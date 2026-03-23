@@ -11,7 +11,7 @@ $(d-1)$-simplex $\Delta\_{d-1}$, driven by the Wright–Fisher diffusion. The po
 precisely the Kelly log-growth rate $r(b,t)$, and the generator is the Wright–Fisher operator
 $\mathcal{L}^\varepsilon$ whose stationary distribution is the uniform (Dirichlet) prior. In the
 semiclassical limit $\varepsilon \to 0$, the WKB approximation to this PDE recovers the
-Laplace approximation to the simplex integral, identifying the log-optimal portfolio $b^*$ as
+Laplace approximation to the simplex integral, identifying the log-optimal portfolio $b^{\ast}$ as
 the Hamilton–Jacobi saddle point and the Fisher information matrix as the Hessian of the action.
 The normalised posterior measure satisfies a replicator–diffusion equation that unifies Cover's
 online algorithm with evolutionary replicator dynamics in a single PDE. We then establish a
@@ -21,7 +21,7 @@ a curvature correction from the Fisher–Rao (Bhattacharyya sphere) geometry, an
 local-time term recording the time the portfolio spends at the faces where individual asset
 weights vanish. This corrects the classical Stokes theorem by an explicit $\varepsilon^2/4$
 curvature term reflecting the constant positive sectional curvature of $(\Delta\_{d-1}, g\_{\rm FR})$.
-We prove that the stable rank $r\_{\rm eff}$ of the Fisher matrix at $b^*$ controls the dimension
+We prove that the stable rank $r\_{\rm eff}$ of the Fisher matrix at $b^{\ast}$ controls the dimension
 of the effective PDE: the heat kernel on $(\Delta\_{d-1}, g\_{\rm FR})$ is concentrated on an
 $r\_{\rm eff}$-dimensional submanifold, extending the Johnson–Lindenstrauss lemma to the
 measure-valued setting. To our knowledge these connections are new.
@@ -40,7 +40,7 @@ Cover's Universal Portfolio \[Cover 1991\] is a remarkable object: a portfolio s
 asymptotically matches the best constant-rebalanced portfolio in hindsight, with no statistical
 assumptions on the market. Its wealth after $T$ periods is:
 
-$$S_T^* = \int_{\Delta_{d-1}} \prod_{t=1}^T \langle b, x_t \rangle \, d\mu(b) \tag{1.1}$$
+$$S_T^{\ast} = \int_{\Delta_{d-1}} \prod_{t=1}^T \langle b, x_t \rangle \, d\mu(b) \tag{1.1}$$
 
 where $x\_t \in \mathbb{R}^d\_+$ are price relative vectors, $\mu$ is the uniform measure on
 $\Delta\_{d-1} = \{b \in \mathbb{R}^d : b \geq 0,\, \mathbf{1}^T b = 1\}$, and the portfolio
@@ -58,7 +58,7 @@ In this paper we identify $(1.2)$ as a **Feynman–Kac functional** on $\Delta\_
 identification has several consequences that, to our knowledge, are new:
 
 1. The simplex integral $(1.1)$ is the solution to a parabolic PDE with Kelly growth rate as
-   potential, whose WKB limit is the log-optimal portfolio $b^*$.
+   potential, whose WKB limit is the log-optimal portfolio $b^{\ast}$.
 
 2. The Laplace approximation — which we showed elsewhere \[preprint\] gives $O(1/T^2)$ accuracy
    for moderate $T$ — is precisely the leading WKB correction to this PDE, with the Fisher
@@ -126,7 +126,7 @@ the simplex maps to the positive orthant of the unit sphere:
 $$\phi(\Delta_{d-1}) = S^{d-1}_+ := \{u \in \mathbb{R}^d : u_i \geq 0,\, \|u\|^2 = 1\} \tag{2.3}$$
 
 Under this map, the Fisher–Rao metric pulls back to the standard round metric on $S^{d-1}$,
-scaled by $1/4$: $g^{\rm FR} = 4\phi^* g\_{\rm round}$. Hence:
+scaled by $1/4$: $g^{\rm FR} = 4\phi^{\ast} g\_{\rm round}$. Hence:
 
 **Proposition 2.1** (Bhattacharyya sphere). *The Riemannian manifold $(\mathring{\Delta}\_{d-1}, g^{\rm FR})$
 is isometric to the positive hemisphere $S^{d-1}\_+$ with constant sectional curvature $K = 1/4$.
@@ -183,10 +183,10 @@ $$r(b, t) = b^T \mu(t) - \tfrac{1}{2}\,b^T \Sigma(t)\, b \tag{2.8}$$
 This is the drift of $\log V\_t(b)$ where $V\_t(b)$ is the wealth of the constantly rebalanced
 portfolio $b$. The **log-optimal portfolio** is:
 
-$$b^*(t) = \arg\max_{b \in \Delta_{d-1}} r(b,t) \tag{2.9}$$
+$$b^{\ast}(t) = \arg\max_{b \in \Delta_{d-1}} r(b,t) \tag{2.9}$$
 
 In the discrete-time setting, $r(b) = \frac{1}{T}\sum\_t \log\langle b, x\_t\rangle$ and
-$b^* = \arg\max\_{b \in \Delta\_{d-1}} r(b)$ is the empirical log-optimal (Kelly) portfolio.
+$b^{\ast} = \arg\max\_{b \in \Delta\_{d-1}} r(b)$ is the empirical log-optimal (Kelly) portfolio.
 
 ---
 
@@ -251,11 +251,11 @@ $$\pi_t(b) = \frac{u(b, t)\,\mu(b)}{\int_\Delta u(b',t)\,\mu(db')} \propto W_t(b
 
 satisfies a **forward equation**. Differentiating the normalisation and applying (3.2):
 
-$$\frac{\partial \pi_t}{\partial t} = (\mathcal{L}^\varepsilon)^* \pi_t
+$$\frac{\partial \pi_t}{\partial t} = (\mathcal{L}^\varepsilon)^{\ast} \pi_t
 + \bigl(r(b,t) - \bar{r}_t\bigr)\,\pi_t \tag{3.5}$$
 
 where $\bar{r}\_t = \int\_\Delta r(b,t)\,\pi\_t(db)$ is the posterior mean growth rate and
-$(\mathcal{L}^\varepsilon)^*$ is the Fokker–Planck operator (formal $L^2$-adjoint of $\mathcal{L}^\varepsilon$).
+$(\mathcal{L}^\varepsilon)^{\ast}$ is the Fokker–Planck operator (formal $L^2$-adjoint of $\mathcal{L}^\varepsilon$).
 We call (3.5) the **replicator–diffusion equation**, developed fully in Section 5.
 
 ---
@@ -295,44 +295,44 @@ on the Riemannian manifold $(\Delta\_{d-1}, g^{\rm FR})$.
 $$\dot{b}^i = \frac{\partial H}{\partial p_i} = b_i\!\left(p_i - \sum_j b_j p_j\right),
 \qquad \dot{p}_i = -\frac{\partial H}{\partial b_i} - \frac{\partial r}{\partial b_i} \tag{4.4}$$
 
-**Theorem 4.1** (Geodesic = log-optimal path). *The critical point $b^*(t)$ of $r(\cdot, t)$ over
-$\Delta\_{d-1}$ is the rest point of the Hamiltonian flow (4.4). The path $t \mapsto b^*(t)$
+**Theorem 4.1** (Geodesic = log-optimal path). *The critical point $b^{\ast}(t)$ of $r(\cdot, t)$ over
+$\Delta\_{d-1}$ is the rest point of the Hamiltonian flow (4.4). The path $t \mapsto b^{\ast}(t)$
 tracking the log-optimal portfolio as $\mu(t), \Sigma(t)$ evolve is a geodesic of
 $(\Delta\_{d-1}, g^{\rm FR})$ in the sense that it minimises the action:*
 
 $$\mathcal{A}[\gamma] = \int_0^T \left[\frac{1}{2}\|\dot{\gamma}\|^2_{g^{\rm FR}} - r(\gamma,t)\right] dt \tag{4.5}$$
 
-*The value of the action at the critical path is $S(b^*, 0) = \int\_0^T r(b^*(s),s)\,ds = \log W\_T(b^*)$.*
+*The value of the action at the critical path is $S(b^{\ast}, 0) = \int\_0^T r(b^{\ast}(s),s)\,ds = \log W\_T(b^{\ast})$.*
 
 **Proof.** The Euler–Lagrange equations for (4.5) on the Riemannian manifold $(\Delta, g^{\rm FR})$
 are precisely Hamilton's equations (4.4). The Lagrangian $\mathcal{L} = \frac{1}{2}|\dot\gamma|^2 - r$
 is convex-concave (kinetic term convex, $r$ concave in $b$), so the saddle point exists uniquely
-in the interior of $\Delta$ whenever $b^*$ is in the interior. $\square$
+in the interior of $\Delta$ whenever $b^{\ast}$ is in the interior. $\square$
 
 **Corollary 4.2** (Stationary phase). *In the limit $T \to \infty$, the integral
-$\int\_\Delta e^{T \cdot r(b)/\varepsilon^2}\,d\mu(b)$ is dominated by the saddle point at $b^*$.*
+$\int\_\Delta e^{T \cdot r(b)/\varepsilon^2}\,d\mu(b)$ is dominated by the saddle point at $b^{\ast}$.*
 
 ### 4.3 The Van Vleck formula and the Laplace approximation
 
 The standard WKB calculation (Van Vleck determinant) gives at subleading order:
 
-$$u(b^*, 0) \approx e^{S(b^*,0)/\varepsilon^2} \cdot A_0(b^*, 0) = W_T(b^*) \cdot |\det(T \cdot F(b^*))|^{-1/2} \cdot (2\pi\varepsilon^2)^{(d-1)/2}$$
+$$u(b^{\ast}, 0) \approx e^{S(b^{\ast},0)/\varepsilon^2} \cdot A_0(b^{\ast}, 0) = W_T(b^{\ast}) \cdot |\det(T \cdot F(b^{\ast}))|^{-1/2} \cdot (2\pi\varepsilon^2)^{(d-1)/2}$$
 
-where $F(b^*) = -\nabla^2\_b r(b^*) = \frac{1}{T}\sum\_t \frac{x\_t x\_t^T}{(b^{*T}x\_t)^2}$
-is the **Fisher information matrix of the log-growth rate at $b^*$** (the Hessian of the PDE potential).
+where $F(b^{\ast}) = -\nabla^2\_b r(b^{\ast}) = \frac{1}{T}\sum\_t \frac{x\_t x\_t^T}{(b^{*T}x\_t)^2}$
+is the **Fisher information matrix of the log-growth rate at $b^{\ast}$** (the Hessian of the PDE potential).
 
 **Theorem 4.3** (WKB = Laplace). *The leading WKB approximation to the FK functional (3.1) with
 $f \equiv 1$ recovers the Laplace approximation to the simplex integral:*
 
-$$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) \approx W_T(b^*) \cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2}
-\cdot |\det F(b^*)|^{-1/2} \tag{4.6}$$
+$$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) \approx W_T(b^{\ast}) \cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2}
+\cdot |\det F(b^{\ast})|^{-1/2} \tag{4.6}$$
 
-*and the universal portfolio weights satisfy $\hat{b}\_T = b^* + O(1/T^2)$.*
+*and the universal portfolio weights satisfy $\hat{b}\_T = b^{\ast} + O(1/T^2)$.*
 
-**Proof.** The Gaussian integral around the saddle $b^*$ in the $(d-1)$-dimensional tangent space
-of $\Delta\_{d-1}$ at $b^*$ gives $(4.6)$. The $O(1/T^2)$ correction to $\hat{b}\_T$ comes from
+**Proof.** The Gaussian integral around the saddle $b^{\ast}$ in the $(d-1)$-dimensional tangent space
+of $\Delta\_{d-1}$ at $b^{\ast}$ gives $(4.6)$. The $O(1/T^2)$ correction to $\hat{b}\_T$ comes from
 the next WKB order, the Maslov correction $A\_1$ to the amplitude, which involves $\text{tr}[F^{-1}]$
-and the third derivative of $r$ at $b^*$. For the uniform prior, the first-order correction
+and the third derivative of $r$ at $b^{\ast}$. For the uniform prior, the first-order correction
 $\nabla \log \pi = 0$ vanishes identically, pushing the error to $O(1/T^2)$. $\square$
 
 **Remark 4.4.** The quantity $\varepsilon^2$ in the WKB expansion plays the role of $\hbar$ in
@@ -353,7 +353,7 @@ the FK-weighted WF process. We expand it explicitly.
 
 The **Fokker–Planck operator** (adjoint of $\mathcal{L}^\varepsilon$ in $L^2(\mu)$) is:
 
-$$(\mathcal{L}^\varepsilon)^* \pi = \frac{\varepsilon^2}{2}\sum_{i,j}
+$$(\mathcal{L}^\varepsilon)^{\ast} \pi = \frac{\varepsilon^2}{2}\sum_{i,j}
 \frac{\partial^2}{\partial b_i \partial b_j}\bigl[b_i(\delta_{ij} - b_j)\pi\bigr] \tag{5.1}$$
 
 Equation (3.5) becomes:
@@ -373,14 +373,14 @@ $$\frac{\partial \pi_t}{\partial t} = \bigl(r(b,t) - \bar{r}(t)\bigr)\pi_t \tag{
 This is the continuous-time replicator equation of evolutionary game theory
 \[Taylor–Jonker 1978\]. Its solution is $\pi\_t(b) \propto e^{\int\_0^t r(b,s)\,ds} \pi\_0(b)$,
 which for $\pi\_0 = \mu$ flat and $r$ time-stationary gives $\pi\_t \propto W\_t(b)\mu$. As
-$t \to \infty$, $\pi\_t \to \delta\_{b^*}$ — the posterior concentrates on the log-optimal
+$t \to \infty$, $\pi\_t \to \delta\_{b^{\ast}}$ — the posterior concentrates on the log-optimal
 portfolio. This is a PDE proof of Cover's regret theorem.
 
 **Case 2: $\varepsilon^2 = 1/T$ (optimal WKB scaling).**
 
 The diffusion term provides $O(1/\sqrt{T})$ exploration and prevents premature concentration.
 The balance $\varepsilon^2 T = 1$ is exactly the scale at which the WKB expansion is valid:
-the posterior is a Gaussian of width $1/\sqrt{T}$ centred at $b^*$.
+the posterior is a Gaussian of width $1/\sqrt{T}$ centred at $b^{\ast}$.
 
 **Case 3: $\varepsilon \to \infty$ (pure diffusion, uniform posterior).**
 
@@ -392,17 +392,17 @@ corresponds to a "maximum entropy" portfolio that ignores the data entirely.
 **Theorem 5.1** (Spectral gap and convergence). *The replicator–diffusion equation (5.2)
 has a spectral gap:*
 
-$$\lambda_1 = \varepsilon^2 \cdot \frac{d-1}{2} + \lambda_{\min}(F(b^*))$$
+$$\lambda_1 = \varepsilon^2 \cdot \frac{d-1}{2} + \lambda_{\min}(F(b^{\ast}))$$
 
 *where the $\varepsilon^2(d-1)/2$ term is the WF spectral gap (Poincaré constant of $\mu$) and
 $\lambda\_{\min}(F)$ is the smallest eigenvalue of the Fisher matrix. The posterior $\pi\_t$
-converges to $\delta\_{b^*}$ at rate $e^{-\lambda\_1 t}$.*
+converges to $\delta\_{b^{\ast}}$ at rate $e^{-\lambda\_1 t}$.*
 
 *The effective number of active modes is the stable rank $r\_{\rm eff}(F) = \|F\|\_F^2/\|F\|\_2^2$:
 modes corresponding to eigenvalues $\lambda\_i \ll \lambda\_1$ contribute exponentially small
 corrections to $\pi\_t$ for $t \gg 1/\lambda\_1$.*
 
-**Remark 5.2.** For a $d$-stock portfolio with an $r$-factor structure, $F(b^*)$ has rank $r$
+**Remark 5.2.** For a $d$-stock portfolio with an $r$-factor structure, $F(b^{\ast})$ has rank $r$
 and $r\_{\rm eff} \leq r \ll d$. The posterior concentrates in $r$ directions, not $d-1$.
 This is the PDE manifestation of the JL dimension reduction.
 
@@ -479,9 +479,9 @@ $$\mathbb{E}_b[\mathcal{I}_\tau(\omega)] = \mathbb{E}_b\!\left[\int_0^\tau \math
 ### 6.4 The Weitzenböck correction from curvature
 
 On a Riemannian manifold $(M,g)$, the **Weitzenböck identity** relates the Hodge Laplacian
-$\Delta\_H = d\delta + \delta d$ on 1-forms to the connection Laplacian $\nabla^*\nabla$ by:
+$\Delta\_H = d\delta + \delta d$ on 1-forms to the connection Laplacian $\nabla^{\ast}\nabla$ by:
 
-$$\Delta_H \omega = \nabla^* \nabla \omega + \text{Ric}(\omega^\sharp,\cdot) \tag{6.7}$$
+$$\Delta_H \omega = \nabla^{\ast} \nabla \omega + \text{Ric}(\omega^\sharp,\cdot) \tag{6.7}$$
 
 For the simplex $(\Delta\_{d-1}, g^{\rm FR}) \cong S^{d-1}\_+$ with constant curvature $K = 1/4$:
 
@@ -575,7 +575,7 @@ $$\left|\mathbb{E}_{b_0}\!\left[\oint_{\partial \mathcal{C}_\tau} \omega\right]\
 *When $\omega$ is the log-return 1-form $\omega\_i = \partial\_{b\_i} L\_T(b)\,db\_i$ (gradient of the
 log-growth rate), the stochastic line integral $\mathcal{I}\_\tau(\omega)$ measures the
 **path-dependent part of portfolio performance**: the excess return of the WF-perturbed strategy
-over the log-optimal portfolio $b^*$. Inequality (6.12) then bounds this excess return by the
+over the log-optimal portfolio $b^{\ast}$. Inequality (6.12) then bounds this excess return by the
 curvature of the log-growth landscape, the Fisher–Rao sectional curvature, and the boundary
 cost of assets approaching zero weight.*
 
@@ -613,9 +613,9 @@ weighted heat semigroup, for some reference diffusion time $T\_0 = 1/T$.
 **Theorem 7.2** (JL on the simplex via heat kernel). *The effective dimension $d\_{\rm eff}(T)$
 satisfies:*
 
-$$d_{\rm eff}(T) \leq r_{\rm eff}(F(b^*)) + O(1/\sqrt{T}) \tag{7.4}$$
+$$d_{\rm eff}(T) \leq r_{\rm eff}(F(b^{\ast})) + O(1/\sqrt{T}) \tag{7.4}$$
 
-*where $r\_{\rm eff}(F) = \|F\|\_F^2/\|F\|\_2^2$ is the stable rank of the Fisher matrix at $b^*$.*
+*where $r\_{\rm eff}(F) = \|F\|\_F^2/\|F\|\_2^2$ is the stable rank of the Fisher matrix at $b^{\ast}$.*
 
 *Moreover, for any $\varepsilon > 0$ and any set of $n$ portfolio vectors
 $b\_1,\ldots,b\_n \in \Delta\_{d-1}$, there exists a random projection
@@ -625,7 +625,7 @@ $$\bigl|\log W_T(\Pi(b)) - \log W_T(b)\bigr| \leq \varepsilon\,|\log W_T(b)| \ta
 
 *simultaneously for all $b \in \{b\_1,\ldots,b\_n\}$ with high probability.*
 
-**Proof sketch.** The stable rank of $F(b^*)$ controls how many spherical harmonics $Y\_{k,l}$
+**Proof sketch.** The stable rank of $F(b^{\ast})$ controls how many spherical harmonics $Y\_{k,l}$
 have significant weight under the FK measure $\pi\_T$. Modes with $\lambda\_k \gg T\|F\|\_2$
 are exponentially suppressed in $K\_T$. The effective number of non-negligible modes is
 $r\_{\rm eff}(F)$. The JL embedding then follows from the standard argument applied to the
@@ -648,8 +648,8 @@ We summarise the main identifications established in this paper:
 | Universal portfolio | FK / PDE | Information geometry |
 |:--------------------|:---------|:---------------------|
 | Simplex integral $\int\_\Delta W\_T(b)\,d\mu$ | FK functional $u(b,0)$ | Heat kernel trace on $(Δ, g^{\rm FR})$ |
-| Log-optimal portfolio $b^*$ | HJ saddle point | Fisher–Rao geodesic endpoint |
-| Fisher information $F(b^*)$ | Hessian of action $S$ at saddle | Riemann curvature at $b^*$ |
+| Log-optimal portfolio $b^{\ast}$ | HJ saddle point | Fisher–Rao geodesic endpoint |
+| Fisher information $F(b^{\ast})$ | Hessian of action $S$ at saddle | Riemann curvature at $b^{\ast}$ |
 | Laplace approximation | Leading WKB term (Van Vleck) | Gaussian tube around geodesic |
 | $O(1/T^2)$ Laplace error | Next WKB order (Maslov) | Curvature correction to tube |
 | Stable rank $r\_{\rm eff}$ | Effective PDE dimension | Heat kernel spectral gap |
@@ -675,10 +675,10 @@ acts as a centering force pushing weights towards $1/d$. The boundary term preve
 allocations. Together these implement the Langevin dynamics for the replicator–diffusion
 equation (5.2).*
 
-### 8.3 The case of stochastic $b^*(t)$: a SPDE on the simplex
+### 8.3 The case of stochastic $b^{\ast}(t)$: a SPDE on the simplex
 
 When the market parameters $\mu(t), \Sigma(t)$ are themselves stochastic (e.g.\ driven by
-a hidden Markov model), the log-optimal portfolio $b^*(t)$ is a stochastic process on $\Delta\_{d-1}$.
+a hidden Markov model), the log-optimal portfolio $b^{\ast}(t)$ is a stochastic process on $\Delta\_{d-1}$.
 The HJ equation (4.1) becomes a **stochastic HJ equation** on $\Delta\_{d-1}$:
 
 $$dS + H(b, \nabla S)\,dt + r(b,t)\,dt = \nabla_b S \cdot \sigma^{\rm mkt}(b,t)\,dW_t^{\rm mkt} \tag{8.1}$$
@@ -686,7 +686,7 @@ $$dS + H(b, \nabla S)\,dt + r(b,t)\,dt = \nabla_b S \cdot \sigma^{\rm mkt}(b,t)\
 where $\sigma^{\rm mkt}$ is the volatility of the market parameters. The solution theory for
 stochastic HJ on manifolds is an active research area \[Lions–Souganidis 1998\]. We conjecture
 that the universal portfolio wealth remains a FK functional for the joint process $(B\_t^\varepsilon,
-b^*(t))$ on $\Delta\_{d-1} \times \Delta\_{d-1}$, and that the stochastic Stokes theorem (6.10)
+b^{\ast}(t))$ on $\Delta\_{d-1} \times \Delta\_{d-1}$, and that the stochastic Stokes theorem (6.10)
 extends to this product space with an additional Itô correction from the correlation between
 the WF diffusion and the market noise.
 
@@ -714,7 +714,7 @@ $$\mathbb{E}\!\left[\oint_{\partial \mathcal{C}_\tau^k} \omega\right]
 
 **Problem 3** (Stochastic Stokes and regret). *Show that the boundary local time term
 $\sum\_i \mathbb{E}[\int\_0^\tau \iota\_{\nu\_i}\omega\,dL\_s^{F\_i}]$ in Theorem 6.2, for $\omega = d\log W\_T$,
-equals the **regret** $\log W\_T(b^*) - \log S\_T^*$ of the universal portfolio relative to the
+equals the **regret** $\log W\_T(b^{\ast}) - \log S\_T^{\ast}$ of the universal portfolio relative to the
 log-optimal portfolio. This would give a path-space proof of Cover's regret bound as a boundary
 local time formula.*
 
@@ -775,19 +775,19 @@ taking expectations gives (6.10). $\square$
 
 ## Appendix B: The Log-Optimal ODE in Fisher–Rao Coordinates
 
-In sphere coordinates $u = \sqrt{b}$, the log-optimal portfolio $b^* = u^{*2}$ satisfies
-the first-order condition $\nabla\_\Delta r(b^*) = \lambda \mathbf{1}$ (gradient parallel to the
+In sphere coordinates $u = \sqrt{b}$, the log-optimal portfolio $b^{\ast} = u^{*2}$ satisfies
+the first-order condition $\nabla\_\Delta r(b^{\ast}) = \lambda \mathbf{1}$ (gradient parallel to the
 constraint normal). In $u$-coordinates this becomes the **geodesic equation on $S^{d-1}$**:
 
-$$\nabla_{u^*}^{S^{d-1}} \nabla \tilde{r}(u^*) = 0 \tag{B.1}$$
+$$\nabla_{u^{\ast}}^{S^{d-1}} \nabla \tilde{r}(u^{\ast}) = 0 \tag{B.1}$$
 
 where $\tilde{r}(u) = r(u^2)$ is the log-growth rate in sphere coordinates. This confirms
-Theorem 4.1: $b^*$ is a geodesic rest point of the information-geometric flow.
+Theorem 4.1: $b^{\ast}$ is a geodesic rest point of the information-geometric flow.
 
-The **Newton step** in Fisher–Rao geometry for updating $b^*$ after observing a new return $x\_t$ is:
+The **Newton step** in Fisher–Rao geometry for updating $b^{\ast}$ after observing a new return $x\_t$ is:
 
-$$b^*_{\rm new} = \Pi_\Delta\!\left(b^* + [g^{\rm FR}(b^*)]^{-1}\nabla_b r(b^*;\, x_t)\right)
-= \Pi_\Delta\!\left(b^* + C(b^*)\cdot \frac{x_t}{b^{*T}x_t}\right) \tag{B.2}$$
+$$b^{\ast}_{\rm new} = \Pi_\Delta\!\left(b^{\ast} + [g^{\rm FR}(b^{\ast})]^{-1}\nabla_b r(b^{\ast};\, x_t)\right)
+= \Pi_\Delta\!\left(b^{\ast} + C(b^{\ast})\cdot \frac{x_t}{b^{*T}x_t}\right) \tag{B.2}$$
 
 where $C(b) = [g^{\rm FR}]^{-1}$ is the WF diffusion matrix. This is precisely the
 **natural gradient descent step** on the simplex \[Amari 1998\], and its online version

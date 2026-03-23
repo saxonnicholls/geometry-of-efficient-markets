@@ -39,7 +39,7 @@ with the scalar curvature $R=1/4 \cdot r(r-1)$ giving $a\_1 = r(r-1)/24$.
 
 **Lemma M1. Cauchy-Crofton Formula for Sharpe Ratio.**
 The Sharpe ratio can be written as an integral over random hyperplanes $P$:
-$$\mathrm{Sharpe}^* = c_r \int_{\rm Gr(d-1,d)} \mathrm{length}(M^r \cap P)\, d\nu(P)$$
+$$\mathrm{Sharpe}^{\ast} = c_r \int_{\rm Gr(d-1,d)} \mathrm{length}(M^r \cap P)\, d\nu(P)$$
 where $d\nu$ is the kinematic measure on the Grassmannian.
 This is the Cauchy-Crofton formula for the $L^1$ norm of mean curvature.
 **Practical consequence:** The Sharpe ratio can be estimated by counting how many
@@ -115,14 +115,14 @@ The portfolio weight $b\_i$ and its conjugate momentum $\pi\_i = \partial\_{\dot
 (from the path integral Lagrangian on $M^r$) satisfy:
 $$\Delta b_i \cdot \Delta\pi_i \geq \frac{\varepsilon^2}{2} = \frac{1}{2T}$$
 where $\Delta$ denotes standard deviation. **This gives a fundamental limit on
-portfolio precision:** after $T$ observations, the log-optimal portfolio $b^*$ can
+portfolio precision:** after $T$ observations, the log-optimal portfolio $b^{\ast}$ can
 be estimated to precision no better than $1/\sqrt{T}$ in any single weight —
 the quantum uncertainty principle applied to portfolio space.
 
 **Lemma H2. The Virial Theorem Gives the Jeffreys Prior.**
 At equilibrium (stationary distribution), the virial theorem on $(M^r, g\_M)$ gives:
 $2\langle\mathrm{KE}\rangle = \langle b\cdot\nabla V\rangle$ where $V = -L\_T$ is the Kelly potential.
-For the log-optimal portfolio: $b^*\cdot\nabla L\_T|\_{b^*} = L\_T(b^*)$ (by homogeneity of
+For the log-optimal portfolio: $b^{\ast}\cdot\nabla L\_T|\_{b^{\ast}} = L\_T(b^{\ast})$ (by homogeneity of
 the Kelly growth rate in $b$). Therefore $2\langle\mathrm{KE}\rangle = h\_{\rm Kelly}$.
 The kinetic energy of the portfolio diffusion at equilibrium is exactly half the Kelly rate.
 This gives an independent derivation that the equilibrium distribution is $\propto\prod b\_i^{-1/2}$
@@ -407,14 +407,14 @@ The nucleolus (the unique attribution minimising the maximum excess over all
 coalitions, in lexicographic order) equals the Shapley value for convex games.
 Since the Kelly game is convex (Lemma HS1): **the nucleolus and Shapley value
 coincide — there is a unique "most defensible" attribution of Kelly growth,
-and it equals $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$.**
+and it equals $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$.**
 
 **Lemma HS3. The Owen Value Generalises to Sector Attribution.**
 When assets are partitioned into sectors $\mathcal{S} = \{S\_1,\ldots,S\_K\}$
 (e.g., technology, finance, healthcare), the Owen value $\phi\_i^{\rm Owen}$
 is the Shapley value of a two-stage game: first allocate Kelly growth to sectors,
 then within each sector. The Owen sector attribution:
-$$\Phi_k^{\rm Owen} = \sum_{i\in S_k}\phi_i = \sum_{i\in S_k}b^*_i(\mu_i-\bar\mu)$$
+$$\Phi_k^{\rm Owen} = \sum_{i\in S_k}\phi_i = \sum_{i\in S_k}b^{\ast}_i(\mu_i-\bar\mu)$$
 is the sum of Shapley values within each sector — preserving sector-level efficiency
 while maintaining asset-level fairness. **The Owen value is the correct attribution
 framework for sector-level portfolio analysis.**
@@ -459,7 +459,7 @@ invariant.
 The Poincaré inequality $\|f-\bar f\|\_{L^2} \leq (1/\lambda\_1)\|\nabla f\|\_{L^2}$
 on $M^r$ directly gives the MUP convergence rate: the regret $r\log T/2T$ is
 related to $1/\lambda\_1$ — the spectral gap controls how fast the MUP posterior
-concentrates around $b^*$. This connection should be stated as a lemma in CONVERGENCE.md.
+concentrates around $b^{\ast}$. This connection should be stated as a lemma in CONVERGENCE.md.
 
 **Connection 2: Log-Sobolev ↔ Concentration of option prices.**
 The log-Sobolev inequality $\mathrm{Ent}(f^2) \leq (2/\lambda\_1)\|\nabla f\|\_{L^2}^2$

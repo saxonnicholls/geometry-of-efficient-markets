@@ -66,10 +66,10 @@ $$\frac{\partial f}{\partial t} = \mathcal{L} f, \qquad
 \mathcal{L} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} - \varepsilon^2\vec{H}\cdot\nabla_{g^{\mathrm{FR}}} \tag{1.1}$$
 
 **Forward equation** (Kolmogorov forward = Fokker-Planck):
-$$\frac{\partial\rho}{\partial t} = \mathcal{L}^*\rho, \qquad
-\mathcal{L}^* = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} + \varepsilon^2\nabla_{g^{\mathrm{FR}}}\cdot(\vec{H}\rho) \tag{1.2}$$
+$$\frac{\partial\rho}{\partial t} = \mathcal{L}^{\ast}\rho, \qquad
+\mathcal{L}^{\ast} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} + \varepsilon^2\nabla_{g^{\mathrm{FR}}}\cdot(\vec{H}\rho) \tag{1.2}$$
 
-where $\mathcal{L}^*$ is the $L^2(M, d\mathrm{vol}\_M)$-adjoint of $\mathcal{L}$.
+where $\mathcal{L}^{\ast}$ is the $L^2(M, d\mathrm{vol}\_M)$-adjoint of $\mathcal{L}$.
 
 **Key difference:** In the backward equation, the mean curvature $\vec{H}$ appears
 as a first-order drift opposing the diffusion. In the forward equation, it appears
@@ -117,7 +117,7 @@ $b = \mathbf{1}/d$) and the distinction vanishes to leading order.
 
 ### 1.3 The spectral expansion of the Fokker-Planck
 
-The Fokker-Planck operator $\mathcal{L}^* = \frac{\varepsilon^2}{2}\Delta\_M$ on
+The Fokker-Planck operator $\mathcal{L}^{\ast} = \frac{\varepsilon^2}{2}\Delta\_M$ on
 the efficient market manifold has a complete spectral expansion:
 
 $$\rho(b,t) = \rho_\infty + \sum_{k=1}^\infty a_k e^{-\varepsilon^2\lambda_k t/2}\phi_k(b) \tag{1.5}$$
@@ -204,7 +204,7 @@ forced by the Fisher-Rao geometry.**
 
 Returns from the Jacobi model: $r\_t = \log(b\_t^A/b\_{t-1}^A)$ where $b^A$ is the
 asset-$A$ weight. These have:
-- Power-law tails with exponent $\alpha\_i = Tb^*\_i - 1/2$ (matching our fat tails theorem)
+- Power-law tails with exponent $\alpha\_i = Tb^{\ast}\_i - 1/2$ (matching our fat tails theorem)
 - Volatility clustering (because the diffusion coefficient $\sqrt{b\_t(1-b\_t)}$ varies)
 - Mean reversion to the stationary distribution
 
@@ -276,7 +276,7 @@ space is $\mathbb{R}^2$ (flat), recovering Type 2 above.
 
 | Market type | Manifold | Diffusion | Stationary distribution | Tails |
 |:-----------|:---------|:----------|:------------------------|:------|
-| CAPM ($r=1$) | $S^1\_+$ (arc) | Jacobi / WF | Beta($\alpha,\beta$) | Power-law $\alpha = Tb^*\_i-1/2$ |
+| CAPM ($r=1$) | $S^1\_+$ (arc) | Jacobi / WF | Beta($\alpha,\beta$) | Power-law $\alpha = Tb^{\ast}\_i-1/2$ |
 | Multi-CAPM ($r\geq 2$) | $S^r\_+$ (sphere) | Spherical BM | Uniform on $S^r\_+$ | Power-law $\alpha = r/2$ |
 | Clifford torus | $T^2$ (flat) | Torus BM | Uniform on $T^2$ | Wrapped Gaussian + corrections |
 | Veronese | $\mathbb{R}P^2$ | $\mathbb{R}P^2$ BM | Uniform on $\mathbb{R}P^2$ | Beta-like, $\mathbb{Z}\_2$ folded |
@@ -357,7 +357,7 @@ often by the optimal portfolio.
 **Estimating Voronoi volumes from data:** The sample estimate of $\pi\_k$ is the
 fraction of time the log-optimal portfolio spends in cell $\mathrm{Vor}\_k$:
 
-$$\hat\pi_k = \frac{1}{T}\sum_{t=1}^T \mathbf{1}[b^*(t) \in \mathrm{Vor}_k] \tag{3.5}$$
+$$\hat\pi_k = \frac{1}{T}\sum_{t=1}^T \mathbf{1}[b^{\ast}(t) \in \mathrm{Vor}_k] \tag{3.5}$$
 
 By ergodicity (the efficient market is ergodic from BRAIDS.md Theorem 4.1):
 $\hat\pi\_k \to \pi\_k$ almost surely.
@@ -617,7 +617,7 @@ rate for a fluid with viscosity $\varepsilon^2$ and "velocity" $\vec{H}$.
 
 | Market type | SDE | Generator | Stationary dist | Tails | Reynolds |
 |:-----------|:----|:----------|:----------------|:------|:---------|
-| CAPM | Jacobi diffusion | $-\kappa(b-b^*)b\partial + \frac{\varepsilon^2}{2}b(1-b)\partial^2$ | Beta | Power law | $<1$ |
+| CAPM | Jacobi diffusion | $-\kappa(b-b^{\ast})b\partial + \frac{\varepsilon^2}{2}b(1-b)\partial^2$ | Beta | Power law | $<1$ |
 | Multi-CAPM | Spherical BM | $\frac{\varepsilon^2}{2}\Delta\_{S^r}$ | Uniform on $S^r\_+$ | Power law $r/2$ | $<1$ |
 | Clifford | Torus BM | $\frac{\varepsilon^2}{2}\Delta\_{T^2}$ | Uniform on $T^2$ | Wrapped Gauss | $\approx 1$ |
 | Figure-eight | Hyperbolic BM | $\frac{\varepsilon^2}{2}\Delta\_{\mathbb{H}^2}$ | Cauchy on $\partial\mathbb{H}^2$ | Cauchy | $>1$ |
@@ -673,7 +673,7 @@ in distribution, with $O(N\cdot T\cdot d)$ computational cost.
 
 $$\frac{db}{dt} = -\nabla_{g_M}L_T(b) \tag{6.4}$$
 
-The terminal point is the log-optimal portfolio $b^*$. This is **gradient descent in
+The terminal point is the log-optimal portfolio $b^{\ast}$. This is **gradient descent in
 the Fisher-Rao metric** — faster convergence than Euclidean gradient descent because
 $g\_M$ is the natural metric for this problem. Equivalent to the natural gradient
 algorithm of Amari \[1998\], now given a geometric derivation as streamline integration

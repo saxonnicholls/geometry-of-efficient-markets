@@ -228,7 +228,7 @@ Six papers are ready for submission. In order of priority:
 ### Paper B — Annals of Applied Probability (Submit in ~6 weeks)
 **"Market Efficiency as a Minimal Surface: The Sharpe-Curvature Theorem"**
 - Source: 03_MINIMAL_SURFACE.md, 04_CLASSIFICATION.md
-- Key result: R1 ($\mathrm{Sharpe}^*=\|H\|\_{L^2}$), R3 (only CAPMs stable)
+- Key result: R1 ($\mathrm{Sharpe}^{\ast}=\|H\|\_{L^2}$), R3 (only CAPMs stable)
 - Length: 35 pages
 
 ### Paper C — Operations Research / Journal of Finance (Submit in ~8 weeks)
@@ -246,7 +246,7 @@ Six papers are ready for submission. In order of priority:
 ### Paper N — Journal of Finance (Submit in ~10 weeks)
 **"Shapley Values and Kelly Attribution on the Portfolio Simplex"**
 - Source: 27_HYPERCUBE_SHAPLEY.md
-- Key result: R25 ($\phi\_i=b^*\_i(\mu\_i-\bar\mu)$)
+- Key result: R25 ($\phi\_i=b^{\ast}\_i(\mu\_i-\bar\mu)$)
 - Length: 25 pages
 
 ---

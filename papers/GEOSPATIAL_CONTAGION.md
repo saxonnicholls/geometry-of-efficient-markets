@@ -34,7 +34,7 @@ The Hilbert-ordered market path is the most compressible representation of the
 portfolio trajectory.
 
 **(iii) Information propagation as diffusion on the Delaunay graph.** A news shock
-affecting stock $i$ moves the portfolio from $b^*$ to $b^* + \delta e\_i$ in the
+affecting stock $i$ moves the portfolio from $b^{\ast}$ to $b^{\ast} + \delta e\_i$ in the
 simplex. The perturbation propagates through the Delaunay graph of the Voronoi
 partition at speed governed by the Jacobi spectral gap $\lambda\_1$. At time $t$
 after the shock, the perturbation has spread to all Voronoi cells within
@@ -145,7 +145,7 @@ $d\_{g^{\mathrm{FR}}}(b\_1,b\_2) \approx C\_{\mathrm{LCP}(b\_1,b\_2)}$ — the d
 is the resolution at which the two portfolios first disagree.*
 
 **Practical application — portfolio similarity search:** Given a new market state
-$b^*(T+1)$, find all historical states $\{b^*(t)\}\_{t \leq T}$ within Fisher-Rao
+$b^{\ast}(T+1)$, find all historical states $\{b^{\ast}(t)\}\_{t \leq T}$ within Fisher-Rao
 distance $\varepsilon$ in $O(\log(1/\varepsilon))$ time using the H3 prefix index.
 This is the geometric nearest-neighbour problem for portfolio states, exactly the
 H3 ring/disk query on the market sphere.
@@ -196,7 +196,7 @@ The S2 hierarchy at level $\ell$ on portfolio $S^2\_+$ partitions the market man
 into $4^\ell$ cells, each corresponding to a specific range of factor exposures.
 
 **At level 1** ($4$ cells for $S^2\_+$): the four "quadrant portfolios"
-$(b\_1 \gtrless b^*\_1, b\_2 \gtrless b^*\_2)$ — the Clifford torus Voronoi cells.
+$(b\_1 \gtrless b^{\ast}\_1, b\_2 \gtrless b^{\ast}\_2)$ — the Clifford torus Voronoi cells.
 
 **At level 2** ($16$ cells): each quadrant further divided into sub-quadrants by
 within-group allocation — resolves the fine structure within each factor regime.
@@ -250,13 +250,13 @@ rather than arbitrary IDs reduces the compressed size by a factor of up to $r$.
 
 ### 4.3 The Hilbert curve and information revelation
 
-The Hilbert curve index $\mathrm{HI}(b^*(t)) \in [0,1]$ is a scalar time series that
+The Hilbert curve index $\mathrm{HI}(b^{\ast}(t)) \in [0,1]$ is a scalar time series that
 summarises the portfolio trajectory on $M^r$. Its properties:
 
-**Binary expansion and the filtration.** The binary expansion of $\mathrm{HI}(b^*(t))$:
-$$\mathrm{HI}(b^*(t)) = \sum_{k=1}^\infty b_k 2^{-k}, \qquad b_k \in \{0,1\} \tag{4.4}$$
+**Binary expansion and the filtration.** The binary expansion of $\mathrm{HI}(b^{\ast}(t))$:
+$$\mathrm{HI}(b^{\ast}(t)) = \sum_{k=1}^\infty b_k 2^{-k}, \qquad b_k \in \{0,1\} \tag{4.4}$$
 has a remarkable property: the first $n$ bits $b\_1\cdots b\_n$ determine the depth-$n$
-Hilbert cell containing $b^*(t)$ — equivalently, the depth-$n$ atom of the Hilbert filtration.
+Hilbert cell containing $b^{\ast}(t)$ — equivalently, the depth-$n$ atom of the Hilbert filtration.
 
 **The Hilbert filtration:**
 $$\mathcal{F}^{\mathrm{HI}}_t^n = \sigma(b_1(s),\ldots,b_n(s) : s \leq t) \tag{4.5}$$
@@ -278,7 +278,7 @@ bounding rectangles (MBRs). For portfolio space:
 - The R-tree supports range queries: find all portfolios within a given MBR
 
 **The natural MBR for portfolio space** is the Fisher-Rao ball:
-$$B_{g^{\mathrm{FR}}}(b^*, \varepsilon) = \{b \in M : d_{g^{\mathrm{FR}}}(b, b^*) \leq \varepsilon\} \tag{5.1}$$
+$$B_{g^{\mathrm{FR}}}(b^{\ast}, \varepsilon) = \{b \in M : d_{g^{\mathrm{FR}}}(b, b^{\ast}) \leq \varepsilon\} \tag{5.1}$$
 
 In simplex coordinates, this is an **ellipsoid** (not an axis-aligned box) — the
 Fisher-Rao ball is elongated in directions of small portfolio weight $b\_i$ and
@@ -301,18 +301,18 @@ historical market environments most similar to the current one in Fisher-Rao geo
 ### 5.2 Range queries and regime detection
 
 An R-tree range query on the market manifold:
-$$Q_\varepsilon(b^*) = \{t : b^*(t) \in B_{g^{\mathrm{FR}}}(b^*, \varepsilon)\} \tag{5.3}$$
+$$Q_\varepsilon(b^{\ast}) = \{t : b^{\ast}(t) \in B_{g^{\mathrm{FR}}}(b^{\ast}, \varepsilon)\} \tag{5.3}$$
 
-returns all times when the portfolio was within Fisher-Rao distance $\varepsilon$ of $b^*$.
+returns all times when the portfolio was within Fisher-Rao distance $\varepsilon$ of $b^{\ast}$.
 The expected query time is $O(T^\gamma)$ for the R-tree (with $\gamma < 1$ depending
 on the dimensionality and clustering structure).
 
 **Regime detection via R-tree clustering.** The market manifold has a natural
-cluster structure — efficient periods cluster near $b^*$ (small Fisher-Rao radius),
+cluster structure — efficient periods cluster near $b^{\ast}$ (small Fisher-Rao radius),
 while crises push the portfolio toward the boundary $\partial\Delta$ (large Fisher-Rao
 radius). An R-tree density query detects regimes:
 
-- **Dense cluster near $b^*$**: normal efficient market
+- **Dense cluster near $b^{\ast}$**: normal efficient market
 - **Sparse region near $\partial\Delta$**: crisis (portfolio concentrating in safe assets)
 - **Multi-modal density** (two clusters of comparable size): regime transition
 
@@ -338,7 +338,7 @@ $$\mathbb{P}(\mathrm{LSH}(b_1) = \mathrm{LSH}(b_2)) = 1 - \frac{d_{g^{\mathrm{FR
 Nearby portfolios (small Fisher-Rao distance) collide with high probability;
 distant portfolios collide with low probability.
 
-**Portfolio fingerprinting.** The LSH of the current portfolio $b^*(t)$ is a compact
+**Portfolio fingerprinting.** The LSH of the current portfolio $b^{\ast}(t)$ is a compact
 "fingerprint" that can be compared across different markets, time periods, or asset
 universes. Two markets are "in similar states" iff their portfolio fingerprints match.
 
@@ -362,7 +362,7 @@ space analogue of "same city" (short prefix) vs "same street address" (long pref
 ### 7.1 The contagion model
 
 A shock to stock $i$ at time $t\_0$ moves the log-optimal portfolio:
-$$b^*(t_0^+) = b^*(t_0^-) + \delta_i e_i, \qquad \delta_i = \frac{\partial b^*}{\partial x_i}\Delta x_i \tag{7.1}$$
+$$b^{\ast}(t_0^+) = b^{\ast}(t_0^-) + \delta_i e_i, \qquad \delta_i = \frac{\partial b^{\ast}}{\partial x_i}\Delta x_i \tag{7.1}$$
 
 This perturbation moves the portfolio from its current Voronoi cell to an adjacent
 cell (if $\delta\_i$ is large enough to cross a Voronoi boundary). The perturbation
@@ -370,7 +370,7 @@ then propagates through the Delaunay graph via the **manifold heat equation**:
 
 $$\frac{\partial}{\partial t}\delta b(b,t) = \varepsilon^2\Delta_M\,\delta b(b,t) \tag{7.2}$$
 
-with initial condition $\delta b(b,0) = \delta\_i e\_i\cdot\mathbf{1}\_{b=b^*}$.
+with initial condition $\delta b(b,0) = \delta\_i e\_i\cdot\mathbf{1}\_{b=b^{\ast}}$.
 
 ### 7.2 The contagion kernel
 
@@ -447,7 +447,7 @@ For the Clifford torus ($d=4$, 4-cell graph with the torus adjacency matrix 3.7)
 the first non-trivial eigenvector of $A^{T^2}$ has equal loadings on all 4 cells
 (by symmetry) — the Clifford torus has no contagion hubs. All cells are equally central.
 
-For an asymmetric Lawson surface: the cell containing $b^*$ has higher centrality
+For an asymmetric Lawson surface: the cell containing $b^{\ast}$ has higher centrality
 (it is closer to more cells) — the **log-optimal portfolio is the contagion hub of
 an asymmetric market**.
 
@@ -496,14 +496,14 @@ easily the optimal portfolio transitions between their factor regimes).
 institution $i$ as:
 $$\Delta\mathrm{CoVaR}^{j|i} = \mathrm{VaR}^j|\mathrm{distress}(i) - \mathrm{VaR}^j|\mathrm{median}(i) \tag{8.1}$$
 
-In geometric terms: institution $i$ is in distress when $b^*\_i \to \partial\Delta$
+In geometric terms: institution $i$ is in distress when $b^{\ast}\_i \to \partial\Delta$
 (portfolio weight approaching zero — the Feller boundary). The VaR of institution $j$
 given $i$'s distress equals the VaR under the conditional distribution given that
-$b^*\_i(t)$ is in the crisis cell $A^{\rm crisis} = B\_{g^{\mathrm{FR}}}(\partial\Delta, \varepsilon)$:
+$b^{\ast}\_i(t)$ is in the crisis cell $A^{\rm crisis} = B\_{g^{\mathrm{FR}}}(\partial\Delta, \varepsilon)$:
 
-$$\Delta\mathrm{CoVaR}^{j|i}_{\rm geom} = \mathrm{VaR}^j\!\left(\,\cdot\, | b^*_i \in A^{\rm crisis}\right) - \mathrm{VaR}^j\!\left(\,\cdot\, | b^*_i \in A^*_i\right) \tag{8.2}$$
+$$\Delta\mathrm{CoVaR}^{j|i}_{\rm geom} = \mathrm{VaR}^j\!\left(\,\cdot\, | b^{\ast}_i \in A^{\rm crisis}\right) - \mathrm{VaR}^j\!\left(\,\cdot\, | b^{\ast}_i \in A^{\ast}_i\right) \tag{8.2}$$
 
-The geometric CoVaR is large when $A^{\rm crisis}$ is close to $A^*\_j$ in the
+The geometric CoVaR is large when $A^{\rm crisis}$ is close to $A^{\ast}\_j$ in the
 Delaunay graph — when institutions $i$ and $j$ are in adjacent Voronoi cells.
 **Two institutions have high mutual CoVaR iff they are Delaunay neighbours.**
 
@@ -592,9 +592,9 @@ exactly balance.
 **Definition 10.1** (Information flow rate). *The information flow rate from
 Voronoi cell $A\_k$ to $A\_l$ at time $t$ is:*
 
-$$I_{kl}(t) = w_{kl}\!\left|p_{b^*}(A_l|A_k) - \pi_l\right| \tag{10.1}$$
+$$I_{kl}(t) = w_{kl}\!\left|p_{b^{\ast}}(A_l|A_k) - \pi_l\right| \tag{10.1}$$
 
-*where $p\_{b^*}(A\_l|A\_k)$ is the transition probability from $A\_k$ to $A\_l$
+*where $p\_{b^{\ast}}(A\_l|A\_k)$ is the transition probability from $A\_k$ to $A\_l$
 and $\pi\_l$ is the stationary probability of cell $A\_l$.
 This measures how much the market's current state in cell $A\_k$ changes our
 estimate of the probability of next being in cell $A\_l$.*
@@ -605,7 +605,7 @@ distribution) and positive when the market is away from stationarity.
 **The total information flow rate:**
 
 $$I_{\rm total}(t) = \sum_{(k,l)\in\mathcal{D}} I_{kl}(t)
-= D_{\rm KL}(p_{b^*}(\cdot|\mathcal{F}^{\rm Vor}_t) \| \pi) \tag{10.2}$$
+= D_{\rm KL}(p_{b^{\ast}}(\cdot|\mathcal{F}^{\rm Vor}_t) \| \pi) \tag{10.2}$$
 
 — the KL divergence between the current conditional distribution and the stationary
 distribution. This is zero at the efficient market equilibrium and positive during
@@ -629,7 +629,7 @@ characterises the information event at each scale simultaneously.
 
 The **news scale classifier**: a news event at time $t$ is classified as
 systematic (factor-level), semi-systematic, or idiosyncratic by the first
-H3 resolution level $\ell^*$ at which $I^\ell(t)$ is significantly elevated.
+H3 resolution level $\ell^{\ast}$ at which $I^\ell(t)$ is significantly elevated.
 
 ---
 

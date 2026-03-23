@@ -76,7 +76,7 @@ Ch.19: Chaos ≡ stochastic on $M^r$ (Oseledets); Feigenbaum $\delta$ at bifurca
         Takens embedding ($2r+1$ dimension); optimal delay $\tau=1/\lambda\_1$;
         symbolic Takens = LZ tree; three-step practical manifold estimation algorithm
 Ch.20: Simplex inside hypercube; Walsh = Jacobi polynomials; barycentric = Voronoi;
-        Shapley $\phi\_i=b^*\_i(\mu\_i-\bar\mu)$; factor attribution; Banzhaf = Walsh-Fourier;
+        Shapley $\phi\_i=b^{\ast}\_i(\mu\_i-\bar\mu)$; factor attribution; Banzhaf = Walsh-Fourier;
         ANOVA = Shapley; normal bundle Shapley = unexplained alpha
 Ch.21: Pairs trading from Hamiltonian; geometric thresholds; Berry phase entry filter;
         quantum pairs trading; C++ implementation

@@ -32,7 +32,7 @@ Show stable rank of attention weight matrices $\to r$ under spectral regularisat
 *Key step:* Fisher info of transformer model at optimal weights = $g^{\rm FR}$ of $M^r$.
 
 **OP6. Implement Kelly Rate as Loss Benchmark ★**
-Compute $h\_{\rm Kelly}(b^*)$ from Fama-French data. Train transformer on same data.
+Compute $h\_{\rm Kelly}(b^{\ast})$ from Fama-French data. Train transformer on same data.
 Verify validation loss converges to $h\_{\rm Kelly}$ at $d\_{\rm model}=r$.
 
 **OP7. Normal Bundle Concentration as Side-Channel Detector ★★**
@@ -121,10 +121,10 @@ CBOE SKEW vs $H^2/(2\sigma\_I)$. Strongest single test of R7.
 
 **OP23. Takens Reconstruction Validation ★**
 Apply three-step algorithm to S\&P 500 data.
-Verify FNN fraction drops at $m^*=9$ (for $r=4$ factors).
+Verify FNN fraction drops at $m^{\ast}=9$ (for $r=4$ factors).
 
 **OP24. Shapley Attribution Decomposition ★**
-Implement $\phi\_i=b^*\_i(\mu\_i-\bar\mu)$ on Fama-French 25 portfolios.
+Implement $\phi\_i=b^{\ast}\_i(\mu\_i-\bar\mu)$ on Fama-French 25 portfolios.
 Compare to standard factor attribution. Test normal bundle component = unexplained alpha.
 
 **OP25. Transformer Dimension Test ★**
@@ -135,7 +135,7 @@ Plot validation loss vs $d\_{\rm model}$. Verify minimum near $d\_{\rm model}=r\
 
 ## Group G: Mathematical Extensions
 
-**OP26. Boundary WKB Theory When $b^*\in\partial\Delta$ ★★★**
+**OP26. Boundary WKB Theory When $b^{\ast}\in\partial\Delta$ ★★★**
 WKB/Laplace analysis at the boundary of the simplex.
 
 **OP27. Non-Equilibrium Markets as KPZ Universality ★★★★**

@@ -297,9 +297,9 @@ value. This is not modesty. It is optimal behaviour under the geometry.
 ---
 
 **"Wonderful business at a fair price" is the Hamiltonian free boundary.**
-The optimal entry point for a mean-reverting asset is $z^* = \sqrt{1+r/\kappa}$ — 
+The optimal entry point for a mean-reverting asset is $z^{\ast} = \sqrt{1+r/\kappa}$ — 
 the Hamiltonian free boundary. For a high-quality business with slow 
-mean reversion (a wide moat), $\kappa$ is small, $z^*$ is large, and you 
+mean reversion (a wide moat), $\kappa$ is small, $z^{\ast}$ is large, and you 
 should only enter at a substantial discount to intrinsic value. Buffett's 
 patience is the optimal stopping rule applied, not a temperamental 
 preference.
@@ -357,7 +357,7 @@ on the manifold.
    Be honest about which is which.
 
 5. **Compute the Shapley attribution of your Kelly growth to each asset 
-   monthly.** $\phi\_i = b^*\_i \times (\mu\_i - \bar\mu)$. The assets with 
+   monthly.** $\phi\_i = b^{\ast}\_i \times (\mu\_i - \bar\mu)$. The assets with 
    large positive Shapley values deserve their weight. The others do not.
 
 6. **Set your rebalancing frequency to the market's natural rate.** 

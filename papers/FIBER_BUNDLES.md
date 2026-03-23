@@ -18,11 +18,11 @@ connections has direct financial interpretations.
 
 Our principal results:
 **(i) Parallel transport = optimal hedge updating:** as the log-optimal portfolio
-$b^*(t)$ moves along $M$, a derivative position in the normal bundle is parallel
+$b^{\ast}(t)$ moves along $M$, a derivative position in the normal bundle is parallel
 transported by the connection on $NM$ — this is the unique way to update an
 idiosyncratic hedge position without introducing spurious factor risk.
 **(ii) Holonomy = accumulated drift from market cycles:** if the market completes
-an economic cycle ($b^*(T) = b^*(0)$, a closed loop on $M$), idiosyncratic
+an economic cycle ($b^{\ast}(T) = b^{\ast}(0)$, a closed loop on $M$), idiosyncratic
 positions rotate by the holonomy element $\mathrm{Hol}(\gamma) \in SO(d-1-r)$.
 This rotation is unavoidable — it is the portfolio analog of the Berry phase.
 **(iii) Homotopy invariance:** the holonomy depends only on the homotopy class
@@ -63,7 +63,7 @@ the $(d-1-r)$-dimensional space perpendicular to $M$ at $b$ in the Fisher-Rao me
 
 *Financial meaning:* The space of portfolio directions not explained by the factor
 structure — the idiosyncratic directions. As identified in
-HAMILTONIAN\_TAILS\_COMPLETENESS Theorem 3.1: the space of EMMs $\cong N\_{b^*}M$.
+HAMILTONIAN\_TAILS\_COMPLETENESS Theorem 3.1: the space of EMMs $\cong N\_{b^{\ast}}M$.
 
 **Bundle 2: The Frame Bundle $FM$**
 
@@ -108,25 +108,25 @@ $\mathcal{T} \to \text{Gr}(r,d)$, pulled back to the time-varying factor subspac
 ### 2.1 The hedging problem
 
 A portfolio manager holds:
-- A position $b^*(t)$ in the factor portfolio (on the manifold $M$)
-- A derivative hedging position $s(t) \in N\_{b^*(t)}M$ (in the normal bundle)
+- A position $b^{\ast}(t)$ in the factor portfolio (on the manifold $M$)
+- A derivative hedging position $s(t) \in N\_{b^{\ast}(t)}M$ (in the normal bundle)
 
-As the market evolves and $b^*(t)$ moves along $M$, how should the hedge position
+As the market evolves and $b^{\ast}(t)$ moves along $M$, how should the hedge position
 $s(t)$ be updated?
 
 **The naive answer** (used in practice): adjust $s(t)$ to maintain a fixed target
 exposure — e.g., always hold $\delta$ shares of asset $i$. This introduces spurious
-factor exposure because the meaning of asset $i$ in the factor frame changes as $b^*(t)$ moves.
+factor exposure because the meaning of asset $i$ in the factor frame changes as $b^{\ast}(t)$ moves.
 
-**The correct answer:** parallel transport $s(t)$ along the path $b^*(t)$ using
+**The correct answer:** parallel transport $s(t)$ along the path $b^{\ast}(t)$ using
 the normal bundle connection $\nabla^N$.
 
-**Definition 2.1** (Parallel transport on $NM$). *A section $s(t) \in N\_{b^*(t)}M$
-is **parallel** along $b^*(t)$ if:*
+**Definition 2.1** (Parallel transport on $NM$). *A section $s(t) \in N\_{b^{\ast}(t)}M$
+is **parallel** along $b^{\ast}(t)$ if:*
 
-$$\frac{D^N s}{dt} := \nabla^N_{\dot{b}^*} s = \Pi_{NM}(\bar\nabla_{\dot{b}^*}s) = 0 \tag{2.1}$$
+$$\frac{D^N s}{dt} := \nabla^N_{\dot{b}^{\ast}} s = \Pi_{NM}(\bar\nabla_{\dot{b}^{\ast}}s) = 0 \tag{2.1}$$
 
-*The parallel transport $\tau\_{t\_0}^t: N\_{b^*(t\_0)}M \to N\_{b^*(t)}M$ is the unique
+*The parallel transport $\tau\_{t\_0}^t: N\_{b^{\ast}(t\_0)}M \to N\_{b^{\ast}(t)}M$ is the unique
 isometry transporting $s(t\_0)$ to $s(t)$ while keeping it parallel.*
 
 **Theorem 2.2** *(Parallel transport = minimal-cost hedge update)*.
@@ -135,7 +135,7 @@ isometry transporting $s(t\_0)$ to $s(t)$ while keeping it parallel.*
 
 $$C[s] = \int_{t_0}^t \left\|\frac{D^N s}{d\tau}\right\|^2_{g^{\mathrm{FR}}} d\tau \tag{2.2}$$
 
-*among all paths $s(\tau) \in N\_{b^*(\tau)}M$ connecting $s(t\_0)$ to $s(t)$.
+*among all paths $s(\tau) \in N\_{b^{\ast}(\tau)}M$ connecting $s(t\_0)$ to $s(t)$.
 Equivalently: parallel transport is the **zero-cost hedge update** — it moves the
 hedging position along the manifold without introducing any net force into the normal bundle.*
 
@@ -143,7 +143,7 @@ hedging position along the manifold without introducing any net force into the n
 the parallel transport equation. The minimum cost is zero (achieved by parallel
 transport), and all other paths have positive cost. $\square$
 
-**Financial interpretation.** When the optimal portfolio $b^*(t)$ shifts from
+**Financial interpretation.** When the optimal portfolio $b^{\ast}(t)$ shifts from
 "growth-value balanced" to "growth-heavy" (a movement along $M$), the hedging
 position against idiosyncratic risk must be updated by parallel transport — not by
 naive delta-hedging. The difference between parallel transport and naive delta-hedging
@@ -153,15 +153,15 @@ is the **connection correction** — a term proportional to the curvature of $M$
 
 The parallel transport equation (2.1) expands using the Weingarten map:
 
-$$\frac{D^N s}{dt} = \dot{s} - A^*_s\,\dot{b}^* + \nabla^N_{\dot{b}^*}s_{\rm tang} = 0 \tag{2.3}$$
+$$\frac{D^N s}{dt} = \dot{s} - A^{\ast}_s\,\dot{b}^{\ast} + \nabla^N_{\dot{b}^{\ast}}s_{\rm tang} = 0 \tag{2.3}$$
 
-where $A^*\_s: TM \to TM$ is the shape operator (adjoint of the second fundamental form)
+where $A^{\ast}\_s: TM \to TM$ is the shape operator (adjoint of the second fundamental form)
 evaluated in direction $s$. Solving for $\dot{s}$:
 
-$$\dot{s} = A^*_s\,\dot{b}^* \tag{2.4}$$
+$$\dot{s} = A^{\ast}_s\,\dot{b}^{\ast} \tag{2.4}$$
 
 **This is the Weingarten equation:** the rate of change of the hedge position equals
-the shape operator applied to the market movement. The shape operator $A^*\_s$ is
+the shape operator applied to the market movement. The shape operator $A^{\ast}\_s$ is
 exactly the matrix of second derivatives connecting the normal and tangential directions
 — it is the **second fundamental form** of $M$ in the direction $s$.
 
@@ -214,10 +214,10 @@ In our framework:
 **The adiabatic theorem for markets:** Suppose the return distribution parameters
 $\theta(t) = (\mu(t), \Sigma(t))$ change slowly (adiabatically: $|\dot\theta|/|\theta| \ll 1/T$).
 The ground state of the market Hamiltonian $\mathcal{H}[\theta(t)]$ (the log-optimal portfolio
-$b^*(t)$) evolves adiabatically, tracking the instantaneous log-optimal portfolio.
+$b^{\ast}(t)$) evolves adiabatically, tracking the instantaneous log-optimal portfolio.
 
 After a closed loop in parameter space ($\theta(T) = \theta(0)$), the portfolio
-$b^*(T) = b^*(0)$ returns to its starting point. But the universal portfolio $\hat{b}\_T^M$
+$b^{\ast}(T) = b^{\ast}(0)$ returns to its starting point. But the universal portfolio $\hat{b}\_T^M$
 — the ground state wavefunction — has accumulated a phase:
 
 $$\hat{b}_T^M = e^{i\gamma_{\rm Berry}}\cdot e^{-i E_0 T}\cdot \hat{b}_0^M \tag{3.3}$$
@@ -280,7 +280,7 @@ produce identical portfolio phase effects.
 
 **Homotopy equivalence classes of market strategies:**
 
-Two portfolio strategies $b^*(t)$ and $b^{**}(t)$ that trace homotopically equivalent
+Two portfolio strategies $b^{\ast}(t)$ and $b^{**}(t)$ that trace homotopically equivalent
 paths in $M$ are **geometrically equivalent** — they have the same:
 - Berry phase (adiabatic alpha)
 - Holonomy of the hedging position
@@ -349,7 +349,7 @@ $$\alpha_{\rm top} = \frac{c_k(NM)}{T} \tag{4.4}$$
 normal bundle $NM$ has non-trivial first Chern class $c\_1(NM) \neq 0$, then there
 exists a portfolio strategy $\beta\_t$ with positive expected excess log-return:*
 
-$$\mathbb{E}[L(\beta_t)] - L(b^*) = \frac{c_1(NM)}{T} + O(1/T^2) > 0 \tag{4.5}$$
+$$\mathbb{E}[L(\beta_t)] - L(b^{\ast}) = \frac{c_1(NM)}{T} + O(1/T^2) > 0 \tag{4.5}$$
 
 *even if $H \equiv 0$ on $M$ (the market is efficient in the minimal surface sense).*
 
@@ -379,7 +379,7 @@ is topological: the Hall conductance cannot change unless the gap closes.
 **The market analogue:** Define the **market Hall conductance** as the cross-response
 of portfolio weights to factor shocks:
 
-$$\sigma_{ij}^{\rm Hall} = \frac{\partial b^*_i}{\partial f_j} - \frac{\partial b^*_j}{\partial f_i} \tag{4.6}$$
+$$\sigma_{ij}^{\rm Hall} = \frac{\partial b^{\ast}_i}{\partial f_j} - \frac{\partial b^{\ast}_j}{\partial f_i} \tag{4.6}$$
 
 (the antisymmetric part of the factor response matrix). The integral of this over
 the market manifold:
@@ -421,14 +421,14 @@ of factor loadings). The symplectic form $\omega\_K$ gives the Grassmannian a
 of the market manifold equals the integral of the Kähler form over a 2-cycle in the
 Grassmannian:*
 
-$$\mathcal{W}_2(M) = \int_{M^2} \iota^*\omega_K \tag{5.2}$$
+$$\mathcal{W}_2(M) = \int_{M^2} \iota^{\ast}\omega_K \tag{5.2}$$
 
 *where $\iota: M^2 \to \text{Gr}(r,d)$ is the map sending each point $b \in M$ to
 the tangent subspace $T\_bM \in \text{Gr}(r,d)$ (the Gauss map of $M$).*
 
 *Proof.* The Gauss map $\iota(b) = T\_bM$ pulls back the Kähler form to the second
-fundamental form: $\iota^*\omega\_K = \|II\|\_F^2\,d\mathrm{vol}\_M$.
-Integrating: $\int\_M \iota^*\omega\_K = \int\_M\|II\|\_F^2\,d\mathrm{vol}\_M = \mathcal{W}\_2(M)$. $\square$
+fundamental form: $\iota^{\ast}\omega\_K = \|II\|\_F^2\,d\mathrm{vol}\_M$.
+Integrating: $\int\_M \iota^{\ast}\omega\_K = \int\_M\|II\|\_F^2\,d\mathrm{vol}\_M = \mathcal{W}\_2(M)$. $\square$
 
 **The Willmore energy is the "symplectic area" of the Gauss map image in the
 Grassmannian.** A minimal surface has zero Willmore energy iff the Gauss map
@@ -444,7 +444,7 @@ When the factor structure $V\_r(t)$ rotates (due to economic structural change),
 log-optimal portfolio must be updated. The **canonical update** is parallel transport
 along the Grassmannian path:
 
-$$b^*(t) = \Pi_\Delta\!\left(\mathcal{P}\exp\!\left(-\int_0^t A(\dot{V}_r(\tau))\,d\tau\right) V_r(0)\alpha^*\right) \tag{5.3}$$
+$$b^{\ast}(t) = \Pi_\Delta\!\left(\mathcal{P}\exp\!\left(-\int_0^t A(\dot{V}_r(\tau))\,d\tau\right) V_r(0)\alpha^{\ast}\right) \tag{5.3}$$
 
 where $\mathcal{P}\exp$ is the path-ordered exponential of the Grassmannian connection
 $A = V\_r^\dagger dV\_r$ (the **Berry connection on the Grassmannian**).
@@ -452,9 +452,9 @@ $A = V\_r^\dagger dV\_r$ (the **Berry connection on the Grassmannian**).
 **The rotation of the log-optimal portfolio under factor rotation is determined
 by the Berry connection.** If the factors rotate by a matrix $R \in O(r)$ (an
 orthogonal rotation within the factor subspace), the optimal factor loadings
-$\alpha^*$ transform as:
+$\alpha^{\ast}$ transform as:
 
-$$\alpha^*(t) = \mathcal{P}\exp\!\left(-\int_0^t A\right) \alpha^*(0) \tag{5.4}$$
+$$\alpha^{\ast}(t) = \mathcal{P}\exp\!\left(-\int_0^t A\right) \alpha^{\ast}(0) \tag{5.4}$$
 
 For a slow rotation (adiabatic): the portfolio tracks the rotating factor frame
 without additional trading cost, accumulating only the Berry phase.
@@ -563,12 +563,12 @@ $$(e_1,\ldots,e_r)(b) \mapsto (e_1,\ldots,e_r)(b)\cdot g(b)^{-1} \tag{7.1}$$
 **Gauge-invariant quantities** are those unchanged by this transformation:
 - The Willmore energy $\mathcal{W}(M)$ (invariant under $O(r)$ rotations of the factor frame)
 - The mean curvature $H(b)$ (scalar — obviously invariant)
-- The Sharpe ratio $\mathrm{Sharpe}^* = \|H\|\_{L^2}$ (invariant)
+- The Sharpe ratio $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2}$ (invariant)
 - The Chern classes $c\_k(NM)$ (topological — invariant)
 
 **Gauge-dependent quantities:**
 - The specific factor loading matrix $V\_r$ (depends on choice of factor frame)
-- The individual portfolio weights $b^*\_i$ (depend on the asset labeling)
+- The individual portfolio weights $b^{\ast}\_i$ (depend on the asset labeling)
 - The specific Jacobi eigenfunction $\phi\_k$ (depend on the frame choice)
 
 **Implication:** The "right" objects to study in market theory are the gauge-invariant
@@ -626,7 +626,7 @@ the posterior distribution in the space of market data — a measure of how curv
 "information landscape" is.*
 
 *For an efficient market ($H=0$): the Berry curvature is determined entirely by
-the Fisher information matrix: $\mathcal{F} = F(b^*)^{-1/2}R^N F(b^*)^{-1/2}$
+the Fisher information matrix: $\mathcal{F} = F(b^{\ast})^{-1/2}R^N F(b^{\ast})^{-1/2}$
 where $R^N$ is the normal bundle curvature.*
 
 ### 8.2 Quantization of adiabatic alpha
@@ -658,7 +658,7 @@ where the idiosyncratic risk of a stock changes character over one business cycl
 holonomy is the precise mathematical description of this rotation.
 
 **Theorem 8.3** *(Holonomy risk attribution)*. *For a portfolio with initial
-idiosyncratic exposure $s\_0 \in N\_{b^*}M$, after one market cycle:*
+idiosyncratic exposure $s\_0 \in N\_{b^{\ast}}M$, after one market cycle:*
 
 $$s_T = \mathrm{Hol}_\gamma \cdot s_0 \tag{8.3}$$
 

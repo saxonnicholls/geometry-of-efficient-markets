@@ -35,7 +35,7 @@ is better conditioned, and the portfolio is more robustly diversified.
 $S\_n(\alpha,\beta,\gamma) = \int\_{[0,1]^n}\prod\_i t\_i^{\alpha-1}(1-t\_i)^{\beta-1}
 \prod\_{i<j}|t\_i-t\_j|^{2\gamma}\,dt\_i$ is the exact partition function for the
 $\beta$-ensemble on the portfolio simplex with Jacobi-type potential. Setting
-$\alpha = \beta = Tb^* - 1/2$ (the Jacobi parameters from MARKET\_PROCESSES.md)
+$\alpha = \beta = Tb^{\ast} - 1/2$ (the Jacobi parameters from MARKET\_PROCESSES.md)
 and $\gamma = \beta/2$: the Selberg integral equals the MUP normalisation constant
 $\int\_{M^r}W\_T(b)\,d\mathrm{vol}\_M$.
 
@@ -149,7 +149,7 @@ In the random matrix context, this repulsion prevents eigenvalue clustering:
 eigenvalues push apart with force $\beta/|\lambda\_i-\lambda\_j|$.
 
 **In the market context:** The eigenvalues $\lambda\_1,\ldots,\lambda\_r$ of the
-Fisher information matrix $F(b^*)$ are the factor exposure magnitudes. The Vandermonde
+Fisher information matrix $F(b^{\ast})$ are the factor exposure magnitudes. The Vandermonde
 repulsion is the Fisher-Rao pressure keeping factors orthogonal and well-separated.
 
 **Theorem 2.1** *(Vandermonde = diversification pressure)*.
@@ -206,31 +206,31 @@ conformal field theory, the quantum Hall effect, and random matrix theory.
 market manifold is a Selberg integral:*
 
 $$\mathcal{Z}_T^M = \int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)
-= S_r(Tb^*_1 - 1/2,\; Tb^*_2 - 1/2,\; \beta/2) \tag{3.3}$$
+= S_r(Tb^{\ast}_1 - 1/2,\; Tb^{\ast}_2 - 1/2,\; \beta/2) \tag{3.3}$$
 
 *where $\beta$ is the Dyson index of the market manifold (1, 2, or 4), and
-$b^*\_1, b^*\_2,\ldots$ are the log-optimal portfolio weights at the factor vertices.*
+$b^{\ast}\_1, b^{\ast}\_2,\ldots$ are the log-optimal portfolio weights at the factor vertices.*
 
 *Proof.* In eigenvalue coordinates on the market manifold, the wealth function
-$W\_T(b) = \exp(TL\_T(b))$ takes the form $\prod\_i \lambda\_i^{Tb^*\_i-1}(1-\lambda\_i)^{Tb^*(1-\bullet)-1}$
+$W\_T(b) = \exp(TL\_T(b))$ takes the form $\prod\_i \lambda\_i^{Tb^{\ast}\_i-1}(1-\lambda\_i)^{Tb^{\ast}(1-\bullet)-1}$
 (the Jacobi ensemble potential), and the Riemannian volume element $d\mathrm{vol}\_M$
 includes the Vandermonde factor $|\mathrm{Van}(\lambda)|^\beta$ from the Fisher-Rao
-metric. The integral becomes the Selberg integral (3.1) with $a = Tb^*\_1 - 1/2$,
-$b = Tb^*\_2 - 1/2$, $\gamma = \beta/2$. The closed form (3.2) gives the MUP
+metric. The integral becomes the Selberg integral (3.1) with $a = Tb^{\ast}\_1 - 1/2$,
+$b = Tb^{\ast}\_2 - 1/2$, $\gamma = \beta/2$. The closed form (3.2) gives the MUP
 normalisation exactly. $\square$
 
 **Corollary 3.2** *(The MUP partition function is exactly computable)*.
 *For a CAPM market ($\beta=1$) with $n=r$ factors:*
 
-$$\mathcal{Z}_T^{\rm CAPM} = S_r(Tb^*/r - 1/2,\; Tb^*/r - 1/2,\; 1/2)
-= \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^*/r - 1/2 + k/2)\Gamma(1+(k+1)/2)}
-{\Gamma(2Tb^*/r - 1 + (r-1+k)/2)\Gamma(3/2)} \tag{3.4}$$
+$$\mathcal{Z}_T^{\rm CAPM} = S_r(Tb^{\ast}/r - 1/2,\; Tb^{\ast}/r - 1/2,\; 1/2)
+= \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^{\ast}/r - 1/2 + k/2)\Gamma(1+(k+1)/2)}
+{\Gamma(2Tb^{\ast}/r - 1 + (r-1+k)/2)\Gamma(3/2)} \tag{3.4}$$
 
 *For a GUE market ($\beta=2$, Clifford torus):*
 
-$$\mathcal{Z}_T^{\rm GUE} = S_r(Tb^*/r - 1/2,\; Tb^*/r - 1/2,\; 1)
-= \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^*/r-1/2+k)\Gamma(k+2)}
-{\Gamma(2Tb^*/r-1+(r-1+k))\Gamma(2)} \tag{3.5}$$
+$$\mathcal{Z}_T^{\rm GUE} = S_r(Tb^{\ast}/r - 1/2,\; Tb^{\ast}/r - 1/2,\; 1)
+= \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^{\ast}/r-1/2+k)\Gamma(k+2)}
+{\Gamma(2Tb^{\ast}/r-1+(r-1+k))\Gamma(2)} \tag{3.5}$$
 
 *The ratio $\mathcal{Z}\_T^{\rm GUE}/\mathcal{Z}\_T^{\rm CAPM}$ is an explicit function
 of $r$ and $T$ that measures the excess diversification provided by the GUE Clifford
@@ -245,7 +245,7 @@ torus structure relative to the CAPM.*
 The classical Marchenko-Pastur law is the GOE ($\beta=1$) result. For general $\beta$:
 
 **Theorem 4.1** *($\beta$-Marchenko-Pastur)*.
-*For a $\beta$-Wishart matrix $W\_\beta = X\_\beta^* X\_\beta / T$ where $X\_\beta$ is
+*For a $\beta$-Wishart matrix $W\_\beta = X\_\beta^{\ast} X\_\beta / T$ where $X\_\beta$ is
 a $T\times d$ random matrix in the $\beta$-ensemble (real/complex/quaternionic
 for $\beta=1/2/4$) with aspect ratio $c = d/T$, the empirical spectral distribution
 converges to the $\beta$-Marchenko-Pastur law:*
@@ -268,7 +268,7 @@ eigenvalue repulsion: in the GUE, the factor eigenvalues are more uniformly spre
 
 ### 4.2 The free energy and the equilibrium measure
 
-The equilibrium measure $\mu^*$ — the weak limit of the empirical spectral distribution — 
+The equilibrium measure $\mu^{\ast}$ — the weak limit of the empirical spectral distribution — 
 minimises the $\beta$-ensemble free energy functional:
 
 $$F_\beta[\mu] = \int V(\lambda)\,\mu(d\lambda)
@@ -280,17 +280,17 @@ The equilibrium measure minimises the negative Kelly growth rate minus the diver
 pressure.
 
 **Theorem 4.2** *(The equilibrium measure = log-optimal portfolio distribution)*.
-*The equilibrium measure $\mu^*\_\beta$ of the $\beta$-ensemble with potential
+*The equilibrium measure $\mu^{\ast}\_\beta$ of the $\beta$-ensemble with potential
 $V(\lambda) = -L\_T(b)$ is the log-optimal portfolio distribution on $M^r$:*
 
-$$\mu^*_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_M(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}$$
+$$\mu^{\ast}_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_M(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}$$
 
 — the MUP posterior distribution. The variational problem for the RMT equilibrium
 measure IS the MUP optimisation problem.
 
 The Euler-Lagrange equation for (4.2):
 
-$$V'(\lambda) - \frac{2}{\beta}\mathrm{P.V.}\int\frac{\mu^*(d\mu)}{\lambda-\mu} = C \tag{4.4}$$
+$$V'(\lambda) - \frac{2}{\beta}\mathrm{P.V.}\int\frac{\mu^{\ast}(d\mu)}{\lambda-\mu} = C \tag{4.4}$$
 
 (where P.V. is the principal value) is the Fredholm integral equation whose solution
 is the MUP portfolio. The kernel $1/(\lambda-\mu)$ is the Cauchy transform — the
@@ -425,8 +425,8 @@ with $\beta=2$. The bulk distribution is the $\beta=2$ Marchenko-Pastur (narrowe
 support than GOE).
 
 **The Jacobi parameters match.** From MARKET\_PROCESSES.md: the Jacobi diffusion
-parameters are $\alpha\_i = Tb^*\_i - 1/2$. From (7.2): the Wishart Laguerre parameter
-is $a = \beta(T-d-1)/2$. Setting $b^*\_i = 1/d$ (equal-weight CAPM):
+parameters are $\alpha\_i = Tb^{\ast}\_i - 1/2$. From (7.2): the Wishart Laguerre parameter
+is $a = \beta(T-d-1)/2$. Setting $b^{\ast}\_i = 1/d$ (equal-weight CAPM):
 $\alpha = T/d - 1/2 = \beta(T-d-1)/(2d) + O(1)$ — consistent. The Jacobi diffusion
 and the Wishart random matrix are the same object in different parameterisations.
 
@@ -458,7 +458,7 @@ MUP stationary distribution $\rho\_\infty = d\mathrm{vol}\_M/\mathrm{vol}(M)$
 | Tracy-Widom edge $F\_\beta$ | Largest factor eigenvalue | $\hat\lambda\_{\rm max}$ |
 | Mesoscopic crossover | $TM\to NM$ transition | Jacobi gap $\lambda\_1$ |
 | Selberg integral | MUP partition function | $\mathcal{Z}\_T^M$ |
-| Equilibrium measure $\mu^*$ | MUP posterior | $\pi\_T(db)$ |
+| Equilibrium measure $\mu^{\ast}$ | MUP posterior | $\pi\_T(db)$ |
 | Wishart matrix | Sample Fisher information | $\hat F = X^TX/T$ |
 | Bai-Silverstein | FP stationarity = Jeffreys prior | $\rho\_\infty = d\mathrm{vol}\_M$ |
 | Ratio test $r\_n$ | Symmetry class detector | $\beta\in\{1,2,4\}$ |
@@ -500,7 +500,7 @@ $$d\lambda_i = dW_i + \frac{\beta}{2}\sum_{j\neq i}\frac{dt}{\lambda_i-\lambda_j
 This is the **Dyson Brownian motion** — eigenvalues diffuse while repelling each other
 with strength $\beta/2$.
 
-**The market version:** The factor eigenvalues of the Fisher matrix $F(b^*(t))$,
+**The market version:** The factor eigenvalues of the Fisher matrix $F(b^{\ast}(t))$,
 as the market evolves, follow Dyson Brownian motion on the market manifold. The diffusion
 coefficient is $\varepsilon = 1/\sqrt{T}$ (the WF parameter); the repulsion is
 $\beta/2$ where $\beta$ is the market's symmetry class.

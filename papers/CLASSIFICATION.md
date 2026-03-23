@@ -53,7 +53,7 @@ with the Fisher–Rao metric. The key objects are:
   a market with $r$ systematic factors.
 - The **Willmore inefficiency** $\mathcal{W}(\Sigma) = \int\_\Sigma |H|^2\,d\mathrm{vol}$:
   the integrated squared mean curvature, which equals zero iff $\Sigma$ is minimal.
-- The **Sharpe–curvature theorem**: $\mathrm{Sharpe}^*(\Sigma) = \|H\|\_{L^2(\Sigma)}$
+- The **Sharpe–curvature theorem**: $\mathrm{Sharpe}^{\ast}(\Sigma) = \|H\|\_{L^2(\Sigma)}$
   (proved in MINIMAL\_SURFACE), so a minimal market has maximum Sharpe zero.
 - The **EMH conjecture**: a market is strongly efficient iff $H \equiv 0$ on $\Sigma$
   (one direction proved, converse open).
@@ -82,7 +82,7 @@ of the area functional determines:
 1. Whether the market *stays* efficient after a small perturbation (stable) or *runs away*
    from efficiency (unstable).
 2. The rate at which Sharpe opportunities grow when the market is displaced from $\Sigma$:
-   $\mathrm{Sharpe}^*(\Sigma\_\varepsilon) = \varepsilon|\lambda\_1(L)| + O(\varepsilon^2)$.
+   $\mathrm{Sharpe}^{\ast}(\Sigma\_\varepsilon) = \varepsilon|\lambda\_1(L)| + O(\varepsilon^2)$.
 3. The rate at which arbitrage capital (performing MCF) restores efficiency: for stable
    surfaces, the restoration rate is $\lambda\_1(L)$ per arbitrage cycle.
 
@@ -212,7 +212,7 @@ the mean curvature to first order is $H(\Sigma\_\varepsilon) = -\varepsilon Lf +
 (the linearisation of $H$ around $H=0$). By the Sharpe–curvature theorem (Theorem 9.1 of
 MINIMAL\_SURFACE):
 
-$$\mathrm{Sharpe}^*(\Sigma_\varepsilon) = \varepsilon\,\|Lf\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{3.5}$$
+$$\mathrm{Sharpe}^{\ast}(\Sigma_\varepsilon) = \varepsilon\,\|Lf\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{3.5}$$
 
 **Definition 3.1** (Stability Sharpe). *The **stability Sharpe ratio** of an efficient
 market structure $\Sigma$ is:*
@@ -329,7 +329,7 @@ to markets where the factor structure is linear and symmetric — the log-optima
 moves along a great circle in Bhattacharyya space as factor shocks vary. This is precisely
 the factor model where the optimal portfolio is a convex combination of the $r+1$ "pure
 factor portfolios" (vertices of the simplex projected onto the factor subspace). The
-one-factor version is the classical CAPM: the market portfolio $b^*$ is always a
+one-factor version is the classical CAPM: the market portfolio $b^{\ast}$ is always a
 convex combination of the risk-free asset and the market-weighted portfolio.
 
 **All other efficient market structures are unstable saddle points.** The Clifford torus
@@ -362,7 +362,7 @@ geodesic arcs; minimal 0-submanifolds are points.
 
 | $r$ | Manifold | Topology | $|II|^2$ | $\lambda\_1(L)$ | Index | Stable? |
 |:---:|:---------|:--------:|:--------:|:--------------:|:-----:|:-------:|
-| 0 | Single portfolio $\{b^*\}$ | Point | — | — | 0 | Yes (trivial) |
+| 0 | Single portfolio $\{b^{\ast}\}$ | Point | — | — | 0 | Yes (trivial) |
 | 1 | Great circle arc | Arc/$S^1$ | $0$ | $+\frac{1}{4}$ | 0 | **Yes** |
 
 **Result:** Every one-factor three-asset market is a stable efficient CAPM. There is
@@ -752,7 +752,7 @@ strategies grows linearly with the stability index.*
 
 This is a direct consequence of the stability Sharpe calculation: each unstable mode
 contributes $|\lambda\_k(J)|$ to the Sharpe budget. Summing over the $k$ negative modes
-and averaging: $\mathrm{Sharpe}^* \approx \bar\lambda\cdot\sqrt{k}$ where $\bar\lambda$
+and averaging: $\mathrm{Sharpe}^{\ast} \approx \bar\lambda\cdot\sqrt{k}$ where $\bar\lambda$
 is the mean negative eigenvalue. Empirically testable using the eigenspectrum of the
 historical return covariance matrix.
 
@@ -763,7 +763,7 @@ historical return covariance matrix.
 The complete classification of stable efficient market structures, in increasing order
 of complexity:
 
-**Level 0: Trivial** — A single portfolio $\{b^*\}$ (point manifold). A perfectly
+**Level 0: Trivial** — A single portfolio $\{b^{\ast}\}$ (point manifold). A perfectly
 concentrated market with no uncertainty.
 
 **Level 1: CAPM** (great circle, $r=1$, any $d$) — The single-factor capital asset
@@ -782,12 +782,12 @@ Stable in high dimensions only.
 
 **Level ∞: Lawson surfaces** ($r=2$, any $d \geq 4$, any genus) — Infinitely many
 unstable efficient market structures, each corresponding to a coupled-regime factor model.
-All unstable. All have $\mathrm{Sharpe}^* = 0$ but positive stability Sharpe growing
+All unstable. All have $\mathrm{Sharpe}^{\ast} = 0$ but positive stability Sharpe growing
 with genus.
 
 $$\boxed{\begin{array}{c}
 \text{Stable efficient markets} = \{\text{great spheres}\} \cup \{\text{Veronese}\} \cup \{\text{Clifford hypersurfaces (}d\geq 8\text{)}\}\\[6pt]
-\text{All have Sharpe}^* = 0. \text{ Only great spheres are universal attractors under MCF.}
+\text{All have Sharpe}^{\ast} = 0. \text{ Only great spheres are universal attractors under MCF.}
 \end{array}}$$
 
 ---

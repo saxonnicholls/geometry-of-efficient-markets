@@ -24,9 +24,9 @@ Willmore energy $\mathcal{W}(M)$ is a **spectral invariant** of the shape operat
 it is a symmetric function of $\{|\kappa\_i|\}$ and is preserved under conformal
 reparameterisation of $M$. In the portfolio setting ($M$ = market manifold, $A$ = Fisher
 information shape operator, data matrix $X = U\Sigma V^T$): the market is efficient iff
-the centroid direction $1/(2\sqrt{b^*})$ lies in $\mathrm{Im}(V\_r)$; the Sharpe of any
-strategy is bounded by the projection of $1/(2\sqrt{b^*})$ onto the null space of $V\_r^T$
-weighted by the reciprocal singular values of $F(b^*)$; and the pseudoinverse duality
+the centroid direction $1/(2\sqrt{b^{\ast}})$ lies in $\mathrm{Im}(V\_r)$; the Sharpe of any
+strategy is bounded by the projection of $1/(2\sqrt{b^{\ast}})$ onto the null space of $V\_r^T$
+weighted by the reciprocal singular values of $F(b^{\ast})$; and the pseudoinverse duality
 theorem says the "dual market" obtained by inverting the factor structure is also efficient
 iff the original market is.
 
@@ -79,7 +79,7 @@ We treat each level in turn.
 
 **Theorem A** *(Local curvature preservation — mean curvature)*. The rank-$r$ Eckart–Young
 truncation $X\_r = U\_r\Sigma\_r V\_r^T$ of the data matrix preserves the minimal surface
-condition $H = 0$ locally at $b^*$ to order $O(\sigma\_{r+1}^2/\sigma\_r^2)$.
+condition $H = 0$ locally at $b^{\ast}$ to order $O(\sigma\_{r+1}^2/\sigma\_r^2)$.
 
 **Theorem B** *(Global non-preservation — Gaussian curvature)*. The Eckart–Young truncation
 does not generally preserve Gaussian curvature $K$. The Gauss–Bonnet theorem identifies the
@@ -114,9 +114,9 @@ invariant under the Möbius group of $S^{d-1}$, and determines the stability ind
 are equivalent:
 
 1. The market manifold $M$ is minimal ($H = 0$, market is efficient)
-2. $1/(2\sqrt{b^*}) \in \mathrm{Im}(V\_r)$, where $X = U\Sigma V^T$
-3. The Fisher information matrix $F(b^*)$ has isotropic spectrum across the normal bundle
-4. The pseudoinverse $F(b^*)^+$ has the same null space as $F(b^*)$
+2. $1/(2\sqrt{b^{\ast}}) \in \mathrm{Im}(V\_r)$, where $X = U\Sigma V^T$
+3. The Fisher information matrix $F(b^{\ast})$ has isotropic spectrum across the normal bundle
+4. The pseudoinverse $F(b^{\ast})^+$ has the same null space as $F(b^{\ast})$
 5. The dual market $M^+$ defined by $A^+$ is also minimal (efficient)
 
 ---
@@ -495,19 +495,19 @@ values exceed the threshold, confirming instability.
 **Corollary 6.2** *(SVD phase transition for stability)*. *There is a critical singular
 value:*
 
-$$\sigma^* = \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{6.6}$$
+$$\sigma^{\ast} = \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{6.6}$$
 
 *A minimal surface $M$ is stable iff all singular values of all shape operators satisfy
-$\sigma\_i < \sigma^*$, and unstable iff any $\sigma\_i > \sigma^*$.*
+$\sigma\_i < \sigma^{\ast}$, and unstable iff any $\sigma\_i > \sigma^{\ast}$.*
 
 This is the SVD version of the Simons stability condition, expressed as a **spectral gap**
 in the shape operator singular values.
 
 **Portfolio interpretation:** The shape operator singular values $\{|\kappa\_i|\}$ are
 estimable from the empirical Fisher matrix (they are the eigenvalues of the second
-fundamental form in each normal direction). The threshold $\sigma^*$ is computable from
+fundamental form in each normal direction). The threshold $\sigma^{\ast}$ is computable from
 the spectral gap of the within-manifold Laplacian (the reciprocal of the mixing time of
-the factor dynamics on $M$). If any estimated $|\kappa\_i| > \sigma^*$: the market manifold
+the factor dynamics on $M$). If any estimated $|\kappa\_i| > \sigma^{\ast}$: the market manifold
 is unstable, and the instability Sharpe is $|\kappa\_i^2 - \sigma^{*2}|^{1/2}$ per unit
 perturbation.
 
@@ -517,9 +517,9 @@ perturbation.
 
 ### 7.1 The Fisher information SVD
 
-The Fisher information matrix $F(b^*)$ estimated from the return data has SVD:
+The Fisher information matrix $F(b^{\ast})$ estimated from the return data has SVD:
 
-$$F(b^*) = V\Lambda V^T,
+$$F(b^{\ast}) = V\Lambda V^T,
 \qquad \Lambda = \mathrm{diag}(\lambda_1 \geq \ldots \geq \lambda_{d-1} > 0) \tag{7.1}$$
 
 The top-$r$ eigenvalues $\lambda\_1 \geq \ldots \geq \lambda\_r$ correspond to the factor
@@ -527,52 +527,52 @@ directions (tangent to the market manifold $M$), and the remaining $\lambda\_{r+
 to the idiosyncratic directions (normal to $M$). The mean curvature formula (Proposition
 2.2 of MINIMAL\_SURFACE) is:
 
-$$H^2(b^*) = \sum_{k=r+1}^{d-1} \frac{(b^* \cdot v_k)^2}{\lambda_k} \tag{7.2}$$
+$$H^2(b^{\ast}) = \sum_{k=r+1}^{d-1} \frac{(b^{\ast} \cdot v_k)^2}{\lambda_k} \tag{7.2}$$
 
 **Theorem 7.1** *(Theorem F: efficiency in SVD language)*. *The market manifold $M$ is
-minimal at $b^*$ (the market is locally efficient) iff:*
+minimal at $b^{\ast}$ (the market is locally efficient) iff:*
 
-$$\Pi_{N_{b^*}M}\!\left(\frac{1}{2\sqrt{b^*}}\right) = 0
-\iff \frac{1}{2\sqrt{b^*}} = \sum_{k=1}^r \alpha_k v_k \in \mathrm{Im}(V_r) \tag{7.3}$$
+$$\Pi_{N_{b^{\ast}}M}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right) = 0
+\iff \frac{1}{2\sqrt{b^{\ast}}} = \sum_{k=1}^r \alpha_k v_k \in \mathrm{Im}(V_r) \tag{7.3}$$
 
-*where $V\_r = [v\_1|\cdots|v\_r]$ are the top-$r$ eigenvectors of $F(b^*)$.*
+*where $V\_r = [v\_1|\cdots|v\_r]$ are the top-$r$ eigenvectors of $F(b^{\ast})$.*
 
-*Equivalently: $1/(2\sqrt{b^*})$ lies entirely in the column space of the top-$r$ right
+*Equivalently: $1/(2\sqrt{b^{\ast}})$ lies entirely in the column space of the top-$r$ right
 singular vectors of the data matrix $X = U\Sigma V^T$.*
 
-*Proof.* From (7.2), $H=0$ iff $b^* \perp\_{g^{\mathrm{FR}}} v\_k$ for all $k > r$.
-In the Fisher-Rao metric $g^{\mathrm{FR}}\_{ij} = \delta\_{ij}/b^*\_i$, the inner product is
-$\langle u, w\rangle\_{g^{\mathrm{FR}}} = \sum\_i u\_i w\_i / b^*\_i$. So $b^* \perp v\_k$ means
-$\sum\_i b^*\_i v\_{ki} / b^*\_i = \sum\_i v\_{ki} = \mathbf{1}^T v\_k = 0$, but more precisely the
-condition is $\langle 1/(2\sqrt{b^*}), v\_k\rangle\_{g^{\mathrm{FR}}} = 0$, i.e.\ $1/(2\sqrt{b^*})$
+*Proof.* From (7.2), $H=0$ iff $b^{\ast} \perp\_{g^{\mathrm{FR}}} v\_k$ for all $k > r$.
+In the Fisher-Rao metric $g^{\mathrm{FR}}\_{ij} = \delta\_{ij}/b^{\ast}\_i$, the inner product is
+$\langle u, w\rangle\_{g^{\mathrm{FR}}} = \sum\_i u\_i w\_i / b^{\ast}\_i$. So $b^{\ast} \perp v\_k$ means
+$\sum\_i b^{\ast}\_i v\_{ki} / b^{\ast}\_i = \sum\_i v\_{ki} = \mathbf{1}^T v\_k = 0$, but more precisely the
+condition is $\langle 1/(2\sqrt{b^{\ast}}), v\_k\rangle\_{g^{\mathrm{FR}}} = 0$, i.e.\ $1/(2\sqrt{b^{\ast}})$
 has no component in the normal directions $\{v\_{r+1},\ldots,v\_{d-1}\}$, hence lies in
 $\mathrm{Im}(V\_r)$. $\square$
 
 **Corollary 7.2** *(The Sharpe ratio as an SVD residual)*. *The maximum achievable Sharpe
 ratio is:*
 
-$$\mathrm{Sharpe}^* = \left\|\Pi_{N_{b^*}M}\!\left(\frac{1}{2\sqrt{b^*}}\right)\right\|_{F(b^*)^{-1}}
-= \left(\sum_{k=r+1}^{d-1}\frac{(b^* \cdot v_k)^2}{\lambda_k}\right)^{1/2} \tag{7.4}$$
+$$\mathrm{Sharpe}^{\ast} = \left\|\Pi_{N_{b^{\ast}}M}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right\|_{F(b^{\ast})^{-1}}
+= \left(\sum_{k=r+1}^{d-1}\frac{(b^{\ast} \cdot v_k)^2}{\lambda_k}\right)^{1/2} \tag{7.4}$$
 
-*This is the weighted residual of the projection of $1/(2\sqrt{b^*})$ onto $\mathrm{Im}(V\_r)^{\perp}$,
-weighted by the reciprocal singular values of $F(b^*)$ in the normal directions.*
+*This is the weighted residual of the projection of $1/(2\sqrt{b^{\ast}})$ onto $\mathrm{Im}(V\_r)^{\perp}$,
+weighted by the reciprocal singular values of $F(b^{\ast})$ in the normal directions.*
 
 This is the **Eckart–Young interpretation of market efficiency**: the market is efficient
-iff the "centroid direction" $1/(2\sqrt{b^*})$ is explained by the top-$r$ components of
+iff the "centroid direction" $1/(2\sqrt{b^{\ast}})$ is explained by the top-$r$ components of
 the Fisher information SVD. Any unexplained residual in the normal directions creates
 Sharpe opportunities proportional to the residual magnitude, weighted by the inverse square
 roots of the idiosyncratic eigenvalues.
 
 ### 7.2 The pseudoinverse duality in the market setting
 
-The pseudoinverse $F(b^*)^+$ (using the top-$r$ eigenvalues only, setting the rest to zero)
+The pseudoinverse $F(b^{\ast})^+$ (using the top-$r$ eigenvalues only, setting the rest to zero)
 appears in the Laplace approximation to the universal portfolio (LAPLACE.md):
 
-$$\Sigma_T = (T\cdot F(b^*))^{-1}_{\upharpoonright T_{b^*}M} \approx \frac{1}{T} F(b^*)^+ \tag{7.5}$$
+$$\Sigma_T = (T\cdot F(b^{\ast}))^{-1}_{\upharpoonright T_{b^{\ast}}M} \approx \frac{1}{T} F(b^{\ast})^+ \tag{7.5}$$
 
 This is the posterior covariance of the portfolio weights — it is the pseudoinverse of $F$
 restricted to the factor directions. By Theorem 4.1 (pseudoinverse duality), if the market
-manifold is minimal ($H=0$), then the "dual Fisher matrix" $F(b^*)^+$ defines a minimal
+manifold is minimal ($H=0$), then the "dual Fisher matrix" $F(b^{\ast})^+$ defines a minimal
 dual market.
 
 **Economic interpretation:** The dual market $M^+$ has:
@@ -584,7 +584,7 @@ dual market.
 **For the Clifford torus** (self-dual): the balanced two-factor market is its own dual.
 The dual portfolio has the same factor loadings and the same curvature structure.
 
-**For a great sphere** (CAPM): $F(b^*)$ has $r$ equal factor eigenvalues and $d-1-r$ zero
+**For a great sphere** (CAPM): $F(b^{\ast})$ has $r$ equal factor eigenvalues and $d-1-r$ zero
 idiosyncratic eigenvalues. The pseudoinverse has $r$ equal factor eigenvalues (inverted)
 and zeros in the normal direction. The dual CAPM has factor curvatures scaled by $1/\lambda\_{\rm factor}$
 — it is a rescaled CAPM, still totally geodesic, still stable.
@@ -718,13 +718,13 @@ structure.
 $X \in \mathbb{R}^{T\times d}$ with SVD $X = U\Sigma V^T$, the empirical estimates of the
 curvature quantities are:*
 
-$$\hat{H}(b^*) = \left(\sum_{k=r+1}^{d-1}\frac{(\hat{b}^* \cdot \hat{v}_k)^2}{\hat\lambda_k}\right)^{1/2}
-\approx \frac{\|\Pi_{V_{d-r}^T} (1/\sqrt{\hat{b}^*})\|_2}{\sqrt{2}\,\hat\lambda_{r+1}^{1/2}} \tag{10.4}$$
+$$\hat{H}(b^{\ast}) = \left(\sum_{k=r+1}^{d-1}\frac{(\hat{b}^{\ast} \cdot \hat{v}_k)^2}{\hat\lambda_k}\right)^{1/2}
+\approx \frac{\|\Pi_{V_{d-r}^T} (1/\sqrt{\hat{b}^{\ast}})\|_2}{\sqrt{2}\,\hat\lambda_{r+1}^{1/2}} \tag{10.4}$$
 
 $$\widehat{r_{\rm eff}(A)} = \frac{\sum_{k>r} \hat\lambda_k^{-2}}{\max_{k>r}\hat\lambda_k^{-2}}
 = \frac{\sum_{k>r} \hat\lambda_k^{-2}}{\hat\lambda_{d-1}^{-2}} \tag{10.5}$$
 
-$$\widehat{\mathrm{Sh}_{\rm stab}} = \max_{k>r} \hat\lambda_k^{-1/2} \cdot \|(\hat{b}^*)^{1/2}\|_\infty \tag{10.6}$$
+$$\widehat{\mathrm{Sh}_{\rm stab}} = \max_{k>r} \hat\lambda_k^{-1/2} \cdot \|(\hat{b}^{\ast})^{1/2}\|_\infty \tag{10.6}$$
 
 *These are computable from the return data and converge to their population values at rate
 $O(1/\sqrt{T})$ under standard regularity conditions.*
@@ -766,7 +766,7 @@ structure (Gaussian curvature = determinant = product of eigenvalues).*
 
 ### 11.3 Portfolio implications
 
-1. **Efficiency testing via SVD residuals:** Compute $\Pi\_{V\_{d-r}^T}(1/\sqrt{b^*})$. If
+1. **Efficiency testing via SVD residuals:** Compute $\Pi\_{V\_{d-r}^T}(1/\sqrt{b^{\ast}})$. If
    zero: efficient. If not: the Sharpe budget is the weighted residual (7.4).
 2. **Dual market construction:** The pseudoinverse market $M^+$ is efficient iff $M$ is,
    and has the same Willmore energy. This suggests a **pairs trading** strategy: find two

@@ -141,7 +141,7 @@ where $C\_2$ is the second-order correlation integral over $\tau$-step pairs.
 equals the Kelly growth rate $h\_{\rm Kelly}$ (from INFORMATION\_THEORY.md, the SMB theorem).
 Therefore:
 
-$$K_2 = h_{\rm Kelly}(b^*) \tag{1.5}$$
+$$K_2 = h_{\rm Kelly}(b^{\ast}) \tag{1.5}$$
 
 The Grassberger $K\_2$ entropy estimate is a practical estimator of the Kelly rate.
 This gives three independent empirical estimators of $h\_{\rm Kelly}$:
@@ -368,7 +368,7 @@ consistent with the filtration atom count $2\cdot 2^n$ (FILTRATIONS.md).
 
 **The Yang-Baxter no-arbitrage condition** (BRAIDS.md Section 4.3) forbids certain
 "arbitrage cycles" in the Voronoi path. In generating function terms: the allowed
-paths form a **language** $\mathcal{L}\subset\mathcal{A}^*$, and the no-arbitrage
+paths form a **language** $\mathcal{L}\subset\mathcal{A}^{\ast}$, and the no-arbitrage
 constraint removes certain words from $\mathcal{L}$.
 
 **Theorem 3.1** *(No-arbitrage = finite set of forbidden patterns)*.

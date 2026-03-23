@@ -58,7 +58,7 @@ market topology; minimal surface diffusion.
 ### 1.1 Why the process is determined by the geometry
 
 Each market manifold $M^r \subset S^{d-1}\_+$ carries a canonical diffusion: the
-intrinsic Brownian motion of the Riemannian manifold $(M^r, g\_M)$ where $g\_M = \iota^*g^{\mathrm{FR}}$
+intrinsic Brownian motion of the Riemannian manifold $(M^r, g\_M)$ where $g\_M = \iota^{\ast}g^{\mathrm{FR}}$
 is the induced Fisher-Rao metric. This is the unique diffusion satisfying:
 
 1. **Generator = half the Laplace-Beltrami operator**: $\mathcal{L} = \frac{\varepsilon^2}{2}\Delta\_M$
@@ -102,7 +102,7 @@ $$\boxed{db_t = \kappa(\theta - b_t)\,dt + \sqrt{2\varepsilon^2 b_t(1-b_t)}\,dW_
 
 with:
 - $\kappa = \varepsilon^2\lambda\_1$ (Jacobi spectral gap, from CLASSIFICATION.md)
-- $\theta = b^* = $ log-optimal portfolio weight
+- $\theta = b^{\ast} = $ log-optimal portfolio weight
 - $\varepsilon^2 = 1/T$ (the WF diffusion parameter)
 - $\lambda\_1 = $ first nonzero eigenvalue of $-\Delta\_{S^1\_+}$
 
@@ -113,7 +113,7 @@ in the Fisher-Rao metric.
 **Parameters from market data:**
 
 $$\kappa = \frac{(1-\rho^2)\sigma_A^2\sigma_B^2}{(\sigma_A - \sigma_B\rho)^2\cdot(\sigma_B - \sigma_A\rho)^2}\cdot\varepsilon^2, \quad
-\theta = b^*_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.2}$$
+\theta = b^{\ast}_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.2}$$
 
 The **Jacobi parameters** are $\alpha = \kappa\theta/\varepsilon^2$ and $\beta = \kappa(1-\theta)/\varepsilon^2$.
 
@@ -167,7 +167,7 @@ the opposite intuition from GBM, but correct for a mean-reverting portfolio proc
 ### 2.4 The GBM limit
 
 GBM is recovered when: $b\_0 \to 0$ (small weight, single-asset limit), $\alpha\to\infty$
-(large drift dominates), and $\alpha/(\alpha+\beta) = b^*$ (centred at equilibrium).
+(large drift dominates), and $\alpha/(\alpha+\beta) = b^{\ast}$ (centred at equilibrium).
 
 In this limit: $\sqrt{2\varepsilon^2 b\_t(1-b\_t)} \approx \sqrt{2\varepsilon^2 b\_t} = \sigma\sqrt{b\_t}$,
 giving $d(\log b\_t) \approx (\mu-\sigma^2/2)dt + \sigma\,dW\_t$ — GBM for the portfolio weight.
@@ -557,7 +557,7 @@ $\chi = 1$, giving $p\_{\rm SRB}(r) \sim |r|^{-2}$ — a power law with tail ind
 
 | Market type | SDE | Transition density | CF of log-return | Tail index |
 |:-----------|:----|:-------------------|:-----------------|:----------:|
-| CAPM | Jacobi (2.1) | Jacobi poly series (2.3) | Kummer $\_1F\_1$ (2.5) | $\alpha = T b^*-1/2$ |
+| CAPM | Jacobi (2.1) | Jacobi poly series (2.3) | Kummer $\_1F\_1$ (2.5) | $\alpha = T b^{\ast}-1/2$ |
 | Multi-CAPM $S^r\_+$ | Spherical BM (3.1) | Gegenbauer series (3.2) | Bessel series | $r/2$ |
 | Clifford $T^2$ | Flat torus BM (4.1) | $\vartheta\_3$ theta function (4.4) | $e^{-\varepsilon^2\xi^2 t}\vartheta\_3$ (4.9) | Bounded! |
 | Figure-eight $\mathbb{H}^2$ | Hyperbolic BM (5.3) | McKean kernel (5.6-5.7) | $e^{-t(\xi^2+1/4)}$ (5.8) | 1 (Cauchy) |
@@ -590,7 +590,7 @@ The diagram of limiting cases:
 **GBM is the large-$T$, CAPM, equal-weight limit of the Jacobi diffusion.**
 It is valid only for:
 - Single-factor markets ($r=1$, great circle manifold)
-- Portfolio near equal-weight ($b^*\_i \approx 1/d$, so diffusion coefficient $\sqrt{b(1-b)}$ is nearly constant)
+- Portfolio near equal-weight ($b^{\ast}\_i \approx 1/d$, so diffusion coefficient $\sqrt{b(1-b)}$ is nearly constant)
 - Short time horizons ($t \ll 1/\kappa$, so the mean-reversion hasn't kicked in)
 
 For all other market types: GBM is wrong, and using it introduces systematic errors in

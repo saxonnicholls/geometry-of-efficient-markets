@@ -25,7 +25,7 @@ programming framework: the portfolio optimisation problem is a log-sum-exp progr
 Fisher matrix is its Hessian, and the Lagrangian dual gives the risk-neutral measure.
 We prove that CVaR (Conditional Value-at-Risk) is geometrically controlled by the distance
 from the market manifold to the boundary of the simplex, VaR is the $g^{\mathrm{FR}}$-ball
-radius at $b^*$, and the Markowitz efficient frontier is the projection of the $g^{\mathrm{FR}}$
+radius at $b^{\ast}$, and the Markowitz efficient frontier is the projection of the $g^{\mathrm{FR}}$
 unit ball onto the mean-variance plane. Convex operators are pervasive: the mean curvature
 $H$ is the sub-differential of the area functional, the Willmore energy is a convex function
 of the second fundamental form spectrum, and the stability index counts the negative
@@ -87,20 +87,20 @@ of the index process on $M$.
 
 ### 2.2 The index process on the manifold
 
-The index $I\_t = b^*(t)^T S\_t$ depends on both $S\_t$ (prices) and $b^*(t)$ (evolving
-weights). On the market manifold, $b^*(t)$ follows the WF diffusion restricted to $M^r$:
+The index $I\_t = b^{\ast}(t)^T S\_t$ depends on both $S\_t$ (prices) and $b^{\ast}(t)$ (evolving
+weights). On the market manifold, $b^{\ast}(t)$ follows the WF diffusion restricted to $M^r$:
 
-$$db^*_i = -\varepsilon^2 H_i(b^*(t))\,dt + \varepsilon\sum_k \sigma_{ik}(b^*(t))\,dW_k \tag{2.3}$$
+$$db^{\ast}_i = -\varepsilon^2 H_i(b^{\ast}(t))\,dt + \varepsilon\sum_k \sigma_{ik}(b^{\ast}(t))\,dW_k \tag{2.3}$$
 
 (from PAPER.md equation 2.5). For an efficient market ($H=0$), the drift vanishes
 and the portfolio evolution is a pure diffusion on $M$. The index volatility is:
 
-$$\sigma_I^2(b^*, t) = \sum_{ij} b^*_i b^*_j\,\Sigma_{ij}^{\rm asset}(t)
-= b^{*T}\Sigma^{\rm asset} b^* \tag{2.4}$$
+$$\sigma_I^2(b^{\ast}, t) = \sum_{ij} b^{\ast}_i b^{\ast}_j\,\Sigma_{ij}^{\rm asset}(t)
+= b^{*T}\Sigma^{\rm asset} b^{\ast} \tag{2.4}$$
 
 where $\Sigma^{\rm asset}$ is the asset return covariance. In Fisher–Rao geometry:
 
-$$\sigma_I^2(b^*) = \langle b^*, F(b^*)^{-1}b^*\rangle_{g^{\mathrm{FR}}} = \mathrm{tr}[F_M(b^*)^{-1}] \tag{2.5}$$
+$$\sigma_I^2(b^{\ast}) = \langle b^{\ast}, F(b^{\ast})^{-1}b^{\ast}\rangle_{g^{\mathrm{FR}}} = \mathrm{tr}[F_M(b^{\ast})^{-1}] \tag{2.5}$$
 
 (using the Bhattacharyya sphere identity $b^T\Sigma b \approx \mathrm{tr}[F\_M^{-1}]$
 for the log-normal factor model).
@@ -122,24 +122,24 @@ factor portfolio.*
 
 ### 2.3 The manifold pricing PDE
 
-For a derivative with payoff $\Psi(b^*(T), S\_T)$ at expiry $T$, the price
-$V(b^*, S, t)$ satisfies the **manifold pricing PDE**:
+For a derivative with payoff $\Psi(b^{\ast}(T), S\_T)$ at expiry $T$, the price
+$V(b^{\ast}, S, t)$ satisfies the **manifold pricing PDE**:
 
 $$\frac{\partial V}{\partial t} + \mathcal{L}^M V + r_f(S)\cdot V - r_f V = 0 \tag{2.8}$$
 
-where $\mathcal{L}^M$ is the generator of the joint process $(b^*(t), S\_t)$ restricted
+where $\mathcal{L}^M$ is the generator of the joint process $(b^{\ast}(t), S\_t)$ restricted
 to $M^r \times \mathbb{R}^d\_+$.
 
 For an index option (payoff depends only on $I\_t = b^{*T}S\_t$), the PDE reduces to
 a 1-dimensional equation in the index value:
 
-$$\frac{\partial C}{\partial t} + \frac{1}{2}\sigma_I^2(b^*)\cdot I^2\frac{\partial^2 C}{\partial I^2}
-+ \underbrace{\varepsilon^2 H(b^*)\cdot I\frac{\partial C}{\partial I}}_{\text{curvature drift}}
+$$\frac{\partial C}{\partial t} + \frac{1}{2}\sigma_I^2(b^{\ast})\cdot I^2\frac{\partial^2 C}{\partial I^2}
++ \underbrace{\varepsilon^2 H(b^{\ast})\cdot I\frac{\partial C}{\partial I}}_{\text{curvature drift}}
 - r_f C + \underbrace{\frac{\varepsilon^2}{2}\Delta_M C}_{\text{manifold Laplacian}} = 0 \tag{2.9}$$
 
 **For an efficient market ($H=0$):**
 
-$$\frac{\partial C}{\partial t} + \frac{1}{2}\sigma_I^2(b^*)\cdot I^2\frac{\partial^2 C}{\partial I^2}
+$$\frac{\partial C}{\partial t} + \frac{1}{2}\sigma_I^2(b^{\ast})\cdot I^2\frac{\partial^2 C}{\partial I^2}
 - r_f C + \frac{\varepsilon^2}{2}\Delta_M C = 0 \tag{2.10}$$
 
 The extra term $\frac{\varepsilon^2}{2}\Delta\_M C$ is the **manifold Laplacian correction**
@@ -162,7 +162,7 @@ $$C = I\cdot N(d_+) - Ke^{-r_f\tau}N(d_-) + \text{Manifold correction} \tag{2.11
 and the manifold correction is:*
 
 $$\Delta C = \frac{\varepsilon^2\tau}{2}\cdot\left[\frac{r(r-1)}{4}\cdot I\cdot N'(d_+)
-+ \frac{1}{2}\mathrm{tr}[F_M^{-1}\nabla^2_{b^*}C]\right] + O(\varepsilon^4) \tag{2.12}$$
++ \frac{1}{2}\mathrm{tr}[F_M^{-1}\nabla^2_{b^{\ast}}C]\right] + O(\varepsilon^4) \tag{2.12}$$
 
 *The first term in (2.12) is the Ricci curvature correction from the sphere $S^r\_+$
 (using $\mathrm{Ric}\_{S^r} = \frac{(r-1)}{4}g\_{S^r}$ in Bhattacharyya normalisation).
@@ -184,9 +184,9 @@ solution and integrating over $\tau$ gives (2.12). $\square$
 
 **Theorem 2.3** *(Geometric put-call parity)*. *For the manifold pricing model:*
 
-$$C - P = I - Ke^{-r_f\tau} + \underbrace{\frac{\varepsilon^2\tau}{2}\cdot\mathcal{R}(b^*, r)}_{\text{geometric correction}} \tag{2.13}$$
+$$C - P = I - Ke^{-r_f\tau} + \underbrace{\frac{\varepsilon^2\tau}{2}\cdot\mathcal{R}(b^{\ast}, r)}_{\text{geometric correction}} \tag{2.13}$$
 
-*where $\mathcal{R}(b^*, r) = \frac{r(r-1)}{4}\mathrm{tr}[F\_M^{-1}]$ is the Ricci
+*where $\mathcal{R}(b^{\ast}, r) = \frac{r(r-1)}{4}\mathrm{tr}[F\_M^{-1}]$ is the Ricci
 correction term. For $r=1$ (CAPM): $\mathcal{R} = 0$ and classical put-call parity holds
 exactly. For $r \geq 2$: put-call parity acquires a positive geometric correction term —
 calls are relatively more expensive than puts by $\mathcal{R}/2$.*
@@ -194,9 +194,9 @@ calls are relatively more expensive than puts by $\mathcal{R}/2$.*
 *Proof.* Apply (2.9) to $C - P$ with payoffs $\max(I-K,0)$ and $\max(K-I,0)$.
 The difference satisfies (2.9) with payoff $I-K$ (linear, hence harmonic in $I$).
 The manifold Laplacian of the linear payoff $\Psi(I) = I-K$ gives the Ricci correction:
-$\Delta\_M(I - K) = \Delta\_M(b^{*T}S) = (\Delta\_M b^*)\cdot S = -r\cdot b^*\cdot S$
-(by Takahashi: $\Delta\_M b^* = -r\cdot b^*$ for minimal surfaces). This generates the
-extra term $-r\varepsilon^2 b^*\cdot S = -r\varepsilon^2 I$, which after integrating over
+$\Delta\_M(I - K) = \Delta\_M(b^{*T}S) = (\Delta\_M b^{\ast})\cdot S = -r\cdot b^{\ast}\cdot S$
+(by Takahashi: $\Delta\_M b^{\ast} = -r\cdot b^{\ast}$ for minimal surfaces). This generates the
+extra term $-r\varepsilon^2 b^{\ast}\cdot S = -r\varepsilon^2 I$, which after integrating over
 $\tau$ gives the Ricci correction. $\square$
 
 **The Takahashi theorem in option pricing.** The eigenmap condition $\Delta\_M\iota = -r\iota$
@@ -221,7 +221,7 @@ and develops curvature for $r \geq 2$.*
 $k = \log(K/I)$ — is:*
 
 $$\frac{\partial\hat\sigma}{\partial k}\bigg|_{k=0} = -\frac{\varepsilon^2}{2\sigma_I}
-\sum_{k=r+1}^{d-1}\frac{(b^*\cdot\nu_k)^2}{\lambda_k(F)} = -\frac{\varepsilon^2 H^2}{2\sigma_I} \tag{2.15}$$
+\sum_{k=r+1}^{d-1}\frac{(b^{\ast}\cdot\nu_k)^2}{\lambda_k(F)} = -\frac{\varepsilon^2 H^2}{2\sigma_I} \tag{2.15}$$
 
 *The volatility skew is proportional to $H^2$ — the squared mean curvature. For an
 efficient market ($H=0$): the implied volatility is flat (no strike dependence at leading
@@ -231,7 +231,7 @@ order). For an inefficient market: the skew measures the mean curvature.*
 measurement of the mean curvature of the market manifold. Equation (2.15) gives
 a **model-free formula for the market's alpha budget from options data**:
 
-$$|H(b^*)| = \sqrt{-\frac{2\sigma_I}{\varepsilon^2}\cdot\frac{\partial\hat\sigma}{\partial k}} \tag{2.16}$$
+$$|H(b^{\ast})| = \sqrt{-\frac{2\sigma_I}{\varepsilon^2}\cdot\frac{\partial\hat\sigma}{\partial k}} \tag{2.16}$$
 
 Options traders can estimate the mean curvature — and hence the maximum Sharpe ratio
 (by Theorem 9.1 of MINIMAL\_SURFACE) — directly from the implied volatility skew.
@@ -283,10 +283,10 @@ $$\max_{b \in \Delta_{d-1}} L_T(b) = \max_{b \geq 0,\, \mathbf{1}^Tb=1}
 - Constraints: $\Delta\_{d-1}$ is a convex polytope.
 - DCP form: `maximize log_sum_exp(log(X @ b))` in CVXPY notation.
 
-The **sub-differential** of $L\_T$ at a non-smooth point (e.g.\ when some $b^*\_i = 0$):
+The **sub-differential** of $L\_T$ at a non-smooth point (e.g.\ when some $b^{\ast}\_i = 0$):
 
-$$\partial L_T(b^*) = \left\{g \in \mathbb{R}^d : g_i = \frac{1}{T}\sum_t\frac{x_{t,i}}{b^{*T}x_t}
-+ \lambda_i, \; \lambda_i \geq 0, \; \lambda_i b^*_i = 0\right\} \tag{3.2}$$
+$$\partial L_T(b^{\ast}) = \left\{g \in \mathbb{R}^d : g_i = \frac{1}{T}\sum_t\frac{x_{t,i}}{b^{*T}x_t}
++ \lambda_i, \; \lambda_i \geq 0, \; \lambda_i b^{\ast}_i = 0\right\} \tag{3.2}$$
 
 This is exactly the KKT sub-differential condition from Section 1 of CONVERGENCE.md —
 the normal gradient being in the sub-differential cone corresponds to $H \neq 0$ at a
@@ -297,17 +297,17 @@ is the KKT complementarity slack.**
 
 The **conjugate** of $-L\_T$ is:
 
-$$L_T^*(p) = \sup_{b \in \Delta_{d-1}} \left[\langle p, b\rangle - (-L_T(b))\right]
+$$L_T^{\ast}(p) = \sup_{b \in \Delta_{d-1}} \left[\langle p, b\rangle - (-L_T(b))\right]
 = \sup_b \left[\langle p, b\rangle + L_T(b)\right] \tag{3.3}$$
 
 **Theorem 3.1** *(Legendre transform = log-partition function)*. *The conjugate is:*
 
-$$L_T^*(p) = \frac{1}{T}\sum_{t=1}^T\log\sum_{i=1}^d e^{p_i}x_{t,i} - \frac{1}{T}\sum_t\log(b^{*T}x_t) \tag{3.4}$$
+$$L_T^{\ast}(p) = \frac{1}{T}\sum_{t=1}^T\log\sum_{i=1}^d e^{p_i}x_{t,i} - \frac{1}{T}\sum_t\log(b^{*T}x_t) \tag{3.4}$$
 
 *The Legendre transform of the log-growth rate is the log of the moment generating
 function of the return distribution — the **cumulant generating function** of $\log x\_t$.*
 
-*At $p = 0$: $L\_T^*(0) = 0$. The gradient $\nabla\_p L\_T^*(0) = b^*$ — the log-optimal
+*At $p = 0$: $L\_T^{\ast}(0) = 0$. The gradient $\nabla\_p L\_T^{\ast}(0) = b^{\ast}$ — the log-optimal
 portfolio is the gradient of the log-partition function at zero. This is the standard
 exponential family duality: **the portfolio is the natural parameter, the expected
 log-return is the moment parameter, and the log-growth rate is the log-partition function.***
@@ -318,14 +318,14 @@ $$\frac{d\mathbb{Q}^\theta}{d\mathbb{P}} = \frac{\exp(\theta^T\log x_t)}
 {\mathbb{E}^\mathbb{P}[\exp(\theta^T\log x_t)]} \tag{3.5}$$
 
 defines a family of equivalent measures parameterised by $\theta \in \mathbb{R}^d$.
-The risk-neutral measure for option pricing is the $\theta^*$ such that
-$\mathbb{E}^{\mathbb{Q}^{\theta^*}}[x\_t] = r\_f\mathbf{1}$ (martingale condition). By
+The risk-neutral measure for option pricing is the $\theta^{\ast}$ such that
+$\mathbb{E}^{\mathbb{Q}^{\theta^{\ast}}}[x\_t] = r\_f\mathbf{1}$ (martingale condition). By
 the exponential family duality:
 
-$$\theta^* = \nabla_b L_T(b^*) = F(b^*)^{-1}(\mathbb{E}[x] - r_f\mathbf{1}) \tag{3.6}$$
+$$\theta^{\ast} = \nabla_b L_T(b^{\ast}) = F(b^{\ast})^{-1}(\mathbb{E}[x] - r_f\mathbf{1}) \tag{3.6}$$
 
 This is the **risk-neutral portfolio** in Fisher–Rao geometry. For an efficient market
-($H=0$): $\theta^* \in T\_{b^*}M$ (the risk adjustment lies within the factor subspace),
+($H=0$): $\theta^{\ast} \in T\_{b^{\ast}}M$ (the risk adjustment lies within the factor subspace),
 meaning **the risk-neutral measure for an efficient market is determined entirely by the
 $r$ factor directions**. No idiosyncratic risk adjustment is needed — consistent with
 no-idiosyncratic-arbitrage.
@@ -398,17 +398,17 @@ $$\mathrm{CVaR}_\alpha(b) = b^T\mu - \sigma_b\cdot\frac{\phi(\Phi^{-1}(\alpha))}
 
 *(where $\phi, \Phi$ are the standard normal density and CDF and $\sigma\_b = (b^T\Sigma b)^{1/2}$).*
 
-*In Fisher–Rao geometry, $\sigma\_b^2 = \langle b-b^*, F(b^*)^{-1}(b-b^*)\rangle\_{g^{FR}}
-+ \sigma\_{b^*}^2$ — the variance of $b$ relative to the log-optimal decomposes as
-the distance from $b$ to $b^*$ in the $F(b^*)^{-1}$ metric, plus the base volatility at $b^*$.*
+*In Fisher–Rao geometry, $\sigma\_b^2 = \langle b-b^{\ast}, F(b^{\ast})^{-1}(b-b^{\ast})\rangle\_{g^{FR}}
++ \sigma\_{b^{\ast}}^2$ — the variance of $b$ relative to the log-optimal decomposes as
+the distance from $b$ to $b^{\ast}$ in the $F(b^{\ast})^{-1}$ metric, plus the base volatility at $b^{\ast}$.*
 
-*Therefore: $\mathrm{CVaR}\_\alpha(b)$ is minimised at $b = b^*$ (the log-optimal portfolio)
-and increases as $b$ moves away from $b^*$ in the Fisher–Rao metric. The CVaR efficient
-frontier is the set of portfolios equidistant from $b^*$ in $g^{FR}$:*
+*Therefore: $\mathrm{CVaR}\_\alpha(b)$ is minimised at $b = b^{\ast}$ (the log-optimal portfolio)
+and increases as $b$ moves away from $b^{\ast}$ in the Fisher–Rao metric. The CVaR efficient
+frontier is the set of portfolios equidistant from $b^{\ast}$ in $g^{FR}$:*
 
-$$\mathcal{F}^{\mathrm{CVaR}} = \{b \in \Delta_{d-1} : d_{g^{FR}}(b, b^*) = \rho\}_{\rho \geq 0} \tag{4.4}$$
+$$\mathcal{F}^{\mathrm{CVaR}} = \{b \in \Delta_{d-1} : d_{g^{FR}}(b, b^{\ast}) = \rho\}_{\rho \geq 0} \tag{4.4}$$
 
-*This is the Fisher–Rao sphere of radius $\rho$ around $b^*$ — a geometric ball in $(\Delta\_{d-1}, g^{FR})$.*
+*This is the Fisher–Rao sphere of radius $\rho$ around $b^{\ast}$ — a geometric ball in $(\Delta\_{d-1}, g^{FR})$.*
 
 **CVaR level sets are Fisher-Rao spheres.** The CVaR efficient portfolio at risk level
 $\rho$ is the portfolio on the Fisher–Rao sphere of radius $\rho$ that maximises expected
@@ -419,29 +419,29 @@ the normal bundle of $M$, now identified as a CVaR level set.
 
 | Risk measure | Geometric object | Convex? | Manifold? |
 |:------------|:----------------|:-------:|:---------:|
-| VaR$\_\alpha(b)$ | $g^{FR}$-ball radius at $b^*$ | No | Level set of $d\_{g^{FR}}(b,b^*)$ |
-| CVaR$\_\alpha(b)$ | $g^{FR}$-distance from $b^*$ | **Yes** | Level set of $d\_{g^{FR}}(b,b^*)$ |
+| VaR$\_\alpha(b)$ | $g^{FR}$-ball radius at $b^{\ast}$ | No | Level set of $d\_{g^{FR}}(b,b^{\ast})$ |
+| CVaR$\_\alpha(b)$ | $g^{FR}$-distance from $b^{\ast}$ | **Yes** | Level set of $d\_{g^{FR}}(b,b^{\ast})$ |
 | Max Sharpe | $\|H\|\_{L^2}$ (mean curvature) | No (non-convex) | Minimal surface |
-| Kelly growth | $L\_T(b^*)$ | Concave | Critical point on $M$ |
+| Kelly growth | $L\_T(b^{\ast})$ | Concave | Critical point on $M$ |
 
 **Key insight:** VaR and CVaR have the same geometric level sets (Fisher–Rao spheres)
 but different algebraic properties (VaR is non-convex, CVaR is convex). The minimal
-surface ($b^*$) minimises both simultaneously — it is at the centre of all Fisher–Rao
+surface ($b^{\ast}$) minimises both simultaneously — it is at the centre of all Fisher–Rao
 spheres.
 
 ### 4.3 The Markowitz frontier as a Fisher-Rao ellipse
 
 Classical Markowitz: maximise $b^T\mu - \frac{\lambda}{2}b^T\Sigma b$ over $\Delta\_{d-1}$.
 
-The KKT conditions give the efficient frontier as $b^*(\lambda) = \Sigma^{-1}(\mu - \nu\mathbf{1})/\lambda$
-for $\nu$ chosen to satisfy $\mathbf{1}^Tb^*(\lambda) = 1$.
+The KKT conditions give the efficient frontier as $b^{\ast}(\lambda) = \Sigma^{-1}(\mu - \nu\mathbf{1})/\lambda$
+for $\nu$ chosen to satisfy $\mathbf{1}^Tb^{\ast}(\lambda) = 1$.
 
 **In Fisher–Rao geometry:**
 
 **Theorem 4.2** *(Markowitz frontier = Fisher–Rao ellipse)*. *The Markowitz efficient
 frontier:*
 
-$$\mathcal{F}^{\rm MV} = \{b^*(\lambda) : \lambda > 0\} \tag{4.5}$$
+$$\mathcal{F}^{\rm MV} = \{b^{\ast}(\lambda) : \lambda > 0\} \tag{4.5}$$
 
 *is the intersection of the Fisher–Rao ellipsoid:*
 
@@ -467,7 +467,7 @@ derivation of the Markowitz frontier that does not require specifying a utility 
 
 ### 5.1 The log-growth Hessian as a positive semidefinite operator
 
-The Fisher information matrix $F(b^*)$ is:
+The Fisher information matrix $F(b^{\ast})$ is:
 
 - The **negative Hessian** of $L\_T$ (concave, so PSD Hessian is negative: $-\nabla^2 L\_T = F \geq 0$)
 - The **Fisher information** of the return distribution (information-geometric PSD metric)
@@ -478,12 +478,12 @@ The Fisher information matrix $F(b^*)$ is:
 \[Vandenberghe–Boyd 1996, Semidef. Prog.\]. The Fisher information matrix fits exactly
 into the semidefinite programming (SDP) framework:
 
-$$F(b^*) = \frac{1}{T}\sum_t \frac{x_tx_t^T}{(b^{*T}x_t)^2} \succeq 0 \tag{5.1}$$
+$$F(b^{\ast}) = \frac{1}{T}\sum_t \frac{x_tx_t^T}{(b^{*T}x_t)^2} \succeq 0 \tag{5.1}$$
 
 The log-optimal portfolio minimises $\log\det F^{-1}$ (the log-volume of the Fisher
 ellipsoid) over all $b \in \Delta\_{d-1}$:
 
-$$b^* = \operatorname{argmin}_{b \in \Delta_{d-1}} \log\det\left[\sum_t\frac{x_tx_t^T}{(b^Tx_t)^2}\right]^{-1}
+$$b^{\ast} = \operatorname{argmin}_{b \in \Delta_{d-1}} \log\det\left[\sum_t\frac{x_tx_t^T}{(b^Tx_t)^2}\right]^{-1}
 = \operatorname{argmin}_{b} \log\det F(b)^{-1} \tag{5.2}$$
 
 This is the **D-optimal design problem** — minimising the determinant of the Fisher
@@ -493,13 +493,13 @@ experimental design (a classical topic in Boyd's group) is new.
 
 ### 5.2 The mean curvature as a sub-differential
 
-The mean curvature vector $\vec{H}(b^*)$ is:
+The mean curvature vector $\vec{H}(b^{\ast})$ is:
 
-$$\vec{H}(b^*) = -\frac{1}{\mathrm{Area}(M)}\frac{\partial\mathrm{Area}}{\partial b}\bigg|_{b=b^*} \tag{5.3}$$
+$$\vec{H}(b^{\ast}) = -\frac{1}{\mathrm{Area}(M)}\frac{\partial\mathrm{Area}}{\partial b}\bigg|_{b=b^{\ast}} \tag{5.3}$$
 
 — the (negative) gradient of the area functional. In convex analysis terms:
 
-$$\vec{H}(b^*) \in -\partial_{\rm norm}\mathrm{Area}(M) \tag{5.4}$$
+$$\vec{H}(b^{\ast}) \in -\partial_{\rm norm}\mathrm{Area}(M) \tag{5.4}$$
 
 where $\partial\_{\rm norm}$ is the sub-differential in the normal direction. **The mean
 curvature is the sub-gradient of the area functional.** The minimal surface condition
@@ -556,11 +556,11 @@ $$\max_{b \in \mathbb{R}^d} L_T(b) + \mu\sum_{i=1}^d\log b_i
 (log-barrier for the simplex constraints $b\_i \geq 0$, $\sum b\_i = 1$). Boyd's interior
 point method for this program follows the central path:
 
-$$b^*(\mu) = \operatorname{argmax}\left[L_T(b) + \mu\sum_i\log b_i\right] \tag{5.9}$$
+$$b^{\ast}(\mu) = \operatorname{argmax}\left[L_T(b) + \mu\sum_i\log b_i\right] \tag{5.9}$$
 
 as $\mu \to 0$. The central path corresponds to the **Dirichlet$(\mu,\ldots,\mu)$ prior
 universal portfolio**: as $\mu \to 0$, the prior becomes uniform Dirichlet(1,...,1)
-(Cover's prior) and the central path portfolio converges to the log-optimal $b^*$.
+(Cover's prior) and the central path portfolio converges to the log-optimal $b^{\ast}$.
 
 **The interior point central path is the portfolio path between Bayesian priors.**
 Moving along the central path from $\mu = 1$ (uniform portfolio) to $\mu = 0$
@@ -573,12 +573,12 @@ interior-point central path.
 The factor dimension $r$ of the market manifold can be determined by solving an
 SDP rank minimisation:
 
-$$\min_{F_r \succeq 0,\, \mathrm{rank}(F_r) = r} \|F(b^*) - F_r\|_F^2 \tag{5.10}$$
+$$\min_{F_r \succeq 0,\, \mathrm{rank}(F_r) = r} \|F(b^{\ast}) - F_r\|_F^2 \tag{5.10}$$
 
 This is a rank-constrained SDP — non-convex in general but with a known convex
 relaxation (nuclear norm minimisation):
 
-$$\min_{F_r \succeq 0} \|F(b^*) - F_r\|_F^2 + \lambda\|F_r\|_* \tag{5.11}$$
+$$\min_{F_r \succeq 0} \|F(b^{\ast}) - F_r\|_F^2 + \lambda\|F_r\|_* \tag{5.11}$$
 
 where $\|F\_r\|\_* = \sum\_k\sigma\_k(F\_r)$ is the nuclear norm. Boyd's group has extensively
 studied nuclear norm minimisation \[Recht–Fazel–Parrilo 2010\]. Applied here: **detecting
@@ -587,7 +587,7 @@ solvable by CVXPY in seconds.**
 
 The optimal $\lambda$ that recovers the true factor rank $r$ is:
 
-$$\lambda^* = \sigma_{r+1}(F(b^*))\sqrt{T/\log d} \tag{5.12}$$
+$$\lambda^{\ast} = \sigma_{r+1}(F(b^{\ast}))\sqrt{T/\log d} \tag{5.12}$$
 
 (the universal thresholding formula for approximate factor models \[Donoho–Gavish 2014\]).
 
@@ -600,9 +600,9 @@ $$\lambda^* = \sigma_{r+1}(F(b^*))\sqrt{T/\log d} \tag{5.12}$$
 The manifold geometry provides a unified taxonomy of portfolio risks:
 
 **Definition 6.1** (Geometric risk decomposition). *For portfolio $b \in \Delta\_{d-1}$
-relative to the log-optimal $b^*$ on market manifold $M$:*
+relative to the log-optimal $b^{\ast}$ on market manifold $M$:*
 
-$$\mathrm{Risk}(b) = \underbrace{d_M^2(b^*, b_M)}_{\text{factor risk}} + \underbrace{d_N^2(b^*, b)}_{\text{idiosyncratic risk}} + \underbrace{H^2\cdot\tau}_{\text{efficiency risk}} + \underbrace{\mathcal{W}_2(M)\cdot\varepsilon^2}_{\text{curvature risk}} \tag{6.1}$$
+$$\mathrm{Risk}(b) = \underbrace{d_M^2(b^{\ast}, b_M)}_{\text{factor risk}} + \underbrace{d_N^2(b^{\ast}, b)}_{\text{idiosyncratic risk}} + \underbrace{H^2\cdot\tau}_{\text{efficiency risk}} + \underbrace{\mathcal{W}_2(M)\cdot\varepsilon^2}_{\text{curvature risk}} \tag{6.1}$$
 
 *where:*
 - *$d\_M$ = Fisher–Rao distance along $M$ (systematic factor allocation error)*
@@ -620,22 +620,22 @@ geometry and have direct option pricing interpretations (equations 2.15 and 2.17
 
 ### 6.2 Stress testing as geodesic perturbation
 
-A stress test moves the portfolio from $b^*$ to $b\_{\rm stress} = b^* + \delta b$.
+A stress test moves the portfolio from $b^{\ast}$ to $b\_{\rm stress} = b^{\ast} + \delta b$.
 The Fisher–Rao distance:
 
-$$d_{g^{FR}}(b^*, b_{\rm stress}) = \sqrt{(\delta b)^T F(b^*)\delta b} = \|\delta b\|_{F(b^*)} \tag{6.2}$$
+$$d_{g^{FR}}(b^{\ast}, b_{\rm stress}) = \sqrt{(\delta b)^T F(b^{\ast})\delta b} = \|\delta b\|_{F(b^{\ast})} \tag{6.2}$$
 
 measures the "information distance" of the stress scenario from the base case. The
 stress loss is:
 
-$$\Delta L = L(b_{\rm stress}) - L(b^*) = -\frac{1}{2}\|\delta b\|_{F(b^*)}^2 + O(\|\delta b\|^3) \tag{6.3}$$
+$$\Delta L = L(b_{\rm stress}) - L(b^{\ast}) = -\frac{1}{2}\|\delta b\|_{F(b^{\ast})}^2 + O(\|\delta b\|^3) \tag{6.3}$$
 
-The Fisher–Rao ball $\{b : d\_{g^{FR}}(b,b^*) \leq \rho\}$ contains all scenarios with
+The Fisher–Rao ball $\{b : d\_{g^{FR}}(b,b^{\ast}) \leq \rho\}$ contains all scenarios with
 log-growth loss $\leq \rho^2/2$. **The CVaR at level $\alpha$ equals the worst-case
 log-growth loss over the Fisher–Rao ball of radius $\sigma\_\alpha = \Phi^{-1}(\alpha)$**
 (equation 4.3).
 
-The worst stress direction is $\delta b \propto F(b^*)^{-1}v$ for the eigenvector $v$
+The worst stress direction is $\delta b \propto F(b^{\ast})^{-1}v$ for the eigenvector $v$
 corresponding to the smallest eigenvalue of $F$ — the direction of minimum Fisher information,
 i.e.\ the direction of maximum estimation uncertainty. For an efficient market: this worst
 direction is in the normal bundle of $M$ (the idiosyncratic direction), not in the factor
@@ -650,20 +650,20 @@ We collect the convex operators that appear naturally in the manifold market the
 | Object | Convex operator type | Boyd framework |
 |:-------|:--------------------|:---------------|
 | $L\_T(b)$ | Concave function | DCP objective |
-| $F(b^*)$ | PSD Hessian | SDP constraint |
+| $F(b^{\ast})$ | PSD Hessian | SDP constraint |
 | $\mathcal{W}\_2(M)$ | Convex in $\kappa$ | DCP objective |
 | CVaR$\_\alpha(b)$ | Convex in $b$ | LP / SOCP |
 | $\|F\_r\|\_*$ | Convex relaxation of rank | Nuclear norm min |
 | $\mathrm{Area}(M)$ | Non-convex globally, locally | Gradient descent near min |
 | Willmore flow | Newton iteration | 4th-order gradient descent |
-| Central path $b^*(\mu)$ | Interior point central path | Log-barrier |
-| $d\_{g^{FR}}(b,b^*)^2$ | Convex Bregman divergence | Bregman projection |
+| Central path $b^{\ast}(\mu)$ | Interior point central path | Log-barrier |
+| $d\_{g^{FR}}(b,b^{\ast})^2$ | Convex Bregman divergence | Bregman projection |
 | Sub-grad of Area | $\partial\mathrm{Area} = H\vec{\nu}$ | Sub-differential |
 
 The last entry deserves emphasis. The **Bregman divergence** generated by $-L\_T$:
 
-$$D(b\|b^*) = -L_T(b) - (-L_T(b^*)) - \langle\nabla(-L_T)(b^*), b-b^*\rangle
-= \frac{1}{2}(b-b^*)^TF(b^*)(b-b^*) + O(|b-b^*|^3) \tag{7.1}$$
+$$D(b\|b^{\ast}) = -L_T(b) - (-L_T(b^{\ast})) - \langle\nabla(-L_T)(b^{\ast}), b-b^{\ast}\rangle
+= \frac{1}{2}(b-b^{\ast})^TF(b^{\ast})(b-b^{\ast}) + O(|b-b^{\ast}|^3) \tag{7.1}$$
 
 is the Fisher–Rao squared distance to leading order. **The Fisher–Rao metric IS the
 Bregman divergence of the log-growth rate.** This connects our geometric framework
@@ -677,7 +677,7 @@ Bregman projection framework.
 **Problem 1** (Option pricing with data). Implement equation (2.15) — the geometric skew
 formula $\partial\hat\sigma/\partial k = -\varepsilon^2 H^2/(2\sigma\_I)$ — on S\&P 500
 index options and test whether the observed skew predicts the Sharpe of factor strategies
-through the relation $\mathrm{Sharpe}^* = |H|$.
+through the relation $\mathrm{Sharpe}^{\ast} = |H|$.
 
 **Problem 2** (Willmore vol-of-vol). Test Theorem 2.5 empirically: does the CBOE VVIX
 (volatility of VIX) predict the Willmore energy of the equity market manifold as estimated

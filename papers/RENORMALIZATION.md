@@ -55,7 +55,7 @@ scale invariance; Ising model; information theory.
 
 Consider a market where returns are pure i.i.d. noise with no systematic factors:
 $x\_{t,i} = \bar x\_i\exp(\varepsilon\_{ti})$ with $\varepsilon\_{ti} \sim \mathcal{N}(0,\sigma^2)$
-independent across all $i$ and $t$. The log-optimal portfolio is $b^* = \mathbf{1}/d$
+independent across all $i$ and $t$. The log-optimal portfolio is $b^{\ast} = \mathbf{1}/d$
 (equal weight — no factor structure to exploit). The market manifold $M$ is a single
 point (a 0-dimensional manifold, $r=0$).
 
@@ -71,7 +71,7 @@ point (a 0-dimensional manifold, $r=0$).
 
 Now consider a market where returns are perfectly predictable: $x\_{t,i} = f\_i(x\_{t-1})$
 for some deterministic function $f$. The entropy rate $h = 0$. The log-optimal portfolio
-achieves $L(b^*) = \max\_i \log\bar x\_i$ (just hold the best asset).
+achieves $L(b^{\ast}) = \max\_i \log\bar x\_i$ (just hold the best asset).
 
 **Problems:**
 - Returns are perfectly predictable — anyone can front-run tomorrow's prices
@@ -115,7 +115,7 @@ same at all scales. In statistical mechanics, fixed points correspond to **phase
 
 The key objects:
 - **Beta function** $\beta(g) = \mu\,\partial g/\partial\mu$: rate of change of coupling $g$ under scale $\mu$
-- **Fixed points**: $\beta(g^*) = 0$
+- **Fixed points**: $\beta(g^{\ast}) = 0$
 - **Relevant operators**: perturbations that grow under RG flow ($\beta > 0$): drive the system away from the fixed point
 - **Irrelevant operators**: perturbations that shrink ($\beta < 0$): decay to zero at large scales
 - **Marginal operators**: $\beta = 0$: neither grow nor shrink
@@ -136,7 +136,7 @@ Rescale time so the number of observations stays $T$: this rescales the volatili
 $\sigma \to \sigma/\sqrt{k}$ (by the central limit theorem).
 
 **Step 3 (Update parameters):** The factor structure $\Phi$ and log-optimal portfolio
-$b^*$ may change under this averaging. The RG "coupling constants" are:
+$b^{\ast}$ may change under this averaging. The RG "coupling constants" are:
 - $g\_1$: systematic volatility (factor loadings magnitude)
 - $g\_2$: idiosyncratic volatility (noise level)
 - $\{g\_k\}$: higher cumulants of the return distribution
@@ -159,7 +159,7 @@ fixed point.*
 transforms as $F^{(k)} = F/k$ (averaging reduces information by factor $k$). The mean
 curvature from MINIMAL\_SURFACE Proposition 2.2:
 
-$$H^2 = \sum_{j>r}\frac{(b^*\cdot\nu_j)^2}{\lambda_j(F)}$$
+$$H^2 = \sum_{j>r}\frac{(b^{\ast}\cdot\nu_j)^2}{\lambda_j(F)}$$
 
 scales as $H^{(k)2} = k\cdot H^2$ under $F \to F/k$. Wait — this gives $H^{(k)} = \sqrt{k}\cdot H$,
 meaning $H$ grows under coarse-graining. Let us be more careful.
@@ -178,7 +178,7 @@ $$\boxed{\beta_H = -\frac{H}{2} + O(H^3)} \tag{2.3}$$
 **The mean curvature has a negative beta function** — it is a *relevant* coupling in
 the infrared (it flows to zero at large scales / long times). This is the RG statement
 of market efficiency: all inefficiency (curvature) is washed out by temporal coarse-graining.
-The only stable fixed point is $H^* = 0$ — the efficient market.
+The only stable fixed point is $H^{\ast} = 0$ — the efficient market.
 
 The $O(H^3)$ correction involves the third fundamental form of $M$ and the skewness
 of the return distribution. $\square$
@@ -220,20 +220,20 @@ on intermediate time scales before ultimately flowing to the CAPM class.
 
 ### 3.2 Critical exponents
 
-At a fixed point $M^*$ with $H^* = 0$, the critical exponents are the eigenvalues of
+At a fixed point $M^{\ast}$ with $H^{\ast} = 0$, the critical exponents are the eigenvalues of
 the linearised RG flow — the eigenvalues of the Jacobi operator $L$ of CLASSIFICATION.md.
 
-For a perturbation $M = M^* + \delta M$ with $\delta M = \varepsilon f\vec{\nu}$:
+For a perturbation $M = M^{\ast} + \delta M$ with $\delta M = \varepsilon f\vec{\nu}$:
 
 $$\beta_H[\delta M] = -\lambda_f\,\varepsilon f + O(\varepsilon^2) \tag{3.1}$$
 
 where $\lambda\_f$ is the eigenvalue of $L$ for eigenfunction $f$:
 
-$$L f = \Delta_{M^*} f + (|II^*|^2 + \frac{d-2}{4})f = \lambda_f f \tag{3.2}$$
+$$L f = \Delta_{M^{\ast}} f + (|II^{\ast}|^2 + \frac{d-2}{4})f = \lambda_f f \tag{3.2}$$
 
 **Critical exponents from the Jacobi spectrum:**
 
-For the **CAPM fixed point** (great $r$-sphere, $|II^*|^2 = 0$):
+For the **CAPM fixed point** (great $r$-sphere, $|II^{\ast}|^2 = 0$):
 
 The Jacobi eigenvalues (with boundary conditions) are $\lambda\_k = k(k+r-1)/4 - (d-2)/4$ for $k \geq 1$.
 In the RG language, eigenvalues $\lambda\_k < 0$ correspond to **relevant operators** (grow under RG),
@@ -251,7 +251,7 @@ For $d=50$, $r=4$ (the realistic market):
 This is consistent with having $O(d/r) = 12$ important "factors" in a $d=50$, $r=4$ market
 before the factor zoo sets in.
 
-For the **Clifford torus fixed point** ($|II^*|^2 = 2$ per direction):
+For the **Clifford torus fixed point** ($|II^{\ast}|^2 = 2$ per direction):
 
 The Jacobi eigenvalues (Section 6.2 of CLASSIFICATION.md): $\nu\_{mn} = m^2 + n^2 - 2 + (d-2)/4$.
 For $d=4$ (the natural setting for the Clifford torus):
@@ -287,7 +287,7 @@ universality class — they flow to the great circle fixed point.*
 *(ii) All $r=2$ factor markets with torus topology flow toward the Clifford torus fixed
 point in the UV before ultimately flowing to the CAPM class in the IR.*
 
-*(iii) The cross-over between universality classes occurs at the time scale $\tau^* \sim
+*(iii) The cross-over between universality classes occurs at the time scale $\tau^{\ast} \sim
 1/|\lambda\_1(J)|$ — the inverse of the first Jacobi eigenvalue.*
 
 This is the financial markets analogue of the **universality hypothesis in statistical
@@ -314,7 +314,7 @@ the "number of degrees of freedom" of the theory.
 **Theorem 4.1** *(Market $c$-theorem)*. *The Willmore energy $\mathcal{W}(M)$ is the
 $c$-function of the market RG:*
 
-*(i) $\mathcal{W}(M^*) = 0$ at all minimal surface fixed points.*
+*(i) $\mathcal{W}(M^{\ast}) = 0$ at all minimal surface fixed points.*
 
 *(ii) $\mathcal{W}(M)$ decreases monotonically along the RG flow (MCF):*
 
@@ -397,13 +397,13 @@ at all lags at the critical point. This is the **efficient market: zero autocorr
 
 **Cross-asset correlations** near the Clifford torus critical point:
 
-$$\mathbb{E}[(b_i - b_i^*)(b_j - b_j^*)] \sim |i-j|^{-2\Delta_\phi} \tag{5.3}$$
+$$\mathbb{E}[(b_i - b_i^{\ast})(b_j - b_j^{\ast})] \sim |i-j|^{-2\Delta_\phi} \tag{5.3}$$
 
-where $\Delta\_\phi$ is the scaling dimension of the fundamental field $\phi = b - b^*$.
+where $\Delta\_\phi$ is the scaling dimension of the fundamental field $\phi = b - b^{\ast}$.
 For the Clifford torus: $\Delta\_\phi = 1/4$ (from the $c=1$ free boson with compactification
 radius $R=1$), giving:
 
-$$\mathbb{E}[(b_i - b_i^*)(b_j - b_j^*)] \sim |i-j|^{-1/2} \tag{5.4}$$
+$$\mathbb{E}[(b_i - b_i^{\ast})(b_j - b_j^{\ast})] \sim |i-j|^{-1/2} \tag{5.4}$$
 
 Power-law decay of portfolio weight correlations across assets, with exponent $1/2$, is
 the signature of a market near the Clifford torus critical point.
@@ -505,10 +505,10 @@ specific correlations (5.4) on short time scales before flowing to the CAPM clas
 
 The **crossover scale** from Clifford to CAPM behaviour:
 
-$$\tau^* \sim e^{(c_{\rm Cliff} - c_{\rm CAPM})/\beta_0} = e^{2\pi^2/\beta_0} \tag{6.4}$$
+$$\tau^{\ast} \sim e^{(c_{\rm Cliff} - c_{\rm CAPM})/\beta_0} = e^{2\pi^2/\beta_0} \tag{6.4}$$
 
 where $\beta\_0 = |d\mathcal{W}/d\log k|$ is the rate of decrease of $\mathcal{W}$.
-For typical equity markets, $\tau^*$ corresponds to the time scale at which momentum
+For typical equity markets, $\tau^{\ast}$ corresponds to the time scale at which momentum
 and value effects decay — empirically 6-24 months. This gives a prediction for
 $\beta\_0 \approx 2\pi^2/\log(250) \approx 3.6$.
 
@@ -518,7 +518,7 @@ $\beta\_0 \approx 2\pi^2/\log(250) \approx 3.6$.
 
 ### 7.1 Relevant, marginal, and irrelevant operators
 
-**Definition 7.1** (Market operator classification). *At a critical fixed point $M^*$:*
+**Definition 7.1** (Market operator classification). *At a critical fixed point $M^{\ast}$:*
 
 - *A **relevant operator** is a perturbation $\delta M = \varepsilon f\vec\nu$ with Jacobi eigenvalue $\lambda\_f < 0$ — it grows under coarse-graining and drives the market to a new phase.*
 - *A **marginal operator** has $\lambda\_f = 0$ — it neither grows nor decays (scale-invariant).*
@@ -555,9 +555,9 @@ efficient market.
 
 For the CAPM fixed point, the marginal operators satisfy:
 
-$$\Delta_{M^*} f + \frac{d-2}{4}f = 0 \tag{7.3}$$
+$$\Delta_{M^{\ast}} f + \frac{d-2}{4}f = 0 \tag{7.3}$$
 
-These are the harmonic functions on $M^*$ with frequency $\sqrt{(d-2)/4}$ — a specific
+These are the harmonic functions on $M^{\ast}$ with frequency $\sqrt{(d-2)/4}$ — a specific
 set of portfolio deformations. In the CAPM with $r=1$: the marginal operator corresponds
 to rotations within the factor subspace (choosing which linear combination of assets to
 hold as the "market portfolio"). This corresponds to the Sharpe-ratio optimisation —
@@ -623,7 +623,7 @@ when quantum/thermal fluctuations are important — i.e.\ for small $T$ (few obs
 
 For large $T$: the mean-field exponent $H \sim |p-1/2|^1$ holds (classical theory).
 For small $T$ (few observations): the Ising exponent $H \sim |p-1/2|^{1/8}$ holds
-(fluctuation-dominated). The crossover occurs at $T^* \sim 1/\varepsilon^2 = T\_0$ —
+(fluctuation-dominated). The crossover occurs at $T^{\ast} \sim 1/\varepsilon^2 = T\_0$ —
 the characteristic information horizon.
 
 ---
@@ -649,14 +649,14 @@ measure return autocorrelation functions for large-cap (near CAPM) vs mid-cap (p
 near Clifford) stocks at different frequencies.
 
 **Prediction 3** *(Crossover time scale)*. The crossover from Clifford to CAPM behaviour
-occurs at time scale $\tau^* = e^{2\pi^2/\beta\_0}$ (equation 6.4). For equity markets,
+occurs at time scale $\tau^{\ast} = e^{2\pi^2/\beta\_0}$ (equation 6.4). For equity markets,
 this should correspond to the 6-24 month time scale at which momentum/value decay. From
-$\tau^* = 12$ months: $\beta\_0 = 2\pi^2/\log 12 \approx 7.9$. **Testing:** directly
+$\tau^{\ast} = 12$ months: $\beta\_0 = 2\pi^2/\log 12 \approx 7.9$. **Testing:** directly
 measure $\beta\_0 = |d\mathcal{W}/d\log T|$ from returns data at different time scales.
 
 **Prediction 4** *(Running Sharpe with horizon)*. From equation (7.4):
 
-$$\mathrm{Sharpe}^*(k) \approx \frac{\mathrm{Sharpe}^*(1)}{(1 + \beta_0\,\mathrm{Sharpe}^*(1)^2\log k)^{1/2}} \tag{9.1}$$
+$$\mathrm{Sharpe}^{\ast}(k) \approx \frac{\mathrm{Sharpe}^{\ast}(1)}{(1 + \beta_0\,\mathrm{Sharpe}^{\ast}(1)^2\log k)^{1/2}} \tag{9.1}$$
 
 The Sharpe ratio of factor strategies should decrease logarithmically with the investment
 horizon. **Testing:** measure Sharpe ratios of momentum, value, and quality factors at
@@ -690,7 +690,7 @@ Kelly rate — the market contains more randomness than can be exploited. In geo
 the market manifold degenerates ($r \to 0$, point manifold) and $H = 0$ trivially but
 $\mathcal{W}\_2 = \int|II|^2 \to \infty$ from the noise terms. The ordered phase:
 $h < h\_{\rm Kelly}$ means the Kelly rate exceeds the entropy rate — there is a systematic
-drift in $b^*(t)$ that is not captured by the entropy rate, giving $H \neq 0$. The critical
+drift in $b^{\ast}(t)$ that is not captured by the entropy rate, giving $H \neq 0$. The critical
 phase is the unique boundary. $\square$
 
 ---

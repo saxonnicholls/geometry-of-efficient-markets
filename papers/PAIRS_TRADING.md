@@ -26,7 +26,7 @@ solved via the Hamiltonian theory; (iv) a C++ implementation connecting all thre
 
 The key practical result: **the optimal entry threshold for a pairs trade is the
 Jacobi eigenvalue $\lambda\_1$ of the pairs manifold, and the optimal exit is the
-free boundary $b^*$ of the Hamiltonian ground state problem.** Both are computable
+free boundary $b^{\ast}$ of the Hamiltonian ground state problem.** Both are computable
 from the $(μ, σ, ρ)$ state alone.
 
 ---
@@ -42,8 +42,8 @@ connection it makes by analogy is an exact theorem in the geometric framework.
 |:------------------|:-----------------------|:-------------------|
 | Bloch sphere for binary market | Bhattacharyya sphere $S^{d-1}\_+$ | Fisher-Rao isometry $b \mapsto \sqrt{b}$; proved in MINIMAL\_SURFACE |
 | "Phase" on Bloch sphere | Berry phase on market manifold | $\gamma\_{\rm Berry} = \oint\_\gamma A$; proved in FIBER\_BUNDLES |
-| Density matrix from $(μ,σ,ρ)$ | Fisher information matrix $F(b^*)$ | $\rho = F(b^*)/\mathrm{tr}(F(b^*))$; proved in LAPLACE |
-| Entanglement entropy | Von Neumann entropy of $F(b^*)$ | $S = -\mathrm{tr}(\rho\log\rho)$; normal bundle dimension |
+| Density matrix from $(μ,σ,ρ)$ | Fisher information matrix $F(b^{\ast})$ | $\rho = F(b^{\ast})/\mathrm{tr}(F(b^{\ast}))$; proved in LAPLACE |
+| Entanglement entropy | Von Neumann entropy of $F(b^{\ast})$ | $S = -\mathrm{tr}(\rho\log\rho)$; normal bundle dimension |
 | OU mean reversion | Jacobi spectral gap $\lambda\_1$ | $\kappa = \lambda\_1(L\_M)$; proved in CLASSIFICATION |
 | Decoherence threshold | MCF convergence to minimal surface | $H \to 0$ at rate $\lambda\_1$; proved in MINIMAL\_SURFACE |
 | Free boundary / optimal stop | Hamiltonian ground state free boundary | Variational inequality; proved in HAMILTONIAN paper |
@@ -83,7 +83,7 @@ $$\Sigma = \begin{pmatrix}\sigma_A^2 & \rho\sigma_A\sigma_B\\ \rho\sigma_A\sigma
 
 The **density matrix** of the pairs trade is the normalized Fisher information:
 
-$$\rho_{\rm pair} = \frac{\Sigma^{-1}}{\mathrm{tr}(\Sigma^{-1})} = \frac{F(b^*)}{\mathrm{tr}(F(b^*))} \tag{2.2}$$
+$$\rho_{\rm pair} = \frac{\Sigma^{-1}}{\mathrm{tr}(\Sigma^{-1})} = \frac{F(b^{\ast})}{\mathrm{tr}(F(b^{\ast}))} \tag{2.2}$$
 
 This is a $2\times 2$ positive semidefinite matrix with unit trace — exactly a density
 matrix in the sense of quantum mechanics.
@@ -127,11 +127,11 @@ $$L(M^1) = \int_0^1 \sqrt{g^{\mathrm{FR}}_{11}(b_1)}\,db_1 = \pi/2 \tag{2.5}$$
 (a quarter-circle arc — the full positive octant of $S^1$). This is universal: every
 single-pair market manifold has the same length $\pi/2$ in the Fisher-Rao metric,
 regardless of $\mu, \sigma, \rho$. The parameters change only where on this arc the
-log-optimal $b^*$ sits.
+log-optimal $b^{\ast}$ sits.
 
 **The log-optimal pairs weight:**
 
-$$b^*_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}$$
+$$b^{\ast}_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}$$
 
 This is the Kelly fraction for a two-asset portfolio — the point on $S^1\_+$ where the
 Fisher-Rao gradient of log-growth vanishes.
@@ -304,37 +304,37 @@ converging to the mean), and $r$ is the risk-free rate (opportunity cost).
 From our market Hamiltonian theory (HAMILTONIAN\_TAILS\_COMPLETENESS Section 1),
 the stopping problem (5.1) is the **free boundary problem for the QHO ground state**.
 
-The free boundary $x^* = b^*$ is determined by the smooth pasting conditions:
+The free boundary $x^{\ast} = b^{\ast}$ is determined by the smooth pasting conditions:
 
-$$V(x^*) = g(x^*), \qquad V'(x^*) = g'(x^*) = 1 \tag{5.2}$$
+$$V(x^{\ast}) = g(x^{\ast}), \qquad V'(x^{\ast}) = g'(x^{\ast}) = 1 \tag{5.2}$$
 
 **Explicit solution.** In the QHO coordinates $\xi = (x-\theta)\sqrt{2\kappa}/\sigma\_X$,
 the value function is:
 
 $$V(\xi) = \begin{cases}
-A\cdot e^{-\xi^2/4}\cdot D_\nu(\xi\sqrt{2}) & \xi > \xi^* \\
-g(\xi) & \xi \leq \xi^*
+A\cdot e^{-\xi^2/4}\cdot D_\nu(\xi\sqrt{2}) & \xi > \xi^{\ast} \\
+g(\xi) & \xi \leq \xi^{\ast}
 \end{cases} \tag{5.3}$$
 
 where $D\_\nu$ is the parabolic cylinder function, $\nu = r/(2\kappa) - 1/2$ is the
-fractional mode number, and $\xi^*$ is determined by the smooth pasting condition.
+fractional mode number, and $\xi^{\ast}$ is determined by the smooth pasting condition.
 
 **For low $r$ relative to $\kappa$ (fast mean reversion):** $\nu \approx -1/2$,
-$D\_{-1/2}(\xi) \approx \sqrt{\pi/2}\,e^{-\xi^2/4}$, giving $\xi^* \approx -1$.
+$D\_{-1/2}(\xi) \approx \sqrt{\pi/2}\,e^{-\xi^2/4}$, giving $\xi^{\ast} \approx -1$.
 The optimal exit is 1σ below the entry — consistent with "exit at 1σ" rules of thumb.
 
 **For high $r$ relative to $\kappa$ (slow mean reversion or high rates):** $\nu$ increases,
-$\xi^*$ moves toward 0 — exit earlier, closer to the current spread. The opportunity
+$\xi^{\ast}$ moves toward 0 — exit earlier, closer to the current spread. The opportunity
 cost of waiting dominates.
 
 **The optimal stopping formula:**
 
-$$x^*_{\rm exit} = \theta - \sigma_X\sqrt{\frac{1}{2\kappa}}\cdot\xi^* \approx \theta - \sigma_X\sqrt{\frac{r}{2\kappa^3}} \tag{5.4}$$
+$$x^{\ast}_{\rm exit} = \theta - \sigma_X\sqrt{\frac{1}{2\kappa}}\cdot\xi^{\ast} \approx \theta - \sigma_X\sqrt{\frac{r}{2\kappa^3}} \tag{5.4}$$
 
 For gold basis: $\kappa \approx 2$/year (from historical basis mean reversion),
 $\sigma\_X \approx \$5$/oz, $r \approx 0.05$:
 
-$$x^*_{\rm exit} \approx \theta - 5\sqrt{\frac{0.05}{16}} \approx \theta - \$0.88\text{/oz} \tag{5.5}$$
+$$x^{\ast}_{\rm exit} \approx \theta - 5\sqrt{\frac{0.05}{16}} \approx \theta - \$0.88\text{/oz} \tag{5.5}$$
 
 Exit when the basis is within \$0.88 of fair value — not at zero. This is the
 risk-adjusted optimal exit, accounting for the opportunity cost of waiting for full
@@ -345,20 +345,20 @@ convergence.
 The **optimal entry threshold** is the point at which the expected log-PnL exceeds
 the opportunity cost of being in the position. From the Jacobi theory:
 
-$$x^*\_{\rm entry} = \theta + z^*\_{\rm entry}\cdot\sigma\_X, \qquad
-z^*\_{\rm entry} = \sqrt{\frac{r + \lambda\_1}{\kappa}} \cdot \frac{\sigma\_X}{\sqrt{2}} \tag{5.6}$$
+$$x^{\ast}\_{\rm entry} = \theta + z^{\ast}\_{\rm entry}\cdot\sigma\_X, \qquad
+z^{\ast}\_{\rm entry} = \sqrt{\frac{r + \lambda\_1}{\kappa}} \cdot \frac{\sigma\_X}{\sqrt{2}} \tag{5.6}$$
 
 where $\lambda_1 = \kappa$ is the Jacobi spectral gap (same as OU mean-reversion speed
 in the one-dimensional case). This simplifies to:
 
-$$z^*\_{\rm entry} = \sqrt{\frac{r + \kappa}{\kappa}} \cdot \frac{1}{\sqrt{2}} \approx \sqrt{1 + r/\kappa} \tag{5.7}$$
+$$z^{\ast}\_{\rm entry} = \sqrt{\frac{r + \kappa}{\kappa}} \cdot \frac{1}{\sqrt{2}} \approx \sqrt{1 + r/\kappa} \tag{5.7}$$
 
-For $r/\kappa \ll 1$ (fast mean reversion): $z^*_{\rm entry} \approx 1\sigma$ — entry
+For $r/\kappa \ll 1$ (fast mean reversion): $z^{\ast}_{\rm entry} \approx 1\sigma$ — entry
 at 1σ is optimal.
 
-For $r/\kappa = 1$ (rates equal mean reversion speed): $z^*_{\rm entry} \approx 1.41\sigma$ — enter at $\sqrt{2}\sigma$.
+For $r/\kappa = 1$ (rates equal mean reversion speed): $z^{\ast}_{\rm entry} \approx 1.41\sigma$ — enter at $\sqrt{2}\sigma$.
 
-For $r/\kappa = 3$ (slow mean reversion): $z^*_{\rm entry} \approx 2\sigma$ — entry at 2σ.
+For $r/\kappa = 3$ (slow mean reversion): $z^{\ast}_{\rm entry} \approx 2\sigma$ — entry at 2σ.
 
 **This gives the classical rule-of-thumb a rigorous foundation:** "enter at 2σ" is optimal
 when the risk-free rate roughly equals 3× the mean-reversion speed. For faster-reverting
@@ -374,10 +374,10 @@ Combining all elements, the complete geometric pairs trading signal is:
 
 **Step 1: State estimation.** From rolling 30-day window, estimate $(μ_A, μ_B, σ_A, σ_B, ρ)$
 and compute:
-- Density matrix $\rho_{\rm pair} = F(b^*)/\mathrm{tr}(F(b^*))$
+- Density matrix $\rho_{\rm pair} = F(b^{\ast})/\mathrm{tr}(F(b^{\ast}))$
 - Von Neumann entropy $S$ (correlation health)
-- Log-optimal weight $b^*$ (equation 2.6)
-- Fisher-Rao distance from current weights to $b^*$
+- Log-optimal weight $b^{\ast}$ (equation 2.6)
+- Fisher-Rao distance from current weights to $b^{\ast}$
 
 **Step 2: OU parameter estimation.** From the spread residual $X_t$:
 - Mean reversion speed $\hat\kappa$ (half-life regression)
@@ -386,8 +386,8 @@ and compute:
 - Mode decomposition: $c_1$ (fundamental), $c_0$ (DC — regime flag)
 
 **Step 3: Geometric thresholds.** Compute:
-- Optimal entry: $z^*_{\rm entry} = \sqrt{1 + r/\hat\kappa}$ σ
-- Optimal exit: $x^*_{\rm exit} = \hat\theta - \hat\sigma_X\sqrt{r/(2\hat\kappa^3)}$
+- Optimal entry: $z^{\ast}_{\rm entry} = \sqrt{1 + r/\hat\kappa}$ σ
+- Optimal exit: $x^{\ast}_{\rm exit} = \hat\theta - \hat\sigma_X\sqrt{r/(2\hat\kappa^3)}$
 - Phase signal: $\hat\gamma_{\rm Berry}$ from correlation momentum (equation 4.4)
 
 **Step 4: Signal composite.** Enter long-spread when ALL conditions met:
@@ -399,11 +399,11 @@ c\_0/z\_t < 0.2                      // DC component small (no regime change)
 First Notice Day > 15 days         // decoherence window
 ```
 
-Exit when spread crosses $x^*_{\rm exit}$ or when any condition breaks.
+Exit when spread crosses $x^{\ast}_{\rm exit}$ or when any condition breaks.
 
 **Step 5: Position sizing.** The Kelly fraction for the pairs trade:
 
-$$f^* = \frac{z\_t\kappa - r}{2\sigma\_X^2\kappa} \cdot (1 - S/\log 2) \tag{6.1}$$
+$$f^{\ast} = \frac{z\_t\kappa - r}{2\sigma\_X^2\kappa} \cdot (1 - S/\log 2) \tag{6.1}$$
 
 The first factor is the classic Kelly sizing for an OU process; the second factor
 $(1 - S/\log 2) \in [0,1]$ is the von Neumann entropy discount — reduce size
@@ -849,8 +849,8 @@ The geometric framework resolves all four:
 | Question | Quantum metaphor | Geometric answer |
 |:---------|:----------------|:-----------------|
 | What is the phase? | Proxy: volume asymmetry | Berry phase $\gamma_{\rm Berry}$ (exact, computable) |
-| Where to enter? | "2-sigma" rule of thumb | $z^* = \sqrt{1 + r/\kappa}$ (Hamiltonian free boundary) |
-| Where to exit? | "0.5-sigma" rule of thumb | $x^* = \theta - \sigma\sqrt{r/2\kappa^3}$ (smooth pasting) |
+| Where to enter? | "2-sigma" rule of thumb | $z^{\ast} = \sqrt{1 + r/\kappa}$ (Hamiltonian free boundary) |
+| Where to exit? | "0.5-sigma" rule of thumb | $x^{\ast} = \theta - \sigma\sqrt{r/2\kappa^3}$ (smooth pasting) |
 | How much to size? | Vague | Kelly fraction with von Neumann entropy discount |
 | When does the metaphor break? | Unclear | When $c_1(NM) \neq 0$: true topological effects |
 

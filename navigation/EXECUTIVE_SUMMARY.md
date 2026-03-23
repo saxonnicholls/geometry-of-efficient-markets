@@ -29,7 +29,7 @@ This closes a 30-year gap in Cover's theory.
 
 ### 2 · The Market Manifold and Its Classification *(MINIMAL\_SURFACE, CLASSIFICATION, CONVERGENCE)*
 Bhattacharyya isometry: $b\mapsto\sqrt{b}\in S^{d-1}\_+$, curvature $K=1/4$.
-**Sharpe = curvature** (proved): $\mathrm{Sharpe}^*=\|H\|\_{L^2(M)}$.
+**Sharpe = curvature** (proved): $\mathrm{Sharpe}^{\ast}=\|H\|\_{L^2(M)}$.
 **Only CAPMs stable** (proved): Simons-Lawson-Simons, stability index of Clifford torus = 5.
 **MUP minimax** (proved): regret $r\log T/2T$ vs Cover's $(d-1)\log T/2T$.
 
@@ -63,7 +63,7 @@ Feigenbaum $\delta=4.669$ governs CAPM-to-pA bifurcation.
 Takens: single return series in $\mathbb{R}^{2r+1}$ recovers $M^r$ topology.
 Optimal delay $\tau=1/\lambda\_1$. Three-step algorithm: embed→diffusion maps→$M^r$.
 $\Delta\_{d-1}\subset[0,1]^d$; Walsh functions = Jacobi polynomials; barycentric = Voronoi.
-**Shapley** $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ (proved — unique fair Kelly attribution).
+**Shapley** $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$ (proved — unique fair Kelly attribution).
 Banzhaf = Walsh-Fourier coefficient. Normal bundle Shapley = unexplained alpha.
 
 ---

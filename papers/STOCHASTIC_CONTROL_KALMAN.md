@@ -28,9 +28,9 @@ The value function IS the Kelly growth rate $L\_T(b)$. The optimal control IS th
 Stochastic control theory and universal portfolio theory are the same problem.
 
 **(ii) The manifold Kalman-Bucy filter.** The optimal linear filter for estimating
-the market state $b^*(t)\in M^r$ from observed returns $x\_t\in\mathbb{R}^d$ has
-Riccati equation whose steady-state solution is the Fisher information matrix $F(b^*)$.
-The Kalman gain is $K = F(b^*)^{-1}V\_r^T$ where $V\_r$ is the factor loading matrix.
+the market state $b^{\ast}(t)\in M^r$ from observed returns $x\_t\in\mathbb{R}^d$ has
+Riccati equation whose steady-state solution is the Fisher information matrix $F(b^{\ast})$.
+The Kalman gain is $K = F(b^{\ast})^{-1}V\_r^T$ where $V\_r$ is the factor loading matrix.
 The innovation process IS the normal bundle projection $\Pi\_{NM}(x\_t)$ — the
 idiosyncratic component of each return that the manifold model did not predict.
 
@@ -43,7 +43,7 @@ manifold analogue of VWAP execution — the trajectory of minimum Fisher-Rao len
 **(iv) Risk parity in Fisher-Rao geometry.** Risk parity (equal risk contribution)
 in the Fisher-Rao metric means each asset contributes equal Fisher-Rao distance
 from the log-optimal portfolio. The Fisher-Rao risk parity portfolio is:
-$b^{\rm FRP}\_i \propto 1/\sqrt{F\_{ii}(b^*)}$ — inversely proportional to the
+$b^{\rm FRP}\_i \propto 1/\sqrt{F\_{ii}(b^{\ast})}$ — inversely proportional to the
 square root of the $i$-th diagonal of the Fisher information matrix.
 
 **(v) The separation theorem on $M^r$.** The optimal portfolio separates into
@@ -54,7 +54,7 @@ independently. This is the geometric extension of Tobin's two-fund separation.
 
 **(vi) The Ornstein-Uhlenbeck controller.** The LQG (Linear Quadratic Gaussian)
 optimal controller for the portfolio process on $M^r$ is an OU mean-reversion
-controller: $u^*(b) = -K\_{\rm LQG}(b - b^*)$ with gain $K\_{\rm LQG} = \varepsilon^2 F(b^*)$.
+controller: $u^{\ast}(b) = -K\_{\rm LQG}(b - b^{\ast})$ with gain $K\_{\rm LQG} = \varepsilon^2 F(b^{\ast})$.
 The optimal rebalancing frequency is $1/\lambda\_1$ — the Jacobi spectral gap timescale.
 
 **Keywords.** Stochastic control; HJB equation; Kalman filter; Riccati equation;
@@ -96,7 +96,7 @@ $$V(b,t) = L_T(b) = \frac{1}{T-t}\log\mathbb{E}\!\left[\prod_{s=t}^T\langle b(s)
 *The value function of the stochastic control problem IS the Kelly growth rate function.
 The optimal control IS the MUP portfolio:*
 
-$$b^*(t) = \arg\max_{b\in M^r}V(b,t) = \hat{b}^M_T \tag{1.5}$$
+$$b^{\ast}(t) = \arg\max_{b\in M^r}V(b,t) = \hat{b}^M_T \tag{1.5}$$
 
 *Proof.* The HJB equation (1.3) is the backward Kolmogorov equation for the market
 diffusion on $M^r$ with running reward $L$. The Feynman-Kac formula gives its
@@ -110,14 +110,14 @@ stochastic control problem (1.1) exactly. There is no better adapted strategy.
 ### 1.3 The verification theorem and the transversality condition
 
 The value function $V(b,t) = L\_T(b)$ satisfies the boundary condition:
-$V(b^*,T) = L\_T(b^*) = h\_{\rm Kelly}$ (the Kelly growth rate at maturity).
+$V(b^{\ast},T) = L\_T(b^{\ast}) = h\_{\rm Kelly}$ (the Kelly growth rate at maturity).
 The **transversality condition** — that the marginal value of portfolio deviation
 is zero at maturity — is:
 
-$$\nabla_{g_M}V\big|_{b=b^*,t=T} = \nabla_{g_M}L_T\big|_{b^*} = 0 \tag{1.6}$$
+$$\nabla_{g_M}V\big|_{b=b^{\ast},t=T} = \nabla_{g_M}L_T\big|_{b^{\ast}} = 0 \tag{1.6}$$
 
 This is the KKT condition for the log-optimal portfolio — it holds by definition
-of $b^*$. **The log-optimal portfolio satisfies the HJB transversality condition exactly.**
+of $b^{\ast}$. **The log-optimal portfolio satisfies the HJB transversality condition exactly.**
 
 ---
 
@@ -125,14 +125,14 @@ of $b^*$. **The log-optimal portfolio satisfies the HJB transversality condition
 
 ### 2.1 Setup: state and observation
 
-**State:** $b^*(t)\in M^r$ — the log-optimal portfolio (unobserved, estimated).
+**State:** $b^{\ast}(t)\in M^r$ — the log-optimal portfolio (unobserved, estimated).
 
-**State dynamics:** $db^* = -\varepsilon^2\vec{H}(b^*)\,dt + \varepsilon\,dW\_M$ (market diffusion)
+**State dynamics:** $db^{\ast} = -\varepsilon^2\vec{H}(b^{\ast})\,dt + \varepsilon\,dW\_M$ (market diffusion)
 
 **Observation:** $x\_t \in \mathbb{R}^d$ — the full return vector (observed each period)
 
 **Observation model:** 
-$$x_t = V_r\,\xi_t + \sigma_N\,\eta_t, \qquad \xi_t \in T_{b^*}M^r,\; \eta_t\in N_{b^*}M \tag{2.1}$$
+$$x_t = V_r\,\xi_t + \sigma_N\,\eta_t, \qquad \xi_t \in T_{b^{\ast}}M^r,\; \eta_t\in N_{b^{\ast}}M \tag{2.1}$$
 
 where $V\_r\in\mathbb{R}^{d\times r}$ is the factor loading matrix (columns = factor directions
 in $\mathbb{R}^d$), $\xi\_t$ is the factor shock (tangential), and $\eta\_t$ is the
@@ -140,9 +140,9 @@ idiosyncratic shock (normal bundle).
 
 ### 2.2 The manifold Kalman-Bucy equations
 
-The optimal linear filter for estimating $b^*(t)$ from $\{x\_s:s\leq t\}$:
+The optimal linear filter for estimating $b^{\ast}(t)$ from $\{x\_s:s\leq t\}$:
 
-**State estimate:** $\hat{b}^*(t) = \mathbb{E}[b^*(t)|\mathcal{F}^X\_t]$
+**State estimate:** $\hat{b}^{\ast}(t) = \mathbb{E}[b^{\ast}(t)|\mathcal{F}^X\_t]$
 
 **Innovation process:**
 $$\nu_t = x_t - V_r\xi_t = \Pi_{NM}(x_t) \tag{2.2}$$
@@ -150,51 +150,51 @@ $$\nu_t = x_t - V_r\xi_t = \Pi_{NM}(x_t) \tag{2.2}$$
 the part of the return not explained by the current factor state estimate.
 **The Kalman innovation IS the normal bundle projection of the return.**
 
-**Riccati equation** for the estimation error covariance $P(t) = \mathbb{E}[(b^*-\hat b^*)(b^*-\hat b^*)^T|\mathcal{F}^X\_t]$:
+**Riccati equation** for the estimation error covariance $P(t) = \mathbb{E}[(b^{\ast}-\hat b^{\ast})(b^{\ast}-\hat b^{\ast})^T|\mathcal{F}^X\_t]$:
 
-$$\dot{P} = \varepsilon^2 g_M^{-1}(b^*) - P\cdot V_r^T R_N^{-1}V_r\cdot P \tag{2.3}$$
+$$\dot{P} = \varepsilon^2 g_M^{-1}(b^{\ast}) - P\cdot V_r^T R_N^{-1}V_r\cdot P \tag{2.3}$$
 
 where $R\_N = \sigma\_N^2 I$ is the idiosyncratic noise covariance.
 
 **Theorem 2.1** *(Riccati steady state = Fisher information matrix)*.
 *The steady-state solution of the Riccati equation (2.3) is:*
 
-$$P_\infty = F(b^*)^{-1} \tag{2.4}$$
+$$P_\infty = F(b^{\ast})^{-1} \tag{2.4}$$
 
 *the inverse of the Fisher information matrix at the log-optimal portfolio.*
 
 *Proof.* At steady state $\dot{P}=0$:
-$\varepsilon^2 g\_M^{-1}(b^*) = P\_\infty\cdot V\_r^T R\_N^{-1}V\_r\cdot P\_\infty$.
+$\varepsilon^2 g\_M^{-1}(b^{\ast}) = P\_\infty\cdot V\_r^T R\_N^{-1}V\_r\cdot P\_\infty$.
 Setting $P\_\infty = F^{-1}$: $\varepsilon^2 F = F^{-1}\cdot V\_r^TR\_N^{-1}V\_r\cdot F^{-1}$,
-i.e., $\varepsilon^2 F^2 = V\_r^TR\_N^{-1}V\_r$. Since the Fisher information at $b^*$
-satisfies $F(b^*) = V\_r^T\Sigma^{-1}V\_r/\varepsilon^2$ (the inverse covariance
+i.e., $\varepsilon^2 F^2 = V\_r^TR\_N^{-1}V\_r$. Since the Fisher information at $b^{\ast}$
+satisfies $F(b^{\ast}) = V\_r^T\Sigma^{-1}V\_r/\varepsilon^2$ (the inverse covariance
 projected onto the factor subspace), this holds exactly. $\square$
 
 **The Kalman gain matrix:**
-$$K = P_\infty\cdot V_r^T R_N^{-1} = F(b^*)^{-1}V_r^T R_N^{-1} = \Pi_{TM}\cdot\Sigma^{-1} \tag{2.5}$$
+$$K = P_\infty\cdot V_r^T R_N^{-1} = F(b^{\ast})^{-1}V_r^T R_N^{-1} = \Pi_{TM}\cdot\Sigma^{-1} \tag{2.5}$$
 
 This is the Fisher-Rao projection of the observation onto the tangent bundle —
 exactly the operation of projecting the return observation onto the factor subspace.
 
 **The Kalman filter update rule:**
-$$d\hat{b}^* = K\nu_t\,dt = F(b^*)^{-1}V_r^T R_N^{-1}\Pi_{NM}(x_t)\,dt \tag{2.6}$$
+$$d\hat{b}^{\ast} = K\nu_t\,dt = F(b^{\ast})^{-1}V_r^T R_N^{-1}\Pi_{NM}(x_t)\,dt \tag{2.6}$$
 
 **Three-part interpretation:**
 1. $\Pi\_{NM}(x\_t)$: isolate the part of the return not explained by the current manifold estimate (the innovation)
 2. $V\_r^TR\_N^{-1}$: weight the innovation by inverse idiosyncratic noise (Mahalanobis weight)
-3. $F(b^*)^{-1}$: map from observation space back to manifold state space via inverse Fisher matrix
+3. $F(b^{\ast})^{-1}$: map from observation space back to manifold state space via inverse Fisher matrix
 
 ### 2.3 What the Kalman filter tells a portfolio manager
 
 **Signal extraction:** The Kalman filter decomposes each return vector into:
-- **Factor component** $\Pi\_{TM}(x\_t) = V\_r V\_r^T x\_t$: the part explained by the factor model — this updates the manifold state estimate $\hat b^*$
+- **Factor component** $\Pi\_{TM}(x\_t) = V\_r V\_r^T x\_t$: the part explained by the factor model — this updates the manifold state estimate $\hat b^{\ast}$
 - **Idiosyncratic component** $\Pi\_{NM}(x\_t) = (I - V\_rV\_r^T)x\_t$: the innovation — this is noise for factor investors but signal for stock pickers
 
 **The signal-to-noise ratio on $M^r$:**
 $$\mathrm{SNR} = \frac{\|V_r^T x_t\|^2}{\|\Pi_{NM}(x_t)\|^2} = \frac{\text{factor variance}}{\text{idiosyncratic variance}} \tag{2.7}$$
 
 **The filter's steady-state tracking error:**
-$$\mathrm{tr}(P_\infty) = \mathrm{tr}(F(b^*)^{-1}) = \sum_{k=1}^r \frac{1}{\lambda_k(F)} \tag{2.8}$$
+$$\mathrm{tr}(P_\infty) = \mathrm{tr}(F(b^{\ast})^{-1}) = \sum_{k=1}^r \frac{1}{\lambda_k(F)} \tag{2.8}$$
 
 is the sum of reciprocal factor eigenvalues — small when factors are strong,
 large when factors are weak. **The Kalman filter's tracking error is determined
@@ -206,7 +206,7 @@ When the market is not at its log-optimal portfolio (i.e., during a transition),
 the dynamics are nonlinear. The **manifold extended Kalman filter** (EKF):
 
 1. Propagate the state estimate along the geodesic on $M^r$:
-   $\hat b^*(t+\Delta t) = \exp\_{\hat b^*(t)}(\varepsilon\sqrt{\Delta t}\,\hat\xi\_t)$
+   $\hat b^{\ast}(t+\Delta t) = \exp\_{\hat b^{\ast}(t)}(\varepsilon\sqrt{\Delta t}\,\hat\xi\_t)$
    where $\exp$ is the Riemannian exponential map on $(M^r, g\_M)$
 
 2. Update the covariance using the parallel transport of $P$ along the geodesic:
@@ -219,7 +219,7 @@ the dynamics are nonlinear. The **manifold extended Kalman filter** (EKF):
 
 **The manifold EKF is the Riemannian analogue of the standard EKF**, replacing
 Euclidean additions with Riemannian exponential maps and subtractions with
-logarithmic maps $\log\_{b^*}(b) = $ the tangent vector pointing from $b^*$ to $b$.
+logarithmic maps $\log\_{b^{\ast}}(b) = $ the tangent vector pointing from $b^{\ast}$ to $b$.
 
 ---
 
@@ -228,44 +228,44 @@ logarithmic maps $\log\_{b^*}(b) = $ the tangent vector pointing from $b^*$ to $
 ### 3.1 The rebalancing problem
 
 A portfolio manager holds portfolio $b\_0\in M^r$ and wants to rebalance to target
-$b^*\in M^r$ while minimising a combination of:
+$b^{\ast}\in M^r$ while minimising a combination of:
 - **Transaction costs:** proportional to $\|b(t) - b(t^-)\|\_{g\_M}$ (Fisher-Rao distance traded)
-- **Tracking error:** $\int\_0^T\|b(t) - b^*\|^2\_{g\_M}\,dt$ (time-average deviation from target)
+- **Tracking error:** $\int\_0^T\|b(t) - b^{\ast}\|^2\_{g\_M}\,dt$ (time-average deviation from target)
 - **Market impact:** proportional to trading speed $\|\dot b\|\_{g\_M}$
 
 **The Almgren-Chriss problem on $M^r$:** minimise over trading paths $b:[0,T]\to M^r$:
 
-$$J[b] = \int_0^T\!\left(\alpha\|\dot b(t)\|^2_{g_M} + \lambda\|b(t)-b^*\|^2_{g_M}\right)dt \tag{3.1}$$
+$$J[b] = \int_0^T\!\left(\alpha\|\dot b(t)\|^2_{g_M} + \lambda\|b(t)-b^{\ast}\|^2_{g_M}\right)dt \tag{3.1}$$
 
-subject to $b(0) = b\_0$, $b(T) = b^*$.
+subject to $b(0) = b\_0$, $b(T) = b^{\ast}$.
 
 ### 3.2 The geodesic execution schedule
 
 **Theorem 3.1** *(Optimal execution = damped geodesic)*. *The optimal trading path
 minimising (3.1) is the **critically damped geodesic** on $(M^r, g\_M)$:*
 
-$$b^{\rm opt}(t) = \exp_{b^*}\!\!\left(-e^{-\kappa t}\log_{b^*}(b_0)\right), \qquad
+$$b^{\rm opt}(t) = \exp_{b^{\ast}}\!\!\left(-e^{-\kappa t}\log_{b^{\ast}}(b_0)\right), \qquad
 \kappa = \sqrt{\lambda/\alpha} \tag{3.2}$$
 
-*where $\exp\_{b^*}$ and $\log\_{b^*}$ are the Riemannian exponential and logarithm
-maps at $b^*$, and $\kappa = \sqrt{\lambda/\alpha}$ is the damping rate.*
+*where $\exp\_{b^{\ast}}$ and $\log\_{b^{\ast}}$ are the Riemannian exponential and logarithm
+maps at $b^{\ast}$, and $\kappa = \sqrt{\lambda/\alpha}$ is the damping rate.*
 
 *For the unconstrained case ($\lambda=0$): constant-speed geodesic (VWAP execution).
-For the heavily penalised case ($\lambda\gg\alpha$): instantaneous jump to $b^*$.*
+For the heavily penalised case ($\lambda\gg\alpha$): instantaneous jump to $b^{\ast}$.*
 
 *Proof.* The Euler-Lagrange equation for (3.1) is the damped geodesic equation on $M^r$:
 $\nabla\_{\dot b}\dot b + \kappa\dot b = 0$ (covariant acceleration + damping = 0).
 The solution satisfying the boundary conditions is (3.2). $\square$
 
 **In plain language:** The optimal execution path is the Fisher-Rao geodesic from
-$b\_0$ to $b^*$, traversed at a speed that decays exponentially at rate $\kappa$.
+$b\_0$ to $b^{\ast}$, traversed at a speed that decays exponentially at rate $\kappa$.
 The portfolio "flows" toward the target along the path of minimum Fisher-Rao length —
 which is the path of minimum information-theoretic distance.
 
 ### 3.3 The geodesic in each market type
 
 **CAPM ($M = S^r\_+$):** The geodesic is a great circle arc on the positive sphere.
-In portfolio weight coordinates: $b^{\rm opt}(t) = (\cos(\theta\_t)\sqrt{b\_0} + \sin(\theta\_t)(\sqrt{b^*}-\cos\phi\sqrt{b\_0})/\sin\phi)^{\odot 2}$ where $\phi = d\_{g^{\rm FR}}(b\_0,b^*)$ is the initial Fisher-Rao distance.
+In portfolio weight coordinates: $b^{\rm opt}(t) = (\cos(\theta\_t)\sqrt{b\_0} + \sin(\theta\_t)(\sqrt{b^{\ast}}-\cos\phi\sqrt{b\_0})/\sin\phi)^{\odot 2}$ where $\phi = d\_{g^{\rm FR}}(b\_0,b^{\ast})$ is the initial Fisher-Rao distance.
 
 **Clifford torus ($M = T^2$):** The geodesic is a straight line on the flat torus —
 linear interpolation in the $(\theta,\varphi)$ coordinates. This gives the "factor-by-factor"
@@ -280,12 +280,12 @@ concentrated positions.
 
 The total transaction cost along the geodesic execution path (3.2) is:
 
-$$C_{\rm geodesic} = 2\alpha\kappa\|b_0 - b^*\|_{g_M}(1 - e^{-\kappa T}) \tag{3.3}$$
+$$C_{\rm geodesic} = 2\alpha\kappa\|b_0 - b^{\ast}\|_{g_M}(1 - e^{-\kappa T}) \tag{3.3}$$
 
 The break-even between immediate execution and geodesic execution occurs at
-$T^* = \log(2\alpha\kappa/\lambda\_{\rm cost})/\kappa$ where $\lambda\_{\rm cost}$
-is the linear transaction cost rate. **For $T < T^*$: execute immediately.
-For $T > T^*$: execute along the geodesic.**
+$T^{\ast} = \log(2\alpha\kappa/\lambda\_{\rm cost})/\kappa$ where $\lambda\_{\rm cost}$
+is the linear transaction cost rate. **For $T < T^{\ast}$: execute immediately.
+For $T > T^{\ast}$: execute along the geodesic.**
 
 ---
 
@@ -293,21 +293,21 @@ For $T > T^*$: execute along the geodesic.**
 
 ### 4.1 Tracking error in Fisher-Rao geometry
 
-The **tracking error** of portfolio $b$ relative to the log-optimal portfolio $b^*$
+The **tracking error** of portfolio $b$ relative to the log-optimal portfolio $b^{\ast}$
 is the Fisher-Rao distance:
 
-$$\mathrm{TE}(b) = d_{g^{\rm FR}}(b, b^*) = 2\arccos\!\left(\sum_i\sqrt{b_i b^*_i}\right) \tag{4.1}$$
+$$\mathrm{TE}(b) = d_{g^{\rm FR}}(b, b^{\ast}) = 2\arccos\!\left(\sum_i\sqrt{b_i b^{\ast}_i}\right) \tag{4.1}$$
 
 This is the Bhattacharyya distance — the geodesic distance on $S^{d-1}\_+$.
 
 **Properties:**
-- $\mathrm{TE} = 0$ iff $b = b^*$ (exact log-optimal)
+- $\mathrm{TE} = 0$ iff $b = b^{\ast}$ (exact log-optimal)
 - $\mathrm{TE} \leq \pi/2$ (bounded by the hemisphere diameter)
 - $\mathrm{TE}$ is symmetric and satisfies the triangle inequality
-- $\mathrm{TE}^2 \approx \sum\_i (b\_i - b^*\_i)^2/b^*\_i$ for small deviations (the $\chi^2$ distance)
+- $\mathrm{TE}^2 \approx \sum\_i (b\_i - b^{\ast}\_i)^2/b^{\ast}\_i$ for small deviations (the $\chi^2$ distance)
 
 **The tracking error approximation for small deviations:**
-$$\mathrm{TE}^2 \approx (b-b^*)^T F(b^*)(b-b^*) \tag{4.2}$$
+$$\mathrm{TE}^2 \approx (b-b^{\ast})^T F(b^{\ast})(b-b^{\ast}) \tag{4.2}$$
 
 the quadratic form in the Fisher information matrix. **Tracking error IS the Fisher-Rao squared distance** — the natural risk measure for portfolio deviation from the log-optimal.
 
@@ -317,19 +317,19 @@ the quadratic form in the Fisher information matrix. **Tracking error IS the Fis
 variance is equal: $b\_i\sigma\_i = b\_j\sigma\_j$ for all $i,j$.
 
 **Fisher-Rao risk parity:** weights each asset so that its contribution to the
-Fisher-Rao distance from $b^*$ is equal. The Fisher-Rao risk contribution of
+Fisher-Rao distance from $b^{\ast}$ is equal. The Fisher-Rao risk contribution of
 asset $i$ is:
 
-$$\rho_i^{\rm FR}(b) = b_i\frac{\partial\,\mathrm{TE}^2(b)}{\partial b_i} = b_i\cdot 2F_{ii}(b^*)(b_i-b^*_i) \tag{4.3}$$
+$$\rho_i^{\rm FR}(b) = b_i\frac{\partial\,\mathrm{TE}^2(b)}{\partial b_i} = b_i\cdot 2F_{ii}(b^{\ast})(b_i-b^{\ast}_i) \tag{4.3}$$
 
 **Equal Fisher-Rao risk contribution:** $\rho\_i^{\rm FR} = c$ for all $i$ gives:
 
-$$b_i = b^*_i + \frac{c}{2F_{ii}(b^*)\cdot b_i} \approx b^*_i + \frac{c}{2\cdot b^{*-1}_i\cdot b_i} \tag{4.4}$$
+$$b_i = b^{\ast}_i + \frac{c}{2F_{ii}(b^{\ast})\cdot b_i} \approx b^{\ast}_i + \frac{c}{2\cdot b^{*-1}_i\cdot b_i} \tag{4.4}$$
 
-For equal weight $b\_i = 1/d$: $F\_{ii}(b^*) = d$ and $\rho\_i^{\rm FR} = 2d(1/d - b^*\_i)$.
+For equal weight $b\_i = 1/d$: $F\_{ii}(b^{\ast}) = d$ and $\rho\_i^{\rm FR} = 2d(1/d - b^{\ast}\_i)$.
 The Fisher-Rao risk parity portfolio is:
 
-$$b^{\rm FRP}_i = b^*_i + \frac{c}{2/b^*_i} = b^*_i\left(1 + \frac{c\,b^*_i}{2}\right) \approx b^*_i \tag{4.5}$$
+$$b^{\rm FRP}_i = b^{\ast}_i + \frac{c}{2/b^{\ast}_i} = b^{\ast}_i\left(1 + \frac{c\,b^{\ast}_i}{2}\right) \approx b^{\ast}_i \tag{4.5}$$
 
 to leading order in the deviation. **Fisher-Rao risk parity converges to the
 log-optimal portfolio — equal Fisher-Rao risk contribution is achieved by the
@@ -351,9 +351,9 @@ where $F\_T$ is the CDF of $L\_T(b(T))-L\_T(b)$ under the heat kernel.
 
 **For the CAPM market (Jacobi process):** the VaR at confidence $\alpha$ is:
 
-$$\mathrm{VaR}_\alpha^{\rm CAPM}(b,T) = -\Phi^{-1}(\alpha)\sqrt{\varepsilon^2 T/b^*(1-b^*)} \tag{4.8}$$
+$$\mathrm{VaR}_\alpha^{\rm CAPM}(b,T) = -\Phi^{-1}(\alpha)\sqrt{\varepsilon^2 T/b^{\ast}(1-b^{\ast})} \tag{4.8}$$
 
-where $\Phi^{-1}$ is the inverse normal CDF and $b^*(1-b^*)$ is the local variance
+where $\Phi^{-1}$ is the inverse normal CDF and $b^{\ast}(1-b^{\ast})$ is the local variance
 of the Jacobi process at the current portfolio weight.
 
 **For the hyperbolic market (McKean process):** the VaR has heavy Cauchy tails:
@@ -402,7 +402,7 @@ The P&L of a portfolio $b$ over period $[t,t+\Delta t]$ decomposes as:
 
 $$\Delta\mathrm{PnL} = \underbrace{\langle\Pi_{TM}b,\, x_{t+\Delta t}\rangle}_{\text{Factor PnL}} + \underbrace{\langle\Pi_{NM}b,\, x_{t+\Delta t}\rangle}_{\text{Alpha PnL}} \tag{5.2}$$
 
-The factor PnL has expectation $\varepsilon^2(L\_T(b^*)-L\_T(b))\Delta t$ (the Kelly gap).
+The factor PnL has expectation $\varepsilon^2(L\_T(b^{\ast})-L\_T(b))\Delta t$ (the Kelly gap).
 The alpha PnL has expectation $\varepsilon^2|v\_{\mathcal{G}}|\_{g^{\rm FR}}\Delta t$ if the manager
 has side-channel information $v\_\mathcal{G}\in NM$, and zero otherwise.
 
@@ -418,7 +418,7 @@ has side-channel information $v\_\mathcal{G}\in NM$, and zero otherwise.
 
 The **Linear Quadratic Gaussian (LQG)** portfolio controller minimises a quadratic cost:
 
-$$J_{\rm LQG} = \mathbb{E}\!\left[\int_0^T\!\left(q\|b-b^*\|^2_{g_M} + \rho\|u\|^2_{g_M}\right)dt\right] \tag{6.1}$$
+$$J_{\rm LQG} = \mathbb{E}\!\left[\int_0^T\!\left(q\|b-b^{\ast}\|^2_{g_M} + \rho\|u\|^2_{g_M}\right)dt\right] \tag{6.1}$$
 
 where $u = \dot b$ is the rebalancing control, $q>0$ is the tracking penalty, and
 $\rho>0$ is the trading cost penalty.
@@ -429,20 +429,20 @@ The dynamics: $db = u\,dt + \varepsilon\,dW\_M$ (controlled diffusion on $M^r$).
 
 **Theorem 6.1** *(LQG optimal control on $M^r$)*. *The optimal LQG controller is:*
 
-$$u^*(b) = -K_{\rm LQG}(b - b^*), \qquad K_{\rm LQG} = \sqrt{q/\rho} \tag{6.2}$$
+$$u^{\ast}(b) = -K_{\rm LQG}(b - b^{\ast}), \qquad K_{\rm LQG} = \sqrt{q/\rho} \tag{6.2}$$
 
-*— an OU mean-reversion toward $b^*$ with rate $K\_{\rm LQG} = \sqrt{q/\rho}$.
+*— an OU mean-reversion toward $b^{\ast}$ with rate $K\_{\rm LQG} = \sqrt{q/\rho}$.
 The optimal rebalancing rate equals $\sqrt{q/\rho}$ — the geometric mean of the
 tracking urgency and the trading cost.*
 
 *The controlled portfolio process:*
-$$db = -K_{\rm LQG}(b-b^*)\,dt + \varepsilon\,dW_M \tag{6.3}$$
+$$db = -K_{\rm LQG}(b-b^{\ast})\,dt + \varepsilon\,dW_M \tag{6.3}$$
 *is an OU process on $M^r$ with mean reversion rate $K\_{\rm LQG}$ and stationary
-distribution $\mathrm{Normal}\_{g\_M}(b^*, \varepsilon^2/(2K\_{\rm LQG}))$.*
+distribution $\mathrm{Normal}\_{g\_M}(b^{\ast}, \varepsilon^2/(2K\_{\rm LQG}))$.*
 
 **Optimal rebalancing frequency:** The controller rebalances at rate $K\_{\rm LQG}$
 per unit time. In discrete time with daily rebalancing opportunities:
-$$f^* = K_{\rm LQG} = \sqrt{q/\rho} \text{ rebalances per day} \tag{6.4}$$
+$$f^{\ast} = K_{\rm LQG} = \sqrt{q/\rho} \text{ rebalances per day} \tag{6.4}$$
 
 Matching to the Jacobi spectral gap timescale (PORTFOLIO\_GEOMETRY.md): the
 optimal $K\_{\rm LQG} = \lambda\_1(L\_M)$ — setting the LQG mean-reversion rate
@@ -450,11 +450,11 @@ equal to the natural mean-reversion rate of the market.
 
 ### 6.3 The LQG-Kalman combination (LQG with uncertain state)
 
-When the state $b^*(t)$ is not directly observed (only the noisy return $x\_t$ is observed),
+When the state $b^{\ast}(t)$ is not directly observed (only the noisy return $x\_t$ is observed),
 the **LQG with Kalman filter** (the separation principle):
 
-1. **Estimate:** Run the manifold Kalman filter (Section 2) to obtain $\hat b^*(t)$
-2. **Control:** Apply the LQG controller to the estimated state: $u^*(t) = -K\_{\rm LQG}(\hat b(t) - \hat b^*(t))$
+1. **Estimate:** Run the manifold Kalman filter (Section 2) to obtain $\hat b^{\ast}(t)$
+2. **Control:** Apply the LQG controller to the estimated state: $u^{\ast}(t) = -K\_{\rm LQG}(\hat b(t) - \hat b^{\ast}(t))$
 
 By the **separation theorem for stochastic control** (the certainty equivalence principle):
 the optimal strategy is to estimate the state optimally (Kalman) and then control
@@ -464,7 +464,7 @@ as if the estimate were exact (LQG). **The estimation and control problems separ
 $$\mathrm{TE}^2_{\rm total} = \underbrace{\mathrm{tr}(P_\infty)}_{\text{Kalman error}} + \underbrace{\varepsilon^2/(2K_{\rm LQG})}_{\text{LQG error}} = \mathrm{tr}(F^{-1}) + \varepsilon^2\sqrt{\rho/q} \tag{6.5}$$
 
 **Optimal cost coefficient ratio** minimising total tracking error:
-$$\frac{\rho^*}{q} = \left(\frac{\varepsilon^2}{2\mathrm{tr}(F^{-1})}\right)^2 \tag{6.6}$$
+$$\frac{\rho^{\ast}}{q} = \left(\frac{\varepsilon^2}{2\mathrm{tr}(F^{-1})}\right)^2 \tag{6.6}$$
 
 — the trading cost should be set proportional to the square of the Kalman uncertainty.
 When the factor model is highly uncertain (large $\mathrm{tr}(F^{-1})$): trade slowly.
@@ -525,15 +525,15 @@ END OF DAY:
 
 | Parameter | Formula | Geometric meaning | Update frequency |
 |:----------|:--------|:-----------------|:----------------|
-| Log-optimal $b^*$ | $\arg\max L\_T(b)$ | Centre of $M^r$ | Daily |
-| Fisher matrix $F$ | $-\nabla^2 L\_T|\_{b^*}$ | Local curvature of $M^r$ | Daily |
+| Log-optimal $b^{\ast}$ | $\arg\max L\_T(b)$ | Centre of $M^r$ | Daily |
+| Fisher matrix $F$ | $-\nabla^2 L\_T|\_{b^{\ast}}$ | Local curvature of $M^r$ | Daily |
 | Manifold dim $r$ | FNN / stable rank | Intrinsic complexity | Monthly |
 | Dyson class $\beta$ | Ratio statistic | Symmetry of $M^r$ | Monthly |
 | Cheeger constant $h\_M$ | Fiedler eigenvalue | Systemic risk | Weekly |
 | Kalman gain $K$ | $F^{-1}V\_r^TR\_N^{-1}$ | Optimal signal weight | Daily |
 | Rebal rate $\kappa$ | $\lambda\_1(L\_M)$ | Natural mean reversion | Monthly |
-| Tracking error TE | $d\_{g^{\rm FR}}(b,b^*)$ | Distance from optimal | Daily |
-| Shapley $\phi\_i$ | $b^*\_i(\mu\_i-\bar\mu)$ | Asset contribution | Daily |
+| Tracking error TE | $d\_{g^{\rm FR}}(b,b^{\ast})$ | Distance from optimal | Daily |
+| Shapley $\phi\_i$ | $b^{\ast}\_i(\mu\_i-\bar\mu)$ | Asset contribution | Daily |
 
 ### 7.3 Warning signals for portfolio managers
 
@@ -554,14 +554,14 @@ END OF DAY:
 
 | Problem | Classical tool | Manifold tool | Formula |
 |:--------|:---------------|:-------------|:--------|
-| Portfolio optimisation | Mean-variance | HJB on $M^r$ | Value function = $L\_T(b^*)$ |
-| Signal extraction | Standard Kalman | Manifold Kalman-Bucy | Gain = $F(b^*)^{-1}V\_r^TR\_N^{-1}$ |
-| State estimation | Riccati equation | Riccati on $M^r$ | $P\_\infty = F(b^*)^{-1}$ |
-| Execution | Almgren-Chriss | Geodesic on $M^r$ | $b(t) = \exp\_{b^*}(-e^{-\kappa t}\log\_{b^*}b\_0)$ |
+| Portfolio optimisation | Mean-variance | HJB on $M^r$ | Value function = $L\_T(b^{\ast})$ |
+| Signal extraction | Standard Kalman | Manifold Kalman-Bucy | Gain = $F(b^{\ast})^{-1}V\_r^TR\_N^{-1}$ |
+| State estimation | Riccati equation | Riccati on $M^r$ | $P\_\infty = F(b^{\ast})^{-1}$ |
+| Execution | Almgren-Chriss | Geodesic on $M^r$ | $b(t) = \exp\_{b^{\ast}}(-e^{-\kappa t}\log\_{b^{\ast}}b\_0)$ |
 | Rebalancing rule | Heuristic (monthly) | LQG controller | Rate $= \lambda\_1(L\_M)$ |
-| Risk measure | Variance, VaR | Fisher-Rao distance | $\mathrm{TE} = d\_{g^{\rm FR}}(b,b^*)$ |
-| Risk parity | Equal variance | Equal Fisher-Rao | Converges to $b^*$ |
-| Attribution | Factor regression | Shapley value | $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ |
+| Risk measure | Variance, VaR | Fisher-Rao distance | $\mathrm{TE} = d\_{g^{\rm FR}}(b,b^{\ast})$ |
+| Risk parity | Equal variance | Equal Fisher-Rao | Converges to $b^{\ast}$ |
+| Attribution | Factor regression | Shapley value | $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$ |
 | Crisis detection | VIX | Cheeger constant | $h\_M \to 0$ before crisis |
 | Regime detection | Hidden Markov | Dyson class test | $\beta\in\{1,2,4\}$ |
 | Separation | Tobin two-fund | Tangential/Normal | $b = b^M\_{\rm MUP} + \Pi\_{NM}\alpha$ |

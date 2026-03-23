@@ -12,12 +12,12 @@ $\int\_{\Delta\_{d-1}} b\, W\_T(b)\,d\mu(b)$ is precisely the leading-order WKB 
 of a Feynman–Kac parabolic PDE on $\Delta\_{d-1}$ with Kelly growth rate $r(b)$ as potential.
 This identification is not merely formal: we establish it at the level of complete asymptotic
 expansions, derive an explicit $O(1/T^2)$ error bound with constants expressed entirely in
-terms of the Fisher information matrix $F(b^*)$ at the log-optimal portfolio $b^*$, and
+terms of the Fisher information matrix $F(b^{\ast})$ at the log-optimal portfolio $b^{\ast}$, and
 show that the Fisher matrix is the Hessian of the WKB action at the saddle point. The
 $O(1/T)$ term in the posterior mean error vanishes identically for the uniform prior because
 $\nabla \log \pi \equiv 0$ in the interior of $\Delta\_{d-1}$, which is the information-geometric
 reason the approximation is so accurate in practice. The next correction, at $O(1/T^2)$,
-involves the third cumulant of the log-return distribution under $b^*$ and the Ricci curvature
+involves the third cumulant of the log-return distribution under $b^{\ast}$ and the Ricci curvature
 of $(\Delta\_{d-1}, g^{\mathrm{FR}})$. We provide explicit, computable bounds for all
 $T \geq 1$ and $d \geq 2$, and illustrate the theory with numerical experiments for
 $d \in \{5, 10, 50\}$.
@@ -56,22 +56,22 @@ $$L_T(b) = \frac{1}{T}\sum_{t=1}^T \log\langle b, x_t\rangle \tag{1.2}$$
 This is a strictly concave function of $b$ on $\Delta\_{d-1}$ (under mild non-degeneracy).
 The **log-optimal portfolio** is:
 
-$$b^* = \operatorname{argmax}_{b \in \Delta_{d-1}} L_T(b) \tag{1.3}$$
+$$b^{\ast} = \operatorname{argmax}_{b \in \Delta_{d-1}} L_T(b) \tag{1.3}$$
 
 The **Laplace approximation** to the simplex integral $(1.1)$ asserts:
 
-$$\hat{b}_T \;\approx\; b^* \tag{1.4}$$
+$$\hat{b}_T \;\approx\; b^{\ast} \tag{1.4}$$
 
 with the normalisation constant approximated by:
 
-$$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) \;\approx\; W_T(b^*)\cdot \frac{(2\pi/T)^{(d-1)/2}}{|\det F(b^*)|^{1/2}} \tag{1.5}$$
+$$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) \;\approx\; W_T(b^{\ast})\cdot \frac{(2\pi/T)^{(d-1)/2}}{|\det F(b^{\ast})|^{1/2}} \tag{1.5}$$
 
-where $F(b^*)$ is the Fisher information matrix:
+where $F(b^{\ast})$ is the Fisher information matrix:
 
-$$F_{ij}(b^*) = \frac{1}{T}\sum_{t=1}^T \frac{x_{t,i}\,x_{t,j}}{\langle b^*, x_t\rangle^2}
-= -\frac{\partial^2 L_T}{\partial b_i \partial b_j}\bigg|_{b=b^*} \tag{1.6}$$
+$$F_{ij}(b^{\ast}) = \frac{1}{T}\sum_{t=1}^T \frac{x_{t,i}\,x_{t,j}}{\langle b^{\ast}, x_t\rangle^2}
+= -\frac{\partial^2 L_T}{\partial b_i \partial b_j}\bigg|_{b=b^{\ast}} \tag{1.6}$$
 
-The conventional justification for $(1.4)$ is: expand $L\_T(b)$ to second order around $b^*$
+The conventional justification for $(1.4)$ is: expand $L\_T(b)$ to second order around $b^{\ast}$
 and apply Laplace's method. This gives an $O(1/T)$ remainder, but for the **posterior mean**
 $\hat{b}\_T$ rather than the normalisation constant, the error is $O(1/T^2)$ — a full order
 better, and not explained by the standard Laplace argument.
@@ -84,24 +84,24 @@ error constant.
 
 **Theorem A** (WKB = Laplace, informal). *The Laplace approximation $(1.4)$–$(1.5)$ to
 the universal portfolio is the leading-order WKB expansion of the solution to a parabolic
-PDE on $\Delta\_{d-1}$ with $L\_T(b)$ as potential. The Fisher information matrix $F(b^*)$
-is the Hessian of the WKB action at the saddle point $b^*$, and the Van Vleck determinant
-$|\det F(b^*)|^{-1/2}$ is the WKB amplitude.*
+PDE on $\Delta\_{d-1}$ with $L\_T(b)$ as potential. The Fisher information matrix $F(b^{\ast})$
+is the Hessian of the WKB action at the saddle point $b^{\ast}$, and the Van Vleck determinant
+$|\det F(b^{\ast})|^{-1/2}$ is the WKB amplitude.*
 
 **Theorem B** (Error bound, informal). *The posterior mean satisfies:*
 
-$$\|\hat{b}_T - b^*\|_1 \;\leq\; \frac{C_3(b^*, x_{1:T})}{T^2\,\lambda_{\min}(F(b^*))^2} \tag{1.7}$$
+$$\|\hat{b}_T - b^{\ast}\|_1 \;\leq\; \frac{C_3(b^{\ast}, x_{1:T})}{T^2\,\lambda_{\min}(F(b^{\ast}))^2} \tag{1.7}$$
 
-*where $C\_3$ depends only on the third derivatives of $L\_T$ at $b^*$, and the $O(1/T)$ term
+*where $C\_3$ depends only on the third derivatives of $L\_T$ at $b^{\ast}$, and the $O(1/T)$ term
 vanishes because $\nabla\log\mu \equiv 0$ in the interior of $\Delta\_{d-1}$.*
 
 **Theorem C** (Fisher information as Hessian of action). *The Fisher information matrix
-$F(b^*)$ is the Hessian of the WKB action functional $S(b) = T\cdot L\_T(b)$ at the saddle
-$b^*$:*
+$F(b^{\ast})$ is the Hessian of the WKB action functional $S(b) = T\cdot L\_T(b)$ at the saddle
+$b^{\ast}$:*
 
-$$\frac{\partial^2 S}{\partial b_i \partial b_j}\bigg|_{b^*} = -T\cdot F_{ij}(b^*) \tag{1.8}$$
+$$\frac{\partial^2 S}{\partial b_i \partial b_j}\bigg|_{b^{\ast}} = -T\cdot F_{ij}(b^{\ast}) \tag{1.8}$$
 
-*The eigenvalues of $F(b^*)$ are the curvatures of the log-growth landscape; the stable rank
+*The eigenvalues of $F(b^{\ast})$ are the curvatures of the log-growth landscape; the stable rank
 $r\_{\mathrm{eff}} = \|F\|\_F^2/\|F\|\_2^2$ is the effective number of dimensions in which the
 PDE is non-degenerate, and controls the dimension reduction of the simplex integral.*
 
@@ -112,7 +112,7 @@ Precise statements are given in Sections 3, 4, and 5 respectively.
 For $d = 50$, Monte Carlo integration on $\Delta\_{49}$ requires $O(N)$ evaluations of $W\_T$,
 each costing $O(Td)$ operations, for a total of $O(NTd)$. To achieve $L^1$ error $\varepsilon$
 requires $N = O(1/\varepsilon^2)$ (standard MC) or $N = O(1/\varepsilon)$ (QMC). By contrast,
-Theorem B says the Laplace approximation $\hat{b}\_T \approx b^*$ achieves error
+Theorem B says the Laplace approximation $\hat{b}\_T \approx b^{\ast}$ achieves error
 $O(1/T^2)$ at cost $O(Td^2)$ (one projected gradient solve). For $T \geq 50$ and
 $d \leq 100$, this is orders of magnitude cheaper with strictly better accuracy than Monte Carlo.
 
@@ -222,14 +222,14 @@ $$\frac{\partial A_1}{\partial \tau} + \nabla_b S \cdot \nabla_b A_1
 ### 3.2 Solving the Hamilton–Jacobi equation
 
 **Theorem 3.1** (HJ solution and the action). *For generic price relatives $x\_{1:T}$ (so that
-$b^* \in \mathring{\Delta}\_{d-1}$, the interior), the Hamilton–Jacobi equation (3.1) has a
+$b^{\ast} \in \mathring{\Delta}\_{d-1}$, the interior), the Hamilton–Jacobi equation (3.1) has a
 smooth solution on $\mathring{\Delta}\_{d-1} \times [0,T]$ given by the method of characteristics
 (Hamiltonian flow). The solution at the saddle point satisfies:*
 
-$$S(b^*, T) = \int_0^T r(b^*(s), s)\,ds = \log W_T(b^*) \tag{3.5}$$
+$$S(b^{\ast}, T) = \int_0^T r(b^{\ast}(s), s)\,ds = \log W_T(b^{\ast}) \tag{3.5}$$
 
-*where $b^*$ is the unique minimiser of $-S(\cdot, T)$ over $\Delta\_{d-1}$, and
-$\nabla\_b S(b^*, T) = 0$.*
+*where $b^{\ast}$ is the unique minimiser of $-S(\cdot, T)$ over $\Delta\_{d-1}$, and
+$\nabla\_b S(b^{\ast}, T) = 0$.*
 
 **Proof.** The characteristics of (3.1) are the Hamiltonian trajectories:
 
@@ -241,13 +241,13 @@ $$\dot{p}_i = -\frac{\partial H}{\partial b_i} - \frac{\partial r}{\partial b_i}
 - \frac{\partial r}{\partial b_i} \tag{3.7}$$
 
 Along a characteristic, $\dot{S} = p \cdot \dot{b} - H(b,p) - r = \frac{1}{2}\|p\|^2\_C - r$.
-At the saddle point $b^*$, we have $p^* \equiv 0$ by the stationarity condition $\nabla\_b S = p = 0$.
-Substituting $p^* = 0$ into (3.6)–(3.7): $\dot{b}^* = 0$ (the saddle is fixed), and
-$\dot{p}^* = -\nabla\_b r(b^*(s),s)$. The characteristic through $b^*$ satisfies
-$S(b^*(T), T) = -\int\_0^T r(b^*,\tau)\,d\tau \cdot (-1) = \log W\_T(b^*)$.
+At the saddle point $b^{\ast}$, we have $p^{\ast} \equiv 0$ by the stationarity condition $\nabla\_b S = p = 0$.
+Substituting $p^{\ast} = 0$ into (3.6)–(3.7): $\dot{b}^{\ast} = 0$ (the saddle is fixed), and
+$\dot{p}^{\ast} = -\nabla\_b r(b^{\ast}(s),s)$. The characteristic through $b^{\ast}$ satisfies
+$S(b^{\ast}(T), T) = -\int\_0^T r(b^{\ast},\tau)\,d\tau \cdot (-1) = \log W\_T(b^{\ast})$.
 
-The stationarity $\nabla\_b S(b^*,T) = 0$ follows from the fact that $b^*$ maximises
-$L\_T(b) = \frac{1}{T}S(b,T)$, hence $\nabla S(b^*,T) = T\nabla L\_T(b^*) = 0$ by KKT. $\square$
+The stationarity $\nabla\_b S(b^{\ast},T) = 0$ follows from the fact that $b^{\ast}$ maximises
+$L\_T(b) = \frac{1}{T}S(b,T)$, hence $\nabla S(b^{\ast},T) = T\nabla L\_T(b^{\ast}) = 0$ by KKT. $\square$
 
 **Corollary 3.2.** *At the leading WKB order:*
 
@@ -260,16 +260,16 @@ that the FK functional at $\varepsilon^2 = 1/T$ agrees with the simplex integral
 
 This is the central computation.
 
-**Theorem 3.3** (Theorem C: Fisher information as action Hessian). *Let $b^*$ be the log-optimal
+**Theorem 3.3** (Theorem C: Fisher information as action Hessian). *Let $b^{\ast}$ be the log-optimal
 portfolio in the interior of $\Delta\_{d-1}$. The Hessian of the WKB action $S(b,T) = T\cdot L\_T(b)$
-at $b^*$, restricted to the tangent space
-$T\_{b^*}\Delta\_{d-1} = \{v \in \mathbb{R}^d : \mathbf{1}^Tv = 0\}$, satisfies:*
+at $b^{\ast}$, restricted to the tangent space
+$T\_{b^{\ast}}\Delta\_{d-1} = \{v \in \mathbb{R}^d : \mathbf{1}^Tv = 0\}$, satisfies:*
 
-$$\frac{\partial^2 S}{\partial b_i\,\partial b_j}\bigg|_{b^*}
-= -T \cdot F_{ij}(b^*), \qquad i,j = 1,\ldots,d \tag{3.8}$$
+$$\frac{\partial^2 S}{\partial b_i\,\partial b_j}\bigg|_{b^{\ast}}
+= -T \cdot F_{ij}(b^{\ast}), \qquad i,j = 1,\ldots,d \tag{3.8}$$
 
-*where $F\_{ij}(b^*) = \frac{1}{T}\sum\_{t=1}^T \frac{x\_{t,i}\,x\_{t,j}}{(\langle b^*, x\_t\rangle)^2}$
-is the observed Fisher information matrix of the log-return distribution at $b^*$.*
+*where $F\_{ij}(b^{\ast}) = \frac{1}{T}\sum\_{t=1}^T \frac{x\_{t,i}\,x\_{t,j}}{(\langle b^{\ast}, x\_t\rangle)^2}$
+is the observed Fisher information matrix of the log-return distribution at $b^{\ast}$.*
 
 **Proof.** Since $S(b,T) = T\cdot L\_T(b) = \sum\_{t=1}^T \log\langle b, x\_t\rangle$:
 
@@ -278,20 +278,20 @@ $$\frac{\partial S}{\partial b_i} = \sum_{t=1}^T \frac{x_{t,i}}{\langle b, x_t\r
 $$\frac{\partial^2 S}{\partial b_i\,\partial b_j} = -\sum_{t=1}^T \frac{x_{t,i}\,x_{t,j}}{\langle b, x_t\rangle^2}
 = -T\cdot F_{ij}(b) \tag{3.10}$$
 
-Evaluating at $b = b^*$ gives (3.8). The matrix $F(b^*)$ is positive semidefinite (it is a
-sum of outer products divided by positive scalars) and positive definite on $T\_{b^*}\Delta\_{d-1}$
+Evaluating at $b = b^{\ast}$ gives (3.8). The matrix $F(b^{\ast})$ is positive semidefinite (it is a
+sum of outer products divided by positive scalars) and positive definite on $T\_{b^{\ast}}\Delta\_{d-1}$
 under the non-degeneracy assumption that $\{x\_1,\ldots,x\_T\}$ span $\mathbb{R}^d$. $\square$
 
-**Interpretation.** The Fisher information matrix $F(b^*)$ is simultaneously:
-- (Statistics) The observed Fisher information of the multinomial log-likelihood at the MLE $b^*$;
-- (Differential geometry) The Riemannian Hessian of $-L\_T$ at $b^*$ with respect to the
-  Euclidean metric on $T\_{b^*}\Delta\_{d-1}$;
+**Interpretation.** The Fisher information matrix $F(b^{\ast})$ is simultaneously:
+- (Statistics) The observed Fisher information of the multinomial log-likelihood at the MLE $b^{\ast}$;
+- (Differential geometry) The Riemannian Hessian of $-L\_T$ at $b^{\ast}$ with respect to the
+  Euclidean metric on $T\_{b^{\ast}}\Delta\_{d-1}$;
 - (WKB theory) The curvature of the action $S$ at the saddle — the quantity that determines
   the width of the Gaussian approximation.
 
 **Corollary 3.4** (Stable rank = effective PDE dimension). *The stable rank
-$r\_{\mathrm{eff}} = \|F(b^*)\|\_F^2/\|F(b^*)\|\_2^2$ equals the effective number of
-non-degenerate curvature directions of the HJ action at $b^*$. In the WKB expansion,
+$r\_{\mathrm{eff}} = \|F(b^{\ast})\|\_F^2/\|F(b^{\ast})\|\_2^2$ equals the effective number of
+non-degenerate curvature directions of the HJ action at $b^{\ast}$. In the WKB expansion,
 modes in directions with eigenvalue $\lambda\_k(F) \ll \lambda\_1(F)$ contribute
 exponentially small corrections $O(e^{-T\lambda\_k/\lambda\_1})$ and can be ignored.
 The effective dimension of the PDE is $r\_{\mathrm{eff}}$, not $d-1$.*
@@ -299,72 +299,72 @@ The effective dimension of the PDE is $r\_{\mathrm{eff}}$, not $d-1$.*
 ### 3.4 The Van Vleck determinant and the Laplace approximation
 
 **Theorem 3.5** (Theorem A: Van Vleck = Laplace). *The solution to the transport equation
-(3.3) at $b = b^*$ is the Van Vleck determinant:*
+(3.3) at $b = b^{\ast}$ is the Van Vleck determinant:*
 
-$$A_0(b^*, T) = \left|\det\!\left(\frac{T\cdot F(b^*)}{2\pi}\right)\right|^{1/2} \cdot \frac{1}{(d-1)!} \tag{3.11}$$
+$$A_0(b^{\ast}, T) = \left|\det\!\left(\frac{T\cdot F(b^{\ast})}{2\pi}\right)\right|^{1/2} \cdot \frac{1}{(d-1)!} \tag{3.11}$$
 
-*restricted to the $(d-1)$-dimensional tangent space $T\_{b^*}\Delta\_{d-1}$. Consequently:*
+*restricted to the $(d-1)$-dimensional tangent space $T\_{b^{\ast}}\Delta\_{d-1}$. Consequently:*
 
 $$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) = u_0(T)\big|_{\varepsilon^2=1/T}
-\approx W_T(b^*)\cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2} \cdot |\det F(b^*)|^{-1/2} \tag{3.12}$$
+\approx W_T(b^{\ast})\cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2} \cdot |\det F(b^{\ast})|^{-1/2} \tag{3.12}$$
 
 *This is precisely the Laplace approximation (1.5). The WKB amplitude $A\_0$ is the
 Van Vleck determinant; the Laplace approximation is the leading WKB term.*
 
-**Proof.** The transport equation (3.3) along the characteristic through $b^*$ (where $p^* = 0$,
-$\dot{b}^* = 0$) reduces to:
+**Proof.** The transport equation (3.3) along the characteristic through $b^{\ast}$ (where $p^{\ast} = 0$,
+$\dot{b}^{\ast} = 0$) reduces to:
 
-$$\frac{\partial A_0}{\partial \tau}(b^*,\tau) + \frac{1}{2}\,\mathrm{tr}\!\left[C(b^*)\cdot \nabla^2_b S(b^*,\tau)\right] A_0(b^*,\tau) = 0 \tag{3.13}$$
+$$\frac{\partial A_0}{\partial \tau}(b^{\ast},\tau) + \frac{1}{2}\,\mathrm{tr}\!\left[C(b^{\ast})\cdot \nabla^2_b S(b^{\ast},\tau)\right] A_0(b^{\ast},\tau) = 0 \tag{3.13}$$
 
-where $\mathrm{tr}[C(b^*)\cdot \nabla^2 S] = \sum\_{ij} C\_{ij}(b^*)\partial\_{ij}S(b^*,\tau)$
-is the WF-Laplacian of $S$ at $b^*$.
+where $\mathrm{tr}[C(b^{\ast})\cdot \nabla^2 S] = \sum\_{ij} C\_{ij}(b^{\ast})\partial\_{ij}S(b^{\ast},\tau)$
+is the WF-Laplacian of $S$ at $b^{\ast}$.
 
-From (3.10), $\partial\_{ij}S(b^*,\tau) = -T(\tau)\cdot F\_{ij}(b^*;\tau)$ where
+From (3.10), $\partial\_{ij}S(b^{\ast},\tau) = -T(\tau)\cdot F\_{ij}(b^{\ast};\tau)$ where
 $T(\tau) = \lfloor \tau \rfloor$ is the number of periods elapsed. So:
 
-$$\mathrm{tr}\!\left[C(b^*)\cdot \nabla^2 S\right] = -T(\tau)\cdot\mathrm{tr}\!\left[C(b^*)\cdot F(b^*;\tau)\right] \tag{3.14}$$
+$$\mathrm{tr}\!\left[C(b^{\ast})\cdot \nabla^2 S\right] = -T(\tau)\cdot\mathrm{tr}\!\left[C(b^{\ast})\cdot F(b^{\ast};\tau)\right] \tag{3.14}$$
 
-Now $C(b^*)\_{ij} = b^*\_i(\delta\_{ij} - b^*\_j)$ and $F(b^*;\tau)\_{ij}$ are both symmetric matrices.
+Now $C(b^{\ast})\_{ij} = b^{\ast}\_i(\delta\_{ij} - b^{\ast}\_j)$ and $F(b^{\ast};\tau)\_{ij}$ are both symmetric matrices.
 Their product trace is $\mathrm{tr}[C \cdot F] = \sum\_{ij} C\_{ij} F\_{ji}$.
 Using the identity $C(b)F(b) = \mathrm{Proj}\_{T\_b\Delta}$ (the WF diffusion matrix times the
 Fisher information equals the tangent-space projector, proved below), we get:
 
-$$\mathrm{tr}[C(b^*)F(b^*)] = d-1 \tag{3.15}$$
+$$\mathrm{tr}[C(b^{\ast})F(b^{\ast})] = d-1 \tag{3.15}$$
 
 since the tangent space of $\Delta\_{d-1}$ at any interior point has dimension $d-1$.
 
-**Proof of (3.15).** On $T\_{b^*}\Delta\_{d-1}$, in coordinates $(v\_1,\ldots,v\_{d-1})$
+**Proof of (3.15).** On $T\_{b^{\ast}}\Delta\_{d-1}$, in coordinates $(v\_1,\ldots,v\_{d-1})$
 (with $v\_d = -\sum\_{i<d}v\_i$), the WF diffusion matrix is $C = Q^T \tilde{C} Q$ and the
 Fisher information is $F = Q^T \tilde{F} Q$ where $Q$ is the projection onto the tangent space.
-By direct computation with $\tilde{C}\_{ij} = b\_i^*(\delta\_{ij} - b\_j^*)$:
-$C \cdot F = \mathrm{Id}\_{T\_{b^*}\Delta}$ (identity on the $(d-1)$-dim tangent space)
+By direct computation with $\tilde{C}\_{ij} = b\_i^{\ast}(\delta\_{ij} - b\_j^{\ast})$:
+$C \cdot F = \mathrm{Id}\_{T\_{b^{\ast}}\Delta}$ (identity on the $(d-1)$-dim tangent space)
 when evaluated at a critical point where $F = -\nabla^2 L\_T$ and $\nabla L\_T = 0$.
 Hence $\mathrm{tr}[CF] = d-1$. $\square$
 
 Returning to (3.13): $\frac{\partial}{\partial\tau}\log A\_0 = -\frac{d-1}{2}$, so
-$A\_0(b^*,T) = A\_0(b^*,0)\cdot e^{-(d-1)T/2}$. This is the scalar factor; the full
+$A\_0(b^{\ast},T) = A\_0(b^{\ast},0)\cdot e^{-(d-1)T/2}$. This is the scalar factor; the full
 Van Vleck determinant formula accounts for the spreading of nearby characteristics
 (Jacobi fields), giving:
 
-$$A_0(b^*, T) = \left|\det\!\left(-\frac{\nabla^2_b S(b^*,T)}{2\pi}\right)_{\upharpoonright T_{b^*}\Delta}\right|^{1/2}
-= \left(\frac{T}{2\pi}\right)^{(d-1)/2} |\det F(b^*)|^{1/2} \tag{3.16}$$
+$$A_0(b^{\ast}, T) = \left|\det\!\left(-\frac{\nabla^2_b S(b^{\ast},T)}{2\pi}\right)_{\upharpoonright T_{b^{\ast}}\Delta}\right|^{1/2}
+= \left(\frac{T}{2\pi}\right)^{(d-1)/2} |\det F(b^{\ast})|^{1/2} \tag{3.16}$$
 
-Assembling: $u(b^*,T) = e^{S(b^*,T)/\varepsilon^2}\cdot A\_0(b^*,T)$ with $\varepsilon^2 = 1/T$:
+Assembling: $u(b^{\ast},T) = e^{S(b^{\ast},T)/\varepsilon^2}\cdot A\_0(b^{\ast},T)$ with $\varepsilon^2 = 1/T$:
 
-$$u(b^*,T) = W_T(b^*)\cdot \left(\frac{T}{2\pi}\right)^{(d-1)/2}|\det F(b^*)|^{1/2} \tag{3.17}$$
+$$u(b^{\ast},T) = W_T(b^{\ast})\cdot \left(\frac{T}{2\pi}\right)^{(d-1)/2}|\det F(b^{\ast})|^{1/2} \tag{3.17}$$
 
-Integrating the Gaussian approximation $u(b,T) \approx u(b^*,T)\cdot
-e^{-T(b-b^*)^TF(b^*)(b-b^*)/2}$ over $\Delta\_{d-1}$ (locally approximated by
-$T\_{b^*}\Delta\_{d-1} \cong \mathbb{R}^{d-1}$):
+Integrating the Gaussian approximation $u(b,T) \approx u(b^{\ast},T)\cdot
+e^{-T(b-b^{\ast})^TF(b^{\ast})(b-b^{\ast})/2}$ over $\Delta\_{d-1}$ (locally approximated by
+$T\_{b^{\ast}}\Delta\_{d-1} \cong \mathbb{R}^{d-1}$):
 
-$$\int_\Delta u(b,T)\,d\mu(b) \approx W_T(b^*)\cdot\left(\frac{T}{2\pi}\right)^{(d-1)/2}
+$$\int_\Delta u(b,T)\,d\mu(b) \approx W_T(b^{\ast})\cdot\left(\frac{T}{2\pi}\right)^{(d-1)/2}
 |\det F|^{1/2}\cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2}|\det F|^{-1/2}
-= W_T(b^*) \tag{3.18}$$
+= W_T(b^{\ast}) \tag{3.18}$$
 
 Wait — this gives 1. The correct statement normalises by the volume of $\Delta\_{d-1}$ under $\mu$.
 Retaining the $(d-1)!$ normalisation factor of $\mu$:
 
-$$\int_\Delta W_T(b)\,d\mu(b) \approx W_T(b^*)\cdot \frac{(2\pi/T)^{(d-1)/2}}{|\det F(b^*)|^{1/2}}
+$$\int_\Delta W_T(b)\,d\mu(b) \approx W_T(b^{\ast})\cdot \frac{(2\pi/T)^{(d-1)/2}}{|\det F(b^{\ast})|^{1/2}}
 \cdot \frac{1}{(d-1)!} \tag{3.19}$$
 
 which matches $(1.5)$ (absorbing the $(d-1)!$ factor into the normalisation of $\mu$). $\square$
@@ -380,37 +380,37 @@ The universal portfolio weights are the posterior mean:
 $$\hat{b}_{T,i} = \frac{\int_\Delta b_i\, e^{S(b,T)/\varepsilon^2}\,d\mu(b)}
 {\int_\Delta e^{S(b,T)/\varepsilon^2}\,d\mu(b)} \tag{4.1}$$
 
-Expanding $S(b,T)$ around $b^*$ to third order:
+Expanding $S(b,T)$ around $b^{\ast}$ to third order:
 
-$$S(b,T) = S(b^*,T) + \underbrace{\nabla S(b^*,T)}_{=\,0}\cdot(b-b^*)
-- \frac{T}{2}(b-b^*)^T F(b^*)(b-b^*)
-+ \frac{1}{6}\sum_{ijk} \kappa_{ijk}\,(b_i-b_i^*)(b_j-b_j^*)(b_k-b_k^*) + O(|b-b^*|^4) \tag{4.2}$$
+$$S(b,T) = S(b^{\ast},T) + \underbrace{\nabla S(b^{\ast},T)}_{=\,0}\cdot(b-b^{\ast})
+- \frac{T}{2}(b-b^{\ast})^T F(b^{\ast})(b-b^{\ast})
++ \frac{1}{6}\sum_{ijk} \kappa_{ijk}\,(b_i-b_i^{\ast})(b_j-b_j^{\ast})(b_k-b_k^{\ast}) + O(|b-b^{\ast}|^4) \tag{4.2}$$
 
-where $\kappa\_{ijk} = \partial\_{ijk}S(b^*,T) = -T\cdot\partial\_{ijk}(-L\_T)(b^*)$ is the
+where $\kappa\_{ijk} = \partial\_{ijk}S(b^{\ast},T) = -T\cdot\partial\_{ijk}(-L\_T)(b^{\ast})$ is the
 **negative third derivative of the log-growth rate**:
 
-$$\kappa_{ijk} = -T\cdot\frac{\partial^3 L_T}{\partial b_i\partial b_j\partial b_k}\bigg|_{b^*}
-= 2T\sum_{t=1}^T\frac{x_{t,i}x_{t,j}x_{t,k}}{\langle b^*, x_t\rangle^3}\cdot\frac{1}{T}
-= 2\sum_{t=1}^T \frac{x_{t,i}x_{t,j}x_{t,k}}{\langle b^*, x_t\rangle^3} \tag{4.3}$$
+$$\kappa_{ijk} = -T\cdot\frac{\partial^3 L_T}{\partial b_i\partial b_j\partial b_k}\bigg|_{b^{\ast}}
+= 2T\sum_{t=1}^T\frac{x_{t,i}x_{t,j}x_{t,k}}{\langle b^{\ast}, x_t\rangle^3}\cdot\frac{1}{T}
+= 2\sum_{t=1}^T \frac{x_{t,i}x_{t,j}x_{t,k}}{\langle b^{\ast}, x_t\rangle^3} \tag{4.3}$$
 
 ### 4.2 The Laplace integral with cubic correction
 
 **Lemma 4.1** (Standard Laplace with cubic remainder). *For a smooth function
-$h: \mathbb{R}^n \to \mathbb{R}$ with a non-degenerate maximum at $x^*$:*
+$h: \mathbb{R}^n \to \mathbb{R}$ with a non-degenerate maximum at $x^{\ast}$:*
 
 $$\frac{\int x_i\, e^{Th(x)}dx}{\int e^{Th(x)}dx}
-= x_i^* + \frac{1}{T}\left[- \frac{1}{2}\sum_{jkl}\kappa_{ijk}(H^{-1})_{jk}^{\phantom{jk}}
+= x_i^{\ast} + \frac{1}{T}\left[- \frac{1}{2}\sum_{jkl}\kappa_{ijk}(H^{-1})_{jk}^{\phantom{jk}}
 (H^{-1})_{ll}^{\phantom{ll}} + \ldots\right] + O(1/T^2) \tag{4.4}$$
 
-*where $H\_{ij} = -T \frac{\partial^2 h}{\partial x\_i\partial x\_j}|\_{x^*}$.*
+*where $H\_{ij} = -T \frac{\partial^2 h}{\partial x\_i\partial x\_j}|\_{x^{\ast}}$.*
 
-For our case $h = L\_T$, $H = TF(b^*)$, and the $O(1/T)$ coefficient involves
+For our case $h = L\_T$, $H = TF(b^{\ast})$, and the $O(1/T)$ coefficient involves
 $\kappa\_{ijk}[F^{-1}]\_{jk}[F^{-1}]\_{ll}$.
 
 **However**, there is an additional $O(1/T)$ contribution from the prior. For a general prior
 $\pi(b)$, the posterior mean satisfies:
 
-$$\hat{b}_{T,i} = b_i^* + \frac{1}{T}\sum_j [F^{-1}]_{ij}\,\partial_j\log\pi(b^*)
+$$\hat{b}_{T,i} = b_i^{\ast} + \frac{1}{T}\sum_j [F^{-1}]_{ij}\,\partial_j\log\pi(b^{\ast})
 + \frac{1}{T}\cdot(\text{cubic correction from }\kappa) + O(1/T^2) \tag{4.5}$$
 
 ### 4.3 Cancellation for the uniform prior
@@ -419,27 +419,27 @@ $$\hat{b}_{T,i} = b_i^* + \frac{1}{T}\sum_j [F^{-1}]_{ij}\,\partial_j\log\pi(b^*
 $\pi(b) = 1$ on $\Delta\_{d-1}$ (the Dirichlet(1,...,1) measure), $\nabla\log\pi \equiv 0$
 in the interior. Therefore the $O(1/T)$ term in (4.5) vanishes identically, and:*
 
-$$\hat{b}_{T,i} = b_i^* + \frac{1}{T^2}\cdot\mathcal{M}_i(b^*, x_{1:T}) + O(1/T^3) \tag{4.6}$$
+$$\hat{b}_{T,i} = b_i^{\ast} + \frac{1}{T^2}\cdot\mathcal{M}_i(b^{\ast}, x_{1:T}) + O(1/T^3) \tag{4.6}$$
 
 *where the $O(1/T^2)$ coefficient $\mathcal{M}\_i$ (the Maslov correction) is:*
 
 $$\mathcal{M}_i = -\sum_{j,k,l,m,n}[F^{-1}]_{ij}\,\kappa_{jkl}\,[F^{-1}]_{km}\,\kappa_{lmn}\,[F^{-1}]_{np}
 + \frac{1}{2}\sum_{j,k,l,m}\,[F^{-1}]_{ij}\,\lambda_{jklm}\,[F^{-1}]_{kl}\,[F^{-1}]_{mm} \tag{4.7}$$
 
-*with $\lambda\_{jklm} = \partial\_{jklm}S(b^*,T)/T = -\partial\_{jklm}L\_T(b^*)$ the fourth cumulant tensor.*
+*with $\lambda\_{jklm} = \partial\_{jklm}S(b^{\ast},T)/T = -\partial\_{jklm}L\_T(b^{\ast})$ the fourth cumulant tensor.*
 
 **Proof.** The leading $O(1/T)$ term in the general expansion (4.5) has two parts:
 (i) the prior correction $\frac{1}{T}[F^{-1}]\nabla\log\pi$, which is zero for $\pi$ flat;
 (ii) the cubic correction from $\kappa\_{ijk}$. By standard Laplace expansion with Gram–Hermite
 polynomials (see Appendix A), the cubic term $\kappa\_{ijk}$ contributes to the **normalisation
 constant** at $O(1/T)$ but to the **posterior mean** only at $O(1/T^2)$, because odd moments
-of a Gaussian centred at $b^*$ vanish: $\mathbb{E}\_G[(b-b^*)\_i(b-b^*)\_j(b-b^*)\_k] = 0$.
+of a Gaussian centred at $b^{\ast}$ vanish: $\mathbb{E}\_G[(b-b^{\ast})\_i(b-b^{\ast})\_j(b-b^{\ast})\_k] = 0$.
 The $O(1/T^2)$ contribution comes from the product of two cubic corrections (sixth moment of
 a Gaussian, which is non-zero) and from the fourth-order term $\lambda\_{jklm}$.
 
-Explicitly, writing $v = b - b^*$ and $\tilde{S}(v) = -\frac{T}{2}v^TFv + \frac{1}{6}\kappa\_{ijk}v\_iv\_jv\_k + \ldots$:
+Explicitly, writing $v = b - b^{\ast}$ and $\tilde{S}(v) = -\frac{T}{2}v^TFv + \frac{1}{6}\kappa\_{ijk}v\_iv\_jv\_k + \ldots$:
 
-$$\hat{b}_i - b_i^* = \frac{\int v_i\,e^{\tilde{S}(v)}\,dv}{\int e^{\tilde{S}(v)}\,dv}
+$$\hat{b}_i - b_i^{\ast} = \frac{\int v_i\,e^{\tilde{S}(v)}\,dv}{\int e^{\tilde{S}(v)}\,dv}
 = \frac{\int v_i\left[1 + \frac{\kappa_{jkl}v_jv_kv_l}{6T} + \frac{(\kappa_{jkl}v_jv_kv_l)^2}{72T^2}
 + \frac{\lambda_{jklm}v_jv_kv_lv_m}{24T^2} + \ldots\right]e^{-\frac{T}{2}v^TFv}\,dv}
 {\int \left[1 + \ldots\right]e^{-\frac{T}{2}v^TFv}\,dv} \tag{4.8}$$
@@ -452,11 +452,11 @@ moment times $(1/T)^2$) and generates an $O(1/T^2)$ correction to $\hat{b}\_i$ u
 ### 4.4 Explicit $L^1$ error bound
 
 **Theorem 4.3** (Explicit bound). *Suppose the price relatives satisfy the non-degeneracy
-conditions: (i) $\lambda\_{\min}(F(b^*)) \geq \lambda > 0$; (ii)
-$\max\_{ijk}|\kappa\_{ijk}| \leq K$; (iii) $b^*$ is at distance $\delta > 0$ from
-$\partial\Delta\_{d-1}$ (so $\min\_i b\_i^* \geq \delta$). Then for all $T \geq T\_0(\lambda, K, d)$:*
+conditions: (i) $\lambda\_{\min}(F(b^{\ast})) \geq \lambda > 0$; (ii)
+$\max\_{ijk}|\kappa\_{ijk}| \leq K$; (iii) $b^{\ast}$ is at distance $\delta > 0$ from
+$\partial\Delta\_{d-1}$ (so $\min\_i b\_i^{\ast} \geq \delta$). Then for all $T \geq T\_0(\lambda, K, d)$:*
 
-$$\|\hat{b}_T - b^*\|_1 \leq \frac{C(d)}{T^2} \cdot \frac{K^2}{\lambda^4} \tag{4.9}$$
+$$\|\hat{b}_T - b^{\ast}\|_1 \leq \frac{C(d)}{T^2} \cdot \frac{K^2}{\lambda^4} \tag{4.9}$$
 
 *where $C(d) = O(d^3)$ is a dimension-dependent constant and $K/\lambda^2 =
 \|\kappa\|\_{\mathrm{op}}/\lambda\_{\min}(F)^2$ is the anharmonicity ratio.*
@@ -467,7 +467,7 @@ $$|\mathcal{M}_i| \leq \|F^{-1}\|_{\mathrm{op}}^3\cdot\|\kappa\|_{\mathrm{op}}^2
 \leq \frac{K^2 d^3}{\lambda^3} \tag{4.10}$$
 
 where $\|F^{-1}\|\_{\mathrm{op}} \leq 1/\lambda$ and $\|\kappa\|\_{\mathrm{op}} \leq K$.
-Summing over $i = 1,\ldots,d$ gives $\|\hat{b}\_T - b^*\|\_1 \leq \frac{K^2 d^4}{\lambda^3 T^2}$.
+Summing over $i = 1,\ldots,d$ gives $\|\hat{b}\_T - b^{\ast}\|\_1 \leq \frac{K^2 d^4}{\lambda^3 T^2}$.
 The $\lambda^4$ denominator in (4.9) absorbs an additional $\lambda$ factor from the
 stability of the saddle point. $\square$
 
@@ -475,10 +475,10 @@ stability of the saddle point. $\square$
 $\lambda\_{\min}(F) \sim 1/\sigma^2\_{\mathrm{idio}}$ (the idiosyncratic variance),
 $K \sim 1/\sigma^3\_{\mathrm{idio}}$, so:
 
-$$\|\hat{b}_T - b^*\|_1 \lesssim \frac{d^3 \sigma^2_{\mathrm{idio}}}{T^2} \tag{4.11}$$
+$$\|\hat{b}_T - b^{\ast}\|_1 \lesssim \frac{d^3 \sigma^2_{\mathrm{idio}}}{T^2} \tag{4.11}$$
 
 For $d = 50$, $\sigma\_{\mathrm{idio}} = 0.1$, $T = 252$ (one year of daily data):
-$\|\hat{b}\_T - b^*\|\_1 \lesssim 50^3 \cdot 0.01 / 252^2 \approx 2\times 10^{-4}$.
+$\|\hat{b}\_T - b^{\ast}\|\_1 \lesssim 50^3 \cdot 0.01 / 252^2 \approx 2\times 10^{-4}$.
 This is negligible for any practical purpose.
 
 ---
@@ -492,25 +492,25 @@ The first quantum correction $A\_1$ satisfies (3.4):
 $$\frac{DA_1}{D\tau} = -\frac{1}{2}\Delta^{\mathrm{WF}} A_0 \tag{5.1}$$
 
 where $\frac{D}{D\tau}$ is the material derivative along the characteristic flow and
-$\Delta^{\mathrm{WF}}$ is the WF Laplacian. At the saddle point $b^*$:
+$\Delta^{\mathrm{WF}}$ is the WF Laplacian. At the saddle point $b^{\ast}$:
 
-$$\frac{\partial A_1}{\partial \tau}(b^*,\tau) = -\frac{1}{2}\Delta^{\mathrm{WF}} A_0(b^*,\tau) \tag{5.2}$$
+$$\frac{\partial A_1}{\partial \tau}(b^{\ast},\tau) = -\frac{1}{2}\Delta^{\mathrm{WF}} A_0(b^{\ast},\tau) \tag{5.2}$$
 
-**Proposition 5.1** (Maslov correction formula). *At $b^*$ with $\varepsilon^2 = 1/T$, the
+**Proposition 5.1** (Maslov correction formula). *At $b^{\ast}$ with $\varepsilon^2 = 1/T$, the
 $O(1/T)$ correction to the log normalisation constant is:*
 
-$$\log\int_\Delta W_T\,d\mu = \log W_T(b^*) - \frac{d-1}{2}\log T + \frac{1}{2}\log(2\pi)^{d-1}
-- \frac{1}{2}\log\det F(b^*) + \frac{1}{T}\cdot\mathcal{M}_0 + O(1/T^2) \tag{5.3}$$
+$$\log\int_\Delta W_T\,d\mu = \log W_T(b^{\ast}) - \frac{d-1}{2}\log T + \frac{1}{2}\log(2\pi)^{d-1}
+- \frac{1}{2}\log\det F(b^{\ast}) + \frac{1}{T}\cdot\mathcal{M}_0 + O(1/T^2) \tag{5.3}$$
 
 *where the Maslov scalar is:*
 
 $$\mathcal{M}_0 = -\frac{1}{8}\sum_{ij}[F^{-1}]_{ij}\,\lambda_{iijj}
 + \frac{5}{24}\sum_{ijk}[F^{-1}]_{ii}\kappa_{ijk}^2\,[F^{-1}]_{jj}[F^{-1}]_{kk}
-- \frac{1}{12}\,\mathrm{Ric}_{g^{\mathrm{FR}}}|_{b^*} \tag{5.4}$$
+- \frac{1}{12}\,\mathrm{Ric}_{g^{\mathrm{FR}}}|_{b^{\ast}} \tag{5.4}$$
 
 *The last term is the Riemann curvature correction from $(\Delta\_{d-1}, g^{\mathrm{FR}})$:*
 
-$$\mathrm{Ric}_{g^{\mathrm{FR}}}|_{b^*} = \frac{d-2}{4}\cdot\mathrm{tr}_{g^{\mathrm{FR}}}[F(b^*)^{-1}] \tag{5.5}$$
+$$\mathrm{Ric}_{g^{\mathrm{FR}}}|_{b^{\ast}} = \frac{d-2}{4}\cdot\mathrm{tr}_{g^{\mathrm{FR}}}[F(b^{\ast})^{-1}] \tag{5.5}$$
 
 *This curvature term reflects the fact that $\Delta\_{d-1}$ is not flat — it is a hemisphere of
 $S^{d-1}$ with curvature $K = 1/4$ — and the Gaussian approximation on a curved manifold
@@ -520,18 +520,18 @@ acquires a Ricci correction.*
 with $K = 1/4$, the WKB expansion on a Riemannian manifold includes a Ricci correction
 (the DeWitt coefficient $a\_1$) equal to $\frac{1}{6}\int R\,d\mathrm{vol}$ where $R$ is the
 scalar curvature. For $S^{d-1}$ with $K = 1/4$: $R = (d-1)(d-2)/4$. Restricting to
-$T\_{b^*}\Delta\_{d-1}$ and contracting with $F^{-1}$ (the local metric at the saddle)
+$T\_{b^{\ast}}\Delta\_{d-1}$ and contracting with $F^{-1}$ (the local metric at the saddle)
 gives (5.5). $\square$
 
 ### 5.2 The WKB/semiclassical hierarchy and the role of $T$
 
 The full WKB expansion of $\log \int\_\Delta W\_T\,d\mu$ is:
 
-$$\log W_T(b^*) + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F
+$$\log W_T(b^{\ast}) + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F
 + \frac{\mathcal{M}_0}{T} + \frac{\mathcal{M}_1}{T^2} + \cdots \tag{5.6}$$
 
 This is the **semiclassical expansion** with $\hbar \leftrightarrow 1/T$:
-- Leading term: classical action $= \log W\_T(b^*)$
+- Leading term: classical action $= \log W\_T(b^{\ast})$
 - $O(T^0)$: Van Vleck determinant $(= $ Laplace approximation $)$
 - $O(1/T)$: Maslov correction (first quantum correction)
 - $O(1/T^2)$: second quantum correction
@@ -539,7 +539,7 @@ This is the **semiclassical expansion** with $\hbar \leftrightarrow 1/T$:
 The $O(1/T)$ Maslov correction to the **normalisation constant** does not affect the
 **posterior mean** to the same order, because it is a multiplicative correction to $Z\_T$
 that cancels between numerator and denominator in $\hat{b}\_T = \nabla\_b \log Z\_T$ (gradient
-of the log partition function). This is the deeper reason $\hat{b}\_T = b^* + O(1/T^2)$:
+of the log partition function). This is the deeper reason $\hat{b}\_T = b^{\ast} + O(1/T^2)$:
 the $O(1/T)$ correction is a scalar (affects $\log Z$, not $\nabla \log Z$).
 
 ---
@@ -548,10 +548,10 @@ the $O(1/T)$ correction is a scalar (affects $\log Z$, not $\nabla \log Z$).
 
 ### 6.1 The Fisher–Rao Hessian in normal coordinates
 
-The Fisher information matrix $F(b^*)$ defines a local inner product on $T\_{b^*}\Delta\_{d-1}$.
-In **$F$-normal coordinates** $\xi = F(b^*)^{1/2}(b - b^*)$, the integrand becomes:
+The Fisher information matrix $F(b^{\ast})$ defines a local inner product on $T\_{b^{\ast}}\Delta\_{d-1}$.
+In **$F$-normal coordinates** $\xi = F(b^{\ast})^{1/2}(b - b^{\ast})$, the integrand becomes:
 
-$$W_T(b) = W_T(b^*)\cdot \exp\!\left(-\frac{T}{2}|\xi|^2 + O(|\xi|^3)\right) \tag{6.1}$$
+$$W_T(b) = W_T(b^{\ast})\cdot \exp\!\left(-\frac{T}{2}|\xi|^2 + O(|\xi|^3)\right) \tag{6.1}$$
 
 This is a spherically symmetric Gaussian in $\xi$-space, perturbed by cubic and higher terms.
 The variance of the posterior in $\xi$-coordinates is $1/T$ in every direction, uniformly —
@@ -565,20 +565,20 @@ of radius $O(1/\sqrt{T})$:*
 
 $$\pi_T\!\left(\|\xi\| \geq \frac{C\log T}{\sqrt{T}}\right) = O(T^{-C^2/2}) \tag{6.2}$$
 
-*The posterior covariance is $\Sigma\_T = (TF(b^*))^{-1} + O(1/T^2)$ in original coordinates.*
+*The posterior covariance is $\Sigma\_T = (TF(b^{\ast}))^{-1} + O(1/T^2)$ in original coordinates.*
 
 This is the information-geometric law of large numbers: as $T\to\infty$, the posterior
-concentrates at $b^*$ at rate $1/\sqrt{T}$ in the Fisher–Rao metric, regardless of the
-dimension $d$, because $F(b^*)$ is the metric.
+concentrates at $b^{\ast}$ at rate $1/\sqrt{T}$ in the Fisher–Rao metric, regardless of the
+dimension $d$, because $F(b^{\ast})$ is the metric.
 
 ### 6.3 Effective dimension and the JL lemma on the simplex
 
-The Fisher information matrix $F(b^*)$ has eigenvalue decomposition
-$F(b^*) = \sum\_{k=1}^{d-1}\lambda\_k v\_k v\_k^T$. The posterior is anisotropic: it is narrow
+The Fisher information matrix $F(b^{\ast})$ has eigenvalue decomposition
+$F(b^{\ast}) = \sum\_{k=1}^{d-1}\lambda\_k v\_k v\_k^T$. The posterior is anisotropic: it is narrow
 in the directions $v\_k$ with large $\lambda\_k$ and wide in directions with small $\lambda\_k$.
 
 **Theorem 6.2** (Effective dimension of the Laplace approximation). *The number of
-eigenvalues of $F(b^*)$ that contribute more than $\varepsilon$ to the total posterior
+eigenvalues of $F(b^{\ast})$ that contribute more than $\varepsilon$ to the total posterior
 variance (measured in $\|\cdot\|\_F$) is bounded by the stable rank:*
 
 $$\\#\{k : \lambda_k(F) \geq \varepsilon^2 \lambda_{\max}\} \leq r_{\mathrm{eff}} = \|F\|_F^2/\|F\|_2^2 \tag{6.3}$$
@@ -597,7 +597,7 @@ Johnson–Lindenstrauss lemma applied to the asset return vectors.*
 
 ### 7.1 Setup
 
-We compare the Laplace approximation $b^*$ with Monte Carlo (50,000 samples, Halton QMC),
+We compare the Laplace approximation $b^{\ast}$ with Monte Carlo (50,000 samples, Halton QMC),
 and measure $L^1$ error as a function of $T$ for $d \in \{5, 10, 50\}$.
 
 Data is generated from a factor model with $r = 3$ factors:
@@ -625,7 +625,7 @@ For $d = 50$, $T = 252$, target $L^1$ accuracy $= 10^{-3}$:
 
 | Method | Time (ms) | Accuracy | Evaluations of $W\_T$ |
 |--------|-----------|----------|----------------------|
-| Laplace ($b^*$ only) | 0.05 | $6\times10^{-4}$ | $\sim 2\times10^4$ |
+| Laplace ($b^{\ast}$ only) | 0.05 | $6\times10^{-4}$ | $\sim 2\times10^4$ |
 | Laplace + $A\_1$ correction | 0.08 | $3\times10^{-4}$ | $\sim 2\times10^4$ |
 | QMC Halton, $N=10^3$ | 8.1 | $4\times10^{-3}$ | $10^3$ |
 | QMC Halton, $N=10^4$ | 81 | $4\times10^{-4}$ | $10^4$ |
@@ -644,11 +644,11 @@ The central contribution of this paper is the following exact identification:
 
 | Laplace approximation | WKB expansion | 
 |:----------------------|:--------------|
-| Taylor expand $\log W\_T(b)$ to 2nd order around $b^*$ | Expand $S(b,T) = T L\_T(b)$ around HJ saddle |
+| Taylor expand $\log W\_T(b)$ to 2nd order around $b^{\ast}$ | Expand $S(b,T) = T L\_T(b)$ around HJ saddle |
 | Gaussian integral over $\Delta\_{d-1}$ | Leading WKB oscillatory integral |
-| $F(b^*) = -\nabla^2 L\_T(b^*)$ | Hessian of action at saddle $= -\partial^2 S / T$ |
-| $|\det F(b^*)|^{-1/2}$ (Laplace weight) | Van Vleck determinant $A\_0$ |
-| $b^* + O(1/T^2)$ accuracy | Leading WKB, $O(1/T^2)$ quantum correction |
+| $F(b^{\ast}) = -\nabla^2 L\_T(b^{\ast})$ | Hessian of action at saddle $= -\partial^2 S / T$ |
+| $|\det F(b^{\ast})|^{-1/2}$ (Laplace weight) | Van Vleck determinant $A\_0$ |
+| $b^{\ast} + O(1/T^2)$ accuracy | Leading WKB, $O(1/T^2)$ quantum correction |
 | $O(1/T)$ term vanishes for uniform prior | $\nabla\log\pi = 0 \Rightarrow$ no Maslov $O(1/T)$ |
 | Third cumulant $\kappa\_{ijk}$ governs error | Cubic anharmonicity of action at saddle |
 | Stable rank $r\_{\mathrm{eff}}(F)$ | Effective dimension of WKB oscillation |
@@ -657,7 +657,7 @@ The central contribution of this paper is the following exact identification:
 
 The $O(1/T)$ cancellation (Theorem 4.2) has an elegant geometric interpretation.
 For a general prior $\pi$ on $\Delta\_{d-1}$, the leading correction to the posterior
-mean is $\frac{1}{T}F^{-1}\nabla\log\pi$ — the natural gradient of the log-prior at $b^*$.
+mean is $\frac{1}{T}F^{-1}\nabla\log\pi$ — the natural gradient of the log-prior at $b^{\ast}$.
 For the uniform (Lebesgue) measure on $\Delta\_{d-1}$, $\log\pi = \mathrm{const}$, so this
 term vanishes. But this is a statement about the information geometry: the uniform prior is
 the **Jeffreys prior** for the multinomial model, and the Jeffreys prior is the one for which
@@ -668,11 +668,11 @@ universal portfolio achieves $O(1/T^2)$ accuracy under the Laplace approximation
 
 ### 8.3 Relation to the Bernstein–von Mises theorem
 
-The result $\hat{b}\_T = b^* + O(1/T^2)$ is a quantitative, non-asymptotic refinement of
+The result $\hat{b}\_T = b^{\ast} + O(1/T^2)$ is a quantitative, non-asymptotic refinement of
 the Bernstein–von Mises theorem for the Dirichlet–multinomial model. The standard BvM
-theorem states that the posterior concentrates at rate $1/\sqrt{T}$ around the MLE $b^*$,
+theorem states that the posterior concentrates at rate $1/\sqrt{T}$ around the MLE $b^{\ast}$,
 with the posterior variance converging to $(TF)^{-1}$. Our result sharpens this: the
-**posterior mean** (not just the posterior itself) converges to $b^*$ at rate $1/T^2$, with
+**posterior mean** (not just the posterior itself) converges to $b^{\ast}$ at rate $1/T^2$, with
 the WKB expansion providing the full asymptotic series.
 
 ### 8.4 Open problems
@@ -680,16 +680,16 @@ the WKB expansion providing the full asymptotic series.
 **Problem 1** (Sharp constant). *Determine the sharp constant in (4.9). We conjecture
 $C(d) = O(d\cdot r\_{\mathrm{eff}})$ rather than $O(d^4)$, based on the numerical evidence.*
 
-**Problem 2** (Non-interior $b^*$). *Extend Theorems A–C to the case where $b^*$ lies on
+**Problem 2** (Non-interior $b^{\ast}$). *Extend Theorems A–C to the case where $b^{\ast}$ lies on
 a face of $\Delta\_{d-1}$ (some assets receive zero weight). The WKB analysis at the boundary
 requires the theory of diffraction — the HJ characteristics reflect off $\partial\Delta$,
 introducing additional phase factors (Maslov index). The error bound (1.7) should be replaced
 by an $O(1/T)$ bound at boundary saddles, reflecting the slower concentration of the
 posterior near the faces.*
 
-**Problem 3** (Time-varying $b^*(t)$). *Extend the analysis to the case where $b^*$ changes
+**Problem 3** (Time-varying $b^{\ast}(t)$). *Extend the analysis to the case where $b^{\ast}$ changes
 over time (non-stationary returns). The WKB expansion then involves a path-dependent action,
-and the $O(1/T^2)$ bound becomes $O(1/T^2) + O(\|\dot{b}^*\|^2/T)$, where the second term
+and the $O(1/T^2)$ bound becomes $O(1/T^2) + O(\|\dot{b}^{\ast}\|^2/T)$, where the second term
 measures the cost of tracking a moving target.*
 
 **Problem 4** (Non-Gaussian tails). *The error bound (4.9) assumes $r(b,t)$ is smooth and
@@ -713,7 +713,7 @@ $$\frac{\int v_i\, e^{Tf(v)}\,dv}{\int e^{Tf(v)}\,dv}
 cumulants of $f$ at 0.*
 
 *For $f = L\_T$, the $O(1/T)$ term is $\Sigma\_{ij}\partial\_j\log Z\_0 = 0$ because $Z\_0$ is
-a function of $\Sigma = F^{-1}$ only (no $b^*$-dependence at this order) and $b^*$ is a
+a function of $\Sigma = F^{-1}$ only (no $b^{\ast}$-dependence at this order) and $b^{\ast}$ is a
 critical point of $L\_T$. This confirms the $O(1/T^2)$ result.*
 
 **Proof.** Gram–Charlier expansion: write
@@ -729,26 +729,26 @@ by $T$ from the denominator normalisation. $\square$
 The Van Vleck determinant for the WKB approximation to a Schrödinger-type equation
 $\partial\_\tau \Psi = (\varepsilon^2/2)\Delta\_b \Psi + r\Psi$ with $\Psi = e^{S/\varepsilon^2}A$
 is a standard result \[Gutzwiller 1990\]. For the WF generator $\mathcal{L}^\varepsilon$
-instead of $(\varepsilon^2/2)\Delta$, the Jacobi fields $J(b^*,\tau)$ satisfy:
+instead of $(\varepsilon^2/2)\Delta$, the Jacobi fields $J(b^{\ast},\tau)$ satisfy:
 
-$$\ddot{J} + \nabla^2_b r(b^*,\tau)\cdot J = 0 \tag{B.1}$$
+$$\ddot{J} + \nabla^2_b r(b^{\ast},\tau)\cdot J = 0 \tag{B.1}$$
 
-with $J(b^*,0) = 0$, $\dot{J}(b^*,0) = I\_{d-1}$ (identity on the tangent space).
-The Van Vleck determinant is $D(b^*,T) = \det J(b^*,T)$.
+with $J(b^{\ast},0) = 0$, $\dot{J}(b^{\ast},0) = I\_{d-1}$ (identity on the tangent space).
+The Van Vleck determinant is $D(b^{\ast},T) = \det J(b^{\ast},T)$.
 
 For time-independent $r$ (the case $x\_t$ are i.i.d.), equation (B.1) is the matrix Riccati
-equation with constant coefficient $\nabla^2 r = -F(b^*)$:
+equation with constant coefficient $\nabla^2 r = -F(b^{\ast})$:
 
-$$\ddot{J} - F(b^*)\cdot J = 0 \tag{B.2}$$
+$$\ddot{J} - F(b^{\ast})\cdot J = 0 \tag{B.2}$$
 
-with solution $J(b^*,T) = F(b^*)^{-1/2}\sinh(T F(b^*)^{1/2})$, giving:
+with solution $J(b^{\ast},T) = F(b^{\ast})^{-1/2}\sinh(T F(b^{\ast})^{1/2})$, giving:
 
-$$D(b^*,T) = \det\!\left(F^{-1/2}\sinh(TF^{1/2})\right)
+$$D(b^{\ast},T) = \det\!\left(F^{-1/2}\sinh(TF^{1/2})\right)
 \xrightarrow{T\to\infty} \det\!\left(\frac{e^{TF^{1/2}}}{2F^{1/2}}\right) \tag{B.3}$$
 
 The Van Vleck amplitude $A\_0 = D^{-1/2}$ then gives:
 
-$$A_0(b^*,T) = \left[\det\!\left(\frac{2F^{1/2}}{e^{TF^{1/2}}}\right)\right]^{1/2}
+$$A_0(b^{\ast},T) = \left[\det\!\left(\frac{2F^{1/2}}{e^{TF^{1/2}}}\right)\right]^{1/2}
 = \left[\det\frac{T\,F}{2\pi}\right]^{1/2} \cdot e^{-T\,\mathrm{tr}(F^{1/2})/2}\cdot \left[\frac{(2\pi)^{(d-1)/2}}{T^{(d-1)/2}|\det F|^{1/2}}\right] \tag{B.4}$$
 
 after restoring normalisation factors, recovering (3.16). $\square$

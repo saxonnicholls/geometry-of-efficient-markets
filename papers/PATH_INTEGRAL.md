@@ -32,7 +32,7 @@ from $b$ to any final state $b\_T \in M^r$.
 **(ii) The WKB saddle point = LAPLACE.md.** The stationary phase approximation of
 (0.1) is achieved at the geodesic path on $M^r$ from $b$ to $b'$. The prefactor
 is the Van Vleck-Morette determinant, which equals the Fisher information matrix
-$F(b^*)$ — recovering the Laplace approximation of LAPLACE.md as the WKB leading
+$F(b^{\ast})$ — recovering the Laplace approximation of LAPLACE.md as the WKB leading
 term. The $O(1/T^2)$ error is the first-order WKB correction vanishing because the
 Jeffreys prior = stationary distribution.
 
@@ -168,23 +168,23 @@ where $J(b,b',T)$ is the **Van Vleck-Morette determinant**:
 $$J(b,b',T) = \det\!\left(-\frac{\partial^2 S_{\rm cl}(b,b',T)}{\partial b_i\partial b'_j}\right) \tag{2.2}$$
 
 **Theorem 2.1** *(Van Vleck = Fisher information)*.
-*At the log-optimal portfolio $b = b^*$, the Van Vleck-Morette determinant equals
+*At the log-optimal portfolio $b = b^{\ast}$, the Van Vleck-Morette determinant equals
 the Fisher information matrix:*
 
-$$J(b^*,b^*,T) = \det F(b^*) \tag{2.3}$$
+$$J(b^{\ast},b^{\ast},T) = \det F(b^{\ast}) \tag{2.3}$$
 
-*where $F(b^*) = -\nabla^2 L\_T(b^*)|\_{b^*}$ is the Hessian of the Kelly growth rate.*
+*where $F(b^{\ast}) = -\nabla^2 L\_T(b^{\ast})|\_{b^{\ast}}$ is the Hessian of the Kelly growth rate.*
 
-*Proof.* The classical action from $b^*$ to $b^*$ in time $T$ is $S\_{\rm cl}(b^*,b^*,T) = 0$
+*Proof.* The classical action from $b^{\ast}$ to $b^{\ast}$ in time $T$ is $S\_{\rm cl}(b^{\ast},b^{\ast},T) = 0$
 (trivial path, no kinetic cost). The second derivative of $S\_{\rm cl}$ with respect to
 the endpoint is the inverse propagator — the Fisher information matrix of the stationary
-process, which equals $F(b^*)$ by the Cramér-Rao bound for the efficient market. $\square$
+process, which equals $F(b^{\ast})$ by the Cramér-Rao bound for the efficient market. $\square$
 
 **This is LAPLACE.md restated as a path integral identity.** The WKB approximation
-(2.1) evaluated at $b=b'=b^*$ with the Van Vleck determinant (2.3) gives:
+(2.1) evaluated at $b=b'=b^{\ast}$ with the Van Vleck determinant (2.3) gives:
 
-$$V^{\rm WKB}\big|_{b=b^*} = e^{-rT}\cdot(4\pi\varepsilon^2 T)^{-r/2}\cdot(\det F(b^*))^{-1/2}\cdot G(b^*)
-= e^{-rT}\cdot\frac{G(b^*)}{(4\pi T)^{r/2}\sqrt{\det F(b^*)}} \tag{2.4}$$
+$$V^{\rm WKB}\big|_{b=b^{\ast}} = e^{-rT}\cdot(4\pi\varepsilon^2 T)^{-r/2}\cdot(\det F(b^{\ast}))^{-1/2}\cdot G(b^{\ast})
+= e^{-rT}\cdot\frac{G(b^{\ast})}{(4\pi T)^{r/2}\sqrt{\det F(b^{\ast})}} \tag{2.4}$$
 
 This is exactly the Laplace approximation of LAPLACE.md (equation 3.7). **The WKB saddle
 point approximation for the manifold path integral IS the Laplace approximation
@@ -210,7 +210,7 @@ where $V = -L\_T(b)$ is the Kelly potential (negative log-growth rate), and $\et
 is white noise with covariance $\mathbb{E}[\eta\_t^\mu\eta\_s^\nu] = g\_M^{\mu\nu}(b\_t)\delta(t-s)$
 (noise in the Fisher-Rao metric).
 
-For the efficient market ($V$ = constant on $M^r$, i.e., $\nabla\_{g\_M}L\_T = 0$ at $b^*$):
+For the efficient market ($V$ = constant on $M^r$, i.e., $\nabla\_{g\_M}L\_T = 0$ at $b^{\ast}$):
 
 $$\dot b_t = \varepsilon\,\eta_t \tag{3.2}$$
 
@@ -269,7 +269,7 @@ the paths that extremise the action $S\_M[b]$. These are the **geodesics** on
 $(M^r, g\_M)$ — paths of minimum Fisher-Rao length. Each instanton connects one
 portfolio configuration to another via the geodesic on $M^r$.
 
-For the Clifford torus: instantons include constant paths ($b=b^*$, the
+For the Clifford torus: instantons include constant paths ($b=b^{\ast}$, the
 log-optimal portfolio) AND non-trivial winding paths that go around the torus.
 The winding instantons contribute to the path integral with action
 $S\_{\rm instanton} = n^2(\pi/2)^2/(2\varepsilon^2\cdot\mathrm{Area}(T^2)) \propto n^2/\varepsilon^2$
@@ -460,7 +460,7 @@ $$S_{\rm eff}[b^M] = S_M[b^M]
 + \underbrace{\frac{\varepsilon^2}{2}\mathrm{tr}(F_N^{-1})\cdot(T-t)}_{\text{idiosyncratic correction}}
 + O(\varepsilon^4) \tag{6.5}$$
 
-*and $F\_N = \Pi\_{NM}F(b^*)\Pi\_{NM}$ is the normal bundle Fisher matrix (idiosyncratic
+*and $F\_N = \Pi\_{NM}F(b^{\ast})\Pi\_{NM}$ is the normal bundle Fisher matrix (idiosyncratic
 Fisher information).*
 
 *Proof.* The normal bundle integral $\int\mathcal{D}[\xi]e^{-S\_N[\xi;b^M]/2\varepsilon^2}$
@@ -554,7 +554,7 @@ measure. Key results:
 $$\boxed{
 \begin{array}{lcl}
 \text{WKB saddle} & = & \text{geodesic on }M^r \\
-\text{Van Vleck det.} & = & F(b^*)\text{ (Fisher info)}\\
+\text{Van Vleck det.} & = & F(b^{\ast})\text{ (Fisher info)}\\
 \text{WKB accuracy }{O(1/T^2)} & = & \text{Jeffreys prior = stationary dist.}\\
 \text{Theta function} & = & \text{winding sum on }T^2\\
 \text{McKean kernel} & = & \text{unique geodesic on }\mathbb{H}^2\\

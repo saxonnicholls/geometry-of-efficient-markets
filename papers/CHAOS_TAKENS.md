@@ -36,7 +36,7 @@ same $M^r$, the same tail indices, the same option prices.
 
 **(iii) Takens embedding reconstructs $M^r$.** By Takens' theorem, the delay
 embedding $\mathbf{x}(t) = (x\_t, x\_{t-\tau}, x\_{t-2\tau}, \ldots, x\_{t-(2r)\tau})$
-of a scalar observable $x\_t = f(b^*(t))$ into $\mathbb{R}^{2r+1}$ produces a
+of a scalar observable $x\_t = f(b^{\ast}(t))$ into $\mathbb{R}^{2r+1}$ produces a
 manifold diffeomorphic to $M^r$. The minimal embedding dimension is $2r+1$ — where
 $r$ is the market manifold dimension. This gives a completely practical algorithm:
 embed a single return series with increasing delay dimension; the embedding dimension
@@ -184,7 +184,7 @@ b \mapsto (\phi(b), \phi(f(b)), \phi(f^2(b)), \ldots, \phi(f^{2r}(b))) \tag{3.1}
 is a generic diffeomorphism onto its image — i.e., for generic $\phi$ and $f$,
 the delay embedding is a smooth embedding of $M^r$ into $\mathbb{R}^{2r+1}$.
 
-**Financial translation:** Let $x\_t = \phi(b^*(t)) = \log(S\_{A,t}/S\_{A,0})$
+**Financial translation:** Let $x\_t = \phi(b^{\ast}(t)) = \log(S\_{A,t}/S\_{A,0})$
 (the log-return of a single asset $A$). The delay embedding:
 
 $$\mathbf{x}(t) = (x_t, x_{t-\tau}, x_{t-2\tau}, \ldots, x_{t-2r\tau}) \in \mathbb{R}^{2r+1} \tag{3.2}$$
@@ -207,7 +207,7 @@ the market manifold!
 3. Promote to dimension $m+1$: compute the ratio $|x\_{t-m\tau} - x\_{t'-m\tau}|/\|\mathbf{x}(t)-\mathbf{x}(t')\|$
 4. If this ratio exceeds a threshold $R\_{\rm tol}$: the neighbour is "false" (only
    appears close due to projection artefact)
-5. The market manifold dimension: $r = (m^* - 1)/2$ where $m^*$ is the smallest $m$
+5. The market manifold dimension: $r = (m^{\ast} - 1)/2$ where $m^{\ast}$ is the smallest $m$
    for which the FNN fraction drops below 1\%
 
 **This gives $r$ from a single return series.** No covariance matrix, no PCA, no
@@ -216,12 +216,12 @@ cross-sectional data required — just the time series of one stock's log-return
 **Theorem 3.1** *(FNN gives the market manifold dimension)*. 
 *For a market on $M^r$ with smooth dynamics, the FNN algorithm applied to the
 log-return series of any non-degenerate asset identifies the manifold dimension $r$:*
-$$m^* = 2r+1 \quad\text{(the minimum faithful embedding dimension)} \tag{3.3}$$
-*For the CAPM ($r=1$): $m^*=3$. For the Clifford torus ($r=2$): $m^*=5$.
-For Fama-French ($r=4$): $m^*=9$.*
+$$m^{\ast} = 2r+1 \quad\text{(the minimum faithful embedding dimension)} \tag{3.3}$$
+*For the CAPM ($r=1$): $m^{\ast}=3$. For the Clifford torus ($r=2$): $m^{\ast}=5$.
+For Fama-French ($r=4$): $m^{\ast}=9$.*
 
 **Empirical prediction:** Apply the FNN algorithm to S\&P 500 log-returns with delay
-$\tau\approx 5$ trading days. The FNN fraction should drop sharply near $m^*=9$
+$\tau\approx 5$ trading days. The FNN fraction should drop sharply near $m^{\ast}=9$
 (for $r=4$ factors). This is a direct, data-driven estimate of the Fama-French
 factor dimension.
 

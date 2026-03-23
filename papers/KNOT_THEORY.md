@@ -8,7 +8,7 @@
 
 **Abstract.**  
 We establish a deep connection between knot theory and the geometry of efficient
-financial markets. The log-optimal portfolio path $\Gamma = \{b^*(t) : t \in [0,T]\}$
+financial markets. The log-optimal portfolio path $\Gamma = \{b^{\ast}(t) : t \in [0,T]\}$
 traces a curve in the Bhattacharyya sphere $S^{d-1}\_+$, and for $d \geq 4$ this
 curve can be knotted. The knot type of $\Gamma$ is a topological market invariant —
 it determines which minimal surface the efficient market must span (via the Plateau
@@ -61,7 +61,7 @@ surfaces; Chern-Simons; market topology; writhe; unknotting number; satellite kn
 
 The log-optimal portfolio path is:
 
-$$\Gamma: [0,T] \to S^{d-1}_+, \qquad t \mapsto \phi(b^*(t)) = \sqrt{b^*(t)} \tag{1.1}$$
+$$\Gamma: [0,T] \to S^{d-1}_+, \qquad t \mapsto \phi(b^{\ast}(t)) = \sqrt{b^{\ast}(t)} \tag{1.1}$$
 
 For $d = 3$ (three assets): $\Gamma$ is a curve in $S^2\_+$ (a positive octant of the
 2-sphere). Curves on the 2-sphere cannot be knotted — the knot group of $S^2$ is
@@ -86,16 +86,16 @@ the smallest market where non-trivial knot topology can arise.
 ### 1.2 The Plateau problem for knotted boundaries
 
 The **knotted Plateau problem** asks: given a knot $K \subset S^3$, find the minimal
-surface $\Sigma^*$ spanning $K$:
+surface $\Sigma^{\ast}$ spanning $K$:
 
-$$\Sigma^* = \operatorname{argmin}_{\partial\Sigma = K} \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{1.2}$$
+$$\Sigma^{\ast} = \operatorname{argmin}_{\partial\Sigma = K} \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{1.2}$$
 
-The topology of $\Sigma^*$ is constrained by the knot type of $K$:
+The topology of $\Sigma^{\ast}$ is constrained by the knot type of $K$:
 
 **Theorem 1.1** *(Seifert genus and the Plateau problem)*. *The minimum genus
-$g(\Sigma^*)$ of any spanning surface for a knot $K$ is the Seifert genus $g(K)$:*
+$g(\Sigma^{\ast})$ of any spanning surface for a knot $K$ is the Seifert genus $g(K)$:*
 
-$$g(\Sigma^*) = g(K) = \min_{\partial\Sigma = K} \text{genus}(\Sigma) \tag{1.3}$$
+$$g(\Sigma^{\ast}) = g(K) = \min_{\partial\Sigma = K} \text{genus}(\Sigma) \tag{1.3}$$
 
 *For the unknot: $g = 0$ (spanning surface is a disk — CAPM, great sphere).*
 *For the trefoil: $g = 1$ (spanning surface is a torus — Clifford torus universality).*
@@ -117,7 +117,7 @@ topological complexity of the factor structure is bounded below by the knot inva
 
 ### 2.1 The complete dictionary for low-crossing knots
 
-| Knot $K$ | $g(K)$ | Crossings | Minimal surface $\Sigma^*$ | Market structure |
+| Knot $K$ | $g(K)$ | Crossings | Minimal surface $\Sigma^{\ast}$ | Market structure |
 |:---------|:------:|:---------:|:--------------------------|:----------------|
 | Unknot $0\_1$ | 0 | 0 | Great disk (great sphere) | CAPM, no factor interactions |
 | Trefoil $3\_1$ | 1 | 3 | Seifert surface (torus-like) | Clifford torus market |
@@ -352,8 +352,8 @@ it to CAPM type.*
 
 *(iii) The **Fox-Milnor theorem** \[1966\] gives an obstruction: $\Gamma$ is not
 slice if $\Delta\_\Gamma(t) \neq f(t)f(t^{-1})$ for any $f \in \mathbb{Z}[t]$.
-For the trefoil: $\Delta\_{3\_1}(t) = t - 1 + t^{-1}$. Is this of the form $ff^*$?
-Testing: if $f = at + b$ then $ff^* = a^2 + ab(t+t^{-1}) + b^2 = ab(t+t^{-1})
+For the trefoil: $\Delta\_{3\_1}(t) = t - 1 + t^{-1}$. Is this of the form $ff^{\ast}$?
+Testing: if $f = at + b$ then $ff^{\ast} = a^2 + ab(t+t^{-1}) + b^2 = ab(t+t^{-1})
 + (a^2+b^2)$. Matching: $a^2+b^2 = -1$ (impossible over $\mathbb{Z}$).
 Therefore the trefoil is NOT a ribbon knot — a trefoil market has permanent
 topological complexity.*
@@ -607,7 +607,7 @@ a way that is immune to continuous market evolution. Different knot types corres
 to qualitatively different market regimes.
 
 **2. The Jones polynomial is computable from market data.** Given the log-optimal
-portfolio time series $b^*(t)$, project it into $S^3\_+$, compute the winding numbers,
+portfolio time series $b^{\ast}(t)$, project it into $S^3\_+$, compute the winding numbers,
 and evaluate the Jones polynomial. This gives a computable topological market invariant.
 
 **3. The Alexander polynomial predicts factor rotation.** The roots of $\Delta\_\Gamma(t)$

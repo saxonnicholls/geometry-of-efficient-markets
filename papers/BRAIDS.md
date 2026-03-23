@@ -118,7 +118,7 @@ as the closure $\hat\beta$ of some braid $\beta \in B\_d$. The closure identifie
 top and bottom endpoints of the braid, turning the open braid into a closed loop.
 
 **The market closes the strategy braid into a knot:** the log-optimal portfolio
-path $\Gamma = \{b^*(t)\}$ over one business cycle is exactly the closure of the
+path $\Gamma = \{b^{\ast}(t)\}$ over one business cycle is exactly the closure of the
 strategy braid traced by the market.
 
 $$\Gamma = \widehat{\beta_{\text{market}}} \in S^3_+ \tag{1.4}$$
@@ -216,7 +216,7 @@ evaluating the Manifold Universal Portfolio (CONVERGENCE.md), implicitly solves
 a $\\#\mathbf{P}$-hard problem at each time step. In the language of computational
 complexity: the market is a $\\#\mathbf{P}$ oracle.*
 
-*Proof.* At each time step, the market determines the optimal portfolio $b^*(t)$
+*Proof.* At each time step, the market determines the optimal portfolio $b^{\ast}(t)$
 by evaluating the manifold integral (3.1). Via the Chern-Simons/Jones polynomial
 correspondence (KNOT\_THEORY equation 3.4), this integral is equivalent to computing
 $J\_\Gamma(q)$ for the current market path $\Gamma$ at the coupling $q = e^{2\pi i/(k+2)}$.
@@ -283,7 +283,7 @@ homeomorphism $f\_\Gamma: M \to M$ of the market manifold. By Nielsen-Thurston:
 
 **Periodic market:** The economy returns exactly to its initial state after one
 business cycle. All portfolios trace closed orbits. The log-optimal portfolio
-is periodic: $b^*(t+T) = b^*(t)$ exactly. This is the idealised model of
+is periodic: $b^{\ast}(t+T) = b^{\ast}(t)$ exactly. This is the idealised model of
 stationary markets — no secular trend, pure cycles.
 
 **Reducible market:** The market manifold decomposes into invariant sub-manifolds
@@ -385,7 +385,7 @@ Markov model).*
 *Proof.* A sofic shift is characterised by having a **finite follower set** for each
 admissible finite word: given any finite return history, there are only finitely many
 distinct "future" sequences consistent with that history. This is precisely the
-Markov property of the log-optimal portfolio: the current portfolio $b^*(t)$ is a
+Markov property of the log-optimal portfolio: the current portfolio $b^{\ast}(t)$ is a
 sufficient statistic for future returns, determined by the finite factor structure.
 The factor structure defines a finite automaton with $r+1$ states (the vertices of
 the factor simplex $\Delta\_{r-1}$ plus a "start" state), and the return sequence
@@ -400,7 +400,7 @@ The inefficiency manifests as **unbounded complexity of the market language**.
 **Theorem 5.3** *(Entropy identity)*. *The topological entropy of the market shift
 space equals the Kelly growth rate:*
 
-$$h_{\rm top}(X_M, \sigma) = h_{\rm Kelly}(b^*) = \mathbb{E}[\log\langle b^*, x\rangle] \tag{5.4}$$
+$$h_{\rm top}(X_M, \sigma) = h_{\rm Kelly}(b^{\ast}) = \mathbb{E}[\log\langle b^{\ast}, x\rangle] \tag{5.4}$$
 
 *Proof.* The topological entropy of $(X\_M, \sigma)$ is:
 
@@ -487,16 +487,16 @@ For general strategies: this is undecidable — equivalent to the Halting Proble
 for the Turing machine encoded in $\beta$. But:
 
 **Theorem 6.3** *(Log-optimal = halting certificate)*. *The log-optimal portfolio
-$b^*(T)$ is the halting certificate for the market Turing machine: for any admissible
+$b^{\ast}(T)$ is the halting certificate for the market Turing machine: for any admissible
 strategy $\beta$:*
 
-$$\limsup_{T\to\infty} \frac{1}{T}\log\frac{W_T(\beta)}{W_T(b^*)} \leq 0 \quad \text{a.s.} \tag{6.1}$$
+$$\limsup_{T\to\infty} \frac{1}{T}\log\frac{W_T(\beta)}{W_T(b^{\ast})} \leq 0 \quad \text{a.s.} \tag{6.1}$$
 
 *The log-optimal portfolio "halts" on every input — it always converges to
 the maximum achievable wealth rate. No strategy halts on a superset of inputs.*
 
 *This is Cover's theorem (CONVERGENCE.md), reread as a computability statement:
-$b^*$ is the universal halting certificate.*
+$b^{\ast}$ is the universal halting certificate.*
 
 ### 6.3 The computational complexity of market regimes
 
@@ -581,7 +581,7 @@ market** for a given marginal return distribution.
 marginal distribution $(p\_1,\ldots,p\_N)$ is the Gibbs distribution for the Kelly potential.*
 
 The efficient Bernoulli market has:
-$$p_i^* = \frac{e^{T b^{*T}\log x_i}}{\sum_j e^{T b^{*T}\log x_j}} \tag{8.1}$$
+$$p_i^{\ast} = \frac{e^{T b^{*T}\log x_i}}{\sum_j e^{T b^{*T}\log x_j}} \tag{8.1}$$
 
 (the Gibbs distribution with Kelly potential — the **market Gibbs state**). This is
 the unique probability distribution on return symbols consistent with both

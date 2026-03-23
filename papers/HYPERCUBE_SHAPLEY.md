@@ -49,7 +49,7 @@ $$\phi_i = \sum_{S\subseteq[d]\setminus\{i\}}\frac{|S|!(d-|S|-1)!}{d!}
 This satisfies all four Shapley axioms. We prove that the Shapley attribution equals
 the Fisher-Rao gradient of the Kelly growth rate projected onto the $i$-th coordinate:
 
-$$\phi_i = b^*_i\frac{\partial L_T}{\partial b_i}\bigg|_{b=b^*} = b^*_i(\mu_i - \bar\mu) \tag{0.2}$$
+$$\phi_i = b^{\ast}_i\frac{\partial L_T}{\partial b_i}\bigg|_{b=b^{\ast}} = b^{\ast}_i(\mu_i - \bar\mu) \tag{0.2}$$
 
 — the product of the log-optimal weight and the excess expected return. This is
 the **CAPM alpha attribution formula** derived from cooperative game theory.
@@ -191,40 +191,40 @@ given by the formula (0.1).
 ### 3.2 The Shapley = Fisher-Rao gradient theorem
 
 **Theorem 3.2** *(Shapley attribution = Fisher-Rao projection of Kelly gradient)*.
-*For a market with $d$ assets and log-optimal portfolio $b^*$, the Shapley value of
+*For a market with $d$ assets and log-optimal portfolio $b^{\ast}$, the Shapley value of
 asset $i$ in the Kelly game is:*
 
-$$\phi_i = b^*_i\frac{\partial L_T}{\partial b_i}\bigg|_{b^*} \tag{3.1}$$
+$$\phi_i = b^{\ast}_i\frac{\partial L_T}{\partial b_i}\bigg|_{b^{\ast}} \tag{3.1}$$
 
-*where $\partial L\_T/\partial b\_i|\_{b^*} = \mu\_i - \bar\mu$ is the excess expected
+*where $\partial L\_T/\partial b\_i|\_{b^{\ast}} = \mu\_i - \bar\mu$ is the excess expected
 return of asset $i$ over the portfolio mean (the log-optimal portfolio's KKT condition).*
 
 *Proof.* The Shapley value for a game with smooth characteristic function $v$ is:
 
-$$\phi_i = \int_0^1 \frac{\partial v(\lambda b^*)}{\partial b^*_i}\,d\lambda \tag{3.2}$$
+$$\phi_i = \int_0^1 \frac{\partial v(\lambda b^{\ast})}{\partial b^{\ast}_i}\,d\lambda \tag{3.2}$$
 
-(the Owen \[1972\] integral formula). The Kelly game has $v(\lambda b^*) = L\_T(\lambda b^*)$.
+(the Owen \[1972\] integral formula). The Kelly game has $v(\lambda b^{\ast}) = L\_T(\lambda b^{\ast})$.
 The integral gives:
 
-$$\phi_i = \int_0^1 \lambda b^*_i\frac{\partial^2 L_T}{\partial b_i^2}\bigg|_{\lambda b^*}
-+ b^*_i\frac{\partial L_T}{\partial b_i}\bigg|_{\lambda b^*}\,d\lambda \tag{3.3}$$
+$$\phi_i = \int_0^1 \lambda b^{\ast}_i\frac{\partial^2 L_T}{\partial b_i^2}\bigg|_{\lambda b^{\ast}}
++ b^{\ast}_i\frac{\partial L_T}{\partial b_i}\bigg|_{\lambda b^{\ast}}\,d\lambda \tag{3.3}$$
 
-At the log-optimal portfolio: $\partial L\_T/\partial b\_i|\_{b^*} = \mu\_i - \bar\mu$
+At the log-optimal portfolio: $\partial L\_T/\partial b\_i|\_{b^{\ast}} = \mu\_i - \bar\mu$
 (the KKT condition, from CONVERGENCE.md equation 1.8). Substituting and integrating:
-$\phi\_i = b^*\_i(\mu\_i - \bar\mu)$. $\square$
+$\phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$. $\square$
 
 ### 3.3 The Shapley attribution in financial terms
 
-**The Shapley value $\phi\_i = b^*\_i(\mu\_i - \bar\mu)$ is:**
-- **Proportional to the Kelly weight** $b^*\_i$: assets with higher log-optimal weight
+**The Shapley value $\phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$ is:**
+- **Proportional to the Kelly weight** $b^{\ast}\_i$: assets with higher log-optimal weight
   receive higher attribution. A zero-weight asset gets zero Shapley value (dummy axiom ✓).
 - **Proportional to the excess return** $\mu\_i - \bar\mu$: only assets that outperform
   the Kelly mean contribute. Assets with mean expected return get zero attribution.
 - **The CAPM alpha** for the log-optimal portfolio: this is the single-period excess
   return contribution of asset $i$ when held in the Kelly proportion.
 
-**The total attribution** $\sum\_i\phi\_i = \sum\_i b^*\_i(\mu\_i-\bar\mu) = \bar\mu^* - \bar\mu$
-where $\bar\mu^* = b^{*T}\mu$ is the Kelly portfolio expected return. This equals the
+**The total attribution** $\sum\_i\phi\_i = \sum\_i b^{\ast}\_i(\mu\_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu$
+where $\bar\mu^{\ast} = b^{*T}\mu$ is the Kelly portfolio expected return. This equals the
 Kelly portfolio alpha — the excess return over the equal-weight mean. Efficiency axiom ✓.
 
 ### 3.4 Factor attribution via Shapley
@@ -232,12 +232,12 @@ Kelly portfolio alpha — the excess return over the equal-weight mean. Efficien
 For a multi-factor market with $r$ factors and $d$ assets, the Shapley value of factor $k$
 (rather than individual asset $i$) is:
 
-$$\Phi_k = \sum_{i=1}^d V_{ik} b^*_i (\mu_i - \bar\mu) \tag{3.4}$$
+$$\Phi_k = \sum_{i=1}^d V_{ik} b^{\ast}_i (\mu_i - \bar\mu) \tag{3.4}$$
 
 where $V\_{ik}$ is the loading of asset $i$ on factor $k$ (from the PCA of the Fisher
 information matrix). The total factor attribution:
 
-$$\sum_{k=1}^r \Phi_k = \sum_i b^*_i(\mu_i-\bar\mu) = \bar\mu^* - \bar\mu \tag{3.5}$$
+$$\sum_{k=1}^r \Phi_k = \sum_i b^{\ast}_i(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu \tag{3.5}$$
 
 equals the Kelly portfolio alpha — the Shapley attribution is complete.
 
@@ -303,7 +303,7 @@ Higher-order interactions (pairwise, triple, etc.) are the correction terms.
 
 Combining Shapley values with the ANOVA decomposition:
 
-**Asset-level attribution:** $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ — the Shapley value,
+**Asset-level attribution:** $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$ — the Shapley value,
 provably the unique fair attribution.
 
 **Factor-level attribution:** $\Phi\_k = \sum\_i V\_{ik}\phi\_i$ — the factor Shapley value,
@@ -353,7 +353,7 @@ $$\boxed{
 \text{Walsh }w_S & = & \text{Jacobi polynomial degree }|S| \\
 \text{Barycentric subdivision} & = & \text{Voronoi Delaunay} \\
 \text{ANOVA main effect} & = & \text{Shapley value} \\
-\text{Shapley }\phi_i & = & b^*_i(\mu_i-\bar\mu)\text{ (proved)} \\
+\text{Shapley }\phi_i & = & b^{\ast}_i(\mu_i-\bar\mu)\text{ (proved)} \\
 \text{Factor Shapley }\Phi_k & = & \text{unique fair factor attribution} \\
 \text{Normal bundle }\Pi_{NM}\phi & = & \text{unexplained alpha} \\
 \text{Banzhaf }= & & \text{Walsh-Fourier coefficient} \\

@@ -90,13 +90,13 @@ $$\sup_{B \subset M}\left(\frac{1}{|B|}\int_B w\right)\!\!\left(\frac{1}{|B|}\in
 **Lemma 1.3** *(The stationary weight satisfies $A\_2$)*. *The weight
 $w\_{\rm stat} = \prod\_i b\_i^{\alpha\_i-1}$ is a Muckenhoupt $A\_2$ weight
 iff $0 < \alpha\_i < 2$ for all $i$. In market terms: $A\_2$ holds iff
-the Kelly weight satisfies $b^*\_i \in (0, 1/T)^c$ — the log-optimal portfolio
+the Kelly weight satisfies $b^{\ast}\_i \in (0, 1/T)^c$ — the log-optimal portfolio
 does not assign extreme weights close to 0 or 1/T.*
 
 *Proof.* The Muckenhoupt condition fails precisely when the weight concentrates near
 a boundary point with $\alpha\_i \leq 0$ (weight too singular) or $\alpha\_i \geq 2$
-(inverse weight too singular). For $\alpha\_i = T b^*\_i - 1/2 \in (0,\infty)$,
-the condition $\alpha\_i < 2$ requires $b^*\_i < 1/(2T) + 1/2 \approx 1$ — satisfied
+(inverse weight too singular). For $\alpha\_i = T b^{\ast}\_i - 1/2 \in (0,\infty)$,
+the condition $\alpha\_i < 2$ requires $b^{\ast}\_i < 1/(2T) + 1/2 \approx 1$ — satisfied
 for any non-trivial portfolio. $\square$
 
 **Consequence.** When $A\_2$ holds, the FK operator $\mathcal{L}$ extends to a bounded
@@ -186,12 +186,12 @@ so the first $N$ terms give error $O(e^{-N\lambda\_1 T})$.*
 *For large $T$ ($e^{-\lambda\_1 T} \ll 1$): only the $n=0$ term survives, giving
 the **infinite-horizon call price** under the Beta stationary distribution.*
 
-**ATM formula.** At-the-money ($K = b^* = \alpha/(\alpha+\beta)$), the $n=0$ term dominates:
+**ATM formula.** At-the-money ($K = b^{\ast} = \alpha/(\alpha+\beta)$), the $n=0$ term dominates:
 
-$$C_{\rm ATM}^{n=0} = e^{-rT}\left[\frac{\alpha}{\alpha+\beta}\bar{I}_{b^*}(\alpha+1,\beta)
-- b^*\bar{I}_{b^*}(\alpha,\beta)\right] \tag{2.8}$$
+$$C_{\rm ATM}^{n=0} = e^{-rT}\left[\frac{\alpha}{\alpha+\beta}\bar{I}_{b^{\ast}}(\alpha+1,\beta)
+- b^{\ast}\bar{I}_{b^{\ast}}(\alpha,\beta)\right] \tag{2.8}$$
 
-For symmetric parameters ($\alpha = \beta$, equal-weight log-optimal): $b^* = 1/2$,
+For symmetric parameters ($\alpha = \beta$, equal-weight log-optimal): $b^{\ast} = 1/2$,
 $\bar{I}\_{1/2}(\alpha,\alpha) = 1/2$ by symmetry, giving:
 
 $$C_{\rm ATM}^{\rm sym} = e^{-rT}\cdot\frac{1}{2}\left[\frac{1}{2}\bar{I}_{1/2}(\alpha+1,\alpha) - \frac{1}{2}\bar{I}_{1/2}(\alpha,\alpha)\right] = e^{-rT}\frac{\bar{I}_{1/2}(\alpha+1,\alpha) - 1/2}{4} \tag{2.9}$$
@@ -221,17 +221,17 @@ Feller classification of the boundary:
 
 | Parameter | Feller class | Behavior |
 |:---------:|:------------:|:---------|
-| $\alpha < 1$ (i.e. $Tb^*\_A < 3/2$) | Regular | Process can hit 0 and reflect |
+| $\alpha < 1$ (i.e. $Tb^{\ast}\_A < 3/2$) | Regular | Process can hit 0 and reflect |
 | $\alpha = 1$ | Regular/entrance | Process reaches 0 instantaneously |
-| $\alpha > 1$ (i.e. $Tb^*\_A > 3/2$) | Entrance | Process never reaches 0 |
+| $\alpha > 1$ (i.e. $Tb^{\ast}\_A > 3/2$) | Entrance | Process never reaches 0 |
 
-For a typical CAPM market with $d=2$, $T=252$: $\alpha = Tb^* - 1/2 = 125.5$.
+For a typical CAPM market with $d=2$, $T=252$: $\alpha = Tb^{\ast} - 1/2 = 125.5$.
 **The boundary 0 is an entrance boundary: the portfolio weight never hits zero.**
 This is the geometric mechanism behind diversification — the Fisher-Rao metric
 creates an infinite potential barrier at zero weight.
 
 For small portfolios ($d=2$, $T=21$ weekly observations): $\alpha = 10$ — still
-entrance. You need $Tb^* < 3/2$, i.e. $b^* < 1.5/T$ — a portfolio weight less than
+entrance. You need $Tb^{\ast} < 3/2$, i.e. $b^{\ast} < 1.5/T$ — a portfolio weight less than
 $1.5\%$ for daily data — for the boundary to be reachable. This is consistent with
 the observation that very small positions in an asset can be "washed out" by noise
 but large positions cannot.
@@ -539,7 +539,7 @@ change of the torus correction to the option price. For long-maturity options ($
 the Volga approaches zero as the price stabilises at the long-run uniform distribution value.
 For short maturities ($\varepsilon^2 T \ll 1$): Volga equals the standard Black-Scholes Vomma.
 The torus geometry creates a **Volga smile** — Volga peaks at intermediate maturities
-corresponding to the torus traversal time $T^* = (\pi/2)^2/(4\varepsilon^2)$.
+corresponding to the torus traversal time $T^{\ast} = (\pi/2)^2/(4\varepsilon^2)$.
 
 ### 6.6 The Gamma surface across market types
 

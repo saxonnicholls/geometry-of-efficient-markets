@@ -41,10 +41,10 @@ of this submanifold.**
 
 **The FK-WKB identity.** Cover's simplex integral satisfies a Feynman-Kac PDE on
 $(\Delta\_{d-1}, g^{\rm FR})$. The WKB expansion identifies the Fisher information
-matrix as the action Hessian; the Van Vleck-Morette determinant equals $F(b^*)$;
+matrix as the action Hessian; the Van Vleck-Morette determinant equals $F(b^{\ast})$;
 the $O(1/T^2)$ accuracy follows from Cover's prior being the Jeffreys prior.
 
-**The Sharpe-curvature theorem** (proved): $\mathrm{Sharpe}^* = \|H\|\_{L^2(M)}$.
+**The Sharpe-curvature theorem** (proved): $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2(M)}$.
 The vol skew of index options measures $H$ in real time.
 
 **Classification** (proved): only CAPMs are stably efficient.
@@ -112,7 +112,7 @@ from one observable using diffusion maps.
 **Hypercubes/Shapley** (new): $\Delta\_{d-1}\subset[0,1]^d$ (simplex inside hypercube);
 Walsh-Hadamard functions on $[0,1]^d$ restricted to $\Delta\_{d-1}$ = Jacobi polynomials;
 barycentric subdivision = Voronoi Delaunay (proved); Walsh ANOVA = Shapley decomposition.
-Shapley value of asset $i$ in Kelly game = $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ (proved —
+Shapley value of asset $i$ in Kelly game = $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$ (proved —
 the unique fair attribution of Kelly growth satisfying efficiency, symmetry, dummy, linearity).
 Factor Shapley = unique fair factor attribution. Normal bundle projection of Shapley =
 unexplained alpha. Banzhaf power index = Walsh-Fourier coefficient.
@@ -123,11 +123,11 @@ unexplained alpha. Banzhaf power index = Walsh-Fourier coefficient.
 
 The monograph contains at least 25 fully proved new results. The five most important:
 
-1. $\mathrm{Sharpe}^* = \|H\|\_{L^2}$ — the alpha budget is observable from vol skew
+1. $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2}$ — the alpha budget is observable from vol skew
 2. Only CAPMs stably efficient — explains LTCM (stability index 5)
 3. MUP regret $r\log T/2T$ — 12× practical improvement, minimax optimal
 4. Dyson class forced by manifold symmetry — not a modelling choice
-5. Shapley attribution $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ — unique fair attribution proved
+5. Shapley attribution $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$ — unique fair attribution proved
 
 ---
 
@@ -146,7 +146,7 @@ from leverage). Scholarly grounding via Kindleberger, Ferguson, Minsky, Shiller.
 ## Practical Impact
 
 **For the quant practitioner:** MUP algorithm (12× regret improvement), geometric
-pairs trading thresholds ($z^*=\sqrt{1+r/\kappa}$), optimal transformer dimension
+pairs trading thresholds ($z^{\ast}=\sqrt{1+r/\kappa}$), optimal transformer dimension
 for market ML ($d\_{\rm model}=r$), Kelly rate as ML loss calibration benchmark,
 Shapley attribution of portfolio alpha to assets and factors.
 

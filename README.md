@@ -12,7 +12,7 @@ in finance is a computable geometric invariant of this submanifold.
 
 ## The Central Theorem
 
-$$\mathrm{Sharpe}^* = \|H\|_{L^2(M,\, g_M)}$$
+$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M,\, g_M)}$$
 
 The maximum achievable Sharpe ratio equals the RMS mean curvature of the
 market manifold. The vol skew of index options measures $H$ in real time.
@@ -66,7 +66,7 @@ using the wrong measure.
 | `PATH_INTEGRAL.md` | Constrained path integral on $M^r$; theta function = winding sum |
 | `FILTRATIONS.md` | LZ prefix tree = filtration tree; any compressor = valid filtration |
 | `STOCHASTIC_CONTROL_KALMAN.md` | Manifold Kalman filter; geodesic execution; separation theorem |
-| `HYPERCUBE_SHAPLEY.md` | Shapley $\phi\_i = b^*\_i(\mu\_i - \bar\mu)$ (proved); Walsh = Jacobi |
+| `HYPERCUBE_SHAPLEY.md` | Shapley $\phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$ (proved); Walsh = Jacobi |
 | *...and 18 more* | See `navigation/SERIES_PLAN.md` for full list |
 
 ### `navigation/` — Reference Documents
@@ -142,10 +142,10 @@ The five most immediately useful results:
 
 | Result | What to do with it |
 |:-------|:------------------|
-| $\phi\_i = b^*\_i(\mu\_i - \bar\mu)$ | Fair attribution of P&L to assets — `code/shapley/` |
+| $\phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$ | Fair attribution of P&L to assets — `code/shapley/` |
 | Cheeger constant $h\_M \to 0$ before crises | Early warning systemic risk indicator — `code/contagion/` |
-| Optimal entry $z^* = \sqrt{1 + r/\kappa}$ | Replace the 2σ pairs trading rule — `code/pairs/` |
-| Kalman gain $K = F(b^*)^{-1}V\_r^TR\_N^{-1}$ | Optimal signal extraction — `code/kalman/` |
+| Optimal entry $z^{\ast} = \sqrt{1 + r/\kappa}$ | Replace the 2σ pairs trading rule — `code/pairs/` |
+| Kalman gain $K = F(b^{\ast})^{-1}V\_r^TR\_N^{-1}$ | Optimal signal extraction — `code/kalman/` |
 | Kelly rate = minimum ML loss | Calibrate any market model — `code/transformer/` |
 
 ---

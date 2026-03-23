@@ -74,7 +74,7 @@ manifold was a single point — there was no $M^r$ to speak of.
 partition has only one cell. The Cheeger constant $h\_M\to\infty$ (a single cell has
 no bottleneck). But without a factor structure, the diffusion on $\Delta\_{d-1}$ is
 uncontrolled — there is no restoring force. The "stationary distribution" is
-degenerate: the Jacobi parameters $\alpha = T b^* - 1/2 \to 0$ as $b^* \to 0$,
+degenerate: the Jacobi parameters $\alpha = T b^{\ast} - 1/2 \to 0$ as $b^{\ast} \to 0$,
 which is the Feller boundary — the **exactly regular boundary**, where the process
 can reach zero but also return. The tulip price could and did go to zero.
 
@@ -209,7 +209,7 @@ $\mathcal{F}^{\rm full}\setminus\mathcal{F}^M$) generate no alpha.
 
 **"I know from experience that nobody can give me a tip or a series of tips that will
 make more money for me than my own judgement":**
-The log-optimal portfolio $b^*$ is the unique $\mathcal{F}^M$-adapted strategy that
+The log-optimal portfolio $b^{\ast}$ is the unique $\mathcal{F}^M$-adapted strategy that
 maximises log-growth. Tips (unless they are genuine $\mathcal{F}^\perp$ information)
 are in $\mathcal{F}^M$ — already priced in. Livermore had learned, empirically,
 the complexity-theoretic EMH ($\\#\mathbf{P}$-hardness of exact prediction).
@@ -228,7 +228,7 @@ an efficient market and costly in transaction costs.
 
 **Scholar:** Jack Schwager, *Market Wizards* \[1989\]: "The great traders aren't
 making predictions about what the market will do. They are reading what the market
-is doing." In geometric terms: they are estimating $H(b^*(t))$ in real time.
+is doing." In geometric terms: they are estimating $H(b^{\ast}(t))$ in real time.
 
 ---
 
@@ -261,8 +261,8 @@ but could not keep pace with the speculative inflows. By October 1929:
    the implied mean reversion speed of stock prices was declining (volatility was
    rising but mean reversion was slowing — a signature of $\lambda\_1\to 0$).
    Robert Shiller's data \[*Irrational Exuberance*, 2000\] shows exactly this:
-   the Shiller P/E ratio (a proxy for $1/b^*$ in our notation) was at levels where
-   $\lambda\_1 = Tb^* - 1/2 \approx 0$ — the Feller boundary was being approached.
+   the Shiller P/E ratio (a proxy for $1/b^{\ast}$ in our notation) was at levels where
+   $\lambda\_1 = Tb^{\ast} - 1/2 \approx 0$ — the Feller boundary was being approached.
 
 4. **The recovery** (such as it was, 1933-1937) corresponds to MCF restarting from
    a simpler manifold — a CAPM great sphere (the New Deal's simplification of the
@@ -290,7 +290,7 @@ The geometric theory offers an explanation.
 *The geometric reading:* Buffett operates exclusively on the CAPM great sphere —
 the $r=1$, totally geodesic, stably efficient market structure. His "circle of
 competence" is a precise geometric object: the Voronoi cell $A\_0$ of the great
-sphere, centred on the log-optimal portfolio $b^*$ for high-quality businesses
+sphere, centred on the log-optimal portfolio $b^{\ast}$ for high-quality businesses
 with durable competitive advantages.
 
 **"Circle of competence" = Voronoi cell.** Buffett will not invest outside his cell.
@@ -298,29 +298,29 @@ He does not have alpha outside $A\_0$; he has information ($\mathcal{F}^{\rm ful
 vs $\mathcal{F}^M$) within it. The cell boundary is defined by the Fisher-Rao
 distance beyond which his information advantage degenerates.
 
-**"Wonderful businesses at fair prices"** = entering at $z^* = \sqrt{1+r/\kappa}$
+**"Wonderful businesses at fair prices"** = entering at $z^{\ast} = \sqrt{1+r/\kappa}$
 where $r$ is the risk-free rate and $\kappa$ is the mean reversion speed of intrinsic
 value. For high-quality businesses (large moat, $\kappa$ small = slow mean reversion),
-$z^* = \sqrt{1 + r/\kappa} \approx 2$–$3$ — enter at a substantial discount to
+$z^{\ast} = \sqrt{1 + r/\kappa} \approx 2$–$3$ — enter at a substantial discount to
 intrinsic value. For commodity businesses ($\kappa$ large = fast mean reversion to
-competitive equilibrium), $z^* \approx 1$ — barely any discount needed.
+competitive equilibrium), $z^{\ast} \approx 1$ — barely any discount needed.
 
 Buffett's famous reluctance to buy technology companies is not technophobia — it is
 geometry. Technology companies are in a different Voronoi cell (fast-moving,
-$\kappa$ large, $r/\kappa$ small, $z^*\approx 1$) from his circle. The optimal entry
+$\kappa$ large, $r/\kappa$ small, $z^{\ast}\approx 1$) from his circle. The optimal entry
 threshold in his cell is fundamentally different from the threshold in adjacent cells.
 
 **"The market is there to serve you, not to instruct you"** (paraphrase of Graham,
 Buffett's teacher) = the Snell envelope (MARTINGALE\_GEOMETRY): the Snell envelope
 $S\_t$ dominates the gain function $G(b\_t)$ always, with equality at the optimal stopping
-time $\tau^*$. The market price is not the value; the market price is the current
+time $\tau^{\ast}$. The market price is not the value; the market price is the current
 gain function; the value is the Snell envelope. Buffett waits until the market price
 (gain function) exceeds his estimate of the Snell envelope.
 
 **The patience equation.** The expected time to reach the optimal entry point in
 Buffett's Voronoi cell is:
-$$\mathbb{E}[\tau_{z^*}] = \frac{(z^*)^2 - z_0^2}{2\varepsilon^2} \approx \frac{4-1}{2/T} = 1.5T$$
-— for a target $z^* = 2$ starting from $z\_0 = 1$, the expected waiting time is
+$$\mathbb{E}[\tau_{z^{\ast}}] = \frac{(z^{\ast})^2 - z_0^2}{2\varepsilon^2} \approx \frac{4-1}{2/T} = 1.5T$$
+— for a target $z^{\ast} = 2$ starting from $z\_0 = 1$, the expected waiting time is
 1.5 years (for annual return data). Buffett holds cash and waits. This is not a
 failure of imagination; it is the optimal stopping rule applied.
 
@@ -558,11 +558,11 @@ cycle that threatened to spiral.
 *The geometric reading:* LDI strategies are long-duration gilt portfolios near the
 boundary of the portfolio simplex. The weight on long-dated gilts $b_{\rm gilt}$ was
 close to 1 for many LDI funds. By the Feller boundary classification
-(SOBOLEV ESC\_UNDER OPTIONS ESC\_UNDER GREEKS Section 3.1): the Jacobi parameter $\alpha = Tb^*_{\rm gilt} - 1/2$.
-For funds with $b^*_{\rm gilt} \approx 0.9$ and $T = 252$: $\alpha \approx 227$ — the
+(SOBOLEV ESC\_UNDER OPTIONS ESC\_UNDER GREEKS Section 3.1): the Jacobi parameter $\alpha = Tb^{\ast}_{\rm gilt} - 1/2$.
+For funds with $b^{\ast}_{\rm gilt} \approx 0.9$ and $T = 252$: $\alpha \approx 227$ — the
 weight is far from the Feller boundary, the portfolio is stable.
 
-But the leverage changed the effective $b^*$. A pension fund with 3:1 leverage in
+But the leverage changed the effective $b^{\ast}$. A pension fund with 3:1 leverage in
 gilts has an effective gilt weight of $b_{\rm eff} \approx 3\times 0.9 = 2.7 > 1$ —
 **outside the simplex.** When a portfolio leaves the simplex through the boundary
 $b_i = 1$, the Jacobi diffusion coefficient $\sqrt{b(1-b)} = 0$ — the process is
@@ -577,7 +577,7 @@ force.
 
 **The prediction this framework makes:** leveraged strategies with effective weights
 approaching or exceeding 1 are at the Feller exit boundary. The Feller condition
-$Tb^*_i > 3/2$ (SOBOLEV ESC\_UNDER OPTIONS ESC\_UNDER GREEKS, Lemma 1.3) is a stability criterion for
+$Tb^{\ast}_i > 3/2$ (SOBOLEV ESC\_UNDER OPTIONS ESC\_UNDER GREEKS, Lemma 1.3) is a stability criterion for
 portfolio weights. Any strategy violating this condition is vulnerable to the LDI
 dynamics — forced selling when the position moves adversely.
 
@@ -597,7 +597,7 @@ constant declines, (4) MCF singularity forms, (5) manifold collapses to lower ge
 Minsky's "financial instability hypothesis": stability breeds instability. In geometric
 terms: a period of low volatility (small $H$, efficient market) encourages leverage
 (increasing effective portfolio weights), which moves portfolios toward the simplex
-boundary, which reduces the Feller stability parameter $\alpha = Tb^*_i - 1/2$,
+boundary, which reduces the Feller stability parameter $\alpha = Tb^{\ast}_i - 1/2$,
 which makes the market vulnerable to the LDI-type boundary failures. Minsky described
 the geometry without knowing it.
 
@@ -615,12 +615,12 @@ The geometric framework is the next chapter: not probability applied to finance,
 but the geometry of the space on which the probability lives.
 
 **Robert Shiller, *Irrational Exuberance* \[2000, 3rd ed. 2015\]**
-Shiller's Cyclically Adjusted P/E ratio (CAPE) is a proxy for $1/(Tb^*)$ — the
+Shiller's Cyclically Adjusted P/E ratio (CAPE) is a proxy for $1/(Tb^{\ast})$ — the
 ratio of fundamental value to market price, measuring how far the market is from the
-log-optimal portfolio. High CAPE = large Fisher-Rao distance from $b^*$ = large
+log-optimal portfolio. High CAPE = large Fisher-Rao distance from $b^{\ast}$ = large
 $z$-score in the Jacobi diffusion = elevated entry opportunity. Shiller's empirical
 finding that high CAPE predicts low long-run returns is the Jacobi mean-reversion
-property: $z > z^*$ implies drift toward the mean.
+property: $z > z^{\ast}$ implies drift toward the mean.
 
 **John Maynard Keynes, *The General Theory* \[1936\]**
 Keynes on "animal spirits": the observation that investment decisions cannot be

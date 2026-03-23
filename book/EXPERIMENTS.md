@@ -56,10 +56,10 @@ pip install matplotlib seaborn tqdm arch hurst
 ## Experiment 1: The Sharpe-Curvature Identity
 
 ### Theory
-$\mathrm{Sharpe}^* = \|H\|\_{L^2(M)}$ where $H$ is the mean curvature of the
+$\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2(M)}$ where $H$ is the mean curvature of the
 market manifold. The mean curvature is proportional to the component of the
-half-inverse-square-root vector $\tfrac{1}{2\sqrt{b^*}}$ in the normal bundle.
-For a two-factor market: $H(b^*) = \Pi\_{NM}(1/2\sqrt{b^*})$ where $\Pi\_{NM}$ is
+half-inverse-square-root vector $\tfrac{1}{2\sqrt{b^{\ast}}}$ in the normal bundle.
+For a two-factor market: $H(b^{\ast}) = \Pi\_{NM}(1/2\sqrt{b^{\ast}})$ where $\Pi\_{NM}$ is
 the projection onto the normal bundle.
 
 ### Falsifiable Hypothesis
@@ -388,7 +388,7 @@ Predicted improvement factor: $(d-1)/r$. For $d=30$, $r=4$: factor $\approx 7.25
 ### Falsifiable Hypothesis
 **H0:** The MUP does not outperform Cover's portfolio in annualised log-wealth.
 
-**H1 (our theory):** The annualised log-wealth gap $L(b^*) - L(\hat b^{\rm Cover})$
+**H1 (our theory):** The annualised log-wealth gap $L(b^{\ast}) - L(\hat b^{\rm Cover})$
 satisfies $L(\hat b^M\_T) - L(\hat b^{\rm Cover}\_T) \approx (d-1-r)\log T / 2T$
 where $L = $ Kelly growth rate. The gap should increase with $d$ and decrease with $r$.
 
@@ -570,8 +570,8 @@ after transaction costs (assuming 5 bps round-trip per monthly rebalance).
 ## Experiment 4: Fokker-Planck Stationary Distribution
 
 ### Theory
-The long-run distribution of the log-optimal portfolio weight $b^*\_{1,t}$
-(weight on one asset) is Beta$(\alpha,\beta)$ with $\alpha = T\bar{b}^* - 1/2$.
+The long-run distribution of the log-optimal portfolio weight $b^{\ast}\_{1,t}$
+(weight on one asset) is Beta$(\alpha,\beta)$ with $\alpha = T\bar{b}^{\ast} - 1/2$.
 NOT uniform. NOT Gaussian.
 
 ### Falsifiable Hypothesis
@@ -579,11 +579,11 @@ NOT uniform. NOT Gaussian.
 with a uniform distribution on $[0,1]$.
 
 **H1 (our theory):** The empirical distribution is consistent with
-Beta$(\alpha,\beta)$ where $\alpha = T\hat{b}^* - 1/2$, and the
+Beta$(\alpha,\beta)$ where $\alpha = T\hat{b}^{\ast} - 1/2$, and the
 Kolmogorov-Smirnov test rejects the uniform in favour of the Beta.
 
 **What would falsify this:** KS test fails to distinguish empirical distribution
-from uniform, OR the fitted $\alpha$ differs significantly from $T\bar{b}^* - 1/2$.
+from uniform, OR the fitted $\alpha$ differs significantly from $T\bar{b}^{\ast} - 1/2$.
 
 ### Dataset
 Fama-French 25 portfolios, monthly 1963–2024.
@@ -656,7 +656,7 @@ print("Falsification: Beta rejected OR Uniform not rejected")
 ```
 
 **Expected outcome:** KS test does not reject Beta (p > 0.10) but rejects uniform
-(p < 0.01). Fitted $\alpha$ close to $T\bar b^* - 1/2$.
+(p < 0.01). Fitted $\alpha$ close to $T\bar b^{\ast} - 1/2$.
 
 ---
 
@@ -852,17 +852,17 @@ print("Falsification: R² < 0.05 or slope ≤ 0")
 ## Experiment 7: Optimal Pairs Trading Thresholds
 
 ### Theory
-Optimal entry threshold: $z^* = \sqrt{1 + r/\kappa}$ where $r$ is the risk-free
+Optimal entry threshold: $z^{\ast} = \sqrt{1 + r/\kappa}$ where $r$ is the risk-free
 rate and $\kappa$ is the OU mean-reversion speed (= Jacobi spectral gap).
 The classical 2$\sigma$ rule is only optimal when $r \approx 3\kappa$.
 
 ### Falsifiable Hypothesis
-**H0:** The geometric threshold $z^* = \sqrt{1+r/\kappa}$ performs no better
+**H0:** The geometric threshold $z^{\ast} = \sqrt{1+r/\kappa}$ performs no better
 than the fixed 2$\sigma$ rule in out-of-sample pairs trading P&L.
 
 **H1 (our theory):** For pairs with high $\kappa$ (fast mean reversion), the
-geometric threshold $z^* < 2$ and entering earlier is more profitable.
-For low-$\kappa$ pairs, $z^* > 2$ and the 2$\sigma$ rule is too aggressive.
+geometric threshold $z^{\ast} < 2$ and entering earlier is more profitable.
+For low-$\kappa$ pairs, $z^{\ast} > 2$ and the 2$\sigma$ rule is too aggressive.
 The geometric rule should have higher Sharpe ratio and lower drawdown.
 
 **What would falsify this:** No systematic improvement from the geometric rule
@@ -991,7 +991,7 @@ print("Falsification: fixed-2σ systematically outperforms z* across all pairs")
 
 ### Theory
 The topological entropy $h\_{\rm top}(X\_M,\sigma)$ of the market shift space
-equals the Kelly growth rate $h\_{\rm Kelly}(b^*)$. The market's return sequence
+equals the Kelly growth rate $h\_{\rm Kelly}(b^{\ast})$. The market's return sequence
 complexity equals its maximum log-wealth growth rate.
 
 ### Falsifiable Hypothesis
@@ -1347,7 +1347,7 @@ print("Falsification: No consistent improvement across pairs")
 | 4 | Stationary distribution | Portfolio weights ∼ Beta | KS rejects uniform, not Beta | KS rejects Beta |
 | 5 | Jacobi vs GBM | $\sigma^2\propto b(1-b)$ | Jacobi R² > GBM R² | GBM R² ≥ Jacobi R² |
 | 6 | Vol skew | Skew ∝ $H^2/2\sigma\_I$ | Slope $>0$, incremental R²$>0$ | No incremental R² |
-| 7 | Pairs threshold | $z^*=\sqrt{1+r/\kappa}$ | Higher Sharpe than fixed 2σ | Fixed 2σ systematically better |
+| 7 | Pairs threshold | $z^{\ast}=\sqrt{1+r/\kappa}$ | Higher Sharpe than fixed 2σ | Fixed 2σ systematically better |
 | 8 | Entropy = Kelly | $h\_{\rm top}= h\_{\rm Kelly}$ | Slope $\approx 1$, correlation $>0.2$ | Correlation $<0.10$ |
 | 9 | Reynolds number | High Re → crisis | AUC$>0.60$, crisis Re elevated | AUC$<0.55$ |
 | 10 | Berry phase | Phase adjustment helps | Sharpe improvement $>0.2$ | No consistent improvement |

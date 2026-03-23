@@ -8,7 +8,7 @@
 ## Tier 1: Fully Proved and Publishable Today (26 results)
 
 **R1. Sharpe-Curvature Identity** *(MINIMAL\_SURFACE)*
-$\mathrm{Sharpe}^*=\|H\|\_{L^2(M,g\_M)}$.
+$\mathrm{Sharpe}^{\ast}=\|H\|\_{L^2(M,g\_M)}$.
 Vol skew of index options measures $H$ in real time.
 
 **R2. MUP Minimax Optimality, Regret $r\log T/2T$** *(CONVERGENCE)*
@@ -17,14 +17,14 @@ Vol skew of index options measures $H$ in real time.
 **R3. Only CAPMs Are Stably Efficient** *(CLASSIFICATION)*
 Clifford torus stability index 5 = LTCM's five simultaneous failure modes.
 
-**R4. Fat Tails: $\alpha\_i = Tb^*\_i - 1/2$** *(HAMILTONIAN)*
+**R4. Fat Tails: $\alpha\_i = Tb^{\ast}\_i - 1/2$** *(HAMILTONIAN)*
 No free parameters. Predicts $\alpha\approx4.5$ for US equities.
 
 **R5. Fokker-Planck Stationary = Jeffreys Prior = Cover's Prior** *(FOKKER\_PLANCK)*
 Closes Cover's 30-year gap.
 
 **R6. Completeness = Normal Bundle Dimension** *(HAMILTONIAN)*
-Space of EMMs $\cong N\_{b^*}M$. Incompleteness dimension $=d-1-r$.
+Space of EMMs $\cong N\_{b^{\ast}}M$. Incompleteness dimension $=d-1-r$.
 
 **R7. Vol Skew = Mean Curvature** *(DERIVATIVES)*
 $\partial\hat\sigma/\partial k|\_{k=0} = -\varepsilon^2H^2/(2\sigma\_I)$.
@@ -42,10 +42,10 @@ $p\_t=\vartheta\_3$ — exact option pricing for the Clifford torus market.
 Hyperbolic Gamma $y^2(\partial^2\_x+\partial^2\_y)V$: smile from curvature alone.
 
 **R12. Diversification: Feller Boundary Proof** *(SOBOLEV)*
-Portfolio weights never hit zero for $Tb^*\_i>3/2$. Geometric theorem.
+Portfolio weights never hit zero for $Tb^{\ast}\_i>3/2$. Geometric theorem.
 
 **R13. Optimal Pairs Entry/Exit from Hamiltonian Free Boundary** *(PAIRS\_TRADING)*
-$z^*\_{\rm entry}=\sqrt{1+r/\kappa}$. Classical 2$\sigma$ rule is only optimal when $r=3\kappa$.
+$z^{\ast}\_{\rm entry}=\sqrt{1+r/\kappa}$. Classical 2$\sigma$ rule is only optimal when $r=3\kappa$.
 
 **R14. General Prefix Trie = Filtration Tree** *(FILTRATIONS)*
 Any grammar-based compressor (LZ77, LZW, CTW, PPM, BWT) applied to the
@@ -68,10 +68,10 @@ converges to the heat kernel on $M^r$ and cannot outperform the MUP.
 Optimal hidden dimension = $r$.
 
 **R19. Kelly Rate = Minimum Cross-Entropy Loss** *(LLM\_MANIFOLD)*
-$\min\_\theta\mathcal{L}(\theta)=h\_{\rm Kelly}(b^*)$. Calibration criterion for market ML models.
+$\min\_\theta\mathcal{L}(\theta)=h\_{\rm Kelly}(b^{\ast})$. Calibration criterion for market ML models.
 
 **R20. Insider Information Lives in the Normal Bundle** *(LLM\_MANIFOLD)*
-$v\_\mathcal{G}\in N\_{b^*}M$; $\alpha=\varepsilon^2|v\_\mathcal{G}|\_{g^{\rm FR}}$.
+$v\_\mathcal{G}\in N\_{b^{\ast}}M$; $\alpha=\varepsilon^2|v\_\mathcal{G}|\_{g^{\rm FR}}$.
 Co-location is temporal filtration shift (different and weaker).
 
 **R21. Dyson Class Forced by Manifold Symmetry** *(RANDOM\_MATRIX)*
@@ -79,7 +79,7 @@ CAPM $\to$ GOE ($\beta=1$); Clifford torus $\to$ GUE ($\beta=2$, Berry phase);
 pseudo-Anosov $\to$ GSE ($\beta=4$, symplectic foliation). Not a modelling choice.
 
 **R22. Selberg Integral = MUP Partition Function** *(RANDOM\_MATRIX)*
-$\mathcal{Z}\_T^M = S\_r(Tb^*-1/2,\, Tb^*-1/2,\, \beta/2)$. Exact closed form.
+$\mathcal{Z}\_T^M = S\_r(Tb^{\ast}-1/2,\, Tb^{\ast}-1/2,\, \beta/2)$. Exact closed form.
 MUP normalisation constant computable analytically for all three market types.
 
 **R23. Tracy-Widom $F\_\beta$ = Largest Factor Eigenvalue Distribution** *(RANDOM\_MATRIX)*
@@ -89,9 +89,9 @@ Crisis signal: exceedance of the $F\_\beta$ edge. Market-type specific.
 $|\lambda\_i-\lambda\_j|^\beta$ is the Fisher-Rao force keeping factor loadings separated.
 GUE ($\beta=2$) provides stronger diversification than GOE ($\beta=1$).
 
-**R25. Shapley Attribution $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$** *(HYPERCUBE\_SHAPLEY)*
+**R25. Shapley Attribution $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$** *(HYPERCUBE\_SHAPLEY)*
 Proved: the Shapley value of asset $i$ in the Kelly cooperative game equals the
-Fisher-Rao gradient of the Kelly rate at $b^*$. Unique fair attribution satisfying
+Fisher-Rao gradient of the Kelly rate at $b^{\ast}$. Unique fair attribution satisfying
 all four Shapley axioms. Factor Shapley = unique fair factor attribution.
 
 **R26. Walsh Functions = Jacobi Polynomials on the Simplex** *(HYPERCUBE\_SHAPLEY)*
