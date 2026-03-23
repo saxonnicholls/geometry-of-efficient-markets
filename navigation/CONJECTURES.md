@@ -30,7 +30,7 @@ From Milnor independence of torus knots.
 
 ## Part II: Computation and Information Theory
 
-**C6. $\\#\mathbf{P}$-Hardness of Return Prediction (Grade B)**
+**C6. #**P**-Hardness of Return Prediction (Grade B)**
 *Open step:* Identify $q\_0=e^{2\pi i/(k+2)}$ is not at an exceptional easy value.
 
 **C7. Pseudo-Anosov Markets Simulate Rule 110 (Grade B)**

@@ -212,7 +212,7 @@ make more money for me than my own judgement":**
 The log-optimal portfolio $b^{\ast}$ is the unique $\mathcal{F}^M$-adapted strategy that
 maximises log-growth. Tips (unless they are genuine $\mathcal{F}^\perp$ information)
 are in $\mathcal{F}^M$ — already priced in. Livermore had learned, empirically,
-the complexity-theoretic EMH ($\\#\mathbf{P}$-hardness of exact prediction).
+the complexity-theoretic EMH (#**P**-hardness of exact prediction).
 
 **Livermore's 1907 short and 1929 short:**
 Both were positions based on recognising the Cheeger constant declining — the manifold

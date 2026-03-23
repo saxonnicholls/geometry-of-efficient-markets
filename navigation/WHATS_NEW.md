@@ -137,7 +137,7 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 
 **R50.** Jones polynomial = market partition function
 **R51.** Topological EMH: $J\_\Gamma(q)=1\iff$CAPM
-**R52.** $\\#\mathbf{P}$-hardness of return prediction
+**R52.** #**P**-hardness of return prediction
 **R53.** Pseudo-Anosov markets simulate Rule 110 (Turing complete)
 **R54.** Topologically protected alpha from $c\_1(NM)\neq0$
 **R55.** Berry phase = adiabatic alpha from correlation cycles

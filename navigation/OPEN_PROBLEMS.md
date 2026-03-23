@@ -17,7 +17,7 @@ $\beta\_H=-H/2+cH^3+\ldots$ Compute $c$ from heat kernel expansion to one higher
 
 **OP3. CS/Jones Identification Rigorous ★★★★**
 Identify $q\_0=e^{2\pi i/(k+2)}$ and verify $k$ not at an exceptional easy value.
-*Unlocks:* C2 (topological EMH), C6 ($\\#\mathbf{P}$-hardness).
+*Unlocks:* C2 (topological EMH), C6 (#**P**-hardness).
 
 **OP4. Compute Market Chern Number from Return Data ★★**
 Implement Chern-Weil formula for $c\_1(NM)$ quarterly from rolling covariance.

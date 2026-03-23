@@ -55,7 +55,7 @@ Ch.11: Dyson class forced by manifold symmetry (GOE/GUE/GSE);
 
 Ch.12: Berry phase; parallel transport = hedge update; topologically protected alpha
 Ch.13: Knot classification; Jones polynomial; topological EMH; Alexander = factor rotation
-Ch.14: Braids; Yang-Baxter; pseudo-Anosov; $\\#\mathbf{P}$ oracle; complexity hierarchy
+Ch.14: Braids; Yang-Baxter; pseudo-Anosov; #**P** oracle; complexity hierarchy
 Ch.15: ML-randomness; Wolfram Class IV; Rule 110; Martin-Löf and Kelly rate
 Ch.16: Geometric filtrations; Voronoi atoms; LZ=filtration; general compressor theorem;
         Clifford winding number; sofic shift; filtration complexity = Willmore

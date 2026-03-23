@@ -43,7 +43,7 @@ RG: CAPM = IR fixed point; Willmore = $c$-function; running Sharpe formula.
 ### 4 · Topology, Computation, Filtrations *(KNOT\_THEORY, BRAIDS, FIBER\_BUNDLES, COMPLEXITY, FILTRATIONS)*
 Knot type classifies markets. Jones polynomial = market partition function.
 Alexander roots = factor rotation eigenvalues. Yang-Baxter = no braiding arbitrage.
-$\mathbf{P}/\\#\mathbf{P}/\Pi\_2^0/\mathbf{PPAD}$ prediction hierarchy.
+**P**/#**P**/Π₂⁰/PPAD prediction hierarchy.
 LZ prefix tree = filtration tree (proved; any compressor = valid filtration).
 Clifford torus winding number = momentum vs contrarian (topological classifier).
 

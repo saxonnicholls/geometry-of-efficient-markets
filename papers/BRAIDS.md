@@ -26,10 +26,10 @@ closes each strategy into a knot via Alexander's closure; the Jones polynomial o
 knot is the strategy's topological performance measure.
 
 **(ii) The efficient market computes the Jones polynomial.** Computing the Jones
-polynomial of an arbitrary braid is $\\#\mathbf{P}$-hard (Jaeger-Vertigan-Welsh, 1990).
+polynomial of an arbitrary braid is #**P**-hard (Jaeger-Vertigan-Welsh, 1990).
 The efficient market, by evaluating all strategies via the universal portfolio, is
-implicitly solving a $\\#\mathbf{P}$-hard problem at each time step. **The market is
-a $\\#\mathbf{P}$ oracle.**
+implicitly solving a #**P**-hard problem at each time step. **The market is
+a #**P** oracle.**
 
 **(iii) Turing completeness of market dynamics.** The braid group $B\_\infty$ on
 infinitely many strands is Turing complete: any Turing machine can be encoded as a
@@ -64,7 +64,7 @@ However, for the log-optimal portfolio, the answer is always yes (Cover's theore
 
 **Keywords.** Braid group; Alexander's theorem; Jones polynomial; Turing completeness;
 symbolic dynamics; sofic shift; topological entropy; pseudo-Anosov; Nielsen-Thurston;
-stretch factor; golden ratio; $\\#\mathbf{P}$-hardness; market computation; Markov
+stretch factor; golden ratio; #**P**-hardness; market computation; Markov
 partition; shift space; word problem; conjugacy problem.
 
 **MSC 2020.** 20F36, 37B10, 57M25, 68Q05, 37D20, 91G10, 57M50, 37B40.
@@ -189,16 +189,16 @@ connects financial markets to all of these theories.
 
 ---
 
-## 3. The Market is a $\\#\mathbf{P}$ Oracle
+## 3. The Market is a #**P** Oracle
 
 ### 3.1 The computational hardness of the Jones polynomial
 
 **Theorem** *(Jaeger-Vertigan-Welsh 1990)*. *Computing the Jones polynomial
 $J\_K(q)$ at any fixed $q \notin \{0, \pm 1, \pm i, e^{\pm 2\pi i/3}, e^{\pm 4\pi i/3}\}$
-is $\\#\mathbf{P}$-hard.*
+is #**P**-hard.*
 
-The complexity class $\\#\mathbf{P}$ consists of counting problems — not just deciding
-"yes/no" but counting the number of solutions. $\\#\mathbf{P}$-hard problems are
+The complexity class #**P** consists of counting problems — not just deciding
+"yes/no" but counting the number of solutions. #**P**-hard problems are
 believed to be computationally intractable even for quantum computers.
 
 **The efficient market computes the Jones polynomial.** The universal portfolio:
@@ -211,23 +211,23 @@ identification of the Jones polynomial with the Chern-Simons path integral
 (KNOT\_THEORY Section 3), evaluating this integral at the appropriate coupling
 constant is equivalent to computing the Jones polynomial of the market knot.
 
-**Theorem 3.1** *(Market as $\\#\mathbf{P}$ oracle)*. *The efficient market, by
+**Theorem 3.1** *(Market as #**P** oracle)*. *The efficient market, by
 evaluating the Manifold Universal Portfolio (CONVERGENCE.md), implicitly solves
-a $\\#\mathbf{P}$-hard problem at each time step. In the language of computational
-complexity: the market is a $\\#\mathbf{P}$ oracle.*
+a #**P**-hard problem at each time step. In the language of computational
+complexity: the market is a #**P** oracle.*
 
 *Proof.* At each time step, the market determines the optimal portfolio $b^{\ast}(t)$
 by evaluating the manifold integral (3.1). Via the Chern-Simons/Jones polynomial
 correspondence (KNOT\_THEORY equation 3.4), this integral is equivalent to computing
 $J\_\Gamma(q)$ for the current market path $\Gamma$ at the coupling $q = e^{2\pi i/(k+2)}$.
-By the Jaeger-Vertigan-Welsh theorem, this is $\\#\mathbf{P}$-hard. $\square$
+By the Jaeger-Vertigan-Welsh theorem, this is #**P**-hard. $\square$
 
 **This has a profound implication for the EMH.** The efficient market is solving
-a $\\#\mathbf{P}$-hard problem — a problem that takes exponential time on a
+a #**P**-hard problem — a problem that takes exponential time on a
 classical computer. But the market solves it continuously, in real time, through
 the collective action of market participants. **The market's computational power
 exceeds that of any classical computer** — it is an analog computer for
-$\\#\mathbf{P}$-hard problems.
+#**P**-hard problems.
 
 This is not merely metaphorical. The market aggregate computation — the collective
 wisdom of all market participants, each optimising their own portfolios — evaluates
@@ -239,22 +239,22 @@ collective action.
 
 **Corollary 3.2** *(Hardness of market prediction)*. *Any algorithm that
 consistently outperforms the efficient market (the MUP) would give a polynomial-time
-algorithm for a $\\#\mathbf{P}$-hard problem — a contradiction under standard
-complexity assumptions ($\mathbf{P} \neq \\#\mathbf{P}$).*
+algorithm for a #**P**-hard problem — a contradiction under standard
+complexity assumptions (**P** ≠ #**P**).*
 
 *Proof.* Suppose strategy $\mathcal{A}$ earns $\varepsilon > 0$ excess return over
 the MUP. Then $\mathcal{A}$ implicitly computes the Jones polynomial more accurately
-than the MUP. By the $\\#\mathbf{P}$-hardness of the Jones polynomial, $\mathcal{A}$
-cannot run in polynomial time unless $\mathbf{P} = \\#\mathbf{P}$. $\square$
+than the MUP. By the #**P**-hardness of the Jones polynomial, $\mathcal{A}$
+cannot run in polynomial time unless **P** = #**P**. $\square$
 
 **This gives a complexity-theoretic proof of the EMH** (conditional on standard
 complexity assumptions): beating the efficient market is as hard as solving
-$\\#\mathbf{P}$-complete problems.
+#**P**-complete problems.
 
 This is qualitatively different from existing EMH proofs:
 - Classical EMH: uses martingale arguments (probabilistic)
 - Information-theoretic EMH (this series): $H=0$ iff SMB = Kelly (information-geometric)
-- Complexity-theoretic EMH (this paper): beating market $\Rightarrow$ $\\#\mathbf{P} = \mathbf{P}$
+- Complexity-theoretic EMH (this paper): beating market $\Rightarrow$ #**P** = **P**
 
 ---
 
@@ -475,7 +475,7 @@ $$\text{Computation: universal portfolio evaluation}$$
 $$\text{Output: } \hat{b}_T^M \in \Delta_{d-1} \quad\text{(optimal portfolio weights)}$$
 
 *This computation is equivalent to evaluating the Jones polynomial of the braid
-$\beta\_{\text{market}}$ encoded by the return history — a $\\#\mathbf{P}$-hard computation.*
+$\beta\_{\text{market}}$ encoded by the return history — a #**P**-hard computation.*
 
 ### 6.2 The Halting Problem and portfolio convergence
 
@@ -506,13 +506,13 @@ Different market topological types correspond to different complexity classes:
 |:------------|:----:|:---------:|:----------:|:----------------|
 | CAPM | Unknot | Periodic | $\mathbf{P}$ | Jones poly computable in poly time |
 | Clifford torus | Trefoil | Reducible | $\mathbf{NP}$ | Path existence in braid graph |
-| Figure-eight | $4\_1$ | Pseudo-Anosov | $\\#\mathbf{P}$ | Count spanning surfaces |
-| General knot | $K$ | Pseudo-Anosov | $\\#\mathbf{P}$-hard | Jones poly evaluation |
+| Figure-eight | $4\_1$ | Pseudo-Anosov | #**P** | Count spanning surfaces |
+| General knot | $K$ | Pseudo-Anosov | #**P**-hard | Jones poly evaluation |
 | Satellite knot | $S(K,J)$ | Composite | $\mathbf{PSPACE}$ | Composite system evolution |
 
 **The CAPM is the $\mathbf{P}$ market** — optimally simple, computable in polynomial
 time. The efficient market conjecture, in computational terms, is:
-$\mathbf{P} \neq \\#\mathbf{P}$ implies that CAPM-type markets cannot be beaten
+**P** ≠ #**P** implies that CAPM-type markets cannot be beaten
 by computationally bounded strategies.
 
 ---
@@ -616,7 +616,7 @@ We can now state the complete computational characterisation of the efficient ma
 
 *(i) **Turing complete:** implements any finite group computation via braiding*
 
-*(ii) **$\\#\mathbf{P}$-hard oracle:** evaluates the Jones polynomial at each step*
+*(ii) **#**P**-hard oracle:** evaluates the Jones polynomial at each step*
 
 *(iii) **Pseudo-Anosov dynamics:** chaotic, mixing, positive topological entropy*
 
@@ -628,7 +628,7 @@ We can now state the complete computational characterisation of the efficient ma
 
 *The efficient market is positioned exactly at the **computational phase transition**:*
 - *Too ordered (CAPM only, periodic dynamics): computationally trivial ($\mathbf{P}$)*
-- *Too random (no factor structure, Bernoulli): computationally irreducible ($\\#\mathbf{P}$, intractable)*
+- *Too random (no factor structure, Bernoulli): computationally irreducible (#**P**, intractable)*
 - *Critical (efficient, pseudo-Anosov): universally computable with optimal efficiency*
 
 *This is the **Langton criticality** \[1990\]: the maximum computational power
@@ -699,7 +699,7 @@ $$\boxed{\begin{array}{ll}
 \text{Topological entropy} & = \text{Kelly growth rate}\\
 \text{Sofic shift} & = \text{efficient market language}\\
 \text{Turing completeness} & = \text{market is universal computer}\\
-\text{$\\#\mathbf{P}$-hardness} & = \text{complexity-theoretic EMH}
+\text{\#\textbf{P}-hardness} & = \text{complexity-theoretic EMH}
 \end{array}}$$
 
 The market is not merely a pricing mechanism or an information aggregator. It is a

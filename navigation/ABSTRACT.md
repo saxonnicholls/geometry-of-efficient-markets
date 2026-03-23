@@ -67,8 +67,8 @@ diversification.
 Knot theory classifies markets: Jones polynomial = market partition function; topological
 EMH $J\_\Gamma=1\iff$CAPM; Alexander polynomial roots = factor rotation eigenvalues.
 Braids: Yang-Baxter = no braiding arbitrage; pseudo-Anosov = chaotic efficient market;
-market is a $\\#\mathbf{P}$ oracle. Prediction complexity hierarchy:
-$\mathbf{P}$ (sign) $\to$ $\\#\mathbf{P}$ (exact return) $\to$ $\Pi\_2^0$ (long-run)
+market is a #**P** oracle. Prediction complexity hierarchy:
+$\mathbf{P}$ (sign) $\to$ #**P** (exact return) $\to$ $\Pi\_2^0$ (long-run)
 $\to$ $\mathbf{PPAD}$ (equilibrium). Filtrations: Voronoi atoms explicitly constructed;
 LZ prefix tree = filtration tree (general: any grammar-based compressor = valid
 filtration); Clifford torus winding number = momentum/contrarian classification.
