@@ -685,8 +685,7 @@ $$dS + H(b, \nabla S)\,dt + r(b,t)\,dt = \nabla_b S \cdot \sigma^{\rm mkt}(b,t)\
 
 where $\sigma^{\rm mkt}$ is the volatility of the market parameters. The solution theory for
 stochastic HJ on manifolds is an active research area \[Lions–Souganidis 1998\]. We conjecture
-that the universal portfolio wealth remains a FK functional for the joint process $(B\_t^\varepsilon,
-b^{\ast}(t))$ on $\Delta\_{d-1} \times \Delta\_{d-1}$, and that the stochastic Stokes theorem (6.10)
+that the universal portfolio wealth remains a FK functional for the joint process $(B\_t^\varepsilon, b^{\ast}(t))$ on $\Delta\_{d-1} \times \Delta\_{d-1}$, and that the stochastic Stokes theorem (6.10)
 extends to this product space with an additional Itô correction from the correlation between
 the WF diffusion and the market noise.
 

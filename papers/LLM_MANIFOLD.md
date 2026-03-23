@@ -32,8 +32,7 @@ future returns. Any model that learns more than $r$ dimensions of market structu
 is overfitting; any model that learns fewer than $r$ dimensions is losing information.
 The market manifold dimension $r$ is the intrinsic dimensionality of all market data.
 
-**(iii) The LLM convergence theorem.** A transformer with hidden dimension $d\_{\rm model}
-\geq r$ trained on an efficient market's complete data with sufficient capacity and
+**(iii) The LLM convergence theorem.** A transformer with hidden dimension $d\_{\rm model} \geq r$ trained on an efficient market's complete data with sufficient capacity and
 training converges (in total variation) to a model that:
 - Represents the market state as a point on $M^r$
 - Predicts the next return distribution as the heat kernel $p\_{\Delta t}(b^{\ast}(t),\cdot)$
@@ -354,8 +353,7 @@ market $M\_{\mathcal{G}} = M + \epsilon v\_{\mathcal{G}}$. $\square$
 faster filtration — they observe $\mathcal{F}^X\_{t-\epsilon}$ (the present) while others
 see $\mathcal{F}^X\_{t-\delta}$ with $\delta > \epsilon$. This is not "normal bundle"
 information — it is a temporal shift of the same filtration. The alpha is bounded by
-the filtration complexity per unit time: $c\_{\rm LZ}(s\_{0:T})\cdot h\_{\rm Kelly}/T
-\cdot (\delta - \epsilon)$.
+the filtration complexity per unit time: $c\_{\rm LZ}(s\_{0:T})\cdot h\_{\rm Kelly}/T \cdot (\delta - \epsilon)$.
 
 ### 4.4 What a transformer can and cannot learn
 

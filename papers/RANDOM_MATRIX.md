@@ -32,8 +32,7 @@ or $4$ vs $\beta=1$) means the factor eigenvalues are more spread out, the manif
 is better conditioned, and the portfolio is more robustly diversified.
 
 **(iii) The Selberg integral IS the MUP partition function.** The Selberg integral
-$S\_n(\alpha,\beta,\gamma) = \int\_{[0,1]^n}\prod\_i t\_i^{\alpha-1}(1-t\_i)^{\beta-1}
-\prod\_{i<j}|t\_i-t\_j|^{2\gamma}\,dt\_i$ is the exact partition function for the
+$S\_n(\alpha,\beta,\gamma) = \int\_{[0,1]^n}\prod\_i t\_i^{\alpha-1}(1-t\_i)^{\beta-1} \prod\_{i<j}|t\_i-t\_j|^{2\gamma}\,dt\_i$ is the exact partition function for the
 $\beta$-ensemble on the portfolio simplex with Jacobi-type potential. Setting
 $\alpha = \beta = Tb^{\ast} - 1/2$ (the Jacobi parameters from MARKET\_PROCESSES.md)
 and $\gamma = \beta/2$: the Selberg integral equals the MUP normalisation constant

@@ -222,8 +222,7 @@ $$\dot b_t = \varepsilon^2\nabla_{g_M}L_T(b_t) + \varepsilon\,\eta_t
 = -\varepsilon^2\Pi_{TM}\!\left[\nabla_{g^{\rm FR}}L_T\right] + \varepsilon\,\eta_t \tag{3.3}$$
 
 The drift is the gradient of the Kelly growth rate projected onto $TM$ — which, by the
-KKT conditions for the log-optimal portfolio, equals $-\varepsilon^2\Pi\_{NM}\vec{H}/T +
-O(\varepsilon^4)$ (from CONVERGENCE.md). For the efficient market ($H=0$): zero drift.
+KKT conditions for the log-optimal portfolio, equals $-\varepsilon^2\Pi\_{NM}\vec{H}/T + O(\varepsilon^4)$ (from CONVERGENCE.md). For the efficient market ($H=0$): zero drift.
 
 **Connection to our previous processes:** Equation (3.3) IS the SDE from MARKET\_PROCESSES.md —
 the Langevin equation generates exactly the same diffusion as the WF process on $M^r$.

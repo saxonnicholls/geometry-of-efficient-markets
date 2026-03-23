@@ -313,8 +313,7 @@ The Clifford torus is **self-dual under pseudoinversion**: $A^+ = A$. This is a
 deep structural property — the Clifford torus is a fixed point of the pseudoinverse map
 on the space of shape operators.
 
-For a perturbation of the Clifford torus (the tilted torus with $\kappa\_1 = \kappa + \varepsilon,
-\kappa\_2 = -\kappa + \varepsilon$, $H = \varepsilon \neq 0$):
+For a perturbation of the Clifford torus (the tilted torus with $\kappa\_1 = \kappa + \varepsilon, \kappa\_2 = -\kappa + \varepsilon$, $H = \varepsilon \neq 0$):
 
 $$A^+ = \begin{pmatrix}1/(\kappa+\varepsilon)&0\\0&1/(-\kappa+\varepsilon)\end{pmatrix},
 \qquad \mathrm{tr}(A^+) = \frac{2\varepsilon}{\varepsilon^2 - \kappa^2} \neq 0 \tag{4.5}$$
@@ -368,8 +367,7 @@ $|A|\_F^2 = 2\kappa^2$ and $|A^+|\_F^2 = 2/\kappa^2$. The duality map $f \mapsto
 on the principal curvature function $\kappa(x)$ is a diffeomorphism of $M$ to $M^+$
 whose Jacobian is $J = |\nabla\kappa|^2/\kappa^4$ (from the inverse function theorem on
 the curvature). The area element transforms as $d\mathrm{vol}\_{M^+} = J\,d\mathrm{vol}\_M$
-and the Willmore integral is preserved by the cancellation of $\kappa^4 \cdot (1/\kappa^2) =
-\kappa^2$. $\square$
+and the Willmore integral is preserved by the cancellation of $\kappa^4 \cdot (1/\kappa^2) = \kappa^2$. $\square$
 
 ---
 

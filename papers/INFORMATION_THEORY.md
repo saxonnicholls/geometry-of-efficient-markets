@@ -214,8 +214,7 @@ description needs only the linear factor loading matrix $\Phi$ — a point in th
 Grassmannian $\mathrm{Gr}(r, d)$ requiring $r(d-r)$ real parameters. Part (ii): any
 non-zero $II$ requires additional data beyond $\Phi$ — the shape functions $A\_k(x)$ for
 $x \in M$ — increasing $K(M)$. Part (iii): the Simons gap $|II|^2 \geq (d-2)/(d-1)$
-(non-zero implies bounded below) translates directly to a gap in $\mathcal{W}\_2 \geq
-(d-2)/(d-1) \cdot \mathrm{Area}$, and hence in $K(M)$. $\square$
+(non-zero implies bounded below) translates directly to a gap in $\mathcal{W}\_2 \geq (d-2)/(d-1) \cdot \mathrm{Area}$, and hence in $K(M)$. $\square$
 
 **The MDL principle** \[Rissanen 1978\] selects the model with minimum description length.
 Applied to market modelling: among all market structures consistent with the data, MDL
@@ -380,8 +379,7 @@ $H=0$ is preserved. $\square$
 *Proof of (iii).* From the stability condition (5.2), the market manifold is stable iff
 all shape operator singular values are below the threshold. The threshold itself depends on
 $\lambda\_1(-\Delta\_M)$, which scales as $\lambda\_1 \propto 1/\sigma^2$ (since the Laplacian
-eigenvalues scale inversely with the metric). So the threshold scales as $\sigma^{\ast} \propto
-1/\sigma\_i(A)$. Above $\sigma^{\ast}$, the Laplacian gap is too small to provide restoring force
+eigenvalues scale inversely with the metric). So the threshold scales as $\sigma^{\ast} \propto 1/\sigma\_i(A)$. Above $\sigma^{\ast}$, the Laplacian gap is too small to provide restoring force
 and the manifold becomes unstable. $\square$
 
 **Portfolio interpretation.** High volatility markets ($\sigma > \sigma^{\ast}$) have small
@@ -422,8 +420,7 @@ between movements along $M$ (factor bets) and movements off $M$ (idiosyncratic b
 
 ### 6.2 The manifold efficient frontier
 
-**Definition 6.1** (Manifold efficient frontier). *For a market manifold $M \subset
-\Delta\_{d-1}$, the **manifold efficient frontier** is:*
+**Definition 6.1** (Manifold efficient frontier). *For a market manifold $M \subset \Delta\_{d-1}$, the **manifold efficient frontier** is:*
 
 $$\mathcal{F}(M) = \left\{b \in \Delta_{d-1} : b = b^{\ast} + \xi,\;
 \xi \in N_{b^{\ast}}M,\; |\xi|_{g^{\mathrm{FR}}} = \rho\right\}_{\rho \geq 0} \tag{6.2}$$

@@ -186,8 +186,7 @@ where the **Jacobi operator** is:
 
 $$Lf = \Delta_\Sigma f + \left(|II|^2 + \overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu})\right)f \tag{3.2}$$
 
-Here $\Delta\_\Sigma$ is the Laplace–Beltrami operator of $(\Sigma, g\_\Sigma)$, $|II|^2 =
-\sum\_{a,b}|II(e\_a,e\_b)|^2$ is the squared norm of the second fundamental form (summed over
+Here $\Delta\_\Sigma$ is the Laplace–Beltrami operator of $(\Sigma, g\_\Sigma)$, $|II|^2 = \sum\_{a,b}|II(e\_a,e\_b)|^2$ is the squared norm of the second fundamental form (summed over
 an orthonormal frame $\{e\_a\}$ of $\Sigma$), and $\overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu})$
 is the ambient Ricci curvature in the normal direction.
 
@@ -390,8 +389,7 @@ $\overline{\mathrm{Ric}} = \frac{2}{4} = \frac{1}{2}$):
 
 $$Lf = \Delta_{T^2} f + \left(2 + \frac{1}{2}\right)f = \Delta_{T^2}f + \frac{5}{2}f \tag{5.1}$$
 
-Wait — let me be careful about signs. The Jacobi operator has $Lf = \Delta\_\Sigma f +
-(|II|^2 + \overline{\mathrm{Ric}})f$. A minimal surface has area that is *increased* by
+Wait — let me be careful about signs. The Jacobi operator has $Lf = \Delta\_\Sigma f + (|II|^2 + \overline{\mathrm{Ric}})f$. A minimal surface has area that is *increased* by
 perturbations when $L$ has only positive eigenvalues. The second variation is
 $\delta^2\mathrm{Area} = -\int fLf\,d\mathrm{vol} = \int f(-L)f\,d\mathrm{vol}$,
 so stability requires $-L \geq 0$, i.e.\ $L \leq 0$, i.e.\ all eigenvalues of $L$

@@ -305,8 +305,7 @@ pseudo-Anosov monodromy is:*
 
 *(ii) Has dense periodic orbits: periodic market paths are dense in $M$*
 
-*(iii) Has sensitive dependence: two similar portfolio histories diverge at rate
-$\log\lambda\_{\rm pA}$ per cycle*
+*(iii) Has sensitive dependence: two similar portfolio histories diverge at rate $\log\lambda\_{\rm pA}$ per cycle*
 
 *In short: it is chaotic in the sense of Devaney. Yet it is simultaneously efficient
 ($H=0$ for the minimal surface) — chaos and efficiency are compatible.*

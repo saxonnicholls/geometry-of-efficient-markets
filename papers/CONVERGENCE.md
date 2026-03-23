@@ -99,8 +99,7 @@ Now decompose $\nabla L(b^{\ast}(t))$ into tangential and normal components over
 $$\nabla_{g^{FR}} L(b^{\ast}(t)) = \underbrace{\Pi_{T_{b^{\ast}}M}\nabla_{g^{FR}} L}_{\text{tangential}} + \underbrace{\Pi_{N_{b^{\ast}}M}\nabla_{g^{FR}} L}_{\text{normal}} \tag{1.4}$$
 
 **Tangential component.** By the KKT condition (1.3) with $\mu = 0$, the gradient
-$\nabla L(b^{\ast}) = \lambda\mathbf{1}$ is parallel to $\mathbf{1}$. Since $\mathbf{1}
-\perp T\Delta$ (in the Euclidean sense), and $T\_{b^{\ast}}M \subset T\_{b^{\ast}}\Delta$:
+$\nabla L(b^{\ast}) = \lambda\mathbf{1}$ is parallel to $\mathbf{1}$. Since $\mathbf{1} \perp T\Delta$ (in the Euclidean sense), and $T\_{b^{\ast}}M \subset T\_{b^{\ast}}\Delta$:
 
 $$\Pi_{T_{b^{\ast}}M}\nabla_{g^{FR}} L(b^{\ast}) = 0 \tag{1.5}$$
 

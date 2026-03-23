@@ -79,8 +79,7 @@ Gauge-invariant quantities (Willmore energy, Sharpe ratio) are independent of th
 Total space: $\{(t, V) : V \in \text{Gr}(r,d)\}$ where $V$ is the factor subspace at time $t$.
 
 *Financial meaning:* The evolution of the factor structure over time. As the economy
-changes (new sectors emerge, correlations shift), the factor subspace $V\_r(t) \in
-\text{Gr}(r,d)$ traces a path in the Grassmannian. The connection on this bundle
+changes (new sectors emerge, correlations shift), the factor subspace $V\_r(t) \in \text{Gr}(r,d)$ traces a path in the Grassmannian. The connection on this bundle
 governs how portfolios should be updated to track the changing factor structure.
 
 ### 1.2 The canonical connections

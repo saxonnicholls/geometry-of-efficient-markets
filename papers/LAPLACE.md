@@ -353,8 +353,7 @@ Assembling: $u(b^{\ast},T) = e^{S(b^{\ast},T)/\varepsilon^2}\cdot A\_0(b^{\ast},
 
 $$u(b^{\ast},T) = W_T(b^{\ast})\cdot \left(\frac{T}{2\pi}\right)^{(d-1)/2}|\det F(b^{\ast})|^{1/2} \tag{3.17}$$
 
-Integrating the Gaussian approximation $u(b,T) \approx u(b^{\ast},T)\cdot
-e^{-T(b-b^{\ast})^TF(b^{\ast})(b-b^{\ast})/2}$ over $\Delta\_{d-1}$ (locally approximated by
+Integrating the Gaussian approximation $u(b,T) \approx u(b^{\ast},T)\cdot e^{-T(b-b^{\ast})^TF(b^{\ast})(b-b^{\ast})/2}$ over $\Delta\_{d-1}$ (locally approximated by
 $T\_{b^{\ast}}\Delta\_{d-1} \cong \mathbb{R}^{d-1}$):
 
 $$\int_\Delta u(b,T)\,d\mu(b) \approx W_T(b^{\ast})\cdot\left(\frac{T}{2\pi}\right)^{(d-1)/2}

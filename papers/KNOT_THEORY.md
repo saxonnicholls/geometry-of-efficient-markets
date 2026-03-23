@@ -353,8 +353,7 @@ it to CAPM type.*
 *(iii) The **Fox-Milnor theorem** \[1966\] gives an obstruction: $\Gamma$ is not
 slice if $\Delta\_\Gamma(t) \neq f(t)f(t^{-1})$ for any $f \in \mathbb{Z}[t]$.
 For the trefoil: $\Delta\_{3\_1}(t) = t - 1 + t^{-1}$. Is this of the form $ff^{\ast}$?
-Testing: if $f = at + b$ then $ff^{\ast} = a^2 + ab(t+t^{-1}) + b^2 = ab(t+t^{-1})
-+ (a^2+b^2)$. Matching: $a^2+b^2 = -1$ (impossible over $\mathbb{Z}$).
+Testing: if $f = at + b$ then $ff^{\ast} = a^2 + ab(t+t^{-1}) + b^2 = ab(t+t^{-1}) + (a^2+b^2)$. Matching: $a^2+b^2 = -1$ (impossible over $\mathbb{Z}$).
 Therefore the trefoil is NOT a ribbon knot — a trefoil market has permanent
 topological complexity.*
 

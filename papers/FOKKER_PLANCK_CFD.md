@@ -101,8 +101,7 @@ $\Delta\_M\rho = 0$ with the constraint $\int\rho\,d\mathrm{vol}\_M = 1$. On a
 compact manifold, the only harmonic (constant) function is the constant function.
 The normalised constant function $\rho\_\infty = 1/\mathrm{vol}(M)$ corresponds,
 in the original simplex coordinates, to the Jeffreys prior
-$\rho\_\infty(b) \propto \prod\_i b\_i^{-1/2}$ (since $d\mathrm{vol}\_{g^{\mathrm{FR}}} =
-\prod\_i b\_i^{-1/2}\,db\_i$). $\square$
+$\rho\_\infty(b) \propto \prod\_i b\_i^{-1/2}$ (since $d\mathrm{vol}\_{g^{\mathrm{FR}}} = \prod\_i b\_i^{-1/2}\,db\_i$). $\square$
 
 **This is the deepest explanation of why Cover's prior works.** Cover chose the
 Dirichlet$(1,\ldots,1)$ prior (uniform) for the universal portfolio. The Jeffreys prior
@@ -489,8 +488,7 @@ For $H = 0.01$ (1% daily curvature): $\mathrm{Re} \approx 4$ — transitional.
 For $H = 0.1$: $\mathrm{Re} \approx 40$ — turbulent.
 
 **The market turbulence transition** at $\mathrm{Re} \approx 10$ corresponds to
-$H \approx 0.025$ — a Sharpe of $\|H\|\_{L^2} \approx 0.025\cdot\sqrt{\mathrm{Area}(M)}
-\approx 0.025 \times 1.57 \approx 0.04$ — a 4% annual Sharpe. This is the threshold
+$H \approx 0.025$ — a Sharpe of $\|H\|\_{L^2} \approx 0.025\cdot\sqrt{\mathrm{Area}(M)} \approx 0.025 \times 1.57 \approx 0.04$ — a 4% annual Sharpe. This is the threshold
 above which the market's dynamics become "turbulent" and unpredictable: consistent
 with the empirical finding that factor strategies with Sharpe $> 0.3$–$0.4$ tend to
 attract enough capital to drive the market toward efficiency.
