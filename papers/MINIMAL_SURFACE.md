@@ -1,6 +1,8 @@
 # Market Efficiency as a Minimal Surface Condition:  
 ## Willmore Energy, Mean Curvature Flow, and the Geometry of Efficient Markets
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

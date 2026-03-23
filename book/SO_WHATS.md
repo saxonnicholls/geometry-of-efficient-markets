@@ -2,6 +2,8 @@
 ## What Every Portfolio Manager Should Take From This Work
 ### Plain English. No Equations. Real Money.
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 > *"I have no use for a theory I cannot explain to a bright twelve-year-old

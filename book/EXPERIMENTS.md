@@ -2,6 +2,8 @@
 
 ## A Replication Guide for Practitioners
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 > *"A theory that cannot be killed by data is not a theory.

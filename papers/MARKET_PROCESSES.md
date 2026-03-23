@@ -2,6 +2,8 @@
 ## Beyond GBM — Exact SDEs, Transition Densities, and Return Distributions
 ## Forced by Market Topology
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

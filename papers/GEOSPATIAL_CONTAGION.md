@@ -2,6 +2,8 @@
 ## on Market Manifolds: H3, S2, R-Trees, Local Hashing,
 ## and the Geometry of Financial Contagion
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

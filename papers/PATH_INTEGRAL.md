@@ -2,6 +2,8 @@
 ## Derivative Pricing as a Sum Over Manifold Paths,
 ## the Langevin Equation, and the Constrained Risk-Neutral Measure
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

@@ -2,6 +2,8 @@
 ## Anecdotes, Notable Events, and the Scholars Who Saw It Coming
 ### A Reader's Guide to the Theory Through Two Centuries of Markets
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 > *"The market teaches the same lessons over and over again.

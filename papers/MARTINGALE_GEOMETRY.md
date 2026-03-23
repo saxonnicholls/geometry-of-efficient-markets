@@ -2,6 +2,8 @@
 ## Measure Theory, Optimal Stopping, BSDEs, Snell Envelopes,
 ## and the Bellman-HJB Equation on Market Manifolds
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

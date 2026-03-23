@@ -3,6 +3,8 @@
 ## Grassberger-Procaccia, Guttman-Brak, and Wilf
 ## in the Geometric Framework
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

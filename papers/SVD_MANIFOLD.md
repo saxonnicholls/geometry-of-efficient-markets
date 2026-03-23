@@ -1,6 +1,8 @@
 # The Singular Value Decomposition as an Operator on Minimal Surfaces:
 ## Curvature Preservation, the Pseudoinverse Duality, and Applications to Market Geometry
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

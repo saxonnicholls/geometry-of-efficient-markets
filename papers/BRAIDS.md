@@ -2,6 +2,8 @@
 ## Braid Groups, Turing Completeness, Symbolic Dynamics,
 ## and the Computational Theory of Efficient Markets
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

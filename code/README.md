@@ -8,6 +8,8 @@ Mathematics of Financial Markets."*
 Every major theorem in the monograph has a corresponding function. Every experiment
 in `book/EXPERIMENTS.md` has a corresponding script. All data sources are free.
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## Quick Start

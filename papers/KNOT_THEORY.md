@@ -2,6 +2,8 @@
 ## Knots as Boundaries of Efficient Markets, the Jones Polynomial
 ## as a Market Partition Function, and Topological Market Invariants
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

@@ -2,6 +2,8 @@
 ## on the Market Manifold: The Simplex Inside the Cube,
 ## and the Unique Fair Attribution of Kelly Growth to Assets
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

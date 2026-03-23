@@ -2,6 +2,8 @@
 ## Feigenbaum Universality, Deterministic-Stochastic Equivalence,
 ## and Building $M^r$ from a Single Return Series
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

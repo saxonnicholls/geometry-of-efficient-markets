@@ -2,6 +2,8 @@
 ## Holonomy, Berry Phase, Parallel Transport,
 ## and Topologically Protected Alpha
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

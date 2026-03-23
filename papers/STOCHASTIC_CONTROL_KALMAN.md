@@ -1,6 +1,8 @@
 # Stochastic Control, Kalman Filtering, and Portfolio Management
 ## on the Market Manifold: A Practical Guide for Portfolio Managers
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

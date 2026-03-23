@@ -2,6 +2,8 @@
 ## Non-Anticipating Sequences, Lempel-Ziv Complexity,
 ## Prefix Trees, and the Information Structure of Efficient Markets
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

@@ -1,6 +1,8 @@
 # A Feynman–Kac Formula on the High-Dimensional Simplex,  
 ## with a Stochastic Stokes Theorem and Applications to Universal Portfolio Theory
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.** We establish a Feynman–Kac representation for the wealth functional of Cover's

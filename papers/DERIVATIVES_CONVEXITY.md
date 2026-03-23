@@ -1,6 +1,8 @@
 # Derivatives Pricing on Minimal Market Manifolds,
 ## Convex Geometry of Portfolios, and the Boyd Connections
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

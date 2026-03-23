@@ -1,6 +1,8 @@
 # Sobolev Spaces, Exact Option Pricing, Barrier Problems,
 ## and the Geometric Greeks on Market Manifolds
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

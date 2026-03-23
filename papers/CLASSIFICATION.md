@@ -1,6 +1,8 @@
 # A Classification of Efficient Market Structures  
 ## via Minimal Surface Theory and the Simons Stability Theorem
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Saxon Nicholls. MIT License. See LICENSE.
 """
 kelly.py
 --------

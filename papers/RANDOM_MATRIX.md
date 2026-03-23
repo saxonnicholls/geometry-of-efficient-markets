@@ -1,6 +1,8 @@
 # Random Matrix Theory and the Efficient Market Manifold:
 ## The Dyson Classification Is Not a Choice — It Is Forced by the Geometry
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

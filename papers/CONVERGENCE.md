@@ -2,6 +2,8 @@
 ## Proving the Efficiency Conjecture, Tightening Cover's Convergence,
 ## and Integration over Low-Dimensional Market Manifolds
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

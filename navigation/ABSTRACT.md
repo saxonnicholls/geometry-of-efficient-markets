@@ -1,6 +1,8 @@
 # The Geometry of Efficient Markets
 ## Extended Abstract and Publisher Overview
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 *Minimal Surfaces, Universal Portfolios, and the Mathematics of Financial Markets*
 
 ---

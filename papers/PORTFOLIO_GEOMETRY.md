@@ -1,6 +1,8 @@
 # Portfolio Construction on Minimal Market Manifolds:
 ## What Different Efficient Structures Mean for the Investor
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

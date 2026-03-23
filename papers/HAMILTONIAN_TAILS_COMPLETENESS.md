@@ -1,6 +1,8 @@
 # The Efficient Market Hamiltonian, Fat Tails as Geometric Necessity,
 ## and Market Completeness from the Normal Bundle
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

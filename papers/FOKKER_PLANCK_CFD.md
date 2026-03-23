@@ -2,6 +2,8 @@
 ## on Market Manifolds: Better Stochastic Processes, Voronoi Geometry,
 ## and the Portfolio Fluid
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

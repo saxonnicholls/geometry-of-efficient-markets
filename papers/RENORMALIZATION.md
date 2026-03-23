@@ -1,6 +1,8 @@
 # The Efficient Market as a Renormalization Group Fixed Point:
 ## Criticality, Wilson Flows, and the Information-Theoretic Phase Transition
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

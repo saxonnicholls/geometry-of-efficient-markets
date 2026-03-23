@@ -20,6 +20,8 @@ complexity; sofic shift; cellular automaton; Rule 110; Garside; Halting Problem;
 
 **MSC 2020.** 68Q15, 68Q30, 03D10, 37B10, 20F10, 91G10, 37D20, 68Q80.
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## 1. The Complexity Trichotomy

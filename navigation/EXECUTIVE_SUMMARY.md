@@ -1,6 +1,8 @@
 # The Geometry of Efficient Markets — Executive Summary
 ## 35 Papers · ~145,000 Words · 25+ Proved Results
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## The Single Organising Principle

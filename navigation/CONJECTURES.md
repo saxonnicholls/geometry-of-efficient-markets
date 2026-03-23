@@ -1,6 +1,8 @@
 # Conjectures: The Unproved but Believed
 ## Graded A (near-certain) or B (probable)
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## Part I: Market Efficiency

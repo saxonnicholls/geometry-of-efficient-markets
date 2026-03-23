@@ -2,6 +2,8 @@
 ## Bhattacharyya Sphere, Berry Phase, Optimal Stopping,
 ## and the Ornstein-Uhlenbeck / Quantum Harmonic Oscillator Duality
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

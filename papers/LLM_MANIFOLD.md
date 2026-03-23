@@ -1,6 +1,8 @@
 # Large Language Models, Transformers, and the Market Manifold:
 ## Why No Machine Learning Model Can Beat the MUP Without Side-Channel Information
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

@@ -1,6 +1,8 @@
 # Publication Plan: The Geometry of Efficient Markets
 ## Complete Strategy — Monograph, Papers, Repository
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## The Monograph

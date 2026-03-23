@@ -1,6 +1,8 @@
 # What Is New: Complete Inventory of Original Contributions
 ## Ranked from Strongest to Most Speculative
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## Tier 1: Fully Proved and Publishable Today (26 results)

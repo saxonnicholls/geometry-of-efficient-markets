@@ -1,5 +1,7 @@
 # The Geometry of Efficient Markets
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 A mathematical monograph establishing that a financial market is a minimal
 submanifold of the Bhattacharyya sphere, and that every important quantity
 in finance is a computable geometric invariant of this submanifold.
@@ -170,7 +172,8 @@ Euler eligibility:   V - E + F = χ(M)      (lattice constraint on contagion gra
 ## Citation
 
 ```bibtex
-@book{geometry_efficient_markets_2025,
+@book{nicholls2025geometry,
+  author    = {Nicholls, Saxon},
   title     = {The Geometry of Efficient Markets},
   subtitle  = {Minimal Surfaces, Universal Portfolios, and the
                Mathematics of Financial Markets},

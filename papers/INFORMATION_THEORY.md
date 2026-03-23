@@ -2,6 +2,8 @@
 ## Kolmogorov Complexity, Shannon Capacity, the SMB Theorem,
 ## and Entropy Geometry on Minimal Market Manifolds
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

@@ -2,6 +2,8 @@
 ## to a Feynman–Kac PDE on the Simplex:  
 ### Exact Error Analysis for the Universal Portfolio
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

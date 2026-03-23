@@ -1,6 +1,8 @@
 # Open Problems: The Research Programme
 ## Organised by Difficulty and Priority
 
+**Saxon Nicholls** — me@saxonnicholls.com
+
 ---
 
 ## Group A: Complete the Core Theory
