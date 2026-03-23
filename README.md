@@ -32,7 +32,7 @@ market manifold. The vol skew of index options measures $H$ in real time.
 ## The Single Organising Principle
 
 > *A financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
-> $S^{d-1}_+$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
+> $S^{d-1}\_+$. Portfolio weights are barycentric coordinates on $\Delta\_{d-1}$.
 > Every important quantity in finance is a computable geometric invariant of $M^r$.*
 
 This single sentence explains: why Cover's prior works; why only CAPMs are stable;
@@ -60,13 +60,13 @@ using the wrong measure.
 | `MINIMAL_SURFACE.md` | **Sharpe\* = ‖H‖ (proved)**; EMH conjecture; Willmore = inefficiency |
 | `CLASSIFICATION.md` | Only CAPMs stably efficient; Clifford torus index = 5 |
 | `CONVERGENCE.md` | MUP regret $r\log T/2T$; minimax optimal |
-| `MARKET_PROCESSES.md` | Jacobi, theta function $\vartheta_3$, McKean — exact transition densities |
+| `MARKET_PROCESSES.md` | Jacobi, theta function $\vartheta\_3$, McKean — exact transition densities |
 | `RANDOM_MATRIX.md` | Dyson class forced by manifold; Selberg = MUP partition function |
 | `LLM_MANIFOLD.md` | LMSR = softmax = Fisher; LLM ≤ MUP (proved) |
 | `PATH_INTEGRAL.md` | Constrained path integral on $M^r$; theta function = winding sum |
 | `FILTRATIONS.md` | LZ prefix tree = filtration tree; any compressor = valid filtration |
 | `STOCHASTIC_CONTROL_KALMAN.md` | Manifold Kalman filter; geodesic execution; separation theorem |
-| `HYPERCUBE_SHAPLEY.md` | Shapley $\phi_i = b^*_i(\mu_i - \bar\mu)$ (proved); Walsh = Jacobi |
+| `HYPERCUBE_SHAPLEY.md` | Shapley $\phi\_i = b^*\_i(\mu\_i - \bar\mu)$ (proved); Walsh = Jacobi |
 | *...and 18 more* | See `navigation/SERIES_PLAN.md` for full list |
 
 ### `navigation/` — Reference Documents
@@ -142,10 +142,10 @@ The five most immediately useful results:
 
 | Result | What to do with it |
 |:-------|:------------------|
-| $\phi_i = b^*_i(\mu_i - \bar\mu)$ | Fair attribution of P&L to assets — `code/shapley/` |
-| Cheeger constant $h_M \to 0$ before crises | Early warning systemic risk indicator — `code/contagion/` |
+| $\phi\_i = b^*\_i(\mu\_i - \bar\mu)$ | Fair attribution of P&L to assets — `code/shapley/` |
+| Cheeger constant $h\_M \to 0$ before crises | Early warning systemic risk indicator — `code/contagion/` |
 | Optimal entry $z^* = \sqrt{1 + r/\kappa}$ | Replace the 2σ pairs trading rule — `code/pairs/` |
-| Kalman gain $K = F(b^*)^{-1}V_r^TR_N^{-1}$ | Optimal signal extraction — `code/kalman/` |
+| Kalman gain $K = F(b^*)^{-1}V\_r^TR\_N^{-1}$ | Optimal signal extraction — `code/kalman/` |
 | Kelly rate = minimum ML loss | Calibrate any market model — `code/transformer/` |
 
 ---

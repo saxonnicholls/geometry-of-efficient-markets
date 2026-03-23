@@ -35,8 +35,8 @@ chaotic" or "really stochastic" is unobservable and irrelevant: both give the
 same $M^r$, the same tail indices, the same option prices.
 
 **(iii) Takens embedding reconstructs $M^r$.** By Takens' theorem, the delay
-embedding $\mathbf{x}(t) = (x_t, x_{t-\tau}, x_{t-2\tau}, \ldots, x_{t-(2r)\tau})$
-of a scalar observable $x_t = f(b^*(t))$ into $\mathbb{R}^{2r+1}$ produces a
+embedding $\mathbf{x}(t) = (x\_t, x\_{t-\tau}, x\_{t-2\tau}, \ldots, x\_{t-(2r)\tau})$
+of a scalar observable $x\_t = f(b^*(t))$ into $\mathbb{R}^{2r+1}$ produces a
 manifold diffeomorphic to $M^r$. The minimal embedding dimension is $2r+1$ — where
 $r$ is the market manifold dimension. This gives a completely practical algorithm:
 embed a single return series with increasing delay dimension; the embedding dimension
@@ -44,9 +44,9 @@ where the false nearest-neighbour fraction drops to zero is $2r+1$; the embedded
 manifold IS (topologically) $M^r$.
 
 **(iv) Symbol sequence Takens embedding.** The Takens theorem applies to symbolic
-sequences as well as real-valued series. The Voronoi cell sequence $(s_0,s_1,\ldots)$,
-embedded as delay vectors $(s_t, s_{t-1}, \ldots, s_{t-2r})$ in $\{0,\ldots,r\}^{2r+1}$,
-reconstructs the filtration $\mathcal{F}^{\rm Vor}_t$ — the Voronoi filtration of
+sequences as well as real-valued series. The Voronoi cell sequence $(s\_0,s\_1,\ldots)$,
+embedded as delay vectors $(s\_t, s\_{t-1}, \ldots, s\_{t-2r})$ in $\{0,\ldots,r\}^{2r+1}$,
+reconstructs the filtration $\mathcal{F}^{\rm Vor}\_t$ — the Voronoi filtration of
 FILTRATIONS.md. The LZ prefix tree is the symbolic analogue of the Takens embedding.
 
 **(v) Practical manifold estimation.** Combining Takens embedding with the diffusion
@@ -84,18 +84,18 @@ are identical: same manifold, same tail indices, same option prices, same filtra
 
 **Theorem 1.1** *(Deterministic-stochastic equivalence on $M^r$)*. 
 *Let $(M^r, f)$ be a pseudo-Anosov market (deterministic chaos) with Lyapunov
-exponent $\chi_1 = \log\lambda_{\rm pA}$. Let $(M^r, \mathbb{P}_\varepsilon)$ be
+exponent $\chi\_1 = \log\lambda\_{\rm pA}$. Let $(M^r, \mathbb{P}\_\varepsilon)$ be
 the stochastic WF diffusion on $M^r$ with diffusion parameter $\varepsilon$.
 As $\varepsilon\to 0$:*
 
-*(i) The stationary distributions of the two systems converge: $\mathbb{P}_\varepsilon \to \mu_{\rm SRB}$
+*(i) The stationary distributions of the two systems converge: $\mathbb{P}\_\varepsilon \to \mu\_{\rm SRB}$
 (the Sinai-Ruelle-Bowen measure of the pseudo-Anosov map).*
 
 *(ii) The Lyapunov exponents of the stochastic system converge to those of the deterministic system:
-$\chi_1(\varepsilon) \to \log\lambda_{\rm pA}$ as $\varepsilon\to 0$.*
+$\chi\_1(\varepsilon) \to \log\lambda\_{\rm pA}$ as $\varepsilon\to 0$.*
 
 *(iii) The Jacobi eigenvalues of the stochastic system coincide with the characteristic
-exponents of the deterministic system: $\lambda_k(L_M) = k\cdot\log\lambda_{\rm pA}/r$.*
+exponents of the deterministic system: $\lambda\_k(L\_M) = k\cdot\log\lambda\_{\rm pA}/r$.*
 
 *Both systems generate the same market manifold $M^r$, the same Fisher-Rao metric,
 and the same option prices.*
@@ -116,16 +116,16 @@ $M^r$ is observable; its generating mechanism (deterministic vs stochastic) is n
 
 ### 2.1 The period-doubling route to chaos
 
-Feigenbaum \[1978, 1979\] discovered that the logistic map $x_{n+1} = rx_n(1-x_n)$
-undergoes a universal period-doubling cascade as $r$ increases from 1 to $r_\infty = 3.5699\ldots$:
+Feigenbaum \[1978, 1979\] discovered that the logistic map $x\_{n+1} = rx\_n(1-x\_n)$
+undergoes a universal period-doubling cascade as $r$ increases from 1 to $r\_\infty = 3.5699\ldots$:
 
 - $r < 3$: stable fixed point (Period 1)
 - $r = 3$: Period 2 bifurcation
 - $r = 3.449\ldots$: Period 4
 - $\vdots$
-- $r_\infty$: chaos onset
+- $r\_\infty$: chaos onset
 
-The bifurcations occur at parameter values $r_n$ with the universal ratio:
+The bifurcations occur at parameter values $r\_n$ with the universal ratio:
 $$\delta = \lim_{n\to\infty}\frac{r_n - r_{n-1}}{r_{n+1}-r_n} = 4.6692\ldots \tag{2.1}$$
 
 and the attractor scaling with universal constant $\alpha = -2.5029\ldots$.
@@ -133,11 +133,11 @@ and the attractor scaling with universal constant $\alpha = -2.5029\ldots$.
 ### 2.2 The market bifurcation parameter
 
 In the RG framework of RENORMALIZATION.md, the market's RG flow has:
-- **Stable fixed point** ($H=0$, CAPM): corresponds to the logistic map's $r < r_c$
+- **Stable fixed point** ($H=0$, CAPM): corresponds to the logistic map's $r < r\_c$
   (periodic, Wolfram Class II)
 - **Unstable fixed point** (Clifford torus, $H=0$, stability index 5): corresponds to
   the period-5 window of the logistic map — five unstable directions
-- **Chaotic regime** (pseudo-Anosov, $H\neq 0$ generically): corresponds to $r > r_\infty$
+- **Chaotic regime** (pseudo-Anosov, $H\neq 0$ generically): corresponds to $r > r\_\infty$
 
 **The market bifurcation parameter** is the market's Reynolds number $\mathrm{Re} = H\cdot T\cdot\mathrm{diam}(M)$ from GEOSPATIAL\_CONTAGION.md. As $\mathrm{Re}$ increases:
 
@@ -147,16 +147,16 @@ $$\mathrm{Re} = 0\text{ (efficient/CAPM)} \to 1\text{ (transitional)} \to \infty
 *The transition from periodic to chaotic market dynamics, viewed as a function of
 the mean curvature $H$ (the market's "control parameter"), exhibits Feigenbaum
 universality: the sequence of period-doubling bifurcations in the market manifold's
-Jacobi spectrum occurs at curvature values $H_n$ with the universal ratio:*
+Jacobi spectrum occurs at curvature values $H\_n$ with the universal ratio:*
 
 $$\lim_{n\to\infty}\frac{H_n - H_{n-1}}{H_{n+1}-H_n} = \delta_{\rm Feigenbaum} = 4.6692\ldots \tag{2.2}$$
 
 *The self-similarity constant $\alpha = 2.5029\ldots$ governs the scaling of the
 Voronoi cell sizes at each bifurcation level.*
 
-*Proof.* The Jacobi operator $L_M = \Delta_M + |II|^2 + \mathrm{Ric}_M$ on $M^r$
+*Proof.* The Jacobi operator $L\_M = \Delta\_M + |II|^2 + \mathrm{Ric}\_M$ on $M^r$
 has the same mathematical structure as the Ruelle-Perron-Frobenius operator of the
-logistic map restricted to the interval $[H_{\rm min}, H_{\rm max}]$. The universality
+logistic map restricted to the interval $[H\_{\rm min}, H\_{\rm max}]$. The universality
 theorem of Feigenbaum (which applies to all unimodal maps, not just the logistic map)
 therefore applies to the market's bifurcation sequence. $\square$
 
@@ -184,7 +184,7 @@ b \mapsto (\phi(b), \phi(f(b)), \phi(f^2(b)), \ldots, \phi(f^{2r}(b))) \tag{3.1}
 is a generic diffeomorphism onto its image — i.e., for generic $\phi$ and $f$,
 the delay embedding is a smooth embedding of $M^r$ into $\mathbb{R}^{2r+1}$.
 
-**Financial translation:** Let $x_t = \phi(b^*(t)) = \log(S_{A,t}/S_{A,0})$
+**Financial translation:** Let $x\_t = \phi(b^*(t)) = \log(S\_{A,t}/S\_{A,0})$
 (the log-return of a single asset $A$). The delay embedding:
 
 $$\mathbf{x}(t) = (x_t, x_{t-\tau}, x_{t-2\tau}, \ldots, x_{t-2r\tau}) \in \mathbb{R}^{2r+1} \tag{3.2}$$
@@ -204,8 +204,8 @@ the market manifold!
 
 1. Embed the return series with dimension $m$: $\mathbf{x}(t) \in \mathbb{R}^m$
 2. For each point $\mathbf{x}(t)$, find its nearest neighbour $\mathbf{x}(t')$
-3. Promote to dimension $m+1$: compute the ratio $|x_{t-m\tau} - x_{t'-m\tau}|/\|\mathbf{x}(t)-\mathbf{x}(t')\|$
-4. If this ratio exceeds a threshold $R_{\rm tol}$: the neighbour is "false" (only
+3. Promote to dimension $m+1$: compute the ratio $|x\_{t-m\tau} - x\_{t'-m\tau}|/\|\mathbf{x}(t)-\mathbf{x}(t')\|$
+4. If this ratio exceeds a threshold $R\_{\rm tol}$: the neighbour is "false" (only
    appears close due to projection artefact)
 5. The market manifold dimension: $r = (m^* - 1)/2$ where $m^*$ is the smallest $m$
    for which the FNN fraction drops below 1\%
@@ -228,16 +228,16 @@ factor dimension.
 ### 3.3 Diffusion maps for manifold reconstruction
 
 The Coifman-Lafon **diffusion maps** algorithm \[2006\] reconstructs the Riemannian
-geometry of the embedded manifold from the point cloud $\{\mathbf{x}(t)\}_{t=1}^T$:
+geometry of the embedded manifold from the point cloud $\{\mathbf{x}(t)\}\_{t=1}^T$:
 
-1. Compute the kernel matrix $K_{ij} = \exp(-\|\mathbf{x}(t_i)-\mathbf{x}(t_j)\|^2/\epsilon)$
-2. Row-normalise: $P_{ij} = K_{ij}/\sum_k K_{ik}$ (the Markov matrix)
-3. The eigenvectors $\{\psi_1,\ldots,\psi_r\}$ of $P$ with eigenvalues $\{\lambda_1,\ldots,\lambda_r\}$
+1. Compute the kernel matrix $K\_{ij} = \exp(-\|\mathbf{x}(t\_i)-\mathbf{x}(t\_j)\|^2/\epsilon)$
+2. Row-normalise: $P\_{ij} = K\_{ij}/\sum\_k K\_{ik}$ (the Markov matrix)
+3. The eigenvectors $\{\psi\_1,\ldots,\psi\_r\}$ of $P$ with eigenvalues $\{\lambda\_1,\ldots,\lambda\_r\}$
    near 1 are the **diffusion map coordinates** — they parameterise $M^r$
 
 **The diffusion map coordinates ARE the Voronoi cell structure of $M^r$** — the
 eigenvectors of the Markov matrix correspond to the eigenvectors of the Laplace-Beltrami
-operator $\Delta_M$, which are the Jacobi eigenfunctions.
+operator $\Delta\_M$, which are the Jacobi eigenfunctions.
 
 **The three-step practical algorithm for market manifold estimation:**
 
@@ -268,7 +268,7 @@ single S\&P 500 return series with no additional data.
 
 The standard Takens theorem is for real-valued observables. The symbolic version:
 
-**Theorem 4.1** *(Symbolic Takens)*. *Let $(X_M, \sigma)$ be the Voronoi shift space
+**Theorem 4.1** *(Symbolic Takens)*. *Let $(X\_M, \sigma)$ be the Voronoi shift space
 (FILTRATIONS.md, BRAIDS.md) with alphabet $\mathcal{A} = \{0,\ldots,r\}$.
 For a generic observable $\phi:M^r\to\mathcal{A}$ (the Voronoi cell map), the
 symbolic delay embedding:*
@@ -276,8 +276,8 @@ symbolic delay embedding:*
 $$\Phi_{\rm sym}: X_M \to \mathcal{A}^{2r+1},
 \qquad (s_t)_{t\geq 0} \mapsto (s_t, s_{t-1}, \ldots, s_{t-2r}) \tag{4.1}$$
 
-*is a topological conjugacy between the shift space $X_M$ and a subshift of
-$\mathcal{A}^{2r+1}$. The image of $\Phi_{\rm sym}$ is the $(2r+1)$-step
+*is a topological conjugacy between the shift space $X\_M$ and a subshift of
+$\mathcal{A}^{2r+1}$. The image of $\Phi\_{\rm sym}$ is the $(2r+1)$-step
 Markov approximation of the Voronoi filtration.*
 
 **Consequence:** The LZ prefix tree (FILTRATIONS.md R14) built from the Voronoi
@@ -290,17 +290,17 @@ symbolic Takens embedding onto the first $n$ coordinates.
 
 ### 4.2 The delay parameter $\tau$
 
-The delay parameter $\tau$ in the Takens embedding must be chosen so that $x_t$ and
-$x_{t-\tau}$ are "sufficiently independent" — enough time must have passed for the
+The delay parameter $\tau$ in the Takens embedding must be chosen so that $x\_t$ and
+$x\_{t-\tau}$ are "sufficiently independent" — enough time must have passed for the
 system to evolve away from the initial condition.
 
-**The optimal delay is $\tau = 1/\lambda_1$** — one Jacobi spectral gap timescale.
-At $\tau < 1/\lambda_1$: successive delay coordinates are too correlated (not enough
-independent information). At $\tau > 1/\lambda_1$: successive coordinates are
+**The optimal delay is $\tau = 1/\lambda\_1$** — one Jacobi spectral gap timescale.
+At $\tau < 1/\lambda\_1$: successive delay coordinates are too correlated (not enough
+independent information). At $\tau > 1/\lambda\_1$: successive coordinates are
 effectively independent (too much time has passed, information lost).
 
-For the CAPM with $\lambda_1 = 12$/year: $\tau = 1/12$ year $\approx 21$ trading
-days. For the Clifford torus with $\lambda_1 = 5/2$/year: $\tau = 2/5$ year
+For the CAPM with $\lambda\_1 = 12$/year: $\tau = 1/12$ year $\approx 21$ trading
+days. For the Clifford torus with $\lambda\_1 = 5/2$/year: $\tau = 2/5$ year
 $\approx 100$ days. **The delay parameter for the Takens embedding IS the Jacobi
 spectral gap timescale.**
 

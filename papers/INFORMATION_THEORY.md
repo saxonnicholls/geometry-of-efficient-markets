@@ -57,7 +57,7 @@ available information). The geometric framework developed in PAPER.md, MINIMAL\_
 and CLASSIFICATION.md has so far spoken primarily to the economic face. In this paper we
 establish the information-theoretic face with equal precision.
 
-The key bridge is the Fisher–Rao metric $g^{\mathrm{FR}}_{ij}(b) = \delta_{ij}/b_i$. This
+The key bridge is the Fisher–Rao metric $g^{\mathrm{FR}}\_{ij}(b) = \delta\_{ij}/b\_i$. This
 metric is not merely a mathematical convenience — it is the **canonical metric of statistical
 inference**, defined by the curvature of the log-likelihood function. Every object in our
 geometric theory has a direct information-theoretic translation:
@@ -68,8 +68,8 @@ geometric theory has a direct information-theoretic translation:
 | Mean curvature $H$ | Bias of the market's information processing |
 | Willmore energy $\mathcal{W}$ | Integrated squared processing bias |
 | Minimal surface $H=0$ | Unbiased information processor |
-| Stable rank $r_{\rm eff}$ | Effective channel dimension |
-| Jacobi eigenvalue $\lambda_1$ | Channel capacity per factor direction |
+| Stable rank $r\_{\rm eff}$ | Effective channel dimension |
+| Jacobi eigenvalue $\lambda\_1$ | Channel capacity per factor direction |
 | MCF convergence rate | Information absorption rate |
 
 The goal of this paper is to make each entry in this table precise.
@@ -94,12 +94,12 @@ of the log-optimal portfolio.
 ### 2.1 The Shannon channel model
 
 Model the market as a discrete memoryless channel:
-- **Input**: factor shock $f_t \in \mathcal{F}$ (the "signal" from the economy)
-- **Channel**: return mapping $x_t = \Phi(f_t) + \varepsilon_t$ (linear factor model plus noise)
-- **Output**: return vector $x_t \in \mathbb{R}^d_+$ (what the investor observes)
+- **Input**: factor shock $f\_t \in \mathcal{F}$ (the "signal" from the economy)
+- **Channel**: return mapping $x\_t = \Phi(f\_t) + \varepsilon\_t$ (linear factor model plus noise)
+- **Output**: return vector $x\_t \in \mathbb{R}^d\_+$ (what the investor observes)
 
-The investor's problem is to decode the factor state $f_t$ from the observed returns
-$x_1, \ldots, x_T$ — and then to allocate portfolio weights optimally. The **channel capacity**
+The investor's problem is to decode the factor state $f\_t$ from the observed returns
+$x\_1, \ldots, x\_T$ — and then to allocate portfolio weights optimally. The **channel capacity**
 is:
 
 $$C = \max_{p(f)} I(f; x) = \max_{p(f)} \left[H(x) - H(x|f)\right] \tag{2.1}$$
@@ -108,7 +108,7 @@ where $I(f;x)$ is the mutual information and $H(\cdot)$ is entropy.
 
 ### 2.2 The Fisher information as channel capacity
 
-For a Gaussian channel with input variance $\sigma_f^2$ and noise variance $\sigma_e^2$:
+For a Gaussian channel with input variance $\sigma\_f^2$ and noise variance $\sigma\_e^2$:
 
 $$C = \frac{r}{2}\log\left(1 + \frac{\sigma_f^2}{\sigma_e^2}\right) \tag{2.2}$$
 
@@ -142,7 +142,7 @@ $$\nabla_M C(b) \approx \mathrm{tr}\!\left[F(b)^{-1}\nabla_M F(b)\right]
 = \nabla_M \log\det F(b) \tag{2.7}$$
 
 The gradient of $\log\det F$ over $M$ vanishes at $b^*$ iff the tangential gradient
-$\Pi_{T_{b^*}M}\nabla_b \log\det F = 0$, which by the Fisher matrix formula (2.3) equals
+$\Pi\_{T\_{b^*}M}\nabla\_b \log\det F = 0$, which by the Fisher matrix formula (2.3) equals
 the trace of the shape operator — the mean curvature $H(b^*)$. Setting this to zero gives
 $H = 0$. $\square$
 
@@ -158,7 +158,7 @@ square root of the capacity gradient:*
 $$\mathrm{Sharpe}^* = \|\nabla_M C(b^*)\|_{F(b^*)^{-1}}^{1/2} \tag{2.8}$$
 
 *An inefficient market has positive capacity gradient — moving the portfolio in the
-$\nabla_M C$ direction improves channel capacity and earns excess return.*
+$\nabla\_M C$ direction improves channel capacity and earns excess return.*
 
 ### 2.3 The effective channel dimension
 
@@ -166,8 +166,8 @@ The **effective channel capacity** uses only the significant singular values:
 
 $$C_{\rm eff}(b^*) = \frac{1}{2}\sum_{k=1}^{r_{\rm eff}}\log(1 + T\lambda_k(F(b^*))) \tag{2.9}$$
 
-where $r_{\rm eff} = \|F\|_F^2/\|F\|_2^2$ is the stable rank (same number appearing
-throughout this series). The remaining $d-1-r_{\rm eff}$ channels carry negligible
+where $r\_{\rm eff} = \|F\|\_F^2/\|F\|\_2^2$ is the stable rank (same number appearing
+throughout this series). The remaining $d-1-r\_{\rm eff}$ channels carry negligible
 information — they are the "noise channels" in the idiosyncratic directions. The market
 manifold dimension $r$ is the number of channels above the noise floor.
 
@@ -191,35 +191,35 @@ a minimal market manifold $M \subset S^{d-1}$ is:*
 $$K(M) = r\log d + \log\!\left(\frac{1}{\mathrm{vol}(\mathcal{M}_r)}\right)
 + \log\!\left(1 + \mathcal{W}_2(M)\right) \tag{3.1}$$
 
-*where $\mathcal{M}_r$ is the moduli space of minimal $r$-submanifolds of $S^{d-1}_+$
-and $\mathcal{W}_2(M) = \int |II|^2 d\mathrm{vol}$ is the Willmore functional of the
+*where $\mathcal{M}\_r$ is the moduli space of minimal $r$-submanifolds of $S^{d-1}\_+$
+and $\mathcal{W}\_2(M) = \int |II|^2 d\mathrm{vol}$ is the Willmore functional of the
 second fundamental form.*
 
 **Theorem 3.2** *(Theorem B: efficiency = minimum description length)*. *Among all market
 manifolds with fixed $d$ and $r$:*
 
-*(i) The totally geodesic surfaces (CAPM) have $\mathcal{W}_2 = 0$, hence minimum
-description complexity: $K_{\rm CAPM} = r\log d + \log|\mathcal{M}_r^{\rm geod}|^{-1}$.*
+*(i) The totally geodesic surfaces (CAPM) have $\mathcal{W}\_2 = 0$, hence minimum
+description complexity: $K\_{\rm CAPM} = r\log d + \log|\mathcal{M}\_r^{\rm geod}|^{-1}$.*
 
-*(ii) Any non-totally-geodesic minimal surface has $\mathcal{W}_2 > 0$ and hence
-$K(M) > K_{\rm CAPM}$ — it requires additional bits to describe the curvature.*
+*(ii) Any non-totally-geodesic minimal surface has $\mathcal{W}\_2 > 0$ and hence
+$K(M) > K\_{\rm CAPM}$ — it requires additional bits to describe the curvature.*
 
-*(iii) The Simons gap implies a complexity gap: either $\mathcal{W}_2 = 0$ (CAPM, minimum
-complexity) or $\mathcal{W}_2 \geq \frac{d-2}{d-1}\cdot\mathrm{Area}(M)$ (non-CAPM
+*(iii) The Simons gap implies a complexity gap: either $\mathcal{W}\_2 = 0$ (CAPM, minimum
+complexity) or $\mathcal{W}\_2 \geq \frac{d-2}{d-1}\cdot\mathrm{Area}(M)$ (non-CAPM
 minimal surface, elevated complexity). There are no efficient market structures of
 intermediate description complexity.*
 
-*Proof.* Part (i): totally geodesic means $II = 0$, hence $\mathcal{W}_2 = 0$. The
+*Proof.* Part (i): totally geodesic means $II = 0$, hence $\mathcal{W}\_2 = 0$. The
 description needs only the linear factor loading matrix $\Phi$ — a point in the
 Grassmannian $\mathrm{Gr}(r, d)$ requiring $r(d-r)$ real parameters. Part (ii): any
-non-zero $II$ requires additional data beyond $\Phi$ — the shape functions $A_k(x)$ for
+non-zero $II$ requires additional data beyond $\Phi$ — the shape functions $A\_k(x)$ for
 $x \in M$ — increasing $K(M)$. Part (iii): the Simons gap $|II|^2 \geq (d-2)/(d-1)$
-(non-zero implies bounded below) translates directly to a gap in $\mathcal{W}_2 \geq
+(non-zero implies bounded below) translates directly to a gap in $\mathcal{W}\_2 \geq
 (d-2)/(d-1) \cdot \mathrm{Area}$, and hence in $K(M)$. $\square$
 
 **The MDL principle** \[Rissanen 1978\] selects the model with minimum description length.
 Applied to market modelling: among all market structures consistent with the data, MDL
-selects the one with minimum $K(M)$ — which is the CAPM (totally geodesic, $\mathcal{W}_2 = 0$).
+selects the one with minimum $K(M)$ — which is the CAPM (totally geodesic, $\mathcal{W}\_2 = 0$).
 **The MDL principle selects the CAPM as the canonical efficient market model.** This is not
 an economic assumption — it is a logical consequence of the minimum complexity characterisation
 of market efficiency.
@@ -228,13 +228,13 @@ of market efficiency.
 
 The Lawson surface classification of CLASSIFICATION.md, reread through the lens of complexity:
 
-| Manifold | Genus | $\mathcal{W}_2$ | $K(M) - K_{\rm CAPM}$ | Complexity interpretation |
+| Manifold | Genus | $\mathcal{W}\_2$ | $K(M) - K\_{\rm CAPM}$ | Complexity interpretation |
 |:---------|:-----:|:---------------:|:---------------------:|:--------------------------|
 | Great sphere (CAPM) | 0 | 0 | 0 | Minimum: just a hyperplane |
-| Veronese | 0 ($\mathbb{R}P^2$) | $>0$ | $+\log(|II|_F^2)$ | One quadratic constraint |
+| Veronese | 0 ($\mathbb{R}P^2$) | $>0$ | $+\log(|II|\_F^2)$ | One quadratic constraint |
 | Clifford torus | 1 | $2\pi^2$ | $+\log(2\pi^2)$ | One product structure |
-| $\tau_{2,1}$ Lawson | 2 | $>2\pi^2$ | $+\log(...)$ | Two handles |
-| $\tau_{m,n}$ | $mn$ | $\sim mn\pi^2$ | $\sim mn\log\pi^2$ | $mn$ handles |
+| $\tau\_{2,1}$ Lawson | 2 | $>2\pi^2$ | $+\log(...)$ | Two handles |
+| $\tau\_{m,n}$ | $mn$ | $\sim mn\pi^2$ | $\sim mn\log\pi^2$ | $mn$ handles |
 
 The Kolmogorov complexity grows with genus — the more complex the topology of the efficient
 market, the more bits required to describe it. The factor zoo of anomalies corresponds to
@@ -247,19 +247,19 @@ high-genus Lawson surface rather than the CAPM.
 
 ### 4.1 The SMB theorem
 
-**Theorem 4.1** *(Shannon–McMillan–Breiman)*. Let $(x_t)_{t \geq 1}$ be a stationary
-ergodic process on $\mathbb{R}^d_+$ with entropy rate:
+**Theorem 4.1** *(Shannon–McMillan–Breiman)*. Let $(x\_t)\_{t \geq 1}$ be a stationary
+ergodic process on $\mathbb{R}^d\_+$ with entropy rate:
 
 $$h = \lim_{T\to\infty} -\frac{1}{T}\log p(x_1, \ldots, x_T) \quad \text{(a.s.)} \tag{4.1}$$
 
-The typical set $\mathcal{T}_T^\varepsilon$ — the set of sequences $(x_1,\ldots,x_T)$
+The typical set $\mathcal{T}\_T^\varepsilon$ — the set of sequences $(x\_1,\ldots,x\_T)$
 satisfying $\left|-\frac{1}{T}\log p - h\right| < \varepsilon$ — has probability approaching 1,
-and $|\mathcal{T}_T^\varepsilon| \approx e^{Th}$.
+and $|\mathcal{T}\_T^\varepsilon| \approx e^{Th}$.
 
 ### 4.2 The Kelly criterion as the SMB entropy rate
 
 **Theorem 4.2** *(Theorem C: SMB = Kelly)*. *For a stationary ergodic return process
-$(x_t)$ with factor structure:*
+$(x\_t)$ with factor structure:*
 
 $$\lim_{T\to\infty} \frac{1}{T}\log W_T(b) = \mathbb{E}[\log\langle b, x\rangle]
 = L(b) \quad \text{a.s.} \tag{4.2}$$
@@ -269,10 +269,10 @@ portfolio metric:*
 
 $$\max_{b \in \Delta_{d-1}} L(b) = L(b^*) = h_{\rm Kelly} \tag{4.3}$$
 
-*where $h_{\rm Kelly}$ is the **Kelly entropy rate** — the maximum log-growth rate of
+*where $h\_{\rm Kelly}$ is the **Kelly entropy rate** — the maximum log-growth rate of
 the return process achievable by any constantly rebalanced portfolio.*
 
-*The universal portfolio $\hat{b}_T$ achieves this rate asymptotically:*
+*The universal portfolio $\hat{b}\_T$ achieves this rate asymptotically:*
 
 $$\frac{1}{T}\log S_T^* \to h_{\rm Kelly} \quad \text{a.s.} \tag{4.4}$$
 
@@ -293,7 +293,7 @@ $$\log S_T^* = T\cdot L(b^*) - \frac{d-1}{2}\log T - \frac{1}{2}\log\det F(b^*) 
 **The SMB typical set in portfolio space.** The SMB theorem defines the typical set of
 return sequences as those achieving the entropy rate. In portfolio space, the dual object
 is the set of portfolios achieving the maximum log-growth rate — this is precisely the
-market manifold $M = \{b^*(x_{1:T}) : (x_1,\ldots,x_T) \in \mathcal{T}_T\}$.
+market manifold $M = \{b^*(x\_{1:T}) : (x\_1,\ldots,x\_T) \in \mathcal{T}\_T\}$.
 
 **Key insight:** The minimal surface condition $H = 0$ means $b^*$ does not drift
 systematically across the manifold as new data arrives — the portfolio is already at the
@@ -312,7 +312,7 @@ precisely the Sharpe result of MINIMAL\_SURFACE.md.
 
 ### 4.3 Entropy and the Willmore energy
 
-The **Boltzmann entropy** of the posterior distribution $\pi_T(b) \propto W_T(b)\mu(b)$:
+The **Boltzmann entropy** of the posterior distribution $\pi\_T(b) \propto W\_T(b)\mu(b)$:
 
 $$S(\pi_T) = -\int_\Delta \pi_T(b)\log\pi_T(b)\,d\mu(b) \tag{4.8}$$
 
@@ -321,12 +321,12 @@ For the Laplace approximation around $b^*$, this is:
 $$S(\pi_T) = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^*)^{-1}
 + \frac{\mathcal{M}_0}{T} + O(1/T^2) \tag{4.9}$$
 
-where $\mathcal{M}_0$ is the Maslov correction from LAPLACE.md (Proposition 5.1 there),
+where $\mathcal{M}\_0$ is the Maslov correction from LAPLACE.md (Proposition 5.1 there),
 which includes the Ricci curvature term $\frac{d-2}{4}\mathrm{tr}[F^{-1}]$.
 
 **The posterior entropy decreases at rate $\frac{d-1}{2}\log T$ per period** — the market
 "learns" at a rate controlled by the dimension of the factor space $(d-1)/2$. The Willmore
-correction $\mathcal{M}_0/T$ accounts for the non-flat geometry of the market manifold.
+correction $\mathcal{M}\_0/T$ accounts for the non-flat geometry of the market manifold.
 For a minimal surface ($H=0$, $\mathrm{tr}[F^{-1}]$ is the Ricci contribution):
 
 $$S(\pi_T)|_{H=0} = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^*)^{-1}
@@ -334,7 +334,7 @@ $$S(\pi_T)|_{H=0} = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^*)^{-1
 
 The $1/T$ correction is the **information-theoretic cost of living on a curved manifold** —
 the Fisher–Rao curvature $K = 1/4$ of the Bhattacharyya sphere adds $\frac{d-2}{4T}$ bits
-of uncertainty per period. For a flat market manifold (CAPM, $K_{\rm intrinsic} = 0$), this
+of uncertainty per period. For a flat market manifold (CAPM, $K\_{\rm intrinsic} = 0$), this
 correction vanishes and the learning rate is purely $\frac{d-1}{2}\log T$.
 
 ---
@@ -363,7 +363,7 @@ of overall volatility level.*
 
 $$\sigma_i(A) < \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{5.2}$$
 
-*involves $\lambda_1(-\Delta_M)$ — the spectral gap of the Laplacian on $M$ — which depends
+*involves $\lambda\_1(-\Delta\_M)$ — the spectral gap of the Laplacian on $M$ — which depends
 on the intrinsic geometry and hence on the volatility through the induced metric.*
 
 *(iii) **Critical volatility:** There exists a critical volatility level $\sigma^* > 0$ such that:*
@@ -379,9 +379,9 @@ $H=0$ is preserved. $\square$
 
 *Proof of (iii).* From the stability condition (5.2), the market manifold is stable iff
 all shape operator singular values are below the threshold. The threshold itself depends on
-$\lambda_1(-\Delta_M)$, which scales as $\lambda_1 \propto 1/\sigma^2$ (since the Laplacian
+$\lambda\_1(-\Delta\_M)$, which scales as $\lambda\_1 \propto 1/\sigma^2$ (since the Laplacian
 eigenvalues scale inversely with the metric). So the threshold scales as $\sigma^* \propto
-1/\sigma_i(A)$. Above $\sigma^*$, the Laplacian gap is too small to provide restoring force
+1/\sigma\_i(A)$. Above $\sigma^*$, the Laplacian gap is too small to provide restoring force
 and the manifold becomes unstable. $\square$
 
 **Portfolio interpretation.** High volatility markets ($\sigma > \sigma^*$) have small
@@ -416,14 +416,14 @@ expected return for a given level of variance:
 $$\mathcal{F}^{\rm MV} = \left\{b \in \Delta_{d-1} : \mathrm{Var}(b^Tx) = v,\;
 \mathbb{E}[b^Tx] = \max\right\}_{v \geq 0} \tag{6.1}$$
 
-This is a 1-dimensional curve in $\Delta_{d-1}$. Its limitation: it ignores the
+This is a 1-dimensional curve in $\Delta\_{d-1}$. Its limitation: it ignores the
 geometric structure of the market manifold $M$ — in particular, it does not distinguish
 between movements along $M$ (factor bets) and movements off $M$ (idiosyncratic bets).
 
 ### 6.2 The manifold efficient frontier
 
 **Definition 6.1** (Manifold efficient frontier). *For a market manifold $M \subset
-\Delta_{d-1}$, the **manifold efficient frontier** is:*
+\Delta\_{d-1}$, the **manifold efficient frontier** is:*
 
 $$\mathcal{F}(M) = \left\{b \in \Delta_{d-1} : b = b^* + \xi,\;
 \xi \in N_{b^*}M,\; |\xi|_{g^{\mathrm{FR}}} = \rho\right\}_{\rho \geq 0} \tag{6.2}$$
@@ -433,8 +433,8 @@ a distance $\rho$ off the market manifold in the normal direction.*
 
 **Theorem 6.2** *(Theorem E: efficient frontier from manifold)*.
 
-*(i) The manifold efficient frontier $\mathcal{F}(M)$ is an $(r_{\rm normal})$-dimensional
-family parametrised by the normal bundle $NM$, where $r_{\rm normal} = d-1-r$.*
+*(i) The manifold efficient frontier $\mathcal{F}(M)$ is an $(r\_{\rm normal})$-dimensional
+family parametrised by the normal bundle $NM$, where $r\_{\rm normal} = d-1-r$.*
 
 *(ii) The Markowitz efficient frontier is the one-dimensional sub-curve of $\mathcal{F}(M)$
 obtained by moving in the direction $\vec{H}$ (the mean curvature direction — the primary
@@ -450,14 +450,14 @@ $$\mathcal{F}(M) = \mathcal{F}^{\rm factor}(M) \cup \mathcal{F}^{\rm normal}(M) 
 and $\mathcal{F}^{\rm normal}$ is the off-manifold frontier (idiosyncratic bets, $\rho > 0$).*
 
 **Proof of (ii).** The Markowitz frontier maximises $\mathbb{E}[b^T x] - \frac{\lambda}{2}\mathrm{Var}(b^T x)$
-over $b \in \Delta_{d-1}$. The gradient of this objective in the Fisher-Rao metric is:
+over $b \in \Delta\_{d-1}$. The gradient of this objective in the Fisher-Rao metric is:
 
 $$\nabla_{g^{\mathrm{FR}}} \left(\mu^T b - \frac{\lambda}{2}b^T\Sigma b\right)
 = F(b^*)^{-1}(\mu - \lambda\Sigma b^*) \tag{6.5}$$
 
-At the log-optimal portfolio $b^*$ (the maximiser of $L_T$), the tangential component
-$\Pi_{T_{b^*}M}(\nabla_{g^{\mathrm{FR}}}(\cdot)) = 0$, but the normal component
-$\Pi_{N_{b^*}M}(\nabla_{g^{\mathrm{FR}}}(\cdot)) \propto \vec{H}(b^*)$. The Markowitz
+At the log-optimal portfolio $b^*$ (the maximiser of $L\_T$), the tangential component
+$\Pi\_{T\_{b^*}M}(\nabla\_{g^{\mathrm{FR}}}(\cdot)) = 0$, but the normal component
+$\Pi\_{N\_{b^*}M}(\nabla\_{g^{\mathrm{FR}}}(\cdot)) \propto \vec{H}(b^*)$. The Markowitz
 frontier follows this normal gradient, which points in the $\vec{H}$ direction. $\square$
 
 **The geometric picture.** The market manifold $M$ is the "spine" of the full portfolio
@@ -494,15 +494,15 @@ its most demanding critic.
 Diaconis's deepest contribution to probability theory is the quantitative theory of Markov
 chain mixing times — how many steps until a random walk on a group or graph is
 indistinguishable from its stationary distribution \[Diaconis–Shahshahani 1981\]. The
-central tool is the spectral gap $\lambda_1$ of the chain's transition matrix.
+central tool is the spectral gap $\lambda\_1$ of the chain's transition matrix.
 
 In our framework: the WF diffusion on the market manifold is a Markov diffusion on
-$(\Sigma, g_\Sigma)$, and its mixing time is:
+$(\Sigma, g\_\Sigma)$, and its mixing time is:
 
 $$t_{\rm mix} = \frac{\log(1/\varepsilon)}{\lambda_1(-\Delta_\Sigma)} \tag{7.1}$$
 
-This is the time for the posterior $\pi_T$ to converge to a $\varepsilon$-neighbourhood of
-its limit $\delta_{b^*}$. **The spectral gap $\lambda_1$ is exactly the same quantity that
+This is the time for the posterior $\pi\_T$ to converge to a $\varepsilon$-neighbourhood of
+its limit $\delta\_{b^*}$. **The spectral gap $\lambda\_1$ is exactly the same quantity that
 appears in the Jacobi stability operator** (CLASSIFICATION.md equation 6.6). Diaconis would
 immediately recognise:
 
@@ -511,17 +511,17 @@ $$\text{Market learning rate} = \text{Markov chain spectral gap} = \text{Jacobi 
 This triple identity is profound: the speed at which the market absorbs information
 (mixing time), the speed at which arbitrageurs restore efficiency (Jacobi stability), and
 the speed at which the posterior concentrates on the log-optimal portfolio — all controlled
-by $\lambda_1(-\Delta_M)$.
+by $\lambda\_1(-\Delta\_M)$.
 
 **Diaconis's card-shuffling analogy.** The riffle shuffle of a deck of $n$ cards requires
-$\frac{3}{2}\log_2 n$ shuffles to mix — a sharp threshold phenomenon \[Bayer–Diaconis 1992\].
+$\frac{3}{2}\log\_2 n$ shuffles to mix — a sharp threshold phenomenon \[Bayer–Diaconis 1992\].
 In our framework: an $r$-factor market with $d$ assets requires approximately
-$\frac{(d-2)}{4\lambda_1}$ return observations to "mix" the posterior to within $\varepsilon$
+$\frac{(d-2)}{4\lambda\_1}$ return observations to "mix" the posterior to within $\varepsilon$
 of $b^*$ — a direct analogue of the shuffle threshold. The factor dimension $r$ plays the
 role of the deck size $n$.
 
 **The sharp threshold:** Just as the card shuffle has a sharp mixing threshold, the posterior
-$\pi_T$ has a sharp threshold around $T^* = (d-2)/(4\lambda_1)$:
+$\pi\_T$ has a sharp threshold around $T^* = (d-2)/(4\lambda\_1)$:
 
 $$\|\pi_T - \delta_{b^*}\|_{\rm TV} \approx \begin{cases}1 & T \ll T^*\\ 0 & T \gg T^*\end{cases} \tag{7.2}$$
 
@@ -533,16 +533,16 @@ with a sharp transition at $T^*$.
 ### 7.2 Harmonic analysis on the symmetric group
 
 Diaconis is the master of harmonic analysis on finite groups \[Diaconis 1988\]. He would
-note that the symmetric group $S_d$ (permutations of $d$ assets) acts on the portfolio
-simplex $\Delta_{d-1}$ by permuting coordinates, and that **exchangeable portfolios** — those
+note that the symmetric group $S\_d$ (permutations of $d$ assets) acts on the portfolio
+simplex $\Delta\_{d-1}$ by permuting coordinates, and that **exchangeable portfolios** — those
 invariant under this action — form the 1-dimensional subspace $\{b = c\cdot\mathbf{1}/d : c\in\mathbb{R}\}$.
 
-The harmonic analysis of functions on $S^{d-1}_+$ (Bhattacharyya sphere) decomposes
+The harmonic analysis of functions on $S^{d-1}\_+$ (Bhattacharyya sphere) decomposes
 into irreducible representations of $O(d)$:
 
 $$f = \sum_{k=0}^\infty \sum_\alpha \hat{f}_{k,\alpha} Y_{k,\alpha} \tag{7.3}$$
 
-where $Y_{k,\alpha}$ are the spherical harmonics. The minimal surface condition $\Delta_M\iota
+where $Y\_{k,\alpha}$ are the spherical harmonics. The minimal surface condition $\Delta\_M\iota
 = -r\iota$ (Takahashi theorem) selects the $k=1$ harmonic component — the embedding
 coordinates are **first-order harmonics** of the Laplacian. The SMB entropy rate is the
 $k=0$ component (the mean). The Sharpe ratio is the projection onto the $k=1$ component
@@ -558,13 +558,13 @@ Diaconis co-proved (with Freedman) a quantitative version of de Finetti's theore
 an $n$-exchangeable sequence of 0-1 random variables is within $O(r/n)$ of a mixture of
 i.i.d. sequences, where $r$ is the number of observations. In our framework:
 
-The posterior $\pi_T(b) \propto W_T(b)\mu(b)$ is an exchangeable measure on
-$\{x_1,\ldots,x_T\}$ (the labelling of time steps is arbitrary for the log-optimal portfolio).
+The posterior $\pi\_T(b) \propto W\_T(b)\mu(b)$ is an exchangeable measure on
+$\{x\_1,\ldots,x\_T\}$ (the labelling of time steps is arbitrary for the log-optimal portfolio).
 The de Finetti–Diaconis–Freedman theorem gives:
 
 $$\|\pi_T - \pi^{\rm de Finetti}_T\|_{\rm TV} \leq \frac{r(d-1)}{T} = O\!\left(\frac{rd}{T}\right) \tag{7.4}$$
 
-where $\pi^{\rm de Finetti}_T$ is the i.i.d. de Finetti mixture. This bound is exactly the
+where $\pi^{\rm de Finetti}\_T$ is the i.i.d. de Finetti mixture. This bound is exactly the
 $O(1/T)$ Laplace correction from LAPLACE.md — the departure from the i.i.d. de Finetti
 mixture is precisely the Maslov correction. The minimal surface condition ($H=0$) is the
 condition under which the $O(1/T)$ correction vanishes to leading order (Theorem 4.2 of
@@ -578,7 +578,7 @@ actually shows. He would ask:
 
 **Question 1: "Can you simulate it?"** The minimal surface characterisation and the
 Sharpe–curvature theorem are elegant, but Diaconis would want a Monte Carlo study
-confirming that the estimated $\|H\|_{L^2}$ from finite-sample return data converges to the
+confirming that the estimated $\|H\|\_{L^2}$ from finite-sample return data converges to the
 theoretical Sharpe upper bound. He would specifically worry about the $O(1/T)$ finite-sample
 bias in estimating $b^*$ and $F(b^*)$ — the Fisher matrix estimator has estimation error
 that could masquerade as mean curvature.
@@ -601,7 +601,7 @@ should ultimately produce a trading strategy with an identifiable P&L.
 
 Despite the skepticism, Diaconis's framework would add three genuine contributions:
 
-1. **Sharp mixing time bounds** for the posterior $\pi_T$ using his spectral methods —
+1. **Sharp mixing time bounds** for the posterior $\pi\_T$ using his spectral methods —
    giving precise sample sizes $T^*$ at which each market "becomes efficient" per the
    SMB theorem.
 
@@ -624,9 +624,9 @@ strongly efficient market:
 the following are equivalent:*
 
 1. **Geometric** (MINIMAL\_SURFACE): $H \equiv 0$ on $\Sigma$ — the market manifold is minimal.
-2. **Information-theoretic** (this paper, Theorem A): $\nabla_M C(b^*) = 0$ — the channel capacity is stationary over the manifold.
+2. **Information-theoretic** (this paper, Theorem A): $\nabla\_M C(b^*) = 0$ — the channel capacity is stationary over the manifold.
 3. **Statistical** (LAPLACE.md, Theorem 4.2): $\nabla\log\pi \equiv 0$ in the interior — the Jeffreys prior condition; the $O(1/T)$ Bayesian correction vanishes.
-4. **Complexity-theoretic** (this paper, Theorem B): $\mathcal{W}_2(M)$ achieves the minimum for its topological type — minimum description length consistent with topology.
+4. **Complexity-theoretic** (this paper, Theorem B): $\mathcal{W}\_2(M)$ achieves the minimum for its topological type — minimum description length consistent with topology.
 5. **Ergodic-theoretic** (this paper, Theorem C): the empirical log-growth rate of the log-optimal portfolio equals the SMB entropy rate — no systematic drift in the typical set.
 
 *Each characterisation is equivalent to the others given Conjecture 3.1 of MINIMAL\_SURFACE.
@@ -645,7 +645,7 @@ compressed, minimal representation.
 
 ### 9.1 The market as a universal source coder
 
-The universal portfolio $\hat{b}_T$ achieves the Kelly entropy rate $h_{\rm Kelly}$ without
+The universal portfolio $\hat{b}\_T$ achieves the Kelly entropy rate $h\_{\rm Kelly}$ without
 knowing the return distribution — it is a **universal source coder** in the information-theoretic
 sense \[Cover–Thomas 2006\]. The connection to the SMB theorem makes this precise: the universal
 portfolio is the **minimum-redundancy code** for the return process, and its excess redundancy
@@ -667,7 +667,7 @@ consistent with parameter estimation.
 
 **Problem 1.** Prove the mixing time threshold (7.2) rigorously using Diaconis's spectral
 methods — specifically, prove a sharp threshold for the total variation distance
-$\|\pi_T - \delta_{b^*}\|_{\rm TV}$ with explicit constants.
+$\|\pi\_T - \delta\_{b^*}\|\_{\rm TV}$ with explicit constants.
 
 **Problem 2.** Extend Theorem C (SMB = Kelly) to non-stationary returns. When the return
 distribution changes over time (regime switching, structural breaks), the entropy rate is
@@ -675,7 +675,7 @@ time-varying and the typical set moves. The mean curvature drift $\vec{H}(b^*(t)
 track this movement — formalise this connection.
 
 **Problem 3.** Compute the channel capacity $C(\sigma)$ for each of the Lawson surfaces
-$\tau_{m,n}$ and determine whether the capacity is monotone in genus. Conjecture: capacity
+$\tau\_{m,n}$ and determine whether the capacity is monotone in genus. Conjecture: capacity
 decreases with genus, so higher-genus efficient markets are lower-capacity information
 processors despite being "equally efficient" ($H=0$).
 

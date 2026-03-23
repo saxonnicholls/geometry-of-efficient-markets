@@ -8,7 +8,7 @@
 ## The Single Organising Principle
 
 A financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
-$S^{d-1}_+$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
+$S^{d-1}\_+$. Portfolio weights are barycentric coordinates on $\Delta\_{d-1}$.
 Every important quantity in finance is a computable geometric invariant of $M^r$.
 
 This single sentence explains: why Cover's prior works; why only CAPMs are stable;
@@ -22,20 +22,20 @@ was using the wrong measure.
 ## Six Layers of the Theory
 
 ### 1 · FK-WKB Foundation *(LAPLACE, PAPER)*
-Cover's integral is a Feynman-Kac functional on $(\Delta_{d-1},g^{\rm FR})$.
+Cover's integral is a Feynman-Kac functional on $(\Delta\_{d-1},g^{\rm FR})$.
 WKB saddle = geodesic. Van Vleck determinant = Fisher information matrix.
 $O(1/T^2)$ accuracy = Jeffreys prior = stationary distribution of the market diffusion.
 This closes a 30-year gap in Cover's theory.
 
 ### 2 · The Market Manifold and Its Classification *(MINIMAL\_SURFACE, CLASSIFICATION, CONVERGENCE)*
-Bhattacharyya isometry: $b\mapsto\sqrt{b}\in S^{d-1}_+$, curvature $K=1/4$.
-**Sharpe = curvature** (proved): $\mathrm{Sharpe}^*=\|H\|_{L^2(M)}$.
+Bhattacharyya isometry: $b\mapsto\sqrt{b}\in S^{d-1}\_+$, curvature $K=1/4$.
+**Sharpe = curvature** (proved): $\mathrm{Sharpe}^*=\|H\|\_{L^2(M)}$.
 **Only CAPMs stable** (proved): Simons-Lawson-Simons, stability index of Clifford torus = 5.
 **MUP minimax** (proved): regret $r\log T/2T$ vs Cover's $(d-1)\log T/2T$.
 
 ### 3 · Physics, Processes, Measure Theory *(HAMILTONIAN, FOKKER\_PLANCK, MARKET\_PROCESSES, SOBOLEV, MARTINGALE, DERIVATIVES, RENORMALIZATION, INFORMATION\_THEORY)*
 Fat tails $\alpha=r/2$ (three independent proofs). FP stationary = Jeffreys prior.
-Exact processes: Jacobi (CAPM), $\vartheta_3$ (Clifford torus), McKean (hyperbolic).
+Exact processes: Jacobi (CAPM), $\vartheta\_3$ (Clifford torus), McKean (hyperbolic).
 Doob-Meyer compensator = Willmore energy. Optimal stopping = MUP posterior.
 Diversification proved via Feller boundary. Geometric vol smile without SV.
 RG: CAPM = IR fixed point; Willmore = $c$-function; running Sharpe formula.
@@ -43,27 +43,27 @@ RG: CAPM = IR fixed point; Willmore = $c$-function; running Sharpe formula.
 ### 4 · Topology, Computation, Filtrations *(KNOT\_THEORY, BRAIDS, FIBER\_BUNDLES, COMPLEXITY, FILTRATIONS)*
 Knot type classifies markets. Jones polynomial = market partition function.
 Alexander roots = factor rotation eigenvalues. Yang-Baxter = no braiding arbitrage.
-$\mathbf{P}/\#\mathbf{P}/\Pi_2^0/\mathbf{PPAD}$ prediction hierarchy.
+$\mathbf{P}/\\#\mathbf{P}/\Pi\_2^0/\mathbf{PPAD}$ prediction hierarchy.
 LZ prefix tree = filtration tree (proved; any compressor = valid filtration).
 Clifford torus winding number = momentum vs contrarian (topological classifier).
 
 ### 5 · Geospatial, Contagion, LLMs, RMT, Path Integrals *(GEOSPATIAL, LLM\_MANIFOLD, RANDOM\_MATRIX, PATH\_INTEGRAL)*
-H3/S2/Hilbert on $S^{d-1}_+$; contagion network = Delaunay graph (endogenous);
+H3/S2/Hilbert on $S^{d-1}\_+$; contagion network = Delaunay graph (endogenous);
 Cheeger = systemic risk.
 LMSR = softmax = Fisher (transformer attention = market making in Fisher-Rao geometry).
 LLM≤MUP (no architecture beats the MUP); optimal dim = $r$; Kelly rate = min loss.
 Dyson $\beta\in\{1,2,4\}$ forced by manifold symmetry; Selberg = MUP partition function;
-TW $F_\beta$ = largest eigenvalue; Vandermonde = diversification pressure.
-Path integral on $M^r$: WKB=LAPLACE, $\vartheta_3$=winding sum, McKean=unique geodesic,
+TW $F\_\beta$ = largest eigenvalue; Vandermonde = diversification pressure.
+Path integral on $M^r$: WKB=LAPLACE, $\vartheta\_3$=winding sum, McKean=unique geodesic,
 $\mathbb{P}=\mathbb{Q}$ on efficient $M$, normal bundle integral = incompleteness premium.
 
 ### 6 · Chaos, Embedding, Hypercubes, Shapley *(CHAOS\_TAKENS, HYPERCUBE\_SHAPLEY)*
 Chaos $\equiv$ stochastic on $M^r$ (Oseledets — unobservable and irrelevant distinction).
 Feigenbaum $\delta=4.669$ governs CAPM-to-pA bifurcation.
 Takens: single return series in $\mathbb{R}^{2r+1}$ recovers $M^r$ topology.
-Optimal delay $\tau=1/\lambda_1$. Three-step algorithm: embed→diffusion maps→$M^r$.
-$\Delta_{d-1}\subset[0,1]^d$; Walsh functions = Jacobi polynomials; barycentric = Voronoi.
-**Shapley** $\phi_i = b^*_i(\mu_i-\bar\mu)$ (proved — unique fair Kelly attribution).
+Optimal delay $\tau=1/\lambda\_1$. Three-step algorithm: embed→diffusion maps→$M^r$.
+$\Delta\_{d-1}\subset[0,1]^d$; Walsh functions = Jacobi polynomials; barycentric = Voronoi.
+**Shapley** $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ (proved — unique fair Kelly attribution).
 Banzhaf = Walsh-Fourier coefficient. Normal bundle Shapley = unexplained alpha.
 
 ---

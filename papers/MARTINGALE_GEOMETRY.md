@@ -21,7 +21,7 @@ equation. The unifying insight is:
 > $NM$, the Snell envelope is the FK value function, and the HJB equation is the
 > manifold-restricted FK PDE.**
 
-Specifically: the Harrison-Pliska space of EMMs is $N_{b^*}M$ (proved in
+Specifically: the Harrison-Pliska space of EMMs is $N\_{b^*}M$ (proved in
 HAMILTONIAN\_TAILS paper); the minimal martingale measure of Föllmer-Schweizer
 corresponds to orthogonal projection onto the tangent bundle $TM$; the free boundary
 of the optimal stopping problem is the boundary $\partial\{H<0\}$ — the
@@ -45,20 +45,20 @@ HJB; Föllmer-Schweizer; minimal martingale measure; Jacobi operator; market man
 
 The central connection begins with the stochastic differential equation for the
 log-optimal portfolio $b^*(t)$ constrained to the market manifold $M$.
-From the Wright-Fisher diffusion on $\Delta_{d-1}$ restricted to $M^r$ (PAPER.md):
+From the Wright-Fisher diffusion on $\Delta\_{d-1}$ restricted to $M^r$ (PAPER.md):
 
 $$db^*(t) = -\varepsilon^2\vec{H}(b^*(t))\,dt + \varepsilon\,dW_M(t) \tag{1.1}$$
 
-where $dW_M(t)$ is the Brownian motion on $(M, g_M)$ and $\vec{H}(b^*)$ is the
+where $dW\_M(t)$ is the Brownian motion on $(M, g\_M)$ and $\vec{H}(b^*)$ is the
 mean curvature vector of $M$ at $b^*$.
 
 **The three martingale regimes:**
 
-- **Efficient market ($H \equiv 0$):** $db^* = \varepsilon\,dW_M$ — the portfolio
+- **Efficient market ($H \equiv 0$):** $db^* = \varepsilon\,dW\_M$ — the portfolio
   process is a martingale on $M$. No predictable drift. The optimal portfolio
   performs a pure diffusion on the market manifold.
 
-- **Inefficient market ($H > 0$):** $db^* = -\varepsilon^2 H\vec{\nu}\,dt + \varepsilon\,dW_M$ — 
+- **Inefficient market ($H > 0$):** $db^* = -\varepsilon^2 H\vec{\nu}\,dt + \varepsilon\,dW\_M$ — 
   the portfolio process is a **submartingale** in the direction of $-\vec{H}$
   (it drifts systematically toward lower mean curvature). An investor who knows
   $\vec{H}$ can exploit this drift.
@@ -79,10 +79,10 @@ mean curvature vector of $M$ at $b^*$.
 $$\mathbb{E}^\mathbb{P}[b^*(t+s) - b^*(t) \mid \mathcal{F}_t] = O(\varepsilon^4) \tag{1.2}$$
 
 *(iii) The physical measure $\mathbb{P}$ restricted to $M$ is an equivalent martingale
-measure (EMM): $\mathbb{P}|_M \in \mathcal{M}(M)$.*
+measure (EMM): $\mathbb{P}|\_M \in \mathcal{M}(M)$.*
 
 *(iv) The Radon-Nikodym derivative $d\mathbb{Q}/d\mathbb{P}$ for any EMM $\mathbb{Q}$
-satisfies: $d\mathbb{Q}/d\mathbb{P}|_{TM} = 1$ (trivial on the tangent bundle).*
+satisfies: $d\mathbb{Q}/d\mathbb{P}|\_{TM} = 1$ (trivial on the tangent bundle).*
 
 *Proof.* (i) $\Leftrightarrow$ (ii): direct from (1.1) with $H=0$. (ii) $\Rightarrow$ (iii):
 a martingale process has $\mathbb{P}$ as its own risk-neutral measure on $M$. (iii)
@@ -101,13 +101,13 @@ From HAMILTONIAN\_TAILS\_COMPLETENESS (Theorem 3.1):
 $$\mathcal{M}(M) \cong N_{b^*}M \tag{2.1}$$
 
 The space of equivalent martingale measures is isomorphic to the normal bundle of
-the market manifold. Each $\nu \in N_{b^*}M$ (a unit normal direction) determines
+the market manifold. Each $\nu \in N\_{b^*}M$ (a unit normal direction) determines
 an EMM via the Girsanov change of measure:
 
 $$\frac{d\mathbb{Q}_\nu}{d\mathbb{P}}\bigg|_{\mathcal{F}_t}
 = \mathcal{E}\!\left(-\int_0^t \frac{\vec{H}_\nu(b^*_s)}{\varepsilon}\cdot dW_s\right) \tag{2.2}$$
 
-where $\vec{H}_\nu$ is the component of the mean curvature in direction $\nu$ and
+where $\vec{H}\_\nu$ is the component of the mean curvature in direction $\nu$ and
 $\mathcal{E}(\cdot)$ is the Doléans-Dade stochastic exponential.
 
 **For the efficient market ($H=0$):** The stochastic exponential (2.2) equals 1 for
@@ -133,7 +133,7 @@ $$\hat{\mathbb{Q}} = \operatorname{argmin}_{\mathbb{Q} \in \mathcal{M}} H(\mathb
 $$\frac{d\hat{\mathbb{Q}}}{d\mathbb{P}}\bigg|_{\mathcal{F}_T}
 = \mathcal{E}\!\left(-\int_0^T \Pi_{TM}\!\left(\frac{\vec{H}(b^*_t)}{\varepsilon}\right)\cdot dW_t\right) \tag{2.4}$$
 
-*where $\Pi_{TM}$ is the orthogonal projection onto the tangent bundle of $M$.
+*where $\Pi\_{TM}$ is the orthogonal projection onto the tangent bundle of $M$.
 The minimal measure corrects only for the tangential drift — it ignores the
 idiosyncratic (normal bundle) risk premium.*
 
@@ -161,12 +161,12 @@ $$\frac{d\mathbb{Q}}{d\mathbb{P}}\bigg|_{\mathcal{F}_T}
 = \exp\!\left(-\varepsilon^2\int_0^T H^2(b^*_t)\,dt
 + \int_0^T H(b^*_t)\,dW_t^N\right) \tag{2.5}$$
 
-where $dW_t^N$ is the normal-bundle Brownian motion. The **exponential of the
+where $dW\_t^N$ is the normal-bundle Brownian motion. The **exponential of the
 integrated squared curvature** appears — this is the Novikov condition:
 
 $$\mathbb{E}\!\left[\exp\!\left(\frac{1}{2}\int_0^T H^2(b^*_t)\,dt\right)\right] < \infty \tag{2.6}$$
 
-which holds whenever $\int_0^T H^2\,dt < \infty$ — i.e., the Willmore energy per
+which holds whenever $\int\_0^T H^2\,dt < \infty$ — i.e., the Willmore energy per
 unit time is finite. **The Novikov condition for the market is the condition that
 the Willmore energy is bounded: $\mathcal{W}(M) < \infty$.**
 
@@ -182,7 +182,7 @@ the Fisher-Rao metric divergence at $\partial\Delta$ established in HAMILTONIAN 
 ### 3.1 The Peskir-Shiryaev framework on the market manifold
 
 The general optimal stopping problem \[Peskir-Shiryaev 2006, Chapter I\] on a
-probability space $(\Omega, \mathcal{F}, \mathbb{P})$ with a process $X_t$ and
+probability space $(\Omega, \mathcal{F}, \mathbb{P})$ with a process $X\_t$ and
 gain function $G$ asks:
 
 $$V(x) = \sup_\tau \mathbb{E}^x[G(X_\tau)] \tag{3.1}$$
@@ -192,21 +192,21 @@ where the supremum is over all stopping times $\tau$. The solution satisfies the
 
 $$\min\!\left\{-\mathcal{L}V, V - G\right\} = 0 \tag{3.2}$$
 
-where $\mathcal{L}$ is the infinitesimal generator of $X_t$.
+where $\mathcal{L}$ is the infinitesimal generator of $X\_t$.
 
-**On the market manifold:** The natural process is $X_t = b^*(t) \in M$ with
-generator $\mathcal{L}_M = \frac{\varepsilon^2}{2}\Delta_M - \varepsilon^2\vec{H}\cdot\nabla$.
+**On the market manifold:** The natural process is $X\_t = b^*(t) \in M$ with
+generator $\mathcal{L}\_M = \frac{\varepsilon^2}{2}\Delta\_M - \varepsilon^2\vec{H}\cdot\nabla$.
 
-For the efficient market ($H=0$): $\mathcal{L}_M = \frac{\varepsilon^2}{2}\Delta_M$
+For the efficient market ($H=0$): $\mathcal{L}\_M = \frac{\varepsilon^2}{2}\Delta\_M$
 — pure manifold Brownian motion, no drift.
 
-For the inefficient market: $\mathcal{L}_M = \frac{\varepsilon^2}{2}\Delta_M - \varepsilon^2\vec{H}\cdot\nabla$
+For the inefficient market: $\mathcal{L}\_M = \frac{\varepsilon^2}{2}\Delta\_M - \varepsilon^2\vec{H}\cdot\nabla$
 — the drift is the negative mean curvature vector.
 
 ### 3.2 The free boundary is the efficient/inefficient transition
 
 **Theorem 3.1** *(Free boundary = zero mean curvature locus)*. *For the optimal
-stopping problem on the market manifold with gain $G(b) = L_T(b) - L_T(b^*)$
+stopping problem on the market manifold with gain $G(b) = L\_T(b) - L\_T(b^*)$
 (excess log-growth over the log-optimal), the free boundary $\partial\mathcal{C}$
 separating the continuation region $\mathcal{C} = \{V > G\}$ from the stopping
 region $\mathcal{S} = \{V = G\}$ satisfies:*
@@ -222,7 +222,7 @@ hypersurface in $M$ separating the region where it is optimal to wait (let the
 portfolio drift toward lower curvature) from the region where it is optimal to stop
 and collect the excess return.*
 
-*Proof.* The gain function $G = L_T(b) - L_T(b^*)$ satisfies $G(b^*) = 0$ (zero excess
+*Proof.* The gain function $G = L\_T(b) - L\_T(b^*)$ satisfies $G(b^*) = 0$ (zero excess
 at the optimum) and $\nabla G(b^*) = 0$ (first-order condition for the log-optimal).
 The variational inequality (3.2) at a point $b$ with $H(b) \neq 0$ gives:
 
@@ -230,11 +230,11 @@ $$-\mathcal{L}_M V = \varepsilon^2\vec{H}\cdot\nabla V - \frac{\varepsilon^2}{2}
 
 so $b \in \mathcal{C}$ (continuation — don't stop yet, there is still drift to exploit).
 At a point with $H(b) = 0$: the drift vanishes and the smooth pasting condition
-$\nabla V|_{\partial\mathcal{C}} = \nabla G|_{\partial\mathcal{C}}$ is satisfied
+$\nabla V|\_{\partial\mathcal{C}} = \nabla G|\_{\partial\mathcal{C}}$ is satisfied
 precisely at $H = 0$. $\square$
 
 **The smooth pasting condition in geometric language.** The classical smooth pasting
-condition $V = G$, $\partial_n V = \partial_n G$ at the free boundary translates to:
+condition $V = G$, $\partial\_n V = \partial\_n G$ at the free boundary translates to:
 
 $$\text{Value function gradient} = \text{Gain function gradient} \iff \Pi_{TM}\nabla L_T = 0 \tag{3.5}$$
 
@@ -272,7 +272,7 @@ The value function of the optimal stopping problem (3.1) on the market manifold 
 
 $$V(b,t) = \mathbb{E}^{b,t}\!\left[\int_t^\tau r(b^*_s,s)\,ds + G(b^*_\tau)\right] \tag{3.7}$$
 
-where $r(b,t) = L_T(b)$ is the Kelly growth rate (the "running gain").
+where $r(b,t) = L\_T(b)$ is the Kelly growth rate (the "running gain").
 This is exactly the Feynman-Kac formula from PAPER.md:
 
 $$V(b,t) = u(b,t) = \mathbb{E}^{b,t}\!\left[\exp\!\left(\int_t^T r\,ds\right)\right] \tag{3.8}$$
@@ -293,7 +293,7 @@ A BSDE on the market manifold $M$ is:
 
 $$dY_t = -f(t, b^*_t, Y_t, Z_t)\,dt + Z_t\cdot dW_M(t), \qquad Y_T = \xi \tag{4.1}$$
 
-where $f$ is the **driver** (running gain) and $Z_t$ is the **control** process
+where $f$ is the **driver** (running gain) and $Z\_t$ is the **control** process
 (the adapted process in the volatility term).
 
 **Zhang \[2017\]** develops the theory of BSDEs including numerical methods, stability,
@@ -304,23 +304,23 @@ geometric content.
 
 $$dY_t = -L_T(b^*_t)\,dt + Z_t\cdot dW_M(t), \qquad Y_T = 0 \tag{4.2}$$
 
-where $L_T(b^*_t) = \log\langle b^*_t, x_t\rangle$ is the Kelly growth rate at
-each time step. The solution $Y_t$ represents the **accumulated future Kelly growth**
-from time $t$ to $T$, and $Z_t$ is the **hedging strategy for this accumulated wealth**.
+where $L\_T(b^*\_t) = \log\langle b^*\_t, x\_t\rangle$ is the Kelly growth rate at
+each time step. The solution $Y\_t$ represents the **accumulated future Kelly growth**
+from time $t$ to $T$, and $Z\_t$ is the **hedging strategy for this accumulated wealth**.
 
-**Theorem 4.1** *(BSDE solution = universal portfolio)*. *The unique solution $(Y_t, Z_t)$
+**Theorem 4.1** *(BSDE solution = universal portfolio)*. *The unique solution $(Y\_t, Z\_t)$
 to the BSDE (4.2) is:*
 
 $$Y_t = \log S_T^{*,M} - \log S_t^{*,M} = \frac{1}{T-t}\log\int_{M^r} W_{t,T}(b)\,d\mathrm{vol}_M \tag{4.3}$$
 
 $$Z_t = \nabla_{b^*_t}\log\int_{M^r} W_{t,T}(b)\,d\mathrm{vol}_M \tag{4.4}$$
 
-*where $W_{t,T}(b) = \prod_{s=t}^T\langle b, x_s\rangle$ is the partial wealth process.*
+*where $W\_{t,T}(b) = \prod\_{s=t}^T\langle b, x\_s\rangle$ is the partial wealth process.*
 
-*Proof.* The BSDE (4.2) with terminal condition $Y_T = 0$ has a unique strong solution
-by the Lipschitz condition on $f = L_T$ (the Kelly growth rate is Lipschitz in $b$
+*Proof.* The BSDE (4.2) with terminal condition $Y\_T = 0$ has a unique strong solution
+by the Lipschitz condition on $f = L\_T$ (the Kelly growth rate is Lipschitz in $b$
 on the compact manifold $M$). The representation (4.3) follows from the FK formula:
-$Y_t = \mathbb{E}^{b^*_t}\!\left[\int_t^T L_s\,ds\right]$ is the conditional expected
+$Y\_t = \mathbb{E}^{b^*\_t}\!\left[\int\_t^T L\_s\,ds\right]$ is the conditional expected
 future growth, which equals the log of the partial wealth normalisation constant. $\square$
 
 **The $Z$-process is the portfolio gradient — the hedging strategy in the BSDE
@@ -331,7 +331,7 @@ $$Z_t = \hat{b}_T^M(t) - b^*_t \tag{4.5}$$
 
 — the $Z$-process IS the difference between the universal portfolio weight and the
 log-optimal weight, which is the $O(1/T)$ Laplace correction from LAPLACE.md.
-For the efficient market (minimal surface): $Z_t = O(1/T^2)$ (tiny, from the
+For the efficient market (minimal surface): $Z\_t = O(1/T^2)$ (tiny, from the
 $O(1/T^2)$ error bound). **The BSDE residual for the efficient market is
 second-order in $1/T$.**
 
@@ -350,7 +350,7 @@ theory), and the running gain satisfies:*
 
 $$\int_0^T \varepsilon^2 H^2(b^*_t)\,dt = \varepsilon^2\mathcal{W}_{\rm time}(M) \tag{4.7}$$
 
-*where $\mathcal{W}_{\rm time}(M) = \int_0^T H^2(b^*(t))\,dt$ is the time-integrated
+*where $\mathcal{W}\_{\rm time}(M) = \int\_0^T H^2(b^*(t))\,dt$ is the time-integrated
 Willmore energy. The total excess return from the BSDE driver is bounded by:*
 
 $$|Y_0 - Y_0^{\rm efficient}| \leq \varepsilon^2\sup_t H^2(b^*_t)\cdot T = \mathcal{W}(M)\cdot T \tag{4.8}$$
@@ -363,7 +363,7 @@ of the quadratic BSDE over the linear BSDE (efficient market) equals the Willmor
 ### 4.3 The comparison theorem in geometric form
 
 **Zhang's comparison theorem for BSDEs** \[2017, Theorem 2.6.2\]: If $f^1 \geq f^2$
-(drivers ordered), then $Y^1_t \geq Y^2_t$ (solutions ordered).
+(drivers ordered), then $Y^1\_t \geq Y^2\_t$ (solutions ordered).
 
 **Geometric form:** Let $M^1$ and $M^2$ be two market manifolds with
 $H^1 \geq H^2$ (the first has higher mean curvature = more inefficiency). Then:
@@ -380,15 +380,15 @@ confirming that the inefficient market BSDE has positive excess gain.
 
 ### 4.4 Linear BSDEs and the Girsanov density
 
-The **linear BSDE** with driver $f(t,y,z) = -r y + h_t\cdot z$ has explicit solution:
+The **linear BSDE** with driver $f(t,y,z) = -r y + h\_t\cdot z$ has explicit solution:
 
 $$Y_t = \mathbb{E}^{\hat{\mathbb{Q}}}\!\left[\xi\,\Gamma_{t,T}\mid\mathcal{F}_t\right] \tag{4.10}$$
 
 where $\hat{\mathbb{Q}}$ is the minimal martingale measure and
-$\Gamma_{t,T} = \mathcal{E}\!\left(\int_t^T h_s\,dW_s\right)$ is the Doléans-Dade
+$\Gamma\_{t,T} = \mathcal{E}\!\left(\int\_t^T h\_s\,dW\_s\right)$ is the Doléans-Dade
 exponential.
 
-**In the geometric framework:** The process $h_t = \vec{H}(b^*_t)/\varepsilon$ is
+**In the geometric framework:** The process $h\_t = \vec{H}(b^*\_t)/\varepsilon$ is
 the market price of risk in the normal bundle direction. The linear BSDE with this
 driver gives the **risk-neutral price of any payoff** on the market manifold, discounted
 by the Girsanov density from (2.2). The connection:
@@ -397,7 +397,7 @@ $$h_t = \frac{\vec{H}(b^*_t)}{\varepsilon} = -\frac{\Pi_{NM}\nabla_{g^{\rm FR}}L
 
 (from CONVERGENCE.md equation 1.8). **The market price of risk in the BSDE is the
 projection of the log-growth gradient onto the normal bundle, divided by the
-information content $T$.** For the efficient market: $h_t = 0$ — zero market price
+information content $T$.** For the efficient market: $h\_t = 0$ — zero market price
 of risk in all normal directions.
 
 ---
@@ -410,8 +410,8 @@ of risk in all normal directions.
 classical theory to multiple exercise rights, path-dependent payoffs, and
 randomised stopping times. The key objects:
 
-- **Multiple stopping:** $\tau_1 \leq \tau_2 \leq \ldots \leq \tau_k$ — a sequence
-  of $k$ stopping times, with cumulative payoff $\sum_{i=1}^k G_i(X_{\tau_i})$.
+- **Multiple stopping:** $\tau\_1 \leq \tau\_2 \leq \ldots \leq \tau\_k$ — a sequence
+  of $k$ stopping times, with cumulative payoff $\sum\_{i=1}^k G\_i(X\_{\tau\_i})$.
 - **Swing options:** $k$ exercise rights within a fixed window $[0,T]$.
 - **Randomised stopping:** stopping measure $\mu$ on $[0,T]$ rather than a single time.
 
@@ -429,17 +429,17 @@ up to $k$ times during $[0,T]$. The value function is:
 $$V^k(b,t) = \sup_{\tau_1 \leq \ldots \leq \tau_k \leq T}
 \mathbb{E}^{b,t}\!\left[\sum_{i=1}^k \varepsilon^2 H^2(b^*_{\tau_i})\Delta_i\right] \tag{5.1}$$
 
-where $\Delta_i$ is the duration of the $i$-th exercise.
+where $\Delta\_i$ is the duration of the $i$-th exercise.
 
 **Theorem 5.1** *(Wong decomposition on $M$)*. *The $k$-exercise value function
 decomposes as:*
 
 $$V^k(b,t) = V^1(b,t) + V^{k-1}(b^*_{\tau^*_1}, \tau^*_1) \tag{5.2}$$
 
-*where $\tau^*_1$ is the optimal first stopping time. This is the inductive structure
+*where $\tau^*\_1$ is the optimal first stopping time. This is the inductive structure
 of \[Wong 2008, Theorem 3.1\], applied to the curvature process $H^2(b^*(t))$ on $M$.*
 
-**Homotopy class structure.** For a market manifold with $\pi_1(M) = \mathbb{Z}^2$
+**Homotopy class structure.** For a market manifold with $\pi\_1(M) = \mathbb{Z}^2$
 (Clifford torus, from FIBER\_BUNDLES), the $k$ exercise rights correspond to $k$
 windings of the market path around the torus. The optimal strategy for $k=2$ rights:
 enter on the first full winding, re-enter on the second. The generalised stopping
@@ -455,7 +455,7 @@ $$V^{\rm rand}(b,t) = \sup_{\mu \in \mathcal{P}([t,T])} \mathbb{E}^{b,t}\!\left[
 
 **Theorem 5.2** *(Randomised stopping = posterior distribution)*. *The optimal
 measure $\mu^*$ for the randomised stopping problem (5.3) is the posterior
-distribution $\pi_T(b^*)$ of the Manifold Universal Portfolio:*
+distribution $\pi\_T(b^*)$ of the Manifold Universal Portfolio:*
 
 $$\mu^*(A) = \pi_T(A) = \frac{\int_A W_T(b)\,d\mathrm{vol}_M}{\int_M W_T(b)\,d\mathrm{vol}_M} \tag{5.4}$$
 
@@ -473,34 +473,34 @@ optimal for timing the entry into curvature strategies.
 
 ### 6.1 Definition and classical theory
 
-The **Snell envelope** $S_t$ of an adapted process $\{G_t\}$ is the smallest
+The **Snell envelope** $S\_t$ of an adapted process $\{G\_t\}$ is the smallest
 supermartingale dominating $G$:
 
 $$S_t = \text{ess}\sup_{\tau \geq t} \mathbb{E}[G_\tau \mid \mathcal{F}_t] \tag{6.1}$$
 
 The Snell envelope characterises the value function of the optimal stopping problem:
-$V(b,t) = S_t$ where $G_t = G(b^*(t))$.
+$V(b,t) = S\_t$ where $G\_t = G(b^*(t))$.
 
 ### 6.2 The Snell envelope IS the FK value function
 
 **Theorem 6.1** *(Snell envelope = FK value function on $M$)*. *The Snell envelope
-of the Kelly growth process $\{G_t = L_T(b^*(t))\}$ is the Feynman-Kac value function:*
+of the Kelly growth process $\{G\_t = L\_T(b^*(t))\}$ is the Feynman-Kac value function:*
 
 $$S_t = u(b^*(t), t) = \mathbb{E}^{b^*(t)}\!\left[\int_t^T L_s\,ds\right] \tag{6.2}$$
 
 *where $u$ solves the FK PDE from PAPER.md.*
 
-*Proof.* $S_t$ is the smallest supermartingale dominating $G_t = L_T(b^*(t))$.
-By the Doob-Meyer decomposition: $S_t = M_t - A_t$ where $M_t$ is a martingale
-and $A_t$ is the compensator (predictable increasing process). At the optimal
-stopping time $\tau^*$: $S_{\tau^*} = G_{\tau^*}$ and $A$ stops increasing.
-The FK representation gives $u(b,t) = \mathbb{E}^b[\int_t^\tau G_s\,ds + G_\tau]$
+*Proof.* $S\_t$ is the smallest supermartingale dominating $G\_t = L\_T(b^*(t))$.
+By the Doob-Meyer decomposition: $S\_t = M\_t - A\_t$ where $M\_t$ is a martingale
+and $A\_t$ is the compensator (predictable increasing process). At the optimal
+stopping time $\tau^*$: $S\_{\tau^*} = G\_{\tau^*}$ and $A$ stops increasing.
+The FK representation gives $u(b,t) = \mathbb{E}^b[\int\_t^\tau G\_s\,ds + G\_\tau]$
 which is exactly the Snell envelope characterisation. $\square$
 
-**Geometric interpretation.** The Snell envelope $S_t$ on the market manifold is
+**Geometric interpretation.** The Snell envelope $S\_t$ on the market manifold is
 the value of the "ideal" portfolio strategy — the one that can perfectly time
 entry and exit into curvature-exploitation positions. It dominates all other
-adapted processes $G_t$ (all other strategies), is the smallest such dominator,
+adapted processes $G\_t$ (all other strategies), is the smallest such dominator,
 and equals the FK path integral. **The universal portfolio IS the Snell envelope.**
 
 ### 6.3 The Doob-Meyer decomposition as a market decomposition
@@ -510,17 +510,17 @@ The Doob-Meyer decomposition of the Snell envelope:
 $$S_t = M_t - A_t \tag{6.3}$$
 
 has a geometric interpretation:
-- **Martingale part $M_t$:** The diffusion of the portfolio on the market manifold — pure noise, no predictable component. For the efficient market: $M_t$ is the entire Snell envelope.
-- **Compensator $A_t$:** The predictable increasing process capturing the drift. For the inefficient market: $dA_t = \varepsilon^2 H^2(b^*(t))\,dt$ — the compensator IS the squared mean curvature accumulated over time.
+- **Martingale part $M\_t$:** The diffusion of the portfolio on the market manifold — pure noise, no predictable component. For the efficient market: $M\_t$ is the entire Snell envelope.
+- **Compensator $A\_t$:** The predictable increasing process capturing the drift. For the inefficient market: $dA\_t = \varepsilon^2 H^2(b^*(t))\,dt$ — the compensator IS the squared mean curvature accumulated over time.
 
 **The Doob-Meyer compensator IS the Willmore energy accumulated over $[0,t]$:**
 
 $$A_t = \varepsilon^2\int_0^t H^2(b^*(s))\,ds \tag{6.4}$$
 
 This is the **time-integrated Willmore energy** — the total squared curvature
-accumulated along the market path. For the efficient market: $A_t = 0$ (zero
+accumulated along the market path. For the efficient market: $A\_t = 0$ (zero
 compensator, the Snell envelope is a martingale). For the inefficient market:
-$A_t > 0$ and growing — the market constantly generates predictable excess return.
+$A\_t > 0$ and growing — the market constantly generates predictable excess return.
 
 ---
 
@@ -540,16 +540,16 @@ $$-\partial_t V + \sup_{u \in \mathcal{U}}\!\left\{\mathcal{L}^u V + r^u\right\}
 
 ### 7.2 The HJB on the market manifold
 
-For the portfolio optimisation on $(M, g_M)$, the control $u$ is the portfolio
-perturbation direction $u \in T_{b^*}M$ (staying on the manifold) or
-$u \in N_{b^*}M$ (moving off the manifold).
+For the portfolio optimisation on $(M, g\_M)$, the control $u$ is the portfolio
+perturbation direction $u \in T\_{b^*}M$ (staying on the manifold) or
+$u \in N\_{b^*}M$ (moving off the manifold).
 
 **Efficient market HJB** (control restricted to $TM$):
 
 $$-\partial_t V + \frac{\varepsilon^2}{2}\Delta_M V + L_T(b^*) = 0 \tag{7.3}$$
 
 This is the FK PDE of PAPER.md restricted to $M$ with $H=0$. The Laplacian
-$\Delta_M$ is the **manifold Laplace-Beltrami operator** — the intrinsic diffusion
+$\Delta\_M$ is the **manifold Laplace-Beltrami operator** — the intrinsic diffusion
 on the factor subspace.
 
 **Inefficient market HJB** (control in both $TM$ and $NM$):
@@ -575,7 +575,7 @@ $$V^{\rm ineff}(b,t) \geq V^{\rm eff}(b,t) \quad\text{for all }(b,t) \in M\times
 
 *with equality iff $H \equiv 0$.*
 
-*Proof.* The HJB drivers satisfy $r^{\rm ineff} = L_T + \varepsilon^2 H^2 \geq L_T = r^{\rm eff}$.
+*Proof.* The HJB drivers satisfy $r^{\rm ineff} = L\_T + \varepsilon^2 H^2 \geq L\_T = r^{\rm eff}$.
 By the comparison theorem for parabolic PDEs (and the BSDE comparison theorem of
 Section 4.3), the larger driver gives the larger value function. $\square$
 
@@ -592,21 +592,21 @@ $\delta V = V^{\rm ineff} - V^{\rm eff}$ satisfies the **linearised HJB**:
 
 $$-\partial_t\delta V + \frac{\varepsilon^2}{2}\Delta_M\delta V + \varepsilon^2 H^2 = 0 \tag{7.7}$$
 
-The solution decomposes in terms of the Jacobi eigenfunctions $\{\phi_k\}$ with
-eigenvalues $\{\lambda_k\}$ (from CLASSIFICATION.md):
+The solution decomposes in terms of the Jacobi eigenfunctions $\{\phi\_k\}$ with
+eigenvalues $\{\lambda\_k\}$ (from CLASSIFICATION.md):
 
 $$\delta V(b,t) = \varepsilon^2\sum_k c_k e^{\lambda_k(T-t)}\phi_k(b) \tag{7.8}$$
 
-where $c_k = \langle H^2, \phi_k\rangle_{L^2(M)}$ are the projections of the
+where $c\_k = \langle H^2, \phi\_k\rangle\_{L^2(M)}$ are the projections of the
 squared mean curvature onto the Jacobi eigenmodes.
 
 **The Jacobi eigenfunctions are the natural basis for the HJB perturbation.** Each
-eigenmode decays (or grows) at rate $\lambda_k$:
-- Modes with $\lambda_k < 0$ (negative Jacobi eigenvalues, unstable directions):
+eigenmode decays (or grows) at rate $\lambda\_k$:
+- Modes with $\lambda\_k < 0$ (negative Jacobi eigenvalues, unstable directions):
   the corresponding components of $\delta V$ grow as $t \to 0$ from $T$ (backward in time).
   These are the **growing inefficiency modes** — directions in which the market becomes
   more inefficient as time approaches the terminal date.
-- Modes with $\lambda_k > 0$ (positive Jacobi eigenvalues, stable directions):
+- Modes with $\lambda\_k > 0$ (positive Jacobi eigenvalues, stable directions):
   the corresponding components decay. These are **self-correcting inefficiency modes**.
 
 The number of growing modes is the stability index $\mathrm{ind}(M)$ — confirming
@@ -623,7 +623,7 @@ The complete optimal control problem on the market manifold is:
 
 $$\sup_{(u_t) \in \mathcal{U}} J(b, t; u) = \mathbb{E}^{b,t}\!\left[\int_t^T e^{-r(s-t)}\!\left(L_s(b^*_s) + \varepsilon^2 H^2(b^*_s)\right)ds + G(b^*_T)\right] \tag{8.1}$$
 
-subject to $db^* = (-\varepsilon^2\vec{H} + u)\,dt + \varepsilon\,dW_M$.
+subject to $db^* = (-\varepsilon^2\vec{H} + u)\,dt + \varepsilon\,dW\_M$.
 
 The optimal control is $u^* = -\vec{H}$ (MINIMAL\_SURFACE.md) and the HJB solution
 gives the value function hierarchy in the following table.
@@ -633,17 +633,17 @@ gives the value function hierarchy in the following table.
 | Framework | Efficient market ($H=0$) | Inefficient market ($H\neq 0$) |
 |:----------|:------------------------|:-------------------------------|
 | **Martingale** | $b^*(t)$ is a martingale on $M$ | $b^*(t)$ is a submartingale with drift $-\varepsilon^2\vec{H}$ |
-| **EMM space** | $\mathcal{M} = \mathbb{P}|_{TM} + N_{b^*}M$ | $\mathcal{M} = \mathbb{Q}_H + N_{b^*}M$ (shifted) |
+| **EMM space** | $\mathcal{M} = \mathbb{P}|\_{TM} + N\_{b^*}M$ | $\mathcal{M} = \mathbb{Q}\_H + N\_{b^*}M$ (shifted) |
 | **Minimal EMM** | $\hat{\mathbb{Q}} = \mathbb{P}$ (no adjustment on $TM$) | $\hat{\mathbb{Q}} \neq \mathbb{P}$ (tangential correction) |
 | **Novikov condition** | $\int H^2 = 0$ (trivially satisfied) | $\int H^2 < \infty$ (Willmore energy finite) |
 | **Optimal stopping** | Stop immediately ($\tau^* = 0$) | Stop at free boundary $\{H=0\}$ |
 | **Free boundary** | All of $M$ (no interior stopping region) | $\{H=0\}$ separates continuation from stopping |
 | **Smooth fit** | Everywhere (stable manifold) | Only at stable parts of $\{H=0\}$ |
-| **BSDE driver** | $f = L_T$ (linear) | $f = L_T + \varepsilon^2 H^2$ (quadratic) |
-| **BSDE $Z$-process** | $Z_t = O(1/T^2)$ (tiny) | $Z_t = O(H)$ (curvature-sized) |
-| **Snell envelope** | $S_t = M_t$ (pure martingale) | $S_t = M_t - A_t$, $dA_t = \varepsilon^2 H^2\,dt$ |
-| **Doob-Meyer compensator** | $A_t = 0$ | $A_t = \varepsilon^2\int_0^t H^2\,ds$ = Willmore energy |
-| **HJB equation** | $-\partial_t V + \frac{\varepsilon^2}{2}\Delta_M V + L_T = 0$ | Same + $\varepsilon^2 H^2$ |
+| **BSDE driver** | $f = L\_T$ (linear) | $f = L\_T + \varepsilon^2 H^2$ (quadratic) |
+| **BSDE $Z$-process** | $Z\_t = O(1/T^2)$ (tiny) | $Z\_t = O(H)$ (curvature-sized) |
+| **Snell envelope** | $S\_t = M\_t$ (pure martingale) | $S\_t = M\_t - A\_t$, $dA\_t = \varepsilon^2 H^2\,dt$ |
+| **Doob-Meyer compensator** | $A\_t = 0$ | $A\_t = \varepsilon^2\int\_0^t H^2\,ds$ = Willmore energy |
+| **HJB equation** | $-\partial\_t V + \frac{\varepsilon^2}{2}\Delta\_M V + L\_T = 0$ | Same + $\varepsilon^2 H^2$ |
 | **HJB value** | $V^{\rm eff}$ | $V^{\rm ineff} = V^{\rm eff} + \varepsilon^2\mathcal{W}(M)T$ |
 | **Jacobi modes** | All decay (stable) | Growing modes = stability index $\mathrm{ind}(M)$ |
 | **Bellman comparison** | Baseline | $V^{\rm ineff} \geq V^{\rm eff}$ always |
@@ -676,8 +676,8 @@ The BSDE framework gives the cleanest path to proving the full EMH conjecture
 (Conjecture 3.1 of MINIMAL\_SURFACE.md):
 
 **Proof strategy via BSDEs.** Suppose $H \neq 0$ on $M$. The quadratic BSDE (4.6)
-has driver $f = L_T + \varepsilon^2 H^2 > L_T$. By the BSDE comparison theorem
-(Section 4.3): $Y_0^{\rm ineff} > Y_0^{\rm eff}$. The difference:
+has driver $f = L\_T + \varepsilon^2 H^2 > L\_T$. By the BSDE comparison theorem
+(Section 4.3): $Y\_0^{\rm ineff} > Y\_0^{\rm eff}$. The difference:
 
 $$Y_0^{\rm ineff} - Y_0^{\rm eff} = \varepsilon^2\mathbb{E}\!\left[\int_0^T H^2(b^*_t)\,dt\right]
 = \varepsilon^2 T\|H\|^2_{L^2(M)} > 0 \tag{9.1}$$
@@ -709,15 +709,15 @@ part of the adjoint). The adjoint equations:
 
 $$dp_t = -\nabla_b\mathcal{H}\,dt + q_t\,dW_M \tag{9.3}$$
 
-**In the geometric framework:** The costate $p_t$ is the gradient of the value
-function: $p_t = \nabla_{b^*}V|_{b^*_t}$. The adjoint equation (9.3) is the
+**In the geometric framework:** The costate $p\_t$ is the gradient of the value
+function: $p\_t = \nabla\_{b^*}V|\_{b^*\_t}$. The adjoint equation (9.3) is the
 **backward equation for the Fisher information gradient** — it evolves the sensitivity
 of the value function backward in time along the market path.
 
-For the efficient market: $p_t = \nabla V^{\rm eff} = O(1/T)$ (small, from the
-Laplace approximation). For the inefficient market: $p_t = \nabla V^{\rm eff} + \varepsilon^2\nabla H^2$
-(includes the curvature correction). The maximum condition $\nabla_u\mathcal{H} = 0$
-gives $u^* = F(b^*)^{-1}p_t = -\vec{H}(b^*(t))$ — **the Pontryagin maximum principle
+For the efficient market: $p\_t = \nabla V^{\rm eff} = O(1/T)$ (small, from the
+Laplace approximation). For the inefficient market: $p\_t = \nabla V^{\rm eff} + \varepsilon^2\nabla H^2$
+(includes the curvature correction). The maximum condition $\nabla\_u\mathcal{H} = 0$
+gives $u^* = F(b^*)^{-1}p\_t = -\vec{H}(b^*(t))$ — **the Pontryagin maximum principle
 recovers the mean curvature strategy as the optimal control.**
 
 ---
@@ -740,7 +740,7 @@ $\varepsilon^2 H^2$ — the mean curvature squared. The comparison theorem gives
 $V^{\rm ineff} \geq V^{\rm eff}$ with equality iff $H=0$.
 
 **Generalised stopping (Wong):** Multiple exercise rights correspond to multiple
-crossings of the free boundary. The topology of $M$ (fundamental group $\pi_1(M)$)
+crossings of the free boundary. The topology of $M$ (fundamental group $\pi\_1(M)$)
 determines the combinatorial structure of the multi-stopping problem. The optimal
 randomised stopping measure IS the MUP posterior.
 

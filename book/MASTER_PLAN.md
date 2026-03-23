@@ -228,7 +228,7 @@ Six papers are ready for submission. In order of priority:
 ### Paper B — Annals of Applied Probability (Submit in ~6 weeks)
 **"Market Efficiency as a Minimal Surface: The Sharpe-Curvature Theorem"**
 - Source: 03_MINIMAL_SURFACE.md, 04_CLASSIFICATION.md
-- Key result: R1 ($\mathrm{Sharpe}^*=\|H\|_{L^2}$), R3 (only CAPMs stable)
+- Key result: R1 ($\mathrm{Sharpe}^*=\|H\|\_{L^2}$), R3 (only CAPMs stable)
 - Length: 35 pages
 
 ### Paper C — Operations Research / Journal of Finance (Submit in ~8 weeks)
@@ -246,7 +246,7 @@ Six papers are ready for submission. In order of priority:
 ### Paper N — Journal of Finance (Submit in ~10 weeks)
 **"Shapley Values and Kelly Attribution on the Portfolio Simplex"**
 - Source: 27_HYPERCUBE_SHAPLEY.md
-- Key result: R25 ($\phi_i=b^*_i(\mu_i-\bar\mu)$)
+- Key result: R25 ($\phi\_i=b^*\_i(\mu\_i-\bar\mu)$)
 - Length: 25 pages
 
 ---
@@ -319,7 +319,7 @@ Add seven new experiments to EXPERIMENTS.md. Each is ★ difficulty:
 | Exp | Test | Data | Time |
 |:---:|:-----|:-----|:----:|
 | 11 | Dyson class ratio test | FF5 daily returns | 20 min |
-| 12 | Tracy-Widom $F_1$ vs $F_2$ fit | FF5 eigenvalues | 20 min |
+| 12 | Tracy-Widom $F\_1$ vs $F\_2$ fit | FF5 eigenvalues | 20 min |
 | 13 | Takens FNN → identify $r$ | S&P 500 daily | 20 min |
 | 14 | Diffusion maps manifold | S&P 500 daily | 30 min |
 | 15 | Shapley attribution | FF25 portfolios | 20 min |

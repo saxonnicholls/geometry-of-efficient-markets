@@ -67,9 +67,9 @@ and it is not replicable from a screen.
 
 **If your alpha source is a Bloomberg terminal, your alpha is probably 
 priced.**
-A terminal gives you $\mathcal{F}^X_t$ — everything observable. In an 
-efficient market, nothing in $\mathcal{F}^X_t$ generates excess return. 
-Real alpha requires $\mathcal{G}_t$ — information genuinely outside the 
+A terminal gives you $\mathcal{F}^X\_t$ — everything observable. In an 
+efficient market, nothing in $\mathcal{F}^X\_t$ generates excess return. 
+Real alpha requires $\mathcal{G}\_t$ — information genuinely outside the 
 market's information set. Satellite images of parking lots. Conversations 
 your competitor hasn't had. A genuine edge in a niche no one is watching.
 
@@ -357,7 +357,7 @@ on the manifold.
    Be honest about which is which.
 
 5. **Compute the Shapley attribution of your Kelly growth to each asset 
-   monthly.** $\phi_i = b^*_i \times (\mu_i - \bar\mu)$. The assets with 
+   monthly.** $\phi\_i = b^*\_i \times (\mu\_i - \bar\mu)$. The assets with 
    large positive Shapley values deserve their weight. The others do not.
 
 6. **Set your rebalancing frequency to the market's natural rate.** 

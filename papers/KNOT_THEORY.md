@@ -9,7 +9,7 @@
 **Abstract.**  
 We establish a deep connection between knot theory and the geometry of efficient
 financial markets. The log-optimal portfolio path $\Gamma = \{b^*(t) : t \in [0,T]\}$
-traces a curve in the Bhattacharyya sphere $S^{d-1}_+$, and for $d \geq 4$ this
+traces a curve in the Bhattacharyya sphere $S^{d-1}\_+$, and for $d \geq 4$ this
 curve can be knotted. The knot type of $\Gamma$ is a topological market invariant —
 it determines which minimal surface the efficient market must span (via the Plateau
 problem), and hence which efficient market structure is "forced" by the market's
@@ -17,12 +17,12 @@ history. Our principal results:
 
 **(i) Knots classify efficient markets:** The unknot forces the CAPM (great sphere,
 genus 0). The trefoil forces a genus-1 minimal surface (Clifford torus universality).
-The torus knot $T(m,n)$ forces the Lawson surface $\tau_{m,n}$ (genus $(m-1)(n-1)/2$).
+The torus knot $T(m,n)$ forces the Lawson surface $\tau\_{m,n}$ (genus $(m-1)(n-1)/2$).
 The Seifert genus of the market path is the minimum topological complexity of the
 efficient market.
 
 **(ii) The Jones polynomial is a market partition function:** By Witten's
-theorem \[1989\], the Jones polynomial $J_\Gamma(q)$ of the market path equals
+theorem \[1989\], the Jones polynomial $J\_\Gamma(q)$ of the market path equals
 the Chern-Simons partition function on $S^3$. Since we established in FIBER\_BUNDLES
 that the Chern-Simons form appears in the market action, the Jones polynomial computes
 the amplitude for market regime transitions — it is a topological market invariant
@@ -35,7 +35,7 @@ path is a non-ribbon knot have permanent topological complexity that cannot be
 unwound, even over the full business cycle. The $s$-cobordism theorem and the
 Gordian distance measure how "far" a market is from being CAPM-resolvable.
 
-**(iv) Knot invariants as risk measures:** The Alexander polynomial $\Delta_\Gamma(t)$
+**(iv) Knot invariants as risk measures:** The Alexander polynomial $\Delta\_\Gamma(t)$
 is the characteristic polynomial of the Seifert matrix — which is precisely the
 monodromy of the normal bundle connection around the market cycle. The writhe of
 the market knot is the Chern-Simons level modulo $2\pi$. The unknotting number
@@ -57,25 +57,25 @@ surfaces; Chern-Simons; market topology; writhe; unknotting number; satellite kn
 
 ## 1. How Knots Arise in Market Geometry
 
-### 1.1 The market path as a curve in $S^{d-1}_+$
+### 1.1 The market path as a curve in $S^{d-1}\_+$
 
 The log-optimal portfolio path is:
 
 $$\Gamma: [0,T] \to S^{d-1}_+, \qquad t \mapsto \phi(b^*(t)) = \sqrt{b^*(t)} \tag{1.1}$$
 
-For $d = 3$ (three assets): $\Gamma$ is a curve in $S^2_+$ (a positive octant of the
+For $d = 3$ (three assets): $\Gamma$ is a curve in $S^2\_+$ (a positive octant of the
 2-sphere). Curves on the 2-sphere cannot be knotted — the knot group of $S^2$ is
 trivial. The market path is always unknotted for three assets.
 
-For $d = 4$ (four assets): $\Gamma$ is a curve in $S^3_+$ (a positive orthant of the
+For $d = 4$ (four assets): $\Gamma$ is a curve in $S^3\_+$ (a positive orthant of the
 3-sphere). **Curves in $S^3$ can be knotted.** The log-optimal portfolio path for a
-four-asset, two-factor market traces a curve in $S^3_+$ that may be:
+four-asset, two-factor market traces a curve in $S^3\_+$ that may be:
 - The unknot (CAPM-type market)
 - The trefoil knot (simplest non-trivial knot)
 - A torus knot $T(m,n)$ (winding $m$ times in one direction and $n$ times in another)
 - More exotic knots (hyperbolic knots, satellite knots)
 
-For $d \geq 5$: knots exist in $S^{d-1}_+$ but are automatically unknotted for
+For $d \geq 5$: knots exist in $S^{d-1}\_+$ but are automatically unknotted for
 $d \geq 5$ (Whitney embedding: knots in $S^n$ are trivial for $n \geq 4$). However,
 **links** (collections of multiple curves) can be non-trivially linked even in high
 dimensions through the theory of higher-dimensional linking.
@@ -119,16 +119,16 @@ topological complexity of the factor structure is bounded below by the knot inva
 
 | Knot $K$ | $g(K)$ | Crossings | Minimal surface $\Sigma^*$ | Market structure |
 |:---------|:------:|:---------:|:--------------------------|:----------------|
-| Unknot $0_1$ | 0 | 0 | Great disk (great sphere) | CAPM, no factor interactions |
-| Trefoil $3_1$ | 1 | 3 | Seifert surface (torus-like) | Clifford torus market |
-| Figure-eight $4_1$ | 1 | 4 | Punctured torus | Hyperbolic 2-factor market |
-| Torus knot $T(2,3) = 3_1$ | 1 | 3 | Clifford torus | Balanced 2-factor |
-| Torus knot $T(2,5) = 5_1$ | 2 | 5 | Lawson $\tau_{2,1}$ | Two-regime 2-factor |
-| Torus knot $T(3,4)$ | 3 | 8 | Lawson $\tau_{3,1}$ or higher | Three-regime factor |
-| Torus knot $T(m,n)$ | $(m-1)(n-1)/2$ | — | Lawson $\tau_{m,n}$-type | Multi-regime coupled |
-| Satellite knot | $g_{\rm comp} + g_{\rm sat}$ | — | Composite surface | Nested factor structure |
+| Unknot $0\_1$ | 0 | 0 | Great disk (great sphere) | CAPM, no factor interactions |
+| Trefoil $3\_1$ | 1 | 3 | Seifert surface (torus-like) | Clifford torus market |
+| Figure-eight $4\_1$ | 1 | 4 | Punctured torus | Hyperbolic 2-factor market |
+| Torus knot $T(2,3) = 3\_1$ | 1 | 3 | Clifford torus | Balanced 2-factor |
+| Torus knot $T(2,5) = 5\_1$ | 2 | 5 | Lawson $\tau\_{2,1}$ | Two-regime 2-factor |
+| Torus knot $T(3,4)$ | 3 | 8 | Lawson $\tau\_{3,1}$ or higher | Three-regime factor |
+| Torus knot $T(m,n)$ | $(m-1)(n-1)/2$ | — | Lawson $\tau\_{m,n}$-type | Multi-regime coupled |
+| Satellite knot | $g\_{\rm comp} + g\_{\rm sat}$ | — | Composite surface | Nested factor structure |
 
-**The figure-eight knot $4_1$** is special: it is the simplest **hyperbolic knot**
+**The figure-eight knot $4\_1$** is special: it is the simplest **hyperbolic knot**
 (not a torus knot, not a satellite knot). The minimal surface spanning the figure-eight
 knot is a once-punctured torus — a torus with a hole. In market terms: a four-asset
 market whose log-optimal path traces a figure-eight knot has a minimal spanning surface
@@ -145,14 +145,14 @@ topologically equivalent. **An amphicheiral market has symmetric long-short fact
 
 The CAPM great-sphere market has the unknot as its boundary:
 the log-optimal path $\Gamma$ for a single-factor market is a great circle arc
-(from MINIMAL\_SURFACE Section 8.1), which in $S^3_+$ is a simple arc from one
+(from MINIMAL\_SURFACE Section 8.1), which in $S^3\_+$ is a simple arc from one
 boundary face to another — topologically, the unknot.
 
 **Theorem 2.1** *(CAPM = unknot)*. *The log-optimal portfolio path of a CAPM
-($r=1$, totally geodesic market manifold) is homotopic to the unknot in $S^{d-1}_+$.
+($r=1$, totally geodesic market manifold) is homotopic to the unknot in $S^{d-1}\_+$.
 The minimal spanning surface is a great disk, confirming the CAPM structure.*
 
-*Proof.* The CAPM path lies on a great circle $S^1_+ \subset S^{d-1}_+$ — a simple
+*Proof.* The CAPM path lies on a great circle $S^1\_+ \subset S^{d-1}\_+$ — a simple
 arc in the positive hemisphere. Simple arcs in any hemisphere are isotopic to the
 unknot (they have no room to knot since they lie in a 1-dimensional curve on a
 contractible region). $\square$
@@ -160,10 +160,10 @@ contractible region). $\square$
 ### 2.3 The trefoil = balanced two-factor market
 
 The Clifford torus market's log-optimal path traces a torus knot $T(2,3)$ — the
-**trefoil** — in $S^3_+$. The trefoil is the $(2,3)$ torus knot: it winds 2 times
+**trefoil** — in $S^3\_+$. The trefoil is the $(2,3)$ torus knot: it winds 2 times
 around the torus in one direction and 3 times in the other.
 
-**Why the trefoil?** The Clifford torus $\tau_{1,1} \subset S^3$ is the standard
+**Why the trefoil?** The Clifford torus $\tau\_{1,1} \subset S^3$ is the standard
 torus (product of two circles). Its log-optimal portfolio path, for a balanced
 ($p=1/2$) two-factor market where Factor 1 and Factor 2 cycle through their values
 independently, traces a path that winds $m$ times around the $\theta$-direction
@@ -173,9 +173,9 @@ For a balanced market where both factors complete one full cycle ($m=n=1$): the 
 is the $(1,1)$ torus knot = the unknot. For a market where Factor 1 completes 2 cycles
 while Factor 2 completes 3 cycles ($m=2$, $n=3$): the path is the trefoil $T(2,3)$.
 
-The connection to the Lawson surfaces: $T(m,n)$ bounds the Lawson surface $\tau_{m,n}$
+The connection to the Lawson surfaces: $T(m,n)$ bounds the Lawson surface $\tau\_{m,n}$
 (minimal, genus $(m-1)(n-1)/2$). **The torus knot $T(m,n)$ is the natural boundary
-of the Lawson surface $\tau_{m,n}$.**
+of the Lawson surface $\tau\_{m,n}$.**
 
 ---
 
@@ -187,7 +187,7 @@ Witten \[1989\] established the profound connection:
 
 $$J_K(q) = Z_{\rm CS}[S^3, K] \tag{3.1}$$
 
-The **Jones polynomial** $J_K(q)$ — a knot invariant that distinguishes most knots —
+The **Jones polynomial** $J\_K(q)$ — a knot invariant that distinguishes most knots —
 equals the Chern-Simons partition function on $S^3$ with the knot $K$ inserted as a
 Wilson loop. The parameter $q = e^{2\pi i/(k+2)}$ encodes the Chern-Simons level $k$.
 
@@ -200,7 +200,7 @@ $\Gamma$ inserted as a "Wilson loop" gives:
 
 $$\int \mathcal{D}[b]\,e^{\mathcal{S}[b,A]}\,W(\Gamma) = J_\Gamma(e^{2\pi i/(k+2)}) \tag{3.3}$$
 
-where $W(\Gamma) = \mathrm{tr}(\mathcal{P}\exp\oint_\Gamma A)$ is the holonomy of the
+where $W(\Gamma) = \mathrm{tr}(\mathcal{P}\exp\oint\_\Gamma A)$ is the holonomy of the
 connection around $\Gamma$ (the Berry phase from FIBER\_BUNDLES Section 3.2).
 
 **Theorem 3.1** *(Jones polynomial = market partition function)*. *The Jones
@@ -214,14 +214,14 @@ $$J_\Gamma(q) = \int_{\{b: \partial b = \Gamma\}} \mathcal{D}[b]\,e^{\mathcal{S}
 $\Gamma$, and $q = e^{2\pi i/(k+2)}$ encodes the Chern-Simons level (topological complexity).*
 
 *The Jones polynomial evaluated at specific values of $q$ gives:*
-- *$J_\Gamma(1)$: the number of spanning surfaces (market structures) consistent with $\Gamma$*
-- *$J_\Gamma(-1)$: the determinant of the market knot (a measure of complexity)*
-- *$J_\Gamma(i)$: related to the Arf invariant (whether the market is "even" or "odd")*
-- *$J_\Gamma(e^{2\pi i/3})$: related to the 3-coloring number of the market structure*
+- *$J\_\Gamma(1)$: the number of spanning surfaces (market structures) consistent with $\Gamma$*
+- *$J\_\Gamma(-1)$: the determinant of the market knot (a measure of complexity)*
+- *$J\_\Gamma(i)$: related to the Arf invariant (whether the market is "even" or "odd")*
+- *$J\_\Gamma(e^{2\pi i/3})$: related to the 3-coloring number of the market structure*
 
 ### 3.2 Computing the Jones polynomial for market paths
 
-**For the unknot (CAPM):** $J_{\rm unknot}(q) = 1$. The market partition function is 1:
+**For the unknot (CAPM):** $J\_{\rm unknot}(q) = 1$. The market partition function is 1:
 the CAPM has a unique market structure (the great sphere) and no topological complexity.
 
 **For the trefoil (Clifford torus market):**
@@ -274,14 +274,14 @@ linking numbers of cycles on $\Sigma$ with their push-offs in the normal directi
 
 $$V_{ij} = \mathrm{lk}(\alpha_i, \alpha_j^+) \tag{4.1}$$
 
-where $\alpha_1,\ldots,\alpha_{2g}$ is a basis for $H_1(\Sigma; \mathbb{Z})$ and
-$\alpha_j^+$ is the push-off of $\alpha_j$ in the positive normal direction.
+where $\alpha\_1,\ldots,\alpha\_{2g}$ is a basis for $H\_1(\Sigma; \mathbb{Z})$ and
+$\alpha\_j^+$ is the push-off of $\alpha\_j$ in the positive normal direction.
 
 **The Alexander polynomial:**
 $$\Delta_K(t) = \det(V - tV^T) \tag{4.2}$$
 
 is a polynomial knot invariant, symmetric under $t \mapsto t^{-1}$ and normalised so
-$\Delta_K(1) = \pm 1$.
+$\Delta\_K(1) = \pm 1$.
 
 ### 4.2 The Seifert matrix IS the monodromy of the normal bundle
 
@@ -292,32 +292,32 @@ connection $\nabla^N$ around the market cycle $\Gamma$:*
 $$V = \mathrm{Hol}_\Gamma(\nabla^N) \in \mathrm{GL}(d-1-r; \mathbb{Z}) \tag{4.3}$$
 
 *where the holonomy is computed in the $\mathbb{Z}$-module structure on
-$H_1(\Sigma;\mathbb{Z})$ (the integer first homology of the Seifert surface).*
+$H\_1(\Sigma;\mathbb{Z})$ (the integer first homology of the Seifert surface).*
 
-*Proof.* The Seifert matrix entries $V_{ij} = \mathrm{lk}(\alpha_i, \alpha_j^+)$ are
-precisely the linking numbers — how much $\alpha_i$ winds around $\alpha_j$ in the
-normal direction. The holonomy of $\nabla^N$ around the cycle $\alpha_i$ measures
+*Proof.* The Seifert matrix entries $V\_{ij} = \mathrm{lk}(\alpha\_i, \alpha\_j^+)$ are
+precisely the linking numbers — how much $\alpha\_i$ winds around $\alpha\_j$ in the
+normal direction. The holonomy of $\nabla^N$ around the cycle $\alpha\_i$ measures
 exactly this winding, giving the identification. The integer structure comes from the
-fact that linking numbers are integers ($\pi_1(S^1) = \mathbb{Z}$). $\square$
+fact that linking numbers are integers ($\pi\_1(S^1) = \mathbb{Z}$). $\square$
 
 **Financial interpretation.** The Seifert matrix $V$ encodes:
-- **Diagonal entries $V_{ii}$:** the self-linking of each homology cycle = the
+- **Diagonal entries $V\_{ii}$:** the self-linking of each homology cycle = the
   Chern-Simons level for that cycle
-- **Off-diagonal entries $V_{ij}$:** the mutual linking of cycles = the cross-factor
+- **Off-diagonal entries $V\_{ij}$:** the mutual linking of cycles = the cross-factor
   holonomy = the "interaction term" between factor loops in the market
 
-**The Alexander polynomial** $\Delta_K(t)$ is the characteristic polynomial of this
-monodromy — its roots $\{t : \Delta_K(t) = 0\}$ are the eigenvalues of the normal
+**The Alexander polynomial** $\Delta\_K(t)$ is the characteristic polynomial of this
+monodromy — its roots $\{t : \Delta\_K(t) = 0\}$ are the eigenvalues of the normal
 bundle monodromy. In market terms: the roots of the Alexander polynomial are the
 eigenvalues of the **factor rotation matrix** after one complete business cycle.
 
-**For the trefoil:** $\Delta_{3_1}(t) = t - 1 + t^{-1}$. The roots satisfy
+**For the trefoil:** $\Delta\_{3\_1}(t) = t - 1 + t^{-1}$. The roots satisfy
 $t^2 - t + 1 = 0$, giving $t = e^{\pm i\pi/3}$ — **the factor structure rotates
 by $\pm 60°$ after each market cycle.** This is a precise prediction: in a trefoil
 market, the dominant factor exposure rotates by $60°$ (one-sixth of a full rotation)
 per business cycle.
 
-**For the figure-eight:** $\Delta_{4_1}(t) = -t + 3 - t^{-1}$.
+**For the figure-eight:** $\Delta\_{4\_1}(t) = -t + 3 - t^{-1}$.
 Roots: $t = (3 \pm \sqrt{5})/2 = \phi^2, \phi^{-2}$ where $\phi$ is the golden ratio.
 **The factor rotation eigenvalues are $\phi^2$ and $\phi^{-2}$** — the golden ratio
 squared. A hyperbolic market has factor rotation rates governed by the golden ratio.
@@ -351,8 +351,8 @@ complexity** — no continuous deformation over any finite time horizon can redu
 it to CAPM type.*
 
 *(iii) The **Fox-Milnor theorem** \[1966\] gives an obstruction: $\Gamma$ is not
-slice if $\Delta_\Gamma(t) \neq f(t)f(t^{-1})$ for any $f \in \mathbb{Z}[t]$.
-For the trefoil: $\Delta_{3_1}(t) = t - 1 + t^{-1}$. Is this of the form $ff^*$?
+slice if $\Delta\_\Gamma(t) \neq f(t)f(t^{-1})$ for any $f \in \mathbb{Z}[t]$.
+For the trefoil: $\Delta\_{3\_1}(t) = t - 1 + t^{-1}$. Is this of the form $ff^*$?
 Testing: if $f = at + b$ then $ff^* = a^2 + ab(t+t^{-1}) + b^2 = ab(t+t^{-1})
 + (a^2+b^2)$. Matching: $a^2+b^2 = -1$ (impossible over $\mathbb{Z}$).
 Therefore the trefoil is NOT a ribbon knot — a trefoil market has permanent
@@ -365,15 +365,15 @@ deform to the simpler CAPM structure without a discontinuity (a market crisis, a
 topological phase transition).
 
 By contrast: the unknot markets (CAPMs) are trivially ribbon. The figure-eight knot
-$4_1$ is ribbon (it IS a slice knot — it bounds a disk in $B^4$). **Figure-eight
+$4\_1$ is ribbon (it IS a slice knot — it bounds a disk in $B^4$). **Figure-eight
 markets are CAPM-resolvable despite their apparent complexity**: over a full temporal
 cobordism, the hyperbolic factor structure resolves to CAPM type.
 
 ### 5.2 The Gordian distance as market complexity measure
 
-**Definition 5.3** (Gordian distance). *The Gordian distance $d_G(K_1, K_2)$ between
-two knots is the minimum number of crossing changes needed to deform $K_1$ into $K_2$.
-The **unknotting number** $u(K) = d_G(K, \text{unknot})$ is the minimum number of
+**Definition 5.3** (Gordian distance). *The Gordian distance $d\_G(K\_1, K\_2)$ between
+two knots is the minimum number of crossing changes needed to deform $K\_1$ into $K\_2$.
+The **unknotting number** $u(K) = d\_G(K, \text{unknot})$ is the minimum number of
 crossing changes to unknot $K$.*
 
 **Financial interpretation:** Each crossing change in the knot diagram corresponds
@@ -381,7 +381,7 @@ to a **market regime change** — a discrete event where two factor loadings cro
 (one factor overtakes another in its effect on a group of assets).
 
 - **$u(K) = 0$:** unknot, CAPM. No regime changes needed.
-- **$u(K) = 1$:** trefoil ($u(3_1) = 1$), figure-eight ($u(4_1) = 1$). One regime change separates the market from CAPM.
+- **$u(K) = 1$:** trefoil ($u(3\_1) = 1$), figure-eight ($u(4\_1) = 1$). One regime change separates the market from CAPM.
 - **$u(K) = k$:** the market requires exactly $k$ discrete regime changes to reach CAPM.
 
 The Gordian distance gives a metric on the space of market structures:
@@ -417,15 +417,15 @@ $$g(S(K,J)) \geq g(K) + g(J) \tag{6.1}$$
 
 **Definition 6.1** (Composite market). *A **composite market** is one whose factor
 structure nests: Factor 1 is itself a factor portfolio of a sub-market with factor
-structure $M_1$, and the outer market has additional factor structure $M_2$. The
-composite market manifold $M_{\rm comp}$ is the satellite of $M_2$ around $M_1$.*
+structure $M\_1$, and the outer market has additional factor structure $M\_2$. The
+composite market manifold $M\_{\rm comp}$ is the satellite of $M\_2$ around $M\_1$.*
 
 **The Seifert genus of the composite market:**
 $$g(M_{\rm comp}) \geq g(M_1) + g(M_2) \tag{6.2}$$
 
 **The Jones polynomial of the composite market:**
 
-For a connected sum of knots $K_1 \# K_2$ (the simplest form of composition):
+For a connected sum of knots $K\_1 \\# K\_2$ (the simplest form of composition):
 $$J_{K_1 \# K_2}(q) = J_{K_1}(q) \cdot J_{K_2}(q) \tag{6.3}$$
 
 The Jones polynomial factorises over the composite market structure. **The market
@@ -438,10 +438,10 @@ their market partition functions multiply — the topological complexity is addi
 
 **Example:** A market combining a trefoil (balanced 2-factor, one sub-market) with
 a torus knot $T(2,5)$ (2-regime 2-factor, another sub-market):
-- Composite knot: $3_1 \# 5_1$ (trefoil connected sum with $T(2,5)$)
+- Composite knot: $3\_1 \\# 5\_1$ (trefoil connected sum with $T(2,5)$)
 - Seifert genus: $g = 1 + 2 = 3$
-- Jones polynomial: $J_{3_1}(q) \cdot J_{5_1}(q)$
-- Market structure: Lawson $\tau_{3,2}$ (genus 3) forced as the spanning surface
+- Jones polynomial: $J\_{3\_1}(q) \cdot J\_{5\_1}(q)$
+- Market structure: Lawson $\tau\_{3,2}$ (genus 3) forced as the spanning surface
 
 ---
 
@@ -482,13 +482,13 @@ Khovanov homology satisfying:
 
 $$|s(K)| \leq 2g_4(K) \leq 2g(K) \tag{7.3}$$
 
-where $g_4(K)$ is the 4-ball genus (slice genus) and $g(K)$ is the Seifert genus.
+where $g\_4(K)$ is the 4-ball genus (slice genus) and $g(K)$ is the Seifert genus.
 
 **The Rasmussen $s$-invariant** gives the sharpest known bound on the 4-ball genus —
 how efficiently the market knot can be resolved by adding time as a dimension.
 
 For torus knots $T(m,n)$: $s(T(m,n)) = (m-1)(n-1)$ (exact computation by Rasmussen).
-Since $2g_4 \leq s = (m-1)(n-1) = 2g$: the 4-ball genus equals the Seifert genus
+Since $2g\_4 \leq s = (m-1)(n-1) = 2g$: the 4-ball genus equals the Seifert genus
 for torus knots — **torus knot markets ($= $ Lawson surface markets) cannot be
 made simpler even by adding time as a dimension.** They are maximally complex.
 
@@ -498,13 +498,13 @@ made simpler even by adding time as a dimension.** They are maximally complex.
 
 ### 8.1 The concordance group
 
-Two knots $K_0$ and $K_1$ are **concordant** if there exists a smooth annulus
-$A \subset S^3 \times [0,1]$ with $\partial A = K_0 \times \{0\} \cup K_1 \times \{1\}$.
+Two knots $K\_0$ and $K\_1$ are **concordant** if there exists a smooth annulus
+$A \subset S^3 \times [0,1]$ with $\partial A = K\_0 \times \{0\} \cup K\_1 \times \{1\}$.
 Concordance is an equivalence relation; the concordance classes form the
 **concordance group** $\mathcal{C}$ under connected sum.
 
 **The concordance group of markets** is the group of topological types of market
-paths under the equivalence: $M_1 \sim M_2$ if their market paths are concordant
+paths under the equivalence: $M\_1 \sim M\_2$ if their market paths are concordant
 (related by a temporal cobordism of market structures).
 
 Key facts about $\mathcal{C}$:
@@ -524,9 +524,9 @@ market dynamics.
 
 The **Casson-Gordon invariants** \[1978\] are higher-order obstructions to a knot
 being slice. They arise from the representation theory of the knot group
-$\pi_1(S^3 \setminus K)$ into finite groups.
+$\pi\_1(S^3 \setminus K)$ into finite groups.
 
-**In market terms:** The knot group $\pi_1(S^3 \setminus K)$ is the fundamental
+**In market terms:** The knot group $\pi\_1(S^3 \setminus K)$ is the fundamental
 group of the complement of the market path — the group of all portfolio trajectories
 that "avoid" the market path $\Gamma$. This is the group of **market-avoiding strategies**
 — strategies that never cross the log-optimal path.
@@ -547,7 +547,7 @@ linear incompleteness of Harrison-Pliska.
 ### 9.1 The writhe as a market chirality invariant
 
 **Definition 9.1** (Market writhe). *For a market path $\Gamma$ with a given planar
-diagram, the **writhe** $w(\Gamma) = \sum_c \epsilon(c)$ (sum of crossing signs)
+diagram, the **writhe** $w(\Gamma) = \sum\_c \epsilon(c)$ (sum of crossing signs)
 is the Chern-Simons level of $\Gamma$ modulo the framing ambiguity.*
 
 The writhe is NOT a knot invariant (it depends on the diagram), but it IS an invariant
@@ -582,15 +582,15 @@ For $d=4$, $r=2$ (the fundamental case where knot theory first applies):
 
 **Theorem 9.2** *(Topological classification of four-asset markets)*. *The topological
 types of log-optimal portfolio paths for four-asset two-factor markets are classified
-by knot types in $S^3_+$. The main families are:*
+by knot types in $S^3\_+$. The main families are:*
 
-| Market path topology | Knot type | $g(K)$ | $\Delta_K(t)$ | $w$ | Market character |
+| Market path topology | Knot type | $g(K)$ | $\Delta\_K(t)$ | $w$ | Market character |
 |:--------------------|:---------:|:------:|:--------------:|:---:|:----------------|
 | CAPM | Unknot | 0 | 1 | 0 | Single-factor, symmetric |
-| Balanced 2-factor | Trefoil $3_1$ | 1 | $t-1+t^{-1}$ | ±3 | Chiral, $60°$ rotation |
-| Hyperbolic 2-factor | Figure-eight $4_1$ | 1 | $-t+3-t^{-1}$ | 0 | Achiral, golden ratio |
-| Momentum 2-factor | $T(2,5) = 5_1$ | 2 | $t^2-t+1-t^{-1}+t^{-2}$ | ±5 | Strong chiral |
-| Multi-regime | $T(3,4) = 8_{19}$ | 3 | computed | ±7 | Three-regime |
+| Balanced 2-factor | Trefoil $3\_1$ | 1 | $t-1+t^{-1}$ | ±3 | Chiral, $60°$ rotation |
+| Hyperbolic 2-factor | Figure-eight $4\_1$ | 1 | $-t+3-t^{-1}$ | 0 | Achiral, golden ratio |
+| Momentum 2-factor | $T(2,5) = 5\_1$ | 2 | $t^2-t+1-t^{-1}+t^{-2}$ | ±5 | Strong chiral |
+| Multi-regime | $T(3,4) = 8\_{19}$ | 3 | computed | ±7 | Three-regime |
 
 *Each row corresponds to a distinct efficient market structure that cannot be
 continuously deformed into any other without a topological transition (regime change).*
@@ -607,10 +607,10 @@ a way that is immune to continuous market evolution. Different knot types corres
 to qualitatively different market regimes.
 
 **2. The Jones polynomial is computable from market data.** Given the log-optimal
-portfolio time series $b^*(t)$, project it into $S^3_+$, compute the winding numbers,
+portfolio time series $b^*(t)$, project it into $S^3\_+$, compute the winding numbers,
 and evaluate the Jones polynomial. This gives a computable topological market invariant.
 
-**3. The Alexander polynomial predicts factor rotation.** The roots of $\Delta_\Gamma(t)$
+**3. The Alexander polynomial predicts factor rotation.** The roots of $\Delta\_\Gamma(t)$
 are the eigenvalues of the factor rotation matrix after one business cycle.
 For trefoil markets: rotation by $60°$. For figure-eight markets: rotation by $\phi^2$.
 
@@ -626,7 +626,7 @@ Their topological complexity is permanent.
 market has positive or negative factor momentum — a topological explanation for the
 empirically observed sign of momentum effects.
 
-**7. The efficient market requires $J_\Gamma(q) = 1$.** For the market to be truly
+**7. The efficient market requires $J\_\Gamma(q) = 1$.** For the market to be truly
 efficient in the topological sense (CAPM-type, no protected alpha), the Jones
 polynomial of the market path must equal 1 — the unknot condition. This is the
 strongest form of the Efficient Market Hypothesis, incorporating topological constraints.
@@ -640,13 +640,13 @@ This is a new, computable, model-free test of market efficiency using knot invar
 ## 11. Open Problems
 
 **Problem 1** *(Compute Jones polynomials from data)*. Given the empirical log-optimal
-portfolio time series for the S\&P 500, compute the Jones polynomial $J_\Gamma(q)$
-of the annual market path. If $J_\Gamma \neq 1$: determine the knot type and the
+portfolio time series for the S\&P 500, compute the Jones polynomial $J\_\Gamma(q)$
+of the annual market path. If $J\_\Gamma \neq 1$: determine the knot type and the
 corresponding minimal spanning surface (efficient market structure).
 
 **Problem 2** *(The market concordance group)*. Is the concordance group of market
 paths finitely generated? The Milnor independence of torus knots suggests it is not,
-but the physical constraint that market paths must lie in $S^{d-1}_+$ (positive
+but the physical constraint that market paths must lie in $S^{d-1}\_+$ (positive
 simplex hemisphere) may impose additional relations.
 
 **Problem 3** *(Khovanov homology as market risk)*. Develop the financial interpretation
@@ -655,10 +655,10 @@ homological grading $i$ corresponds to the Jacobi stability index, and the quant
 grading $j$ corresponds to the Chern-Simons level (topological charge).
 
 **Problem 4** *(The knot group as market symmetry)*. The knot group
-$\pi_1(S^3 \setminus \Gamma)$ is the group of market-avoiding strategies. Determine
+$\pi\_1(S^3 \setminus \Gamma)$ is the group of market-avoiding strategies. Determine
 its representation theory and connect it to the classification of hedging strategies.
-For the trefoil: $\pi_1(S^3 \setminus 3_1) = \langle a,b : a^2 = b^3\rangle$
-(the braid group $B_3$). The market-avoiding strategies of a trefoil market form the
+For the trefoil: $\pi\_1(S^3 \setminus 3\_1) = \langle a,b : a^2 = b^3\rangle$
+(the braid group $B\_3$). The market-avoiding strategies of a trefoil market form the
 braid group on 3 strands — a rich algebraic structure.
 
 **Problem 5** *(Topological EMH test)*. Implement Problem 1 empirically and test

@@ -10,9 +10,9 @@
 We resolve several open questions from the companion papers of this series.
 First, we prove **Conjecture 3.1** of MINIMAL\_SURFACE in the following precise form:
 a market manifold $M$ satisfies $H \neq 0$ at $b^*$ if and only if there exists a
-dynamic factor strategy $\beta_t = b^*(t) - \varepsilon\vec{H}(b^*(t))$ that earns strictly
+dynamic factor strategy $\beta\_t = b^*(t) - \varepsilon\vec{H}(b^*(t))$ that earns strictly
 positive expected excess log-return over the static log-optimal portfolio, with
-$\mathbb{E}[\Delta L_t] = \varepsilon^2|H(b^*(t))|^2 + O(\varepsilon^4)$ per period.
+$\mathbb{E}[\Delta L\_t] = \varepsilon^2|H(b^*(t))|^2 + O(\varepsilon^4)$ per period.
 The proof uses a second-order KKT analysis that separates the tangential and normal
 components of the log-growth gradient. We explain carefully why the full strong-form
 conjecture ("no strategy of any kind") requires additional price-formation assumptions,
@@ -33,9 +33,9 @@ $\frac{(d-1)\log T}{2T}$. For $d=50$, $r=4$: a factor-of-12 improvement in regre
 achieved with a computationally trivial 4-dimensional integral.
 
 Third, we prove that the maximum compression rate of a return sequence, in the
-rate-distortion sense, is the entropy rate $h_{\rm Kelly}$, achieved by the MUP's
+rate-distortion sense, is the entropy rate $h\_{\rm Kelly}$, achieved by the MUP's
 generating distribution. The minimum-distortion portfolio code has codeword length
-$\frac{r}{2}\log T + \frac{1}{2}\log\det F_M$ bits — the manifold dimension controls
+$\frac{r}{2}\log T + \frac{1}{2}\log\det F\_M$ bits — the manifold dimension controls
 the compression cost.
 
 Finally, we outline the **Tour de Force paper**: a unified treatment merging all six
@@ -71,9 +71,9 @@ $$\beta_t = b^*(t) - \varepsilon\,\frac{\vec{H}(b^*(t))}{|H(b^*(t))|} \tag{1.1}$
 
 *(positioned in the mean curvature direction, step size $\varepsilon > 0$). Then:*
 
-*(i) If $H \equiv 0$ on $M$: $\mathbb{E}[\log\langle\beta_t, x_{t+1}\rangle - \log\langle b^*(t), x_{t+1}\rangle] = O(\varepsilon^2)$ with the $O(\varepsilon^2)$ term negative — the strategy earns no positive excess.*
+*(i) If $H \equiv 0$ on $M$: $\mathbb{E}[\log\langle\beta\_t, x\_{t+1}\rangle - \log\langle b^*(t), x\_{t+1}\rangle] = O(\varepsilon^2)$ with the $O(\varepsilon^2)$ term negative — the strategy earns no positive excess.*
 
-*(ii) If $H(b^*(t)) \neq 0$: $\mathbb{E}[\log\langle\beta_t, x_{t+1}\rangle - \log\langle b^*(t), x_{t+1}\rangle] = \varepsilon^2|H|^2 + O(\varepsilon^4) > 0$ — strictly positive excess.*
+*(ii) If $H(b^*(t)) \neq 0$: $\mathbb{E}[\log\langle\beta\_t, x\_{t+1}\rangle - \log\langle b^*(t), x\_{t+1}\rangle] = \varepsilon^2|H|^2 + O(\varepsilon^4) > 0$ — strictly positive excess.*
 
 *Proof.*
 
@@ -85,14 +85,14 @@ $$L(b) = L(b^*(t)) + \nabla L(b^*(t)) \cdot (b - b^*(t))
 where $L(b) = \mathbb{E}[\log\langle b, x\rangle]$ is the population log-growth and
 $F(b^*) = -\nabla^2 L(b^*)$ is the Fisher information (negative Hessian).
 
-The **KKT conditions** for $b^*(t)$ as the log-optimal on $\Delta_{d-1}$ give:
+The **KKT conditions** for $b^*(t)$ as the log-optimal on $\Delta\_{d-1}$ give:
 
 $$\nabla L(b^*(t)) = \lambda(t)\mathbf{1} + \mu(t) \tag{1.3}$$
 
-where $\lambda(t)$ is the Lagrange multiplier for $\mathbf{1}^Tb = 1$ and $\mu(t)_i \geq 0$
-with $\mu_i b^*_i = 0$ (complementary slackness — assets not in the portfolio have
-non-negative shadow price). For $b^*(t)$ in the interior of $\Delta_{d-1}$: $\mu = 0$
-and $\partial_i L(b^*(t)) = \lambda(t)$ for all $i$.
+where $\lambda(t)$ is the Lagrange multiplier for $\mathbf{1}^Tb = 1$ and $\mu(t)\_i \geq 0$
+with $\mu\_i b^*\_i = 0$ (complementary slackness — assets not in the portfolio have
+non-negative shadow price). For $b^*(t)$ in the interior of $\Delta\_{d-1}$: $\mu = 0$
+and $\partial\_i L(b^*(t)) = \lambda(t)$ for all $i$.
 
 Now decompose $\nabla L(b^*(t))$ into tangential and normal components over $M$:
 
@@ -100,7 +100,7 @@ $$\nabla_{g^{FR}} L(b^*(t)) = \underbrace{\Pi_{T_{b^*}M}\nabla_{g^{FR}} L}_{\tex
 
 **Tangential component.** By the KKT condition (1.3) with $\mu = 0$, the gradient
 $\nabla L(b^*) = \lambda\mathbf{1}$ is parallel to $\mathbf{1}$. Since $\mathbf{1}
-\perp T\Delta$ (in the Euclidean sense), and $T_{b^*}M \subset T_{b^*}\Delta$:
+\perp T\Delta$ (in the Euclidean sense), and $T\_{b^*}M \subset T\_{b^*}\Delta$:
 
 $$\Pi_{T_{b^*}M}\nabla_{g^{FR}} L(b^*) = 0 \tag{1.5}$$
 
@@ -113,7 +113,7 @@ by moving off $M$:
 $$\Pi_{N_{b^*}M}\nabla_{g^{FR}} L(b^*(t)) = \sum_{k=r+1}^{d-1}
 \langle\nabla_{g^{FR}} L, \nu_k\rangle_{g^{FR}} \nu_k \tag{1.6}$$
 
-**Claim:** $\Pi_{N_{b^*}M}\nabla_{g^{FR}} L(b^*(t)) = \vec{H}(b^*(t)) / r$.
+**Claim:** $\Pi\_{N\_{b^*}M}\nabla\_{g^{FR}} L(b^*(t)) = \vec{H}(b^*(t)) / r$.
 
 *Proof of claim.* From the Fisher–Rao geometry, the normal gradient of $L$ at the
 log-optimal portfolio is related to the mean curvature by the following argument.
@@ -130,11 +130,11 @@ $$\varepsilon^2\vec{H}(b^*) = -F(b^*)^{-1}\Pi_{N_{b^*}M}\nabla L(b^*) \tag{1.8}$
 
 This is the defining equation of the shape operator as the normal derivative of the
 embedding coordinates in the Fisher–Rao metric. Rearranging:
-$\Pi_{N_{b^*}M}\nabla_{g^{FR}} L = -F(b^*)\varepsilon^2\vec{H}$. At the leading order
-with $\varepsilon^2 = 1/T$: $\Pi_N\nabla_{g^{FR}} L = -\vec{H}/T$. $\square$ (claim)
+$\Pi\_{N\_{b^*}M}\nabla\_{g^{FR}} L = -F(b^*)\varepsilon^2\vec{H}$. At the leading order
+with $\varepsilon^2 = 1/T$: $\Pi\_N\nabla\_{g^{FR}} L = -\vec{H}/T$. $\square$ (claim)
 
 **Completing the proof.** Substituting (1.5) and the claim into (1.2), for
-$b = \beta_t = b^* - \varepsilon\vec{H}/|H|$:
+$b = \beta\_t = b^* - \varepsilon\vec{H}/|H|$:
 
 $$L(\beta_t) - L(b^*) = \langle\nabla_{g^{FR}} L(b^*), -\varepsilon\vec{H}/|H|\rangle_{g^{FR}}
 - \frac{\varepsilon^2}{2}\frac{(\vec{H}/|H|)^T F(b^*)(\vec{H}/|H|)}{1} + O(\varepsilon^3) \tag{1.9}$$
@@ -142,7 +142,7 @@ $$L(\beta_t) - L(b^*) = \langle\nabla_{g^{FR}} L(b^*), -\varepsilon\vec{H}/|H|\r
 $$= \varepsilon\langle\Pi_N\nabla_{g^{FR}} L, -\vec{H}/|H|\rangle_{g^{FR}}
 - \frac{\varepsilon^2}{2}|H|^2_F + O(\varepsilon^3) \tag{1.10}$$
 
-Using $\Pi_N\nabla_{g^{FR}} L = -\vec{H}/T$:
+Using $\Pi\_N\nabla\_{g^{FR}} L = -\vec{H}/T$:
 
 $$L(\beta_t) - L(b^*) = \frac{\varepsilon}{T}|H|^2 - \frac{\varepsilon^2}{2}|H|^2_F + O(\varepsilon^3) \tag{1.11}$$
 
@@ -152,19 +152,19 @@ over the second-order Fisher term. Setting $\varepsilon = \delta/T$ for small $\
 
 $$L(\beta_t) - L(b^*) = \frac{\delta|H|^2}{T^2} + O(\delta^2/T^3) > 0 \quad \text{when }H \neq 0 \tag{1.12}$$
 
-For $H = 0$: the first term vanishes and the second term $-\varepsilon^2|H|^2_F/2 = 0$
+For $H = 0$: the first term vanishes and the second term $-\varepsilon^2|H|^2\_F/2 = 0$
 (since $H=0$ implies $|H|=0$). The next-order term involves the third cumulant and is
 $O(\varepsilon^3) < 0$. Part (i) follows. $\square$
 
 ### 1.2 What the proof shows and what it doesn't
 
 **What it shows:**
-- The normal component of $\nabla_{g^{FR}} L$ is proportional to $\vec{H}$
+- The normal component of $\nabla\_{g^{FR}} L$ is proportional to $\vec{H}$
 - When $H \neq 0$, positioning in the $-\vec{H}$ direction earns positive expected log-excess-return
 - The excess is of order $\varepsilon|H|^2/T$ per period — small but non-zero for any $H \neq 0$
 
 **What it doesn't show:**
-The strategy $\beta_t$ uses knowledge of $\vec{H}(b^*(t))$, which requires estimating the
+The strategy $\beta\_t$ uses knowledge of $\vec{H}(b^*(t))$, which requires estimating the
 mean curvature from observed returns. The estimation error in $\hat{H}$ is $O(1/\sqrt{T})$,
 which for $T = 252$ and $d = 50$ is approximately $\pm 0.45$. The excess return
 $\varepsilon|H|^2/T$ is economically significant only when $|H|^2/T \gg$ estimation noise.
@@ -186,14 +186,14 @@ The distinction matters only for *dynamic* strategies that track the evolving $b
 **Complete proof under a mild additional assumption.** If we assume **market completeness**
 — that any portfolio can be traded, so the market portfolio distribution is the same as
 the population distribution for any strategy — then the proof above is complete: $H \neq 0$
-implies the dynamic factor strategy $\beta_t$ earns positive excess. The incompleteness gap
+implies the dynamic factor strategy $\beta\_t$ earns positive excess. The incompleteness gap
 (price impact) corresponds to the market not being complete, and closes when the position
 size $\varepsilon \to 0$ and the number of market participants $N \to \infty$.
 
 **Theorem 1.2** *(Full proof for large markets)*. *In a market with $N$ identical
 investors each using the log-optimal strategy, with price impact of order $1/N$: for
 $N \geq (T^2|H|^2)^{-1}$ (meaning the market is "deep" relative to the curvature
-signal), the dynamic factor strategy $\beta_t$ earns positive net-of-impact expected
+signal), the dynamic factor strategy $\beta\_t$ earns positive net-of-impact expected
 log-excess-return. As $N \to \infty$, impact vanishes and Conjecture 3.1 holds exactly.*
 
 ---
@@ -204,16 +204,16 @@ log-excess-return. As $N \to \infty$, impact vanishes and Conjecture 3.1 holds e
 
 Cover's universal portfolio integrates over the full $(d-1)$-dimensional simplex. For
 $d=50$ assets, this is a 49-dimensional integral — computationally intractable and
-statistically wasteful: most of the mass of $W_T(b)$ concentrates on the $r$-dimensional
+statistically wasteful: most of the mass of $W\_T(b)$ concentrates on the $r$-dimensional
 market manifold $M$ for large $T$ (by the Laplace approximation of LAPLACE.md).
 
 **Definition 2.1** (Manifold Universal Portfolio). *The **Manifold Universal Portfolio**
-(MUP) integrates only over the market manifold $M^r \subset \Delta_{d-1}$:*
+(MUP) integrates only over the market manifold $M^r \subset \Delta\_{d-1}$:*
 
 $$\hat{b}_T^M = \frac{\displaystyle\int_{M^r} b\, W_T(b)\,d\mathrm{vol}_M(b)}
 {\displaystyle\int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)} \tag{2.1}$$
 
-*where $d\mathrm{vol}_M$ is the Riemannian volume element of $(M^r, g_M)$ — the induced
+*where $d\mathrm{vol}\_M$ is the Riemannian volume element of $(M^r, g\_M)$ — the induced
 Fisher–Rao metric on the manifold.*
 
 ### 2.2 The manifold wealth process
@@ -225,13 +225,13 @@ $$\log S_T^{*,M} = \log\int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)$$
 $$= T\cdot L_T(b^*) - \frac{r}{2}\log T + \frac{r}{2}\log(2\pi)
 - \frac{1}{2}\log\det F_M(b^*) + O(1/T) \tag{2.2}$$
 
-*where $F_M(b^*) = V_r^T F(b^*) V_r \in \mathbb{R}^{r\times r}$ is the Fisher matrix
-restricted to the tangent space of $M$, and $V_r$ spans $T_{b^*}M$.*
+*where $F\_M(b^*) = V\_r^T F(b^*) V\_r \in \mathbb{R}^{r\times r}$ is the Fisher matrix
+restricted to the tangent space of $M$, and $V\_r$ spans $T\_{b^*}M$.*
 
 *Proof.* The Laplace approximation of LAPLACE.md (Theorem 4.3) applies with $M$ in place
-of $\Delta_{d-1}$. The key change: the dimension is $r$ (not $d-1$), and the Fisher matrix
-is $F_M = V_r^T F V_r$ (the projection onto the factor directions). The uniform volume
-measure $d\mathrm{vol}_M$ is proportional to Lebesgue measure on $T_{b^*}M \cong \mathbb{R}^r$
+of $\Delta\_{d-1}$. The key change: the dimension is $r$ (not $d-1$), and the Fisher matrix
+is $F\_M = V\_r^T F V\_r$ (the projection onto the factor directions). The uniform volume
+measure $d\mathrm{vol}\_M$ is proportional to Lebesgue measure on $T\_{b^*}M \cong \mathbb{R}^r$
 near $b^*$. The rest of the proof is identical. $\square$
 
 ### 2.3 Comparing MUP to Cover's universal portfolio
@@ -252,21 +252,21 @@ $$\frac{1}{T}\log S_T^{*,M} - \frac{1}{T}\log S_T^* = \frac{(d-1-r)\log T}{2T}
 
 *Proof.* Subtract (2.3) from (2.4). The first term is positive since $d-1 > r$.
 For the second term: $\det F(b^*)$ is the determinant over all $d-1$ directions,
-$\det F_M(b^*)$ over only $r$ directions. Since $F_M = V_r^T F V_r$ is a principal
-submatrix of $F$, by the Hadamard inequality $\det F_M \leq \prod_{k=1}^r\lambda_k(F)$
-and $\det F = \prod_{k=1}^{d-1}\lambda_k(F)$. So:
+$\det F\_M(b^*)$ over only $r$ directions. Since $F\_M = V\_r^T F V\_r$ is a principal
+submatrix of $F$, by the Hadamard inequality $\det F\_M \leq \prod\_{k=1}^r\lambda\_k(F)$
+and $\det F = \prod\_{k=1}^{d-1}\lambda\_k(F)$. So:
 
 $$\log\det F(b^*) - \log\det F_M(b^*) = \sum_{k=r+1}^{d-1}\log\lambda_k(F(b^*)) > 0 \tag{2.6}$$
 
 since all eigenvalues of $F$ are positive. Both terms in (2.5) are positive. $\square$
 
-**Numerical example** ($d=50$, $r=4$, $T=252$, $\log\lambda_{r+1} \approx \log(0.1) \approx -2.3$):
+**Numerical example** ($d=50$, $r=4$, $T=252$, $\log\lambda\_{r+1} \approx \log(0.1) \approx -2.3$):
 
 | Quantity | Cover's portfolio | MUP | Improvement |
 |:---------|:-----------------:|:---:|:-----------:|
 | Regret dimension | $49\log T / (2T)$ | $4\log T / (2T)$ | $\times 12.25$ |
 | Regret (1 year) | $49 \times 5.5 / (2 \times 252) \approx 0.53\%$ | $4 \times 5.5 / (2\times 252) \approx 0.04\%$ | $\times 12.25$ |
-| Fisher correction | $-\frac{\log\det F}{2\times 252}$ | $-\frac{\log\det F_M}{2\times 252}$ | Smaller |
+| Fisher correction | $-\frac{\log\det F}{2\times 252}$ | $-\frac{\log\det F\_M}{2\times 252}$ | Smaller |
 | Integral dimension | 49 | 4 | $\times 12.25$ |
 | Computation | Intractable | Trivial | $\infty$ |
 
@@ -302,7 +302,7 @@ idiosyncratic correction for any reasonable $T$ and $d$.
 
 $$\hat\Sigma = \frac{1}{T}(\log X)^T(\log X) - (\overline{\log x})(\overline{\log x})^T \tag{3.1}$$
 
-Take PCA: $\hat\Sigma = V\Lambda V^T$. The factor subspace is $V_r = [v_1|\cdots|v_r]$.
+Take PCA: $\hat\Sigma = V\Lambda V^T$. The factor subspace is $V\_r = [v\_1|\cdots|v\_r]$.
 
 **Step 2.** Find the log-optimal portfolio on the manifold:
 
@@ -323,11 +323,11 @@ $$\hat{b}_T^M = b^* + \frac{1}{T}F_M(b^*)^{-1}\nabla_{M} L_T(b^*)
 = b^* + O(1/T^2) \tag{3.4}$$
 
 For the uniform prior (Jeffreys), the $O(1/T)$ correction vanishes (Theorem 4.2 of
-LAPLACE.md) and $\hat{b}_T^M = b^* + O(1/T^2)$ exactly.
+LAPLACE.md) and $\hat{b}\_T^M = b^* + O(1/T^2)$ exactly.
 
 **Step 5.** (Optional) Manifold MC for higher accuracy. Sample $N$ points
-$\{b_k\}$ uniformly on $M$ via the Halton sequence on the $r$-simplex $\Delta_{r-1}$
-(mapped to $M$ through the factor parameterisation $\alpha \mapsto \Pi_\Delta(V_r\alpha)$):
+$\{b\_k\}$ uniformly on $M$ via the Halton sequence on the $r$-simplex $\Delta\_{r-1}$
+(mapped to $M$ through the factor parameterisation $\alpha \mapsto \Pi\_\Delta(V\_r\alpha)$):
 
 $$\hat{b}_T^{M,\rm MC} = \frac{\sum_{k=1}^N b_k\, W_T(b_k)}{\sum_{k=1}^N W_T(b_k)} \tag{3.5}$$
 
@@ -335,8 +335,8 @@ For $r=4$ and $N=1000$ QMC points: error $O(1/N) = O(10^{-3})$, computation $O(1
 
 ### 3.2 The MUP as a factor model portfolio
 
-The MUP $\hat{b}_T^M$ is always a convex combination of the $r+1$ extreme points of
-$M$ (the vertices of the factor simplex mapped through $\Pi_\Delta \circ V_r$). These
+The MUP $\hat{b}\_T^M$ is always a convex combination of the $r+1$ extreme points of
+$M$ (the vertices of the factor simplex mapped through $\Pi\_\Delta \circ V\_r$). These
 are the "pure factor portfolios" — portfolios that maximally load on a single factor.
 The MUP is a weighted average of these, with weights determined by the factor performance.
 
@@ -357,7 +357,7 @@ risk preferences.
 ### 4.1 Rate-distortion for portfolios
 
 The **rate-distortion** problem asks: at what information rate $R$ can we represent a
-return sequence $(x_1,\ldots,x_T)$ with log-growth distortion at most $D$?
+return sequence $(x\_1,\ldots,x\_T)$ with log-growth distortion at most $D$?
 
 $$R(D) = \min_{q(b|x_{1:T}):\, \mathbb{E}[L(b^*) - L(b)] \leq D} I(x_{1:T}; b) \tag{4.1}$$
 
@@ -366,12 +366,12 @@ strategy.
 
 **Theorem 4.1** *(Maximum compression of return sequences)*.
 
-*(i) The minimum description length (in nats) of a return sequence $(x_1,\ldots,x_T)$
+*(i) The minimum description length (in nats) of a return sequence $(x\_1,\ldots,x\_T)$
 with distortion $D \leq L(b^*) - L(b)$ is:*
 
 $$R(D) = h_{\rm Kelly} \cdot T - \max_{b: L(b) \geq L(b^*) - D} H(b) \tag{4.2}$$
 
-*where $H(b)$ is the differential entropy of the portfolio $b$ under the posterior $\pi_T$.*
+*where $H(b)$ is the differential entropy of the portfolio $b$ under the posterior $\pi\_T$.*
 
 *(ii) The **minimum-distortion portfolio code** uses codewords of length:*
 
@@ -387,13 +387,13 @@ $$\mathrm{CR}(T,d,r) = \frac{Td}{r\log T/2 + \log\det F_M/2} \approx \frac{2Td}{
 *For $d=50$, $r=4$, $T=252$: $\mathrm{CR} \approx \frac{2 \times 252 \times 50}{4 \times 5.5} \approx 1145$.*
 *The return sequence can be compressed by a factor of over 1000 with negligible portfolio performance loss.*
 
-*Proof of (ii).* The optimal portfolio estimator is the MUP $\hat{b}_T^M$, which lies
+*Proof of (ii).* The optimal portfolio estimator is the MUP $\hat{b}\_T^M$, which lies
 in the $r$-dimensional manifold $M$. Specifying a point on $M$ requires $r$ real numbers;
 at precision $1/\sqrt{T}$ (the posterior width from the Laplace approximation), each
 requires $\frac{1}{2}\log T$ bits (Shannon's source coding theorem). The determinant
-$\log\det F_M/2$ is the coding overhead from the non-uniform Fisher metric on $M$. $\square$
+$\log\det F\_M/2$ is the coding overhead from the non-uniform Fisher metric on $M$. $\square$
 
-**Economic interpretation.** The return sequence $(x_1,\ldots,x_T)$ has $Td$ scalar
+**Economic interpretation.** The return sequence $(x\_1,\ldots,x\_T)$ has $Td$ scalar
 values, but the portfolio-relevant information is contained in $r\log T/2$ nats —
 a tiny fraction. The factor structure $M$ is the compression codebook; the MUP is
 the decoder. **The efficient market is the one whose factor structure achieves the
@@ -407,7 +407,7 @@ of Shannon's source coding theorem:
 
 $$K(b | x_{1:T}) \approx \ell^* = \frac{r}{2}\log T + O(\log\log T) \text{ bits} \tag{4.5}$$
 
-(almost surely, for generic return processes). The universal portfolio $\hat{b}_T^M$
+(almost surely, for generic return processes). The universal portfolio $\hat{b}\_T^M$
 is **Kolmogorov optimal** — it achieves the algorithmic complexity lower bound. The
 minimum-complexity strategy is the one that exploits only the factor structure (the
 $r$-dimensional manifold) and ignores the $d-1-r$ idiosyncratic dimensions. This
@@ -436,28 +436,28 @@ From Theorem 2.2 and LAPLACE.md Theorem 4.3:
 $$\frac{1}{T}\log S_T^{*,M} = L(b^*) - \frac{r\,\log T}{2T}
 - \frac{\log\det F_M(b^*)}{2T} + \frac{\mathcal{M}_0^M}{T^2} + O(1/T^3) \tag{5.2}$$
 
-*where $\mathcal{M}_0^M$ is the manifold Maslov correction (Proposition 5.1 of LAPLACE.md
+*where $\mathcal{M}\_0^M$ is the manifold Maslov correction (Proposition 5.1 of LAPLACE.md
 with $d$ replaced by $r+1$). This gives:*
 
 *(i) The exact leading constant: $r/2$ vs Cover's $d-1$.*
 
-*(ii) The exact sub-leading constant: $\log\det F_M(b^*)/2$, computable from data.*
+*(ii) The exact sub-leading constant: $\log\det F\_M(b^*)/2$, computable from data.*
 
-*(iii) A non-asymptotic bound: for $T \geq T_0(r, F_M)$, the MUP achieves within
-$\varepsilon$ of $L(b^*)$ whenever $T \geq (r\log T + \log\det F_M)/(2\varepsilon)$.*
+*(iii) A non-asymptotic bound: for $T \geq T\_0(r, F\_M)$, the MUP achieves within
+$\varepsilon$ of $L(b^*)$ whenever $T \geq (r\log T + \log\det F\_M)/(2\varepsilon)$.*
 
 *Comparison:*
 
 | | Cover's bound | MUP (this paper) |
 |:--|:---:|:---:|
 | Leading regret | $(d-1)\log T / T$ | $r\log T / T$ |
-| Sub-leading | $O(1/T)$ unknown | $\log\det F_M / T$ (explicit) |
-| Next order | unknown | $\mathcal{M}_0^M / T^2$ (explicit) |
+| Sub-leading | $O(1/T)$ unknown | $\log\det F\_M / T$ (explicit) |
+| Next order | unknown | $\mathcal{M}\_0^M / T^2$ (explicit) |
 | Dimension | $d-1 = 49$ | $r = 4$ |
 
 ### 5.3 The minimax optimal regret
 
-**Theorem 5.2** *(Minimax lower bound)*. *For any portfolio strategy $\hat{b}_T$ and
+**Theorem 5.2** *(Minimax lower bound)*. *For any portfolio strategy $\hat{b}\_T$ and
 for a market with factor dimension $r$:*
 
 $$\sup_{x_{1:T}} \left[L(b^*(x_{1:T})) - \frac{1}{T}\log S_T(\hat{b})\right]
@@ -485,7 +485,7 @@ the market manifold. We now make this constructive.
 
 **Algorithm 6.1** (Geometric efficient frontier).
 
-**Step 1.** Compute the MUP $\hat{b}_T^M \approx b^*$ and the normal frame $\{\nu_k\}_{k=r+1}^{d-1}$.
+**Step 1.** Compute the MUP $\hat{b}\_T^M \approx b^*$ and the normal frame $\{\nu\_k\}\_{k=r+1}^{d-1}$.
 
 **Step 2.** The efficient frontier parameterised by risk level $\rho \geq 0$:
 
@@ -493,9 +493,9 @@ $$b_\rho = b^* + \rho\cdot\frac{\nu^*}{|\nu^*|_{g^{FR}}},
 \qquad \nu^* = \operatorname{argmax}_{\nu \in N_{b^*}M,\,|\nu|=1}
 \mathbb{E}[(b^* + \nu)^T x] \tag{6.1}$$
 
-The normal vector $\nu^*$ that maximises expected return is $\nu^* = F(b^*)^{-1}(\mu - \lambda_*\mathbf{1})/\|F^{-1}(\mu - \lambda_*\mathbf{1})\|$ where $\mu_i = \mathbb{E}[x_i]$ and $\lambda_*$ is the Lagrange multiplier. This is the **projection of the expected return vector onto the normal bundle** — exactly the idiosyncratic part of expected returns that the factor model misses.
+The normal vector $\nu^*$ that maximises expected return is $\nu^* = F(b^*)^{-1}(\mu - \lambda\_*\mathbf{1})/\|F^{-1}(\mu - \lambda\_*\mathbf{1})\|$ where $\mu\_i = \mathbb{E}[x\_i]$ and $\lambda\_*$ is the Lagrange multiplier. This is the **projection of the expected return vector onto the normal bundle** — exactly the idiosyncratic part of expected returns that the factor model misses.
 
-**Step 3.** The frontier curve $\{b_\rho : \rho \geq 0\}$ traces the Markowitz efficient frontier from $b^*$ (minimum variance, on the manifold) outward in the normal direction (increasing idiosyncratic risk, increasing expected return).
+**Step 3.** The frontier curve $\{b\_\rho : \rho \geq 0\}$ traces the Markowitz efficient frontier from $b^*$ (minimum variance, on the manifold) outward in the normal direction (increasing idiosyncratic risk, increasing expected return).
 
 **New insight.** The classical Markowitz frontier has two regimes:
 - **On-manifold** ($\rho = 0$): pure factor bets, zero idiosyncratic risk, minimum variance for given factor exposure.
@@ -505,12 +505,12 @@ The traditional efficient frontier conflates these two regimes. The manifold geo
 
 ### 6.2 Risk attribution
 
-**Definition 6.2** (Geometric risk decomposition). *For any portfolio $b \in \Delta_{d-1}$:*
+**Definition 6.2** (Geometric risk decomposition). *For any portfolio $b \in \Delta\_{d-1}$:*
 
 $$\mathrm{Risk}(b) = \underbrace{(b - b^*)^T F_M(b^*)(b - b^*)}_{\text{systematic (on-manifold)}} + \underbrace{(b - b^*)^T F_N(b^*)(b - b^*)}_{\text{idiosyncratic (off-manifold)}} \tag{6.2}$$
 
-*where $F_M = V_r^TFV_r$ is the factor Fisher matrix and $F_N = V_N^TFV_N$ is the
-idiosyncratic Fisher matrix ($V_N = [v_{r+1}|\cdots|v_{d-1}]$).*
+*where $F\_M = V\_r^TFV\_r$ is the factor Fisher matrix and $F\_N = V\_N^TFV\_N$ is the
+idiosyncratic Fisher matrix ($V\_N = [v\_{r+1}|\cdots|v\_{d-1}]$).*
 
 This decomposition is exact and orthogonal in $g^{FR}$ — systematic and idiosyncratic
 risk are genuinely independent in the Fisher–Rao metric. **Traditional Barra-style risk
@@ -542,7 +542,7 @@ narrative arc:
 **Act II: The Minimal Surface (MINIMAL\_SURFACE.md, CLASSIFICATION.md)**
 
 7. The market's factor structure defines a submanifold $M$ of the simplex.
-8. The mean curvature $H$ measures exploitable alpha: $\mathrm{Sharpe}^* = \|H\|_{L^2}$ (proved).
+8. The mean curvature $H$ measures exploitable alpha: $\mathrm{Sharpe}^* = \|H\|\_{L^2}$ (proved).
 9. Market efficiency = minimal surface ($H=0$) (one direction proved, converse proved for dynamic strategies here).
 10. The classification: stable efficient markets are exactly the great sphere sections (CAPMs). This follows from Simons (1968) and Lawson–Simons (1973).
 11. The Clifford torus, Lawson surfaces: unstable efficient market structures.
@@ -565,19 +565,19 @@ narrative arc:
 
 ### 7.2 The central theorem of the unified paper
 
-**Master Theorem.** *Let $M^r \subset (\Delta_{d-1}, g^{\mathrm{FR}})$ be the market
+**Master Theorem.** *Let $M^r \subset (\Delta\_{d-1}, g^{\mathrm{FR}})$ be the market
 manifold of a $d$-asset market with $r$ systematic factors. The following are equivalent:*
 
 1. $M$ is minimal: $H \equiv 0$ (geometry).
 2. $\mathrm{Sharpe}^* = 0$ for all dynamic factor strategies (economics).
-3. $\nabla_M C(b^*) = 0$: channel capacity is stationary (information theory).
-4. $K(M) = K_{\rm CAPM}$: minimum description complexity for topology (complexity).
-5. $\frac{1}{T}\log W_T(b^*) \to h_{\rm Kelly}$ without systematic bias (ergodic theory).
+3. $\nabla\_M C(b^*) = 0$: channel capacity is stationary (information theory).
+4. $K(M) = K\_{\rm CAPM}$: minimum description complexity for topology (complexity).
+5. $\frac{1}{T}\log W\_T(b^*) \to h\_{\rm Kelly}$ without systematic bias (ergodic theory).
 6. The MUP is minimax optimal with regret $\frac{r\log T}{2T}$ (online learning).
 
 *Moreover: $M$ is a stable efficient market iff it is totally geodesic ($II = 0$, CAPM),
-by the Lawson–Simons theorem. The Sharpe$^*$ of a perturbation $\Sigma_\varepsilon$ from
-a CAPM efficient market grows as $\varepsilon|\lambda_1(J)|$ where $\lambda_1(J)$ is the
+by the Lawson–Simons theorem. The Sharpe$^*$ of a perturbation $\Sigma\_\varepsilon$ from
+a CAPM efficient market grows as $\varepsilon|\lambda\_1(J)|$ where $\lambda\_1(J)$ is the
 first eigenvalue of the Jacobi stability operator — the "stiffness" of the efficient
 equilibrium.*
 
@@ -615,7 +615,7 @@ empirical best CRP. Compute the factor dimension $r$ adaptively using the stable
 of the Fisher matrix.
 
 **Priority 3** (deepest, most open): Determine whether the Plateau problem on
-$(\Delta_{d-1}, g^{\mathrm{FR}})$ has a unique solution for generic boundary curves
+$(\Delta\_{d-1}, g^{\mathrm{FR}})$ has a unique solution for generic boundary curves
 $\Gamma = \{b^*(t)\}$. This would establish existence of the efficient market manifold
 and its uniqueness given the log-optimal portfolio path — a fundamental structural result.
 
@@ -627,13 +627,13 @@ theory of the WF diffusion using Diaconis's hypercontractivity methods.
 
 ## Appendix: The MUP is Cover's Portfolio Restricted to M
 
-**Proposition A.1.** *The MUP $\hat{b}_T^M$ is the Cover universal portfolio of the
+**Proposition A.1.** *The MUP $\hat{b}\_T^M$ is the Cover universal portfolio of the
 restricted market in which only portfolios on $M$ are permitted:*
 
 $$\hat{b}_T^M = \hat{b}_T^{\rm Cover}\!\left[\text{restricted to }M^r\right] \tag{A.1}$$
 
 *Proof.* By the definition of the MUP (2.1), it has exactly the form of Cover's
-portfolio with the measure $d\mu$ replaced by the volume measure $d\mathrm{vol}_M$ on $M$.
+portfolio with the measure $d\mu$ replaced by the volume measure $d\mathrm{vol}\_M$ on $M$.
 This is Cover's portfolio for a "world" in which the investor is constrained to choose
 $b \in M$. The universal portfolio in this restricted world is exactly the MUP. $\square$
 

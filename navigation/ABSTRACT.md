@@ -40,11 +40,11 @@ of this submanifold.**
 ## Part I: The Core — Simplex, Manifold, Central Theorems
 
 **The FK-WKB identity.** Cover's simplex integral satisfies a Feynman-Kac PDE on
-$(\Delta_{d-1}, g^{\rm FR})$. The WKB expansion identifies the Fisher information
+$(\Delta\_{d-1}, g^{\rm FR})$. The WKB expansion identifies the Fisher information
 matrix as the action Hessian; the Van Vleck-Morette determinant equals $F(b^*)$;
 the $O(1/T^2)$ accuracy follows from Cover's prior being the Jeffreys prior.
 
-**The Sharpe-curvature theorem** (proved): $\mathrm{Sharpe}^* = \|H\|_{L^2(M)}$.
+**The Sharpe-curvature theorem** (proved): $\mathrm{Sharpe}^* = \|H\|\_{L^2(M)}$.
 The vol skew of index options measures $H$ in real time.
 
 **Classification** (proved): only CAPMs are stably efficient.
@@ -55,7 +55,7 @@ The Clifford torus has stability index 5 — LTCM had five convergence strategie
 ## Part II: Physics, Processes, and Measure Theory
 
 Exact stochastic processes forced by topology: Jacobi diffusion (CAPM), theta function
-$\vartheta_3$ (Clifford torus — exact closed-form option pricing), McKean hyperbolic
+$\vartheta\_3$ (Clifford torus — exact closed-form option pricing), McKean hyperbolic
 BM (pseudo-Anosov — geometric vol smile without stochastic volatility, Cauchy tails).
 Fat tails proved three ways: $\alpha=r/2$. Fokker-Planck stationary distribution =
 Jeffreys prior (closes Cover's 30-year gap). Doob-Meyer compensator = Willmore energy.
@@ -65,17 +65,17 @@ diversification.
 ## Part III: Topology, Computation, Filtrations
 
 Knot theory classifies markets: Jones polynomial = market partition function; topological
-EMH $J_\Gamma=1\iff$CAPM; Alexander polynomial roots = factor rotation eigenvalues.
+EMH $J\_\Gamma=1\iff$CAPM; Alexander polynomial roots = factor rotation eigenvalues.
 Braids: Yang-Baxter = no braiding arbitrage; pseudo-Anosov = chaotic efficient market;
-market is a $\#\mathbf{P}$ oracle. Prediction complexity hierarchy:
-$\mathbf{P}$ (sign) $\to$ $\#\mathbf{P}$ (exact return) $\to$ $\Pi_2^0$ (long-run)
+market is a $\\#\mathbf{P}$ oracle. Prediction complexity hierarchy:
+$\mathbf{P}$ (sign) $\to$ $\\#\mathbf{P}$ (exact return) $\to$ $\Pi\_2^0$ (long-run)
 $\to$ $\mathbf{PPAD}$ (equilibrium). Filtrations: Voronoi atoms explicitly constructed;
 LZ prefix tree = filtration tree (general: any grammar-based compressor = valid
 filtration); Clifford torus winding number = momentum/contrarian classification.
 
 ## Part IV: Geospatial, Contagion, LLMs, Random Matrices, Path Integrals
 
-**Geospatial** (new): H3/S2/Hilbert on $S^{d-1}_+$; contagion = Delaunay graph
+**Geospatial** (new): H3/S2/Hilbert on $S^{d-1}\_+$; contagion = Delaunay graph
 (endogenous, not exogenous); Cheeger constant = systemic risk; Hawkes criticality =
 efficiency.
 
@@ -88,12 +88,12 @@ rate = minimum cross-entropy loss; insider information lives in the normal bundl
 not a modelling choice. CAPM $\to$ GOE ($\beta=1$); Clifford torus $\to$ GUE
 ($\beta=2$, Berry phase breaks time-reversal); pseudo-Anosov $\to$ GSE ($\beta=4$,
 symplectic foliation). Selberg integral = MUP partition function (exact, closed form).
-Tracy-Widom $F_\beta$ = distribution of largest factor eigenvalue. Vandermonde repulsion
+Tracy-Widom $F\_\beta$ = distribution of largest factor eigenvalue. Vandermonde repulsion
 = Fisher-Rao diversification pressure. Dyson BM = factor eigenvalue dynamics.
 
 **Path integrals** (new): constrained geometric Wiener measure on $M^r$ rather than
 all of $\mathbb{R}^d$. WKB saddle = geodesic = LAPLACE.md (Van Vleck = Fisher matrix).
-Theta function = winding sum over $\pi_1(T^2)=\mathbb{Z}^2$. McKean = unique geodesic
+Theta function = winding sum over $\pi\_1(T^2)=\mathbb{Z}^2$. McKean = unique geodesic
 on $\mathbb{H}^2$. Risk-neutral measure on $M$: efficient market means $\mathbb{P}=\mathbb{Q}$.
 Novikov condition = finite Willmore energy. Normal bundle integration = incompleteness
 premium. Langevin equation generates the same diffusion via Parisi-Wu stochastic quantisation.
@@ -105,14 +105,14 @@ the same statistics (Oseledets equivalence — whether the market is "really" ch
 or stochastic is unobservable and irrelevant). Feigenbaum constants $\delta=4.669$
 and $\alpha=2.502$ govern the period-doubling bifurcation from CAPM to pseudo-Anosov
 dynamics. Takens embedding theorem: the delay embedding of a single return series
-into $\mathbb{R}^{2r+1}$ recovers $M^r$ topologically. Optimal delay $\tau = 1/\lambda_1$
+into $\mathbb{R}^{2r+1}$ recovers $M^r$ topologically. Optimal delay $\tau = 1/\lambda\_1$
 (Jacobi spectral gap). Practical three-step algorithm for market manifold estimation
 from one observable using diffusion maps.
 
-**Hypercubes/Shapley** (new): $\Delta_{d-1}\subset[0,1]^d$ (simplex inside hypercube);
-Walsh-Hadamard functions on $[0,1]^d$ restricted to $\Delta_{d-1}$ = Jacobi polynomials;
+**Hypercubes/Shapley** (new): $\Delta\_{d-1}\subset[0,1]^d$ (simplex inside hypercube);
+Walsh-Hadamard functions on $[0,1]^d$ restricted to $\Delta\_{d-1}$ = Jacobi polynomials;
 barycentric subdivision = Voronoi Delaunay (proved); Walsh ANOVA = Shapley decomposition.
-Shapley value of asset $i$ in Kelly game = $\phi_i = b^*_i(\mu_i-\bar\mu)$ (proved —
+Shapley value of asset $i$ in Kelly game = $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ (proved —
 the unique fair attribution of Kelly growth satisfying efficiency, symmetry, dummy, linearity).
 Factor Shapley = unique fair factor attribution. Normal bundle projection of Shapley =
 unexplained alpha. Banzhaf power index = Walsh-Fourier coefficient.
@@ -123,11 +123,11 @@ unexplained alpha. Banzhaf power index = Walsh-Fourier coefficient.
 
 The monograph contains at least 25 fully proved new results. The five most important:
 
-1. $\mathrm{Sharpe}^* = \|H\|_{L^2}$ — the alpha budget is observable from vol skew
+1. $\mathrm{Sharpe}^* = \|H\|\_{L^2}$ — the alpha budget is observable from vol skew
 2. Only CAPMs stably efficient — explains LTCM (stability index 5)
 3. MUP regret $r\log T/2T$ — 12× practical improvement, minimax optimal
 4. Dyson class forced by manifold symmetry — not a modelling choice
-5. Shapley attribution $\phi_i = b^*_i(\mu_i-\bar\mu)$ — unique fair attribution proved
+5. Shapley attribution $\phi\_i = b^*\_i(\mu\_i-\bar\mu)$ — unique fair attribution proved
 
 ---
 
@@ -147,11 +147,11 @@ from leverage). Scholarly grounding via Kindleberger, Ferguson, Minsky, Shiller.
 
 **For the quant practitioner:** MUP algorithm (12× regret improvement), geometric
 pairs trading thresholds ($z^*=\sqrt{1+r/\kappa}$), optimal transformer dimension
-for market ML ($d_{\rm model}=r$), Kelly rate as ML loss calibration benchmark,
+for market ML ($d\_{\rm model}=r$), Kelly rate as ML loss calibration benchmark,
 Shapley attribution of portfolio alpha to assets and factors.
 
 **For the risk manager:** Cheeger constant as leading crisis indicator, Dyson class
-as model-free symmetry test, Tracy-Widom $F_\beta$ as largest eigenvalue crisis signal.
+as model-free symmetry test, Tracy-Widom $F\_\beta$ as largest eigenvalue crisis signal.
 
 **For the theorist:** A complete geometric framework unifying portfolio theory,
 information geometry, stochastic processes, topology, random matrices, and path integrals.

@@ -12,15 +12,15 @@ $H\neq0\Rightarrow$ exploitable alpha for all strategies.
 *Best approach:* BSDE comparison under completeness; mean-field game for general case.
 
 **OP2. One-Loop RG Beta Function ★★★**
-$\beta_H=-H/2+cH^3+\ldots$ Compute $c$ from heat kernel expansion to one higher order.
+$\beta\_H=-H/2+cH^3+\ldots$ Compute $c$ from heat kernel expansion to one higher order.
 *Unlocks:* Running Sharpe to next order; factor anomaly decay rate predictions.
 
 **OP3. CS/Jones Identification Rigorous ★★★★**
-Identify $q_0=e^{2\pi i/(k+2)}$ and verify $k$ not at an exceptional easy value.
-*Unlocks:* C2 (topological EMH), C6 ($\#\mathbf{P}$-hardness).
+Identify $q\_0=e^{2\pi i/(k+2)}$ and verify $k$ not at an exceptional easy value.
+*Unlocks:* C2 (topological EMH), C6 ($\\#\mathbf{P}$-hardness).
 
 **OP4. Compute Market Chern Number from Return Data ★★**
-Implement Chern-Weil formula for $c_1(NM)$ quarterly from rolling covariance.
+Implement Chern-Weil formula for $c\_1(NM)$ quarterly from rolling covariance.
 *Expected:* Integer jumps at 2000, 2008, 2020 structural breaks.
 
 ---
@@ -32,8 +32,8 @@ Show stable rank of attention weight matrices $\to r$ under spectral regularisat
 *Key step:* Fisher info of transformer model at optimal weights = $g^{\rm FR}$ of $M^r$.
 
 **OP6. Implement Kelly Rate as Loss Benchmark ★**
-Compute $h_{\rm Kelly}(b^*)$ from Fama-French data. Train transformer on same data.
-Verify validation loss converges to $h_{\rm Kelly}$ at $d_{\rm model}=r$.
+Compute $h\_{\rm Kelly}(b^*)$ from Fama-French data. Train transformer on same data.
+Verify validation loss converges to $h\_{\rm Kelly}$ at $d\_{\rm model}=r$.
 
 **OP7. Normal Bundle Concentration as Side-Channel Detector ★★**
 Project attention weight matrices onto $TM$ vs $NM$.
@@ -56,8 +56,8 @@ CTW posterior = MUP posterior. BWT = filtration by entropy. PPM = manifold predi
 *Priority:* This should be among the first proofs completed.
 
 **OP11. Symbolic Takens Theorem: Full Proof ★★**
-Prove the symbolic delay embedding $(s_t,s_{t-1},\ldots,s_{t-2r})$ is a topological
-conjugacy between the Voronoi shift $X_M$ and a subshift of $\mathcal{A}^{2r+1}$.
+Prove the symbolic delay embedding $(s\_t,s\_{t-1},\ldots,s\_{t-2r})$ is a topological
+conjugacy between the Voronoi shift $X\_M$ and a subshift of $\mathcal{A}^{2r+1}$.
 *Connection:* LZ prefix tree = projection of symbolic Takens embedding.
 
 ---
@@ -73,7 +73,7 @@ conjugacy between the Voronoi shift $X_M$ and a subshift of $\mathcal{A}^{2r+1}$
 Validate on Fama-French data: do the 4 diffusion map coordinates reproduce
 the known FF4 factor structure?
 
-**OP13. Optimal Delay Estimation: $\tau=1/\lambda_1$ ★★**
+**OP13. Optimal Delay Estimation: $\tau=1/\lambda\_1$ ★★**
 Prove rigorously that the optimal Takens delay equals the Jacobi spectral gap timescale.
 Implement mutual information criterion for empirical delay selection.
 
@@ -82,7 +82,7 @@ Compute the sequence of Jacobi eigenvalue spacings as $H$ increases.
 Verify the convergence ratio approaches $\delta=4.669$.
 
 **OP15. Penrose Portfolio Theory for $d=5$ (C13) ★★★★**
-Prove Voronoi tessellation of $\Delta_4$ has Penrose structure with $\phi^2$ growth.
+Prove Voronoi tessellation of $\Delta\_4$ has Penrose structure with $\phi^2$ growth.
 Develop symbolic dynamics of the quasicrystalline tessellation.
 
 ---
@@ -90,20 +90,20 @@ Develop symbolic dynamics of the quasicrystalline tessellation.
 ## Group E: Random Matrix Programme
 
 **OP16. Implement the Dyson Class Test ★**
-Rolling ratio statistic $r_n=(\lambda_{n+1}-\lambda_n)/(\lambda_n-\lambda_{n-1})$.
+Rolling ratio statistic $r\_n=(\lambda\_{n+1}-\lambda\_n)/(\lambda\_n-\lambda\_{n-1})$.
 Fit to GOE/GUE/GSE Wigner surmise by KS test. Run quarterly on S\&P 500 data.
 Identify whether the market regime is GOE (CAPM periods) or GUE (two-factor periods).
 
 **OP17. Tracy-Widom Crisis Indicator ★★**
-Compute rescaled $\hat\lambda_{\rm max}$ quarterly. Compare to $F_1$/$F_2$ CDFs.
+Compute rescaled $\hat\lambda\_{\rm max}$ quarterly. Compare to $F\_1$/$F\_2$ CDFs.
 Test whether exceedances predict VIX spikes by 3-6 months.
 
 **OP18. Selberg Ratio Test ★★**
-Compute $\mathcal{Z}_T^{\rm GUE}/\mathcal{Z}_T^{\rm CAPM}$ analytically.
+Compute $\mathcal{Z}\_T^{\rm GUE}/\mathcal{Z}\_T^{\rm CAPM}$ analytically.
 Test whether empirical MUP log-wealth difference matches the Selberg ratio.
 
-**OP19. $E_8$ Symmetry in 9-Asset Markets ★★★★★**
-Does the Voronoi tessellation of $\Delta_8$ have $E_8$ Weyl group symmetry?
+**OP19. $E\_8$ Symmetry in 9-Asset Markets ★★★★★**
+Does the Voronoi tessellation of $\Delta\_8$ have $E\_8$ Weyl group symmetry?
 Sphere packing connection (Viazovska 2016).
 
 ---
@@ -117,19 +117,19 @@ $d=50$, $T=10$ years. Verify 12× regret improvement.
 Quarterly 1990–2024. Test 3-6 month lead time before crises.
 
 **OP22. Vol Skew vs Mean Curvature ★**
-CBOE SKEW vs $H^2/(2\sigma_I)$. Strongest single test of R7.
+CBOE SKEW vs $H^2/(2\sigma\_I)$. Strongest single test of R7.
 
 **OP23. Takens Reconstruction Validation ★**
 Apply three-step algorithm to S\&P 500 data.
 Verify FNN fraction drops at $m^*=9$ (for $r=4$ factors).
 
 **OP24. Shapley Attribution Decomposition ★**
-Implement $\phi_i=b^*_i(\mu_i-\bar\mu)$ on Fama-French 25 portfolios.
+Implement $\phi\_i=b^*\_i(\mu\_i-\bar\mu)$ on Fama-French 25 portfolios.
 Compare to standard factor attribution. Test normal bundle component = unexplained alpha.
 
 **OP25. Transformer Dimension Test ★**
-Train transformers of varying $d_{\rm model}$ on equity return data.
-Plot validation loss vs $d_{\rm model}$. Verify minimum near $d_{\rm model}=r\approx6$.
+Train transformers of varying $d\_{\rm model}$ on equity return data.
+Plot validation loss vs $d\_{\rm model}$. Verify minimum near $d\_{\rm model}=r\approx6$.
 
 ---
 
@@ -144,7 +144,7 @@ with exponents $\alpha=1/2$, $\beta=1/3$, $z=3/2$.
 
 **OP28. Holographic Dual of the Market CFT ★★★★★**
 The efficient market at RG critical point is a 2D CFT.
-Identify its AdS$_3$ bulk via AdS/CFT.
+Identify its AdS$\_3$ bulk via AdS/CFT.
 Ryu-Takayanagi formula for sector entanglement = new systemic risk measure.
 
 ---
@@ -175,7 +175,7 @@ OP2 (one-loop RG), OP3 (CS/Jones), OP8 (LLM=MCF), OP9 (LMSR=BS),
 OP15 (Penrose), OP17 (TW crisis), OP18 (Selberg test), OP23 (Takens validation), OP27 (KPZ)
 
 **Moonshots:**
-OP19 ($E_8$ markets), OP28 (holographic dual)
+OP19 ($E\_8$ markets), OP28 (holographic dual)
 
 ---
 

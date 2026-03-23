@@ -56,10 +56,10 @@ pip install matplotlib seaborn tqdm arch hurst
 ## Experiment 1: The Sharpe-Curvature Identity
 
 ### Theory
-$\mathrm{Sharpe}^* = \|H\|_{L^2(M)}$ where $H$ is the mean curvature of the
+$\mathrm{Sharpe}^* = \|H\|\_{L^2(M)}$ where $H$ is the mean curvature of the
 market manifold. The mean curvature is proportional to the component of the
 half-inverse-square-root vector $\tfrac{1}{2\sqrt{b^*}}$ in the normal bundle.
-For a two-factor market: $H(b^*) = \Pi_{NM}(1/2\sqrt{b^*})$ where $\Pi_{NM}$ is
+For a two-factor market: $H(b^*) = \Pi\_{NM}(1/2\sqrt{b^*})$ where $\Pi\_{NM}$ is
 the projection onto the normal bundle.
 
 ### Falsifiable Hypothesis
@@ -67,10 +67,10 @@ the projection onto the normal bundle.
 estimated RMS mean curvature of the market manifold.
 
 **H1 (our theory):** The regression
-$\mathrm{Sharpe}^{\rm realised}_{t} = \beta_0 + \beta_1 \hat H_t + \varepsilon_t$
-has slope $\beta_1 > 0$ with $p < 0.05$, and the R² is substantially positive.
+$\mathrm{Sharpe}^{\rm realised}\_{t} = \beta\_0 + \beta\_1 \hat H\_t + \varepsilon\_t$
+has slope $\beta\_1 > 0$ with $p < 0.05$, and the R² is substantially positive.
 
-**What would falsify this:** $\beta_1 \leq 0$ or R² $< 0.05$ across multiple
+**What would falsify this:** $\beta\_1 \leq 0$ or R² $< 0.05$ across multiple
 independent rolling windows.
 
 ### Dataset
@@ -217,8 +217,8 @@ print(f"\nCorrelation of realised vs theory-predicted Sharpe: {correlation:.4f}"
 print("Theory predicts: correlation > 0.3")
 ```
 
-**Expected outcome under theory:** $\beta_1 > 0$, $p < 0.01$, R² $> 0.10$.
-The correlation between $H_t$ and realised Sharpe should exceed 0.3.
+**Expected outcome under theory:** $\beta\_1 > 0$, $p < 0.01$, R² $> 0.10$.
+The correlation between $H\_t$ and realised Sharpe should exceed 0.3.
 
 **Falsification criterion:** Slope insignificantly different from zero
 ($p > 0.10$) in any rolling 5-year subsample.
@@ -237,9 +237,9 @@ risk factors.
 
 **H1 (our theory):** The Hill estimator $\hat\alpha$ satisfies
 $\hat\alpha \approx \hat r/2$ where $\hat r = \mathrm{tr}(F)^2/\mathrm{tr}(F^2)$
-is the stable rank (effective rank). The regression $\hat\alpha_t = \gamma_0 + \gamma_1(\hat r_t/2) + \varepsilon_t$
-should have slope $\gamma_1 \approx 1$ (not significantly different from 1)
-and intercept $\gamma_0 \approx 0$.
+is the stable rank (effective rank). The regression $\hat\alpha\_t = \gamma\_0 + \gamma\_1(\hat r\_t/2) + \varepsilon\_t$
+should have slope $\gamma\_1 \approx 1$ (not significantly different from 1)
+and intercept $\gamma\_0 \approx 0$.
 
 **What would falsify this:** Slope significantly different from 1, or intercept
 significantly different from 0 at the 5% level, across multiple time periods.
@@ -389,7 +389,7 @@ Predicted improvement factor: $(d-1)/r$. For $d=30$, $r=4$: factor $\approx 7.25
 **H0:** The MUP does not outperform Cover's portfolio in annualised log-wealth.
 
 **H1 (our theory):** The annualised log-wealth gap $L(b^*) - L(\hat b^{\rm Cover})$
-satisfies $L(\hat b^M_T) - L(\hat b^{\rm Cover}_T) \approx (d-1-r)\log T / 2T$
+satisfies $L(\hat b^M\_T) - L(\hat b^{\rm Cover}\_T) \approx (d-1-r)\log T / 2T$
 where $L = $ Kelly growth rate. The gap should increase with $d$ and decrease with $r$.
 
 **What would falsify this:** MUP does not improve over Cover's portfolio after
@@ -570,7 +570,7 @@ after transaction costs (assuming 5 bps round-trip per monthly rebalance).
 ## Experiment 4: Fokker-Planck Stationary Distribution
 
 ### Theory
-The long-run distribution of the log-optimal portfolio weight $b^*_{1,t}$
+The long-run distribution of the log-optimal portfolio weight $b^*\_{1,t}$
 (weight on one asset) is Beta$(\alpha,\beta)$ with $\alpha = T\bar{b}^* - 1/2$.
 NOT uniform. NOT Gaussian.
 
@@ -663,8 +663,8 @@ print("Falsification: Beta rejected OR Uniform not rejected")
 ## Experiment 5: Jacobi Diffusion vs GBM for Portfolio Weights
 
 ### Theory
-The log-optimal portfolio weight $b_t$ evolves as a Jacobi diffusion:
-$db_t = \kappa(\theta-b_t)dt + \sqrt{2\varepsilon^2 b_t(1-b_t)}dW_t$.
+The log-optimal portfolio weight $b\_t$ evolves as a Jacobi diffusion:
+$db\_t = \kappa(\theta-b\_t)dt + \sqrt{2\varepsilon^2 b\_t(1-b\_t)}dW\_t$.
 The diffusion coefficient is $\sigma(b) = \sqrt{2\varepsilon^2 b(1-b)}$, NOT
 the GBM coefficient $\sigma b$ or the arithmetic BM coefficient $\sigma$.
 
@@ -672,8 +672,8 @@ the GBM coefficient $\sigma b$ or the arithmetic BM coefficient $\sigma$.
 **H0:** The local variance of portfolio weight changes is unrelated to $b(1-b)$.
 
 **H1 (our theory):** The regression
-$(\Delta b_t)^2 = \eta_0 + \eta_1 b_{t-1}(1-b_{t-1}) + \varepsilon_t$
-has slope $\eta_1 > 0$ (p < 0.01) and the coefficient of determination is substantially
+$(\Delta b\_t)^2 = \eta\_0 + \eta\_1 b\_{t-1}(1-b\_{t-1}) + \varepsilon\_t$
+has slope $\eta\_1 > 0$ (p < 0.01) and the coefficient of determination is substantially
 higher for the Jacobi form $b(1-b)$ than for the GBM form $b^2$ or the flat form $1$.
 
 **What would falsify this:** GBM form $b^2$ fits the variance better than $b(1-b)$.
@@ -749,8 +749,8 @@ print("Theory predicts: residuals should be homoscedastic after Jacobi correctio
 ## Experiment 6: Volatility Skew and Mean Curvature
 
 ### Theory
-Vol skew $\partial\hat\sigma/\partial k|_{k=0} = -\varepsilon^2 H^2/(2\sigma_I)$
-where $H$ is the market manifold mean curvature and $\sigma_I$ is the ATM
+Vol skew $\partial\hat\sigma/\partial k|\_{k=0} = -\varepsilon^2 H^2/(2\sigma\_I)$
+where $H$ is the market manifold mean curvature and $\sigma\_I$ is the ATM
 implied vol. The CBOE SKEW index measures $-\partial\hat\sigma/\partial k$
 for S&P 500 options.
 
@@ -758,11 +758,11 @@ for S&P 500 options.
 **H0:** CBOE SKEW is uncorrelated with the estimated market manifold curvature $H$.
 
 **H1 (our theory):** The regression
-$\mathrm{SKEW}_t = \gamma_0 + \gamma_1 \hat H^2_t / (2\sigma_{I,t}) + \varepsilon_t$
-has slope $\gamma_1 > 0$ (p < 0.05) and explains at least 10% of SKEW variation.
+$\mathrm{SKEW}\_t = \gamma\_0 + \gamma\_1 \hat H^2\_t / (2\sigma\_{I,t}) + \varepsilon\_t$
+has slope $\gamma\_1 > 0$ (p < 0.05) and explains at least 10% of SKEW variation.
 
 **What would falsify this:** No significant relationship, or VIX alone explains
-SKEW as well as $H^2/(2\sigma_I)$.
+SKEW as well as $H^2/(2\sigma\_I)$.
 
 ```python
 # experiment_6_vol_skew_curvature.py
@@ -990,15 +990,15 @@ print("Falsification: fixed-2σ systematically outperforms z* across all pairs")
 ## Experiment 8: Topological Entropy and the Kelly Rate
 
 ### Theory
-The topological entropy $h_{\rm top}(X_M,\sigma)$ of the market shift space
-equals the Kelly growth rate $h_{\rm Kelly}(b^*)$. The market's return sequence
+The topological entropy $h\_{\rm top}(X\_M,\sigma)$ of the market shift space
+equals the Kelly growth rate $h\_{\rm Kelly}(b^*)$. The market's return sequence
 complexity equals its maximum log-wealth growth rate.
 
 ### Falsifiable Hypothesis
 **H0:** The complexity of the return sequence (measured by its approximate entropy
 or permutation entropy) is uncorrelated with the Kelly growth rate.
 
-**H1 (our theory):** Regression of $h_{\rm top}$ on $h_{\rm Kelly}$ across
+**H1 (our theory):** Regression of $h\_{\rm top}$ on $h\_{\rm Kelly}$ across
 asset classes, time periods, and market regimes should have slope $\approx 1$
 and intercept $\approx 0$.
 
@@ -1215,9 +1215,9 @@ print("\nFalsification: AUC < 0.55 or crisis Re not elevated vs calm Re")
 ## Experiment 10: Berry Phase and Pairs Trading Performance
 
 ### Theory
-The Berry phase proxy $\hat\gamma = \pi(\rho_t - \rho_{t-\tau})/(\rho_{\rm max}-\rho_{\rm min})$
+The Berry phase proxy $\hat\gamma = \pi(\rho\_t - \rho\_{t-\tau})/(\rho\_{\rm max}-\rho\_{\rm min})$
 should improve pairs entry timing. The phase-adjusted z-score
-$z_{\rm adj} = z_{\rm raw}\cos(\hat\gamma)$ should give better risk-adjusted
+$z\_{\rm adj} = z\_{\rm raw}\cos(\hat\gamma)$ should give better risk-adjusted
 returns than raw z-score alone.
 
 ### Falsifiable Hypothesis
@@ -1341,14 +1341,14 @@ print("Falsification: No consistent improvement across pairs")
 
 | # | Experiment | Core Prediction | Key Statistic | Falsification Criterion |
 |:-:|:-----------|:---------------|:-------------|:-----------------------|
-| 1 | Sharpe-curvature | Sharpe ∝ $\|H\|_{L^2}$ | Slope $\beta_1>0$, R²>0.10 | $\beta_1\leq 0$ or R²<0.05 |
+| 1 | Sharpe-curvature | Sharpe ∝ $\|H\|\_{L^2}$ | Slope $\beta\_1>0$, R²>0.10 | $\beta\_1\leq 0$ or R²<0.05 |
 | 2 | Tail index | $\alpha = r/2$ | Slope $\approx 1$, intercept $\approx 0$ | Slope outside $[0.5, 2.0]$ |
 | 3 | MUP vs Cover | Regret ratio $(d-1)/r$ | 12× improvement ($d=30$, $r=4$) | MUP ≤ Cover after txn costs |
 | 4 | Stationary distribution | Portfolio weights ∼ Beta | KS rejects uniform, not Beta | KS rejects Beta |
 | 5 | Jacobi vs GBM | $\sigma^2\propto b(1-b)$ | Jacobi R² > GBM R² | GBM R² ≥ Jacobi R² |
-| 6 | Vol skew | Skew ∝ $H^2/2\sigma_I$ | Slope $>0$, incremental R²$>0$ | No incremental R² |
+| 6 | Vol skew | Skew ∝ $H^2/2\sigma\_I$ | Slope $>0$, incremental R²$>0$ | No incremental R² |
 | 7 | Pairs threshold | $z^*=\sqrt{1+r/\kappa}$ | Higher Sharpe than fixed 2σ | Fixed 2σ systematically better |
-| 8 | Entropy = Kelly | $h_{\rm top}= h_{\rm Kelly}$ | Slope $\approx 1$, correlation $>0.2$ | Correlation $<0.10$ |
+| 8 | Entropy = Kelly | $h\_{\rm top}= h\_{\rm Kelly}$ | Slope $\approx 1$, correlation $>0.2$ | Correlation $<0.10$ |
 | 9 | Reynolds number | High Re → crisis | AUC$>0.60$, crisis Re elevated | AUC$<0.55$ |
 | 10 | Berry phase | Phase adjustment helps | Sharpe improvement $>0.2$ | No consistent improvement |
 

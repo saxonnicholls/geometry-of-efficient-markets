@@ -24,7 +24,7 @@ pseudo-Anosov $\to$ GSE ($\beta=4$). The time-reversal symmetry breaking that
 transitions GOE to GUE is exactly the Berry phase of the Clifford torus market.
 
 **(ii) The Vandermonde determinant = eigenvalue repulsion = diversification pressure.**
-The Vandermonde factor $\prod_{i<j}|\lambda_i-\lambda_j|^\beta$ in the joint
+The Vandermonde factor $\prod\_{i<j}|\lambda\_i-\lambda\_j|^\beta$ in the joint
 eigenvalue distribution is the $\beta$-th power of the eigenvalue repulsion. In the
 market context, this repulsion is the Fisher-Rao pressure keeping portfolio weights
 separated — the geometric mechanism of diversification. Stronger repulsion ($\beta=2$
@@ -32,33 +32,33 @@ or $4$ vs $\beta=1$) means the factor eigenvalues are more spread out, the manif
 is better conditioned, and the portfolio is more robustly diversified.
 
 **(iii) The Selberg integral IS the MUP partition function.** The Selberg integral
-$S_n(\alpha,\beta,\gamma) = \int_{[0,1]^n}\prod_i t_i^{\alpha-1}(1-t_i)^{\beta-1}
-\prod_{i<j}|t_i-t_j|^{2\gamma}\,dt_i$ is the exact partition function for the
+$S\_n(\alpha,\beta,\gamma) = \int\_{[0,1]^n}\prod\_i t\_i^{\alpha-1}(1-t\_i)^{\beta-1}
+\prod\_{i<j}|t\_i-t\_j|^{2\gamma}\,dt\_i$ is the exact partition function for the
 $\beta$-ensemble on the portfolio simplex with Jacobi-type potential. Setting
 $\alpha = \beta = Tb^* - 1/2$ (the Jacobi parameters from MARKET\_PROCESSES.md)
 and $\gamma = \beta/2$: the Selberg integral equals the MUP normalisation constant
-$\int_{M^r}W_T(b)\,d\mathrm{vol}_M$.
+$\int\_{M^r}W\_T(b)\,d\mathrm{vol}\_M$.
 
 **(iv) The bulk spectral distribution.** For a GOE ($\beta=1$) CAPM market, the
 empirical spectral distribution of the return covariance converges to the
 Marchenko-Pastur law. For a GUE ($\beta=2$) Clifford torus market, the bulk
 distribution is shifted (stronger eigenvalue repulsion pushes eigenvalues apart)
-and the support is wider. The ratio $\lambda_{\rm max}/\lambda_{\rm min}$ is
+and the support is wider. The ratio $\lambda\_{\rm max}/\lambda\_{\rm min}$ is
 larger for GUE than GOE for the same matrix size — the factor spectrum is more
 spread out in the two-factor complex market.
 
 **(v) Tracy-Widom edge statistics are market-type specific.** The largest eigenvalue
-of the sample return covariance follows Tracy-Widom $F_1$ for CAPM markets, $F_2$
-for Clifford torus markets, and $F_4$ for pseudo-Anosov markets. This is a testable
-prediction: the distribution of the largest factor eigenvalue should shift from $F_1$
-to $F_2$ as the market transitions from single-factor to balanced two-factor structure.
+of the sample return covariance follows Tracy-Widom $F\_1$ for CAPM markets, $F\_2$
+for Clifford torus markets, and $F\_4$ for pseudo-Anosov markets. This is a testable
+prediction: the distribution of the largest factor eigenvalue should shift from $F\_1$
+to $F\_2$ as the market transitions from single-factor to balanced two-factor structure.
 
 **(vi) The mesoscopic regime = the factor-to-idiosyncratic transition.** The mesoscopic
 regime (eigenvalue statistics at intermediate scales, between bulk and edge) corresponds
 to the interface between the tangent bundle $TM$ (factor eigenvalues, bulk) and the
 normal bundle $NM$ (idiosyncratic eigenvalues, edge). The mesoscopic statistics
 interpolate between the $\beta$-ensemble and Poisson statistics, with the crossover
-scale controlled by the Jacobi spectral gap $\lambda_1$.
+scale controlled by the Jacobi spectral gap $\lambda\_1$.
 
 **(vii) Wishart matrices and the Fisher information matrix.** The sample Fisher
 information matrix $\hat{F} = X^TX/T$ (where $X$ is the $T\times d$ matrix of
@@ -99,7 +99,7 @@ $$P(\lambda_1,\ldots,\lambda_n) \propto \prod_{i<j}|\lambda_i-\lambda_j|^\beta
 *The symmetry class of the return covariance ensemble for a market on manifold $M^r$
 is determined by the topological symmetry of $M$:*
 
-**(i) CAPM ($M = S^r_+$, great sphere): GOE ($\beta=1$).**
+**(i) CAPM ($M = S^r\_+$, great sphere): GOE ($\beta=1$).**
 The CAPM market manifold is real and time-reversal symmetric. Running time forward
 or backward on the great sphere gives the same statistics (the sphere has no
 preferred orientation). The return covariance is a real symmetric matrix in the GOE class.
@@ -146,9 +146,9 @@ $$\mathrm{Van}(\lambda) = \prod_{i<j}(\lambda_i - \lambda_j) = \det(\lambda_i^{j
 
 appears in the joint eigenvalue distribution (1.1) as $|\mathrm{Van}(\lambda)|^\beta$.
 In the random matrix context, this repulsion prevents eigenvalue clustering:
-eigenvalues push apart with force $\beta/|\lambda_i-\lambda_j|$.
+eigenvalues push apart with force $\beta/|\lambda\_i-\lambda\_j|$.
 
-**In the market context:** The eigenvalues $\lambda_1,\ldots,\lambda_r$ of the
+**In the market context:** The eigenvalues $\lambda\_1,\ldots,\lambda\_r$ of the
 Fisher information matrix $F(b^*)$ are the factor exposure magnitudes. The Vandermonde
 repulsion is the Fisher-Rao pressure keeping factors orthogonal and well-separated.
 
@@ -165,7 +165,7 @@ the Jeffreys prior on the market manifold.*
 
 *The Vandermonde factor $|\mathrm{Van}(\lambda)|^\beta$ is the geometric mechanism
 of diversification: it creates a repulsive potential between factor eigenvalues
-proportional to $\beta\log|\lambda_i-\lambda_j|^{-1}$, preventing any two factors
+proportional to $\beta\log|\lambda\_i-\lambda\_j|^{-1}$, preventing any two factors
 from collapsing to the same eigenvalue. Stronger repulsion ($\beta=2$ for GUE,
 $\beta=4$ for GSE) means more robust diversification.*
 
@@ -209,14 +209,14 @@ $$\mathcal{Z}_T^M = \int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)
 = S_r(Tb^*_1 - 1/2,\; Tb^*_2 - 1/2,\; \beta/2) \tag{3.3}$$
 
 *where $\beta$ is the Dyson index of the market manifold (1, 2, or 4), and
-$b^*_1, b^*_2,\ldots$ are the log-optimal portfolio weights at the factor vertices.*
+$b^*\_1, b^*\_2,\ldots$ are the log-optimal portfolio weights at the factor vertices.*
 
 *Proof.* In eigenvalue coordinates on the market manifold, the wealth function
-$W_T(b) = \exp(TL_T(b))$ takes the form $\prod_i \lambda_i^{Tb^*_i-1}(1-\lambda_i)^{Tb^*(1-\bullet)-1}$
-(the Jacobi ensemble potential), and the Riemannian volume element $d\mathrm{vol}_M$
+$W\_T(b) = \exp(TL\_T(b))$ takes the form $\prod\_i \lambda\_i^{Tb^*\_i-1}(1-\lambda\_i)^{Tb^*(1-\bullet)-1}$
+(the Jacobi ensemble potential), and the Riemannian volume element $d\mathrm{vol}\_M$
 includes the Vandermonde factor $|\mathrm{Van}(\lambda)|^\beta$ from the Fisher-Rao
-metric. The integral becomes the Selberg integral (3.1) with $a = Tb^*_1 - 1/2$,
-$b = Tb^*_2 - 1/2$, $\gamma = \beta/2$. The closed form (3.2) gives the MUP
+metric. The integral becomes the Selberg integral (3.1) with $a = Tb^*\_1 - 1/2$,
+$b = Tb^*\_2 - 1/2$, $\gamma = \beta/2$. The closed form (3.2) gives the MUP
 normalisation exactly. $\square$
 
 **Corollary 3.2** *(The MUP partition function is exactly computable)*.
@@ -232,7 +232,7 @@ $$\mathcal{Z}_T^{\rm GUE} = S_r(Tb^*/r - 1/2,\; Tb^*/r - 1/2,\; 1)
 = \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^*/r-1/2+k)\Gamma(k+2)}
 {\Gamma(2Tb^*/r-1+(r-1+k))\Gamma(2)} \tag{3.5}$$
 
-*The ratio $\mathcal{Z}_T^{\rm GUE}/\mathcal{Z}_T^{\rm CAPM}$ is an explicit function
+*The ratio $\mathcal{Z}\_T^{\rm GUE}/\mathcal{Z}\_T^{\rm CAPM}$ is an explicit function
 of $r$ and $T$ that measures the excess diversification provided by the GUE Clifford
 torus structure relative to the CAPM.*
 
@@ -245,7 +245,7 @@ torus structure relative to the CAPM.*
 The classical Marchenko-Pastur law is the GOE ($\beta=1$) result. For general $\beta$:
 
 **Theorem 4.1** *($\beta$-Marchenko-Pastur)*.
-*For a $\beta$-Wishart matrix $W_\beta = X_\beta^* X_\beta / T$ where $X_\beta$ is
+*For a $\beta$-Wishart matrix $W\_\beta = X\_\beta^* X\_\beta / T$ where $X\_\beta$ is
 a $T\times d$ random matrix in the $\beta$-ensemble (real/complex/quaternionic
 for $\beta=1/2/4$) with aspect ratio $c = d/T$, the empirical spectral distribution
 converges to the $\beta$-Marchenko-Pastur law:*
@@ -254,11 +254,11 @@ $$\rho_{\rm MP}^\beta(\lambda) = \frac{1}{2\pi c\lambda}
 \sqrt{(\lambda_+ - \lambda)(\lambda-\lambda_-)}\cdot\mathbf{1}_{[\lambda_-,\lambda_+]}(\lambda)
 \tag{4.1}$$
 
-*where $\lambda_\pm = (1\pm\sqrt{c/\beta_{\rm eff}})^2$ and $\beta_{\rm eff}$
+*where $\lambda\_\pm = (1\pm\sqrt{c/\beta\_{\rm eff}})^2$ and $\beta\_{\rm eff}$
 is the effective repulsion parameter.*
 
-*For GOE ($\beta=1$, CAPM): $\lambda_+ = (1+\sqrt{c})^2$.*
-*For GUE ($\beta=2$, Clifford torus): the support is narrower, $\lambda_+^{\rm GUE} < \lambda_+^{\rm GOE}$.*
+*For GOE ($\beta=1$, CAPM): $\lambda\_+ = (1+\sqrt{c})^2$.*
+*For GUE ($\beta=2$, Clifford torus): the support is narrower, $\lambda\_+^{\rm GUE} < \lambda\_+^{\rm GOE}$.*
 *For GSE ($\beta=4$, pseudo-Anosov): narrowest support.*
 
 **The support shrinks as $\beta$ increases.** The GUE market has a smaller spread
@@ -274,14 +274,14 @@ minimises the $\beta$-ensemble free energy functional:
 $$F_\beta[\mu] = \int V(\lambda)\,\mu(d\lambda)
 - \frac{1}{\beta}\int\!\!\int\log|\lambda-\mu|\,\mu(d\lambda)\mu(d\mu) \tag{4.2}$$
 
-**In the market context:** The potential $V(\lambda) = -L_T(b)$ is the negative Kelly
+**In the market context:** The potential $V(\lambda) = -L\_T(b)$ is the negative Kelly
 growth rate. The logarithmic energy term is the Fisher-Rao diversification pressure.
 The equilibrium measure minimises the negative Kelly growth rate minus the diversification
 pressure.
 
 **Theorem 4.2** *(The equilibrium measure = log-optimal portfolio distribution)*.
-*The equilibrium measure $\mu^*_\beta$ of the $\beta$-ensemble with potential
-$V(\lambda) = -L_T(b)$ is the log-optimal portfolio distribution on $M^r$:*
+*The equilibrium measure $\mu^*\_\beta$ of the $\beta$-ensemble with potential
+$V(\lambda) = -L\_T(b)$ is the log-optimal portfolio distribution on $M^r$:*
 
 $$\mu^*_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_M(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}$$
 
@@ -302,17 +302,17 @@ same function that appears in the McKean heat kernel for the hyperbolic market.
 
 ### 5.1 The Tracy-Widom distributions
 
-The Tracy-Widom distribution $F_\beta(s)$ describes the rescaled fluctuations of the
-largest eigenvalue $\lambda_{\rm max}$ of a $\beta$-ensemble matrix near the edge of
+The Tracy-Widom distribution $F\_\beta(s)$ describes the rescaled fluctuations of the
+largest eigenvalue $\lambda\_{\rm max}$ of a $\beta$-ensemble matrix near the edge of
 the support:
 
 $$\mathbb{P}\!\left(\lambda_{\rm max} \leq \lambda_+ + \frac{s}{\lambda_+ n^{2/3}}\right)
 \to F_\beta(s) \quad\text{as } n\to\infty \tag{5.1}$$
 
 **The three distributions:**
-- $F_1$ (GOE): related to the Fredholm determinant of the Airy operator on $L^2([s,\infty))$
-- $F_2$ (GUE): the square of $F_1$: $F_2(s) = F_1(s)^2$ (by the Mehta identity)
-- $F_4$ (GSE): $F_4(s) = F_1(s/\sqrt{2})$
+- $F\_1$ (GOE): related to the Fredholm determinant of the Airy operator on $L^2([s,\infty))$
+- $F\_2$ (GUE): the square of $F\_1$: $F\_2(s) = F\_1(s)^2$ (by the Mehta identity)
+- $F\_4$ (GSE): $F\_4(s) = F\_1(s/\sqrt{2})$
 
 **The tails:** All three Tracy-Widom distributions have heavy left tails and light
 right tails. The right tail falls as $e^{-cs^{3/2}}$ — sub-Gaussian. The left tail
@@ -321,31 +321,31 @@ falls as $e^{-c|s|^3}$ — much lighter.
 ### 5.2 The TW-to-market dictionary
 
 **Theorem 5.1** *(Tracy-Widom and market crises)*.
-*The distribution of the largest factor eigenvalue $\hat\lambda_{\rm max}$ of the
+*The distribution of the largest factor eigenvalue $\hat\lambda\_{\rm max}$ of the
 sample Fisher information matrix $\hat F = X^TX/T$ converges to Tracy-Widom:*
 
-**(i) CAPM market (GOE): $\hat\lambda_{\rm max} \to F_1$.**
-A "market crisis" in the GOE regime corresponds to $\hat\lambda_{\rm max}$ exceeding
-the Tracy-Widom edge $\lambda_+$ by more than $F_1^{-1}(0.01)$ (the 1% left tail).
+**(i) CAPM market (GOE): $\hat\lambda\_{\rm max} \to F\_1$.**
+A "market crisis" in the GOE regime corresponds to $\hat\lambda\_{\rm max}$ exceeding
+the Tracy-Widom edge $\lambda\_+$ by more than $F\_1^{-1}(0.01)$ (the 1% left tail).
 
-**(ii) Clifford torus market (GUE): $\hat\lambda_{\rm max} \to F_2$.**
-The GUE crisis threshold is lower (the right tail of $F_2$ falls faster than $F_1$),
+**(ii) Clifford torus market (GUE): $\hat\lambda\_{\rm max} \to F\_2$.**
+The GUE crisis threshold is lower (the right tail of $F\_2$ falls faster than $F\_1$),
 meaning the two-factor balanced market is more resistant to extreme eigenvalue spikes.
 
-**(iii) Pseudo-Anosov market (GSE): $\hat\lambda_{\rm max} \to F_4$.**
+**(iii) Pseudo-Anosov market (GSE): $\hat\lambda\_{\rm max} \to F\_4$.**
 The GSE right tail is the lightest — extreme eigenvalue spikes are rarest in the
 symplectic market. But the left tail is heavier — the largest eigenvalue is more
 likely to be near its expected value (less spread in the distribution).
 
 **The financial meaning of the TW edge:** The largest factor eigenvalue represents
-the dominant risk factor's strength. A spike in $\lambda_{\rm max}$ (beyond the TW edge)
+the dominant risk factor's strength. A spike in $\lambda\_{\rm max}$ (beyond the TW edge)
 indicates that a single factor is becoming dominant — consistent with a crisis where
 all correlations go to 1. The rate at which the TW distribution decays tells us the
 frequency of such "dominant factor" events.
 
 **Testable prediction:** During CAPM-type market periods, the empirical distribution
-of the maximum rolling eigenvalue of the return covariance should fit $F_1$. During
-balanced two-factor periods (Clifford torus regime), it should fit $F_2$.
+of the maximum rolling eigenvalue of the return covariance should fit $F\_1$. During
+balanced two-factor periods (Clifford torus regime), it should fit $F\_2$.
 The fit quality is a model-free test of the market's symmetry class.
 
 ---
@@ -362,11 +362,11 @@ from the edge.
 
 **In market terms:** The spectrum has three regions:
 - **Bulk (1 to $r$):** Factor eigenvalues — large, systematic, governed by $\beta$-Marchenko-Pastur
-- **Edge (near $\lambda_r$):** The smallest factor eigenvalue — Tracy-Widom with crossover
+- **Edge (near $\lambda\_r$):** The smallest factor eigenvalue — Tracy-Widom with crossover
 - **Noise floor ($r+1$ to $d$):** Idiosyncratic eigenvalues — small, near noise level
 
 The **mesoscopic regime** is the transition region from the $r$-th factor eigenvalue
-$\lambda_r$ to the noise floor $\lambda_{r+1},\ldots,\lambda_{r+k}$. This is
+$\lambda\_r$ to the noise floor $\lambda\_{r+1},\ldots,\lambda\_{r+k}$. This is
 the factor-to-idiosyncratic transition — the boundary between $TM$ and $NM$.
 
 ### 6.2 The Jacobi crossover
@@ -375,7 +375,7 @@ the factor-to-idiosyncratic transition — the boundary between $TM$ and $NM$.
 *At the mesoscopic scale near the $r$-th eigenvalue, the eigenvalue statistics
 interpolate between the $\beta$-ensemble (factor statistics) and Poisson statistics
 (idiosyncratic statistics), with the crossover controlled by the Jacobi spectral gap
-$\lambda_1(L_M)$:*
+$\lambda\_1(L\_M)$:*
 
 $$\text{At scale } k \text{ from } \lambda_r: \quad \text{statistics} =
 \begin{cases}
@@ -383,13 +383,13 @@ $$\text{At scale } k \text{ from } \lambda_r: \quad \text{statistics} =
 \text{Poisson} & k \gg \lambda_1(L_M)^{-1}
 \end{cases} \tag{6.1}$$
 
-*The Jacobi spectral gap $\lambda_1$ controls the mesoscopic crossover scale:
+*The Jacobi spectral gap $\lambda\_1$ controls the mesoscopic crossover scale:
 a large spectral gap means a sharp factor-to-idiosyncratic boundary; a small gap
 means a gradual transition.*
 
-*For the CAPM: $\lambda_1 = (d-2)/4 \approx 12$ — sharp boundary.*
-*For the Clifford torus: $\lambda_1 = 5/2$ — less sharp, broader transition.*
-*Near a crisis (spectral gap collapsing): $\lambda_1\to 0$ — factor and
+*For the CAPM: $\lambda\_1 = (d-2)/4 \approx 12$ — sharp boundary.*
+*For the Clifford torus: $\lambda\_1 = 5/2$ — less sharp, broader transition.*
+*Near a crisis (spectral gap collapsing): $\lambda\_1\to 0$ — factor and
 idiosyncratic eigenvalues mix, and the matrix becomes ill-conditioned.*
 
 **The mesoscopic regime is where model selection matters most.** In the bulk: any
@@ -425,8 +425,8 @@ with $\beta=2$. The bulk distribution is the $\beta=2$ Marchenko-Pastur (narrowe
 support than GOE).
 
 **The Jacobi parameters match.** From MARKET\_PROCESSES.md: the Jacobi diffusion
-parameters are $\alpha_i = Tb^*_i - 1/2$. From (7.2): the Wishart Laguerre parameter
-is $a = \beta(T-d-1)/2$. Setting $b^*_i = 1/d$ (equal-weight CAPM):
+parameters are $\alpha\_i = Tb^*\_i - 1/2$. From (7.2): the Wishart Laguerre parameter
+is $a = \beta(T-d-1)/2$. Setting $b^*\_i = 1/d$ (equal-weight CAPM):
 $\alpha = T/d - 1/2 = \beta(T-d-1)/(2d) + O(1)$ — consistent. The Jacobi diffusion
 and the Wishart random matrix are the same object in different parameterisations.
 
@@ -438,7 +438,7 @@ the empirical spectral distribution of Wishart matrices to the Marchenko-Pastur 
 **Geometric form of Bai-Silverstein:** For an efficient CAPM market, the empirical
 spectral distribution of $\hat F / \mathrm{tr}(\hat F)$ (the normalised Fisher matrix)
 converges almost surely to the Marchenko-Pastur law — the same distribution as the
-MUP stationary distribution $\rho_\infty = d\mathrm{vol}_M/\mathrm{vol}(M)$
+MUP stationary distribution $\rho\_\infty = d\mathrm{vol}\_M/\mathrm{vol}(M)$
 (uniform on $M$). **The Bai-Silverstein theorem IS the FP stationarity result
 (R5 of WHATS\_NEW) in random matrix language.**
 
@@ -450,38 +450,38 @@ MUP stationary distribution $\rho_\infty = d\mathrm{vol}_M/\mathrm{vol}(M)$
 
 | RMT concept | Geometric market concept | Formula |
 |:-----------|:------------------------|:--------|
-| GOE ($\beta=1$) | CAPM great sphere (time-reversal symmetric) | $M = S^r_+$ |
+| GOE ($\beta=1$) | CAPM great sphere (time-reversal symmetric) | $M = S^r\_+$ |
 | GUE ($\beta=2$) | Clifford torus (Berry phase breaks T-reversal) | $M = T^2$ |
-| GSE ($\beta=4$) | Pseudo-Anosov (symplectic foliation pairing) | $M = \Sigma^2_g$ |
-| Vandermonde $|\lambda_i-\lambda_j|^\beta$ | Fisher-Rao eigenvalue repulsion | $g^{\rm FR}$ pressure |
-| Marchenko-Pastur bulk | Factor eigenvalue distribution | $d\mathrm{vol}_M$ |
-| Tracy-Widom edge $F_\beta$ | Largest factor eigenvalue | $\hat\lambda_{\rm max}$ |
-| Mesoscopic crossover | $TM\to NM$ transition | Jacobi gap $\lambda_1$ |
-| Selberg integral | MUP partition function | $\mathcal{Z}_T^M$ |
-| Equilibrium measure $\mu^*$ | MUP posterior | $\pi_T(db)$ |
+| GSE ($\beta=4$) | Pseudo-Anosov (symplectic foliation pairing) | $M = \Sigma^2\_g$ |
+| Vandermonde $|\lambda\_i-\lambda\_j|^\beta$ | Fisher-Rao eigenvalue repulsion | $g^{\rm FR}$ pressure |
+| Marchenko-Pastur bulk | Factor eigenvalue distribution | $d\mathrm{vol}\_M$ |
+| Tracy-Widom edge $F\_\beta$ | Largest factor eigenvalue | $\hat\lambda\_{\rm max}$ |
+| Mesoscopic crossover | $TM\to NM$ transition | Jacobi gap $\lambda\_1$ |
+| Selberg integral | MUP partition function | $\mathcal{Z}\_T^M$ |
+| Equilibrium measure $\mu^*$ | MUP posterior | $\pi\_T(db)$ |
 | Wishart matrix | Sample Fisher information | $\hat F = X^TX/T$ |
-| Bai-Silverstein | FP stationarity = Jeffreys prior | $\rho_\infty = d\mathrm{vol}_M$ |
-| Ratio test $r_n$ | Symmetry class detector | $\beta\in\{1,2,4\}$ |
+| Bai-Silverstein | FP stationarity = Jeffreys prior | $\rho\_\infty = d\mathrm{vol}\_M$ |
+| Ratio test $r\_n$ | Symmetry class detector | $\beta\in\{1,2,4\}$ |
 
 ### 8.2 New testable predictions
 
 **Prediction 8.1** *(Dyson class from ratio statistics)*.
 During CAPM-type market periods (single dominant factor), the ratio statistic
-$r_n = (\lambda_{n+1}-\lambda_n)/(\lambda_n-\lambda_{n-1})$ for consecutive
+$r\_n = (\lambda\_{n+1}-\lambda\_n)/(\lambda\_n-\lambda\_{n-1})$ for consecutive
 factor eigenvalues should follow the GOE ($\beta=1$) ratio distribution.
 During balanced two-factor periods, the distribution should shift to GUE ($\beta=2$).
-*Test:* Compute $r_n$ from quarterly rolling factor decompositions; fit to
+*Test:* Compute $r\_n$ from quarterly rolling factor decompositions; fit to
 $\beta=1,2,4$ ratio distributions using KS test.
 
 **Prediction 8.2** *(TW crisis indicator)*.
-The rescaled largest eigenvalue $((\hat\lambda_{\rm max} - \lambda_+)n^{2/3}/\lambda_+)$
-should be distributed as $F_1$ in CAPM periods and $F_2$ in Clifford torus periods.
-A spike beyond the $1\%$ left tail of the appropriate $F_\beta$ is a TW crisis signal.
-*Test:* Rolling eigenvalue estimation; compare to $F_1$ vs $F_2$ CDFs; identify the
+The rescaled largest eigenvalue $((\hat\lambda\_{\rm max} - \lambda\_+)n^{2/3}/\lambda\_+)$
+should be distributed as $F\_1$ in CAPM periods and $F\_2$ in Clifford torus periods.
+A spike beyond the $1\%$ left tail of the appropriate $F\_\beta$ is a TW crisis signal.
+*Test:* Rolling eigenvalue estimation; compare to $F\_1$ vs $F\_2$ CDFs; identify the
 distribution of such exceedances around known market crises (2008, 2020).
 
 **Prediction 8.3** *(Selberg ratio as factor model test)*.
-The ratio $\mathcal{Z}_T^{\rm GUE}/\mathcal{Z}_T^{\rm CAPM}$ (equation 3.5/3.4) is
+The ratio $\mathcal{Z}\_T^{\rm GUE}/\mathcal{Z}\_T^{\rm CAPM}$ (equation 3.5/3.4) is
 computable analytically. If the market is in the GUE regime, the MUP log-wealth
 should exceed the CAPM MUP log-wealth by $\log(\mathcal{Z}^{\rm GUE}/\mathcal{Z}^{\rm CAPM})/T$.
 This is a direct test of whether the market's symmetry class is GOE or GUE.
@@ -507,7 +507,7 @@ $\beta/2$ where $\beta$ is the market's symmetry class.
 
 **Theorem 9.1** *(Factor eigenvalues follow Dyson BM on $M$)*.
 *For a market on manifold $M$ with Dyson class $\beta$, the eigenvalue process
-$(\lambda_1(t),\ldots,\lambda_r(t))$ of the Fisher information matrix satisfies:*
+$(\lambda\_1(t),\ldots,\lambda\_r(t))$ of the Fisher information matrix satisfies:*
 
 $$d\lambda_i = \varepsilon\,dW_i + \frac{\beta\varepsilon^2}{2}\sum_{j\neq i}\frac{dt}{\lambda_i-\lambda_j}
 + (\text{mean curvature drift}) \tag{9.2}$$
@@ -521,8 +521,8 @@ a systematic drift in the Dyson BM eigenvalue process.*
 
 ### 9.2 MCF as regularisation of Dyson BM
 
-**The mean curvature flow** $\partial_t M = -H\vec\nu$ regularises the Dyson Brownian
-motion of the factor eigenvalues — it prevents eigenvalue collisions ($\lambda_i\to\lambda_j$)
+**The mean curvature flow** $\partial\_t M = -H\vec\nu$ regularises the Dyson Brownian
+motion of the factor eigenvalues — it prevents eigenvalue collisions ($\lambda\_i\to\lambda\_j$)
 by creating a restoring force near degeneracy. The MCF is the "viscous" regularisation
 of the eigenvalue repulsion.
 
