@@ -426,7 +426,7 @@ $$g(M_{\rm comp}) \geq g(M_1) + g(M_2) \tag{6.2}$$
 **The Jones polynomial of the composite market:**
 
 For a connected sum of knots $K\_1 \\# K\_2$ (the simplest form of composition):
-$$J_{K_1 \# K_2}(q) = J_{K_1}(q) \cdot J_{K_2}(q) \tag{6.3}$$
+$$J_{K_1 \\# K_2}(q) = J_{K_1}(q) \cdot J_{K_2}(q) \tag{6.3}$$
 
 The Jones polynomial factorises over the composite market structure. **The market
 partition function (Jones polynomial) of a composite market is the product of the

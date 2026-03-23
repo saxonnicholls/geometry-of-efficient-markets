@@ -581,7 +581,7 @@ in the directions $v\_k$ with large $\lambda\_k$ and wide in directions with sma
 eigenvalues of $F(b^*)$ that contribute more than $\varepsilon$ to the total posterior
 variance (measured in $\|\cdot\|\_F$) is bounded by the stable rank:*
 
-$$\#\{k : \lambda_k(F) \geq \varepsilon^2 \lambda_{\max}\} \leq r_{\mathrm{eff}} = \|F\|_F^2/\|F\|_2^2 \tag{6.3}$$
+$$\\#\{k : \lambda_k(F) \geq \varepsilon^2 \lambda_{\max}\} \leq r_{\mathrm{eff}} = \|F\|_F^2/\|F\|_2^2 \tag{6.3}$$
 
 *The Laplace approximation to the simplex integral can be computed in $O(T\cdot r\_{\mathrm{eff}}\cdot d)$
 operations by projecting the optimisation onto the top-$r\_{\mathrm{eff}}$ eigendirections of $F$,

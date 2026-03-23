@@ -699,7 +699,7 @@ $$\boxed{\begin{array}{ll}
 \text{Topological entropy} & = \text{Kelly growth rate}\\
 \text{Sofic shift} & = \text{efficient market language}\\
 \text{Turing completeness} & = \text{market is universal computer}\\
-\text{$\#\mathbf{P}$-hardness} & = \text{complexity-theoretic EMH}
+\text{$\\#\mathbf{P}$-hardness} & = \text{complexity-theoretic EMH}
 \end{array}}$$
 
 The market is not merely a pricing mechanism or an information aggregator. It is a

@@ -514,7 +514,7 @@ $4^n$ as for an unconstrained 4-alphabet): the forbidden transitions halve the b
 
 The winding number $W\_n \in \mathbb{Z}$ of the portfolio path after $n$ steps is:
 
-$$W_n = \#\{j \leq n : s_j = 0, s_{j+1} = 1\} - \#\{j \leq n : s_j = 1, s_{j+1} = 0\} \tag{6.3}$$
+$$W_n = \\#\{j \leq n : s_j = 0, s_{j+1} = 1\} - \\#\{j \leq n : s_j = 1, s_{j+1} = 0\} \tag{6.3}$$
 
 (net count of counter-clockwise vs clockwise $\theta$-transitions).
 

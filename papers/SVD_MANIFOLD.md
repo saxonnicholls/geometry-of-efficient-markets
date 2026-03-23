@@ -94,7 +94,7 @@ preserves the Willmore energy.
 
 **Theorem D** *(Stability index from SVD)*. The stability index satisfies:
 
-$$\mathrm{ind}(M) = \#\!\left\{i : |\kappa_i|^2 + \frac{d-2}{4} > \lambda_1(-\Delta_M)\right\} \tag{1.1}$$
+$$\mathrm{ind}(M) = \\#\!\left\{i : |\kappa_i|^2 + \frac{d-2}{4} > \lambda_1(-\Delta_M)\right\} \tag{1.1}$$
 
 where $|\kappa\_i|$ are the singular values of the shape operator. A minimal surface is stable
 iff no singular value of $A$ exceeds the threshold $\sqrt{\lambda\_1(-\Delta\_M) - (d-2)/4}$.
@@ -449,13 +449,13 @@ $$L = \sum_k \lambda_k\, \phi_k \otimes \phi_k \tag{6.1}$$
 where $\phi\_k$ are the Jacobi eigenfunctions and $\lambda\_k$ the Jacobi eigenvalues.
 The stability index is:
 
-$$\mathrm{ind}(M) = \#\{\lambda_k < 0\} \tag{6.2}$$
+$$\mathrm{ind}(M) = \\#\{\lambda_k < 0\} \tag{6.2}$$
 
 **Theorem 6.1** *(Stability index controlled by shape operator SVD)*. *For a minimal
 surface $M^r \subset S^{d-1}$ with shape operators $\{A\_k\}\_{k=1}^{d-1-r}$ (one per
 normal direction), the stability index satisfies:*
 
-$$\mathrm{ind}(M) \leq \sum_k \#\left\{i : \kappa_i(A_k)^2 > \frac{\lambda_1(-\Delta_M)}{2}\right\} \tag{6.3}$$
+$$\mathrm{ind}(M) \leq \sum_k \\#\left\{i : \kappa_i(A_k)^2 > \frac{\lambda_1(-\Delta_M)}{2}\right\} \tag{6.3}$$
 
 *where $\lambda\_1(-\Delta\_M)$ is the first nonzero Laplacian eigenvalue on $M$ (the spectral
 gap). Conversely, if all singular values of all $A\_k$ satisfy:*
