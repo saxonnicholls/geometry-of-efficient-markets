@@ -76,7 +76,7 @@ using the wrong measure.
 | `papers/` | 31 mathematical papers (~155,000 words) |
 | `navigation/` | Abstract, series plan, complete results inventory |
 | `book/` | Monograph chapters, experiments, practitioner guide |
-| `code/` | Open-source replication suite (Python + C++) |
+| `code/` | Open-source replication suite (Python + C++20) |
 
 ### `papers/` — The Mathematics
 
