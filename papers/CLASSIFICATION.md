@@ -5,6 +5,8 @@
 
 **Paper I.4** — *The Geometry of Efficient Markets*
 
+**PREPRINT** — Not peer-reviewed. Comments welcome: me@saxonnicholls.com
+
 ---
 
 **Abstract.**  

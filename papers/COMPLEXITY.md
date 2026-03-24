@@ -24,6 +24,8 @@ complexity; sofic shift; cellular automaton; Rule 110; Garside; Halting Problem;
 
 **Paper III.4** — *The Geometry of Efficient Markets*
 
+**PREPRINT** — Not peer-reviewed. Comments welcome: me@saxonnicholls.com
+
 ---
 
 ## 1. The Complexity Trichotomy

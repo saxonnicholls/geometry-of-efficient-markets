@@ -5,6 +5,8 @@
 
 **Paper I.2** — *The Geometry of Efficient Markets*
 
+**PREPRINT** — Not peer-reviewed. Comments welcome: me@saxonnicholls.com
+
 ---
 
 **Abstract.** We establish a Feynman–Kac representation for the wealth functional of Cover's

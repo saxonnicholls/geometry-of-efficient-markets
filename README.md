@@ -8,6 +8,9 @@ in finance is a computable geometric invariant of this submanifold.
 
 **31 papers · ~155,000 words · 85 results · 30 conjectures**
 
+> **PREPRINT** — This is a working draft. None of these papers have been peer-reviewed.
+> Comments, corrections, and collaboration inquiries welcome: me@saxonnicholls.com
+
 ---
 
 ## The Three Market Types
