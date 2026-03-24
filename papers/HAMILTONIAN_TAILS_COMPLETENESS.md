@@ -3,6 +3,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper II.2** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -44,7 +46,7 @@ divergence; Atiyah-Singer; ground state; Jacobi spectrum; critical exponents.
 
 ### 1.1 From the FK PDE to a Schrödinger equation
 
-The Feynman–Kac PDE on the portfolio simplex (PAPER.md equation 2.3):
+The Feynman–Kac PDE on the portfolio simplex (FK_SIMPLEX.md equation 2.3):
 
 $$\frac{\partial u}{\partial\tau} = \mathcal{L}^\varepsilon u + r(b,\tau)\cdot u,
 \qquad u(\cdot, 0) = 1 \tag{1.1}$$
@@ -154,10 +156,16 @@ by the infinite potential wall.
 simplex $\Delta\_{d-1}$) with a concave potential well. Its spectral theory is well-developed
 \[Agmon 1982, Reed-Simon Vol IV\], and the ground state is:
 
-$$\psi_0(b) \propto \exp(-S(b)/\varepsilon^2)\cdot A(b)^{1/2} = W_T(b)^{T/T} = W_T(b) \tag{1.6}$$
+$$\psi_0(b) \propto \exp(-S(b)/(2\varepsilon^2))\cdot A(b)^{1/2} = W_T(b)^{1/2} \tag{1.6}$$
 
 where $S(b) = -\log W\_T(b)$ is the WKB action and $A = |\det F|^{-1/4}$ is the
 amplitude factor (Van Vleck determinant to the 1/4 power).
+
+*Note.* The standard WKB ground state has the factor of 2 in the exponent:
+$\psi\_0 \propto \exp(-S/(2\varepsilon^2))$. With $S = -\log W\_T$ and $\varepsilon^2 = 1/T$,
+this gives $\exp(T\log W\_T / 2) = W\_T^{1/2}$, consistent with Proposition 1.2(i).
+The exponent $1/2$ (rather than $1$) arises because the ground state wavefunction
+is the square root of the posterior: $|\psi\_0|^2 = \pi\_T \propto W\_T$.
 
 ---
 
@@ -320,23 +328,43 @@ critical point.
 
 ### 2.5 The relationship between the three arguments
 
-The three arguments are not independent — they are three faces of the same geometric structure:
+**Critical clarification.** The three arguments give three different exponents measuring
+three different objects:
 
-| Argument | Mathematical structure | Tail exponent |
-|:---------|:----------------------|:-------------|
-| Fisher–Rao divergence | Beta distribution from Dirichlet prior | $\alpha = Tb^{\ast}\_i - 1/2$ |
-| Sphere curvature | Heat kernel on $M^r$, Weyl's law | $\alpha = r/2$ |
-| RG criticality | Scale invariance of critical point | $\alpha = (d-2)/(2r)$ |
+| Argument | What it measures | Tail exponent | Symbol |
+|:---------|:-----------------|:-------------|:-------|
+| Fisher–Rao divergence | Posterior **portfolio weight** distribution | $\alpha\_{\rm portfolio} = Tb^{\ast}\_i - 1/2$ | (2.4) |
+| Sphere curvature / Weyl's law | Marginal **asset return** distribution via heat kernel on $M^r$ | $\alpha\_{\rm return} = r/2$ | (2.9) |
+| RG criticality | **Scaling exponent** of largest eigenvalue of return covariance | $\alpha\_{\rm RG} = (d-2)/(2r)$ | (2.10) |
+
+Argument 1 gives the tail index of the **posterior portfolio weight** distribution:
+$\alpha\_{\rm portfolio} = Tb^{\ast}\_i - 1/2$. This governs the distribution of the
+Kelly-optimal weight $b^{\ast}\_i$ under the posterior.
+
+Argument 2 gives the tail index of the **asset return** distribution via the heat
+kernel on $M$: $\alpha\_{\rm return} = r/2$. This is the tail index of the marginal
+return distribution $x\_{t,i}$.
+
+Argument 3 gives the **RG scaling exponent**: $\alpha\_{\rm RG} = (d-2)/(2r)$. This
+governs the scaling of the largest eigenvalue of the return covariance.
+
+**These three exponents measure different objects and need not agree.** The observable
+fat-tail exponent for asset returns is $\alpha\_{\rm return} = r/2$; the portfolio
+weight distribution has a different exponent $\alpha\_{\rm portfolio}$; and the RG
+exponent governs eigenvalue scaling. The relationship between these requires the
+pushforward measure from portfolio weights to returns, which depends on the specific
+embedding of $M$ in $S^{d-1}\_+$.
 
 For the empirical case ($d=50$, $r=4$, $T=252$, $b^{\ast}\_i = 1/50$):
-- Argument 1: $\alpha = 252/50 - 0.5 = 4.54$
-- Argument 2: $\alpha = 4/2 = 2$
-- Argument 3: $\alpha = 48/8 = 6$
+- Argument 1 (portfolio weights): $\alpha\_{\rm portfolio} = 252/50 - 0.5 = 4.54$
+- Argument 2 (asset returns): $\alpha\_{\rm return} = 4/2 = 2$
+- Argument 3 (eigenvalue scaling): $\alpha\_{\rm RG} = 48/8 = 6$
 
-The three estimates are consistent in the sense that all give $\alpha$ in the range
-$[2, 6]$ — exactly the empirically observed range. The true exponent is governed by
-the **smallest** of these (heaviest tails wins in the tail competition), giving
-$\alpha\_{\rm eff} \approx 2$–$3$ in the deep tail.
+The fact that all three give values in the range $[2, 6]$ is encouraging but should
+not obscure the fact that they describe different distributional quantities. The
+directly observable tail index for asset returns is $\alpha\_{\rm return} = r/2$
+(Argument 2). The empirically observed tail index $\alpha \approx 3$–$5$ for equity
+returns corresponds to $r \approx 6$–$10$ effective factors.
 
 ---
 

@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper II.3** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -154,7 +156,7 @@ $$\hat\phi_r(\xi) = \mathbb{E}[e^{i\xi\log(b_t/b_0)}] = \sum_{n=0}^\infty e^{-\l
 
 **Short-time limit** ($\kappa t \ll 1$): the Jacobi diffusion approximates GBM:
 
-$$r_t \approx \mathcal{N}\!\left(\left(\mu - \frac{\varepsilon^2}{2b_0(1-b_0)}\right)t,\; \frac{2\varepsilon^2 b_0(1-b_0)}{dt}\right) \tag{2.7}$$
+$$r_t \approx \mathcal{N}\!\left(\left(\mu - \frac{\varepsilon^2}{2b_0(1-b_0)}\right)t,\; 2\varepsilon^2 b_0(1-b_0)\,t\right) \tag{2.7}$$
 
 This is a Gaussian with **position-dependent variance** $\sigma^2(b\_0) = 2\varepsilon^2 b\_0(1-b\_0)$ — the
 Fisher-Rao diffusion coefficient. For $b\_0 = 0.5$ (equal weight): $\sigma^2 = \varepsilon^2/2$,
@@ -252,7 +254,7 @@ $$\boxed{p_t(\theta,\varphi\,|\,\theta_0,\varphi_0) = \vartheta_3\!\!\left(\frac
 *where the Jacobi theta function is:*
 
 $$\vartheta_3(z|\tau) = \sum_{n=-\infty}^\infty e^{i\pi\tau n^2 + 2niz}
-= 1 + 2\sum_{n=1}^\infty e^{-n^2\pi^2\varepsilon^2 t/(\pi/2)^2}\cos(2n(\theta-\theta_0)) \tag{4.5}$$
+= 1 + 2\sum_{n=1}^\infty e^{-n^2\pi^2\varepsilon^2 t/(\pi/2)^2}\cos(n(\theta-\theta_0)) \tag{4.5}$$
 
 *This is EXACTLY closed form — a convergent series in elementary functions.*
 
@@ -301,13 +303,19 @@ function oscillates with frequency determined by the torus topology.
 | Short-time | $\mathcal{N}(\mu dt, \sigma^2 dt)$ | $\mathcal{N}(0, 2\varepsilon^2 dt)$ (same!) |
 | Long-time | Normal (unbounded) | Uniform on $[-\pi/2, \pi/2]$ (bounded!) |
 | Characteristic function | $e^{i\mu\xi t - \sigma^2\xi^2 t/2}$ | $e^{-2\varepsilon^2\xi^2 t}\cdot\vartheta\_3(\cdot)$ |
-| Tails | Gaussian (light) | Bounded support (no tails!) |
+| Tails | Gaussian (light) | Exponentially decaying ($\vartheta\_3$ kernel) |
 | Periodicity | None | Peaks at multiples of $\pi/2$ |
 | Return autocorrelation | Zero (Markov) | Non-zero periodic pattern |
 
-**The Clifford torus market has NO fat tails in the long run** — the portfolio is
-bounded. But it has a **non-trivial autocorrelation structure** from the torus geometry:
-returns autocorrelate at time lags corresponding to the torus circumference.
+**Clarification: bounded weights vs bounded returns.** The Clifford torus portfolio
+**weight** process is bounded (the torus is compact). However, the **asset return**
+process $x\_{t,i} = S\_{t,i}/S\_{t-1,i}$ is not bounded, as it depends on the map from
+portfolio weights to prices. The return distribution on the Clifford torus has
+exponentially decaying tails (from the $\vartheta\_3$ kernel), which is lighter than the
+power-law tails of the CAPM (Jacobi) and hyperbolic cases, but not bounded. The
+Clifford torus market has **no power-law fat tails**, but it does have a **non-trivial
+autocorrelation structure** from the torus geometry: returns autocorrelate at time
+lags corresponding to the torus circumference.
 
 ### 4.4 Theta function pricing formula
 

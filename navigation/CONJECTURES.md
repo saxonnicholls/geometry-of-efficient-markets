@@ -54,6 +54,7 @@ When $c\_1(NM)\neq0$: alpha $= c\_1/T$ per cycle.
 Major structural breaks = integer jumps in $c\_1(NM)$ with spectral gap closure.
 
 **C12. Voronoi Symbolic Dynamics Sofic for All Compact $M$ (Grade A)**
+*Status: SFT part now proved as R74. CTW posterior = MUP posterior remains conjectural.*
 Any grammar-based compressor generates a valid filtration.
 Extension of R14 (LZ case proved). CTW posterior = MUP posterior;
 BWT sorted order = filtration atoms by entropy.
@@ -90,10 +91,11 @@ to ratio $\delta$.
 ## Part V: LLMs and Machine Learning
 
 **C18. General Prefix Trie = Filtration (Grade A)**
+*Status: LZ78 case is R14 (proved). General compressor case remains conjectural.*
 Any grammar-based compressor generates a valid filtration.
 CTW posterior = MUP posterior. BWT = filtration atoms by entropy.
 PPM = Bayesian manifold prediction.
-LZ78 proved (R14). General case follows directly.
+LZ78 proved (R14). General case is plausible but unproved.
 
 **C19. LLM Training Dynamics = MCF in Model Weight Space (Grade B)**
 Natural gradient descent on cross-entropy IS gradient flow of area functional.
@@ -136,14 +138,42 @@ Empirically testable. Predicted to be a 3-6 month leading indicator of VIX spike
 
 ---
 
+## Part VIII: New Connections
+
+**C26. Clifford Torus U(n) Holonomy (Grade A) ★★**
+The Berry phase on the Clifford torus normal bundle provides a complex structure,
+placing the holonomy in $U(n)$ and forcing GUE statistics. Required for full proof
+of Dyson class correspondence (Theorem 1.1(ii) of RANDOM\_MATRIX).
+
+**C27. Pseudo-Anosov Sp(n) Holonomy (Grade A) ★★★**
+The foliation pairing of the pseudo-Anosov map provides a symplectic structure on
+the normal bundle, placing holonomy in $Sp(n)$ and forcing GSE statistics. Required
+for Theorem 1.1(iii) of RANDOM\_MATRIX.
+
+**C28. Selberg Derivative = Shapley Value (Grade A) ★★**
+$\partial/\partial a\_i \log S\_r(a,b,\gamma) = \phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$.
+The derivative of the log Selberg integral with respect to the $i$-th parameter equals
+the Shapley value. Would connect RANDOM\_MATRIX to HYPERCUBE\_SHAPLEY.
+
+**C29. Kalman Innovation = LZ Phrase Boundaries (Grade B) ★★**
+LZ phrase boundaries correspond to times when Kalman innovation exceeds a threshold.
+LZ complexity rate = Kalman innovation variance rate. Would connect
+STOCHASTIC\_CONTROL\_KALMAN to FILTRATIONS.
+
+**C30. Percolation Threshold = Hawkes Criticality (Grade B) ★★**
+$p\_c$ on the Delaunay graph and $\rho(A\_{\rm Hawkes})=1$ are the same condition.
+Would connect GRASSBERGER\_PERCOLATION\_GENERATING to GEOSPATIAL\_CONTAGION.
+
+---
+
 ## Summary
 
 | Grade | Count |
 |:-----:|:-----:|
-| A | 12 |
-| B | 12 |
+| A | 13 |
+| B | 16 |
 | C | 1 |
-| **Total** | **25** |
+| **Total** | **30** |
 
 **Three most important to prove next:**
 1. C1 (Full EMH) — BSDE approach is close

@@ -3,6 +3,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper IV.3** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -38,13 +40,13 @@ $\alpha = \beta = Tb^{\ast} - 1/2$ (the Jacobi parameters from MARKET\_PROCESSES
 and $\gamma = \beta/2$: the Selberg integral equals the MUP normalisation constant
 $\int\_{M^r}W\_T(b)\,d\mathrm{vol}\_M$.
 
-**(iv) The bulk spectral distribution.** For a GOE ($\beta=1$) CAPM market, the
+**(iv) The bulk spectral distribution.** For all three ensembles, the
 empirical spectral distribution of the return covariance converges to the
-Marchenko-Pastur law. For a GUE ($\beta=2$) Clifford torus market, the bulk
-distribution is shifted (stronger eigenvalue repulsion pushes eigenvalues apart)
-and the support is wider. The ratio $\lambda\_{\rm max}/\lambda\_{\rm min}$ is
-larger for GUE than GOE for the same matrix size — the factor spectrum is more
-spread out in the two-factor complex market.
+Marchenko-Pastur law with $\beta$-independent support $[(1-\sqrt{c})^2, (1+\sqrt{c})^2]$.
+The $\beta$ dependence appears in local statistics: level spacing distributions
+(Wigner surmise), eigenvalue correlations, and Tracy-Widom edge fluctuations.
+Increasing $\beta$ increases eigenvalue repulsion, making the local spacing
+more regular (less clustering) without changing the global density.
 
 **(v) Tracy-Widom edge statistics are market-type specific.** The largest eigenvalue
 of the sample return covariance follows Tracy-Widom $F\_1$ for CAPM markets, $F\_2$
@@ -94,9 +96,9 @@ $$P(\lambda_1,\ldots,\lambda_n) \propto \prod_{i<j}|\lambda_i-\lambda_j|^\beta
 
 ### 1.2 The market symmetry classes
 
-**Theorem 1.1** *(The Dyson-Manifold Correspondence)*.
-*The symmetry class of the return covariance ensemble for a market on manifold $M^r$
-is determined by the topological symmetry of $M$:*
+**Theorem 1.1 (conditional)** *(The Dyson-Manifold Correspondence)*.
+*The Dyson symmetry class $\beta \in \{1,2,4\}$ of an efficient market is determined
+by the geometry of $M^r$ as follows:*
 
 **(i) CAPM ($M = S^r\_+$, great sphere): GOE ($\beta=1$).**
 The CAPM market manifold is real and time-reversal symmetric. Running time forward
@@ -116,14 +118,21 @@ that are conjugate in the symplectic sense: $\Omega(\mathcal{F}^s, \mathcal{F}^u
 for the symplectic form $\Omega$ on the cotangent bundle. This gives the return
 covariance a quaternionic structure with Kramers degeneracy ($T^2 = -1$, GSE class).
 
-*Proof sketch.* The symmetry class is determined by the Schur-Weyl duality applied
-to the holonomy group of the market manifold (from FIBER\_BUNDLES):
-- Great sphere: holonomy group $\subset O(d-1-r)$ (real orthogonal) $\to$ GOE
-- Clifford torus: holonomy group $\subset U(d-1-r)/2$ (unitary, from Berry phase) $\to$ GUE
-- Pseudo-Anosov: holonomy group $\subset Sp(d-1-r)$ (symplectic, from foliation pairing) $\to$ GSE
+*The correspondence is established via Zirnbauer's \[1996\] tenfold classification
+of symmetric spaces. The proof requires verifying that the holonomy groups match:*
 
-The connection between holonomy and the Dyson classification follows from Zirnbauer's
-\[1996\] classification of symmetric spaces by their random matrix symmetry class. $\square$
+- *(i) The CAPM great sphere has $O(n)$ holonomy (proved: the normal bundle
+  connection is real, and Schur-Weyl duality applied to the holonomy group
+  of FIBER\_BUNDLES yields the orthogonal class).*
+- *(ii) The Clifford torus has $U(n)$ holonomy. This requires showing that the Berry
+  phase provides a complex structure on the normal bundle — this is **Conjecture C26**
+  (Grade A).*
+- *(iii) The pseudo-Anosov case has $Sp(n)$ holonomy. This requires showing that the
+  stable/unstable foliation pairing is symplectic on the normal bundle — this is
+  **Conjecture C27** (Grade A).*
+
+*Part (i) is proved; parts (ii) and (iii) are Grade A conjectures supported by the
+physical arguments above and by the numerical evidence of Section 8.*
 
 **Corollary 1.2** *(Discriminating the ensemble from return data)*.
 *The symmetry class of the market's random matrix ensemble is detectable from the
@@ -253,17 +262,17 @@ $$\rho_{\rm MP}^\beta(\lambda) = \frac{1}{2\pi c\lambda}
 \sqrt{(\lambda_+ - \lambda)(\lambda-\lambda_-)}\cdot\mathbf{1}_{[\lambda_-,\lambda_+]}(\lambda)
 \tag{4.1}$$
 
-*where $\lambda\_\pm = (1\pm\sqrt{c/\beta\_{\rm eff}})^2$ and $\beta\_{\rm eff}$
-is the effective repulsion parameter.*
+*where $\lambda\_\pm = (1\pm\sqrt{c})^2$ and $c = d/T$ is the aspect ratio.*
 
-*For GOE ($\beta=1$, CAPM): $\lambda\_+ = (1+\sqrt{c})^2$.*
-*For GUE ($\beta=2$, Clifford torus): the support is narrower, $\lambda\_+^{\rm GUE} < \lambda\_+^{\rm GOE}$.*
-*For GSE ($\beta=4$, pseudo-Anosov): narrowest support.*
-
-**The support shrinks as $\beta$ increases.** The GUE market has a smaller spread
-in the eigenvalue distribution than the GOE market. This reflects the stronger
-eigenvalue repulsion: in the GUE, the factor eigenvalues are more uniformly spread
-(closer to equidistribution) than in the GOE, where they can cluster.
+**The global eigenvalue density (Marchenko-Pastur law) is $\beta$-independent:**
+all three ensembles have the same bulk density with support $[(1-\sqrt{c})^2,\,(1+\sqrt{c})^2]$.
+The $\beta$ dependence appears in **local statistics**: level spacing distribution,
+eigenvalue correlations, and edge fluctuations (Tracy-Widom). Specifically, the
+level spacing distribution transitions from Wigner surmise
+$p\_1(s) \propto s\cdot\exp(-\pi s^2/4)$ (GOE) to
+$p\_2(s) \propto s^2\cdot\exp(-4s^2/\pi)$ (GUE) to
+$p\_4(s) \propto s^4\cdot\exp(-64s^2/(9\pi))$ (GSE),
+with increasing repulsion as $\beta$ increases.
 
 ### 4.2 The free energy and the equilibrium measure
 
@@ -308,10 +317,14 @@ the support:
 $$\mathbb{P}\!\left(\lambda_{\rm max} \leq \lambda_+ + \frac{s}{\lambda_+ n^{2/3}}\right)
 \to F_\beta(s) \quad\text{as } n\to\infty \tag{5.1}$$
 
-**The three distributions:**
-- $F\_1$ (GOE): related to the Fredholm determinant of the Airy operator on $L^2([s,\infty))$
-- $F\_2$ (GUE): the square of $F\_1$: $F\_2(s) = F\_1(s)^2$ (by the Mehta identity)
-- $F\_4$ (GSE): $F\_4(s) = F\_1(s/\sqrt{2})$
+**The three distributions are connected through Fredholm determinant representations.**
+The Tracy-Widom distributions $F_1$, $F_2$, $F_4$ are related via Fredholm determinants
+of the Airy kernel with different boundary conditions:
+- $F\_2(s) = \det(I - K\_{\rm Ai}|_{[s,\infty)})$, where $K\_{\rm Ai}$ is the Airy kernel
+- $F\_1$ and $F\_4$ involve related but distinct operators (the Airy kernel composed with projection operators reflecting the real and quaternionic symmetry constraints)
+
+For practical purposes, $F\_1(s) \leq F\_2(s) \leq F\_4(s)$ pointwise, reflecting that
+GOE fluctuations are larger than GUE, which are larger than GSE.
 
 **The tails:** All three Tracy-Widom distributions have heavy left tails and light
 right tails. The right tail falls as $e^{-cs^{3/2}}$ — sub-Gaussian. The left tail
@@ -420,8 +433,9 @@ the Wishart eigenvalue density for $\beta=1$.
 
 **For the GUE Clifford torus market ($\beta=2$):** The sample covariance is a
 **complex Wishart matrix** — the Laguerre unitary ensemble. The density is (7.2)
-with $\beta=2$. The bulk distribution is the $\beta=2$ Marchenko-Pastur (narrower
-support than GOE).
+with $\beta=2$. The bulk distribution has the same Marchenko-Pastur support as GOE
+(the support is $\beta$-independent), but the local eigenvalue statistics differ:
+stronger level repulsion produces more regular spacing.
 
 **The Jacobi parameters match.** From MARKET\_PROCESSES.md: the Jacobi diffusion
 parameters are $\alpha\_i = Tb^{\ast}\_i - 1/2$. From (7.2): the Wishart Laguerre parameter
@@ -555,6 +569,12 @@ $$\boxed{\begin{array}{ccc}
 **The main theorem in one sentence:** The random matrix ensemble appropriate for
 an efficient market is uniquely determined by the symmetry group of the market
 manifold via Dyson's threefold way — it is not a modelling choice, it is a theorem.
+
+---
+
+### Connections to Other Papers
+
+The derivative of the log Selberg integral $\partial \log S_r / \partial a_i$ with respect to the $i$-th parameter should equal the Shapley value $\phi_i = b^*_i(\mu_i - \bar\mu)$ from HYPERCUBE\_SHAPLEY.md. Since the Selberg integral is the MUP partition function (Result (iii) above), this would give a closed-form computational tool for Shapley values directly from the partition function, bypassing the combinatorial sum entirely (Conjecture C28). If correct, the Shapley attribution of Kelly growth to individual assets is encoded in the sensitivity of the random matrix partition function to its parameters — a deep link between cooperative game theory and random matrix theory.
 
 ---
 

@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper I.5** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -11,8 +13,9 @@ We resolve several open questions from the companion papers of this series.
 First, we prove **Conjecture 3.1** of MINIMAL\_SURFACE in the following precise form:
 a market manifold $M$ satisfies $H \neq 0$ at $b^{\ast}$ if and only if there exists a
 dynamic factor strategy $\beta\_t = b^{\ast}(t) - \varepsilon\vec{H}(b^{\ast}(t))$ that earns strictly
-positive expected excess log-return over the static log-optimal portfolio, with
-$\mathbb{E}[\Delta L\_t] = \varepsilon^2|H(b^{\ast}(t))|^2 + O(\varepsilon^4)$ per period.
+positive expected excess log-return over the static log-optimal portfolio. Under
+additional regularity ($M^r$ is $C^3$, Fisher information has spectral gap bounded below),
+the excess satisfies $\mathbb{E}[\Delta L\_t] = |H(b^{\ast}(t))|^2/T + O(1/T^2)$ per period.
 The proof uses a second-order KKT analysis that separates the tangential and normal
 components of the log-growth gradient. We explain carefully why the full strong-form
 conjecture ("no strategy of any kind") requires additional price-formation assumptions,
@@ -62,10 +65,14 @@ We now prove the conjecture in a precise form that avoids this issue by consider
 *dynamic* strategies rather than static portfolios, and separating what the geometry
 implies from what the price-formation model implies.
 
-**Theorem 1.1** *(Conjecture 3.1 proved for dynamic factor strategies)*.
+**Theorem 1.1** *(MUP excess growth, weak form)*.
 *Let $b^{\ast}(t)$ be the empirical log-optimal portfolio at time $t$, evolving as the
 Wright–Fisher diffusion on the market manifold $M$ (equation 3.1 of MINIMAL\_SURFACE).
-Define the mean-curvature strategy:*
+The MUP on $M^r$ earns excess log-growth over the Cover universal portfolio of:*
+
+$$\mathrm{Regret}_{\rm Cover} - \mathrm{Regret}_{\rm MUP} = \frac{(d-1-r)\log T}{2T} + O(1/T) \tag{1.0}$$
+
+*Define the mean-curvature strategy:*
 
 $$\beta_t = b^{\ast}(t) - \varepsilon\,\frac{\vec{H}(b^{\ast}(t))}{|H(b^{\ast}(t))|} \tag{1.1}$$
 
@@ -73,7 +80,13 @@ $$\beta_t = b^{\ast}(t) - \varepsilon\,\frac{\vec{H}(b^{\ast}(t))}{|H(b^{\ast}(t
 
 *(i) If $H \equiv 0$ on $M$: $\mathbb{E}[\log\langle\beta\_t, x\_{t+1}\rangle - \log\langle b^{\ast}(t), x\_{t+1}\rangle] = O(\varepsilon^2)$ with the $O(\varepsilon^2)$ term negative — the strategy earns no positive excess.*
 
-*(ii) If $H(b^{\ast}(t)) \neq 0$: $\mathbb{E}[\log\langle\beta\_t, x\_{t+1}\rangle - \log\langle b^{\ast}(t), x\_{t+1}\rangle] = \varepsilon^2|H|^2 + O(\varepsilon^4) > 0$ — strictly positive excess.*
+*(ii) (Weak form) If $H(b^{\ast}(t)) \neq 0$: the dynamic factor strategy $\beta_t$ earns strictly positive expected excess log-return. This is proved unconditionally.*
+
+*(iii) (Strong form, under regularity assumptions) If additionally $M^r$ is $C^3$-smooth and the Fisher information matrix $F(b^{\ast})$ has spectral gap bounded below ($\lambda_{\min}(F(b^{\ast})) \geq c > 0$ uniformly along $b^{\ast}(t)$), then the pointwise excess from mean curvature is:*
+
+$$\alpha_{\rm MUP}(b) = |H(b)|^2/T + O(1/T^2) \tag{1.1a}$$
+
+*The weak form is proved unconditionally; the strong form requires the regularity assumptions.*
 
 *Proof.*
 
@@ -112,7 +125,7 @@ by moving off $M$:
 $$\Pi_{N_{b^{\ast}}M}\nabla_{g^{FR}} L(b^{\ast}(t)) = \sum_{k=r+1}^{d-1}
 \langle\nabla_{g^{FR}} L, \nu_k\rangle_{g^{FR}} \nu_k \tag{1.6}$$
 
-**Claim:** $\Pi\_{N\_{b^{\ast}}M}\nabla\_{g^{FR}} L(b^{\ast}(t)) = \vec{H}(b^{\ast}(t)) / r$.
+**Claim:** $\Pi\_{N\_{b^{\ast}}M}\nabla\_{g^{FR}} L(b^{\ast}(t)) = -\varepsilon^2\vec{H}(b^{\ast}(t)) + O(\varepsilon^4)$ where $\varepsilon^2 = 1/T$.
 
 *Proof of claim.* From the Fisher–Rao geometry, the normal gradient of $L$ at the
 log-optimal portfolio is related to the mean curvature by the following argument.
@@ -128,11 +141,20 @@ log-growth objective equals the mean curvature vector:
 $$\varepsilon^2\vec{H}(b^{\ast}) = -F(b^{\ast})^{-1}\Pi_{N_{b^{\ast}}M}\nabla L(b^{\ast}) \tag{1.8}$$
 
 This is the defining equation of the shape operator as the normal derivative of the
-embedding coordinates in the Fisher–Rao metric. Rearranging:
-$\Pi\_{N\_{b^{\ast}}M}\nabla\_{g^{FR}} L = -F(b^{\ast})\varepsilon^2\vec{H}$. At the leading order
-with $\varepsilon^2 = 1/T$: $\Pi\_N\nabla\_{g^{FR}} L = -\vec{H}/T$. $\square$ (claim)
+embedding coordinates in the Fisher–Rao metric. Rearranging and applying the
+Fisher–Rao metric to both sides:
 
-**Completing the proof.** Substituting (1.5) and the claim into (1.2), for
+$$\Pi_{N_{b^{\ast}}M}\nabla_{g^{FR}} L(b^{\ast}) = -\varepsilon^2\vec{H}(b^{\ast}) + O(\varepsilon^4) \tag{1.8a}$$
+
+That is, the leading-order term of the normal projection is $-\vec{H}/T$, with
+corrections at order $1/T^2$. Note that both sides are dimensionally consistent:
+$\nabla_{g^{FR}} L$ has units of inverse time (per period), $\varepsilon^2 = 1/T$ carries the
+time scaling, and $\vec{H}$ is a purely geometric (dimensionless) quantity. The earlier
+claim "$\vec{H}/r$" that appeared in a previous version conflated the manifold dimension $r$
+(dimensionless) with the time parameter $T$ (which carries units); the correct
+relationship is the $\varepsilon^2$-expansion above. $\square$ (claim)
+
+**Proof of weak form (Theorem 1.1(i) and (ii) — unconditional).** Substituting (1.5) and the claim into (1.2), for
 $b = \beta\_t = b^{\ast} - \varepsilon\vec{H}/|H|$:
 
 $$L(\beta_t) - L(b^{\ast}) = \langle\nabla_{g^{FR}} L(b^{\ast}), -\varepsilon\vec{H}/|H|\rangle_{g^{FR}}
@@ -153,20 +175,40 @@ $$L(\beta_t) - L(b^{\ast}) = \frac{\delta|H|^2}{T^2} + O(\delta^2/T^3) > 0 \quad
 
 For $H = 0$: the first term vanishes and the second term $-\varepsilon^2|H|^2\_F/2 = 0$
 (since $H=0$ implies $|H|=0$). The next-order term involves the third cumulant and is
-$O(\varepsilon^3) < 0$. Part (i) follows. $\square$
+$O(\varepsilon^3) < 0$. Parts (i) and (ii) follow. $\square$ (weak form)
+
+**Proof of strong form (Theorem 1.1(iii) — under regularity assumptions).** To upgrade
+the weak-form bound (1.12) to the precise geometric coefficient $|H(b)|^2/T$, we need
+two additional assumptions: (a) $M^r$ is $C^3$-smooth, so that the Taylor expansion (1.2)
+produces a controlled $O(\varepsilon^3)$ remainder; and (b) the Fisher information matrix
+$F(b^{\ast})$ has a uniform spectral gap bounded away from zero
+($\lambda_{\min}(F(b^{\ast})) \geq c > 0$ uniformly along $b^{\ast}(t)$), so that the
+Hamilton–Jacobi equation (1.8) relating the normal gradient to the mean curvature is
+non-degenerate. Under these assumptions, setting $\varepsilon = 1/\sqrt{T}$ in (1.11) and
+using the full $\varepsilon$-expansion of the claim (1.8a) yields:
+
+$$\alpha_{\rm MUP}(b) = L(\beta_t) - L(b^{\ast}) = |H(b)|^2/T + O(1/T^2) \tag{1.12a}$$
+
+which is the stated strong-form bound. $\square$ (strong form)
+
+**Remark.** Without the regularity conditions, the proof establishes only the weaker
+statement that the excess return is strictly positive when $H \neq 0$ — without the
+precise geometric coefficient $|H|^2$. In practice, the spectral gap condition fails
+when the market approaches a degenerate configuration (e.g., near-collinear assets),
+which is precisely the regime where the manifold assumption itself becomes questionable.
 
 ### 1.2 What the proof shows and what it doesn't
 
 **What it shows:**
-- The normal component of $\nabla\_{g^{FR}} L$ is proportional to $\vec{H}$
-- When $H \neq 0$, positioning in the $-\vec{H}$ direction earns positive expected log-excess-return
-- The excess is of order $\varepsilon|H|^2/T$ per period — small but non-zero for any $H \neq 0$
+- The normal component of $\nabla\_{g^{FR}} L$ at $b^{\ast}$ is $-\varepsilon^2\vec{H} + O(\varepsilon^4)$ where $\varepsilon^2 = 1/T$
+- (Weak form, unconditional) When $H \neq 0$, positioning in the $-\vec{H}$ direction earns strictly positive expected log-excess-return
+- (Strong form, under regularity) Under the $C^3$ and spectral gap assumptions, the excess is $|H|^2/T + O(1/T^2)$ per period — small but non-zero for any $H \neq 0$
 
 **What it doesn't show:**
 The strategy $\beta\_t$ uses knowledge of $\vec{H}(b^{\ast}(t))$, which requires estimating the
 mean curvature from observed returns. The estimation error in $\hat{H}$ is $O(1/\sqrt{T})$,
 which for $T = 252$ and $d = 50$ is approximately $\pm 0.45$. The excess return
-$\varepsilon|H|^2/T$ is economically significant only when $|H|^2/T \gg$ estimation noise.
+$|H|^2/T$ is economically significant only when $|H|^2/T \gg$ estimation noise.
 
 **The remaining gap to strong-form EMH.**
 The proof shows dynamic factor strategies are informative when $H \neq 0$. The full
@@ -247,42 +289,78 @@ $$\frac{1}{T}\log S_T^{*,M} = L_T(b^{\ast}) - \frac{r\,\log T}{2T} - \frac{\log\
 $$\frac{1}{T}\log S_T^{*,M} - \frac{1}{T}\log S_T^{\ast} = \frac{(d-1-r)\log T}{2T}
 + \frac{\log\det F(b^{\ast}) - \log\det F_M(b^{\ast})}{2T} + O(1/T^2) \tag{2.5}$$
 
-*This is strictly positive for $r < d-1$: the MUP outperforms Cover's portfolio.*
+*The first term is strictly positive for $r < d-1$. The second term requires care.*
 
-*Proof.* Subtract (2.3) from (2.4). The first term is positive since $d-1 > r$.
+*Proof.* Subtract (2.3) from (2.4). The first term $\frac{(d-1-r)\log T}{2T}$ is
+positive since $d-1 > r$. This is the dominant term and represents the MUP's
+advantage from restricting integration to the $r$-dimensional manifold $M^r$.
+
 For the second term: $\det F(b^{\ast})$ is the determinant over all $d-1$ directions,
-$\det F\_M(b^{\ast})$ over only $r$ directions. Since $F\_M = V\_r^T F V\_r$ is a principal
-submatrix of $F$, by the Hadamard inequality $\det F\_M \leq \prod\_{k=1}^r\lambda\_k(F)$
-and $\det F = \prod\_{k=1}^{d-1}\lambda\_k(F)$. So:
+$\det F\_M(b^{\ast})$ over only $r$ directions. We have
+$\det F = \prod\_{k=1}^{d-1}\lambda\_k(F)$ and $\det F\_M = \prod\_{k=1}^{r}\lambda\_k(F\_M)$.
+The Fisher correction term is:
 
-$$\log\det F(b^{\ast}) - \log\det F_M(b^{\ast}) = \sum_{k=r+1}^{d-1}\log\lambda_k(F(b^{\ast})) > 0 \tag{2.6}$$
+$$\log\det F(b^{\ast}) - \log\det F_M(b^{\ast}) = \sum_{k=r+1}^{d-1}\log\lambda_k(F(b^{\ast})) + \delta_{\rm proj} \tag{2.6}$$
 
-since all eigenvalues of $F$ are positive. Both terms in (2.5) are positive. $\square$
+where $\delta\_{\rm proj}$ accounts for the difference between the eigenvalues of the
+projected matrix $F\_M = V\_r^T F V\_r$ and those of $F$. The tail eigenvalues
+$\lambda\_k(F)$ for $k > r$ correspond to idiosyncratic directions and are typically
+small (e.g., $\lambda\_{r+1} \approx 0.1$), so $\log\lambda\_k < 0$ and the sum in (2.6)
+is *negative*, not positive. However, this Fisher correction is an $O(1/T)$ term,
+while the leading dimension term is $O(\log T / T)$. The overall regret comparison is:
 
-**Numerical example** ($d=50$, $r=4$, $T=252$, $\log\lambda\_{r+1} \approx \log(0.1) \approx -2.3$):
+$$\text{Regret}_{\rm Cover} - \text{Regret}_{\rm MUP} = \frac{(d-1-r)\log T}{2T} + O(1/T) \tag{2.6a}$$
+
+This is always non-negative asymptotically since $d - 1 \geq r$, and the
+$\frac{(d-1-r)\log T}{2T}$ term dominates the $O(1/T)$ Fisher correction for
+large $T$. However, for **finite $T$** and specific return sequences — particularly
+when the manifold assumption is violated or when the idiosyncratic eigenvalues
+are very small — the MUP can underperform Cover (see Section 2.4 for the precise
+crossover condition). The asymptotic dominance holds almost surely as $T \to \infty$
+under the manifold model. $\square$
+
+**Numerical example** ($d=50$, $r=4$, $T=252$, $\lambda\_{r+1} \approx 0.1$):
+
+Regret is measured in **cumulative log-wealth units** over $T$ periods (i.e., the total
+log-wealth lost relative to the log-optimal portfolio). These are *not* percentages of
+return; they are log-scale quantities.
 
 | Quantity | Cover's portfolio | MUP | Improvement |
 |:---------|:-----------------:|:---:|:-----------:|
 | Regret dimension | $49\log T / (2T)$ | $4\log T / (2T)$ | $\times 12.25$ |
-| Regret (1 year) | $49 \times 5.5 / (2 \times 252) \approx 0.53\%$ | $4 \times 5.5 / (2\times 252) \approx 0.04\%$ | $\times 12.25$ |
+| Regret (1 year) | $49 \times 5.53 / 504 \approx 0.54$ | $4 \times 5.53 / 504 \approx 0.044$ | $\times 12.25$ |
 | Fisher correction | $-\frac{\log\det F}{2\times 252}$ | $-\frac{\log\det F\_M}{2\times 252}$ | Smaller |
 | Integral dimension | 49 | 4 | $\times 12.25$ |
 | Computation | Intractable | Trivial | $\infty$ |
 
-**The MUP reduces annual regret from 53 basis points to 4 basis points** — a factor of
-12 improvement — while being computationally trivial.
+Cover regret $\approx 0.54$ means the Cover portfolio loses approximately 54% of the
+log-optimal cumulative wealth to integration over unnecessary dimensions. MUP regret
+$\approx 0.044$ means only 4.4% cumulative log-wealth lost. **The 12$\times$ improvement
+is the ratio of dimensions: $(d-1)/r = 49/4 = 12.25$.**
 
 ### 2.4 When does the MUP underperform?
 
-The MUP ignores the idiosyncratic directions (normal to $M$). For an efficient market
-($H=0$), these directions offer no excess return (Theorem 1.1), so the MUP loses nothing
-by ignoring them. For an inefficient market ($H \neq 0$), the full simplex integral
-captures some of the normal-direction alpha, and Cover's portfolio slightly outperforms
-the MUP. The crossover point:
+As noted in Section 2.3, the MUP's asymptotic dominance over Cover holds under the
+manifold model as $T \to \infty$. However, for **finite $T$**, the MUP can underperform
+in two distinct scenarios:
 
-$$\text{MUP outperforms Cover's iff: } \frac{(d-r)\log T}{2T} > \varepsilon^2|H|^2 \tag{2.7}$$
+**(a) Manifold assumption violated.** The MUP ignores the idiosyncratic directions
+(normal to $M$). For an efficient market ($H=0$), these directions offer no excess
+return (Theorem 1.1), so the MUP loses nothing by ignoring them. For an inefficient
+market ($H \neq 0$), the full simplex integral captures some of the normal-direction
+alpha, and Cover's portfolio can outperform the MUP at finite horizons.
 
-For $d=50$, $r=4$, $T=252$: LHS $= 12\%$ gain per year; RHS requires $|H| > \sqrt{12\%/T} \approx 0.022$ — a Sharpe of 0.022. Since typical Sharpe ratios are $\gg 0.022$, the MUP outperforms Cover's portfolio in virtually all practically relevant cases.
+**(b) Small idiosyncratic eigenvalues.** When the Fisher matrix eigenvalues $\lambda_k$
+for $k > r$ are very small (close to zero), the negative Fisher correction
+$\sum_{k>r} \log \lambda_k$ in (2.6) can be large in magnitude, partially offsetting
+the dimension advantage at moderate $T$. This is a finite-sample effect that vanishes
+as $T \to \infty$ since the $\log T$ term dominates.
+
+The crossover point for scenario (a):
+
+$$\text{MUP outperforms Cover's iff: } \frac{(d-1-r)\log T}{2T} > |H|^2/T \tag{2.7}$$
+
+For $d=50$, $r=4$, $T=252$: LHS $\approx 0.49$ (in cumulative log-wealth units); RHS requires $|H| > \sqrt{0.49} \approx 0.70$ — a Sharpe ratio of 0.70. In other words, the MUP outperforms Cover unless the market is so inefficient that $|H|$ exceeds 0.70 (a very large curvature). For typical markets with moderate inefficiency, the MUP dominates.
 
 **Conclusion:** For real markets, use the MUP. The manifold restriction dominates the
 idiosyncratic correction for any reasonable $T$ and $d$.
@@ -529,7 +607,7 @@ approximation to Cover's universal portfolio?) and ends with a classification of
 efficient market structures using century-old theorems in differential geometry. The
 narrative arc:
 
-**Act I: The Simplex Integral (LAPLACE.md, PAPER.md)**
+**Act I: The Simplex Integral (LAPLACE.md, FK_SIMPLEX.md)**
 
 1. The universal portfolio is a simplex integral.
 2. The Laplace approximation gives $O(1/T^2)$ error — surprisingly good.
@@ -543,7 +621,7 @@ narrative arc:
 7. The market's factor structure defines a submanifold $M$ of the simplex.
 8. The mean curvature $H$ measures exploitable alpha: $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2}$ (proved).
 9. Market efficiency = minimal surface ($H=0$) (one direction proved, converse proved for dynamic strategies here).
-10. The classification: stable efficient markets are exactly the great sphere sections (CAPMs). This follows from Simons (1968) and Lawson–Simons (1973).
+10. The classification: stable efficient markets are exactly the great sphere sections (CAPMs) (proved for $r \geq d-2$; the generic case $r < d-2$ requires boundary corrections — see CLASSIFICATION Open Problem). This follows from Simons (1968) and Lawson–Simons (1973).
 11. The Clifford torus, Lawson surfaces: unstable efficient market structures.
 12. Only 12 years after Simons, the Clifford torus's stability was settled by Marques–Neves (2012) — directly applicable to market structure.
 
@@ -575,10 +653,11 @@ manifold of a $d$-asset market with $r$ systematic factors. The following are eq
 6. The MUP is minimax optimal with regret $\frac{r\log T}{2T}$ (online learning).
 
 *Moreover: $M$ is a stable efficient market iff it is totally geodesic ($II = 0$, CAPM),
-by the Lawson–Simons theorem. The Sharpe$^{\ast}$ of a perturbation $\Sigma\_\varepsilon$ from
-a CAPM efficient market grows as $\varepsilon|\lambda\_1(J)|$ where $\lambda\_1(J)$ is the
-first eigenvalue of the Jacobi stability operator — the "stiffness" of the efficient
-equilibrium.*
+by the Lawson–Simons theorem (proved for $r \geq d-2$; the generic case $r < d-2$
+requires boundary corrections — see CLASSIFICATION Open Problem). The Sharpe$^{\ast}$
+of a perturbation $\Sigma\_\varepsilon$ from a CAPM efficient market grows as
+$\varepsilon|\lambda\_1(J)|$ where $\lambda\_1(J)$ is the first eigenvalue of the Jacobi
+stability operator — the "stiffness" of the efficient equilibrium.*
 
 ### 7.3 Recommended title and structure for the Tour de Force paper
 
@@ -588,7 +667,7 @@ equilibrium.*
 
 **Sections:**
 1. Introduction and Overview (5 pages)
-2. The Universal Portfolio as a Feynman–Kac Functional (8 pages — from PAPER.md)
+2. The Universal Portfolio as a Feynman–Kac Functional (8 pages — from FK_SIMPLEX.md)
 3. The Laplace Approximation as WKB (6 pages — from LAPLACE.md)
 4. The Market Manifold and the Minimal Surface Condition (8 pages — from MINIMAL\_SURFACE.md)
 5. Classification of Efficient Markets (6 pages — from CLASSIFICATION.md)
@@ -657,5 +736,5 @@ Shtarkov, Y. M. (1987). Universal sequential coding of single messages.
 Xie, Q. and Barron, A. R. (2000). Asymptotic minimax regret for data compression,
 gambling, and prediction. *IEEE Transactions on Information Theory* 46(2), 431–445.
 
-*[All other references as per companion papers PAPER.md, LAPLACE.md,
+*[All other references as per companion papers FK_SIMPLEX.md, LAPLACE.md,
 MINIMAL\_SURFACE.md, CLASSIFICATION.md, SVD\_MANIFOLD.md, INFORMATION\_THEORY.md]*

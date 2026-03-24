@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper III.5** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -265,8 +267,19 @@ admissible Voronoi cell sequences:*
 
 $$X^{\rm Vor}(M) = \{(s_0,s_1,\ldots) \in \{0,\ldots,r\}^\mathbb{N} : A_{s_j,s_{j+1}} = 1\;\forall j\} \tag{3.4}$$
 
-*is a **sofic shift** — recognised by the finite automaton $\mathcal{A}^{\rm Vor}(M)$.
+*is in fact a **subshift of finite type** (SFT), which is strictly stronger than sofic.
 The topological entropy is:*
+
+**Theorem** *(Sofic characterization — strengthened to SFT).* *The symbolic market
+dynamics $(X^{\rm Vor}(M), \sigma)$ on the Voronoi partition is a subshift of finite type
+(SFT), not merely sofic. Proof: The Voronoi partition $\{A\_0,\ldots,A\_r\}$ is finite.
+The Delaunay adjacency matrix $A$ determines which transitions $A\_i \to A\_j$ are
+admissible (those sharing a boundary). The set of admissible sequences is exactly the
+SFT defined by $A$ — the constraint is one-step (depending only on consecutive pairs),
+which is the defining property of a 1-step SFT. Every SFT is sofic, but not conversely;
+the Voronoi filtration is SFT because the adjacency constraint is local.* $\square$
+
+*The topological entropy of this SFT is:*
 
 $$h_{\rm top}(X^{\rm Vor}) = \log\rho(A) \tag{3.5}$$
 
@@ -365,26 +378,32 @@ the resulting prefix tree has:
 - **Internal nodes:** all prefixes of observed phrases
 - **Root:** the empty string $\varnothing$
 
-**Theorem 4.1** *(LZ complexity of the efficient market)*. *For a market on $M^r$
-with $r+1$ Voronoi cells and topological entropy $h\_{\rm top} = h\_{\rm Kelly}$:*
+**Theorem 4.1** *(LZ78 complexity of the efficient market)*. *For a market on $M^r$
+with $N = r+1$ Voronoi cells and topological entropy $h\_{\rm top} = h\_{\rm Kelly}$,
+the LZ78 phrase count satisfies:*
 
-$$c_{\rm LZ}(s_{0:T}) \approx \frac{T \cdot h_{\rm Kelly}}{\log(r+1)} \tag{4.1}$$
+$$c_{\rm LZ78}(T) \sim \frac{T}{\log T} \tag{4.1}$$
 
-*as $T\to\infty$. The LZ complexity is proportional to the Kelly growth rate, scaled
-by the log of the alphabet size.*
+*as $T\to\infty$ (Lempel-Ziv 1978). The compression ratio converges to the source
+entropy rate:*
 
-*Proof.* By the LZ theorem \[1978\]: for a stationary ergodic source with entropy
-$h$, the LZ complexity satisfies $c\_{\rm LZ}(s\_{0:T}) \sim Th/\log(|\Sigma|)$.
+$$\frac{c_{\rm LZ78}(T) \cdot \log c_{\rm LZ78}(T)}{T} \;\to\; h \quad\text{as } T\to\infty. \tag{4.2}$$
+
+*For the Voronoi symbolic sequence with alphabet size $|\Sigma| = N$, the entropy
+rate is $h = h\_{\rm Kelly}$ (the Kelly growth rate), giving:*
+
+$$\frac{c_{\rm LZ78}(T) \cdot \log c_{\rm LZ78}(T)}{T} \;\to\; h_{\rm Kelly} \quad\text{as } T\to\infty. \tag{4.3}$$
+
+*Proof.* The standard LZ78 theorem states that for any stationary ergodic source,
+$c\_{\rm LZ78}(T) \sim T/\log T$ in phrases, and the normalised complexity
+$c\_{\rm LZ78}(T)\cdot\log c\_{\rm LZ78}(T)/T$ converges to the source entropy rate $h$.
 The efficient market is a stationary ergodic source (by the ergodic theorem on $M$,
-BRAIDS.md), with entropy $h\_{\rm top} = h\_{\rm Kelly}$ and alphabet $|\Sigma| = r+1$.
-Substituting: (4.1). $\square$
+BRAIDS.md), with entropy $h\_{\rm top} = h\_{\rm Kelly}$ and alphabet $|\Sigma| = N = r+1$.
+Substituting: (4.3). $\square$
 
-**Connection to the MUP regret bound.** The MUP regret is $r\log T/(2T)$. From (4.1):
-
-$$c_{\rm LZ} \approx \frac{T\cdot h_{\rm Kelly}}{\log(r+1)} \tag{4.2}$$
-
-The number of LZ phrases equals (up to the $1/\log(r+1)$ factor) the number of
-"information bits" in the market path, which grows as $T\cdot h\_{\rm Kelly}$.
+**Connection to the MUP regret bound.** The MUP regret is $r\log T/(2T)$. From (4.1),
+the phrase count grows as $T/\log T$, so each phrase carries $\sim\log T$ bits.
+The total information in the market path grows as $T\cdot h\_{\rm Kelly}$ bits.
 The MUP's regret advantage over Cover's portfolio is $r\log T/(2T)$ — precisely
 the number of bits per unit time saved by knowing the market is on an $r$-dimensional
 manifold rather than the full simplex.
@@ -452,27 +471,28 @@ where $\mathcal{T}\_t(\mathcal{G})$ is the set of $\mathcal{G}$-stopping times $
 **Theorem 5.1** *(Filtration ordering of Snell envelopes)*. *For the three filtrations
 $\mathcal{F}^{\rm Vor} \subseteq \mathcal{F}^M \subseteq \mathcal{F}^{\rm full}$:*
 
-$$S^{\rm Vor}_t \geq S^M_t \geq S^{\rm full}_t \tag{5.2}$$
+$$S^{\rm Vor}_t \leq S^M_t \leq S^{\rm full}_t \tag{5.2}$$
 
-*The coarser the filtration, the larger the Snell envelope — coarser information gives
+*The finer the filtration, the larger the Snell envelope — finer information gives
 more stopping opportunities.*
 
-*Proof.* Fewer observable events means fewer constraints on stopping times:
-$\mathcal{T}\_t(\mathcal{F}^{\rm Vor}) \supseteq \mathcal{T}\_t(\mathcal{F}^M) \supseteq
-\mathcal{T}\_t(\mathcal{F}^{\rm full})$ (more stopping times are measurable under a
-coarser filtration). The essential supremum in (5.1) is taken over a larger set,
-giving a larger value. $\square$
+*Proof.* A stopping time $\tau$ w.r.t. $\mathcal{G}$ requires $\{\tau \leq t\} \in \mathcal{G}\_t$
+for all $t$. A finer filtration has more measurable sets, so more stopping times are
+available:
+$\mathcal{T}\_t(\mathcal{F}^{\rm Vor}) \subseteq \mathcal{T}\_t(\mathcal{F}^M) \subseteq
+\mathcal{T}\_t(\mathcal{F}^{\rm full})$. The essential supremum in (5.1) is taken over a
+larger set for finer filtrations, giving a larger value. $\square$
 
 **The gaps between the Snell envelopes have economic meaning:**
 
-$S^M\_t - S^{\rm full}\_t$ = value of idiosyncratic information — the excess option value
+$S^{\rm full}\_t - S^M\_t$ = value of idiosyncratic information — the excess option value
 from knowing normal bundle shocks.
 
-$S^{\rm Vor}\_t - S^M\_t$ = value of exact manifold position — the excess from knowing
+$S^M\_t - S^{\rm Vor}\_t$ = value of exact manifold position — the excess from knowing
 $b^{\ast}(t)$ precisely vs only its Voronoi cell.
 
-For the efficient market: $S^M\_t - S^{\rm full}\_t = 0$ (normal bundle information is
-worthless for systematic strategies). For the inefficient market: $S^M\_t - S^{\rm full}\_t > 0$.
+For the efficient market: $S^{\rm full}\_t - S^M\_t = 0$ (normal bundle information is
+worthless for systematic strategies). For the inefficient market: $S^{\rm full}\_t - S^M\_t > 0$.
 
 ### 5.2 The optimal stopping time and the LZ tree
 

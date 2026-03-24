@@ -18,7 +18,7 @@
 ## Part Structure
 
 ### Part I — Foundation: The Simplex and the Manifold (Ch. 1–4)
-*LAPLACE, PAPER, MINIMAL\_SURFACE, CLASSIFICATION, CONVERGENCE*
+*LAPLACE, FK\_SIMPLEX, MINIMAL\_SURFACE, CLASSIFICATION, CONVERGENCE*
 
 Ch.1: FK functional on $(\Delta\_{d-1},g^{\rm FR})$; WKB identity; Van Vleck = Fisher;
        stochastic Stokes theorem; $O(1/T^2)$ accuracy explained
@@ -84,7 +84,7 @@ Ch.21: Pairs trading from Hamiltonian; geometric thresholds; Berry phase entry f
 ### Appendices
 A: Barycentric coordinates; Voronoi/Delaunay; simplicial homology; multigrid MUP
 B: Software: MUP algorithm; C++ pairs trading; transformer dimension test; Takens embedding
-C: Open problems (OP1–OP28)
+C: Open problems (OP1–OP31)
 D: Experiments — open-source replication guide (EXPERIMENTS.md)
 E: Historical chapter (ANECDOTES.md)
 

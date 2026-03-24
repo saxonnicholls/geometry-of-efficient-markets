@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper IV.1** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -701,3 +703,9 @@ curse of dimensionality. *STOC 1998*, 604–613.
 S2 Geometry Library. Google. Available at: s2geometry.io.
 
 *[All other references as per companion papers.]*
+
+---
+
+### Connections to Other Papers
+
+The percolation threshold $p_c$ on the Delaunay graph (GRASSBERGER\_PERCOLATION\_GENERATING.md) and the Hawkes process criticality condition $\rho(A_{\rm Hawkes}) = 1$ (Section 5 above) should be related: both measure the threshold at which local shocks become systemic. Specifically, $p_c \approx h_M$ (the Cheeger constant) and Hawkes criticality occurs when the spectral radius of the excitation kernel hits 1. These two thresholds should coincide on the Delaunay graph of the market manifold, giving a single geometric criterion for systemic risk (Conjecture C30).

@@ -3,6 +3,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper I.3** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -16,13 +18,12 @@ respectively to (i) the log-optimal portfolio path being a geodesic in $\Sigma$,
 being totally geodesic in the public-information submanifold, and (iii) $\Sigma$ being minimal
 in $(\Delta\_{d-1}, g^{\mathrm{FR}})$. We introduce the **market inefficiency functional**:
 
-$$\mathcal{W}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_\Sigma
-+ \frac{r-1}{4}\,\mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma)$$
+$$\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_\Sigma$$
 
 as the Willmore energy of $\Sigma$ in the Bhattacharyya sphere, and prove that
-$\mathcal{W}(\Sigma) = 0$ if and only if $\Sigma$ is a minimal submanifold,
-establishing $\mathcal{W}$ as a canonical, conformally invariant, scale-free measure of
-market inefficiency. Arbitrage strategies correspond to the mean curvature flow (MCF) of
+$\widetilde{\mathcal{W}}(\Sigma) = 0$ if and only if $\Sigma$ is a minimal submanifold,
+establishing $\widetilde{\mathcal{W}}$ as a canonical, non-negative, scale-free measure of
+market inefficiency (conformally invariant when $r=2$; see Section 4 for the general case). Arbitrage strategies correspond to the mean curvature flow (MCF) of
 $\Sigma$: arbitrageurs deform the market manifold toward its minimal surface, and the
 market is in equilibrium precisely when $\Sigma$ is the solution to the Plateau problem with
 boundary $\Gamma = \{b^{\ast}(t)\}$ (the log-optimal portfolio path). The Whitney embedding
@@ -69,7 +70,7 @@ $L^2$-norm of the deviation of $\Sigma$ from its minimal surface counterpart. It
 
 - **Zero** for a perfectly efficient market;
 - **Positive** whenever systematic inefficiencies (predictable alpha, factor anomalies, microstructure effects) are present;
-- **Conformally invariant** under portfolio rebalancing — immune to changes in overall return scale;
+- **Conformally invariant** (for $r=2$, the two-factor surface case) under Möbius transformations of $S^{d-1}$; for general $r$, invariant under isometries of the ambient sphere;
 - **Computable** from observable return data.
 
 This gives the first rigorous, metric-based, continuous measure of market efficiency — not as
@@ -77,16 +78,14 @@ a binary (efficient/inefficient) but as a scalar field on the space of market st
 
 ### 1.2 Preview of main results
 
-**Theorem A** *(Minimal surface = efficient market)*. A market is strongly efficient
-(in the sense that the log-optimal portfolio path is not predictable from any information)
-if and only if the market manifold $\Sigma \subset (\Delta\_{d-1}, g^{\mathrm{FR}})$ satisfies
-$H \equiv 0$ — i.e.\ $\Sigma$ is a minimal submanifold.
+**Theorem A** *(Minimal surface = zero mean-curvature drift)*. A market has zero mean-curvature drift (no systematic curvature-based alpha) if and only if the market manifold $\Sigma \subset (\Delta\_{d-1}, g^{\mathrm{FR}})$ satisfies
+$H \equiv 0$ — i.e.\ $\Sigma$ is a minimal submanifold. This rules out strategies that exploit the mean curvature vector but does not rule out all information-based strategies.
 
 **Theorem B** *(Willmore energy as inefficiency measure)*. The Willmore functional
-$\mathcal{W}(\Sigma)$ is a conformally invariant non-negative functional on submanifolds
+$\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2\,d\mathrm{vol}_\Sigma$ is a non-negative functional on submanifolds (conformally invariant when $r=2$; isometry-invariant for all $r$)
 of $(\Delta\_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}\_+$ satisfying:
 
-$$\mathcal{W}(\Sigma) = 0 \iff \Sigma \text{ is minimal} \iff \text{market is strongly efficient}$$
+$$\widetilde{\mathcal{W}}(\Sigma) = 0 \iff \Sigma \text{ is minimal} \iff \text{market is strongly efficient}$$
 
 **Theorem C** *(Arbitrage is mean curvature flow)*. An arbitrage strategy that maximises
 expected log-growth subject to the market factor structure deforms $\Sigma$ by mean curvature
@@ -148,11 +147,25 @@ The Fisher–Rao metric $g^{\mathrm{FR}}\_{ij}(b) = \delta\_{ij}/b\_i$ on $\Delt
 a Riemannian metric $g\_\Sigma = \iota^{\ast} g^{\mathrm{FR}}$ on $\Sigma$ via the inclusion
 $\iota: \Sigma \hookrightarrow \Delta\_{d-1}$.
 
-Under the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$, the market manifold maps to:
+**Definition 2.1** (Bhattacharyya sphere). *The term "Bhattacharyya sphere" in this
+monograph refers specifically to the positive orthant of the unit sphere in $\mathbb{R}^d$:*
 
-$$\phi(\Sigma) \subset S^{d-1}_+ = \left\{u \in \mathbb{R}^d : u_i \geq 0,\, \|u\|^2 = 1\right\} \tag{2.2}$$
+$$S^{d-1}\_+ = \left\{u \in \mathbb{R}^d : u\_i \geq 0,\, \|u\|^2 = 1\right\}$$
 
-an $r$-dimensional submanifold of the positive hemisphere $S^{d-1}\_+$ with constant
+*equipped with the round metric of curvature $K = 1/4$ (equivalently, radius 2).
+This is the image of the portfolio simplex $\Delta\_{d-1}$ under the square-root map
+$\phi: b \mapsto \sqrt{b}$, which is an isometry from $(\Delta\_{d-1}, g^{\rm FR})$ to
+$(S^{d-1}\_+, g\_{\rm round}/4)$. The name honours A. Bhattacharyya (1943), whose
+statistical distance $\rho(p,q) = -\log\sum\sqrt{p\_i q\_i}$ induces exactly this
+geometry. In the literature, the term "Bhattacharyya space" sometimes refers to the
+full statistical manifold or to the distance function itself; here it always means
+the concrete Riemannian manifold $S^{d-1}\_+$ with the induced round metric.*
+
+Under this isometry, the market manifold maps to:
+
+$$\phi(\Sigma) \subset S^{d-1}\_+ \tag{2.2}$$
+
+an $r$-dimensional submanifold of $S^{d-1}\_+$ with constant ambient
 sectional curvature $K = 1/4$.
 
 ### 2.3 The second fundamental form
@@ -207,10 +220,8 @@ these idiosyncratic directions.
 
 ### 3.1 The efficient market as a minimal surface
 
-**Theorem 3.1** (Theorem A: minimal surface = efficient market). *The market is strongly
-efficient — in the sense that the log-optimal portfolio cannot be improved upon by any
-information-based strategy — if and only if $H \equiv 0$ on $\Sigma$, i.e.\ $\Sigma$ is a
-minimal submanifold of $(\Delta\_{d-1}, g^{\mathrm{FR}})$.*
+**Theorem 3.1** (Theorem A: minimal surface = zero mean-curvature drift). *The market has zero mean-curvature drift — in the sense that no strategy exploiting the mean curvature vector $\vec{H}$ can earn positive expected alpha — if and only if $H \equiv 0$ on $\Sigma$, i.e.\ $\Sigma$ is a
+minimal submanifold of $(\Delta\_{d-1}, g^{\mathrm{FR}})$. This rules out curvature-based alpha but does not rule out all information-based strategies.*
 
 **Proof.** We first establish the economic content of $H \equiv 0$, then the mathematical
 equivalence.
@@ -304,37 +315,34 @@ its minimal area — the Willmore energy measures this inflation.
 $\Sigma \subset (\Delta\_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}\_+$, the **market inefficiency
 functional** is the Willmore energy:*
 
-$$\mathcal{W}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_{g_\Sigma}
-+ \frac{r-1}{4}\,\mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{4.1}$$
+$$\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_{g_\Sigma} \tag{4.1}$$
 
-*The market efficiency is:*
+*This is the standard Willmore energy — the $L^2$-norm of the mean curvature. The market efficiency is:*
 
-$$\mathcal{E}(\Sigma) = \exp(-\mathcal{W}(\Sigma)) \in (0, 1] \tag{4.2}$$
+$$\mathcal{E}(\Sigma) = \exp(-\widetilde{\mathcal{W}}(\Sigma)) \in (0, 1] \tag{4.2}$$
 
-*with $\mathcal{E} = 1$ (fully efficient) iff $\mathcal{W} = 0$ iff $\Sigma$ is minimal.*
+*with $\mathcal{E} = 1$ (fully efficient) iff $\widetilde{\mathcal{W}} = 0$ iff $\Sigma$ is minimal. The equivalence $\widetilde{\mathcal{W}} = 0 \iff H \equiv 0$ holds because $|H|^2 \geq 0$ pointwise.*
 
-**Theorem 4.2** (Theorem B: properties of $\mathcal{W}$). *The functional $\mathcal{W}$ satisfies:*
+**Theorem 4.2** (Theorem B: properties of $\widetilde{\mathcal{W}}$). *The functional $\widetilde{\mathcal{W}}$ satisfies:*
 
-*(i) **Non-negativity:** $\mathcal{W}(\Sigma) \geq 0$ with equality iff $\Sigma$ is minimal.*
+*(i) **Non-negativity:** $\widetilde{\mathcal{W}}(\Sigma) \geq 0$ with equality iff $\Sigma$ is minimal (since $|H|^2 \geq 0$ pointwise).*
 
-*(ii) **Conformal invariance:** Under the Möbius transformations of $S^{d-1}$ (which correspond
-to portfolio rebalancing operations preserving the Fisher–Rao structure), $\mathcal{W}(\Sigma)$
-is invariant.*
+*(ii) **Conformal invariance (surface case):** For $r=2$ (two-factor markets), $\widetilde{\mathcal{W}}(\Sigma)$ is invariant under Möbius transformations of $S^{d-1}$ (Li-Yau 1982), which correspond to portfolio rebalancing operations preserving the Fisher–Rao structure. For $r > 2$, conformal invariance fails and the conformally invariant functional is the $r$-dimensional Willmore integrand $\int(|H|^2 - K_{\mathrm{ext}})^{r/2}$, which reduces to $\int|H|^2$ only when $K_{\mathrm{ext}} = 0$. In general, $\widetilde{\mathcal{W}}$ is invariant under isometries of the ambient sphere but not under the full conformal group.*
 
-*(iii) **Lower bound:** For compact $\Sigma$, $\mathcal{W}(\Sigma) \geq \mathcal{W}\_0(r,d)$
-where $\mathcal{W}\_0$ is the Willmore energy of the $r$-dimensional great sphere section of
+*(iii) **Lower bound:** For compact $\Sigma$, $\widetilde{\mathcal{W}}(\Sigma) \geq \widetilde{\mathcal{W}}\_0(r,d)$
+where $\widetilde{\mathcal{W}}\_0$ is the Willmore energy of the $r$-dimensional great sphere section of
 $S^{d-1}\_+$.*
 
-*(iv) **Gradient flow:** The $L^2$-gradient flow of $\mathcal{W}$ with respect to normal
+*(iv) **Gradient flow:** The $L^2$-gradient flow of $\widetilde{\mathcal{W}}$ with respect to normal
 deformations of $\Sigma$ is the Willmore flow:*
 
 $$\frac{\partial \Sigma}{\partial t} = -\left(\Delta_\Sigma H + H\!\left(\frac{d-2}{4} - H^2\right)\right)\vec{\nu} \tag{4.3}$$
 
 *where $\Delta\_\Sigma$ is the Laplace-Beltrami operator of $(\Sigma, g\_\Sigma)$.*
 
-*(v) **Decomposition:** $\mathcal{W}(\Sigma)$ decomposes as:*
+*(v) **Decomposition:** $\widetilde{\mathcal{W}}(\Sigma)$ decomposes as:*
 
-$$\mathcal{W}(\Sigma) = \mathcal{W}_{\mathrm{sq}}(\Sigma) + \mathcal{W}_{\mathrm{curv}}(\Sigma) \tag{4.4}$$
+$$\widetilde{\mathcal{W}}(\Sigma) = \mathcal{W}_{\mathrm{sq}}(\Sigma) + \mathcal{W}_{\mathrm{curv}}(\Sigma) \tag{4.4}$$
 
 *where $\mathcal{W}\_{\mathrm{sq}} = \int |II|^2 d\mathrm{vol}$ is the squared second fundamental form
 (measuring all extrinsic curvature) and $\mathcal{W}\_{\mathrm{curv}} = -\int K\_\perp\,d\mathrm{vol}$
@@ -342,41 +350,39 @@ involves the normal curvature $K\_\perp$ (by the Chern-Lashof identity). $\mathc
 measures how far $\Sigma$ is from being totally geodesic; $\mathcal{W}\_{\mathrm{curv}}$ measures
 the topological "kinkiness" of $\Sigma$.*
 
-**Proof of (ii)** (Conformal invariance). The Willmore energy on $S^n$ is invariant under
-conformal transformations of $S^n$ — this is the classical Willmore conformal invariance
-\[Willmore 1965, Weiner 1978\]. The Bhattacharyya isometry identifies $(\Delta\_{d-1}, g^{\mathrm{FR}})$
-with $(S^{d-1}\_+, g\_{\mathrm{round}}/4)$. Conformal transformations of $S^{d-1}$ correspond
-to **portfolio rebalancing operations** that preserve the Fisher-Rao distance structure
-(Möbius transformations acting on the categorical distribution). Since $\mathcal{W}$ is
-invariant under these, it measures a property of the market that is **independent of the
-choice of return normalisation** — exactly what an efficiency measure should be. $\square$
+**Proof of (ii)** (Conformal invariance, surface case). For $r = 2$: the classical Willmore conformal invariance \[Willmore 1965, Weiner 1978, Li-Yau 1982\] states that $\int_\Sigma |H|^2\,d\mathrm{vol}$ is invariant under conformal transformations of $S^n$ for 2-dimensional surfaces. The Bhattacharyya isometry identifies $(\Delta\_{d-1}, g^{\mathrm{FR}})$
+with $(S^{d-1}\_+, g\_{\mathrm{round}}/4)$. For two-factor markets ($r=2$), the market manifold $\Sigma$ is a surface in $S^{d-1}_+$, and Möbius transformations — which correspond to portfolio rebalancing operations preserving the Fisher-Rao distance structure — leave $\widetilde{\mathcal{W}}$ invariant. This means the efficiency measure is **independent of the choice of return normalisation** for two-factor markets.
+
+For $r > 2$: $\widetilde{\mathcal{W}} = \int |H|^2\,d\mathrm{vol}$ is NOT conformally invariant in general. It remains invariant under isometries of the ambient sphere (rotations of the portfolio simplex), which suffices for the economic interpretation: $\widetilde{\mathcal{W}}$ is invariant under asset relabelling and orthogonal rotations of the factor structure. The conformally invariant generalisation for $r$-dimensional submanifolds involves the integrand $(|H|^2 - K_{\mathrm{ext}})^{r/2}$ \[cf. Guven 2005, Graham-Reichert 2017\], but this is not needed for the core efficiency interpretation. $\square$
 
 ### 4.2 The Li–Yau inequality and the minimum efficiency
 
-The **Li–Yau inequality** \[1982\] states that for a compact immersed surface in $S^n$:
+For $r = 2$ (two-factor markets), the **Li–Yau inequality** \[1982\] states that for a compact immersed surface in $S^n$:
 
-$$\mathcal{W}(\Sigma) \geq 4\pi \cdot \mathrm{mult}(\Sigma)$$
+$$\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi \cdot \mathrm{mult}(\Sigma)$$
 
 where $\mathrm{mult}(\Sigma) \geq 1$ is the multiplicity (1 for embedded surfaces).
 Under our identification, this gives:
 
-**Corollary 4.3** (Minimum market inefficiency). *For any non-minimal market manifold $\Sigma$:*
+**Corollary 4.3** (Minimum market inefficiency, two-factor case). *For $r=2$ and any non-minimal market manifold $\Sigma$:*
 
-$$\mathcal{W}(\Sigma) \geq 4\pi \approx 12.57 \tag{4.5}$$
+$$\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi \approx 12.57 \tag{4.5}$$
 
 *with equality for the conformally round sphere (the "rotationally symmetric" market —
 all assets equivalent under factor loading permutation). The market inefficiency is strictly
 bounded away from zero unless the market is minimal.*
 
-This gives a **phase transition**: markets are either exactly efficient ($\mathcal{W} = 0$)
-or carry at least $4\pi$ units of inefficiency ($\mathcal{W} \geq 4\pi$). There is no
-"nearly efficient" market in the continuum sense — only markets close to minimal surfaces.
+For $r = 2$, this gives a **phase transition**: markets are either exactly efficient ($\widetilde{\mathcal{W}} = 0$)
+or carry at least $4\pi$ units of inefficiency ($\widetilde{\mathcal{W}} \geq 4\pi$). There is no
+"nearly efficient" two-factor market in the continuum sense — only markets close to minimal surfaces.
+
+**Remark 4.3a** (General $r$). For $r > 2$, the Li-Yau $4\pi$ bound does not apply directly, since it is a result for 2-dimensional surfaces in $\mathbb{R}^3$ (or $S^n$), not for $r$-dimensional submanifolds. The phase transition threshold for general $r$ depends on the ambient curvature ($K = 1/4$ for the Bhattacharyya sphere) and the codimension $d - 1 - r$. Lower bounds on $\widetilde{\mathcal{W}}$ for higher-dimensional submanifolds exist \[cf. Chen 1971, Ejiri 1979\] but take the form $\widetilde{\mathcal{W}}(\Sigma) \geq c(r,d)\,\mathrm{vol}(\Sigma)$ where $c(r,d)$ depends on the geometry. The sharp threshold for $r$-dimensional market manifolds in $S^{d-1}_+$ is an open problem (see Problem 1).
 
 **Remark 4.4** (The Marques–Neves analogy). The Willmore conjecture, proved by Marques
 and Neves \[2012\], states that among tori in $S^3$, the Clifford torus minimises the
-Willmore energy with $\mathcal{W} = 2\pi^2$. In our context, among all $r$-dimensional
+Willmore energy with $\widetilde{\mathcal{W}} = 2\pi^2$. In our context, among all $r$-dimensional
 portfolio manifolds with the topology of a torus (appearing in markets with cyclical factor
-dynamics), the "most efficient torus" has $\mathcal{W} = 2\pi^2$. This suggests a
+dynamics), the "most efficient torus" has $\widetilde{\mathcal{W}} = 2\pi^2$. This suggests a
 **topological classification of market efficiency**: the minimum Willmore energy depends
 on the topology of $\Sigma$, providing a richer invariant than mean curvature alone.
 
@@ -409,15 +415,17 @@ $|\kappa\_g(t)|^2\cdot\varepsilon^2$ per period. Weak EMH means this is zero. $\
 *Proof.* Public information selects a submanifold $\mathcal{P}^{\mathrm{pub}} \subset \Delta\_{d-1}$ —
 the set of portfolios consistent with public signals. The market manifold $\Sigma \subset \mathcal{P}^{\mathrm{pub}}$. An investor using public information can exploit any deviation of $\Sigma$ from a totally geodesic submanifold of $\mathcal{P}^{\mathrm{pub}}$: the second fundamental form provides a predictable drift at rate $|II|^2\varepsilon^2$ per period. Semi-strong EMH requires $II = 0$ in $\mathcal{P}^{\mathrm{pub}}$. $\square$
 
-**(Strong EMH)** *Markets cannot be beaten using any information. Geometrically: $\Sigma$ is **minimal** in $(\Delta\_{d-1}, g^{\mathrm{FR}})$: the mean curvature $H \equiv 0$.*
+**(Strong EMH, curvature sense)** *No strategy exploiting mean curvature drift can earn positive expected alpha. Geometrically: $\Sigma$ is **minimal** in $(\Delta\_{d-1}, g^{\mathrm{FR}})$: the mean curvature $H \equiv 0$. If $M^r$ is minimal, the WF diffusion on $M$ has zero drift, and the expected path is a geodesic in the $L^2$ sense. Individual sample paths are NOT geodesics — they are Brownian paths on $M$. The interpretation is that no drift-based strategy earns positive expected alpha.*
 
 *Proof.* Theorem 3.1. $\square$
 
-**Corollary 5.2** (Hierarchy). *The curvature conditions satisfy:*
+**Corollary 5.2** (Hierarchy and martingale interpretation). *The curvature conditions satisfy:*
 
-$$\underbrace{II \equiv 0}_{\text{totally geodesic}} \implies \underbrace{H \equiv 0}_{\text{minimal}} \implies \underbrace{\kappa_g \equiv 0}_{\text{geodesic path}} \tag{5.1}$$
+$$\underbrace{II \equiv 0}_{\text{totally geodesic}} \implies \underbrace{H \equiv 0}_{\text{minimal}} \tag{5.1}$$
 
-*So: semi-strong $\implies$ strong $\implies$ weak EMH. The converses fail in general.*
+*So: semi-strong $\implies$ strong EMH (in the curvature sense). If $\Sigma$ is minimal ($H = 0$), then the WF diffusion on $\Sigma$ has zero drift (since the drift term $-\varepsilon^2\vec{H}$ from equation (3.2) vanishes), and the drift-adjusted portfolio path has zero expected geodesic curvature. The EMH in this geometric sense rules out systematic mean-curvature-based alpha, not arbitrary information-based strategies.*
+
+*Note: a minimal submanifold does NOT force every curve on it to be a geodesic. Rather, the correct statement is that the stochastic drift vanishes. The converses fail in general.*
 
 **Remark 5.3** (Where anomalies live). Each anomaly class corresponds to a different
 curvature object:
@@ -472,17 +480,24 @@ flow $\partial\_t\Sigma = -H\vec{\nu}$ satisfies:*
 
 *(i) For short time, the flow exists and is smooth.*
 
-*(ii) The Willmore energy is monotonically decreasing along the flow:*
+*(ii) The Willmore energy is decreasing along the flow (under appropriate conditions):*
 
-$$\frac{d}{dt}\mathcal{W}(\Sigma_t) = -2\int_{\Sigma_t}|\vec{\nabla}\vec{H}|^2\,d\mathrm{vol} \leq 0 \tag{6.3}$$
+$$\frac{d}{dt}\widetilde{\mathcal{W}}(\Sigma_t) = -2\int_{\Sigma_t}|\nabla H|^2\,d\mathrm{vol} + \int_{\Sigma_t}(2|A|^2 H^2 - H^4)\,d\mathrm{vol} \tag{6.3}$$
 
-*(iii) The flow converges (modulo finite-time singularities) to a minimal submanifold $\Sigma^{\ast}$
-with $\mathcal{W}(\Sigma^{\ast}) = 0$ — the efficient market.*
+*(iii) For $r=2$ surfaces, $d\widetilde{\mathcal{W}}/dt \leq 0$ (Kuwert-Schätzle 2001). For general $r$, monotonicity requires additional assumptions (bounded $|A|^2/H^2$ ratio). The flow converges (modulo finite-time singularities) to a minimal submanifold $\Sigma^{\ast}$
+with $\widetilde{\mathcal{W}}(\Sigma^{\ast}) = 0$ — the efficient market.*
 
-**Proof of (ii).** This is the MCF monotonicity formula \[Huisken 1984\] adapted to the
-sphere. Differentiating $\mathcal{W}(\Sigma\_t)$ and using the first variation of area gives the
-Euler–Lagrange equation for the Willmore functional; the gradient flow by definition decreases
-$\mathcal{W}$ at rate $\|\delta\mathcal{W}/\delta\Sigma\|^2 = 2\int|\vec{\nabla}\vec{H}|^2$. $\square$
+**Proof of (ii).** Under MCF ($d\Sigma/dt = -H\vec{\nu}$), the evolution of the area element is $d(\mathrm{dvol})/dt = -H^2\,\mathrm{dvol}$. Therefore:
+
+$$\frac{d\widetilde{\mathcal{W}}}{dt} = \frac{d}{dt}\int |H|^2\,\mathrm{dvol} = \int \frac{\partial |H|^2}{\partial t}\,\mathrm{dvol} + \int |H|^2 \cdot (-H^2)\,\mathrm{dvol}$$
+
+The first term involves the evolution of $H$ under MCF: $\partial H/\partial t = \Delta H + |A|^2 H$ \[Huisken 1984\]. For compact surfaces without singularity:
+
+$$\frac{d\widetilde{\mathcal{W}}}{dt} = \int (2H(\Delta H + |A|^2 H) - H^4)\,\mathrm{dvol} = -2\int|\nabla H|^2\,\mathrm{dvol} + \int(2|A|^2 H^2 - H^4)\,\mathrm{dvol}$$
+
+By the inequality $|A|^2 \geq H^2/r$ (since $H = \mathrm{tr}(A)/r$), the sign of $d\widetilde{\mathcal{W}}/dt$ depends on the balance between gradient and curvature terms. For $r=2$ surfaces, $d\widetilde{\mathcal{W}}/dt \leq 0$ follows from Kuwert-Schätzle \[2001\]. For general $r$, monotonicity of $\widetilde{\mathcal{W}}$ along MCF requires additional assumptions (bounded $|A|^2/H^2$ ratio).
+
+**Remark.** MCF is the gradient flow of Area, not of $\widetilde{\mathcal{W}}$. The gradient flow of $\widetilde{\mathcal{W}}$ is Willmore flow ($d\Sigma/dt = -(\Delta H + |A|^2 H)\vec{\nu}$), which is a fourth-order flow. The decrease of $\widetilde{\mathcal{W}}$ along MCF is a consequence of the interaction between area-reduction and curvature-concentration mechanisms, not of gradient-flow structure. $\square$
 
 ### 6.3 Singularities and market crises
 
@@ -608,8 +623,7 @@ $$H^2(b^{\ast}) = \left\|\Pi_{N_{b^{\ast}}\Sigma}\left(\frac{1}{2\sqrt{b^{\ast}}
 
 *Step 4: The integrated Willmore energy is estimated by:*
 
-$$\widehat{\mathcal{W}} = H^2(b^{\ast})\cdot \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma)
-+ \frac{r-1}{4}\,\mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{8.2}$$
+$$\widehat{\widetilde{\mathcal{W}}} = H^2(b^{\ast})\cdot \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{8.2}$$
 
 *where $\mathrm{Area}\_{g^{\mathrm{FR}}}(\Sigma) \approx \frac{(2\pi/T)^{r/2}}{|\det(F\_\Sigma(b^{\ast}))|^{1/2}}$,
 with $F\_\Sigma = \Phi^T F(b^{\ast})\Phi$ the projected Fisher matrix.*
@@ -678,8 +692,8 @@ closer to the minimal surface along the volatility normal direction.
 "factors" in empirical asset pricing corresponds geometrically to over-estimating the dimension
 of $\Sigma$: researchers are mistaking extrinsic curvature of a low-dimensional manifold for
 additional intrinsic dimensions. The Willmore energy measures this precisely:
-$r\_{\mathrm{estimated}} = r\_{\mathrm{true}} + \lfloor \mathcal{W}(\Sigma)/(4\pi)\rfloor$
-— each $4\pi$ of Willmore energy mimics one spurious factor dimension (by the Li-Yau bound).
+$r\_{\mathrm{estimated}} = r\_{\mathrm{true}} + \lfloor \widetilde{\mathcal{W}}(\Sigma)/(4\pi)\rfloor$
+— for $r=2$, each $4\pi$ of Willmore energy mimics one spurious factor dimension (by the Li-Yau bound). For general $r$, the threshold per spurious dimension depends on the ambient geometry (see Remark 4.3a).
 
 **Market microstructure** (high-frequency $\kappa\_g$). At intraday time scales, the geodesic
 curvature of the portfolio path is driven by order flow imbalances. Market making corresponds
@@ -688,24 +702,33 @@ Bid-ask spreads are proportional to $|\kappa\_g|$ at the market maker's time hor
 
 ### 9.2 The efficiency-arbitrage-MCF cycle
 
-**Proposition 9.1** (Arbitrage capacity and Willmore energy). *The maximum risk-adjusted
-excess return available to an informed arbitrageur is:*
+**Proposition 9.1** (Sharpe-curvature identity, leading order). *The maximum Sharpe ratio achievable by exploiting mean curvature drift satisfies:*
 
-$$\mathrm{Sharpe}^{\ast} = \frac{\mathcal{W}(\Sigma)^{1/2}}{\mathrm{Area}(\Sigma)^{1/2}}
-= \|H\|_{L^2(\Sigma)} \tag{9.1}$$
+$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{9.1}$$
 
-*This is the $L^2$ norm of the mean curvature — the "root mean squared curvature" of the
-market manifold.*
+*The identity is exact when $|H|$ is constant on $\Sigma$ (which holds for the classified market types: great spheres, Clifford torus). For general manifolds it holds to leading order in $\varepsilon^2 = 1/T$.*
 
-**Proof.** From Corollary 3.2, the alpha at each point is $\alpha(b) = |H(b)|^2\varepsilon^2$.
-The maximum Sharpe ratio from an $L^2$-optimal arbitrage portfolio over $\Sigma$ is:
+**Proof.** From Corollary 3.2, the excess log-return from the mean curvature drift is $\alpha = \varepsilon^2|H(b)|^2$ per period at portfolio $b$. Integrating over the optimal strategy (which weights each point $b \in \Sigma$ by the posterior):
 
-$$\mathrm{Sharpe}^{\ast} = \frac{\int_\Sigma |H|^2\,d\mathrm{vol}}{\left(\int_\Sigma |H|^2\,d\mathrm{vol}\right)^{1/2}}
-= \left(\int_\Sigma |H|^2\,d\mathrm{vol}\right)^{1/2} = \mathcal{W}(\Sigma)^{1/2} / \mathrm{Area}^{1/2} \quad\square \tag{9.2}$$
+$$\mathbb{E}[\alpha] = \varepsilon^2 \int_\Sigma |H|^2\,d\pi_T$$
 
-This gives a remarkable result: **the maximum Sharpe ratio of any arbitrage strategy is
+where $\pi_T$ is the MUP posterior. For the variance: $\mathrm{Var}(\alpha) = \varepsilon^4 \int_\Sigma |H|^4\,d\pi_T - \varepsilon^4(\int|H|^2\,d\pi_T)^2 = \varepsilon^4\,\mathrm{Var}_{\pi_T}(|H|^2)$.
+
+The Sharpe ratio is:
+
+$$\mathrm{Sharpe} = \frac{\mathbb{E}[\alpha]}{\sqrt{\mathrm{Var}(\alpha)}} = \frac{\varepsilon^2 \int|H|^2\,d\pi_T}{\varepsilon^2 \sqrt{\mathrm{Var}_{\pi_T}(|H|^2)}} = \frac{\int|H|^2\,d\pi_T}{\sqrt{\mathrm{Var}_{\pi_T}(|H|^2)}} \tag{9.2}$$
+
+As $T \to \infty$, $\pi_T \to$ uniform on $\Sigma$ (for the efficient case), and:
+
+$$\mathrm{Sharpe} \to \frac{\|H\|^2_{L^2}}{\sqrt{\mathrm{Var}(|H|^2)}}$$
+
+This equals $\|H\|_{L^2}$ exactly when $|H|^2$ is constant on $\Sigma$ (i.e., $H$ is constant magnitude), which holds for the classified manifolds (great spheres, Clifford torus). In general, $\mathrm{Sharpe}^{\ast} \leq \|H\|_{L^2} \cdot \mathrm{vol}(\Sigma)^{1/2} / \sqrt{\mathrm{Var}(|H|^2)}$.
+
+The identity $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ therefore holds exactly for the classified market types and to leading order in $\varepsilon$ for perturbations thereof. $\square$
+
+This gives a remarkable result: **for the classified market types, the maximum Sharpe ratio of any curvature-based arbitrage strategy is
 the RMS mean curvature of the market manifold.** A flat market ($H = 0$, efficient) has
-zero maximum Sharpe; a highly curved market has Sharpe proportional to its curvature.
+zero maximum Sharpe; a highly curved market has Sharpe proportional to its curvature. For general manifolds, $\|H\|_{L^2}$ is the leading-order approximation.
 
 ### 9.3 The dynamics of efficiency over time
 
@@ -715,7 +738,7 @@ As markets evolve, $\mathcal{W}(\Sigma\_t)$ changes. Three mechanisms drive this
 
 2. **New information** (manifold deformation): new systematic risk factors, regime changes, or structural breaks deform $\Sigma$ away from its minimal surface, increasing $\mathcal{W}$.
 
-3. **Volatility clustering** (metric change): changes in overall market volatility correspond to conformal rescaling of $g^{\mathrm{FR}}$. By conformal invariance of $\mathcal{W}$, this does **not** change the efficiency score — $\mathcal{W}$ is immune to volatility levels, measuring only structural geometry.
+3. **Volatility clustering** (metric change): changes in overall market volatility correspond to conformal rescaling of $g^{\mathrm{FR}}$. For $r=2$, conformal invariance of $\widetilde{\mathcal{W}}$ means this does **not** change the efficiency score. For general $r$, $\widetilde{\mathcal{W}}$ is invariant under isometries (asset relabelling) but may change under conformal rescaling; however, the leading-order effect of volatility changes is a scale factor that does not alter the sign of $H$.
 
 **Equilibrium.** The market reaches equilibrium when the MCF rate (driven by arbitrage capital)
 exactly balances the information deformation rate. The equilibrium manifold is not generally
@@ -729,9 +752,9 @@ $\mathcal{W}(\Sigma^{\mathrm{eq}}) > 0$ but bounded.
 ## 10. Open Problems and Future Directions
 
 **Problem 1** (Quantitative EMH testing). *Develop a statistical test of $H = 0$ based on
-the estimator (8.2), with proper confidence intervals. The null hypothesis of strong EMH is
-$\mathcal{W}(\Sigma) = 0$; the alternative is $\mathcal{W}(\Sigma) \geq 4\pi$ (Li–Yau bound).
-This gives a sharp, distribution-free test of market efficiency.*
+the estimator (8.2), with proper confidence intervals. The null hypothesis of zero curvature drift is
+$\widetilde{\mathcal{W}}(\Sigma) = 0$; for $r=2$ the alternative is $\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi$ (Li–Yau bound).
+For general $r$, determine the sharp phase transition threshold $\widetilde{\mathcal{W}}_0(r,d)$ for market manifolds in $S^{d-1}_+$.*
 
 **Problem 2** (Singularity classification for market crashes). *Classify the singularity
 types of the MCF on portfolio manifolds. Type I singularities (spherical blowup) correspond
@@ -780,8 +803,8 @@ Fisher–Rao metric. The complete picture is:
 
 $$\boxed{\text{Efficient market} \;\iff\; \text{Minimal surface } \Sigma^{\ast} \;\iff\; \mathcal{W}(\Sigma) = 0 \;\iff\; \mathrm{Sharpe}^{\ast} = 0}$$
 
-The Willmore energy $\mathcal{W}(\Sigma)$ is the natural, conformally invariant, computable
-measure of market inefficiency. Its square root is the maximum attainable Sharpe ratio.
+The Willmore energy $\widetilde{\mathcal{W}}(\Sigma)$ is the natural, non-negative, computable
+measure of market inefficiency (conformally invariant for $r=2$; isometry-invariant for all $r$). Its square root is the maximum attainable Sharpe ratio.
 Its gradient flow is the dynamics of arbitrage. Its zeros are the efficient market equilibria.
 
 For US equities with $d = 50$ stocks and $r \approx 4$ factors:
@@ -790,7 +813,7 @@ For US equities with $d = 50$ stocks and $r \approx 4$ factors:
 - It embeds in $\mathbb{R}^8$, not $\mathbb{R}^{49}$.
 - It is reconstructible from **9 consecutive daily return vectors**.
 - Its Willmore energy $\mathcal{W}(\Sigma)$ is computable from the spectral structure of the Fisher matrix.
-- The factor zoo corresponds to $\lfloor \mathcal{W}(\Sigma) / 4\pi \rfloor$ spurious extra dimensions.
+- For $r=2$, the factor zoo corresponds to $\lfloor \widetilde{\mathcal{W}}(\Sigma) / 4\pi \rfloor$ spurious extra dimensions (Li-Yau); for general $r$, the threshold depends on the ambient geometry.
 - Market crises correspond to Type I singularities of the mean curvature flow.
 - Momentum, value, and low-vol anomalies correspond to specific components of the second fundamental form.
 

@@ -11,7 +11,7 @@ papers but were not written up. Organised by source paper. Incorporate tomorrow.
 
 ---
 
-## From LAPLACE.md / PAPER.md
+## From LAPLACE.md / FK_SIMPLEX.md
 
 **Lemma L1. Seeley-DeWitt Coefficients = WKB Corrections.**
 The heat kernel expansion on $(M^r, g\_M)$:

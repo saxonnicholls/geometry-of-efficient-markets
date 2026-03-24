@@ -160,6 +160,25 @@ Space is reserved as they are recovered.*
 
 ---
 
+## Group I: New Problems from Day 2 Analysis
+
+**OP32. Great Hemisphere Stability for Large $d$ ★★★**
+Prove stability of the great hemisphere for $d=50$, $r=4$ with Dirichlet boundary
+conditions. The closed-manifold Jacobi eigenvalue is negative; boundary corrections
+may restore stability but this is unproved. *(CLASSIFICATION)*
+
+**OP33. Verify U(n) and Sp(n) Holonomy for Dyson Class Proof ★★★**
+Prove C26 (Clifford torus normal bundle holonomy $\subseteq U(n)$) and C27
+(pseudo-Anosov normal bundle holonomy $\subseteq Sp(n)$). This would complete
+the full proof of the Dyson class correspondence. *(RANDOM\_MATRIX)*
+
+**OP34. Establish the Selberg-Shapley Identity ★★**
+Prove C28: $\partial/\partial a\_i \log S\_r(a,b,\gamma) = \phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$.
+Would provide a deep algebraic connection between the MUP partition function
+and fair attribution. *(RANDOM\_MATRIX, HYPERCUBE\_SHAPLEY)*
+
+---
+
 ## Summary: Priority Ranking
 
 **Do this week:**

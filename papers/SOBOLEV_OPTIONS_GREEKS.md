@@ -3,6 +3,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper II.7** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  

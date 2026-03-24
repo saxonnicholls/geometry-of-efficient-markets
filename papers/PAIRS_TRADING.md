@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper V.1** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -185,15 +187,31 @@ Jacobi spectral gap of the market manifold.
 
 **The mean-reversion speed of the OU process is the Jacobi stability eigenvalue.**
 
-This gives a formula: $\kappa = \lambda\_1(L\_{M^1})$ where
+**Clarification on the spectral gap.** There are two related but distinct spectral gaps:
 
-$$\lambda_1(L_{M^1}) = \frac{(1-\rho^2)\sigma_A^2\sigma_B^2}{\sigma_A^2\sigma_B^2 - \rho^2\sigma_A^2\sigma_B^2}
-= \frac{(1-\rho^2)}{\sigma_X^2/(2\kappa_{\rm empirical})} \tag{3.6}$$
+(i) The **full 2D Jacobi spectral gap** $\lambda\_1(\text{full}) = \kappa$, which is the
+first eigenvalue of the Jacobi operator on the full two-asset market manifold $M^1 \subset S^1\_+$.
+This equals the OU mean-reversion speed $\kappa$ of the full process.
 
-**Cross-check:** As $|\rho| \to 1$: $\lambda\_1 \to 0$ (mean reversion slows, pair barely
-reverts — consistent). As $\rho \to 0$: $\lambda\_1$ is maximised (independent assets
-mean-revert fastest — also consistent). The formula is self-consistent and computable
-from $(σ\_A, σ\_B, ρ)$ alone.
+(ii) The **projected spread spectral gap** $\lambda\_1(\text{spread}) = \kappa(1-\rho^2)$,
+which is the spectral gap of the projected spread process $X\_t = \log(S\_A/S\_B)$.
+The factor $(1-\rho^2)$ accounts for the information lost in projecting from the full
+pairs system (both assets) to the univariate spread.
+
+$$\lambda_1(\text{spread}) = \kappa(1-\rho^2) \tag{3.6}$$
+
+The formula follows from the projection: the spread variance is
+$\sigma\_X^2 = \sigma\_A^2 + \sigma\_B^2 - 2\rho\sigma\_A\sigma\_B$, and the full
+2D process has mean-reversion speed $\kappa$. When projected onto the spread direction,
+the effective mean-reversion is reduced by the factor $(1-\rho^2)$ because correlation
+between the two assets absorbs part of the restoring force into co-movement rather
+than spread convergence.
+
+**Cross-check:** As $|\rho| \to 1$: $\lambda\_1(\text{spread}) \to 0$ (the spread
+barely reverts because the assets move together — consistent). As $\rho \to 0$:
+$\lambda\_1(\text{spread}) = \kappa$ (the full spectral gap applies to the spread,
+since the assets are independent — also consistent). The formula is self-consistent
+and computable from $(\kappa, \rho)$ alone.
 
 ### 3.3 The mode decomposition: why a large spread reverts through superposition
 

@@ -28,7 +28,7 @@ geometry-of-efficient-markets/
 │
 ├── papers/                            ← 28 mathematical papers
 │   ├── 01_LAPLACE.md
-│   ├── 02_PAPER.md
+│   ├── 02_FK_SIMPLEX.md
 │   ├── 03_MINIMAL_SURFACE.md
 │   ├── 04_CLASSIFICATION.md
 │   ├── 05_CONVERGENCE.md
@@ -220,7 +220,7 @@ Six papers are ready for submission. In order of priority:
 
 ### Paper A — Mathematical Finance (Submit in ~6 weeks)
 **"The Laplace Approximation as WKB on the Portfolio Simplex"**
-- Source: 01_LAPLACE.md, 02_PAPER.md
+- Source: 01_LAPLACE.md, 02_FK_SIMPLEX.md
 - Key results: WKB=Laplace, Van Vleck=Fisher, $O(1/T^2)$ accuracy
 - Length: 25 pages
 - Status: Draft complete.

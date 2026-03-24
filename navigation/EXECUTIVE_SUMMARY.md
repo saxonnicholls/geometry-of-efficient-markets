@@ -1,5 +1,5 @@
 # The Geometry of Efficient Markets — Executive Summary
-## 35 Papers · ~145,000 Words · 25+ Proved Results
+## 29 Papers · ~145,000 Words · 25+ Proved Results
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
@@ -21,7 +21,7 @@ was using the wrong measure.
 
 ## Six Layers of the Theory
 
-### 1 · FK-WKB Foundation *(LAPLACE, PAPER)*
+### 1 · FK-WKB Foundation *(LAPLACE, FK\_SIMPLEX)*
 Cover's integral is a Feynman-Kac functional on $(\Delta\_{d-1},g^{\rm FR})$.
 WKB saddle = geodesic. Van Vleck determinant = Fisher information matrix.
 $O(1/T^2)$ accuracy = Jeffreys prior = stationary distribution of the market diffusion.
@@ -30,7 +30,7 @@ This closes a 30-year gap in Cover's theory.
 ### 2 · The Market Manifold and Its Classification *(MINIMAL\_SURFACE, CLASSIFICATION, CONVERGENCE)*
 Bhattacharyya isometry: $b\mapsto\sqrt{b}\in S^{d-1}\_+$, curvature $K=1/4$.
 **Sharpe = curvature** (proved): $\mathrm{Sharpe}^{\ast}=\|H\|\_{L^2(M)}$.
-**Only CAPMs stable** (proved): Simons-Lawson-Simons, stability index of Clifford torus = 5.
+**Only CAPMs stable** (proved for closed manifolds; boundary-corrected Dirichlet case for $d \gg r$ is Open Problem OP32): Simons-Lawson-Simons, stability index of Clifford torus = 5.
 **MUP minimax** (proved): regret $r\log T/2T$ vs Cover's $(d-1)\log T/2T$.
 
 ### 3 · Physics, Processes, Measure Theory *(HAMILTONIAN, FOKKER\_PLANCK, MARKET\_PROCESSES, SOBOLEV, MARTINGALE, DERIVATIVES, RENORMALIZATION, INFORMATION\_THEORY)*
@@ -44,10 +44,10 @@ RG: CAPM = IR fixed point; Willmore = $c$-function; running Sharpe formula.
 Knot type classifies markets. Jones polynomial = market partition function.
 Alexander roots = factor rotation eigenvalues. Yang-Baxter = no braiding arbitrage.
 **P**/#**P**/Π₂⁰/PPAD prediction hierarchy.
-LZ prefix tree = filtration tree (proved; any compressor = valid filtration).
+LZ prefix tree = filtration tree (proved for LZ78; general case is Conjecture C18).
 Clifford torus winding number = momentum vs contrarian (topological classifier).
 
-### 5 · Geospatial, Contagion, LLMs, RMT, Path Integrals *(GEOSPATIAL, LLM\_MANIFOLD, RANDOM\_MATRIX, PATH\_INTEGRAL)*
+### 5 · Geospatial, Contagion, LLMs, RMT, Path Integrals *(GEOSPATIAL\_CONTAGION, LLM\_MANIFOLD, RANDOM\_MATRIX, PATH\_INTEGRAL)*
 H3/S2/Hilbert on $S^{d-1}\_+$; contagion network = Delaunay graph (endogenous);
 Cheeger = systemic risk.
 LMSR = softmax = Fisher (transformer attention = market making in Fisher-Rao geometry).
@@ -68,12 +68,12 @@ Banzhaf = Walsh-Fourier coefficient. Normal bundle Shapley = unexplained alpha.
 
 ---
 
-## Complete Paper Inventory (35 documents)
+## Complete Paper Inventory (40 documents)
 
 | # | Document | Layer | Status |
 |:-:|:---------|:-----:|:------:|
 | 1 | LAPLACE | 1 | Proved |
-| 2 | PAPER | 1 | Proved |
+| 2 | FK\_SIMPLEX | 1 | Proved |
 | 3 | MINIMAL\_SURFACE | 2 | Proved |
 | 4 | CLASSIFICATION | 2 | Proved |
 | 5 | CONVERGENCE | 2 | Proved |
@@ -113,7 +113,7 @@ Banzhaf = Walsh-Fourier coefficient. Normal bundle Shapley = unexplained alpha.
 ## The Five Most Important Results
 
 1. **Sharpe = curvature** — the alpha budget is observable from options data, now
-2. **Only CAPMs stable** — LTCM's five failure modes were a theorem from 1973
+2. **Only CAPMs stable** (closed manifolds proved; boundary case $d \gg r$ is OP32) — LTCM's five failure modes were a theorem from 1973
 3. **LLM ≤ MUP** — no compute or architecture can beat the MUP on an efficient market
 4. **Dyson class is forced** — the random matrix ensemble is a geometric theorem, not a choice
 5. **Shapley = Fisher-Rao gradient** — unique fair attribution of Kelly growth to assets, proved
@@ -130,7 +130,7 @@ Banzhaf = Walsh-Fourier coefficient. Normal bundle Shapley = unexplained alpha.
 
 ## Tomorrow's Agenda
 
-Organise the 35 papers into their final monograph structure. Add results from the
+Organise the 40 documents into their final monograph structure. Add results from the
 first author's unpublished notes (filtration extensions, symbolic dynamics, others).
 Update SERIES\_PLAN with the new Part V and Part VI structure.
 Begin drafting the monograph Part I introduction connecting all layers.

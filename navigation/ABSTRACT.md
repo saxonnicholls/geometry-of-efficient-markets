@@ -47,7 +47,7 @@ the $O(1/T^2)$ accuracy follows from Cover's prior being the Jeffreys prior.
 **The Sharpe-curvature theorem** (proved): $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2(M)}$.
 The vol skew of index options measures $H$ in real time.
 
-**Classification** (proved): only CAPMs are stably efficient.
+**Classification** (proved for closed manifolds): only CAPMs are stably efficient among closed minimal submanifolds. For the boundary-corrected Dirichlet problem relevant to financial markets with $d \gg r$, stability is established for $r \geq d-2$ and is Open Problem OP32 for the generic case.
 The Clifford torus has stability index 5 — LTCM had five convergence strategies.
 
 **MUP** (proved): regret $r\log T/2T$ — minimax optimal, 12× improvement for $d=50$, $r=4$.
@@ -124,7 +124,7 @@ unexplained alpha. Banzhaf power index = Walsh-Fourier coefficient.
 The monograph contains at least 25 fully proved new results. The five most important:
 
 1. $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2}$ — the alpha budget is observable from vol skew
-2. Only CAPMs stably efficient — explains LTCM (stability index 5)
+2. Only CAPMs stably efficient (proved for closed manifolds; boundary-corrected case for $d \gg r$ is OP32) — explains LTCM (stability index 5)
 3. MUP regret $r\log T/2T$ — 12× practical improvement, minimax optimal
 4. Dyson class forced by manifold symmetry — not a modelling choice
 5. Shapley attribution $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$ — unique fair attribution proved

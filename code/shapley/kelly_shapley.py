@@ -28,9 +28,27 @@ Additional: factor Shapley values, sector attribution (Owen value),
 and normal bundle decomposition (unexplained alpha).
 """
 
+import os
+import sys
 import numpy as np
 from typing import Optional, Dict
 from scipy.optimize import minimize
+
+
+def _import_log_optimal_portfolio():
+    try:
+        from ..core.kelly import log_optimal_portfolio
+        return log_optimal_portfolio
+    except ImportError:
+        try:
+            from core.kelly import log_optimal_portfolio
+            return log_optimal_portfolio
+        except ImportError:
+            code_root = os.path.dirname(os.path.dirname(__file__))
+            if code_root not in sys.path:
+                sys.path.insert(0, code_root)
+            from core.kelly import log_optimal_portfolio
+            return log_optimal_portfolio
 
 
 # ── Core Shapley formula ─────────────────────────────────────────────────────
@@ -98,7 +116,7 @@ def kelly_shapley_from_returns(
     ----------
     returns : (T, d) net return matrix
     """
-    from kelly import log_optimal_portfolio
+    log_optimal_portfolio = _import_log_optimal_portfolio()
 
     b_star, L_star = log_optimal_portfolio(returns)
     mu = np.mean(returns, axis=0) * 252    # annualised
@@ -372,7 +390,7 @@ def print_attribution_report(
 
 
 if __name__ == "__main__":
-    from kelly import log_optimal_portfolio
+    log_optimal_portfolio = _import_log_optimal_portfolio()
 
     rng = np.random.default_rng(42)
     d, T = 10, 504

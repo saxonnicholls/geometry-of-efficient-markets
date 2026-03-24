@@ -3,6 +3,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper I.2** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.** We establish a Feynman–Kac representation for the wealth functional of Cover's
@@ -836,3 +838,11 @@ Taylor, P. D. and Jonker, L. (1978). Evolutionarily stable strategies and game d
 unreasonably geometric.
 
 *Competing interests.* None.
+
+---
+
+### Connections to Other Papers
+
+The Wright-Fisher diffusion in sphere coordinates (Appendix A) is a Bessel process of dimension $(d-1)/4$. The three market types (CAPM, Clifford, hyperbolic) from CLASSIFICATION.md should emerge as different limits of this Bessel process depending on manifold topology: the CAPM corresponds to the radial Bessel process on the great sphere, the Clifford torus to the flat limit where the Bessel drift vanishes, and the hyperbolic case to the regime where the effective Bessel dimension drops below the critical threshold for recurrence.
+
+Linearising the replicator-diffusion (Section 5) around the efficient equilibrium ($H=0$) gives exactly the Jacobi stability operator $L$ from CLASSIFICATION.md. The five unstable modes of the Clifford torus correspond to five directions in which the posterior is repelled from equilibrium (new result R73). This provides a dynamical interpretation of the stability index: it counts the number of independent perturbation modes along which the replicator-diffusion posterior diverges from the minimal surface fixed point.

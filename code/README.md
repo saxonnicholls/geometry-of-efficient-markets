@@ -59,7 +59,7 @@ The base layer. Every other module imports from here.
 |:-----|:--------|:-------------|
 | `kelly.py` | Log-optimal (Kelly) portfolio solver | `log_optimal_portfolio()`, `kelly_growth_rate()`, `fisher_information_matrix()`, `stable_rank()`, `factor_subspace()`, `rolling_kelly()` |
 | `fisher_rao.py` | Fisher-Rao geometry on the portfolio simplex | `fisher_rao_distance()`, `geodesic()`, `geodesic_path()`, `damped_geodesic()`, `exp_map()`, `log_map()`, `tracking_error()`, `pairwise_fr_distances()` |
-| `curvature.py` | Mean curvature of the market manifold | `mean_curvature_normal_bundle()`, `mean_curvature_from_returns()`, `sharpe_curvature_decomposition()`, `willmore_energy_proxy()`, `cheeger_constant_estimate()` |
+| `curvature.py` | Mean curvature of the market manifold | `mean_curvature_normal_bundle()`, `mean_curvature_from_returns()`, `sharpe_curvature_decomposition()`, `market_efficiency_profile()`, `willmore_energy_proxy()`, `cheeger_constant_estimate()` |
 
 **The central theorem implemented in `curvature.py`:**
 ```python
@@ -68,6 +68,17 @@ result = sharpe_curvature_decomposition(returns, n_factors=4)
 print(f"H = {result['H']:.4f}")           # mean curvature
 print(f"Sharpe* ≈ {result['sharpe_predicted']:.4f}")  # theory prediction
 print(f"Realised = {result['sharpe_realised']:.4f}")  # empirical check
+```
+
+**Richer market-efficiency diagnostics:**
+```python
+from core.curvature import market_efficiency_profile
+
+profile = market_efficiency_profile(returns, n_factors=4)
+print(f"Alpha share:       {profile['alpha_share']:.2%}")
+print(f"Cheeger proxy:     {profile['cheeger']:.4f}")
+print(f"Effective breadth: {profile['effective_breadth']:.2f}")
+print(f"Top-factor share:  {profile['top_factor_share']:.2%}")
 ```
 
 ---

@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper II.6** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -58,10 +60,10 @@ vorticity; Berry curvature; portfolio fluid; surface tension; fat tails from geo
 
 ### 1.1 The forward and backward pair
 
-The Wright-Fisher diffusion on the portfolio simplex (PAPER.md) generates a pair
+The Wright-Fisher diffusion on the portfolio simplex (FK_SIMPLEX.md) generates a pair
 of Kolmogorov equations. For a function $f(b,t)$ and a probability density $\rho(b,t)$:
 
-**Backward equation** (Kolmogorov backward = FK PDE of PAPER.md):
+**Backward equation** (Kolmogorov backward = FK PDE of FK_SIMPLEX.md):
 $$\frac{\partial f}{\partial t} = \mathcal{L} f, \qquad
 \mathcal{L} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} - \varepsilon^2\vec{H}\cdot\nabla_{g^{\mathrm{FR}}} \tag{1.1}$$
 
@@ -715,6 +717,12 @@ $$\boxed{
 }$$
 
 Five characterisations of one number: the most persistent invariant in the series.
+
+---
+
+### Connections to Other Papers
+
+The Reynolds number $\mathrm{Re} = H \cdot T \cdot \mathrm{diam}(M)$ is essentially a rescaled Sharpe ratio times the time horizon: $\mathrm{Re} \propto \mathrm{Sharpe} \cdot T \cdot \mathrm{diam} \cdot \mathrm{vol}^{-1/2}$, since $\mathrm{Sharpe}^* = \|H\|_{L^2}$ (MINIMAL\_SURFACE.md). The turbulent transition at $\mathrm{Re} \sim 10$ therefore corresponds to $\mathrm{Sharpe} \sim 0.03$--$0.04$ for typical market parameters. This places the laminar-turbulent boundary precisely at the edge of statistical detectability of excess returns — a satisfying consistency between the CFD analogy and the efficient market hypothesis.
 
 ---
 

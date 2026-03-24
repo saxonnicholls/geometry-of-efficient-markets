@@ -17,16 +17,69 @@ Three estimators are implemented:
 """
 
 import numpy as np
-from scipy.linalg import eigh
-from typing import Tuple, Optional
+from typing import Dict, Optional, Tuple
 
-from kelly import (
-    log_optimal_portfolio,
-    fisher_information_matrix,
-    factor_subspace,
-    stable_rank,
-)
-from fisher_rao import project_onto_factor_subspace
+try:
+    from .kelly import (
+        factor_subspace,
+        fisher_information_matrix,
+        log_optimal_portfolio,
+        stable_rank,
+    )
+except ImportError:
+    from kelly import (
+        factor_subspace,
+        fisher_information_matrix,
+        log_optimal_portfolio,
+        stable_rank,
+    )
+
+
+def _market_geometry_from_returns(
+    returns: np.ndarray,
+    n_factors: Optional[int] = None,
+    variance_threshold: float = 0.95,
+) -> Dict[str, np.ndarray]:
+    """
+    Shared geometric state for a return window.
+    """
+    b_star, L_star = log_optimal_portfolio(returns)
+    F = fisher_information_matrix(b_star, 1 + returns)
+    V_r, lambda_r, r = factor_subspace(
+        F,
+        r=n_factors,
+        variance_threshold=variance_threshold,
+    )
+    return {
+        "b_star": b_star,
+        "L_star": float(L_star),
+        "F": F,
+        "V_r": V_r,
+        "lambda_r": lambda_r,
+        "r": r,
+    }
+
+
+def _manifold_volume_proxy(r: int) -> float:
+    """
+    Volume proxy for an r-dimensional efficient market manifold.
+    """
+    from math import gamma, pi
+
+    return float((pi / 2) ** (r / 2) / gamma(r / 2 + 1))
+
+
+def _cheeger_from_fisher(F: np.ndarray) -> float:
+    """
+    Lower-bound proxy for the Cheeger constant from the Fisher spectrum.
+    """
+    eigenvalues = np.linalg.eigvalsh(F)
+    eigenvalues = np.sort(eigenvalues[eigenvalues > 1e-10])
+
+    if len(eigenvalues) < 2:
+        return 0.0
+
+    return float(eigenvalues[1] / 2.0)
 
 
 # ── Mean curvature: normal bundle projection method ───────────────────────────
@@ -94,12 +147,13 @@ def mean_curvature_from_returns(
     b_star : (d,) log-optimal portfolio
     r      : number of factors used
     """
-    b_star, _ = log_optimal_portfolio(returns)
-    F = fisher_information_matrix(b_star, 1 + returns)
-    V_r, lambda_r, r = factor_subspace(F, r=n_factors,
-                                        variance_threshold=variance_threshold)
-    H, H_vec = mean_curvature_normal_bundle(b_star, V_r)
-    return H, H_vec, b_star, r
+    geometry = _market_geometry_from_returns(
+        returns,
+        n_factors=n_factors,
+        variance_threshold=variance_threshold,
+    )
+    H, H_vec = mean_curvature_normal_bundle(geometry["b_star"], geometry["V_r"])
+    return H, H_vec, geometry["b_star"], geometry["r"]
 
 
 # ── Willmore energy ───────────────────────────────────────────────────────────
@@ -130,9 +184,7 @@ def willmore_energy_proxy(
         window_data = returns[start:end]
         try:
             H, _, b_star, r = mean_curvature_from_returns(window_data, n_factors)
-            # vol(M^r) proxy: (pi/2)^r / Gamma(r/2 + 1)
-            from math import gamma, pi
-            vol_M = (pi / 2) ** (r / 2) / gamma(r / 2 + 1)
+            vol_M = _manifold_volume_proxy(r)
             willmore[i] = H ** 2 * vol_M
         except Exception:
             willmore[i] = np.nan
@@ -145,6 +197,7 @@ def willmore_energy_proxy(
 def sharpe_curvature_decomposition(
     returns: np.ndarray,
     n_factors: Optional[int] = None,
+    variance_threshold: float = 0.95,
 ) -> dict:
     """
     Compute both sides of the central theorem:
@@ -166,9 +219,17 @@ def sharpe_curvature_decomposition(
         'alpha_returns'     : normal bundle return component
     """
     T, d = returns.shape
-    b_star, L_star = log_optimal_portfolio(returns)
-    F = fisher_information_matrix(b_star, 1 + returns)
-    V_r, lambda_r, r = factor_subspace(F, r=n_factors)
+    geometry = _market_geometry_from_returns(
+        returns,
+        n_factors=n_factors,
+        variance_threshold=variance_threshold,
+    )
+    b_star = geometry["b_star"]
+    L_star = geometry["L_star"]
+    F = geometry["F"]
+    V_r = geometry["V_r"]
+    lambda_r = geometry["lambda_r"]
+    r = geometry["r"]
     H, H_vec = mean_curvature_normal_bundle(b_star, V_r)
 
     # The curvature strategy: go short mean curvature direction
@@ -183,8 +244,7 @@ def sharpe_curvature_decomposition(
         sharpe_realised = 0.0
 
     # Theory prediction: Sharpe* = H * sqrt(vol(M))
-    from math import gamma, pi
-    vol_M = (pi / 2) ** (r / 2) / gamma(r / 2 + 1)
+    vol_M = _manifold_volume_proxy(r)
     sharpe_predicted = H * np.sqrt(vol_M)
 
     # Decompose returns into factor and idiosyncratic components
@@ -201,9 +261,100 @@ def sharpe_curvature_decomposition(
         "sharpe_predicted": float(sharpe_predicted),
         "V_r": V_r,
         "lambda_r": lambda_r,
+        "fisher_matrix": F,
         "factor_returns": factor_returns,
         "alpha_returns": alpha_returns,
         "stable_rank": float(stable_rank(F)),
+    }
+
+
+def market_efficiency_profile(
+    returns: np.ndarray,
+    n_factors: Optional[int] = None,
+    variance_threshold: float = 0.95,
+) -> dict:
+    """
+    Multi-metric diagnostic profile for a return window.
+
+    The profile separates four distinct questions:
+      1. How much alpha budget exists locally?          -> H, willmore_proxy
+      2. How much return variance sits off-manifold?    -> alpha_share
+      3. How fragile is the manifold globally?          -> cheeger
+      4. How crowded is the efficient allocation?       -> breadth, entropy
+    """
+    decomposition = sharpe_curvature_decomposition(
+        returns,
+        n_factors=n_factors,
+        variance_threshold=variance_threshold,
+    )
+    b_star = decomposition["b_star"]
+    lambda_r = decomposition["lambda_r"]
+    r = decomposition["r"]
+    d = returns.shape[1]
+
+    centred_returns = returns - np.mean(returns, axis=0, keepdims=True)
+    factor_projection = decomposition["V_r"] @ decomposition["V_r"].T
+    factor_returns = centred_returns @ factor_projection.T
+    alpha_returns = centred_returns - factor_returns
+
+    total_variance = float(np.mean(np.sum(centred_returns ** 2, axis=1)))
+    factor_variance = float(np.mean(np.sum(factor_returns ** 2, axis=1)))
+    alpha_variance = float(np.mean(np.sum(alpha_returns ** 2, axis=1)))
+
+    half_inv_sqrt = 1.0 / (2.0 * np.sqrt(np.maximum(b_star, 1e-15)))
+    normal_projection_share = float(
+        np.linalg.norm(decomposition["H_vec"]) /
+        max(np.linalg.norm(half_inv_sqrt), 1e-15)
+    )
+
+    concentration = float(np.sum(b_star ** 2))
+    effective_breadth = float(1.0 / max(concentration, 1e-15))
+    normal_bundle_dimension = int(max(d - 1 - r, 0))
+    cheeger = _cheeger_from_fisher(decomposition["fisher_matrix"])
+    vol_M = _manifold_volume_proxy(r)
+
+    if d > 1:
+        weight_entropy = float(
+            -np.sum(b_star * np.log(np.maximum(b_star, 1e-15))) / np.log(d)
+        )
+        normalized_breadth = float((effective_breadth - 1.0) / (d - 1.0))
+    else:
+        weight_entropy = 0.0
+        normalized_breadth = 1.0
+
+    if len(lambda_r) > 0:
+        lambda_sum = float(lambda_r.sum())
+        top_factor_share = float(lambda_r[0] / max(lambda_sum, 1e-15))
+        if len(lambda_r) > 1:
+            spectrum_probs = lambda_r / max(lambda_sum, 1e-15)
+            factor_entropy = float(
+                -np.sum(spectrum_probs * np.log(np.maximum(spectrum_probs, 1e-15)))
+                / np.log(len(lambda_r))
+            )
+        else:
+            factor_entropy = 1.0
+    else:
+        top_factor_share = 1.0
+        factor_entropy = 0.0
+
+    return {
+        **decomposition,
+        "alpha_share": float(alpha_variance / max(total_variance, 1e-15)),
+        "factor_share": float(factor_variance / max(total_variance, 1e-15)),
+        "alpha_beta_ratio": float(alpha_variance / max(factor_variance, 1e-15)),
+        "willmore_proxy": float(decomposition["H"] ** 2 * vol_M),
+        "cheeger": cheeger,
+        "effective_breadth": effective_breadth,
+        "normalized_breadth": normalized_breadth,
+        "weight_entropy": weight_entropy,
+        "top_factor_share": top_factor_share,
+        "factor_entropy": factor_entropy,
+        "normal_projection_share": normal_projection_share,
+        "normal_bundle_dimension": normal_bundle_dimension,
+        "portfolio_concentration": concentration,
+        "sharpe_gap": float(
+            decomposition["sharpe_realised"] - decomposition["sharpe_predicted"]
+        ),
     }
 
 
@@ -227,18 +378,11 @@ def cheeger_constant_estimate(
     -------
     h_M : Cheeger constant estimate
     """
-    F = fisher_information_matrix(
-        log_optimal_portfolio(returns)[0], 1 + returns
+    geometry = _market_geometry_from_returns(
+        returns,
+        n_factors=n_factors,
     )
-    eigenvalues = np.linalg.eigvalsh(F)
-    eigenvalues = np.sort(eigenvalues[eigenvalues > 1e-10])
-
-    if len(eigenvalues) < 2:
-        return 0.0
-
-    # Fiedler eigenvalue (second smallest) / 2 is a lower bound for h_M
-    lambda_1 = eigenvalues[1]
-    return float(lambda_1 / 2.0)
+    return _cheeger_from_fisher(geometry["F"])
 
 
 # ── Second fundamental form (exact, expensive) ────────────────────────────────

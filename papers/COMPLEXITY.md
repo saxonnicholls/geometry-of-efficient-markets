@@ -22,6 +22,8 @@ complexity; sofic shift; cellular automaton; Rule 110; Garside; Halting Problem;
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper III.4** — *The Geometry of Efficient Markets*
+
 ---
 
 ## 1. The Complexity Trichotomy
@@ -55,8 +57,16 @@ in Garside normal form, the optimal next crossing sign is:
   epsilon_{n+1} = sgn(inf(beta * sigma_i) - inf(beta))
 for the strand i maximizing the Garside infimum increment. Time: O(d^2 n).
 
-Sign prediction is computationally easy but economically useless: it tells you
-which direction crossings go but not by how much. The magnitude is the hard part.
+**Caveat on "sign prediction".** The Garside normal form gives the algebraic braid
+structure: $\epsilon\_{n+1}$ is the algebraic sign of the next crossing generator
+$\sigma\_i^{\pm 1}$ in the braid word — i.e., whether the next strand crossing is
+positive or negative. This is NOT the financial sign of the next return (up or down).
+The braid crossing sign encodes the relative ordering of two asset price paths at
+a crossing event; recovering the financial return sign from this requires additional
+information about the magnitude of the crossing, which is the #P-hard part.
+Sign prediction in the Garside sense is computationally easy but economically
+limited: it tells you the topological structure of strand crossings but not the
+financial direction or magnitude of returns.
 
 ### 2.2 Exact returns are #P-complete
 
@@ -141,7 +151,13 @@ Combined: K(x_{1:T}) >= T * h_Kelly - O(log T).
 This is the Martin-Lof incompressibility condition.
 By Schnorr's theorem: no c.e. supermartingale beats the efficient market.
 Since strategies that beat the market require #P computation (Theorem 2.2),
-which is not c.e. (P subset #P, and c.e. subset P), no c.e. strategy wins. []
+which is not polynomial-time computable (assuming P $\neq$ #P), no polynomial-time
+strategy wins. (Note: #P functions ARE computable — they are computed by counting
+accepting paths of a nondeterministic polynomial-time machine — but they require
+super-polynomial time under standard complexity assumptions. The Martin-Löf
+randomness argument via Schnorr's theorem requires only that no c.e. supermartingale
+succeeds, which is satisfied because the Kelly-optimal measure makes the return
+sequence incompressible.) []
 
 ### 3.3 The stratified EMH from algorithmic randomness
 

@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper II.8** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -45,7 +47,7 @@ HJB; Föllmer-Schweizer; minimal martingale measure; Jacobi operator; market man
 
 The central connection begins with the stochastic differential equation for the
 log-optimal portfolio $b^{\ast}(t)$ constrained to the market manifold $M$.
-From the Wright-Fisher diffusion on $\Delta\_{d-1}$ restricted to $M^r$ (PAPER.md):
+From the Wright-Fisher diffusion on $\Delta\_{d-1}$ restricted to $M^r$ (FK_SIMPLEX.md):
 
 $$db^{\ast}(t) = -\varepsilon^2\vec{H}(b^{\ast}(t))\,dt + \varepsilon\,dW_M(t) \tag{1.1}$$
 
@@ -273,7 +275,7 @@ The value function of the optimal stopping problem (3.1) on the market manifold 
 $$V(b,t) = \mathbb{E}^{b,t}\!\left[\int_t^\tau r(b^{\ast}_s,s)\,ds + G(b^{\ast}_\tau)\right] \tag{3.7}$$
 
 where $r(b,t) = L\_T(b)$ is the Kelly growth rate (the "running gain").
-This is exactly the Feynman-Kac formula from PAPER.md:
+This is exactly the Feynman-Kac formula from FK_SIMPLEX.md:
 
 $$V(b,t) = u(b,t) = \mathbb{E}^{b,t}\!\left[\exp\!\left(\int_t^T r\,ds\right)\right] \tag{3.8}$$
 
@@ -488,7 +490,7 @@ of the Kelly growth process $\{G\_t = L\_T(b^{\ast}(t))\}$ is the Feynman-Kac va
 
 $$S_t = u(b^{\ast}(t), t) = \mathbb{E}^{b^{\ast}(t)}\!\left[\int_t^T L_s\,ds\right] \tag{6.2}$$
 
-*where $u$ solves the FK PDE from PAPER.md.*
+*where $u$ solves the FK PDE from FK_SIMPLEX.md.*
 
 *Proof.* $S\_t$ is the smallest supermartingale dominating $G\_t = L\_T(b^{\ast}(t))$.
 By the Doob-Meyer decomposition: $S\_t = M\_t - A\_t$ where $M\_t$ is a martingale
@@ -548,7 +550,7 @@ $u \in N\_{b^{\ast}}M$ (moving off the manifold).
 
 $$-\partial_t V + \frac{\varepsilon^2}{2}\Delta_M V + L_T(b^{\ast}) = 0 \tag{7.3}$$
 
-This is the FK PDE of PAPER.md restricted to $M$ with $H=0$. The Laplacian
+This is the FK PDE of FK_SIMPLEX.md restricted to $M$ with $H=0$. The Laplacian
 $\Delta\_M$ is the **manifold Laplace-Beltrami operator** — the intrinsic diffusion
 on the factor subspace.
 
@@ -751,6 +753,14 @@ The Doob-Meyer compensator IS the time-integrated Willmore energy.
 On the inefficient market, the extra $\varepsilon^2 H^2$ term drives the difference
 $V^{\rm ineff} - V^{\rm eff} = \varepsilon^2\mathcal{W}(M)T$. The Jacobi eigenmodes
 are the HJB perturbation basis; growing modes are the stability index.
+
+---
+
+### Connections to Other Papers
+
+The Doob-Meyer compensator $A_t = \varepsilon^2\int_0^t H^2\,ds$ grows at the same rate as the KL divergence between the inefficient and efficient Fokker-Planck stationary distributions (FOKKER\_PLANCK\_CFD.md). This unifies the martingale decomposition with the information-theoretic efficiency measurement: the predictable drift accumulated by an inefficient market equals the information-theoretic distance from efficiency, both controlled by $\|H\|^2_{L^2}$.
+
+Additionally, $({\rm Sharpe}^*)^2 = (Y_0^{\rm ineff} - Y_0^{\rm eff})/(\varepsilon^2 T)$ — the Sharpe ratio squared is the BSDE value premium per unit time and diffusion strength (new result R72). This connects the BSDE framework directly to the curvature characterisation of the Sharpe ratio in MINIMAL\_SURFACE.md, giving a second independent derivation of ${\rm Sharpe}^* = \|H\|_{L^2}$ from backward stochastic calculus rather than differential geometry.
 
 ---
 

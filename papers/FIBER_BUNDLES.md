@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper III.1** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -329,7 +331,15 @@ $$c_1(NM_\mathbb{C}) = -\frac{1}{2\pi}\int_M K_\perp\,d\mathrm{vol}_M \in \mathb
 This is an integer — the **topological charge** of the market manifold.*
 
 *For the great sphere: $c\_1 = 0$ (topologically trivial — no protected alpha).*
-*For the Clifford torus: $c\_1 = \pm 1$ for each normal direction (topologically non-trivial).*
+*For the Clifford torus $T^2 \subset S^3$ (codimension 1): the normal bundle is trivial
+(a codimension-1 orientable surface in an orientable manifold admits a globally defined
+unit normal) and $c\_1(NM) = 0$. Topologically protected alpha therefore does NOT arise
+in the codimension-1 case. However, for the Clifford torus embedded in higher codimension
+— $T^2 \subset S^{d-1}\_+$ with $d \geq 5$ — the normal bundle $NM$ has rank $d-3 \geq 2$,
+and nontrivial Chern classes become possible. The topological alpha formula
+$\alpha\_{\rm top} = c\_1(NM)/T$ applies when $c\_1 \neq 0$, which requires codimension
+$\geq 2$. For practical markets ($d \geq 5$, $r = 2$), this condition is met and the
+Berry phase may contribute quantized alpha.*
 
 ### 4.2 Topologically protected alpha
 
@@ -354,8 +364,12 @@ $$\mathbb{E}[L(\beta_t)] - L(b^{\ast}) = \frac{c_1(NM)}{T} + O(1/T^2) > 0 \tag{4
 
 *Proof.* The strategy $\beta\_t$ is the one that winds around the topological cycle
 corresponding to $c\_1 \neq 0$. By the Chern-Weil formula, this winding accumulates
-the Berry phase $\gamma\_{\rm Berry} = 2\pi c\_1$ per cycle. The excess return per
-unit time from this phase is $c\_1/(T)$. $\square$
+the Berry phase $\gamma\_{\rm Berry} = 2\pi c\_1$ per cycle. The Berry phase
+$\gamma\_{\rm Berry} = 2\pi c\_1$ is accumulated per cycle of the factor loop.
+Converting to log-return requires dividing by the cycle period $T\_{\rm cycle}$:
+$\alpha\_{\rm Berry} = \gamma\_{\rm Berry}/(2\pi \cdot T\_{\rm cycle}) = c\_1/T\_{\rm cycle}$.
+This gives an excess log-return of $c\_1/T\_{\rm cycle}$ per period, which is
+topologically quantized but inversely proportional to the cycle length. $\square$
 
 **This is a profound refinement of the EMH.** An efficient market in the minimal
 surface sense ($H=0$) may still have topologically protected alpha signals arising
@@ -508,22 +522,14 @@ $$\mathrm{ind}(D) = \dim\ker D^+ - \dim\ker D^- \tag{6.4}$$
 *— the difference between the number of "positive chirality" and "negative chirality"
 zero modes. These are the topologically robust zero-energy portfolio perturbations.*
 
-**For the Clifford torus ($r=2$):** The $\hat{A}$-genus of $T^2$ is 1, so
-$\mathrm{ind}(D\_{T^2}) = 1$. There is at least one topologically protected zero mode
-— one portfolio perturbation that is exactly marginal at the Clifford torus.
-
-**This zero mode is the group-balance perturbation** — the mode $f\_{00} = \text{const}$
-(uniform perturbation toward $p=1/2$) has Jacobi eigenvalue $\lambda\_{00} = -5/2 \neq 0$.
-Wait — this is not a zero mode of $L$, it is a negative mode. The true zero mode must
-come from the homotopy structure.
-
-**Correction:** The index theorem applies to the **index** (difference of positive and
-negative modes), not the count of zero modes directly. For the Clifford torus with
-non-trivial first Chern class $c\_1 = \pm 1$: the index is $\pm 1$, implying there
-is at least one more zero mode in one chirality class than the other. This zero mode
-corresponds to the exact marginal deformation of the Clifford torus — the rotation
-within the product structure ($\theta \to \theta + \varphi\_0$, $\varphi \to \varphi$)
-that preserves the minimal surface condition.
+**For the flat torus $T^2$ ($r=2$):** The spin Dirac operator on the flat torus
+has $\mathrm{ind}(D) = 0$ (constant spinors of each chirality contribute equally:
+$\dim\ker D^+ = 1$, $\dim\ker D^- = 1$, so $\mathrm{ind}(D) = 1 - 1 = 0$).
+The vanishing of the Dirac index is consistent with the torus being flat: there is
+no topological obstruction from the $\hat{A}$-genus in dimension 2. The Atiyah-Singer
+index theorem confirms: $\mathrm{ind}(D) = \frac{1}{8\pi}\int\_{T^2} R\,d\mathrm{vol} = 0$
+since $R = 0$. The market interpretation: the Clifford torus market has no net chiral
+asymmetry in its factor structure.
 
 **Portfolio interpretation:** The Atiyah-Singer zero modes are the **exactly
 marginal portfolio rotations** — the ways to change the portfolio without changing
@@ -730,6 +736,12 @@ of the market regime, and the instantons are the regime changes.
 including the appropriate boundary conditions at $\partial\Delta\_{d-1}$ (the simplex faces
 where some assets have zero weight). The boundary conditions affect the index computation
 and may give additional contributions to the count of unhedgeable payoffs.
+
+---
+
+### Connections to Other Papers
+
+The Berry phase accumulated over one market cycle, the writhe of the market knot (KNOT\_THEORY.md), and the Chern-Simons invariant are three manifestations of the same holonomy. Specifically, the writhe equals the Berry phase modulo $2\pi$: both measure the total rotation of the normal frame as the portfolio traces a closed loop on $M^r$. This means that topological knot invariants of the market braid (BRAIDS.md) encode quantised Berry phases, and the Jones polynomial evaluated at the market crossing data contains the full holonomy information of the fiber bundle.
 
 ---
 

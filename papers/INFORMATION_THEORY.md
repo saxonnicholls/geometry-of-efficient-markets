@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper II.1** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -53,7 +55,7 @@ Diaconis; mixing time; de Finetti.
 
 The Efficient Market Hypothesis has two faces: an *economic* face (no strategy earns
 risk-adjusted excess returns) and an *information-theoretic* face (prices reflect all
-available information). The geometric framework developed in PAPER.md, MINIMAL\_SURFACE.md,
+available information). The geometric framework developed in FK_SIMPLEX.md, MINIMAL\_SURFACE.md,
 and CLASSIFICATION.md has so far spoken primarily to the economic face. In this paper we
 establish the information-theoretic face with equal precision.
 
@@ -342,8 +344,8 @@ correction vanishes and the learning rate is purely $\frac{d-1}{2}\log T$.
 
 ### 5.1 Volatility as the WF noise parameter
 
-In the WF diffusion model of PAPER.md, volatility enters as $\varepsilon^2 = \sigma^2/T$:
-high volatility = high $\varepsilon^2$ = slow learning. The FK PDE (equation 2.3 of PAPER.md)
+In the WF diffusion model of FK_SIMPLEX.md, volatility enters as $\varepsilon^2 = \sigma^2/T$:
+high volatility = high $\varepsilon^2$ = slow learning. The FK PDE (equation 2.3 of FK_SIMPLEX.md)
 becomes:
 
 $$\frac{\partial u}{\partial\tau} = \frac{\sigma^2}{2T}\mathcal{L}u + r(b,\tau)u \tag{5.1}$$

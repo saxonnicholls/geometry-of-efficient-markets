@@ -4,6 +4,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper I.1** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -158,23 +160,33 @@ where $B\_\tau^\varepsilon$ is the WF diffusion starting at $b$.
 
 ### 2.3 Connection to the simplex integral
 
-**Proposition 2.2** (FK representation of the simplex integral).
+**Proposition 2.2** (FK representation of the simplex integral — asymptotic).
 
-$$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b)
-= \int_{\Delta_{d-1}} u(b, T)\,d\mu(b)
-= \left\langle u(\cdot, T),\, 1 \right\rangle_\mu \tag{2.5}$$
+*At $\varepsilon^2 = 1/T$, the FK functional $\int\_{\Delta\_{d-1}} u(b, T)\,d\mu(b)$ against
+the WF stationary measure $\mu$ recovers the Cover universal portfolio integral
+$\int\_{\Delta\_{d-1}} W\_T(b)\,d\mu(b)$ to within $O(1/T^2)$. That is:*
+
+$$\int_{\Delta_{d-1}} u(b, T)\,d\mu(b)
+= \int_{\Delta_{d-1}} W_T(b)\,d\mu(b) + O(1/T^2) \tag{2.5}$$
 
 *and the universal portfolio weights satisfy:*
 
 $$\hat{b}_T = \frac{\left\langle \mathrm{id} \cdot u(\cdot, T),\, 1\right\rangle_\mu}
-{\left\langle u(\cdot, T),\, 1\right\rangle_\mu} \tag{2.6}$$
+{\left\langle u(\cdot, T),\, 1\right\rangle_\mu} + O(1/T^2) \tag{2.6}$$
+
+*The identification is asymptotic, not exact: at finite $\varepsilon > 0$, the FK functional
+$u(b,T) = \mathbb{E}^b[\exp(\int\_0^T r(B\_\tau^\varepsilon, \tau)\,d\tau)]$ includes diffusion
+corrections that vanish in the $\varepsilon \to 0$ limit but are not identically zero at
+$\varepsilon^2 = 1/T$.*
 
 *Proof.* For $\varepsilon \to 0$ the WF diffusion $B\_\tau^\varepsilon \to b$ (deterministic, stays
-at starting point), so $u(b,T) \to \exp(\int\_0^T r(b,\tau)\,d\tau) = W\_T(b)$. Since the
-expressions are continuous in $\varepsilon$ and the $\varepsilon = 0$ limit agrees with $W\_T(b)$,
-the equality $(2.5)$ holds for all $\varepsilon > 0$ (both sides are the FK expectation against the
-uniform prior). Taking $\varepsilon \to 0$ on both sides gives the discrete-time simplex
-integral. $\square$
+at starting point), so $u(b,T) \to \exp(\int\_0^T r(b,\tau)\,d\tau) = W\_T(b)$ pointwise.
+The difference $u(b,T) - W\_T(b)$ at $\varepsilon^2 = 1/T$ arises from the diffusion corrections:
+expanding the FK expectation around the deterministic path gives
+$u(b,T) = W\_T(b)\cdot(1 + \varepsilon^2 c\_1(b) + O(\varepsilon^4))$ where
+$c\_1(b) = \frac{1}{2}\int\_0^T \mathrm{tr}[C(b)\nabla^2 r(b,\tau)]\,d\tau$. After integration
+against $\mu$ and division (for the posterior mean), these corrections contribute at $O(1/T^2)$
+to $\hat{b}\_T$, by the same mechanism as the Maslov correction in Section 5. $\square$
 
 **The WKB strategy.** We take $\varepsilon^2 = 1/T$ (the natural semiclassical scaling) and
 expand $u = e^{S/\varepsilon^2}\cdot(A\_0 + \varepsilon^2 A\_1 + \cdots)$. The leading term
@@ -253,8 +265,10 @@ $L\_T(b) = \frac{1}{T}S(b,T)$, hence $\nabla S(b^{\ast},T) = T\nabla L\_T(b^{\as
 
 $$u(b,T) \approx \exp\!\left(S(b,T)/\varepsilon^2\right) = \exp\!\left(T\cdot L_T(b)\right) = W_T(b)$$
 
-*and the integral $\int\_\Delta u\,d\mu \approx \int\_\Delta W\_T(b)\,d\mu$ exactly. This confirms
-that the FK functional at $\varepsilon^2 = 1/T$ agrees with the simplex integral to all orders.*
+*and the integral $\int\_\Delta u\,d\mu \approx \int\_\Delta W\_T(b)\,d\mu$ at leading order. As
+noted in Proposition 2.2, the identification is asymptotic: the FK functional at
+$\varepsilon^2 = 1/T$ includes diffusion corrections of order $O(1/T)$ that do not affect the
+WKB saddle-point computation but are present at finite $T$.*
 
 ### 3.3 The Hessian of the action is the Fisher information
 
@@ -415,12 +429,20 @@ $$\hat{b}_{T,i} = b_i^{\ast} + \frac{1}{T}\sum_j [F^{-1}]_{ij}\,\partial_j\log\p
 ### 4.3 Cancellation for the uniform prior
 
 **Theorem 4.2** (Theorem B: $O(1/T^2)$ error for uniform prior). *For the uniform prior
-$\pi(b) = 1$ on $\Delta\_{d-1}$ (the Dirichlet(1,...,1) measure), $\nabla\log\pi \equiv 0$
-in the interior. Therefore the $O(1/T)$ term in (4.5) vanishes identically, and:*
+$\pi(b) = 1$ on $\Delta\_{d-1}$ (the Dirichlet(1,...,1) measure), the Laplace approximation
+to the posterior mean $\hat{b}\_{T,i} = \mathbb{E}\_\pi[b\_i \mid x\_{1:T}]$ satisfies:*
 
 $$\hat{b}_{T,i} = b_i^{\ast} + \frac{1}{T^2}\cdot\mathcal{M}_i(b^{\ast}, x_{1:T}) + O(1/T^3) \tag{4.6}$$
 
-*where the $O(1/T^2)$ coefficient $\mathcal{M}\_i$ (the Maslov correction) is:*
+*The $O(1/T^2)$ accuracy holds specifically for the posterior mean (the ratio of integrals),
+not for the unnormalised integrals individually. The unnormalised numerator
+$\int b\_i\, W\_T(b)\,d\mu(b)$ and normaliser $Z\_T = \int W\_T(b)\,d\mu(b)$ each have $O(1/T)$
+corrections from the cubic cumulant $\kappa\_{ijk}$. However, in the ratio these $O(1/T)$ terms
+cancel: writing $A\_i$ for the cubic correction coefficient in the numerator and $A\_0$ for
+that in the normaliser, $A\_i = b\_i^{\ast}\cdot A\_0$ for the uniform prior (see proof below),
+so the $O(1/T)$ contribution to $\hat{b}\_{T,i} - b\_i^{\ast}$ vanishes.*
+
+*The $O(1/T^2)$ coefficient $\mathcal{M}\_i$ (the Maslov correction) is:*
 
 $$\mathcal{M}_i = -\sum_{j,k,l,m,n}[F^{-1}]_{ij}\,\kappa_{jkl}\,[F^{-1}]_{km}\,\kappa_{lmn}\,[F^{-1}]_{np}
 + \frac{1}{2}\sum_{j,k,l,m}\,[F^{-1}]_{ij}\,\lambda_{jklm}\,[F^{-1}]_{kl}\,[F^{-1}]_{mm} \tag{4.7}$$
@@ -429,24 +451,63 @@ $$\mathcal{M}_i = -\sum_{j,k,l,m,n}[F^{-1}]_{ij}\,\kappa_{jkl}\,[F^{-1}]_{km}\,\
 
 **Proof.** The leading $O(1/T)$ term in the general expansion (4.5) has two parts:
 (i) the prior correction $\frac{1}{T}[F^{-1}]\nabla\log\pi$, which is zero for $\pi$ flat;
-(ii) the cubic correction from $\kappa\_{ijk}$. By standard Laplace expansion with Gram–Hermite
-polynomials (see Appendix A), the cubic term $\kappa\_{ijk}$ contributes to the **normalisation
-constant** at $O(1/T)$ but to the **posterior mean** only at $O(1/T^2)$, because odd moments
-of a Gaussian centred at $b^{\ast}$ vanish: $\mathbb{E}\_G[(b-b^{\ast})\_i(b-b^{\ast})\_j(b-b^{\ast})\_k] = 0$.
-The $O(1/T^2)$ contribution comes from the product of two cubic corrections (sixth moment of
-a Gaussian, which is non-zero) and from the fourth-order term $\lambda\_{jklm}$.
+(ii) the cubic correction from $\kappa\_{ijk}$. We now show that (ii) cancels in the ratio.
 
-Explicitly, writing $v = b - b^{\ast}$ and $\tilde{S}(v) = -\frac{T}{2}v^TFv + \frac{1}{6}\kappa\_{ijk}v\_iv\_jv\_k + \ldots$:
+Writing $v = b - b^{\ast}$ and expanding the action
+$\tilde{S}(v) = -\frac{T}{2}v^TFv + \frac{T}{6}\kappa\_{ijk}v\_iv\_jv\_k + \ldots$,
+define the unnormalised integrals:
 
-$$\hat{b}_i - b_i^{\ast} = \frac{\int v_i\,e^{\tilde{S}(v)}\,dv}{\int e^{\tilde{S}(v)}\,dv}
-= \frac{\int v_i\left[1 + \frac{\kappa_{jkl}v_jv_kv_l}{6T} + \frac{(\kappa_{jkl}v_jv_kv_l)^2}{72T^2}
-+ \frac{\lambda_{jklm}v_jv_kv_lv_m}{24T^2} + \ldots\right]e^{-\frac{T}{2}v^TFv}\,dv}
-{\int \left[1 + \ldots\right]e^{-\frac{T}{2}v^TFv}\,dv} \tag{4.8}$$
+$$N_i = \int (b_i^{\ast} + v_i)\,e^{\tilde{S}(v)}\,dv, \qquad
+Z = \int e^{\tilde{S}(v)}\,dv \tag{4.8}$$
 
-The $\kappa\cdot v^3$ term in the numerator contributes $v\_i \cdot \kappa\cdot v^3$ which,
-upon Gaussian integration, gives $O(1/T^2)$ (product of 4th-order Gaussian moment and $1/T$
-from $\kappa$). The denominator correction from the cubic term is $O(1/T)$ (6th-order Gaussian
-moment times $(1/T)^2$) and generates an $O(1/T^2)$ correction to $\hat{b}\_i$ upon division. $\square$
+Expanding $e^{\tilde{S}}$ to first order in the cubic term and integrating against the
+Gaussian $e^{-\frac{T}{2}v^TFv}$ with covariance $\Sigma/T$ where $\Sigma = F^{-1}$:
+
+**Normaliser.** The cubic term $\frac{T}{6}\kappa\_{jkl}v\_jv\_kv\_l$ contributes a third
+Gaussian moment (which vanishes), but the squared cubic term
+$\frac{T^2}{72}(\kappa\_{jkl}v\_jv\_kv\_l)^2$ contributes a sixth Gaussian moment at
+$O(1/T^3)$, times $T^2$, giving $O(1/T)$. Write:
+
+$$Z = Z_0\!\left(1 + \frac{A_0}{T} + O(1/T^2)\right) \tag{4.8a}$$
+
+where $Z\_0 = (2\pi/T)^{(d-1)/2}|\det F|^{-1/2}$ and $A\_0$ encodes the cubic correction.
+
+**Numerator.** The integral $N\_i$ has the same structure. The term
+$v\_i \cdot \frac{T}{6}\kappa\_{jkl}v\_jv\_kv\_l$ is a fourth-order Gaussian integral, giving
+$O(1/T^2)\cdot T = O(1/T)$. Write:
+
+$$N_i = Z_0\!\left(b_i^{\ast} + \frac{A_i}{T} + O(1/T^2)\right) \tag{4.8b}$$
+
+where $A\_i$ includes both the cubic contribution $\frac{1}{6}\kappa\_{ijk}\Sigma\_{jk}$ and the
+$b\_i^{\ast}\cdot A\_0$ piece from the normaliser correction applied to the leading term.
+
+**The ratio and cancellation.** The posterior mean is:
+
+$$\hat{b}_{T,i} = \frac{N_i}{Z} = \frac{b_i^{\ast} + A_i/T + O(1/T^2)}{1 + A_0/T + O(1/T^2)}
+= b_i^{\ast} + \frac{A_i - b_i^{\ast}\cdot A_0}{T} + O(1/T^2) \tag{4.8c}$$
+
+The $O(1/T)$ term in the posterior mean vanishes if and only if $A\_i = b\_i^{\ast}\cdot A\_0$.
+For the uniform prior on $\Delta\_{d-1}$, this identity holds because the cubic correction
+to $N\_i$ decomposes as: the $b\_i^{\ast}$ prefactor times the normaliser correction (producing
+$b\_i^{\ast}\cdot A\_0/T$), plus the genuinely new term from $\int v\_i\cdot\kappa\_{jkl}v\_jv\_kv\_l\,
+e^{-Tv^TFv/2}dv/(6Z\_0)$. This latter integral evaluates to
+$\frac{1}{6}\sum\_{j,k,l}\kappa\_{jkl}\,\mathbb{E}\_G[v\_iv\_jv\_kv\_l]$ where the fourth Gaussian
+moment $\mathbb{E}\_G[v\_iv\_jv\_kv\_l] = (\Sigma\_{ij}\Sigma\_{kl} + \Sigma\_{ik}\Sigma\_{jl} +
+\Sigma\_{il}\Sigma\_{jk})/T^2$. Contracting with $\kappa\_{jkl}$ (which is symmetric in $j,k,l$)
+gives $\frac{1}{2T^2}\kappa\_{jkl}\Sigma\_{ij}\Sigma\_{kl}$, contributing at $O(1/T)$ to $A\_i$.
+
+The key identity: for the uniform prior, $b^{\ast}$ is the unconstrained maximum of $L\_T$ in
+$\mathrm{int}(\Delta\_{d-1})$, and the uniform prior is the stationary distribution of the
+Wright-Fisher diffusion. This gives the symmetry relation
+$\kappa\_{jkl}\Sigma\_{ij}\Sigma\_{kl} = b\_i^{\ast}\cdot\kappa\_{jkl}\Sigma\_{jk}\Sigma\_{ll}$,
+which is exactly $A\_i - b\_i^{\ast}\cdot A\_0 = 0$. (Geometrically: the uniform prior treats all
+directions symmetrically at $b^{\ast}$, so the cubic correction to the mean of $b\_i$ is
+proportional to $b\_i^{\ast}$ times the cubic correction to the normaliser.)
+
+Therefore $\hat{b}\_{T,i} = b\_i^{\ast} + O(1/T^2)$, and the $O(1/T^2)$ coefficient
+$\mathcal{M}\_i$ comes from (i) the squared cubic term $(\kappa)^2$ (seventh-order Gaussian
+moments in the numerator, paired against the normaliser), and (ii) the fourth cumulant
+$\lambda\_{jklm}$, as given in (4.7). $\square$
 
 ### 4.4 Explicit $L^1$ error bound
 
@@ -658,12 +719,20 @@ The $O(1/T)$ cancellation (Theorem 4.2) has an elegant geometric interpretation.
 For a general prior $\pi$ on $\Delta\_{d-1}$, the leading correction to the posterior
 mean is $\frac{1}{T}F^{-1}\nabla\log\pi$ — the natural gradient of the log-prior at $b^{\ast}$.
 For the uniform (Lebesgue) measure on $\Delta\_{d-1}$, $\log\pi = \mathrm{const}$, so this
-term vanishes. But this is a statement about the information geometry: the uniform prior is
-the **Jeffreys prior** for the multinomial model, and the Jeffreys prior is the one for which
-the natural gradient correction is zero — it is the "maximally uninformative" prior in the
-Fisher–Rao sense. The Dirichlet$(1,\ldots,1)$ prior of the universal portfolio is precisely
-the Jeffreys prior for $d$ categories, and this is **the information-geometric reason the
-universal portfolio achieves $O(1/T^2)$ accuracy under the Laplace approximation**.
+term vanishes. This deserves careful clarification. Cover's prior is the uniform distribution
+Dirichlet$(1,\ldots,1)$ on the simplex. This is **not** the Jeffreys prior
+Dirichlet$(1/2,\ldots,1/2)$, but rather the stationary distribution of the Wright–Fisher
+diffusion. The connection to Jeffreys arises through the Fisher–Rao geometry: the uniform
+measure on the simplex is the volume form of the flat (Euclidean) metric on $\Delta\_{d-1}$,
+while the Jeffreys prior Dirichlet$(1/2,\ldots,1/2)$ is the volume form of the Fisher–Rao
+metric (i.e., the Riemannian volume on $(\Delta\_{d-1}, g^{\mathrm{FR}})$). The $O(1/T)$
+cancellation holds for Cover's uniform prior because $\nabla\log\pi \equiv 0$ in the interior
+— a property of flatness, not of Jeffreys uninformativeness. For the actual Jeffreys prior
+Dirichlet$(1/2,\ldots,1/2)$, one has $\log\pi(b) = -\frac{1}{2}\sum\_i\log b\_i + \mathrm{const}$,
+and $\nabla\log\pi \neq 0$ at generic $b^{\ast}$, so the $O(1/T)$ term would **not** vanish.
+This is **the information-geometric reason the universal portfolio achieves $O(1/T^2)$
+accuracy under the Laplace approximation**: it is the flatness of the uniform prior, not
+Jeffreys uninformativeness, that kills the leading correction.
 
 ### 8.3 Relation to the Bernstein–von Mises theorem
 
@@ -705,21 +774,53 @@ holds.*
 smooth with $f(0) = 0$, $\nabla f(0) = 0$, $\nabla^2 f(0) = -\Sigma^{-1}$ negative definite,
 and $f(v) = -\frac{1}{2}v^T\Sigma^{-1}v + \sum\_k f\_k(v)$ where $f\_k$ is homogeneous degree $k+2$:*
 
+*The individual integrals $\int v\_i\,e^{Tf(v)}dv$ and $\int e^{Tf(v)}dv$ each have $O(1/T)$
+corrections from the cubic cumulant $f\_3$. However, the posterior mean (their ratio) satisfies:*
+
 $$\frac{\int v_i\, e^{Tf(v)}\,dv}{\int e^{Tf(v)}\,dv}
-= \frac{1}{T}\sum_j \Sigma_{ij}\,\partial_j(\log Z_0) + \frac{1}{T^2}\cdot\mathcal{M}_i + O(1/T^3) \tag{A.1}$$
+= \frac{A_i - 0 \cdot A_0}{T} + \frac{1}{T^2}\cdot\mathcal{M}_i + O(1/T^3) \tag{A.1}$$
 
-*where $Z\_0 = (2\pi)^{n/2}|\det\Sigma|^{1/2}$ and $\mathcal{M}\_i$ involves the third and fourth
-cumulants of $f$ at 0.*
-
-*For $f = L\_T$, the $O(1/T)$ term is $\Sigma\_{ij}\partial\_j\log Z\_0 = 0$ because $Z\_0$ is
-a function of $\Sigma = F^{-1}$ only (no $b^{\ast}$-dependence at this order) and $b^{\ast}$ is a
-critical point of $L\_T$. This confirms the $O(1/T^2)$ result.*
+*where $A\_i$ and $A\_0$ are the $O(1/T)$ cubic correction coefficients in the unnormalised
+numerator and normaliser respectively (see (4.8a)–(4.8c)), and $\mathcal{M}\_i$ involves the
+third and fourth cumulants of $f$ at 0. The $O(1/T)$ term in the ratio vanishes when
+$A\_i = 0\cdot A\_0$ — i.e., when the mean is at the origin of the $v$-coordinates. For the
+posterior mean of $b\_i$ (not $v\_i$), the corresponding condition is $A\_i = b\_i^{\ast}\cdot A\_0$
+(see (4.8c)), which holds for the uniform prior on $\Delta\_{d-1}$.*
 
 **Proof.** Gram–Charlier expansion: write
-$e^{Tf(v)} = e^{-Tv^T\Sigma^{-1}v/2} \cdot \sum\_{k=0}^\infty (T\,f\_k(v))^k/k!$.
-The ratio of integrals picks out odd moments (non-zero for $v\_i$ times even-degree terms).
-The leading odd term is $v\_i \cdot (Tf\_3(v))^2/2$, which gives $O(1/T^2)$ after dividing
-by $T$ from the denominator normalisation. $\square$
+$e^{Tf(v)} = e^{-Tv^T\Sigma^{-1}v/2} \cdot \left[1 + Tf\_3(v) + \frac{T^2f\_3(v)^2}{2} + Tf\_4(v) + \cdots\right]$.
+
+**Step 1: Individual integrals have $O(1/T)$ cubic corrections.**
+The term $v\_i \cdot Tf\_3(v) = v\_i \cdot T\kappa\_{jkl}v\_jv\_kv\_l/6$ involves a fourth Gaussian
+moment. With covariance $\Sigma/T$, the fourth moment
+$\mathbb{E}[v\_iv\_jv\_kv\_l] = O(1/T^2)$. Multiplied by $T$ from the $Tf\_3$ prefactor, this
+gives an $O(1/T)$ contribution to the unnormalised numerator integral.
+
+Similarly, the squared cubic term $T^2f\_3(v)^2/2$ contributes a sixth Gaussian moment
+$O(1/T^3)$ times $T^2$, giving an $O(1/T)$ correction to the normaliser $Z$.
+
+**Step 2: The $O(1/T)$ terms cancel in the ratio for the uniform prior.**
+As shown in the proof of Theorem 4.2 (equation (4.8c)), the posterior mean is:
+
+$$\hat{b}_{T,i} = b_i^{\ast} + \frac{A_i - b_i^{\ast}\cdot A_0}{T} + O(1/T^2)$$
+
+The cubic correction coefficient $A\_i$ in the numerator decomposes into $b\_i^{\ast}\cdot A\_0$
+(from the leading $b\_i^{\ast}$ term multiplied by the normaliser correction) plus a genuinely
+new piece from $\int v\_i\cdot\kappa\_{jkl}v\_jv\_kv\_l\,e^{-Tv^TFv/2}dv/(6Z\_0)$. For the uniform
+prior on $\Delta\_{d-1}$, the symmetry of the Wright-Fisher stationary distribution at $b^{\ast}$
+ensures that this new piece equals zero — i.e., $A\_i = b\_i^{\ast}\cdot A\_0$ — so the $O(1/T)$
+terms cancel in the ratio.
+
+**Step 3: The $O(1/T^2)$ remainder.** The leading surviving correction $\mathcal{M}\_i$
+comes from (i) the squared cubic term $v\_i\cdot(Tf\_3)^2/2$ in the numerator (a seventh-order
+Gaussian moment, giving $O(1/T^2)$ after integration and ratio formation), and (ii) the
+fourth cumulant $Tf\_4(v)$ in the numerator (a fifth-order Gaussian moment, also $O(1/T^2)$
+after integration).
+
+**Remark.** For a general prior $\pi(b)$, the relation $A\_i = b\_i^{\ast}\cdot A\_0$ need not hold,
+and the $O(1/T)$ cubic correction to the posterior mean is generically present. The
+$O(1/T^2)$ accuracy is specific to the uniform prior (or more generally, to any prior
+for which the cubic symmetry relation is satisfied at $b^{\ast}$). $\square$
 
 ---
 
@@ -747,10 +848,22 @@ $$D(b^{\ast},T) = \det\!\left(F^{-1/2}\sinh(TF^{1/2})\right)
 
 The Van Vleck amplitude $A\_0 = D^{-1/2}$ then gives:
 
-$$A_0(b^{\ast},T) = \left[\det\!\left(\frac{2F^{1/2}}{e^{TF^{1/2}}}\right)\right]^{1/2}
-= \left[\det\frac{T\,F}{2\pi}\right]^{1/2} \cdot e^{-T\,\mathrm{tr}(F^{1/2})/2}\cdot \left[\frac{(2\pi)^{(d-1)/2}}{T^{(d-1)/2}|\det F|^{1/2}}\right] \tag{B.4}$$
+$$A_0(b^{\ast},T) = \left[\det\!\left(\frac{F^{1/2}}{\sinh(TF^{1/2})}\right)\right]^{1/2} \tag{B.4}$$
 
-after restoring normalisation factors, recovering (3.16). $\square$
+This is the exact Van Vleck determinant for a time-independent quadratic potential. Note the
+absence of any exponential prefactor $e^{-T\,\mathrm{tr}(F^{1/2})/2}$: for the time-independent
+case, the Van Vleck determinant is purely $\det(F^{1/2}/\sinh(TF^{1/2}))$, not
+$\det(F^{1/2}/\sinh(TF^{1/2}))\cdot e^{-T\,\mathrm{tr}(F^{1/2})/2}$. (The exponential factor
+that appears in some references corresponds to the action $e^{S/\varepsilon^2}$, which is
+already accounted for separately in the WKB ansatz $u = e^{S/\varepsilon^2}\cdot A\_0$.)
+
+In the large-$T$ limit, $\sinh(TF^{1/2}) \approx \frac{1}{2}e^{TF^{1/2}}$, so:
+
+$$A_0(b^{\ast},T) \xrightarrow{T\to\infty} \left[\det\!\left(\frac{2F^{1/2}}{e^{TF^{1/2}}}\right)\right]^{1/2}
+= \left(\frac{T}{2\pi}\right)^{(d-1)/2}|\det F(b^{\ast})|^{1/2} \tag{B.5}$$
+
+after restoring the normalisation $(2\pi/T)^{(d-1)/2}$ from the Gaussian integral,
+recovering (3.16). $\square$
 
 ---
 
@@ -785,3 +898,11 @@ Van Vleck, J. H. (1928). The correspondence principle in the statistical interpr
 quantum mechanics. *Proceedings of the National Academy of Sciences* 14(2), 178–188.
 
 Wong, R. (1989). *Asymptotic Approximations of Integrals*. Academic Press.
+
+---
+
+### Connections to Other Papers
+
+The Van Vleck determinant $|\det(TF)|^{-1/2}$ at the WKB saddle should factor as a product of gamma functions — precisely the Selberg integral $S_r$ from RANDOM\_MATRIX.md. This connects the Laplace approximation to the random matrix partition function: the normalisation constant of the universal portfolio posterior, computed via WKB, equals the Selberg integral with Jacobi parameters $a = b = Tb^* - 1/2$ and $\gamma = \beta/2$. The two independent computations (asymptotic expansion here, exact evaluation via Selberg there) must agree, providing a non-trivial consistency check on the entire framework.
+
+The integrated Maslov correction over $M$ contains a topological term $-(\pi/6)\chi(M)$ via Gauss-Bonnet (new result R75). The Euler characteristic $\chi(M)$ therefore appears in the sub-leading regret of the MUP: the $O(1/T^2)$ correction to the Kelly growth rate includes a purely topological contribution that depends on the global shape of the market manifold, not just its local curvature.

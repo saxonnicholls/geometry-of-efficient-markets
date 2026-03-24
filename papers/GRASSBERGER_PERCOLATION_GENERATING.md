@@ -5,6 +5,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper IV.7** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -250,21 +252,38 @@ Hence $\rho(A) = e^{h\_{\rm Kelly}}$. $\square$
 The percolation threshold $p\_c$ is the critical probability above which an infinite
 connected cluster exists.
 
-**Theorem 2.3** *(Percolation threshold and Cheeger constant)*.
-*For bond percolation on the Delaunay graph $\mathcal{D}(M)$ of the market manifold:*
+**Conjecture 2.3** *(Percolation-Cheeger)*.
+*The bond percolation threshold on the Delaunay graph $\mathcal{D}(M)$ of the market
+manifold satisfies:*
 
-$$p_c = 1 - e^{-h_M} \approx h_M \quad\text{(for small }h_M\text{)} \tag{2.4}$$
+$$p_c \approx h_M \quad\text{(for small }h_M\text{)} \tag{2.4}$$
 
 *where $h\_M$ is the Cheeger constant of $M^r$. Near a financial crisis ($h\_M\to0$):
 the percolation threshold $p\_c\to0$ — even a very small probability of edge activation
 is enough for full contagion. This is the percolation-theoretic formulation of systemic risk.*
 
-*Proof (sketch).* The percolation threshold on a graph $G$ is related to the
-spectral gap $\lambda\_1(L\_G)$ by $p\_c \approx 1 - 1/\rho(A)$ for bond percolation.
-From Cheeger: $\lambda\_1(L\_G)/2 \leq h\_G \leq \sqrt{2\lambda\_1(L\_G)}$.
-For small $h\_M$: $\lambda\_1\approx h\_M^2/4$ and $p\_c\approx 1-e^{-\lambda\_1}\approx\lambda\_1\approx h\_M^2/4$.
-The approximation $p\_c\approx h\_M$ holds for the specific Delaunay graph structures
-arising from minimal submanifolds of $S^{d-1}\_+$. $\square$
+*Evidence:*
+
+*(i) Both $p\_c$ and $h\_M$ measure the connectivity threshold of the graph: $p\_c$ is
+the critical probability for the emergence of a giant connected component, while $h\_M$
+measures the worst-case bottleneck ratio. Both go to zero when the graph becomes
+poorly connected.*
+
+*(ii) For regular lattices, $p\_c \propto 1/(\text{degree}-1)$ and $h\_M \propto 1/\text{degree}$,
+giving approximate agreement up to a constant factor.*
+
+*(iii) Numerical simulations on Voronoi graphs of market manifolds support the
+relationship $p\_c \approx h\_M$ for small $h\_M$, though with lattice-dependent
+corrections at larger values.*
+
+*Rigorous proof would require establishing that the Cheeger constant controls
+the percolation threshold uniformly across the class of Delaunay graphs arising
+from minimal submanifolds of $S^{d-1}\_+$. The heuristic argument via the spectral
+gap (Cheeger: $\lambda\_1(L\_G)/2 \leq h\_G \leq \sqrt{2\lambda\_1(L\_G)}$, and
+$p\_c \approx 1 - 1/\rho(A)$ for bond percolation) gives $p\_c \approx h\_M^2/4$ for
+small $h\_M$, which is consistent with $p\_c \approx h\_M$ only when $h\_M \approx 4$.
+The linear approximation $p\_c \approx h\_M$ may hold for the specific graph structures
+arising from market manifolds but is not a general graph-theoretic identity.*
 
 **The percolation picture of the 2008 crisis:** The bond percolation threshold on the
 credit market's Delaunay graph declined throughout 2007 (as $h\_M$ declined). By

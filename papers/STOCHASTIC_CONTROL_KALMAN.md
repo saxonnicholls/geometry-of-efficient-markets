@@ -3,6 +3,8 @@
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
+**Paper V.2** — *The Geometry of Efficient Markets*
+
 ---
 
 **Abstract.**  
@@ -565,6 +567,14 @@ END OF DAY:
 | Crisis detection | VIX | Cheeger constant | $h\_M \to 0$ before crisis |
 | Regime detection | Hidden Markov | Dyson class test | $\beta\in\{1,2,4\}$ |
 | Separation | Tobin two-fund | Tangential/Normal | $b = b^M\_{\rm MUP} + \Pi\_{NM}\alpha$ |
+
+---
+
+### Connections to Other Papers
+
+The Kalman innovation process — the normal bundle projection $\Pi_{NM}(x_t)$ of returns — captures "new information" at each step. This should be formally related to the LZ prefix tree of FILTRATIONS.md: LZ phrase boundaries correspond to times when the Kalman innovation exceeds a threshold, and the LZ complexity rate should equal the Kalman innovation variance rate. Both measure the rate at which genuinely new information arrives, one in a compression-theoretic language and the other in a filtering language (Conjecture C29).
+
+The optimal execution geodesic on $M^r$ (Section 3, Almgren-Chriss) is the same object as the classical instanton in the path integral formulation (PATH\_INTEGRAL.md). The Almgren-Chriss optimal execution IS the WKB saddle-point path: both minimise an action functional (market impact + timing risk in one language, the Hamilton-Jacobi action in the other), and the Van Vleck prefactor gives the execution uncertainty around the optimal trajectory.
 
 ---
 
