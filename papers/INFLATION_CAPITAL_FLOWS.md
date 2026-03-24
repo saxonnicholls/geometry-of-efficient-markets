@@ -72,7 +72,7 @@ This is the market manifold of the existing monograph. Portfolio weights
 $b = (b_1,\ldots,b_{d_f})$ on $d_f$ financial assets (equities, bonds, currencies,
 commodities) with Fisher-Rao metric $g^{\rm FR}_{ij} = \delta_{ij}/b_i$.
 
-The log-optimal portfolio $b^*_{\rm fin}$ maximises log-wealth growth.
+The log-optimal portfolio $b^{\ast}_{\rm fin}$ maximises log-wealth growth.
 The efficient financial market manifold $M^r_{\rm fin} \subset S^{d_f-1}_+$
 has dimension $r$ — the number of independent financial risk factors.
 
@@ -433,7 +433,7 @@ $$M^r_{\rm int} = M^{r_{\rm US}}_{\rm fin}\times M^{r_{\rm EU}}_{\rm fin}\times\
 
 **The exchange rate** is the Fisher-Rao distance between the US and EU financial manifolds:
 
-$$S_{\rm FX} = d_{g^{\rm FR}}(b^*_{\rm US}, \Phi(b^*_{\rm EU})) \tag{7.2}$$
+$$S_{\rm FX} = d_{g^{\rm FR}}(b^{\ast}_{\rm US}, \Phi(b^{\ast}_{\rm EU})) \tag{7.2}$$
 
 where $\Phi$ is the currency conversion map sending EU portfolio weights to the
 same asset space as the US portfolio.

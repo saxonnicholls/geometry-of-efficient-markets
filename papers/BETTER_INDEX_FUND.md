@@ -26,10 +26,10 @@ backtest artefact. It is a theorem.**
 
 **Principal results:**
 
-**(i) Cap-weighting is suboptimal by exactly $\Delta h = h_{\rm Kelly}(b^*) - h_{\rm Kelly}(b^{\rm cap})$.**
+**(i) Cap-weighting is suboptimal by exactly $\Delta h = h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})$.**
 The Kelly growth shortfall of the cap-weighted portfolio relative to the log-optimal
-is computable from the Fisher-Rao distance between $b^{\rm cap}$ and $b^*$:
-$$\Delta h = \frac{1}{2}d_{g^{\rm FR}}(b^{\rm cap}, b^*)^2 + O(d^3_{g^{\rm FR}}) \tag{0.1}$$
+is computable from the Fisher-Rao distance between $b^{\rm cap}$ and $b^{\ast}$:
+$$\Delta h = \frac{1}{2}d_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})^2 + O(d^3_{g^{\rm FR}}) \tag{0.1}$$
 
 **(ii) The MIF is the MUP — the wealth-weighted integral over the market manifold.**
 The geometrically correct passive index integrates over all log-optimal portfolios
@@ -38,7 +38,7 @@ the minimum possible for any strategy using only public market data.
 
 **(iii) Equal weight is closer to optimal than cap-weight, on average.**
 The equal-weight portfolio $b^{\rm ew}_i = 1/d$ has strictly lower Fisher-Rao
-distance from $b^*$ than the cap-weight portfolio in expectation, across the
+distance from $b^{\ast}$ than the cap-weight portfolio in expectation, across the
 joint distribution of market capitalisations. **Equal weighting is a better
 approximation to the log-optimal portfolio than cap weighting** — not because
 cap-weighting is perverse but because cap-weights are driven by price momentum
@@ -47,7 +47,7 @@ which moves portfolios away from the log-optimal.
 **(iv) The Fundamental Index (Arnott) is a first-order Fisher-Rao correction.**
 Fundamental indexing (weighting by sales, earnings, dividends, book value) is
 approximately the first-order Taylor expansion of the log-optimal portfolio weight
-around the equal-weight portfolio, using accounting fundamentals as a proxy for $b^*$.
+around the equal-weight portfolio, using accounting fundamentals as a proxy for $b^{\ast}$.
 It is geometrically motivated — and we can tell exactly when it will and will not work.
 
 **(v) The geometrically optimal rebalancing frequency is $\lambda_1^{-1}$.**
@@ -77,8 +77,8 @@ mean-variance efficient. In our geometric framework: is it optimal?
 
 ### 1.2 The geometric answer: no
 
-**The log-optimal portfolio** $b^*$ maximises the Kelly growth rate:
-$$b^* = \arg\max_{b\in\Delta_{d-1}} \frac{1}{T}\sum_{t=1}^T\log\langle b, x_t\rangle \tag{1.2}$$
+**The log-optimal portfolio** $b^{\ast}$ maximises the Kelly growth rate:
+$$b^{\ast} = \arg\max_{b\in\Delta_{d-1}} \frac{1}{T}\sum_{t=1}^T\log\langle b, x_t\rangle \tag{1.2}$$
 
 **The cap-weight portfolio** $b^{\rm cap}$ maximises nothing. It is driven by prices:
 
@@ -91,16 +91,16 @@ stocks that have recently gone down.
 
 **Theorem 1.1** *(Cap-weighting overweights momentum and underweights value)*.
 *The cap-weight portfolio satisfies:*
-$$b^{\rm cap}_i = b^*_i \cdot \exp\!\left(\int_0^T (r_{i,t} - \bar r_t)\,dt + \text{flow terms}\right) \tag{1.4}$$
+$$b^{\rm cap}_i = b^{\ast}_i \cdot \exp\!\left(\int_0^T (r_{i,t} - \bar r_t)\,dt + \text{flow terms}\right) \tag{1.4}$$
 
 *where $r_{i,t} - \bar r_t$ is the excess return of stock $i$ over the market.
 Cap-weighting compounds the momentum factor: stocks that have outperformed get
 larger weights, stocks that have underperformed get smaller weights, automatically
 and without discretion.*
 
-*In Fisher-Rao geometry: the cap-weight portfolio drifts away from $b^*$ at rate
+*In Fisher-Rao geometry: the cap-weight portfolio drifts away from $b^{\ast}$ at rate
 proportional to the cross-sectional volatility of returns. The longer you hold
-without rebalancing, the further $b^{\rm cap}$ drifts from $b^*$.*
+without rebalancing, the further $b^{\rm cap}$ drifts from $b^{\ast}$.*
 
 ### 1.3 The Kelly shortfall of cap-weighting
 
@@ -108,13 +108,13 @@ without rebalancing, the further $b^{\rm cap}$ drifts from $b^*$.*
 *The expected Kelly growth shortfall of the cap-weighted portfolio relative to
 the log-optimal portfolio is:*
 
-$$\mathbb{E}[h_{\rm Kelly}(b^*) - h_{\rm Kelly}(b^{\rm cap})] 
-= \frac{1}{2}\mathbb{E}\!\left[d_{g^{\rm FR}}(b^{\rm cap}, b^*)^2\right] + O(\varepsilon^4) \tag{1.5}$$
+$$\mathbb{E}[h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})] 
+= \frac{1}{2}\mathbb{E}\!\left[d_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})^2\right] + O(\varepsilon^4) \tag{1.5}$$
 
 *For the US equity market with cross-sectional return volatility $\sigma_{\rm cs}$
 and $d$ stocks:*
 
-$$\mathbb{E}[h_{\rm Kelly}(b^*) - h_{\rm Kelly}(b^{\rm cap})] 
+$$\mathbb{E}[h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})] 
 \approx \frac{\sigma^2_{\rm cs}}{2d} \cdot T_{\rm no\text{-}rebal} \tag{1.6}$$
 
 *where $T_{\rm no\text{-}rebal}$ is the time since last rebalancing.*
@@ -124,7 +124,7 @@ $$\Delta h_{\rm Kelly} \approx \frac{0.09}{1000} \approx 9 \text{ bps/year} \tag
 
 *This is the pure rebalancing premium — the gain from rebalancing annually to
 equal weight from cap weight. In addition, the systematic distance of $b^{\rm cap}$
-from $b^*$ due to the momentum bias contributes a further $\approx 38$ bps/year.*
+from $b^{\ast}$ due to the momentum bias contributes a further $\approx 38$ bps/year.*
 **Total estimated shortfall: $\approx 47$ bps/year for the S&P 500.**
 
 ---
@@ -203,13 +203,13 @@ approximately 1.26 billion operations, or under 5 seconds on a modern laptop.
 
 ### 2.3 The MIF vs the competition
 
-| Index | Weight rule | Fisher-Rao dist from $b^*$ | Expected shortfall |
+| Index | Weight rule | Fisher-Rao dist from $b^{\ast}$ | Expected shortfall |
 |:------|:-----------|:--------------------------:|:------------------:|
 | Cap-weight (S&P 500) | $\propto P_i N_i$ | Large, growing | ~47 bps/yr |
 | Equal-weight | $1/d$ | Medium, stable | ~25 bps/yr |
 | Fundamental (Arnott) | $\propto$ fundamentals | Medium, stable | ~18 bps/yr |
 | Min-variance | $\arg\min\sigma^2_p$ | Medium, biased | ~20 bps/yr |
-| Max Sharpe | $\arg\max\mathrm{SR}$ | Small at est. $b^*$ | ~15 bps/yr |
+| Max Sharpe | $\arg\max\mathrm{SR}$ | Small at est. $b^{\ast}$ | ~15 bps/yr |
 | **MIF (this paper)** | Wealth-integral over $M^r$ | **Minimum** | **see below** |
 
 **MIF regret scaling.** The MIF regret is $r\log T/(2T)$ in cumulative log-wealth
@@ -238,21 +238,21 @@ investors, the MIF is provably superior at any realistic horizon.
 ### 3.1 The theorem
 
 **Theorem 3.1** *(Equal weight dominates cap weight in Fisher-Rao distance)*.
-*Let $b^*$ be the log-optimal portfolio with mean weight $\bar b^* = 1/d$
+*Let $b^{\ast}$ be the log-optimal portfolio with mean weight $\bar b^{\ast} = 1/d$
 (approximately equal for large diversified universes). Then:*
 
-$$\mathbb{E}[d_{g^{\rm FR}}(b^{\rm ew}, b^*)] \leq \mathbb{E}[d_{g^{\rm FR}}(b^{\rm cap}, b^*)] \tag{3.1}$$
+$$\mathbb{E}[d_{g^{\rm FR}}(b^{\rm ew}, b^{\ast})] \leq \mathbb{E}[d_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})] \tag{3.1}$$
 
 *where the expectation is over the joint distribution of market capitalisations
 and returns. Equal weighting is closer to the log-optimal portfolio than
 cap-weighting in expectation.*
 
-*Proof.* The log-optimal weight $b^*_i \propto \mu_i/\sigma_i^2$ (roughly,
+*Proof.* The log-optimal weight $b^{\ast}_i \propto \mu_i/\sigma_i^2$ (roughly,
 expected return divided by variance). The cap-weight $b^{\rm cap}_i \propto M_i$.
 Market cap is driven by price history — it is proportional to $\exp(\int r_i\,dt)$.
 Over long horizons, price momentum pushes $b^{\rm cap}$ toward high-momentum stocks
 which are generally overvalued (price exceeded intrinsic value). The log-optimal
-portfolio does not have this momentum bias. Equal weight is the prior for $b^*$
+portfolio does not have this momentum bias. Equal weight is the prior for $b^{\ast}$
 when fundamentals are unknown; cap weight is not. $\square$
 
 **This explains the "equal weight anomaly"** — the empirical finding that equal-weight
@@ -263,13 +263,13 @@ Uppal 2009). It is not a small-sample anomaly. It is a geometric theorem.
 
 When you rebalance an equal-weight portfolio back to $1/d$ after a period of returns,
 you systematically sell winners and buy losers. In the Fisher-Rao geometry, this
-rebalancing brings you back toward $b^*$. The **rebalancing premium** is:
+rebalancing brings you back toward $b^{\ast}$. The **rebalancing premium** is:
 
 $$\mathrm{RP} = h_{\rm Kelly}(b^{\rm ew}) - h_{\rm Kelly}(b^{\rm cap})
 \approx \frac{\sigma^2_{\rm cs}}{2d} \approx 9 \text{ bps/year for S\&P 500} \tag{3.2}$$
 
 This is the Fernholz-Karatzas rebalancing premium (from stochastic portfolio theory)
-now derived geometrically — it is the Fisher-Rao mean reversion toward $b^*$ generated
+now derived geometrically — it is the Fisher-Rao mean reversion toward $b^{\ast}$ generated
 by equal-weight rebalancing.
 
 ---
@@ -290,13 +290,13 @@ The **RAFI Fundamental Index** (Arnott, Hsu, Moore 2005) weights stocks by:
 **Theorem 4.1** *(Fundamental indexing = first-order Fisher-Rao correction)*.
 *The log-optimal portfolio weight satisfies the first-order expansion:*
 
-$$b^*_i \approx b^{\rm ew}_i + \nabla_{b}L_T\big|_{b^{\rm ew}} \cdot \varepsilon
+$$b^{\ast}_i \approx b^{\rm ew}_i + \nabla_{b}L_T\big|_{b^{\rm ew}} \cdot \varepsilon
 = \frac{1}{d} + \frac{1}{d}\cdot(\mu_i - \bar\mu)\cdot\varepsilon + O(\varepsilon^2) \tag{4.1}$$
 
 *where $\mu_i - \bar\mu$ is the excess expected return of stock $i$.
 Under the accounting identity $\mu_i \approx E_i/P_i$ (earnings yield $\approx$ expected return):*
 
-$$b^*_i \approx \frac{1}{d} + \frac{1}{d}\cdot\frac{E_i/P_i - \bar{E/P}}{\bar{E/P}}\cdot\varepsilon \tag{4.2}$$
+$$b^{\ast}_i \approx \frac{1}{d} + \frac{1}{d}\cdot\frac{E_i/P_i - \bar{E/P}}{\bar{E/P}}\cdot\varepsilon \tag{4.2}$$
 
 *Fundamental indexing weights by $E_i$ (or $B_i$, $S_i$, $C_i$) — which is proportional
 to $E_i/P_i \cdot P_i$. This is approximately the first-order correction in (4.2)
@@ -321,7 +321,7 @@ where $\lambda_{\rm tc}$ is the round-trip transaction cost per unit of turnover
 
 The benefit of rebalancing at frequency $f$ (Kelly growth gained per year).
 The expected Kelly loss from portfolio drift over a rebalancing interval $\Delta t = 1/f$ is:
-$$L(\Delta t) = \frac{1}{2}\mathbb{E}[d^2_{g^{\rm FR}}(b^{\rm current}, b^*)]
+$$L(\Delta t) = \frac{1}{2}\mathbb{E}[d^2_{g^{\rm FR}}(b^{\rm current}, b^{\ast})]
 = \frac{\sigma^2_{\rm cs}}{2d}\cdot\Delta t + c_2\frac{\sigma^4_{\rm cs}}{d^2}\cdot(\Delta t)^2 + O((\Delta t)^3) \tag{5.2}$$
 
 where $c_2 > 0$ is the second-order drift coefficient from the nonlinear curvature
@@ -377,7 +377,7 @@ value Voronoi cell of the market manifold.
 **Momentum tilt:** Move in the direction of recent return momentum — toward stocks
 that have recently outperformed. Geometrically: follow the local geodesic on the
 cap-weight simplex in the direction of recent price moves. **This is the direction
-AWAY from $b^*$** on average — momentum tilts are anti-optimal from the Kelly perspective
+AWAY from $b^{\ast}$** on average — momentum tilts are anti-optimal from the Kelly perspective
 (though they can generate short-run returns from continuation effects).
 
 **Quality tilt:** Move toward stocks with high ROE, low leverage, stable earnings.
@@ -385,22 +385,22 @@ Geometrically: move toward the sub-simplex of stocks with high $\mu_i/\sigma_i^2
 — the correct direction for log-optimality.
 
 **Low volatility tilt:** Move toward stocks with low $\sigma_i$. In Fisher-Rao
-geometry: this increases $b^*_i$ for low-vol stocks (since $b^*_i\propto\mu_i/\sigma_i^2$
+geometry: this increases $b^{\ast}_i$ for low-vol stocks (since $b^{\ast}_i\propto\mu_i/\sigma_i^2$
 for CAPM markets). Geometrically correct when the CAPM holds. Incorrect when
 there are multiple factors.
 
 ### 6.2 Which tilts are geometrically valid?
 
-**Valid in Fisher-Rao geometry** (move toward $b^*$):
+**Valid in Fisher-Rao geometry** (move toward $b^{\ast}$):
 - Value: ✓ (proxy for $\mu_i$)
 - Quality: ✓ (proxy for $\mu_i/\sigma_i^2$)
 - Low volatility: ✓ in CAPM markets, ✗ in multi-factor markets
 - MIF (this paper): ✓ by construction
 
-**Not valid in Fisher-Rao geometry** (move away from $b^*$):
-- Momentum: ✗ (follows price drift away from $b^*$)
+**Not valid in Fisher-Rao geometry** (move away from $b^{\ast}$):
+- Momentum: ✗ (follows price drift away from $b^{\ast}$)
 - Equal risk contribution (ERC) in Euclidean metric: ✗ (wrong metric)
-- Equal risk contribution in Fisher-Rao metric: ✓ (converges to $b^*$)
+- Equal risk contribution in Fisher-Rao metric: ✓ (converges to $b^{\ast}$)
 - Maximum diversification: ✗ when the diversification ratio uses Euclidean metric
 
 ---
@@ -415,7 +415,7 @@ A portfolio manager implementing the MIF needs four inputs:
 |:----------|:---------------|:----------------:|
 | Manifold dimension $r$ | Stable rank of F or FNN algorithm | Monthly |
 | Factor loadings $V_r$ | PCA of return covariance matrix | Monthly |
-| Log-optimal portfolio $b^*$ | Kelly optimisation (convex, closed form) | Daily |
+| Log-optimal portfolio $b^{\ast}$ | Kelly optimisation (convex, closed form) | Daily |
 | Rebalancing threshold | $d_{g^{\rm FR}}(b^{\rm current}, b^{\rm MIF}) > 1/\sqrt{T}$ | Daily |
 
 ### 7.2 Full algorithm
@@ -520,7 +520,7 @@ Net advantage over cap-weighting: +40 bps/year and growing.**
 
 **Fernholz's stochastic portfolio theory** (2002) proves that equal-weight rebalancing
 generates a rebalancing premium — the "excess growth rate." We derive this from
-the Fisher-Rao geometry of the portfolio simplex (it is the geodesic drift toward $b^*$).
+the Fisher-Rao geometry of the portfolio simplex (it is the geodesic drift toward $b^{\ast}$).
 
 **DeMiguel, Garlappi, Uppal** (2009) show empirically that equal-weight portfolios
 outperform cap-weight out-of-sample. We prove this is a geometric theorem, not

@@ -16,7 +16,7 @@ in finance is a computable geometric invariant of this submanifold.
   <img src="code/visualisation/market_manifolds.png" width="100%" alt="The three classified market manifold types in the Bhattacharyya sphere"/>
 </p>
 
-**The classification theorem in one picture.** Every efficient market falls into one of three geometric types, each living as a submanifold of the Bhattacharyya sphere $S^{d-1}\_+$. *Top left:* the ambient space — the positive octant of the unit sphere, where $\sqrt{b}$ coordinates give the Fisher-Rao isometry. *Top right:* **Type I (CAPM)** — a great circle (geodesic) with a Jacobi diffusion path mean-reverting around the log-optimal portfolio. This is the only stably efficient type. *Bottom left:* **Type II (Clifford torus)** — a flat torus with two generating circles, carrying $\vartheta\_3$ transition densities and GUE statistics. Stability index = 5. *Bottom right:* **Type III (Pseudo-Anosov)** — a saddle surface with negative curvature. Five Brownian paths launched from the same point diverge exponentially, illustrating the chaotic dynamics governed by the McKean kernel and GSE statistics.
+**The classification theorem in one picture.** Every efficient market falls into one of three geometric types, each living as a submanifold of the Bhattacharyya sphere $S^{d-1}_+$. *Top left:* the ambient space — the positive octant of the unit sphere, where $\sqrt{b}$ coordinates give the Fisher-Rao isometry. *Top right:* **Type I (CAPM)** — a great circle (geodesic) with a Jacobi diffusion path mean-reverting around the log-optimal portfolio. This is the only stably efficient type. *Bottom left:* **Type II (Clifford torus)** — a flat torus with two generating circles, carrying $\vartheta_3$ transition densities and GUE statistics. Stability index = 5. *Bottom right:* **Type III (Pseudo-Anosov)** — a saddle surface with negative curvature. Five Brownian paths launched from the same point diverge exponentially, illustrating the chaotic dynamics governed by the McKean kernel and GSE statistics.
 
 ---
 
@@ -24,7 +24,7 @@ in finance is a computable geometric invariant of this submanifold.
   <img src="code/visualisation/curvature_profiles.png" width="100%" alt="Mean curvature profiles across the three market types"/>
 </p>
 
-**The Sharpe ratio is curvature.** The mean curvature $|H|^2$ profile across each manifold type determines the exploitable alpha. *Left:* CAPM — an efficient market ($H = 0$, blue line) versus an inefficient perturbation (blue shading). *Centre:* Clifford torus — curvature is periodic (the torus winding), creating rhythmic alpha opportunities. *Right:* Pseudo-Anosov — curvature varies exponentially due to geodesic divergence. The central identity: $\mathrm{Sharpe}^{\ast} = \\|H\\|\_{L^2}$.
+**The Sharpe ratio is curvature.** The mean curvature $|H|^2$ profile across each manifold type determines the exploitable alpha. *Left:* CAPM — an efficient market ($H = 0$, blue line) versus an inefficient perturbation (blue shading). *Centre:* Clifford torus — curvature is periodic (the torus winding), creating rhythmic alpha opportunities. *Right:* Pseudo-Anosov — curvature varies exponentially due to geodesic divergence. The central identity: $\mathrm{Sharpe}^{\ast} = \\|H\\|_{L^2}$.
 
 ---
 
@@ -58,7 +58,7 @@ market manifold. The vol skew of index options measures $H$ in real time.
 ## The Single Organising Principle
 
 > *A financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
-> $S^{d-1}\_+$. Portfolio weights are barycentric coordinates on $\Delta\_{d-1}$.
+> $S^{d-1}_+$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
 > Every important quantity in finance is a computable geometric invariant of $M^r$.*
 
 This single sentence explains: why Cover's prior works; why only CAPMs are stable;
@@ -86,13 +86,13 @@ using the wrong measure.
 | `MINIMAL_SURFACE.md` | **Sharpe\* = ‖H‖ (proved)**; EMH conjecture; Willmore = inefficiency |
 | `CLASSIFICATION.md` | Only CAPMs stably efficient (closed manifolds; boundary case OP32); Clifford torus index = 5 |
 | `CONVERGENCE.md` | MUP regret $r\log T/2T$; minimax optimal |
-| `MARKET_PROCESSES.md` | Jacobi, theta function $\vartheta\_3$, McKean — exact transition densities |
+| `MARKET_PROCESSES.md` | Jacobi, theta function $\vartheta_3$, McKean — exact transition densities |
 | `RANDOM_MATRIX.md` | Dyson class forced by manifold; Selberg = MUP partition function |
 | `LLM_MANIFOLD.md` | LMSR = softmax = Fisher; LLM ≤ MUP (proved) |
 | `PATH_INTEGRAL.md` | Constrained path integral on $M^r$; theta function = winding sum |
 | `FILTRATIONS.md` | LZ78 prefix tree = filtration tree (proved); general compressor filtration is Conjecture C18 |
 | `STOCHASTIC_CONTROL_KALMAN.md` | Manifold Kalman filter; geodesic execution; separation theorem |
-| `HYPERCUBE_SHAPLEY.md` | Shapley $\phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$ (proved); Walsh = Jacobi |
+| `HYPERCUBE_SHAPLEY.md` | Shapley $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ (proved); Walsh = Jacobi |
 | `INFLATION_CAPITAL_FLOWS.md` | Inflation = Fisher-Rao speed; capital flows = connection; Fisher equation = holonomy |
 | `BETTER_INDEX_FUND.md` | Cap-weighting is suboptimal; Manifold Index Fund; optimal rebalancing = spectral gap |
 | *...and 18 more* | See `navigation/SERIES_PLAN.md` for full list |
@@ -170,10 +170,10 @@ The five most immediately useful results:
 
 | Result | What to do with it |
 |:-------|:------------------|
-| $\phi\_i = b^{\ast}\_i(\mu\_i - \bar\mu)$ | Fair attribution of P&L to assets — `code/shapley/` |
-| Cheeger constant $h\_M \to 0$ before crises | Early warning systemic risk indicator — `code/contagion/` |
+| $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ | Fair attribution of P&L to assets — `code/shapley/` |
+| Cheeger constant $h_M \to 0$ before crises | Early warning systemic risk indicator — `code/contagion/` |
 | Optimal entry $z^{\ast} = \sqrt{1 + r/\kappa}$ | Replace the 2σ pairs trading rule — `code/pairs/` |
-| Kalman gain $K = F(b^{\ast})^{-1}V\_r^TR\_N^{-1}$ | Optimal signal extraction — `code/kalman/` |
+| Kalman gain $K = F(b^{\ast})^{-1}V_r^TR_N^{-1}$ | Optimal signal extraction — `code/kalman/` |
 | Kelly rate = minimum ML loss | Calibrate any market model — `code/transformer/` |
 
 ---
