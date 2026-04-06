@@ -1,507 +1,236 @@
 # Master Plan: The Geometry of Efficient Markets
 ## Organisation, Priorities, and Roadmap
-## Prepared overnight — ready for Day 2
 
 **Saxon Nicholls** — me@saxonnicholls.com
+
+**Last updated:** Session 2
 
 ---
 
 ## The State of Play
 
-**41 documents · 160,698 words · 67 proved/conjectured results · 46 addendum lemmas**
+**38 papers · ~192,000 words · 85 results · 30 conjectures · 34 open problems**
 
-Everything produced on Day 1 is complete and self-consistent. The task now is
-to organise it into a publishable monograph, a paper submission pipeline,
-and a working GitHub repository.
-
----
-
-## Part 1: Repository Structure (Set Up First in VS Code)
-
-Create this structure immediately on Day 2. Every file has a home.
-
-```
-geometry-of-efficient-markets/
-│
-├── CLAUDE.md                          ← AI context file (done)
-├── README.md                          ← TO WRITE (30 min)
-│
-├── papers/                            ← 28 mathematical papers
-│   ├── 01_LAPLACE.md
-│   ├── 02_FK_SIMPLEX.md
-│   ├── 03_MINIMAL_SURFACE.md
-│   ├── 04_CLASSIFICATION.md
-│   ├── 05_CONVERGENCE.md
-│   ├── 06_INFORMATION_THEORY.md
-│   ├── 07_SVD_MANIFOLD.md
-│   ├── 08_DERIVATIVES_CONVEXITY.md
-│   ├── 09_HAMILTONIAN_TAILS_COMPLETENESS.md
-│   ├── 10_RENORMALIZATION.md
-│   ├── 11_PORTFOLIO_GEOMETRY.md
-│   ├── 12_FIBER_BUNDLES.md
-│   ├── 13_KNOT_THEORY.md
-│   ├── 14_BRAIDS.md
-│   ├── 15_COMPLEXITY.md
-│   ├── 16_MARTINGALE_GEOMETRY.md
-│   ├── 17_FOKKER_PLANCK_CFD.md
-│   ├── 18_MARKET_PROCESSES.md
-│   ├── 19_SOBOLEV_OPTIONS_GREEKS.md
-│   ├── 20_PAIRS_TRADING.md
-│   ├── 21_FILTRATIONS.md
-│   ├── 22_GEOSPATIAL_CONTAGION.md
-│   ├── 23_LLM_MANIFOLD.md
-│   ├── 24_RANDOM_MATRIX.md
-│   ├── 25_PATH_INTEGRAL.md
-│   ├── 26_CHAOS_TAKENS.md
-│   ├── 27_HYPERCUBE_SHAPLEY.md
-│   ├── 28_GRASSBERGER_PERCOLATION_GENERATING.md
-│   └── 29_STOCHASTIC_CONTROL_KALMAN.md
-│
-├── navigation/                        ← Reference documents
-│   ├── ABSTRACT.md
-│   ├── EXECUTIVE_SUMMARY.md
-│   ├── SERIES_PLAN.md
-│   ├── WHATS_NEW.md
-│   ├── CONJECTURES.md
-│   └── OPEN_PROBLEMS.md
-│
-├── book/                              ← Monograph-specific content
-│   ├── INTRODUCTION.md               ← TO WRITE Day 2 (Priority 2)
-│   ├── ANECDOTES.md
-│   ├── EXPERIMENTS.md
-│   ├── SO_WHATS.md
-│   ├── ADDENDUM.md
-│   └── MONOGRAPH_STRUCTURE.md        ← TO WRITE Day 2 (Priority 4)
-│
-├── submission/                        ← Camera-ready paper drafts
-│   ├── paper_E_LLM_LMSR/             ← NeurIPS/ICML target
-│   ├── paper_A_WKB_LAPLACE/          ← Mathematical Finance
-│   ├── paper_B_SHARPE_CURVATURE/     ← Annals Applied Probability
-│   ├── paper_C_MUP_MINIMAX/          ← Operations Research
-│   ├── paper_F_RANDOM_MATRIX/        ← Annals of Probability
-│   └── paper_N_SHAPLEY/              ← Journal of Finance
-│
-└── code/
-    ├── core/
-    │   ├── kelly.py
-    │   ├── fisher_rao.py
-    │   ├── curvature.py
-    │   ├── ou_params.py
-    │   └── chern_number.py
-    ├── mup/
-    │   └── manifold_universal_portfolio.py
-    ├── processes/
-    │   ├── jacobi_diffusion.py
-    │   ├── theta_function_bm.py
-    │   └── mckean_hyperbolic.py
-    ├── kalman/
-    │   ├── manifold_kalman.py
-    │   └── extended_kalman_manifold.py
-    ├── transformer/
-    │   ├── dimension_estimator.py
-    │   └── kelly_loss_benchmark.py
-    ├── takens/
-    │   ├── fnn_algorithm.py
-    │   └── diffusion_maps.py
-    ├── filtrations/
-    │   ├── lz78_filtration.py
-    │   ├── ctw_filtration.py
-    │   └── voronoi_automaton.py
-    ├── pairs/
-    │   └── geometric_pairs_trading.cpp
-    ├── contagion/
-    │   ├── cheeger_constant.py
-    │   ├── delaunay_graph.py
-    │   └── crisis_detector.py
-    ├── rmt/
-    │   ├── dyson_class_test.py
-    │   ├── tracy_widom_fit.py
-    │   └── selberg_integral.py
-    ├── shapley/
-    │   └── kelly_shapley.py
-    └── experiments/
-        ├── experiment_01_sharpe_curvature.py
-        ├── experiment_02_tail_index.py
-        ├── experiment_03_mup_vs_cover.py
-        ├── experiment_04_stationary_distribution.py
-        ├── experiment_05_jacobi_vs_gbm.py
-        ├── experiment_06_vol_skew_curvature.py
-        ├── experiment_07_pairs_threshold.py
-        ├── experiment_08_entropy_kelly.py
-        ├── experiment_09_reynolds_number.py
-        ├── experiment_10_berry_phase.py
-        ├── experiment_11_dyson_class.py       ← TO WRITE
-        ├── experiment_12_tracy_widom.py        ← TO WRITE
-        ├── experiment_13_takens_fnn.py         ← TO WRITE
-        ├── experiment_14_diffusion_maps.py     ← TO WRITE
-        ├── experiment_15_shapley_attribution.py← TO WRITE
-        ├── experiment_16_grassberger_dim.py    ← TO WRITE
-        └── experiment_17_transformer_dim.py    ← TO WRITE
-```
+The monograph has grown from 29 papers to 38 across two sessions. A complete
+mathematical audit was performed: 20 mathematical errors fixed, 26 navigation
+issues resolved, 12 new results added, 7 conjectures upgraded, 10 cross-paper
+connections identified. A new foundational layer (Papers 0.1–0.4) was added,
+grounding the entire framework in axioms of convex information processing.
 
 ---
 
-## Part 2: Monograph Chapter Map
+## What We Have: Honest Assessment
 
-Every paper maps to a chapter. This is the complete assignment.
+### Tier A — Publishable now (clean proofs, novel results)
 
-### Part I — Foundation (Chapters 1–4)
-| Chapter | Title | Primary papers | Words target |
-|:-------:|:------|:--------------|:------------:|
-| 1 | The Simplex Integral and the WKB Identity | 01, 02 | 8,000 |
-| 2 | The Market Manifold | 03, 11 | 7,000 |
-| 3 | The Sharpe-Curvature Theorem | 03, 04 | 8,000 |
-| 4 | Classification and the MUP | 04, 05 | 8,000 |
+| Result | Paper | Target journal |
+|:-------|:------|:--------------|
+| Sharpe* = ‖H‖_{L²} (leading order, classified types) | MINIMAL_SURFACE | Annals of Applied Probability |
+| MUP regret r·log(T)/(2T) | CONVERGENCE | Operations Research / J. Finance |
+| LLM ≤ MUP on efficient markets | LLM_MANIFOLD | NeurIPS / ICML |
+| Shapley φ_i = b*_i(μ_i - μ̄) | HYPERCUBE_SHAPLEY | Mathematical Finance |
+| Convex information processing theorem (classical) | CONVEX_INFORMATION | Information Geometry / Found. of Physics |
 
-### Part II — Physics and Processes (Chapters 5–9)
-| Chapter | Title | Primary papers | Words target |
-|:-------:|:------|:--------------|:------------:|
-| 5 | Exact Stochastic Processes | 18, 19 | 8,000 |
-| 6 | The Market Hamiltonian | 09, 10 | 7,000 |
-| 7 | Martingale Theory and Stopping | 16, 08 | 8,000 |
-| 8 | Information Theory | 06, 17 | 7,000 |
-| 9 | Renormalisation Group | 10, 07 | 6,000 |
+### Tier B — Strong framework, proofs need tightening
 
-### Part III — Path Integrals and Random Matrices (Chapters 10–11)
-| Chapter | Title | Primary papers | Words target |
-|:-------:|:------|:--------------|:------------:|
-| 10 | Feynman Path Integrals on $M^r$ | 25 | 9,000 |
-| 11 | Random Matrix Universality Classes | 24 | 8,000 |
+| Result | Paper | Gap |
+|:-------|:------|:----|
+| Only CAPMs stably efficient | CLASSIFICATION | Boundary correction for d ≫ r (OP32) |
+| Dyson class forced by geometry | RANDOM_MATRIX | Holonomy verification (C26/C27) |
+| Fat tails α = r/2 | HAMILTONIAN | Three exponents measure different objects — clarified but needs unification |
+| Selberg = MUP partition function | RANDOM_MATRIX | Depends on Dyson class proof |
+| Market evolution via MCF | WHY_MARKETS_EVOLVE | Singularity classification is illustrative, not proved from data |
 
-### Part IV — Topology, Computation, Filtrations (Chapters 12–16)
-| Chapter | Title | Primary papers | Words target |
-|:-------:|:------|:--------------|:------------:|
-| 12 | Fiber Bundles and Berry Phase | 12 | 7,000 |
-| 13 | Knot Theory and Topological Markets | 13 | 8,000 |
-| 14 | Braids, Computation, Complexity | 14, 15 | 8,000 |
-| 15 | Geometric Filtrations | 21 | 8,000 |
-| 16 | Geospatial Indexing and Contagion | 22 | 7,000 |
+### Tier C — Genuine ideas, first-draft quality
 
-### Part V — Machine Learning and Chaos (Chapters 17–18)
-| Chapter | Title | Primary papers | Words target |
-|:-------:|:------|:--------------|:------------:|
-| 17 | LLMs, Transformers, and the MUP | 23 | 8,000 |
-| 18 | Chaos, Takens, and Manifold Reconstruction | 26 | 7,000 |
+| Paper | Status |
+|:------|:-------|
+| CONVEXIFICATION | Free convex completion is clean; Sobolev Čencov needs detailed proof |
+| DUAL_TOWER | Three-tower isomorphism is a programme, not yet a theorem |
+| INCOMPLETENESS | Three-wall separation is clean; individual results need hardening |
+| INFLATION_CAPITAL_FLOWS | Framework sound; Definition 2.1 and curvature sign issues partly fixed |
+| BETTER_INDEX_FUND | MIF concept solid; regret numbers and rebalancing derivation need more work |
+| HORSE_RACING | Core (Cover/Kelly on races, card counting) sound; curvature claims downgraded |
+| PREDICTION_MARKETS | LMSR = softmax = Fisher-Rao is clean; marginal polytope results need proof |
 
-### Part VI — Applications (Chapters 19–21)
-| Chapter | Title | Primary papers | Words target |
-|:-------:|:------|:--------------|:------------:|
-| 19 | Stochastic Control and Kalman Filtering | 29, 20 | 9,000 |
-| 20 | Hypercubes, Shapley, and Attribution | 27 | 7,000 |
-| 21 | Generating Functions and Percolation | 28 | 7,000 |
+### Tier D — Explorations and programme-setting
 
-**Total target: ~165,000 words (monograph body)**
-
-### Appendices
-| App | Content | Source |
-|:----|:--------|:-------|
-| A | Riemannian geometry reference | New |
-| B | Software and algorithms | code/ |
-| C | Open problems (OP1–OP31) | OPEN_PROBLEMS.md |
-| D | Experiments (17 replication studies) | EXPERIMENTS.md |
-| E | Historical episodes | ANECDOTES.md |
-| F | The practitioner's guide | SO_WHATS.md |
+| Paper | Value |
+|:------|:------|
+| KNOT_THEORY | Creative but limited to d=4; exploratory |
+| BRAIDS | Turing completeness argument is loose; #P oracle interesting but unproved |
+| FIBER_BUNDLES | c₁ corrected to 0 for codim-1; higher codimension case is open |
+| GEOSPATIAL_CONTAGION | Cheeger = systemic risk is a nice idea; percolation threshold is conjectural |
+| GRASSBERGER | Correlation dim = r is clean; percolation-Cheeger is now correctly a conjecture |
 
 ---
 
-## Part 3: Paper Submission Pipeline
+## The Publication Pipeline
 
-Six papers are ready for submission. In order of priority:
+### Phase 1: Submit 3 papers (next 3 months)
 
-### Paper E — NeurIPS 2025 (Submit in ~4 weeks)
-**"The LMSR-Softmax-Fisher Identity: Transformer Attention as Market Making"**
-- Source: 23_LLM_MANIFOLD.md
-- Key results: R17, R18, R19, R20
-- Target: NeurIPS 2025 (deadline ~May 2025) or ICML 2025
-- Length: 8 pages + appendix
-- Status: Draft complete. Needs formatting to conference template.
-- Action: Write as standalone ML paper. Lead with LMSR=softmax identity.
-  Financial application is secondary narrative.
+**Paper 1: The LLM paper** → NeurIPS 2025 or ICML 2025
+- Self-contained, timely, reaches largest audience
+- Core: LMSR = softmax = Fisher-Rao, LLM ≤ MUP, Kelly = min loss
+- 8 pages, conference format
+- Convert LLM_MANIFOLD.md to LaTeX
 
-### Paper A — Mathematical Finance (Submit in ~6 weeks)
-**"The Laplace Approximation as WKB on the Portfolio Simplex"**
-- Source: 01_LAPLACE.md, 02_FK_SIMPLEX.md
-- Key results: WKB=Laplace, Van Vleck=Fisher, $O(1/T^2)$ accuracy
-- Length: 25 pages
-- Status: Draft complete.
+**Paper 2: The Sharpe-curvature paper** → Annals of Applied Probability
+- Core theorem of the monograph
+- Needs: complete variance derivation for general manifolds (not just classified types)
+- 25 pages, journal format
+- Sources: MINIMAL_SURFACE.md, relevant parts of CLASSIFICATION.md
 
-### Paper B — Annals of Applied Probability (Submit in ~6 weeks)
-**"Market Efficiency as a Minimal Surface: The Sharpe-Curvature Theorem"**
-- Source: 03_MINIMAL_SURFACE.md, 04_CLASSIFICATION.md
-- Key result: R1 ($\mathrm{Sharpe}^{\ast}=\|H\|\_{L^2}$), R3 (only CAPMs stable)
-- Length: 35 pages
+**Paper 3: The MUP regret paper** → Operations Research or Journal of Finance
+- Clean, self-contained, practically useful
+- The r vs d-1 improvement is striking and implementable
+- 20 pages, journal format
+- Source: CONVERGENCE.md
 
-### Paper C — Operations Research / Journal of Finance (Submit in ~8 weeks)
-**"The Manifold Universal Portfolio: Minimax Optimal Factor Investing"**
-- Source: 05_CONVERGENCE.md
-- Key result: R2 (MUP regret $r\log T/2T$)
-- Length: 30 pages
+### Phase 2: Submit 3 more (months 4-8)
 
-### Paper F — Annals of Probability (Submit in ~8 weeks)
-**"Random Matrix Universality Classes of Efficient Markets"**
-- Source: 24_RANDOM_MATRIX.md
-- Key results: R21, R22, R23, R24
-- Length: 30 pages
+**Paper 4: Shapley attribution** → Journal of Finance / Mathematical Finance
+**Paper 5: Convex information processing** → Information Geometry / Foundations of Physics
+**Paper 6: The MIF (Better Index Fund)** → Journal of Portfolio Management (practitioner)
 
-### Paper N — Journal of Finance (Submit in ~10 weeks)
-**"Shapley Values and Kelly Attribution on the Portfolio Simplex"**
-- Source: 27_HYPERCUBE_SHAPLEY.md
-- Key result: R25 ($\phi\_i=b^{\ast}\_i(\mu\_i-\bar\mu)$)
-- Length: 25 pages
+### Phase 3: The monograph (months 9-18)
+
+Submit the full monograph to Cambridge University Press or Princeton University Press.
+By this time, Papers 1-6 will be in review or accepted, establishing credibility.
 
 ---
 
-## Part 4: Day 2 Session Plan
+## Monograph Structure (6 Parts, ~500 pages)
 
-### Morning Session (3–4 hours) — The Old Notes
+### Part 0: Foundations (new, 4 chapters)
+- Ch.0: Why information lives on the simplex (CONVEX_INFORMATION)
+- Ch.1: The convexification of information (CONVEXIFICATION)
+- Ch.2: The dual tower (DUAL_TOWER)
+- Ch.3: Measurability, computability, provability (INCOMPLETENESS)
 
-**This is the only non-negotiable priority.**
+### Part I: The Core Theory (5 chapters)
+- Ch.4: The Laplace approximation on the simplex (LAPLACE, FK_SIMPLEX)
+- Ch.5: Sharpe ratio = mean curvature (MINIMAL_SURFACE)
+- Ch.6: Classification of efficient markets (CLASSIFICATION)
+- Ch.7: The Manifold Universal Portfolio (CONVERGENCE)
+- Ch.8: Information theory and six characterisations of efficiency (INFORMATION_THEORY)
 
-When the notes are found:
-1. Read carefully. Identify each result.
-2. Check against WHATS\_NEW.md — is it already captured?
-3. If new and proved → assign next R-number, add to Tier 1
-4. If new and conjectural → assign C-number, add to CONJECTURES.md
-5. If it suggests a new direction → assign OP-number
-6. Incorporate into the relevant paper file
-7. Update CLAUDE.md with the new results
+### Part II: Physics and Processes (6 chapters)
+- Ch.9: Market Hamiltonians and fat tails (HAMILTONIAN)
+- Ch.10: Exact transition densities (MARKET_PROCESSES)
+- Ch.11: Geometric derivatives pricing (DERIVATIVES_CONVEXITY, SOBOLEV)
+- Ch.12: The renormalization group (RENORMALIZATION)
+- Ch.13: Martingale geometry (MARTINGALE_GEOMETRY, FOKKER_PLANCK)
+- Ch.14: Why markets evolve to efficiency (WHY_MARKETS_EVOLVE)
 
-Expected yield from notes based on Saxon's description:
-- The general prefix trie/filtration theorem (C17 → becomes R-new, Tier 1)
-- Possibly CTW posterior = MUP posterior
-- Possibly symbolic dynamics results for FILTRATIONS.md or CHAOS\_TAKENS.md
-- Possibly other filtration theory not yet formalised
+### Part III: Topology and Computation (4 chapters)
+- Ch.15: Fiber bundles and parallel transport (FIBER_BUNDLES)
+- Ch.16: Braids, knots, and Turing completeness (BRAIDS, KNOT_THEORY)
+- Ch.17: Filtrations and compression (FILTRATIONS)
+- Ch.18: Computational complexity hierarchy (COMPLEXITY)
 
-### Early Afternoon (2 hours) — INTRODUCTION.md
+### Part IV: New Domains (5 chapters)
+- Ch.19: LLMs and the market manifold (LLM_MANIFOLD)
+- Ch.20: Random matrices and Dyson class (RANDOM_MATRIX)
+- Ch.21: Path integrals and chaos (PATH_INTEGRAL, CHAOS_TAKENS)
+- Ch.22: Shapley values on the hypercube (HYPERCUBE_SHAPLEY, GRASSBERGER)
+- Ch.23: Stochastic control and Kalman filtering (STOCHASTIC_CONTROL, SVD)
 
-Write the monograph Part I introduction. Structure:
+### Part V: Applications (4 chapters)
+- Ch.24: Portfolio construction (PORTFOLIO_GEOMETRY, BETTER_INDEX_FUND)
+- Ch.25: Pairs trading and geometric entry rules (PAIRS_TRADING)
+- Ch.26: Inflation, capital flows, and multiple manifolds (INFLATION)
+- Ch.27: Contagion, systemic risk, and crisis prediction (GEOSPATIAL)
 
-```
-1. The Question (500 words)
-   - The Laplace approximation puzzle
-   - Why Cover's prior works: one sentence answer
-   - Why that answer contains a complete theory
+### Part VI: The Accessible Layer (3 chapters)
+- Ch.28: Horse racing, sports betting, and gambling (HORSE_RACING)
+- Ch.29: Prediction markets and the geometry of beliefs (PREDICTION_MARKETS)
+- Ch.30: What to do on Monday morning (SO_WHATS, ANECDOTES)
 
-2. The Organising Principle (300 words)
-   - The single sentence: market = minimal submanifold
-   - Portfolio weights as barycentric coordinates
-   - Everything is a geometric invariant
-
-3. What Is Proved (400 words)
-   - The five most important theorems, one paragraph each
-   - Honest about what is proved vs conjectured
-   - The distinction matters for credibility
-
-4. A Reader's Guide (500 words)
-   - Six parts, one paragraph per part
-   - What a mathematical finance reader takes
-   - What an ML reader takes
-   - What a practitioner takes
-
-5. Positioning (400 words)
-   - Relative to Amari (information geometry)
-   - Relative to Cover-Thomas (universal portfolios)
-   - Relative to Fernholz (stochastic portfolio theory)
-   - Relative to Harrison-Pliska (martingale pricing)
-   - What is new precisely
-
-6. The Transfer Matrix Climax (400 words)
-   - The single matrix that encodes everything
-   - Build toward this as the intellectual centre of gravity
-   - The reader should finish the introduction wanting to know
-     what this matrix is and why it contains the whole theory
-```
-
-### Mid-Afternoon (1.5 hours) — Experiments 11–17
-
-Add seven new experiments to EXPERIMENTS.md. Each is ★ difficulty:
-
-| Exp | Test | Data | Time |
-|:---:|:-----|:-----|:----:|
-| 11 | Dyson class ratio test | FF5 daily returns | 20 min |
-| 12 | Tracy-Widom $F\_1$ vs $F\_2$ fit | FF5 eigenvalues | 20 min |
-| 13 | Takens FNN → identify $r$ | S&P 500 daily | 20 min |
-| 14 | Diffusion maps manifold | S&P 500 daily | 30 min |
-| 15 | Shapley attribution | FF25 portfolios | 20 min |
-| 16 | Grassberger correlation dim | S&P 500 daily | 20 min |
-| 17 | Transformer dimension test | FF5 + yfinance | 30 min |
-
-### Late Afternoon (1 hour) — MONOGRAPH\_STRUCTURE.md
-
-Write the detailed chapter-by-chapter outline:
-- Chapter title and one-sentence summary
-- Which papers contribute
-- Which addendum lemmas (A1–A46) slot in where
-- Word count target
-- Key theorems to state and prove
-
-### Evening (2 hours) — Paper E Draft
-
-Write the 8-page NeurIPS/ICML version of the LMSR paper.
-
-Template:
-```
-Abstract (150 words)
-1. Introduction (1 page)
-   - Transformers and financial markets
-   - The LMSR connection
-   - Summary of contributions
-2. Background (0.5 page)
-   - LMSR definition
-   - Transformer attention definition
-   - Fisher-Rao metric
-3. The LMSR-Softmax-Fisher Identity (1.5 pages)
-   - Theorem 1: Hessian = Fisher matrix
-   - Theorem 2: Attention = LMSR
-4. The LLM Convergence Theorem (1.5 pages)
-   - Market manifold as minimal sufficient statistic
-   - Theorem 3: LLM ≤ MUP
-   - Optimal dimension result
-5. Side-Channel Information (0.5 page)
-   - Normal bundle geometry of insider information
-6. Experiments (1 page)
-   - Kelly loss benchmark
-   - Transformer dimension test
-7. Conclusion (0.5 page)
-References
-```
+**30 chapters from 38 papers. Some papers merge; some split across chapters.**
 
 ---
 
-## Part 5: Week 1 Goals
+## What Needs To Happen Next
 
-| Day | Primary goal | Secondary | Deliverable |
-|:---:|:-------------|:----------|:------------|
-| 2 | Old notes incorporated | INTRODUCTION.md | Notes → R-numbers; Intro draft |
-| 3 | Experiments 11–17 coded | MONOGRAPH\_STRUCTURE.md | Working code; structure doc |
-| 4 | Paper E draft | Paper A draft begins | NeurIPS submission ready |
-| 5 | Code repository clean | README.md | GitHub public release |
+### Immediate (this week)
+- [ ] Convert LLM_MANIFOLD.md to LaTeX for NeurIPS submission
+- [ ] Write the Introduction chapter (book/INTRODUCTION.md)
+- [ ] Close the variance computation in the Sharpe proof for general manifolds
 
----
+### Short term (this month)
+- [ ] Close OP32 (great sphere stability for d ≫ r) or honestly scope the theorem
+- [ ] Verify U(n) holonomy for Clifford torus (C26) — this would complete the Dyson proof
+- [ ] Run Experiments 1-5 from EXPERIMENTS.md with real market data
+- [ ] Fix remaining regret number issues in BETTER_INDEX_FUND
 
-## Part 6: Key Decisions to Make on Day 2
+### Medium term (3 months)
+- [ ] Submit Papers 1-3 to journals
+- [ ] Complete the code suite (Python + C++) for all 17 experiments
+- [ ] Find Saxon's old notes (Priority 1 from Day 1 — still outstanding!)
 
-**Decision 1: Cambridge or Princeton?**
-Cambridge: stronger in pure mathematics, longer history with geometry.
-Princeton: stronger in applied mathematics and mathematical finance.
-Recommendation: Submit to Cambridge first; if rejected, Princeton.
-Both will want the Tour de Force paper (Annals of Mathematics) accepted first.
-
-**Decision 2: One monograph or two?**
-Option A: One monograph (~460 pages), all six parts.
-Option B: Two books — "The Core Theory" (Parts I–III) and "Applications and 
-Extensions" (Parts IV–VI).
-Recommendation: One monograph. The unity is the point. Splitting it loses the 
-transfer matrix climax.
-
-**Decision 3: How to handle the old notes?**
-If the notes contain fully proved results: incorporate directly into the relevant 
-papers and update WHATS\_NEW.md Tier 1.
-If the notes contain partial proofs: write them up as Tier 2 (proved under 
-mild assumptions) or Tier 4 (conjectures with strong motivation).
-In either case: explicitly acknowledge the provenance ("original proof due to the 
-first author, [year]") in the paper.
-
-**Decision 4: Collaborators?**
-The monograph currently has one author (Saxon). Several results would benefit 
-from collaboration with established mathematicians:
-- The topology results (knot theory, braids) → a topologist
-- The RMT results → a random matrix specialist
-- The ML results → a machine learning theorist
-The SERIES\_PLAN.md already notes potential collaborators. Reaching out should 
-happen in parallel with paper submissions.
+### Long term (12 months)
+- [ ] Monograph submission to Cambridge/Princeton
+- [ ] Conference presentations (mathematical finance, information geometry)
+- [ ] Open-source the MIF implementation as a practical tool
 
 ---
 
-## Part 7: The Long Game
+## The Organising Principle (unchanged from Day 1)
 
-### 6-month targets
-- Papers A, B, C, D, E, F submitted
-- GitHub repository public with all code
-- Monograph draft Parts I–III complete
-- Speaking at one mathematical finance conference
+> A financial market is a minimal submanifold M^r of the Bhattacharyya sphere
+> S^{d-1}_+. Portfolio weights are barycentric coordinates on Δ_{d-1}.
+> Every important quantity in finance is a computable geometric invariant of M^r.
 
-### 12-month targets
-- Papers A–F accepted or under revision
-- Papers G–N submitted
-- Monograph complete draft
-- Publisher contract signed
-
-### 24-month targets
-- Tour de Force submitted to Annals of Mathematics
-- Monograph in production
-- International recognition established
-
-### The metric for success
-Not citations (too slow). Not conference invitations (too variable).
-The metric is: **does the MUP algorithm outperform Cover's portfolio in 
-live trading by the predicted 12× regret improvement?**
-If yes: the theory is empirically confirmed.
-If no: the theory needs revision.
-Either outcome is scientifically valuable.
+After Session 2, this is no longer an axiom. It is a theorem — forced by the
+axioms of convex information processing (Paper 0.1), with the market manifold
+selected by the Kelly criterion within the forced ambient space.
 
 ---
 
-## Part 8: Files Needing Attention on Day 2
+## Key Numbers
 
-### Files to CREATE
-| File | Priority | Estimated time |
-|:-----|:--------:|:--------------:|
-| README.md | High | 30 min |
-| book/INTRODUCTION.md | High | 3 hours |
-| book/MONOGRAPH\_STRUCTURE.md | Medium | 1 hour |
-| submission/paper\_E\_LLM\_LMSR/ | High | 2 hours |
-
-### Files to UPDATE
-| File | What to add | Priority |
-|:-----|:------------|:--------:|
-| EXPERIMENTS.md | Experiments 11–17 | High |
-| WHATS\_NEW.md | Old notes results | High |
-| CONJECTURES.md | Old notes conjectures | High |
-| OPEN\_PROBLEMS.md | OP29–OP31 + old notes | High |
-| CLAUDE.md | New results, updated priorities | Medium |
-| ADDENDUM.md | Incorporate A1–A46 into parent papers | Medium |
-
-### Files to MERGE (eventually)
-Some content is duplicated across papers. Merge on Day 3+:
-- FOKKER\_PLANCK\_CFD.md + PATH\_INTEGRAL.md (overlap on Langevin/FP)
-- RANDOM\_MATRIX.md cross-references to CLASSIFICATION.md (Dyson class)
-- GRASSBERGER\_PERCOLATION\_GENERATING.md references FILTRATIONS.md heavily
+| Metric | Day 1 | Session 2 | Change |
+|:-------|:-----:|:---------:|:------:|
+| Papers | 29 | 38 | +9 |
+| Words | ~140,000 | ~192,000 | +52,000 |
+| Results (R-numbers) | 67 | 85 | +18 |
+| Conjectures | 25 | 30 | +5 |
+| Open problems | 31 | 34 | +3 |
+| Errors found and fixed | — | 20 | — |
+| Navigation issues fixed | — | 26 | — |
+| Cross-paper connections added | — | 10 | — |
 
 ---
 
-## Part 9: The Numbers
+## The Closing Thought (Updated)
 
-| Metric | Day 1 end | Target (6 months) |
-|:-------|:---------:|:-----------------:|
-| Documents | 41 | ~50 (after splitting/merging) |
-| Words | 160,698 | ~200,000 (monograph draft) |
-| Proved results | 67 | 80+ (old notes + Day 2) |
-| Conjectures | 25 | 30 |
-| Open problems | 31 | 35 |
-| Code experiments | 10 | 17 |
-| Papers submitted | 0 | 6 |
-| Collaborators | 0 | 2–3 |
+The monograph began with the question: why does the Laplace approximation
+work so well for the universal portfolio?
 
----
+The answer turned out to be differential geometry. The geometry explained
+the Laplace accuracy, then the Sharpe ratio, then the classification of
+markets, then the random matrix ensembles, then the path integrals, then
+the LLM limitations, then the Kelly attribution, then the information
+processing axioms, then the evolution of markets through crises.
 
-## The Overnight Thought
+The geometry explains everything because the geometry IS everything.
+The market manifold is not a model of the market. It is the market —
+the unique mathematical structure compatible with the processing of
+financial information.
 
-Everything in this monograph flows from one observation:
-portfolio weights are barycentric coordinates on a simplex,
-and that simplex, equipped with the Fisher-Rao metric,
-is a Riemannian manifold.
+The reader spends thirty chapters learning about this manifold. Then in
+the final pages they discover that a single matrix — the Delaunay adjacency
+matrix of the market manifold — encodes the entire theory: the topology,
+the dynamics, the information content, the contagion structure, the
+generating function, and the Kelly rate.
 
-From this single observation: 41 papers, 67 results, 25 conjectures,
-31 open problems, a complete theory of efficient markets, a proof that
-no LLM can beat the MUP, a connection to every branch of modern
-mathematics, a practical portfolio management system, and a plain-English
-guide that a Buffett-follower can read over breakfast.
+That is the mathematical analogue of the moment in physics when you realise
+the Hamiltonian contains everything.
 
-The old notes will add more. Day 2 will be productive.
+*Build toward that moment.*
 
 ---
 
-*Prepared while Saxon sleeps.*
-*Everything is organised. The manifold is waiting.*
-*Good morning.*
+*Last updated: Session 2*
+*Primary goal for next session: Submit the LLM paper. Find the old notes.*

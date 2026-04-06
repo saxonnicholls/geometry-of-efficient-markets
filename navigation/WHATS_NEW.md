@@ -5,6 +5,28 @@
 
 ---
 
+## Tier 0: Foundational (1 result)
+
+**R0a. Convex Information Processing Theorem** *(CONVEX\_INFORMATION)*
+Any classical commutative information processing system satisfying closure
+under combination, the data processing inequality, continuity, normalisation,
+and Markov channels is isomorphic to a geodesically convex subset of
+$(\Delta\_{d-1}, g^{\rm FR})$. The Fisher-Rao metric is the unique geometry
+compatible with these axioms (Čencov 1982). The ambient convex space of
+the monograph is forced; the market manifold is the Kelly-optimal structure
+within it.
+
+**R0b. Convexification = Probabilification** *(CONVEXIFICATION)*
+The free convex completion of any measurable space $X$ is $\mathcal{P}(X)$
+(probability measures). Five operators — convex hull, Legendre-Fenchel,
+density matrices, Reynolds averaging, ergodic time-averaging — are all
+instances of $\mathcal{P}$. Convexification IS the passage from
+deterministic to probabilistic. Negative intrinsic curvature forces
+$\|H\| > 0$ (mandatory alpha for hyperbolic markets). Sobolev extension
+of Čencov to $W^{1,2}$ under Muckenhoupt $A\_2$ weights.
+
+---
+
 ## Tier 1: Fully Proved and Publishable Today (26 results)
 
 **R1. Sharpe-Curvature Identity** *(MINIMAL\_SURFACE)*

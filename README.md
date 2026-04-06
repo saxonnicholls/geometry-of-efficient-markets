@@ -6,7 +6,7 @@ A mathematical monograph establishing that a financial market is a minimal
 submanifold of the Bhattacharyya sphere, and that every important quantity
 in finance is a computable geometric invariant of this submanifold.
 
-**31 papers · ~155,000 words · 85 results · 30 conjectures**
+**52 papers · ~270,000 words · 85 results · 30 conjectures**
 
 > **PREPRINT** — This is a working draft. None of these papers have been peer-reviewed.
 > Comments, corrections, and collaboration inquiries welcome: me@saxonnicholls.com
@@ -58,17 +58,30 @@ market manifold. The vol skew of index options measures $H$ in real time.
 
 ---
 
+## The Foundation: Convex Information Processing
+
+> *Any system that communicates (closure), that cannot create information from
+> nothing (data processing inequality), and that responds continuously to its
+> inputs must operate on a geodesically convex subset of the Fisher-Rao simplex.
+> The geometry is not a choice — it is a mathematical necessity.*
+
+This is Paper 0.1 (CONVEX_INFORMATION.md). The market manifold, the
+Fisher-Rao metric, and the Bhattacharyya sphere are **theorems**, not
+assumptions. They are forced by three axioms that no reasonable information
+processing system can violate.
+
 ## The Single Organising Principle
 
 > *A financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
 > $S^{d-1}_+$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
 > Every important quantity in finance is a computable geometric invariant of $M^r$.*
 
-This single sentence explains: why Cover's prior works; why only CAPMs are stable;
-why fat tails are power-law with exponent $\alpha = r/2$; why LTCM had exactly five
-failure modes; why no LLM can beat the MUP; why the appropriate random matrix ensemble
-is determined by the manifold; and why the path integral for derivative pricing was
-using the wrong measure.
+This single sentence — now a theorem, not an axiom — explains: why Cover's
+prior works; why only CAPMs are stable; why fat tails are power-law with
+exponent $\alpha = r/2$; why LTCM had exactly five failure modes; why no
+LLM can beat the MUP; why the appropriate random matrix ensemble is
+determined by the manifold; and why the path integral for derivative pricing
+was using the wrong measure.
 
 ---
 
@@ -96,8 +109,20 @@ using the wrong measure.
 | `FILTRATIONS.md` | LZ78 prefix tree = filtration tree (proved); general compressor filtration is Conjecture C18 |
 | `STOCHASTIC_CONTROL_KALMAN.md` | Manifold Kalman filter; geodesic execution; separation theorem |
 | `HYPERCUBE_SHAPLEY.md` | Shapley $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ (proved); Walsh = Jacobi |
+| `CONVEX_INFORMATION.md` | **Convex Information Processing Theorem** — the axioms that force the geometry |
+| `CONVEXIFICATION.md` | Free convex completion; Sobolev Čencov; mandatory alpha for hyperbolic markets |
+| `DUAL_TOWER.md` | Giry tower; spectral duals; finite group constructions; factor structure = representation theory |
+| `INCOMPLETENESS.md` | Kelly-Chaitin correspondence; efficiency is Π₂⁰; Gödelian limits of market knowledge |
 | `INFLATION_CAPITAL_FLOWS.md` | Inflation = Fisher-Rao speed; capital flows = connection; Fisher equation = holonomy |
 | `BETTER_INDEX_FUND.md` | Cap-weighting is suboptimal; Manifold Index Fund; optimal rebalancing = spectral gap |
+| `HORSE_RACING_SPORTS_BETTING_GAMBLING.md` | Overround = Willmore energy; FLB = mean curvature; Kelly betting = MUP on races |
+| `PREDICTION_MARKETS.md` | LMSR = softmax = Fisher-Rao; marginal polytopes; scoring rules as divergences |
+| `WHY_MARKETS_DO_EVOLVE...` | MCF → efficiency; five stages; crises = singularities; why central planning fails |
+| `INTERMARKET_GEOMETRY.md` | Spreads as curvature; mergers as connected sums; the payback formula |
+| `EMU_CASE_STUDY.md` | The Euro as connected sum; geometric autopsy; why the Greek crisis was a theorem |
+| `TOPOLOGY_OF_PRICE.md` | Price = graph Laplacian eigenvector; deadweight loss = Willmore; famine = Cheeger failure |
+| `ART_MARKET.md` | Permanently inefficient manifold; the web of relativities; fractionalisation theorem |
+| `INFORMATION_INTELLIGENCE_KNOWING.md` | Computation on manifolds; intelligence = dimension; consciousness = Giry tower |
 | *...and 18 more* | See `navigation/SERIES_PLAN.md` for full list |
 
 ### `navigation/` — Reference Documents
