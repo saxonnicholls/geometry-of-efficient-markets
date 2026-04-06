@@ -90,12 +90,14 @@ to ratio $\delta$.
 
 ## Part V: LLMs and Machine Learning
 
-**C18. General Prefix Trie = Filtration (Grade A)**
-*Status: LZ78 case is R14 (proved). General compressor case remains conjectural.*
-Any grammar-based compressor generates a valid filtration.
-CTW posterior = MUP posterior. BWT = filtration atoms by entropy.
-PPM = Bayesian manifold prediction.
-LZ78 proved (R14). General case is plausible but unproved.
+**C18. General Prefix Trie = Filtration (Grade A) — PROVED (main part)**
+*Status: Theorem 4.2 in FILTRATIONS.md proves that ANY prefixwise compressor
+(satisfying monotonicity, prefix closure, determinism) generates a valid
+subfiltration. This covers LZ78, LZW, CTW, PPM. LZ77 does NOT qualify
+(violates monotonicity — sliding window deletes old phrases).*
+*STILL CONJECTURAL: CTW posterior = MUP posterior. BWT = filtration atoms
+by entropy. These are stronger claims about specific compressor-market
+correspondences that go beyond the general filtration property.*
 
 **C19. LLM Training Dynamics = MCF in Model Weight Space (Grade B)**
 Natural gradient descent on cross-entropy IS gradient flow of area functional.
