@@ -481,7 +481,326 @@ yearlings by the same sire persisted longer.
 
 ---
 
-## 5. Polo Ponies and the Alternative Disciplines
+## 5. Race Day: The Conflagration of Variables
+
+### 5.1 The race as a multi-fiber projection
+
+A horse race is not a test of the horse alone. It is the simultaneous
+projection of MULTIPLE manifolds through a single event — the 90 seconds
+(or 3 minutes, or 6 minutes) from barrier to post. Every variable that
+matters is a separate manifold, and the race result is the composition of
+all their projections:
+
+$$\text{Result} = \pi_{\rm horse} \circ \pi_{\rm jockey} \circ \pi_{\rm trainer} \circ \pi_{\rm track} \circ \pi_{\rm barrier} \circ \pi_{\rm weight} \circ \pi_{\rm pace} \circ \pi_{\rm field} \tag{5.1}$$
+
+Each projection has its own base (what you observe), its own fiber (what you
+don't), and its own channel capacity (how much information it carries about
+the outcome). The race is the COMPOSITION of eight channels — and by the
+data processing inequality, the total information about the outcome is
+limited by the NARROWEST channel in the chain.
+
+### 5.2 The jockey manifold
+
+A jockey is a point on $M_{\rm jockey}$ — a manifold of riding
+characteristics:
+
+| Factor | Dimension | Observable? | Information content |
+|:---|:---|:---|:---|
+| Weight (riding weight) | 1 | Yes (declared) | Low (everyone knows) |
+| Fitness/strength | ~2 | Partially (recent rides) | Medium |
+| Tactical skill | ~3 | Partially (replays, stats) | High |
+| Affinity with horse type | ~2 | Poorly (requires deep analysis) | Very high |
+| Track knowledge | ~2 | Partially (track stats) | Medium |
+| Barrier skill (jump starts) | 1 | Partially | Medium-high |
+| Pace judgement | ~2 | Poorly | Very high |
+| Whip technique | 1 | Partially | Low-medium |
+| Nerve under pressure | ~1 | Poorly (Group 1 record) | Very high in big races |
+
+The effective dimension: $r_{\rm jockey} \approx 8\text{-}12$. Most of the
+important factors (tactical skill, affinity with horse type, pace judgement,
+nerve) are in the FIBER of public observation. You can see a jockey's
+strike rate, but the strike rate is a lossy projection of the full jockey
+manifold.
+
+**The jockey-horse interaction is NOT separable.** A great jockey on the
+wrong horse type produces a mediocre result. A moderate jockey on a horse
+that suits their style produces an excellent result. In geometric terms:
+the projection $\pi_{\rm jockey \times horse}: M_{\rm jockey} \times M_{\rm horse} \to M_{\rm result}$ is NOT the product of individual
+projections. There is curvature in the interaction term — epistasis between
+jockey and horse, analogous to genetic epistasis (Section 8).
+
+**This is where the expert's σ-algebra pays.** A racing manager who
+understands which jockeys suit which horses has a FINER σ-algebra on the
+jockey-horse interaction manifold. They can distinguish "James McDonald on
+a front-running sprinter" (excellent) from "James McDonald on a backmarker
+needing cover" (still good, but different). The casual punter sees only the
+jockey's name — a coarse projection that loses the interaction information.
+
+### 5.3 The trainer manifold
+
+A trainer is a point on $M_{\rm trainer}$:
+
+| Factor | Observable? | Information content |
+|:---|:---|:---|
+| Strike rate (overall) | Yes | Low (publicly known) |
+| Strike rate by class/distance/track | Partially | Medium |
+| Preparation patterns (spacing, trials) | Yes (public form) | Medium-high |
+| Stable condition (current form) | Partially (recent results) | High |
+| Feeding/nutrition program | No (private) | Unknown but potentially high |
+| Veterinary management | No (private) | High |
+| Track work quality | Partially (clockers/reports) | Medium |
+| Gear changes (blinkers, tongue tie) | Yes (declared) | Medium-high (signals intent) |
+| First-up vs second-up vs peak | Yes (public form) | Very high |
+| Confidence in the horse (betting moves) | Partially (market signals) | Very high |
+
+The trainer's PREPARATION of the horse is the largest single fiber in the
+racing projection — it contains information about the horse's current
+fitness, soundness, and readiness that is largely invisible to the public.
+
+**Gear changes are signals.** When a trainer adds blinkers, a tongue tie, or
+cross-over nosebands, they are transmitting information through the public
+channel. The gear change is a SIGNAL — a deliberately chosen act that reveals
+something about the trainer's assessment. In our channel framework: a gear
+change is the trainer increasing their channel capacity to the betting
+market. The punter who ignores gear changes is ignoring a free channel.
+
+**First-up patterns are palindromic.** Most trainers follow a cyclic
+preparation: spell → trial → first-up → second-up → peak → decline → spell.
+This cycle IS a palindrome on the preparation manifold. The horse gets fitter
+(uphill), peaks, then gets tired (downhill — the mirror). A trainer who
+consistently produces peak performances at a specific point in the cycle has
+a highly palindromic preparation pattern — the second half of the cycle is
+predictable from the first half. The punter who tracks the preparation
+palindrome gets free information.
+
+### 5.4 The track manifold
+
+The track is NOT a neutral venue. It is a manifold of conditions that
+interacts with every other variable:
+
+| Factor | Range | Effect |
+|:---|:---|:---|
+| Distance | 800m–3200m | Determines which genotype wins (MSTN, Section 8.3) |
+| Surface | Turf, dirt, synthetic | Different biomechanics, different form lines |
+| Going (condition) | Firm → Good → Soft → Heavy | Massive effect; some horses gain 10+ lengths on soft |
+| Track configuration | Straight, turning, undulating | Affects barrier draw value, pace shape |
+| Rail position | True → +1m → +3m → +7m | Changes the effective distance by barrier |
+| Altitude | Sea level → 2000m | Affects oxygen, stamina (important at some tracks) |
+| Climate | Temperature, humidity, wind | Affects going, affects horse physiology |
+
+**The going IS a coordinate on the Fisher-Rao simplex.** Going conditions
+(Firm, Good, Soft, Heavy) define a simplex $\Delta_3$ of track states.
+Each horse has a performance profile across going conditions — a function
+$f: \Delta_3 \to \mathbb{R}$ mapping track state to expected performance.
+The Fisher-Rao distance between two going conditions measures how DIFFERENT
+the performance profiles are:
+
+$$d_{\rm FR}(\text{Good}, \text{Heavy}) \gg d_{\rm FR}(\text{Good}, \text{Firm}) \tag{5.2}$$
+
+The distance from Good to Heavy is much larger than Good to Firm — because
+heavy going changes the biomechanics radically (favouring strong, heavy
+horses over light, fast ones), while the Good-to-Firm transition is more
+moderate. The simplex captures this nonlinear structure.
+
+**A track specialist has low fiber on that track.** A horse that consistently
+performs well at Randwick (but not Flemington) has had its fiber reduced AT
+RANDWICK by the accumulated data. At Flemington, the fiber is still large —
+you don't know how it handles the different configuration. Track specialists
+are horses whose characteristic manifold projects cleanly onto specific track
+sub-manifolds.
+
+### 5.5 The barrier draw
+
+The barrier draw (starting position) is a discrete variable with enormous
+impact — especially in sprint races and on tight-turning tracks.
+
+The barrier draw effect IS a curvature on the race manifold. On a
+perfectly fair track, barrier draw would have zero effect — the race manifold
+would be flat in the barrier direction. On a real track, inside barriers
+have an advantage (shorter path on turns) or a disadvantage (traffic,
+kickback) depending on distance, pace, and rail position.
+
+$$\alpha_{\rm barrier}(k) = \mathbb{E}[\text{performance} | \text{barrier} = k] - \mathbb{E}[\text{performance}] \tag{5.3}$$
+
+This is directly measurable from historical data. For a typical 1200m race
+at Randwick: barrier 1 has $\alpha \approx +5\%$; barrier 12 has
+$\alpha \approx -8\%$. The barrier effect is the CURVATURE of the race
+manifold in the barrier direction — and by the Sharpe-curvature identity,
+this curvature is exploitable alpha.
+
+**The barrier draw is priced imperfectly.** The betting market adjusts for
+barrier draw, but not enough (Ali [1977], Canfield, Fauman, and Ziemba
+[1987]). The residual mispricing IS the mean curvature in the barrier
+direction that the market has not yet flattened. This is a direct test of
+our framework: the palindromic deficit of the barrier-conditioned return
+sequence should be nonzero (non-palindromic) and proportional to the
+barrier bias.
+
+### 5.6 The weight manifold
+
+In handicap races, the handicapper assigns weight to each horse based on
+past performance — an explicit attempt to FLATTEN the race manifold.
+The handicapper is performing mean curvature flow by hand: they observe
+$\|H\| > 0$ (some horses are better than others) and add weight to reduce
+the curvature (bringing the better horses closer to the others in expected
+performance).
+
+$$w_i = w_{\rm base} + \lambda \cdot \text{rating}_i \tag{5.4}$$
+
+where $\lambda$ is the weight-for-ratings scale (typically 0.5 kg per rating
+point in Australia).
+
+**The handicapper IS performing MCF.** The mean curvature of the race
+manifold, without handicapping, is $\|H\|_{\rm raw} = \sigma_{\rm ability}$
+(the standard deviation of ability across the field). After handicapping:
+
+$$\|H\|_{\rm handicapped} = \|H\|_{\rm raw} \cdot (1 - \rho_{\rm handicap}) \tag{5.5}$$
+
+where $\rho_{\rm handicap}$ is the correlation between the handicapper's
+weight assignment and true ability. A perfect handicapper
+($\rho_{\rm handicap} = 1$) achieves $\|H\| = 0$ — a perfectly flat race
+where every horse has equal chance. In practice, $\rho_{\rm handicap} \approx 0.6\text{-}0.8$ — good but not perfect, leaving residual curvature
+(residual alpha) for astute punters.
+
+**Weight-for-age races have no handicapping.** In WFA races (like the
+Cox Plate, Melbourne Cup at WFA, or the Prix de l'Arc de Triomphe), the
+manifold is NOT flattened. The curvature is the RAW ability difference.
+These races produce the most reliable form — the winner beat the field on
+merit, not on handicap. The information content of a WFA result is higher
+than a handicap result (less noise from the handicapping projection).
+
+### 5.7 The pace manifold
+
+How the race is run — the distribution of energy over the distance — is
+one of the most important and least observable variables.
+
+| Pace shape | Description | Suits |
+|:---|:---|:---|
+| Fast early → slow late | Leader burns out | Closers, backmarkers |
+| Slow early → fast late | Sprint finish | Horses with acceleration |
+| Even pace | Sustained effort | Stamina horses, on-pacers |
+| Muddling (variable) | No clear rhythm | Tactically adept horses/jockeys |
+
+The pace of a race is determined by the FIELD — specifically by the
+interaction of all horses' running styles. A race with three leaders and no
+backmarkers will have fast early pace. A race with no leaders will have slow
+early pace.
+
+**The pace is a NASH EQUILIBRIUM on the field manifold.** Each jockey
+chooses a position given the positions of the others. The resulting pace
+shape is the Nash equilibrium of the positional game. This is a directed
+graph on the field: the edges are "horse $i$ is in front of horse $j$" at
+each point of the race, and the graph evolves dynamically.
+
+**Pace modelling is the highest-value fiber in race analysis.** Most public
+handicapping ignores pace (it's too hard to model). The few punters who
+model pace effectively have a much finer σ-algebra — they can distinguish
+"this horse will lead in a fast-paced race" from "this horse will lead in a
+slow-paced race" — and the expected performance differs enormously between
+these two states.
+
+In our confidence framework: pace is in the fiber for most punters
+($\rho_{\rm pace} \approx 0.1$ for the public) but in the base for expert
+pace analysts ($\rho_{\rm pace} \approx 0.6\text{-}0.8$). The confidence gap
+on pace is one of the largest exploitable edges in racing.
+
+### 5.8 The field manifold: competitive interaction
+
+A race is not a time trial. It is a COMPETITION — the result depends on
+the other runners. The field manifold $M_{\rm field}$ encodes the
+competitive structure:
+
+$$M_{\rm field} = \prod_{i=1}^{n} M^{(i)}_{\rm horse} / \sim \tag{5.6}$$
+
+where $n$ is the field size and $\sim$ identifies configurations that
+produce the same race dynamics (e.g., two midfield runners swapping
+positions doesn't change the pace shape).
+
+**The field size determines the effective manifold dimension.** A race
+with 5 runners has a low-dimensional field manifold (few competitive
+interactions). A race with 20 runners has a high-dimensional field manifold
+(many interactions, many possible pace shapes, many barrier/traffic
+scenarios).
+
+$$r_{\rm field} \approx \min(n - 1, r_{\rm horse} + r_{\rm jockey}) \tag{5.7}$$
+
+The field manifold dimension is bounded by the number of runners minus one
+(the competitive degrees of freedom) and by the sum of horse and jockey
+dimensions (the total information available per runner).
+
+**Class drop/rise is a connected-sum neck.** A horse dropping in class
+(from Group 1 to Listed, or from city to provincial) is moving from one
+sub-manifold of the field space to another. The connected-sum neck between
+class levels has a width determined by how similar the competitive
+environments are. A horse dropping from Group 1 to a Benchmark 72 handicap
+is crossing a WIDE neck — the competitive environments are very different,
+and the form line may not translate.
+
+### 5.9 The conflagration: composing all projections
+
+The race result is the composition of all eight projections:
+
+$$\pi_{\rm result}: M_{\rm horse} \times M_{\rm jockey} \times M_{\rm trainer} \times M_{\rm track} \times M_{\rm barrier} \times M_{\rm weight} \times M_{\rm pace} \times M_{\rm field} \to \{1, 2, \ldots, n\} \tag{5.8}$$
+
+mapping the full state to a finishing order. The total dimension of the
+input space is approximately:
+
+$$r_{\rm total} = r_{\rm horse} + r_{\rm jockey} + r_{\rm trainer} + r_{\rm track} + 1 + 1 + r_{\rm pace} + r_{\rm field}$$
+$$\approx 20 + 10 + 8 + 5 + 1 + 1 + 4 + 15 \approx 64 \tag{5.9}$$
+
+But the output is a single ranking — a point on $\Delta_{n-1}$ (the
+finishing order probabilities). The projection from a 64-dimensional input
+to an $(n-1)$-dimensional output has an enormous fiber:
+
+$$\dim(F_{\rm race}) = 64 - (n-1) \approx 50 \tag{5.10}$$
+
+**Fifty dimensions of information are LOST in the projection from the full
+state to the race result.** This is why racing is hard to predict — not
+because the variables are random, but because the projection is lossy. The
+information is there (in the horse, the jockey, the trainer, the track, the
+barrier, the weight, the pace, the field) but most of it lands in the fiber
+and never reaches the result.
+
+**The betting market IS the projection.** The odds for each horse are the
+market's best estimate of $\pi_{\rm result}$ given the public σ-algebra.
+The favourite-longshot bias (HORSE_RACING.md result (iii)) is the mean
+curvature of this projection — the systematic direction in which the
+market's lossy projection deviates from truth.
+
+### 5.10 Where the edge lives
+
+The exploitable edge in racing lives in the FIBER — the 50 dimensions that
+the public projection doesn't capture. The most valuable fibers:
+
+| Fiber | Typical public $\rho$ | Expert $\rho$ | Capacity gap |
+|:---|:---|:---|:---|
+| Pace (Section 5.7) | 0.1 | 0.7 | Very large |
+| Jockey-horse interaction (Section 5.2) | 0.2 | 0.6 | Large |
+| Trainer preparation pattern (Section 5.3) | 0.3 | 0.7 | Large |
+| Going suitability (Section 5.4) | 0.4 | 0.8 | Moderate |
+| Barrier × pace interaction | 0.1 | 0.5 | Large |
+| Field composition effect (Section 5.8) | 0.2 | 0.5 | Moderate |
+| Class transition (Section 5.8) | 0.3 | 0.6 | Moderate |
+
+The total capacity gap between an expert and the public:
+
+$$\Delta C = \sum_{\rm fibers} (\rho_{\rm expert} - \rho_{\rm public}) \cdot C_{\rm fiber} \tag{5.11}$$
+
+This is the expert's edge — measured in bits per race. An expert who
+models pace, jockey-horse interaction, and preparation patterns has access
+to approximately $0.5 \times 3 = 1.5$ bits of additional information per
+race. Over a season of 1,000 bets, this is 1,500 bits — more than enough
+to overcome the bookmaker's margin ($\Omega \approx 15\%$, costing
+approximately 0.2 bits per race).
+
+**The geometry explains why some punters consistently win.** It's not luck.
+It's not cheating. It's a finer σ-algebra on the fibers that the public
+market doesn't price. The expert has a wider lightcone — they see into
+fibers that the market treats as noise.
+
+---
+
+## 6. Polo Ponies and the Alternative Disciplines
 
 ### 5.1 The projection onto the polo manifold
 
@@ -562,7 +881,7 @@ of retraining is the observation cost for the relay.
 
 ---
 
-## 6. The Geometry of Conformation Assessment
+## 7. The Geometry of Conformation Assessment
 
 ### 6.1 Conformation as a manifold
 
@@ -617,7 +936,7 @@ horses, is the geometric source of the expert's edge.
 
 ---
 
-## 7. The Genetic Manifold: DNA as Geometry
+## 8. The Genetic Manifold: DNA as Geometry
 
 ### 7.1 The genome is a point on a simplex
 
@@ -765,7 +1084,7 @@ sudden fitness collapse.
 
 ---
 
-## 8. Inbreeding, Outcrossing, and the Exploration-Exploitation Tradeoff
+## 9. Inbreeding, Outcrossing, and the Exploration-Exploitation Tradeoff
 
 ### 8.1 Inbreeding as manifold exploitation
 
@@ -953,7 +1272,7 @@ the epigenetic channel — a remarkably sophisticated inference from a
 
 ---
 
-## 9. The Breed as an Evolving Market
+## 10. The Breed as an Evolving Market
 
 ### 9.1 Three timescales
 
@@ -1038,7 +1357,7 @@ viability.
 
 ---
 
-## 10. The Burrows-Wheeler Transform and Genomic Filtrations
+## 11. The Burrows-Wheeler Transform and Genomic Filtrations
 
 ### 10.1 BWT as a context-sorting filtration
 
@@ -1301,7 +1620,7 @@ market. Low BWT complexity → few regimes → more predictable.
 
 ---
 
-## 11. Market Efficiency Across Horse Markets
+## 12. Market Efficiency Across Horse Markets
 
 ### 7.1 The efficiency hierarchy
 
@@ -1350,7 +1669,7 @@ everyone has the data, but not everyone has the expertise to interpret it.
 
 ---
 
-## 12. New Results
+## 13. New Results
 
 **Theorem BM1** (Characteristic manifold). The space of horses is a manifold
 $M_{\rm horse}$ of dimension $r \approx 15\text{-}25$ with Fisher-Rao
@@ -1403,7 +1722,7 @@ complexity, analogous to the number of Voronoi cells on the market manifold.
 
 ---
 
-## 13. Open Problems
+## 14. Open Problems
 
 **OP-BM1** (Empirical characteristic manifold). Estimate $r_{\rm horse}$
 empirically from yearling sale data. Use the same three estimators as for
@@ -1440,7 +1759,7 @@ Is this consistent with the observed 3-5 minute inspection times at sales?
 
 ---
 
-## 14. Conclusion
+## 15. Conclusion
 
 The bloodstock market is a uniquely rich testing ground for the geometric
 theory of markets. It has:
