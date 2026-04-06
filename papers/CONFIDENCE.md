@@ -57,7 +57,7 @@ reduces the number of active observers, which reduces the effective channel
 capacity, which makes the market LESS efficient. Conversely, if agents believe
 the market is inefficient, they search for alpha, increasing the observer
 set, increasing capacity, making the market MORE efficient. Confidence in
-efficiency is a self-referential channel (MANIFOLD\_IS\_THE\_CHANNEL.md
+efficiency is a self-referential channel (MANIFOLD_IS_THE_CHANNEL.md
 Section 7) — the belief determines the reality that validates or contradicts
 the belief.
 
@@ -213,7 +213,7 @@ space.
 
 ### 3.1 The confidence-weighted capacity
 
-The market's information-processing capacity (MANIFOLD\_IS\_THE\_CHANNEL.md
+The market's information-processing capacity (MANIFOLD_IS_THE_CHANNEL.md
 Theorem MC1) is $C = h_{\rm Kelly}$ — the Kelly growth rate. But this assumes
 all agents act on their full information. With heterogeneous confidence:
 
@@ -238,13 +238,13 @@ incorporated into prices.
 ### 3.2 Confidence and the Willmore energy
 
 The Willmore energy $\mathcal{W}$ measures total market inefficiency.
-The Willmore decomposition from MANIFOLD\_IS\_THE\_CHANNEL.md Section 9:
+The Willmore decomposition from MANIFOLD_IS_THE_CHANNEL.md Section 9:
 
-$$\mathcal{W} = \mathcal{W}^*_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm excess} \tag{3.4}$$
+$$\mathcal{W} = \mathcal{W}^{\ast}_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm excess} \tag{3.4}$$
 
 Confidence adds a fourth term:
 
-$$\mathcal{W} = \mathcal{W}^*_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm confidence} + \mathcal{W}_{\rm excess} \tag{3.5}$$
+$$\mathcal{W} = \mathcal{W}^{\ast}_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm confidence} + \mathcal{W}_{\rm excess} \tag{3.5}$$
 
 where $\mathcal{W}_{\rm confidence}$ is the inefficiency due to agents not
 acting on information they possess:
@@ -316,7 +316,7 @@ hasn't changed?
 
 Confidence is contagious because the σ-algebra you're willing to use depends
 on the σ-algebra others are willing to use — the shared filtration from
-OBSERVERS\_AND\_CHANNELS.md.
+OBSERVERS_AND_CHANNELS.md.
 
 If your counterparty retreats to a coarse σ-algebra, the shared filtration
 $\mathcal{F}^{A \cap B}_t$ coarsens even if YOUR filtration hasn't changed.
@@ -365,7 +365,7 @@ which increases capacity, which drives toward efficiency.
 
 This is the Grossman-Stiglitz paradox stated as a confidence-σ-algebra
 feedback loop, and it is a self-referential channel
-(MANIFOLD\_IS\_THE\_CHANNEL.md Section 7). The channel rewires itself
+(MANIFOLD_IS_THE_CHANNEL.md Section 7). The channel rewires itself
 based on participants' beliefs about whether the channel is working.
 
 ### 5.2 The confidence equilibrium
@@ -377,9 +377,9 @@ invest passively). The market's effective inefficiency is:*
 $$\mathcal{W}_{\rm eff}(\rho_{\rm EMH}) = \frac{\mathcal{W}_{\rm full}}{1 - \rho_{\rm EMH}} \tag{5.1}$$
 
 *where $\mathcal{W}_{\rm full}$ is the inefficiency that would obtain if
-all agents were active. The equilibrium $\rho^*_{\rm EMH}$ satisfies:*
+all agents were active. The equilibrium $\rho^{\ast}_{\rm EMH}$ satisfies:*
 
-$$\mathrm{Sharpe}(\rho^*_{\rm EMH}) = \sqrt{\frac{\mathcal{W}_{\rm eff}(\rho^*_{\rm EMH})}{\text{Vol}(M)}} = s_{\rm entry} \tag{5.2}$$
+$$\mathrm{Sharpe}(\rho^{\ast}_{\rm EMH}) = \sqrt{\frac{\mathcal{W}_{\rm eff}(\rho^{\ast}_{\rm EMH})}{\text{Vol}(M)}} = s_{\rm entry} \tag{5.2}$$
 
 *where $s_{\rm entry}$ is the minimum Sharpe ratio that makes active
 management worth the cost (observation costs, data, computation, fees).
@@ -413,7 +413,7 @@ AUM in 1990 to $\sim$50% in 2025 should be accompanied by increased alpha
 for the remaining active managers. Cremers and Petajisto [2009] and
 Stambaugh [2014] find evidence consistent with this.
 
-**Prediction 2.** The equilibrium $\rho^*_{\rm EMH}$ depends on
+**Prediction 2.** The equilibrium $\rho^{\ast}_{\rm EMH}$ depends on
 observation costs. As data becomes cheaper (free market data, low-cost
 brokers), $s_{\rm entry}$ drops, which means MORE agents can profitably
 be active, which means LESS passive investing is needed for equilibrium.
@@ -575,7 +575,7 @@ contrarian's edge is a confidence gap, not an information gap.
 
 ### 8.1 The channel-manifold identity
 
-MANIFOLD\_IS\_THE\_CHANNEL.md establishes that the market manifold IS the
+MANIFOLD_IS_THE_CHANNEL.md establishes that the market manifold IS the
 communication channel. Confidence adds a crucial qualification: the
 **effective** channel is not the manifold but the manifold RESTRICTED to the
 confidence σ-algebra:
@@ -588,7 +588,7 @@ information that exists but isn't acted on.
 
 ### 8.2 The observation cost hierarchy
 
-MANIFOLD\_IS\_THE\_CHANNEL.md Section 9 identifies seven barriers to
+MANIFOLD_IS_THE_CHANNEL.md Section 9 identifies seven barriers to
 observation: existence, access, data, computation, execution, confidence,
 persistence. Confidence is the sixth barrier — it comes AFTER you have the
 data and the computational resources to process it. You can have a Bloomberg
@@ -632,7 +632,7 @@ information-processing capacity is $C_{\rm eff} = \bar{\rho} \cdot C_{\rm full}$
 where $\bar{\rho}$ is the capacity-weighted average confidence ratio.
 
 **Theorem CF3** (Confidence equilibrium). The equilibrium passive fraction
-$\rho^*_{\rm EMH}$ is determined by the condition that the Sharpe ratio
+$\rho^{\ast}_{\rm EMH}$ is determined by the condition that the Sharpe ratio
 of active management equals the entry cost $s_{\rm entry}$.
 
 **Theorem CF4** (Willmore confidence term). The total Willmore energy
@@ -749,12 +749,12 @@ gap is called courage.*
 ---
 
 *This paper is part of the monograph "The Geometry of Efficient Markets."
-Cross-references: MANIFOLD\_IS\_THE\_CHANNEL.md (channel-manifold identity,
+Cross-references: MANIFOLD_IS_THE_CHANNEL.md (channel-manifold identity,
 self-referential channel, observation costs, Willmore decomposition);
 INCOMPLETENESS.md (three walls, σ-algebra hierarchy);
-OBSERVERS\_AND\_CHANNELS.md (shared filtrations, ambient shortcuts);
+OBSERVERS_AND_CHANNELS.md (shared filtrations, ambient shortcuts);
 FILTRATIONS.md (Voronoi partition, geometric filtration);
-INFORMATION\_THEORY.md (Kelly growth rate, channel capacity);
-WHY\_MARKETS\_EVOLVE.md (MCF drives toward efficiency);
-INFLATION\_CAPITAL\_FLOWS.md (Fisher-Rao distance and inflation);
+INFORMATION_THEORY.md (Kelly growth rate, channel capacity);
+WHY_MARKETS_EVOLVE.md (MCF drives toward efficiency);
+INFLATION_CAPITAL_FLOWS.md (Fisher-Rao distance and inflation);
 CLASSIFICATION.md (three market types, spectral gap).*

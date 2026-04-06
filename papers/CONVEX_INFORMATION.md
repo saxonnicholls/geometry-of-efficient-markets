@@ -510,7 +510,7 @@ choice. It is a mathematical necessity.
 
 ### 6.3 The Sharpe-curvature identity
 
-The identity $\mathrm{Sharpe}^* = \|H\|_{L^2}$ (Paper I.3) requires the
+The identity $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ (Paper I.3) requires the
 Fisher-Rao metric to define the mean curvature $H$. From the axioms: the
 metric is forced, the embedding is forced, the curvature is forced.
 The Sharpe ratio is a computable geometric invariant of the information

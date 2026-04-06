@@ -79,7 +79,7 @@ These require combining dimensional quantities to cancel units:
 
 | Number | Symbol | Formula | Meaning |
 |:-------|:------:|:--------|:--------|
-| **Sharpe-curvature** | $\mathcal{S}$ | $\mathrm{Sharpe}^*/\|H\|_{L^2}$ | Should equal 1.0 (the central theorem) |
+| **Sharpe-curvature** | $\mathcal{S}$ | $\mathrm{Sharpe}^{\ast}/\|H\|_{L^2}$ | Should equal 1.0 (the central theorem) |
 | **Reynolds** | $\mathrm{Re}_M$ | $\|H\| \cdot T^2 \cdot \mathrm{diam}(M)$ | Laminar (<1) vs turbulent (>10) |
 | **Cheeger** | $\mathcal{H}$ | $h_M \cdot \mathrm{diam}(M)$ | Connectivity relative to size |
 | **Mixing** | $\mathcal{M}$ | $t_{\rm mix} / T$ | Mixing time relative to observation |
@@ -94,7 +94,7 @@ characterise a market's geometric state completely:
 
 | # | Name | Symbol | Formula | Range | Interpretation |
 |:-:|:-----|:------:|:--------|:-----:|:---------------|
-| 1 | **Sharpe-curvature** | $\mathcal{S}$ | $\mathrm{Sharpe}^*/\|H\|_{L^2}$ | $(0, \infty)$ | 1.0 = theory exact |
+| 1 | **Sharpe-curvature** | $\mathcal{S}$ | $\mathrm{Sharpe}^{\ast}/\|H\|_{L^2}$ | $(0, \infty)$ | 1.0 = theory exact |
 | 2 | **Concentration** | $\mathcal{C}$ | $\lambda_1/\sum\lambda$ | $(1/d, 1)$ | 1 = one factor; 1/d = uniform |
 | 3 | **Entropy** | $\mathcal{E}$ | $H(\lambda)/\log d$ | $(0, 1)$ | 0 = concentrated; 1 = uniform |
 | 4 | **Reynolds** | $\mathrm{Re}_M$ | $\|H\|T^2\mathrm{diam}$ | $(0, \infty)$ | <1 efficient; >10 inefficient |
@@ -150,9 +150,9 @@ like $\lambda_k$ or $\kappa$.
 
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
-| CONVEX\_INFORMATION | Divergence $D(p,q)$ | dimensionless (radians) | Yes |
+| CONVEX_INFORMATION | Divergence $D(p,q)$ | dimensionless (radians) | Yes |
 | CONVEXIFICATION | Convexification dimension $N$ | count | Yes |
-| DUAL\_TOWER | Giry level $k$ | count | Yes |
+| DUAL_TOWER | Giry level $k$ | count | Yes |
 | INCOMPLETENESS | Kolmogorov complexity $K$ | bits | No (depends on encoding) |
 
 ### Part I: Core Theory
@@ -160,9 +160,9 @@ like $\lambda_k$ or $\kappa$.
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
 | LAPLACE | Approximation error | dimensionless (ratio) | Yes |
-| MINIMAL\_SURFACE | Sharpe ratio $\mathrm{Sharpe}^*$ | dimensionless | **Yes** |
-| MINIMAL\_SURFACE | Mean curvature $\|H\|$ | $1/\sqrt{[R]^2[T]}$ | No |
-| MINIMAL\_SURFACE | Willmore energy $\mathcal{W}$ | dimensionless | **Yes** |
+| MINIMAL_SURFACE | Sharpe ratio $\mathrm{Sharpe}^{\ast}$ | dimensionless | **Yes** |
+| MINIMAL_SURFACE | Mean curvature $\|H\|$ | $1/\sqrt{[R]^2[T]}$ | No |
+| MINIMAL_SURFACE | Willmore energy $\mathcal{W}$ | dimensionless | **Yes** |
 | CLASSIFICATION | Stability index $\mathrm{ind}(\Sigma)$ | count | Yes |
 | CLASSIFICATION | Spectral gap $\lambda_1(L)$ | $1/[T]$ | No |
 | CLASSIFICATION | $\mathcal{C}, \mathcal{E}, r$ | dimensionless | **Yes** |
@@ -173,20 +173,20 @@ like $\lambda_k$ or $\kappa$.
 
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
-| INFORMATION\_THEORY | Kelly rate $h_{\rm Kelly}$ | $[R]/[T]$ | No |
+| INFORMATION_THEORY | Kelly rate $h_{\rm Kelly}$ | $[R]/[T]$ | No |
 | HAMILTONIAN | Tail index $\alpha$ | dimensionless | **Yes** |
-| MARKET\_PROCESSES | Jacobi parameter $\alpha_i$ | dimensionless | **Yes** |
+| MARKET_PROCESSES | Jacobi parameter $\alpha_i$ | dimensionless | **Yes** |
 | DERIVATIVES | Option price | currency | No |
 | DERIVATIVES | Implied vol $\sigma_{\rm impl}$ | $\sqrt{[R]^2/[T]}$ | No |
 | RENORMALIZATION | $\mathrm{Re}_M$ | dimensionless | **Yes** |
-| FOKKER\_PLANCK | Stationary density $\rho$ | $1/\mathrm{vol}$ | No |
+| FOKKER_PLANCK | Stationary density $\rho$ | $1/\mathrm{vol}$ | No |
 
 ### Part III: Topology
 
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
-| FIBER\_BUNDLES | Chern class $c_1$ | integer | Yes |
-| FIBER\_BUNDLES | Berry phase $\gamma$ | radians | Yes |
+| FIBER_BUNDLES | Chern class $c_1$ | integer | Yes |
+| FIBER_BUNDLES | Berry phase $\gamma$ | radians | Yes |
 | BRAIDS | Braid word length $\ell(\beta)$ | count | Yes |
 | FILTRATIONS | LZ complexity $c_{\rm LZ}$ | count | Yes |
 | FILTRATIONS | Compression rate $c\log c/T$ | bits/$[T]$ | No |
@@ -195,27 +195,27 @@ like $\lambda_k$ or $\kappa$.
 
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
-| RANDOM\_MATRIX | Dyson class $\beta$ | $\{1,2,4\}$ | Yes |
-| SHAPLEY | $\phi_i = b^*_i(\mu_i - \bar\mu)$ | $[R]/[T]$ | No |
-| CREDIT\_RISK | Credit spread $s$ | $[R]/[T]$ | No |
-| CREDIT\_RISK | Distance to default $d_{\rm FR}$ | dimensionless (radians) | **Yes** |
-| YIELD\_CURVES | Nelson-Siegel $\lambda$ | $1/[T]$ | No |
-| VOL\_SURFACE | Butterfly $\partial^2\sigma/\partial k^2$ | $1/[R]^2$ | No |
+| RANDOM_MATRIX | Dyson class $\beta$ | $\{1,2,4\}$ | Yes |
+| SHAPLEY | $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ | $[R]/[T]$ | No |
+| CREDIT_RISK | Credit spread $s$ | $[R]/[T]$ | No |
+| CREDIT_RISK | Distance to default $d_{\rm FR}$ | dimensionless (radians) | **Yes** |
+| YIELD_CURVES | Nelson-Siegel $\lambda$ | $1/[T]$ | No |
+| VOL_SURFACE | Butterfly $\partial^2\sigma/\partial k^2$ | $1/[R]^2$ | No |
 | MICROSTRUCTURE | Bid-ask spread $s$ | currency | No |
 | MICROSTRUCTURE | $d_{\rm FR}(b^{\rm bid}, b^{\rm ask})$ | dimensionless | **Yes** |
-| NETWORK\_INFO | Channel capacity $C$ | bits/$[T]$ | No |
-| NETWORK\_INFO | $R_{\rm conv} = \min(\lambda_1, C)$ | $1/[T]$ | No |
+| NETWORK_INFO | Channel capacity $C$ | bits/$[T]$ | No |
+| NETWORK_INFO | $R_{\rm conv} = \min(\lambda_1, C)$ | $1/[T]$ | No |
 
 ### Part V-VII: Applications and Political Economy
 
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
-| BETTER\_INDEX | MIF excess return | $[R]/[T]$ | No |
+| BETTER_INDEX | MIF excess return | $[R]/[T]$ | No |
 | INTERMARKET | Neck cost $\mathcal{W}_{\rm neck}$ | dimensionless | **Yes** |
 | INTERMARKET | Payback period $T_{\rm payback}$ | $[T]$ | No |
 | INTERMARKET | $k/r$ (shared factor ratio) | dimensionless | **Yes** |
-| TOPOLOGY\_PRICE | Deadweight loss $= \mathcal{W}$ | dimensionless | **Yes** |
-| EMU\_CASE | Spread $\propto (1-k/r)$ | dimensionless | **Yes** |
+| TOPOLOGY_PRICE | Deadweight loss $= \mathcal{W}$ | dimensionless | **Yes** |
+| EMU_CASE | Spread $\propto (1-k/r)$ | dimensionless | **Yes** |
 
 ---
 

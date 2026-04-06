@@ -21,7 +21,7 @@ non-tradeable), an O'Neill curvature tensor (tradeable, mean-reverting under MCF
 and a topological obstruction (divergent when connectivity fails). The maximum
 Sharpe ratio of a spread trade is $\|A_\Phi\|_{L^2}$, the $L^2$-norm of the
 O'Neill $A$-tensor — the intermarket analogue of the Sharpe-curvature identity
-$\mathrm{Sharpe}^* = \|H\|_{L^2}$ proved in MINIMAL\_SURFACE.md.
+$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ proved in MINIMAL_SURFACE.md.
 
 Market mergers are connected sums of minimal surfaces. When two manifolds are
 joined by a neck, the neck carries Willmore energy $W_{\rm neck} \geq 4\pi$ (for
@@ -81,11 +81,11 @@ It is simply the economic relationship between the two markets.
 
 Given $\Phi$, the **intermarket spread** at a point $p \in M_1$ is
 
-$$\sigma(p) = \pi(p) - \Phi^*\pi_2(p) \tag{1.1}$$
+$$\sigma(p) = \pi(p) - \Phi^{\ast}\pi_2(p) \tag{1.1}$$
 
 where $\pi$ is the log-price function on $M_1$ and $\Phi^*\pi_2 = \pi_2 \circ
 \Phi$ is the pullback of the log-price on $M_2$. The spread $\sigma$ is a section
-of the bundle $\mathcal{E} = T^*M_1 \otimes \Phi^*T^*M_2$ — it lives over $M_1$
+of the bundle $\mathcal{E} = T^{\ast}M_1 \otimes \Phi^{\ast}T^{\ast}M_2$ — it lives over $M_1$
 and measures the deviation of $\Phi$ from a price-preserving isometry.
 
 ### 1.3 The canonical decomposition
@@ -162,7 +162,7 @@ give the mean-reversion speeds of each spread mode:
 
 $$\lambda_k(J_\Phi) = \text{mean-reversion speed of the $k$-th spread component.}$$
 
-This directly generalises the pairs trading result (PAIRS\_TRADING.md Section 3):
+This directly generalises the pairs trading result (PAIRS_TRADING.md Section 3):
 the OU mean-reversion speed $\kappa$ for a pairs spread IS the first eigenvalue
 $\lambda_1(J_\Phi)$ of the parity manifold Jacobi operator for the special case
 $r_1 = r_2 = 1$.
@@ -230,10 +230,10 @@ driven by changes in the curvature spread.
 manifolds with O'Neill tensor $A_\Phi$. The maximum Sharpe ratio achievable by
 any spread trade between $M_1$ and $M_2$ is*
 
-$$\mathrm{Sharpe}^*_{\rm spread} = \|A_\Phi\|_{L^2(M_1, g_{M_1})}. \tag{2.2}$$
+$$\mathrm{Sharpe}^{\ast}_{\rm spread} = \|A_\Phi\|_{L^2(M_1, g_{M_1})}. \tag{2.2}$$
 
-*This is the intermarket analogue of $\mathrm{Sharpe}^* = \|H\|_{L^2}$ from
-MINIMAL\_SURFACE.md. When $\Phi$ is an isometry, $A_\Phi = 0$ and the spread has
+*This is the intermarket analogue of $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ from
+MINIMAL_SURFACE.md. When $\Phi$ is an isometry, $A_\Phi = 0$ and the spread has
 zero Sharpe — the law of one price.*
 
 **Proof sketch.** The $A$-tensor measures the second-order deviation of $\Phi$ from
@@ -249,7 +249,7 @@ drift in the log-wealth of the spread portfolio. The maximum Sharpe ratio is the
 $L^2$-norm of this drift, which equals $\|A_\Phi\|_{L^2}$ by the same
 variational argument that proves the single-market Sharpe-curvature identity. The
 optimiser is the eigenvector of the curvature operator corresponding to the
-maximum eigenvalue of $A_\Phi^*A_\Phi$. $\square$
+maximum eigenvalue of $A_\Phi^{\ast}A_\Phi$. $\square$
 
 ### 2.3 Convergence rate
 
@@ -270,7 +270,7 @@ than equity spreads — and now has a geometric explanation.
 *The optimal spread trade between $M_1$ and $M_2$ is the eigenvector of the
 cross-market Fisher information matrix*
 
-$$F_{\rm cross} = \Phi^* F_{M_2} - F_{M_1} \tag{2.5}$$
+$$F_{\rm cross} = \Phi^{\ast} F_{M_2} - F_{M_1} \tag{2.5}$$
 
 *corresponding to the smallest (most negative) eigenvalue. This is the direction
 of maximum mean-reversion: the mode along which the correspondence $\Phi$ is
@@ -854,7 +854,7 @@ fails).
 
 **Theorem I2** *(Optimal spread trade)*. The optimal spread trade between
 $M_1$ and $M_2$ is the eigenvector of the cross-market Fisher information matrix
-$F_{\rm cross} = \Phi^*F_{M_2} - F_{M_1}$ corresponding to the smallest
+$F_{\rm cross} = \Phi^{\ast}F_{M_2} - F_{M_1}$ corresponding to the smallest
 eigenvalue — the direction of maximum mean-reversion.
 
 **Theorem I3** *(Merger payback formula)*. A market merger with neck Willmore

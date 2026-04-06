@@ -60,8 +60,8 @@ in Garside normal form, the optimal next crossing sign is:
 for the strand i maximizing the Garside infimum increment. Time: O(d^2 n).
 
 **Caveat on "sign prediction".** The Garside normal form gives the algebraic braid
-structure: $\epsilon\_{n+1}$ is the algebraic sign of the next crossing generator
-$\sigma\_i^{\pm 1}$ in the braid word — i.e., whether the next strand crossing is
+structure: $\epsilon_{n+1}$ is the algebraic sign of the next crossing generator
+$\sigma_i^{\pm 1}$ in the braid word — i.e., whether the next strand crossing is
 positive or negative. This is NOT the financial sign of the next return (up or down).
 The braid crossing sign encodes the relative ordering of two asset price paths at
 a crossing event; recovering the financial return sign from this requires additional

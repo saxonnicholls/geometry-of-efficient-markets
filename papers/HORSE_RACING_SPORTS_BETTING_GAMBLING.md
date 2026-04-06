@@ -254,7 +254,7 @@ displacement) than longshots (small $p_i$, negative displacement). $\square$
 ### 3.3 The exploitable edge
 
 By the Sharpe-curvature identity:
-$$\mathrm{Sharpe}_{\rm FLB}^* = \|H\|_{L^2(\mathcal{O})} \tag{3.1}$$
+$$\mathrm{Sharpe}_{\rm FLB}^{\ast} = \|H\|_{L^2(\mathcal{O})} \tag{3.1}$$
 
 The maximum Sharpe ratio of any betting strategy exploiting the FLB is
 computable from publicly available odds.
@@ -298,9 +298,9 @@ $$W_{t+1} = W_t \cdot (b_0 + b_{\rm winner} \cdot o_{\rm winner}) \tag{4.0}$$
 The Kelly growth rate is $\mathbb{E}[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})]$.
 Given true win probabilities $p$ and decimal odds $o$, the Kelly bet is:
 
-$$b^*_i = \max\left(0, \frac{p_i o_i - 1}{\sum_j p_j o_j - 1}\right) \tag{4.1}$$
+$$b^{\ast}_i = \max\left(0, \frac{p_i o_i - 1}{\sum_j p_j o_j - 1}\right) \tag{4.1}$$
 
-with the cash component $b^*_0 = 1 - \sum_{i \geq 1} b^*_i$ absorbing the
+with the cash component $b^{\ast}_0 = 1 - \sum_{i \geq 1} b^{\ast}_i$ absorbing the
 residual. Note: without the cash asset, maximising $\mathbb{E}[\log\langle b, x\rangle]$
 on $\Delta_{d-1}$ with $x_i = o_i \cdot \mathbf{1}_{i=\rm winner}$ gives
 $b_i = p_i$ (independent of odds), which is clearly wrong. The cash asset
@@ -328,24 +328,24 @@ of races observed and $r$ is the number of independent racing factors.
 In practice, most serious punters use fractional Kelly — betting a fraction
 $f \in (0,1)$ of the Kelly-optimal amount. In our framework:
 
-$$b^f = (1-f)\cdot b^{\rm cash} + f\cdot b^* \tag{4.3}$$
+$$b^f = (1-f)\cdot b^{\rm cash} + f\cdot b^{\ast} \tag{4.3}$$
 
 where $b^{\rm cash} = (1, 0, \ldots, 0)$ (keep everything in cash).
 
-**Important clarification:** Fractional Kelly $b^f = (1-f) \cdot b^{\rm cash} + f \cdot b^*$
+**Important clarification:** Fractional Kelly $b^f = (1-f) \cdot b^{\rm cash} + f \cdot b^{\ast}$
 is a Euclidean convex combination, NOT a Fisher-Rao geodesic. The Fisher-Rao
-geodesic from $b^{\rm cash}$ to $b^*$ has a different parameterisation (it
+geodesic from $b^{\rm cash}$ to $b^{\ast}$ has a different parameterisation (it
 passes through the Bhattacharyya sphere). The Euclidean mixture is the
 PRACTICAL fractional Kelly; the Fisher-Rao geodesic would be the
 GEOMETRICALLY correct interpolation. For small $f$, the two agree to
 leading order.
 
 The log-growth rate of fractional Kelly is:
-$$g(f) = \mathbb{E}[\log(1 - f + f \cdot (b^* \cdot x))] \tag{4.4}$$
+$$g(f) = \mathbb{E}[\log(1 - f + f \cdot (b^{\ast} \cdot x))] \tag{4.4}$$
 
 which is concave in $f$ with maximum at $f = 1$ (full Kelly) and $g(0) = 0$
-(no bet). The variance of log-wealth is approximately $f^2 \cdot \mathrm{Var}(\log(b^* \cdot x))$.
-The risk-adjusted optimal fraction is $f^* = 1/(\text{risk aversion})$.
+(no bet). The variance of log-wealth is approximately $f^2 \cdot \mathrm{Var}(\log(b^{\ast} \cdot x))$.
+The risk-adjusted optimal fraction is $f^{\ast} = 1/(\text{risk aversion})$.
 
 **Geometric interpretation of fractional Kelly:** it interpolates between
 "don't bet" and "full Kelly" in Euclidean space on the simplex. The

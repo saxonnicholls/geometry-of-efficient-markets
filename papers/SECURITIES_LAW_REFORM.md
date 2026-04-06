@@ -20,7 +20,7 @@ bottlenecks, silos, and fragility). We can compute which.
 
 The current regulatory system is geometrically inverted. It punishes insider
 trading on true information — which accelerates efficiency by
-$\Delta R_{\rm conv} = I(X; Y_{\rm trade})/T$ (NETWORK\_INFORMATION\_THEORY
+$\Delta R_{\rm conv} = I(X; Y_{\rm trade})/T$ (NETWORK_INFORMATION_THEORY
 Theorem N3) — more severely than misinformation, which retards efficiency at
 double cost: $\Delta R_{\rm conv} = -2 \cdot I(Z; Y|X)/T$ (Theorem N4).
 Short-selling bans eliminate half the mean curvature flow. Static circuit
@@ -141,7 +141,7 @@ identically.
 
 ### 2.2 The geometric case
 
-Theorem N3 of NETWORK\_INFORMATION\_THEORY.md proves: an insider with private
+Theorem N3 of NETWORK_INFORMATION_THEORY.md proves: an insider with private
 signal $X \in \mathcal{F}^{\rm oracle}_t \setminus \mathcal{F}^{\rm public}_t$
 who trades optimally contributes
 
@@ -150,7 +150,7 @@ $$\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{2.1}$$
 additional bits per period to the market's information channel. The insider's
 trade moves the price toward the true value — it reduces the mean curvature
 $|H|$ at the traded point on $M^r$. The insider's profit equals the
-curvature they remove, by the Sharpe–curvature identity (MINIMAL\_SURFACE.md
+curvature they remove, by the Sharpe–curvature identity (MINIMAL_SURFACE.md
 Theorem 3.1) applied to private information.
 
 Every insider trade on true information makes the market more efficient.
@@ -534,7 +534,7 @@ The IPO process in most jurisdictions restricts initial participation:
 ### 8.2 The geometric case
 
 An IPO is manifold nucleation — the transition from Stage 0 (no market) to
-Stage 1 (price discovery) in the five-stage classification (WHY\_MARKETS\_DO\_EVOLVE\_TO\_EFFICIENCY\_DESPITE\_THE\_ODD\_CRISIS.md). The number of
+Stage 1 (price discovery) in the five-stage classification (WHY_MARKETS_DO_EVOLVE_TO_EFFICIENCY_DESPITE_THE_ODD_CRISIS.md). The number of
 participants in the initial MAC channel determines the rate of convergence
 from Stage 1 to Stage 2. More participants = higher $C$ = faster price
 discovery.
@@ -588,7 +588,7 @@ misinformation."
 
 ### 9.2 The geometric case
 
-Theorem N4 of NETWORK\_INFORMATION\_THEORY.md proves the doubling principle:
+Theorem N4 of NETWORK_INFORMATION_THEORY.md proves the doubling principle:
 misinformation costs *twice* — once for the channel capacity consumed
 processing the false signal, and once for the spurious curvature that MCF
 must subsequently undo. The total damage per unit of misinformation is:
@@ -701,7 +701,7 @@ Cryptocurrency regulation is characterised by jurisdictional confusion:
 ### 11.2 The geometric case
 
 Different cryptocurrencies are at different stages of the five-stage
-efficiency evolution (WHY\_MARKETS\_DO\_EVOLVE\_TO\_EFFICIENCY\_DESPITE\_THE\_ODD\_CRISIS.md):
+efficiency evolution (WHY_MARKETS_DO_EVOLVE_TO_EFFICIENCY_DESPITE_THE_ODD_CRISIS.md):
 
 - **Stage 4 (near-efficient):** Bitcoin and Ethereum, with deep liquidity,
   many participants, low Willmore energy, large $\lambda_1$.
@@ -887,12 +887,12 @@ or false, which is non-trivial but feasible for documented cases).
 
 ### Monograph Cross-References
 
-- NETWORK\_INFORMATION\_THEORY.md — Theorems N1–N7. The convergence rate framework.
-- MINIMAL\_SURFACE.md — Sharpe–curvature identity; Willmore energy.
+- NETWORK_INFORMATION_THEORY.md — Theorems N1–N7. The convergence rate framework.
+- MINIMAL_SURFACE.md — Sharpe–curvature identity; Willmore energy.
 - CLASSIFICATION.md — Stability classification; Jacobi operator.
-- WHY\_MARKETS\_DO\_EVOLVE\_TO\_EFFICIENCY\_DESPITE\_THE\_ODD\_CRISIS.md — Five-stage efficiency evolution.
-- MARKET\_MICROSTRUCTURE.md — LOB geometry; market impact.
-- GEOSPATIAL\_CONTAGION.md — Cheeger constant; contagion graph; Delaunay structure.
+- WHY_MARKETS_DO_EVOLVE_TO_EFFICIENCY_DESPITE_THE_ODD_CRISIS.md — Five-stage efficiency evolution.
+- MARKET_MICROSTRUCTURE.md — LOB geometry; market impact.
+- GEOSPATIAL_CONTAGION.md — Cheeger constant; contagion graph; Delaunay structure.
 
 ---
 

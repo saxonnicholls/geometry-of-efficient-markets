@@ -39,7 +39,7 @@ distributions.
   arrival creates curvature, MCF smooths it, and the surface never reaches the
   Black-Scholes flat configuration because new information keeps arriving.
 - The **maximum Sharpe ratio of volatility strategies** satisfies the vol-market
-  Sharpe-curvature identity: $\mathrm{Sharpe}_{\rm vol}^* = \|H\|_{L^2(\Sigma_{\rm vol})}$.
+  Sharpe-curvature identity: $\mathrm{Sharpe}_{\rm vol}^{\ast} = \|H\|_{L^2(\Sigma_{\rm vol})}$.
 
 Every curvature quantity has a market-quoted proxy: VIX = trace of curvature,
 VVIX = Willmore energy, CBOE SKEW = third curvature moment, smile slope = mean
@@ -150,7 +150,7 @@ $$\text{Skew:}\quad \frac{\partial\sigma}{\partial k}\bigg|_{k=0} = \sigma_{\rm 
 
 ### 2.2 The smile-curvature theorem
 
-The connection to the market manifold geometry established in DERIVATIVES\_CONVEXITY.md
+The connection to the market manifold geometry established in DERIVATIVES_CONVEXITY.md
 (Theorem 2.4, equation 2.15) gives the vol skew as $\partial\hat\sigma/\partial k|_{k=0}
 = -\varepsilon^2 H^2/(2\sigma_I)$. We now extend this to the full smile.
 
@@ -180,10 +180,10 @@ $$\kappa_{\rm smile}(T) = \frac{2\alpha_2 - \alpha_1^2}{\sigma_{\rm ATM}(1 + \al
 \propto \|II\|^2_{\rm strike}. \tag{2.5}$$
 
 *Proof.* We work in the Bhattacharyya embedding $\phi: b \mapsto \sqrt{b} \in S^{d-1}_+$.
-The option price $C(K,T)$ depends on the log-optimal portfolio $b^*$ through the
+The option price $C(K,T)$ depends on the log-optimal portfolio $b^{\ast}$ through the
 index $I = b^{*T}S$. A perturbation in log-moneyness $k$ corresponds to a perturbation
 in the strike, which probes the curvature of the return distribution in a specific
-direction. By the geometric Black-Scholes framework (DERIVATIVES\_CONVEXITY.md,
+direction. By the geometric Black-Scholes framework (DERIVATIVES_CONVEXITY.md,
 Theorem 2.2), the $O(\varepsilon^2)$ correction to the implied volatility at
 moneyness $k$ is
 
@@ -251,7 +251,7 @@ in the time direction:*
 
 $$\sigma_\infty = \sqrt{\mathrm{tr}[F_M^{-1}]}, \tag{3.2}$$
 
-*which is the intrinsic volatility of the market manifold from DERIVATIVES\_CONVEXITY.md
+*which is the intrinsic volatility of the market manifold from DERIVATIVES_CONVEXITY.md
 (Theorem 2.1).*
 
 *(ii) The mean-reversion rate $\lambda_1$ is the first non-zero eigenvalue of the
@@ -501,7 +501,7 @@ $M_{\rm price} \times M_{\rm vol}$:
 **The price component.** The process $dF = \sigma F^\beta\,dW_1$ is a CEV diffusion.
 For $\beta = 1$: geometric Brownian motion (the GBM on $\mathbb{R}_+$, the CAPM
 case). For $\beta < 1$: a Jacobi-type process with an absorbing boundary at $F = 0$
-(consistent with the Feller boundary analysis of HAMILTONIAN\_TAILS\_COMPLETENESS.md).
+(consistent with the Feller boundary analysis of HAMILTONIAN_TAILS_COMPLETENESS.md).
 For $\beta = 0$: normal (Bachelier) dynamics. The CEV exponent $\beta$ selects the
 **price manifold type**: the process lives on a 1-dimensional manifold with metric
 $g_F = 1/(F^{2\beta}\sigma^2)$, which has curvature depending on $\beta$.
@@ -550,7 +550,7 @@ This explains both the success and the limitations of SABR:
   This is exactly the WKB/Laplace analysis of LAPLACE.md applied to the vol surface.
 - **Failure for extreme strikes**: for $|k| \gg 1$, the geodesic may approach
   the boundary of the product manifold (where $\sigma \to 0$ or $F \to 0$), and
-  the Feller boundary conditions (HAMILTONIAN\_TAILS\_COMPLETENESS.md) modify the
+  the Feller boundary conditions (HAMILTONIAN_TAILS_COMPLETENESS.md) modify the
   heat kernel.
 
 ---
@@ -592,7 +592,7 @@ The VIX at maturity $T$ is $\mathrm{VIX}_T = \sigma(0, T)\sqrt{252}$ (annualised
 ATM vol). The variance of VIX is therefore the variance of $\sigma(0, T)$ as $T$
 varies, which from the Fokker-Planck analysis is controlled by the curvature of
 the term structure curve $T \mapsto \sigma(0, T)$. By the variance decomposition
-of DERIVATIVES\_CONVEXITY.md (Theorem 2.5), the variance of implied volatility
+of DERIVATIVES_CONVEXITY.md (Theorem 2.5), the variance of implied volatility
 equals $\varepsilon^4 \mathcal{W}_2(M) + O(\varepsilon^6)$. Restricting to the
 ATM slice $k = 0$ and identifying $\varepsilon^4 \mathcal{W}_2|_{k=0}$ with the
 Willmore energy of the term structure curve yields (7.2). $\square$
@@ -653,7 +653,7 @@ cannot flatten too fast or develop curvature too sharply without violating
 no-arbitrage.*
 
 *Proof sketch.* The MCF component follows from the standard result that
-arbitrageurs act to reduce Willmore energy (MINIMAL\_SURFACE.md, Section 5):
+arbitrageurs act to reduce Willmore energy (MINIMAL_SURFACE.md, Section 5):
 option market-makers who observe a locally steep smile sell the wings and buy ATM,
 compressing the curvature. This is the MCF in the options market. The information
 component follows from the Fisher-Rao interpretation: new information changes the
@@ -725,7 +725,7 @@ transitions between regimes correspond to changes in the topology of
 $\Sigma_{\rm vol}$ — the vol surface undergoes a phase transition as the
 market crosses from one regime to another.
 
-At these transitions, the Feigenbaum bifurcation analysis of CHAOS\_TAKENS.md
+At these transitions, the Feigenbaum bifurcation analysis of CHAOS_TAKENS.md
 predicts that the ratio of successive eigenvalue spacings of the vol surface
 Laplacian approaches $\delta = 4.669\ldots$ — the Feigenbaum constant. This is
 a theoretically motivated early warning indicator for regime change in the
@@ -774,22 +774,22 @@ is minimax optimal for the vol trading problem.
 **Theorem 10.1** *(Vol Sharpe = vol surface curvature)*. *The maximum attainable
 Sharpe ratio from volatility trading strategies is:*
 
-$$\mathrm{Sharpe}_{\rm vol}^* = \|H\|_{L^2(\Sigma_{\rm vol})}
+$$\mathrm{Sharpe}_{\rm vol}^{\ast} = \|H\|_{L^2(\Sigma_{\rm vol})}
 = \left(\int_{\Sigma_{\rm vol}} H^2\,d\mathrm{vol}_\Sigma\right)^{1/2}
 = \sqrt{\mathcal{W}(\Sigma_{\rm vol})}. \tag{10.1}$$
 
 *This is the vol-market version of the Sharpe-curvature identity (R1,
-MINIMAL\_SURFACE.md). The proof is identical: the vol surface is a
+MINIMAL_SURFACE.md). The proof is identical: the vol surface is a
 submanifold of the option price simplex (the space of all option-implied
 distributions), the Fisher-Rao metric on this simplex is the ambient metric,
-and the Sharpe-curvature identity from MINIMAL\_SURFACE.md (Theorem 9.1)
+and the Sharpe-curvature identity from MINIMAL_SURFACE.md (Theorem 9.1)
 applies with $M = \Sigma_{\rm vol}$.*
 
 **Corollary 10.2** *(Black-Scholes $\Leftrightarrow$ no vol alpha)*.
 *The vol surface is flat ($H \equiv 0$, the Black-Scholes world) if and only if
-$\mathrm{Sharpe}_{\rm vol}^* = 0$ — there is no Sharpe ratio available from
+$\mathrm{Sharpe}_{\rm vol}^{\ast} = 0$ — there is no Sharpe ratio available from
 vol trading. Conversely, any deviation from Black-Scholes ($H \neq 0$)
-implies $\mathrm{Sharpe}_{\rm vol}^* > 0$ — exploitable vol alpha exists.*
+implies $\mathrm{Sharpe}_{\rm vol}^{\ast} > 0$ — exploitable vol alpha exists.*
 
 This gives a precise, quantitative answer to the question: **how much money can
 you make trading vol?** The answer is $\|H\|_{L^2}$, which from the curvature
@@ -859,7 +859,7 @@ The index vol surface and single-stock vol surfaces are related through
 dispersion (the index is a portfolio of stocks). Develop the joint geometry of
 multiple vol surfaces as a **fiber bundle**: the index vol surface is the base,
 the single-stock vol surfaces are the fibers, and the dispersion relationship
-is the connection. This connects to FIBER\_BUNDLES.md.
+is the connection. This connects to FIBER_BUNDLES.md.
 
 **OP-V4** *(Real-time arbitrage detection, $\star\star$)*.
 Can the curvature cone $\mathcal{C}$ of Theorem 4.1 be computed in real time from
@@ -881,16 +881,16 @@ termination level is a natural complexity measure for the options market.
 
 This paper sits at the intersection of several threads:
 
-**From DERIVATIVES\_CONVEXITY.md:** The vol skew = $H^2$ result (Theorem 2.4 /
-R7 in WHATS\_NEW.md) is the starting point. This paper develops the full surface,
+**From DERIVATIVES_CONVEXITY.md:** The vol skew = $H^2$ result (Theorem 2.4 /
+R7 in WHATS_NEW.md) is the starting point. This paper develops the full surface,
 not just the skew at a single maturity.
 
-**From SOBOLEV\_OPTIONS\_GREEKS.md:** The weighted Sobolev regularity framework
+**From SOBOLEV_OPTIONS_GREEKS.md:** The weighted Sobolev regularity framework
 provides the functional-analytic foundation for the option pricing formulas that
 define $\sigma_{\rm impl}$. The mollifiers of that paper regularise the vol surface
 near the simplex boundary.
 
-**From MINIMAL\_SURFACE.md:** The Sharpe-curvature identity (R1) and the MCF
+**From MINIMAL_SURFACE.md:** The Sharpe-curvature identity (R1) and the MCF
 interpretation of arbitrageur activity extend directly to the vol surface. The
 vol Sharpe-curvature identity (V6) is a corollary.
 
@@ -943,12 +943,12 @@ corresponding observable on the vol surface. This makes the options market the
 
 **Companion papers in this series:**
 
-- DERIVATIVES\_CONVEXITY.md (Paper II.4) — Geometric Black-Scholes, vol skew = $H^2$
-- SOBOLEV\_OPTIONS\_GREEKS.md (Paper II.7) — Weighted Sobolev regularity, exact option
+- DERIVATIVES_CONVEXITY.md (Paper II.4) — Geometric Black-Scholes, vol skew = $H^2$
+- SOBOLEV_OPTIONS_GREEKS.md (Paper II.7) — Weighted Sobolev regularity, exact option
   pricing, geometric Greeks
-- MINIMAL\_SURFACE.md (Paper I.3) — Sharpe-curvature identity, MCF, Willmore energy
+- MINIMAL_SURFACE.md (Paper I.3) — Sharpe-curvature identity, MCF, Willmore energy
 - CLASSIFICATION.md (Paper I.4) — Three market types, stability analysis
 - CONVERGENCE.md (Paper I.5) — MUP regret bound
-- HAMILTONIAN\_TAILS\_COMPLETENESS.md (Paper II.2) — Feller boundary, fat tails
-- FIBER\_BUNDLES.md (Paper III.1) — Fiber bundle geometry, connections
-- CHAOS\_TAKENS.md (Paper IV.5) — Feigenbaum bifurcation, regime transitions
+- HAMILTONIAN_TAILS_COMPLETENESS.md (Paper II.2) — Feller boundary, fat tails
+- FIBER_BUNDLES.md (Paper III.1) — Fiber bundle geometry, connections
+- CHAOS_TAKENS.md (Paper IV.5) — Feigenbaum bifurcation, regime transitions

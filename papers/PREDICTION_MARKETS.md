@@ -18,7 +18,7 @@ $\sum q_i = 1$: a point on $\Delta_{d-1}$. The arbitrage-free price set is $\Del
 itself. The market-maker's cost function induces a Riemannian geometry on the
 belief space. We develop the full geometric theory of prediction markets within
 the framework of the monograph, connecting to the LMSR-softmax-Fisher identity
-of LLM\_MANIFOLD.md, the fiber bundle structure of FIBER\_BUNDLES.md, and the
+of LLM_MANIFOLD.md, the fiber bundle structure of FIBER_BUNDLES.md, and the
 computational hardness results of COMPLEXITY.md.
 
 Our principal results:
@@ -30,7 +30,7 @@ liquidity. The LMSR prices are the softmax function. The liquidity parameter
 $b$ plays the role of $\varepsilon^2 = 1/T$ in the portfolio theory: low liquidity
 ($b\to 0$) concentrates belief on the most likely outcome; high liquidity
 ($b\to\infty$) spreads belief toward maximum entropy. This is the prediction
-market specialisation of R17 from LLM\_MANIFOLD.md.
+market specialisation of R17 from LLM_MANIFOLD.md.
 
 **(ii) The arbitrage-free polytope.** For $d$ outcomes, the arbitrage-free price
 set is $\Delta_{d-1}$. For combinatorial markets with $n$ binary events and $2^n$
@@ -44,7 +44,7 @@ pricing $P(A|B)$ is a fiber bundle: the base space is the market for $B$, the
 fiber over each outcome of $B$ is the conditional market for $A$ given $B$.
 The connection curvature measures the failure of conditional independence.
 Flat connection $\Leftrightarrow$ $A \perp B$. This is a direct application
-of the fiber bundle theory from FIBER\_BUNDLES.md.
+of the fiber bundle theory from FIBER_BUNDLES.md.
 
 **(iv) Scoring rule uniqueness.** The logarithmic scoring rule $S(q,i) = \log q_i$
 is the unique proper scoring rule whose expected score is a Fisher-Rao divergence.
@@ -123,7 +123,7 @@ where $b > 0$ is the **liquidity parameter**. The prices are:
 $$p_i = \frac{\partial C}{\partial q_i} = \frac{e^{q_i/b}}{\sum_{k=1}^d e^{q_k/b}} = \mathrm{softmax}(q/b)_i \tag{1.4}$$
 
 The LMSR prices are the softmax function at inverse temperature $1/b$.
-This is the same identity established in LLM\_MANIFOLD.md (Theorem 1.1),
+This is the same identity established in LLM_MANIFOLD.md (Theorem 1.1),
 now seen in its native habitat: the prediction market.
 
 The maximum loss of the LMSR market maker is $b\log d$, incurred when the
@@ -241,7 +241,7 @@ $$dq_i = \frac{1}{2}(q^{\ast}_i - q_i)\,dt + \sqrt{q_i(1-q_i)}\,dW^{(i)}_t \tag{
 where $q^{\ast}$ is the "true" probability (the resolving value) and the noise
 terms $dW^{(i)}$ are correlated by the simplex constraint $\sum_i dq_i = 0$.
 
-This is the same Jacobi diffusion from MARKET\_PROCESSES.md (Section 2), now
+This is the same Jacobi diffusion from MARKET_PROCESSES.md (Section 2), now
 in its prediction market interpretation. The stationary distribution is the
 Dirichlet distribution $\mathrm{Dir}(Tq^{\ast})$ where $T$ is the effective
 "sample size" — the total information that has been incorporated.
@@ -252,7 +252,7 @@ $$dp = \frac{1}{2}(p^{\ast} - p)\,dt + \sqrt{p(1-p)}\,dW_t \tag{3.4}$$
 
 with absorbing boundaries at $p = 0$ and $p = 1$ (the event is resolved as
 false or true). The transition density is the Jacobi polynomial series
-from MARKET\_PROCESSES.md (Theorem 2.3).
+from MARKET_PROCESSES.md (Theorem 2.3).
 
 ### 3.3 The geometry of binary prediction markets
 
@@ -384,11 +384,11 @@ connection is flat and $\Omega = 0$. Conversely, if $\Omega = 0$, parallel
 transport around any closed loop in $\mathcal{B}$ is trivial, so
 $q^{A|B=j}$ does not depend on $j$, giving independence. $\square$
 
-This is a direct application of the fiber bundle theory from FIBER\_BUNDLES.md,
+This is a direct application of the fiber bundle theory from FIBER_BUNDLES.md,
 now in the transparent setting of prediction markets. The "holonomy" of a
 conditional prediction market is the accumulated change in $P(A|B)$ as the
 market for $B$ completes a cycle — analogous to the Berry phase of
-FIBER\_BUNDLES.md (Section 3).
+FIBER_BUNDLES.md (Section 3).
 
 ### 5.3 Example: political prediction markets
 
@@ -566,8 +566,8 @@ that is invariant under sufficient statistics. Using any other proper scoring
 rule (Brier, spherical, etc.) as a growth criterion introduces dependence on
 the parameterisation of the outcome space.*
 
-This is the deep reason why Kelly is special in portfolio theory (INFORMATION\_THEORY.md),
-in prediction markets, and in machine learning (LLM\_MANIFOLD.md): it is the
+This is the deep reason why Kelly is special in portfolio theory (INFORMATION_THEORY.md),
+in prediction markets, and in machine learning (LLM_MANIFOLD.md): it is the
 unique strategy compatible with the intrinsic geometry of the probability simplex.
 
 ---
@@ -721,7 +721,7 @@ $$\nabla^2 C(q)\big|_{p = \mathrm{softmax}(q/b)} = \frac{1}{b}\,g^{\mathrm{FR}}(
 *where $g^{\mathrm{FR}}(p)_{ij} = p_i(\delta_{ij} - p_j)$ is the Fisher information
 matrix on $\Delta_{d-1}$ at $p$.*
 
-This is the prediction market specialisation of R17 from LLM\_MANIFOLD.md. The proof
+This is the prediction market specialisation of R17 from LLM_MANIFOLD.md. The proof
 is the direct computation in Section 1.3. The novelty here is the interpretation:
 the LMSR market maker's price sensitivity IS the Fisher information of the belief
 distribution, scaled by inverse liquidity.
@@ -768,11 +768,11 @@ independent methods:*
 
 *(i) Stable rank:* $r \approx \mathrm{srank}(\mathrm{Cov}[\Delta\pi])$
 
-*(ii) False Nearest Neighbours* (Takens, from CHAOS\_TAKENS.md): embed the
+*(ii) False Nearest Neighbours* (Takens, from CHAOS_TAKENS.md): embed the
 price series in delay coordinates and identify the dimension at which FNN
 fraction drops to zero.
 
-*(iii) Grassberger-Procaccia* (from GRASSBERGER\_PERCOLATION\_GENERATING.md):
+*(iii) Grassberger-Procaccia* (from GRASSBERGER_PERCOLATION_GENERATING.md):
 $r = \lim_{\epsilon \to 0} \log C(\epsilon)/\log\epsilon$ where $C(\epsilon)$
 is the correlation integral of the embedded price series.
 
@@ -821,9 +821,9 @@ and variational inference," *Foundations and Trends in Machine Learning* 1(1-2)
 ---
 
 *Paper VI.2 of "The Geometry of Efficient Markets" by Saxon Nicholls.*
-*Cross-references: LLM\_MANIFOLD.md (R17, LMSR-softmax-Fisher identity),
-FIBER\_BUNDLES.md (fiber bundle theory), COMPLEXITY.md (computational hardness),
-CONVERGENCE.md (MUP regret), MARKET\_PROCESSES.md (Jacobi diffusion),
-INFORMATION\_THEORY.md (Kelly criterion), CHAOS\_TAKENS.md (Takens embedding),
-GRASSBERGER\_PERCOLATION\_GENERATING.md (correlation dimension),
-HYPERCUBE\_SHAPLEY.md (simplex geometry).*
+*Cross-references: LLM_MANIFOLD.md (R17, LMSR-softmax-Fisher identity),
+FIBER_BUNDLES.md (fiber bundle theory), COMPLEXITY.md (computational hardness),
+CONVERGENCE.md (MUP regret), MARKET_PROCESSES.md (Jacobi diffusion),
+INFORMATION_THEORY.md (Kelly criterion), CHAOS_TAKENS.md (Takens embedding),
+GRASSBERGER_PERCOLATION_GENERATING.md (correlation dimension),
+HYPERCUBE_SHAPLEY.md (simplex geometry).*

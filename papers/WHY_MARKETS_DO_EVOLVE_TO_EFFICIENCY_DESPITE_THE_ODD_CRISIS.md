@@ -27,7 +27,7 @@ historical crises (1929, 1987, 1998 LTCM, 2008 GFC, 2020 COVID) by singularity t
 and verify that the geometric predictions match the observed dynamics in each case.
 The framework yields a geometric formulation of the socialist calculation problem
 (Mises 1920, Hayek 1945): computing the minimal surface requires solving an elliptic
-PDE on $\Delta_{d-1}$ that is $\#P$-hard for a modern economy, while the free market
+PDE on $\Delta_{d-1}$ that is $\#\mathbf{P}$-hard for a modern economy, while the free market
 solves it by distributed MCF — each trader contributing a local curvature reduction.
 Central planning attempts monolithic computation of a surface that can only be found
 by distributed flow. We state and prove the Market Efficiency Emergence Theorem: for
@@ -39,7 +39,7 @@ each surgery preserves or reduces total inefficiency.
 - Five laws of convergence: Willmore monotonicity, exponential decay, entropy production, singularity classification, and surgery
 - Crises are MCF singularities — Type I (corrections) vs Type II (crashes) — classified by curvature blowup rate
 - Historical crises (1929, 1987, 1998, 2008, 2020) classified by singularity type with geometric predictions verified
-- The socialist calculation problem is the $\#P$-hardness of computing the minimal surface monolithically
+- The socialist calculation problem is the $\#\mathbf{P}$-hardness of computing the minimal surface monolithically
 - Traders are curvature reducers: arbitrageurs, market makers, index funds, and short sellers each reduce $|H|$ in specific dual representations
 - The Market Efficiency Emergence Theorem: convergence to efficiency is a theorem, not a hypothesis
 
@@ -371,7 +371,7 @@ the boundary.
 
 ### 3.3 Index Funds
 
-**Geometric action.** Apply the Reynolds operator $R_G = |G|^{-1}\sum_{g \in G} g^*$
+**Geometric action.** Apply the Reynolds operator $R_G = |G|^{-1}\sum_{g \in G} g^{\ast}$
 where $G \cong S_d$ is the permutation group of assets. Index funds hold the
 market-capitalisation-weighted portfolio, which is the $S_d$-symmetrisation of the
 individual asset weights. This reduces *all* components of $H$ uniformly — not by
@@ -740,8 +740,8 @@ controller*. The minimal surface is found by the flow, not by any agent's comput
 
 Central planning — the Soviet Gosplan, the Chinese State Council, any attempt to
 set prices by administrative fiat — attempts to compute the minimal surface directly.
-A central planner tries to determine the log-optimal portfolio $b^*$ for the entire
-economy simultaneously, and then to set prices that place the economy at $b^*$.
+A central planner tries to determine the log-optimal portfolio $b^{\ast}$ for the entire
+economy simultaneously, and then to set prices that place the economy at $b^{\ast}$.
 
 The geometric impossibility is as follows.
 
@@ -749,7 +749,7 @@ The geometric impossibility is as follows.
 surface $M^r$ of the market manifold in $S^{d-1}_+$ requires solving the minimal
 surface equation — a system of $r$ coupled nonlinear elliptic PDEs — on
 $\Delta_{d-1}$. For a modern economy with $d \sim 10^6$ distinct goods and services,
-this is computationally intractable: the problem is $\#P$-hard (COMPLEXITY.md,
+this is computationally intractable: the problem is $\#\mathbf{P}$-hard (COMPLEXITY.md,
 Theorem 4.1), and the number of local minima grows exponentially in $d$.*
 
 *Proof sketch.* The minimal surface equation for $M^r \subset S^{d-1}_+$ in

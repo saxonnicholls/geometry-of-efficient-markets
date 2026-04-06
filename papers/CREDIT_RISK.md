@@ -28,7 +28,7 @@ framework of this monograph. The principal results:
 evolves under the Wright-Fisher diffusion on $\Delta_{d-1}$. The Feller
 boundary classification (entrance/regular/exit) determines whether default
 is impossible, recoverable, or permanent — and this classification is
-computable from the firm's cash flow parameters $\alpha_i = T b^*_i - 1/2$.
+computable from the firm's cash flow parameters $\alpha_i = T b^{\ast}_i - 1/2$.
 
 **(ii) Credit spread = Fisher-Rao distance to default.** The credit spread
 $s$ of a firm is determined, to leading order, by the inverse square of the
@@ -129,8 +129,8 @@ canonical Brownian motion of the Fisher-Rao metric (MARKET_PROCESSES.md Section 
 
 $$db_i = \varepsilon^2\left[\alpha_i - \left(\sum_j \alpha_j\right) b_i\right]dt + \varepsilon\sqrt{b_i(1-b_i)}\,dW_i^{\perp} \tag{1.4}$$
 
-where $\varepsilon^2 = 1/T$ is the diffusion scale parameter, $\alpha_i = T b^*_i - 1/2$
-are the drift parameters determined by the firm's "target" capital structure $b^*$,
+where $\varepsilon^2 = 1/T$ is the diffusion scale parameter, $\alpha_i = T b^{\ast}_i - 1/2$
+are the drift parameters determined by the firm's "target" capital structure $b^{\ast}$,
 and $W^{\perp}$ denotes Brownian motion projected onto the simplex.
 
 The drift term has a direct economic interpretation:
@@ -207,13 +207,13 @@ The Feller boundary theory for one-dimensional diffusions (applied to the $b_d$
 component of the WF process) classifies the boundary $\{b_d = 0\}$ according to
 the drift parameter $\alpha_d$ (SOBOLEV_OPTIONS_GREEKS.md Section 5):
 
-**Theorem 2.1** *(Feller classification for default).* *Let $\alpha_d = T b^*_d - 1/2$
+**Theorem 2.1** *(Feller classification for default).* *Let $\alpha_d = T b^{\ast}_d - 1/2$
 be the equity drift parameter. The default boundary $\{b_d = 0\}$ is classified as:*
 
 *(i) Entrance boundary ($\alpha_d \geq 1$):* The WF process starting in the interior
 never reaches $b_d = 0$. The probability of default is zero:
 $$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 0$$
-*This corresponds to a strongly profitable firm with $b^*_d \geq 3/(2T)$ — the
+*This corresponds to a strongly profitable firm with $b^{\ast}_d \geq 3/(2T)$ — the
 equity drift is strong enough to repel the process from the boundary. These are
 investment-grade firms with negligible default risk.*
 
@@ -221,7 +221,7 @@ investment-grade firms with negligible default risk.*
 positive probability AND can re-enter the interior. Both default and recovery are
 possible:
 $$0 < \mathbb{P}(\exists\, t \leq T : b_d(t) = 0) < 1$$
-*This corresponds to a firm with moderate profitability $1/(2T) < b^*_d < 3/(2T)$.
+*This corresponds to a firm with moderate profitability $1/(2T) < b^{\ast}_d < 3/(2T)$.
 The firm can default but can also emerge from bankruptcy. These are high-yield
 (speculative grade) firms.*
 
@@ -229,7 +229,7 @@ The firm can default but can also emerge from bankruptcy. These are high-yield
 probability one, and once there, it is absorbed. Default is certain and permanent:
 $$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 1, \quad b_d(t) = 0 \;\forall\, t \geq \tau_{\mathcal{D}}$$
 *where $\tau_{\mathcal{D}}$ is the first hitting time. This corresponds to an
-unprofitable firm with $b^*_d \leq 1/(2T)$: equity is being consumed, and default
+unprofitable firm with $b^{\ast}_d \leq 1/(2T)$: equity is being consumed, and default
 is a matter of time.*
 
 The classification is sharp: it depends on a single parameter $\alpha_d$ that is
@@ -358,7 +358,7 @@ Near the default boundary, the mean curvature $H$ of the market manifold diverge
 (because the metric diverges). From the Sharpe-curvature identity (MINIMAL_SURFACE.md
 Theorem 1.1):
 
-$$\mathrm{Sharpe}^* = \|H\|_{L^2(M, g_M)} \tag{3.5}$$
+$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M, g_M)} \tag{3.5}$$
 
 The Sharpe ratio of credit strategies is $\|H\|_{L^2}$ evaluated near the boundary
 — large, because the curvature is large. This is the geometric explanation for
@@ -818,7 +818,7 @@ We collect the principal new results of this paper:
 
 **Result C1** *(Default probability from Feller classification).* The probability
 of default is determined by the Feller boundary type of the equity face, which
-depends on a single parameter $\alpha_d = T b^*_d - 1/2$. For the regular boundary
+depends on a single parameter $\alpha_d = T b^{\ast}_d - 1/2$. For the regular boundary
 case, the default probability is given by the Jacobi eigenvalue series (Theorem 2.2).
 *Status: Proved (Theorem 2.1, 2.2). Tier 2.*
 
@@ -948,7 +948,7 @@ role of currency denomination)?
 14. **GEOSPATIAL_CONTAGION.md** — Cheeger constant, Delaunay graph, contagion
     propagation. The foundation for the systemic risk analysis in Section 7.
 
-15. **MINIMAL_SURFACE.md** — Sharpe-curvature identity $\mathrm{Sharpe}^* = \|H\|_{L^2}$.
+15. **MINIMAL_SURFACE.md** — Sharpe-curvature identity $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$.
     The connection between credit Sharpe ratios and boundary curvature in Section 3.4.
 
 16. **CLASSIFICATION.md** — Three market types, stability analysis. The background

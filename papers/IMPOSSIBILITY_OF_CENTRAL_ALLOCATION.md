@@ -52,7 +52,7 @@ edge addition that increases the Cheeger constant $h_M$ of the economic graph.
 The optimal role of government is Cheeger optimisation: add edges where $h_M$ is
 too low, remove none, and never attempt to replace the distributed MCF with a
 centralised computation. The punchline is a theorem: the optimal government
-policy is $G^* = \arg\max_G \, h_M(G_{\rm economy}(G))$ subject to a budget
+policy is $G^{\ast} = \arg\max_G \, h_M(G_{\rm economy}(G))$ subject to a budget
 constraint, and the greedy algorithm is a 2-approximation.
 
 **Keywords.** Central planning; market efficiency; computational complexity;
@@ -79,7 +79,7 @@ allocation that maximises aggregate welfare. In the framework of this monograph,
 this means finding the minimal surface $M^r \subset S^{d-1}_+$ — the
 configuration where the mean curvature vector $H = 0$ everywhere, so that
 $\mathcal{W}(M) = \int |H|^2 \, d\mathrm{vol}_M = 0$ and there is no
-remaining inefficiency to exploit (MINIMAL\_SURFACE.md, Theorem 1).
+remaining inefficiency to exploit (MINIMAL_SURFACE.md, Theorem 1).
 
 **Theorem CA1** (Computational Impossibility). *Computing the efficient
 allocation of $d$ goods requires solving the minimal surface equation*
@@ -191,7 +191,7 @@ $K_N$, not $S_N$. The market does not aggregate information at a central
 point — it aggregates it IN PRICES, which are simultaneously observable by all
 agents. Prices are the sufficient statistic of the MAC. $\square$
 
-**Remark 1.3.** The connection to NETWORK\_INFORMATION\_THEORY.md is direct. The
+**Remark 1.3.** The connection to NETWORK_INFORMATION_THEORY.md is direct. The
 convergence rate $R_{\rm conv} = \min(\lambda_1, C)$ established in that paper
 shows that the information capacity $C$ is a hard bottleneck on the rate at
 which the market can approach efficiency. The central planner operates with
@@ -257,7 +257,7 @@ disconnection, provided the remaining graph has $h > 0$. The Cheeger constant
 quantifies this resilience. $\square$
 
 **Remark 1.4.** The Cheeger inequality $\lambda_1 / 2 \leq h(G) \leq
-\sqrt{2\lambda_1}$ (TOPOLOGY\_OF\_PRICE.md, Section 3.2) connects the fragility
+\sqrt{2\lambda_1}$ (TOPOLOGY_OF_PRICE.md, Section 3.2) connects the fragility
 result to convergence speed: a fragile economy (low $h$) also has low $\lambda_1$
 (slow convergence to efficiency). Fragility and inefficiency are geometrically
 linked.
@@ -521,7 +521,7 @@ possible for a connected graph on $N + 1$ vertices. The spectral gap is
 $\lambda_1 = 1$ (the slowest possible convergence for a connected graph). The
 monopolist extracts rent equal to the Willmore energy:
 $\mathcal{W}_{\rm monopoly} = \int |H|^2 \, d\mathrm{vol}_M > 0$
-(TOPOLOGY\_OF\_PRICE.md, Section 5.3).
+(TOPOLOGY_OF_PRICE.md, Section 5.3).
 
 Anti-trust enforcement breaks the monopoly star into a denser graph of
 competing firms. This is Cheeger surgery: adding edges to increase $h_M$ and
@@ -550,13 +550,13 @@ market graph, reducing $h_M$ and increasing $\mathcal{W}$.
 
 ### 4.1 Price controls
 
-A price ceiling below the market price $p^*$ makes the transaction
-$(A, B, p^*)$ illegal. The edge between $A$ and $B$ is REMOVED from the
+A price ceiling below the market price $p^{\ast}$ makes the transaction
+$(A, B, p^{\ast})$ illegal. The edge between $A$ and $B$ is REMOVED from the
 legal market graph. The edge may reappear in a black market graph — but
 black market edges are unreliable (no contract enforcement), high-friction
 (search costs), and carry risk premia. The effective $h_M$ falls.
 
-Price floors above $p^*$ have the symmetric effect: transactions that would
+Price floors above $p^{\ast}$ have the symmetric effect: transactions that would
 occur at $p < p_{\rm floor}$ are prohibited, removing edges.
 
 ### 4.2 Trade barriers
@@ -595,7 +595,7 @@ findings; the graph-theoretic framework provides the structural explanation.
 
 ### 4.5 Above-market minimum wage
 
-A minimum wage set above the market-clearing wage $w^*$ REMOVES edges from the
+A minimum wage set above the market-clearing wage $w^{\ast}$ REMOVES edges from the
 labour market. Employers reduce hiring (edges to low-productivity workers are
 severed). The surviving edges carry higher weight (employed workers earn more).
 The effect on $h_M$ depends on the balance: if the removed edges are few and
@@ -634,7 +634,7 @@ government intervention adds them.*
 **Theorem CA5** (Optimal Government). *The government policy that maximises the
 rate of convergence to economic efficiency is:*
 
-$$G^* = \arg\max_{G \in \mathcal{G}} \; h_M\!\big(G_{\rm economy}(G)\big)
+$$G^{\ast} = \arg\max_{G \in \mathcal{G}} \; h_M\!\big(G_{\rm economy}(G)\big)
 \quad \text{subject to} \quad \mathrm{cost}(G) \leq B, \tag{5.1}$$
 
 *where $\mathcal{G}$ is the set of feasible policies (edge additions to the
@@ -810,7 +810,7 @@ became sparse, then disconnected. The consequences followed from the geometry:
 - **Hyperinflation**: the goods manifold disconnected from the financial
   manifold (no reliable price edges), so the numeraire lost its anchor
 - **Shortages**: the distribution graph lost connectivity (the food graph had
-  $h \to 0$), a textbook Cheeger bottleneck failure (cf. TOPOLOGY\_OF\_PRICE.md
+  $h \to 0$), a textbook Cheeger bottleneck failure (cf. TOPOLOGY_OF_PRICE.md
   on famine)
 - **Emigration**: human capital nodes exited the graph entirely ($\sim 7 \times
   10^6$ Venezuelans left), removing their edges and further reducing $h_M$
@@ -995,10 +995,10 @@ Economics and Statistics*, 36(4), 387-389.
 
 Stiglitz, J.E. (1994). *Whither Socialism?* MIT Press.
 
-**Companion papers.** TOPOLOGY\_OF\_PRICE.md (graph Laplacians, Cheeger
-constants, monopoly as star graph); NETWORK\_INFORMATION\_THEORY.md (channel
+**Companion papers.** TOPOLOGY_OF_PRICE.md (graph Laplacians, Cheeger
+constants, monopoly as star graph); NETWORK_INFORMATION_THEORY.md (channel
 capacity, convergence rate $R_{\rm conv} = \min(\lambda_1, C)$);
-SECURITIES\_LAW\_REFORM.md (regulatory inversion, edge-based regulation);
-MINIMAL\_SURFACE.md (Sharpe-curvature identity, Willmore energy);
-CLASSIFICATION.md (three market types, stability); GEOSPATIAL\_CONTAGION.md
+SECURITIES_LAW_REFORM.md (regulatory inversion, edge-based regulation);
+MINIMAL_SURFACE.md (Sharpe-curvature identity, Willmore energy);
+CLASSIFICATION.md (three market types, stability); GEOSPATIAL_CONTAGION.md
 (Cheeger constant and systemic risk); FILTRATIONS.md (information structure).

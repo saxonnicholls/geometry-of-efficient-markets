@@ -56,7 +56,7 @@ market's theory $\mathcal{T}_2$. Gödel's second incompleteness theorem:
 $\mathcal{T}_1$ cannot prove $\mathrm{Con}(\mathcal{T}_1)$, but
 $\mathcal{T}_2$ can. The meta-market resolves what the sub-market cannot —
 but has its own blind spots that require $\mathcal{T}_3$. This tower is the
-logical structure of the Giry monad tower from DUAL\_TOWER.md: each level
+logical structure of the Giry monad tower from DUAL_TOWER.md: each level
 adds a layer of meta-knowledge that resolves the previous level's
 incompleteness while introducing new unprovable statements.
 
@@ -125,13 +125,13 @@ of $M^r$.*
 $$I(b; b') = H(b') - H(b'|b)$$
 
 where $H(b')$ is the entropy of the stationary distribution (the Jeffreys
-prior, by FOKKER\_PLANCK\_CFD.md) and $H(b'|b)$ is the conditional entropy
+prior, by FOKKER_PLANCK_CFD.md) and $H(b'|b)$ is the conditional entropy
 given the current state. Maximising over input distributions:
 
 $$C = \max_{p(b)} I(b; b') = h_{\rm Kelly}$$
 
 by the Shannon-McMillan-Breiman theorem applied to the market process
-(INFORMATION\_THEORY.md Theorem C): the maximum information rate extractable
+(INFORMATION_THEORY.md Theorem C): the maximum information rate extractable
 from the market process is the Kelly growth rate. The MUP achieves this rate,
 so it is the capacity-achieving code.
 
@@ -141,7 +141,7 @@ with respect to the parameter $b$ is:
 $$I_F(b)_{ij} = \mathbb{E}_{b'|b}\left[\frac{\partial \log K_t(b'|b)}{\partial b^i} \frac{\partial \log K_t(b'|b)}{\partial b^j}\right]$$
 
 For the Jacobi diffusion on $\Delta_{d-1}$ (the CAPM case), the transition
-kernel is the Jacobi polynomial series (MARKET\_PROCESSES.md), and its Fisher
+kernel is the Jacobi polynomial series (MARKET_PROCESSES.md), and its Fisher
 information is $I_F(b)_{ij} = \delta_{ij}/b_i = g^{\rm FR}_{ij}(b)$ —
 identical to the manifold's Fisher-Rao metric. The same identity holds for
 the flat torus and McKean kernels by the invariance of the Fisher information
@@ -288,8 +288,8 @@ composed channel as efficient as the direct channel.
 
 ### 3.2 Connected sum = cascaded channel
 
-The connected sum $M_1 \#_{\rm neck} M_2$ from OBSERVERS\_AND\_CHANNELS.md
-and INTERMARKET\_GEOMETRY.md IS the cascaded (series) channel in network
+The connected sum $M_1 \#_{\rm neck} M_2$ from OBSERVERS_AND_CHANNELS.md
+and INTERMARKET_GEOMETRY.md IS the cascaded (series) channel in network
 information theory.
 
 **Theorem 3.1** (Connected sum = cascaded channel). *The connected sum
@@ -301,13 +301,13 @@ $$C(M_1 \# M_2) = \min\left(C(M_1),\; C(M_2),\; \frac{\pi^2}{L_{\rm neck}^2}\rig
 connecting region). The channel capacity of the connected sum is limited by
 the thinnest neck — the bottleneck principle.*
 
-*This recovers the spectral gap result from OBSERVERS\_AND\_CHANNELS.md
+*This recovers the spectral gap result from OBSERVERS_AND_CHANNELS.md
 equation (3.3): the market's spectral gap is the minimum over all component
 gaps and neck modes.*
 
 ### 3.3 The relay channel and market makers
 
-The ambient shortcut from OBSERVERS\_AND\_CHANNELS.md Section 4 IS the relay
+The ambient shortcut from OBSERVERS_AND_CHANNELS.md Section 4 IS the relay
 channel from El Gamal and Kim [2011], Chapter 16.
 
 A market maker holding off-manifold inventory acts as a relay: they receive
@@ -324,7 +324,7 @@ In our framework:
 - $Y_1$ = the market maker's updated inventory (relay output)
 
 The Willmore energy $\mathcal{W}$ IS the relay capacity. This was stated as
-a proportionality in OBSERVERS\_AND\_CHANNELS.md Theorem O4. We can now
+a proportionality in OBSERVERS_AND_CHANNELS.md Theorem O4. We can now
 make it exact:
 
 **Theorem 3.2** (Willmore = relay capacity). *The relay channel capacity
@@ -374,7 +374,7 @@ structure**. The trader's action depends on the market's past outputs, which
 depend on all traders' past actions, which depend on the market's earlier
 outputs. The price is a fixed point of this feedback loop:
 
-$$p^* = \Phi(p^*) \tag{4.2}$$
+$$p^{\ast} = \Phi(p^{\ast}) \tag{4.2}$$
 
 where $\Phi$ is the mapping from current price to the price implied by all
 traders' optimal responses to the current price. The rational expectations
@@ -442,7 +442,7 @@ which traders observe past prices). Then $\mathcal{T}$ is incomplete: there
 exist true statements about strategy profitability that $\mathcal{T}$ cannot
 prove.*
 
-*Proof.* The feedback equation $p^* = \Phi(p^*)$ defines a self-referential
+*Proof.* The feedback equation $p^{\ast} = \Phi(p^{\ast})$ defines a self-referential
 system. The map $\Phi$ is computed by aggregating all traders' best responses,
 which involves evaluating whether each strategy is profitable — a decision
 about the system's own behaviour. By the Turing completeness of market
@@ -514,7 +514,7 @@ At each level, the unanswerable questions of the sub-market become answerable
 ### 5.3 The Giry monad tower
 
 The Giry monad $P$ maps a measurable space $X$ to the space of probability
-measures $P(X)$ (CONVEXIFICATION.md, DUAL\_TOWER.md). Iterating:
+measures $P(X)$ (CONVEXIFICATION.md, DUAL_TOWER.md). Iterating:
 
 $$X \to P(X) \to P(P(X)) \to P(P(P(X))) \to \cdots \tag{5.4}$$
 
@@ -562,7 +562,7 @@ market hierarchy becomes explainable at a higher level. The carry puzzle
 equity premium puzzle (unexplainable at the equity level) is explained at the
 equity-bond interaction level. The puzzle of why markets exist at all
 (unexplainable within any single market) is explained at the meta-level of
-information processing efficiency (WHY\_MARKETS\_EVOLVE.md).
+information processing efficiency (WHY_MARKETS_EVOLVE.md).
 
 ---
 
@@ -592,7 +592,7 @@ $b^{(\rm obs)} \in M^r$ with channel $\mathcal{C}_{\rm obs}$ faces:*
 
 ### 6.2 The insider has a stronger theory
 
-The insider from LIGHTCONE\_OF\_PRICE.md has a wider lightcone — they can
+The insider from LIGHTCONE_OF_PRICE.md has a wider lightcone — they can
 see events outside the public lightcone. In the channel-manifold framework:
 
 The insider has access to a wider channel. Their projection $\pi_{\rm insider}$
@@ -699,16 +699,16 @@ in crises (the self-modification is expansive, the channel is non-stationary).
 
 The self-referential channel has a fixed point when:
 
-$$\theta^* = \Phi(\theta^*, Y^*), \qquad Y^* \sim p_{\theta^*}(\cdot|X^*) \tag{7.3}$$
+$$\theta^{\ast} = \Phi(\theta^{\ast}, Y^{\ast}), \qquad Y^{\ast} \sim p_{\theta^{\ast}}(\cdot|X^{\ast}) \tag{7.3}$$
 
 — the channel parameters are stable under their own output. This is the
-rational expectations equilibrium. The price $p^*$ is a fixed point of the
+rational expectations equilibrium. The price $p^{\ast}$ is a fixed point of the
 map $p \mapsto \Phi(\theta(p), Y(p))$.
 
 **The fixed point IS the Gödel sentence.** Gödel's diagonal lemma: for any
 property $\phi$, there exists $G$ with $G \leftrightarrow \phi(\ulcorner G \urcorner)$.
 The self-referential channel's fixed point equation has exactly this structure:
-$\theta^*$ is a statement about the channel that is true if and only if it
+$\theta^{\ast}$ is a statement about the channel that is true if and only if it
 describes the channel that produces it.
 
 The incompleteness of market theories is not imported from logic — it is
@@ -835,7 +835,7 @@ channel capacity of the market:
 | **Existence** | Time to learn markets exist | Awareness that a channel exists | The uninformed public |
 | **Access** | Brokerage account, KYC, minimum balance | Permission to receive the channel output | Non-participants |
 | **Data** | Bloomberg (\$24k/yr), Reuters, exchange feeds | Resolution of the channel (tick vs daily) | Small retail |
-| **Computation** | Hardware, models, staff | Ability to decode the channel (compute $b^*$) | Non-quantitative participants |
+| **Computation** | Hardware, models, staff | Ability to decode the channel (compute $b^{\ast}$) | Non-quantitative participants |
 | **Execution** | Bid-ask spread, market impact, commissions | Ability to ACT on decoded information | Passive observers |
 | **Confidence** | Track record, capital, risk tolerance | Willingness to bet on the decoded signal | The risk-averse |
 | **Persistence** | Drawdown tolerance, career risk | Ability to maintain position through noise | Short-horizon actors |
@@ -895,19 +895,19 @@ inefficiency.**
 
 Formally:
 
-$$\mathcal{W}^* \geq \frac{\text{Cost of maintaining } \mathcal{F}^M_t}{C_{\rm relay}} \tag{9.3}$$
+$$\mathcal{W}^{\ast} \geq \frac{\text{Cost of maintaining } \mathcal{F}^M_t}{C_{\rm relay}} \tag{9.3}$$
 
-The optimal Willmore energy (optimal inefficiency from OBSERVERS\_AND\_CHANNELS
+The optimal Willmore energy (optimal inefficiency from OBSERVERS_AND_CHANNELS
 Theorem O5) is bounded below by the ratio of observation cost to relay
 capacity. Perfect efficiency ($\mathcal{W} = 0$) would require zero-cost
 observation — violating Landauer.
 
 ### 9.5 The observation-efficiency tradeoff
 
-$$\underbrace{\mathcal{W}(M)}_{\text{inefficiency}} = \underbrace{\mathcal{W}^*_{\rm structural}}_{\text{ambient shortcut capacity}} + \underbrace{\mathcal{W}_{\rm Landauer}}_{\text{observation cost bound}} + \underbrace{\mathcal{W}_{\rm excess}}_{\text{exploitable alpha}} \tag{9.4}$$
+$$\underbrace{\mathcal{W}(M)}_{\text{inefficiency}} = \underbrace{\mathcal{W}^{\ast}_{\rm structural}}_{\text{ambient shortcut capacity}} + \underbrace{\mathcal{W}_{\rm Landauer}}_{\text{observation cost bound}} + \underbrace{\mathcal{W}_{\rm excess}}_{\text{exploitable alpha}} \tag{9.4}$$
 
 The total Willmore energy decomposes into:
-1. **Structural inefficiency** $\mathcal{W}^*_{\rm structural}$: the positive
+1. **Structural inefficiency** $\mathcal{W}^{\ast}_{\rm structural}$: the positive
    curvature needed for ambient shortcuts (beneficial — provides relay capacity)
 2. **Landauer inefficiency** $\mathcal{W}_{\rm Landauer}$: the minimum curvature
    set by the thermodynamic cost of observation (unavoidable — the Grossman-Stiglitz
@@ -915,10 +915,10 @@ The total Willmore energy decomposes into:
 3. **Excess inefficiency** $\mathcal{W}_{\rm excess}$: exploitable alpha
    (the part that MCF eliminates over time)
 
-The Sharpe-curvature identity $\mathrm{Sharpe}^* = \|H\|$ combined with this
+The Sharpe-curvature identity $\mathrm{Sharpe}^{\ast} = \|H\|$ combined with this
 decomposition gives:
 
-$$\mathrm{Sharpe}^* = \sqrt{\mathcal{W}^*_{\rm structural}/\text{Vol}(M) + \mathcal{W}_{\rm Landauer}/\text{Vol}(M) + \mathcal{W}_{\rm excess}/\text{Vol}(M)} \tag{9.5}$$
+$$\mathrm{Sharpe}^{\ast} = \sqrt{\mathcal{W}^{\ast}_{\rm structural}/\text{Vol}(M) + \mathcal{W}_{\rm Landauer}/\text{Vol}(M) + \mathcal{W}_{\rm excess}/\text{Vol}(M)} \tag{9.5}$$
 
 Only the third term is tradeable. The first two are the "cost of doing
 business" — the irreducible Sharpe ratio that exists even in a market as
@@ -954,7 +954,7 @@ The FX market demonstrates the channel-manifold identity concretely:
 
 **One manifold:** The full FX market is $M^3_{\rm FX} \subset \Delta_{N-1}$
 (the currency simplex, $r = 3$ factors). This is the "one manifold" view
-from FOREIGN\_EXCHANGE.md Section 2.
+from FOREIGN_EXCHANGE.md Section 2.
 
 **Many manifolds:** Each currency pair defines a sub-manifold
 $M_{\rm pair} \subset M^3_{\rm FX}$. EUR/USD is a 1-dimensional curve on
@@ -1060,7 +1060,7 @@ three parallel descriptions — they are one description viewed from three
 angles.
 
 This is the deepest unification in the monograph. The Sharpe-curvature
-identity $\mathrm{Sharpe}^* = \|H\|$ connects finance to geometry. The
+identity $\mathrm{Sharpe}^{\ast} = \|H\|$ connects finance to geometry. The
 Kelly-capacity identity $h_{\rm Kelly} = C$ connects finance to information.
 The feedback-Gödel identity connects information to logic. Together they
 form a triangle:
@@ -1233,12 +1233,12 @@ the theory that cannot fully describe itself.*
 ---
 
 *This paper is part of the monograph "The Geometry of Efficient Markets."
-Cross-references: INCOMPLETENESS.md (three walls); OBSERVERS\_AND\_CHANNELS.md
-(shared filtrations, ambient shortcuts, Willmore relay); LIGHTCONE\_OF\_PRICE.md
-(Lorentzian structure, causal cones, insider lightcone); FOREIGN\_EXCHANGE.md
-(currency simplex, one-manifold view); FIBER\_BUNDLES.md (parallel transport,
-O'Neill tensor); DUAL\_TOWER.md (Giry monad); CONVEXIFICATION.md (free convex
-completion); INFORMATION\_THEORY.md (SMB = Kelly); BRAIDS.md (Turing completeness);
-FOKKER\_PLANCK\_CFD.md (stationary distribution = Jeffreys prior);
-INTERMARKET\_GEOMETRY.md (connected sums); MARKET\_PROCESSES.md (Jacobi, torus,
+Cross-references: INCOMPLETENESS.md (three walls); OBSERVERS_AND_CHANNELS.md
+(shared filtrations, ambient shortcuts, Willmore relay); LIGHTCONE_OF_PRICE.md
+(Lorentzian structure, causal cones, insider lightcone); FOREIGN_EXCHANGE.md
+(currency simplex, one-manifold view); FIBER_BUNDLES.md (parallel transport,
+O'Neill tensor); DUAL_TOWER.md (Giry monad); CONVEXIFICATION.md (free convex
+completion); INFORMATION_THEORY.md (SMB = Kelly); BRAIDS.md (Turing completeness);
+FOKKER_PLANCK_CFD.md (stationary distribution = Jeffreys prior);
+INTERMARKET_GEOMETRY.md (connected sums); MARKET_PROCESSES.md (Jacobi, torus,
 McKean kernels).*

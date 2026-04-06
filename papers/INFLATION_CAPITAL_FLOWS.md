@@ -54,7 +54,7 @@ $PQ$ is the volume of $M^s_{\rm goods}$ times the goods output. Inflation occurs
 when $M^r_{\rm fin}$ expands faster than $M^s_{\rm goods}$.
 
 **(v) The Taylor rule = geodesic steering of the connection curvature.**
-The central bank's Taylor rule ($r = r^* + \alpha(\pi-\pi^*) + \beta(y-y^*)$)
+The central bank's Taylor rule ($r = r^{\ast} + \alpha(\pi-\pi^{\ast}) + \beta(y-y^{\ast})$)
 is a feedback law that steers the curvature of $\nabla^{\rm flow}$ toward zero
 — targeting flat connection, minimal inflation holonomy. The Taylor coefficients
 $\alpha, \beta$ are the proportional-integral gains of a geometric PID controller
@@ -87,8 +87,8 @@ $w = (w_1,\ldots,w_{d_g})$ with $\sum w_i = 1$, $w_i \geq 0$, where $w_i$ is
 the expenditure share on good $i$. This is a point on $\Delta_{d_g-1}$.
 
 The goods market is "efficient" in the sense of competitive markets: the
-expenditure weights $w^*$ minimise the cost of a target utility level — the
-**Hicksian demand** problem. In our language: $w^* = \arg\min_{w\in\Delta_{d_g-1}} C(w,p)$
+expenditure weights $w^{\ast}$ minimise the cost of a target utility level — the
+**Hicksian demand** problem. In our language: $w^{\ast} = \arg\min_{w\in\Delta_{d_g-1}} C(w,p)$
 where $C(w,p) = \sum_i w_i p_i$ is the cost function.
 
 **The goods market manifold $M^s_{\rm goods}$** is the set of optimal expenditure
@@ -321,15 +321,15 @@ the goods market manifold have different holonomies.
 
 ### 4.2 The Wicksell natural rate as the geodesic curvature
 
-Wicksell's "natural rate of interest" $r^*$ — the interest rate consistent with
+Wicksell's "natural rate of interest" $r^{\ast}$ — the interest rate consistent with
 price stability — is geometrically the interest rate at which the curvature of
 the capital flow connection is zero:
 
-$$r^* : F^{\rm flow}(r^*) = 0 \tag{4.3}$$
+$$r^{\ast} : F^{\rm flow}(r^{\ast}) = 0 \tag{4.3}$$
 
-The central bank's problem is to find $r^*$ and set the policy rate equal to it.
-When the policy rate $r_{\rm policy} < r^*$: the connection has positive curvature
-(inflationary). When $r_{\rm policy} > r^*$: negative curvature (deflationary).
+The central bank's problem is to find $r^{\ast}$ and set the policy rate equal to it.
+When the policy rate $r_{\rm policy} < r^{\ast}$: the connection has positive curvature
+(inflationary). When $r_{\rm policy} > r^{\ast}$: negative curvature (deflationary).
 
 **The natural rate is not constant.** It changes as $M^r_{\rm fin}$ and $M^s_{\rm goods}$
 evolve — as the factor structure of both markets changes. In RG terms (RENORMALIZATION.md):
@@ -387,19 +387,19 @@ times velocity). The right side is the total inflation load on the goods manifol
 ### 6.1 The Taylor rule derived geometrically
 
 The Federal Reserve's Taylor rule:
-$$r_{\rm policy} = r^* + 1.5(\pi - \pi^*) + 0.5(y - y^*) \tag{6.1}$$
+$$r_{\rm policy} = r^{\ast} + 1.5(\pi - \pi^{\ast}) + 0.5(y - y^{\ast}) \tag{6.1}$$
 
-where $\pi^*$ is the inflation target, $y-y^*$ is the output gap.
+where $\pi^{\ast}$ is the inflation target, $y-y^{\ast}$ is the output gap.
 
 **Geometric derivation:**
 
-The central bank wants to steer the goods manifold velocity toward $\pi^*$ and
-the financial manifold toward full employment $y^*$. This is a combined tracking problem
+The central bank wants to steer the goods manifold velocity toward $\pi^{\ast}$ and
+the financial manifold toward full employment $y^{\ast}$. This is a combined tracking problem
 on both manifolds simultaneously — a multi-manifold LQG controller
 (STOCHASTIC_CONTROL_KALMAN.md Section 6).
 
 The optimal LQG controller for the combined system steers:
-$$\dot{r}_{\rm policy} = -K_\pi(\pi-\pi^*) - K_y(y-y^*) \tag{6.2}$$
+$$\dot{r}_{\rm policy} = -K_\pi(\pi-\pi^{\ast}) - K_y(y-y^{\ast}) \tag{6.2}$$
 
 The Taylor coefficients are the LQG gains:
 $$K_\pi = \sqrt{q_\pi/\rho_\pi}, \qquad K_y = \sqrt{q_y/\rho_y} \tag{6.3}$$
@@ -485,10 +485,10 @@ Each arrow is a connection with curvature:
 
 ### 8.2 The Phillips curve as inter-manifold coupling
 
-The **Phillips curve** ($\pi = f(y-y^*)$, inflation rises when output exceeds potential)
+The **Phillips curve** ($\pi = f(y-y^{\ast})$, inflation rises when output exceeds potential)
 is the O'Neill $A$-tensor coupling between the goods and labour manifolds:
 
-$$\pi = |A^{\rm goods-lab}(y-y^*)|_{g^{\rm FR}} \tag{8.1}$$
+$$\pi = |A^{\rm goods-lab}(y-y^{\ast})|_{g^{\rm FR}} \tag{8.1}$$
 
 The Phillips curve is not a stable relationship — it shifts when the coupling
 structure between the goods and labour manifolds changes. In geometric terms:
@@ -543,7 +543,7 @@ consumption and production structure. A commodity producer's real return during
 an energy price spike is not the same as a tech company's real return.
 
 **The natural rate is on the goods manifold, not in a spreadsheet.**
-Central banks estimate $r^*$ econometrically. The geometric framework says $r^*$
+Central banks estimate $r^{\ast}$ econometrically. The geometric framework says $r^{\ast}$
 is the policy rate at which the curvature of the capital flow connection is zero.
 You can estimate it directly from the divergence of capital flows between the
 financial and goods markets — no need for unobservable potential output.

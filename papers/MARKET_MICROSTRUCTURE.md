@@ -152,7 +152,7 @@ $M^{\rm LOB}$. Each incoming order (limit, market, cancellation) perturbs the
 LOB state. The process is Markovian conditional on the current book state
 (under mild assumptions on the order arrival process).
 
-In the language of MARKET\_PROCESSES.md: the LOB process is a diffusion on
+In the language of MARKET_PROCESSES.md: the LOB process is a diffusion on
 $M^{r_{\rm LOB}}_{\rm LOB}$ with generator:
 
 $$\mathcal{L}_{\rm LOB} = \frac{\varepsilon^2_{\rm LOB}}{2}\Delta_{g^{\rm LOB}} - \varepsilon^2_{\rm LOB}\,\vec{H}_{\rm LOB}\cdot\nabla_{g^{\rm LOB}} \tag{1.6}$$
@@ -356,7 +356,7 @@ of the simplex $\partial\Delta_{d-1}$, where the Fisher-Rao metric has the
 characteristic $1/\sqrt{b}$ singularity. The LOB depth profile inherits this
 singularity, producing $q(\delta p) \sim (\delta p)^{1/2}$. The square-root
 law is a direct consequence of the Jacobi boundary geometry that pervades the
-entire monograph (SOBOLEV\_OPTIONS\_GREEKS.md, Section 2). $\square$
+entire monograph (SOBOLEV_OPTIONS_GREEKS.md, Section 2). $\square$
 
 ---
 
@@ -483,7 +483,7 @@ subject to $x(0) = Q$, $x(T) = 0$, where $x(t)$ is the remaining inventory.
 
 ### 5.2 The geodesic solution
 
-In STOCHASTIC\_CONTROL\_KALMAN.md, we proved that optimal execution is a
+In STOCHASTIC_CONTROL_KALMAN.md, we proved that optimal execution is a
 geodesic on $M^r$. In the LOB geometry, the result specialises as follows.
 
 **Theorem 5.1** (Almgren-Chriss = LOB geodesic). *The optimal execution
@@ -579,7 +579,7 @@ its latency and detection speed) and $\Delta t$ is the timescale over which
 curvature persists without intervention.*
 
 *Proof.* Under MCF, the Willmore energy decreases monotonically (this is
-the content of Huisken's theorem, applied in MINIMAL\_SURFACE.md Section 5).
+the content of Huisken's theorem, applied in MINIMAL_SURFACE.md Section 5).
 The decay rate is controlled by the spectral gap: $\mathcal{W}(t) \leq \mathcal{W}(0)\,e^{-2\lambda_1 t}$.
 A market maker performing MCF with spectral gap $\lambda_1^{\rm HFT}$ reduces
 curvature at rate $2\lambda_1^{\rm HFT}$. The result follows by integrating
@@ -587,7 +587,7 @@ the exponential decay over $M^{r_{\rm LOB}}$. $\square$
 
 ### 6.3 HFT profit as curvature harvesting
 
-The HFT's profit is the Sharpe-curvature identity (R1 from MINIMAL\_SURFACE.md)
+The HFT's profit is the Sharpe-curvature identity (R1 from MINIMAL_SURFACE.md)
 applied to the LOB manifold:
 
 $$\mathrm{Sharpe}_{\rm HFT} = \|H_{\rm LOB}\|_{L^2(M^{r_{\rm LOB}})} \tag{6.3}$$
@@ -706,7 +706,7 @@ seconds by the dense ecosystem of HFT market makers.
 
 **Process:** Jacobi diffusion on the LOB simplex. The stationary distribution
 is the Jacobi polynomial series — the same structure as the macro Jacobi
-diffusion in MARKET\_PROCESSES.md, but at the microstructure timescale.
+diffusion in MARKET_PROCESSES.md, but at the microstructure timescale.
 
 **Impact:** Low $\kappa_{\rm LOB}$ (deep book), square-root law with small
 coefficient. Kyle's $\lambda$ is low because of the large number of noise
@@ -817,7 +817,7 @@ This gives a precise explanation for the coexistence of HFT and factor investing
 > that HFTs cannot reach.*
 
 This is not a slogan — it is a theorem. The Sharpe-curvature identity
-$\mathrm{Sharpe}^* = \|H\|_{L^2}$ applies at every timescale. The total
+$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ applies at every timescale. The total
 curvature (total alpha available) decomposes spectrally:
 
 $$\|H\|_{L^2}^2 = \sum_{k=1}^\infty |h_k|^2 \tag{9.2}$$
@@ -831,7 +831,7 @@ competes with the other because they operate in orthogonal spectral bands.
 ### 9.3 The Cheeger constant across timescales
 
 The Cheeger constant $h_M$ determines resilience — how much of the manifold
-must be cut to disconnect it (GEOSPATIAL\_CONTAGION.md). At the microstructure
+must be cut to disconnect it (GEOSPATIAL_CONTAGION.md). At the microstructure
 level:
 
 $$h_M^{\rm LOB} = \inf_S \frac{\mathrm{Area}(\partial S)}{\min\bigl(\mathrm{Vol}(S),\,\mathrm{Vol}(M\setminus S)\bigr)} \tag{9.3}$$
@@ -911,7 +911,7 @@ The first term is the impact cost of the lit portion; the second is the cost
 of the unfilled dark pool quantity that must be re-routed to the lit market.
 Minimising over the split gives the optimal dark pool allocation:
 
-$$Q_{\rm dark}^* = Q\,\frac{p_{\rm fill}}{p_{\rm fill} + \sqrt{(1-p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}}} \tag{10.5}$$
+$$Q_{\rm dark}^{\ast} = Q\,\frac{p_{\rm fill}}{p_{\rm fill} + \sqrt{(1-p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}}} \tag{10.5}$$
 
 When $p_{\rm fill}$ is high and $\kappa_{\rm LOB}^{\rm lit}$ is large (thin
 lit market): route more to the dark pool. When $p_{\rm fill}$ is low or the
@@ -1026,7 +1026,7 @@ high quality).
 
 This paper connects the microstructure level to the macro-geometric framework:
 
-**MINIMAL\_SURFACE.md:** The Sharpe-curvature identity $\mathrm{Sharpe}^* = \|H\|_{L^2}$
+**MINIMAL_SURFACE.md:** The Sharpe-curvature identity $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$
 applies to the LOB manifold. HFT Sharpe ratio = LOB curvature removed.
 
 **CLASSIFICATION.md:** The three market types (CAPM, Clifford, pseudo-Anosov)
@@ -1038,19 +1038,19 @@ in the pseudo-Anosov tier.
 $r = r_{\rm LOB}$ at the microstructure timescale, giving the minimax-optimal
 LOB prediction strategy.
 
-**STOCHASTIC\_CONTROL\_KALMAN.md:** Optimal execution as geodesic on $M^r$
+**STOCHASTIC_CONTROL_KALMAN.md:** Optimal execution as geodesic on $M^r$
 specialises to the LOB geodesic of Section 5.
 
-**FOKKER\_PLANCK\_CFD.md:** The Voronoi partition of $M^r$ specialises to the
+**FOKKER_PLANCK_CFD.md:** The Voronoi partition of $M^r$ specialises to the
 LOB price grid. The Reynolds number $\mathrm{Re} = H^2/(\varepsilon^2\kappa)$
 at the microstructure level determines whether the LOB dynamics are laminar
 (orderly trading) or turbulent (flash crash).
 
-**GEOSPATIAL\_CONTAGION.md:** The Cheeger constant of the LOB manifold
+**GEOSPATIAL_CONTAGION.md:** The Cheeger constant of the LOB manifold
 determines resilience to large orders. Low Cheeger = fragile LOB = flash-crash
 susceptibility.
 
-**MARKET\_PROCESSES.md:** Each LOB type has the correct stochastic process:
+**MARKET_PROCESSES.md:** Each LOB type has the correct stochastic process:
 Jacobi diffusion for CAPM-type, $\vartheta_3$ torus BM for Clifford-type,
 McKean hyperbolic BM for pseudo-Anosov.
 
@@ -1109,12 +1109,12 @@ nature of liquidity in financial markets," *Physical Review X* **1**(2), 021006.
 
 ---
 
-**Companion papers:** MINIMAL\_SURFACE.md (Sharpe = curvature),
+**Companion papers:** MINIMAL_SURFACE.md (Sharpe = curvature),
 CLASSIFICATION.md (three market types), CONVERGENCE.md (MUP regret),
-STOCHASTIC\_CONTROL\_KALMAN.md (Almgren-Chriss as geodesic),
-FOKKER\_PLANCK\_CFD.md (Voronoi partition, Reynolds number),
-GEOSPATIAL\_CONTAGION.md (Cheeger constant, systemic risk),
-MARKET\_PROCESSES.md (exact SDEs per topology).
+STOCHASTIC_CONTROL_KALMAN.md (Almgren-Chriss as geodesic),
+FOKKER_PLANCK_CFD.md (Voronoi partition, Reynolds number),
+GEOSPATIAL_CONTAGION.md (Cheeger constant, systemic risk),
+MARKET_PROCESSES.md (exact SDEs per topology).
 
 ---
 

@@ -423,7 +423,7 @@ cells miss.
 1. Build an AMR mesh with very high resolution at $b_i \approx 0$ for each $i$
 2. Classify the boundary behaviour: does the process hit the boundary (exit)
    or bounce back (entrance)?
-3. For each portfolio $i$: estimate the Feller parameter $\alpha_i = Tb^*_i - 1/2$
+3. For each portfolio $i$: estimate the Feller parameter $\alpha_i = Tb^{\ast}_i - 1/2$
 4. Compare to the theoretical prediction from HAMILTONIAN_TAILS_COMPLETENESS
 
 ---

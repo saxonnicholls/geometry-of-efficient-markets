@@ -151,7 +151,7 @@ $$\iota(x) = \delta_x \tag{2.2}$$
 *Let $X$ be a compact metrizable space. Then:*
 
 *(i) $\mathcal{P}(X)$ is a compact convex subset of the locally convex space
-$C(X)^*$ (dual of continuous functions).*
+$C(X)^{\ast}$ (dual of continuous functions).*
 
 *(ii) The extreme points of $\mathcal{P}(X)$ are exactly the Dirac masses:
 $\mathrm{ext}(\mathcal{P}(X)) = \{\delta_x : x \in X\}$.*
@@ -418,8 +418,8 @@ is its centroid.
 **The Weyl chamber.** For the action of $S_d$ on ordered portfolios
 ($b_1 \geq b_2 \geq \cdots \geq b_d$), the fundamental domain is the Weyl
 chamber $W = \{b \in \Delta_{d-1} : b_1 \geq \cdots \geq b_d\}$. The
-log-optimal portfolio $b^*$ lies in the Weyl chamber (after relabelling).
-The distance from $b^*$ to the chamber boundary measures how "concentrated"
+log-optimal portfolio $b^{\ast}$ lies in the Weyl chamber (after relabelling).
+The distance from $b^{\ast}$ to the chamber boundary measures how "concentrated"
 the optimal portfolio is.
 
 ### 5.4 Steiner symmetrisation and portfolio simplification
@@ -608,7 +608,7 @@ Legendre-Fenchel biconjugate:
 $$f^{**}(x) = \sup\{g(x) : g \leq f, \, g \text{ convex}\} \tag{8.1}$$
 
 *Equivalently, $f^{**}$ is the Legendre-Fenchel biconjugate:*
-$$f^*(y) = \sup_x(\langle x, y\rangle - f(x)), \qquad f^{**}(x) = \sup_y(\langle x, y\rangle - f^*(y)) \tag{8.2}$$
+$$f^{\ast}(y) = \sup_x(\langle x, y\rangle - f(x)), \qquad f^{**}(x) = \sup_y(\langle x, y\rangle - f^{\ast}(y)) \tag{8.2}$$
 
 **Theorem 8.1** *(Fenchel-Moreau)*.
 *$f^{**} = f$ iff $f$ is convex and lower semicontinuous. For non-convex $f$,
@@ -619,15 +619,15 @@ $f^{**}$ is the largest convex minorant of $f$.*
 The Kelly log-growth function $L_T(b) = \frac{1}{T}\sum_t \log\langle b, x_t\rangle$
 is concave on $\Delta_{d-1}$ (as a function of $b$). Its Legendre-Fenchel
 conjugate is:
-$$L_T^*(y) = \sup_{b \in \Delta_{d-1}}(\langle y, b\rangle - L_T(b)) \tag{8.3}$$
+$$L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}}(\langle y, b\rangle - L_T(b)) \tag{8.3}$$
 
 This is the **rate function** of the large deviations of the empirical portfolio
-distribution. By Cramér's theorem, $L_T^*$ governs the probability that the
-empirical portfolio mean deviates from $b^*$.
+distribution. By Cramér's theorem, $L_T^{\ast}$ governs the probability that the
+empirical portfolio mean deviates from $b^{\ast}$.
 
 **The MUP is the Legendre-Fenchel dual of the Kelly function:**
 $$\log S_T^{\rm MUP} = \log\int_{\Delta} e^{T \cdot L_T(b)}\,d\mu(b)
-\approx T \cdot L_T(b^*) + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F \tag{8.4}$$
+\approx T \cdot L_T(b^{\ast}) + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F \tag{8.4}$$
 
 The Laplace approximation IS the saddle-point approximation of the
 Legendre-Fenchel transform.
@@ -680,11 +680,216 @@ composition.
 
 ---
 
-## 10. Open Problems
+## 10. The Palindromic Completion of the Simplex
+
+### 10.1 The sixth convexification operator
+
+Section 9 unified five convexification operators as instances of the free
+convex completion $\mathcal{P}$. There is a sixth — more economical than any
+of them — that exploits a specific structural symmetry: **palindromic
+reflection**.
+
+The idea: if a space has a reflection symmetry, you only need to observe HALF
+of it. The other half is determined. The palindromic completion builds the
+full convex space from a fundamental domain — the half-space under reflection.
+
+**Definition 10.1** (Palindromic reflection on $\Delta_{d-1}$). *For an
+involution $\tau: \{1, \ldots, d\} \to \{1, \ldots, d\}$ (a permutation with
+$\tau^2 = \mathrm{id}$), the **palindromic reflection** on $\Delta_{d-1}$
+is:*
+
+$$R_\tau: \Delta_{d-1} \to \Delta_{d-1}, \qquad R_\tau(b_1, \ldots, b_d) = (b_{\tau(1)}, \ldots, b_{\tau(d)}) \tag{10.1}$$
+
+*The simplest case: the reversal $\tau(i) = d+1-i$, giving
+$R(b_1, \ldots, b_d) = (b_d, \ldots, b_1)$.*
+
+**Definition 10.2** (Palindromic half-simplex). *The **palindromic
+half-simplex** under $R_\tau$ is the fundamental domain:*
+
+$$\Delta^+_{d-1} = \{b \in \Delta_{d-1} : b_i \geq b_{\tau(i)} \text{ for all } i < \tau(i)\} \tag{10.2}$$
+
+*This is a convex subset of $\Delta_{d-1}$ containing exactly one
+representative from each pair $\{b, R_\tau(b)\}$.*
+
+**Definition 10.3** (Palindromic completion). *The **palindromic completion**
+of a set $S \subseteq \Delta^+_{d-1}$ is:*
+
+$$\mathrm{Pal}(S) = \mathrm{conv}(S \cup R_\tau(S)) \tag{10.3}$$
+
+*The convex hull of $S$ and its palindromic reflection. This is the smallest
+convex set that contains $S$ and is invariant under $R_\tau$.*
+
+### 10.2 Information halving
+
+**Theorem 10.4** (Palindromic information halving). *Let $f: \Delta_{d-1} \to
+\mathbb{R}$ be a portfolio payoff function that is palindromic under $R_\tau$
+($f = f \circ R_\tau$). Then:*
+
+$$H(f) = H(f|_{\Delta^+_{d-1}}) \tag{10.4}$$
+
+*The entropy of $f$ on the full simplex equals its entropy on the
+half-simplex. The information in the second half is zero — it is free.*
+
+*Proof.* Since $f(b) = f(R_\tau(b))$ for all $b$, the values of $f$ on
+$\Delta^- = \Delta \setminus \Delta^+$ are determined by the values on
+$\Delta^+$. The conditional entropy $H(f|_{\Delta^-} \mid f|_{\Delta^+}) = 0$.
+By the chain rule: $H(f) = H(f|_{\Delta^+}) + H(f|_{\Delta^-} \mid f|_{\Delta^+}) = H(f|_{\Delta^+})$. $\square$
+
+This is the precise sense in which palindromic symmetry gives you free
+information. Any palindromic structure in the market return function halves
+the dimension of the estimation problem.
+
+### 10.3 Multi-dimensional palindromic completion
+
+For $k$ independent involutions $\tau_1, \ldots, \tau_k$ (commuting
+reflections on $\Delta_{d-1}$), the **$k$-palindromic completion** uses the
+fundamental domain under all $k$ reflections simultaneously:
+
+$$\Delta^+_{d-1}(k) = \{b : b_i \geq b_{\tau_j(i)} \text{ for all } i < \tau_j(i), \text{ all } j = 1, \ldots, k\} \tag{10.5}$$
+
+The volume of this fundamental domain is $\mathrm{Vol}(\Delta_{d-1}) / 2^k$ —
+the full simplex divided by the order of the palindromic group.
+
+**Theorem 10.5** ($k$-palindromic information reduction). *A function $f$
+that is palindromic under all $k$ reflections satisfies:*
+
+$$H(f) = H(f|_{\Delta^+(k)}) \tag{10.6}$$
+
+*The effective entropy is reduced by a factor of $2^k$: you only need to
+observe the fundamental domain; the remaining $2^k - 1$ copies are free.*
+
+For a market with $r$ factors, the maximum palindromic dimension is $k = r$
+(each factor has a reflection symmetry). In this case:
+
+$$H_{\rm eff} = \frac{H_{\rm full}}{2^r} \tag{10.7}$$
+
+A fully palindromic market (symmetric in every factor direction) has
+exponentially reduced information content. This is the CAPM at equilibrium:
+every factor is mean-reverting (palindromic in time), and the effective
+entropy is minimal.
+
+### 10.4 Palindromic completion on the Bhattacharyya sphere
+
+Under the Bhattacharyya embedding $\phi(b) = \sqrt{b} \in S^{d-1}_+$, the
+palindromic reflection $R_\tau$ becomes a REFLECTION of the sphere:
+
+$$\hat{R}_\tau(\sqrt{b_1}, \ldots, \sqrt{b_d}) = (\sqrt{b_{\tau(1)}}, \ldots, \sqrt{b_{\tau(d)}}) \tag{10.8}$$
+
+This is an isometry of $S^{d-1}_+$ (it preserves the round metric). The
+palindromic half-sphere $S^+$ is a fundamental domain of the reflection group.
+
+**The palindromic completion of $S^+$ gives the full positive orthant $S^{d-1}_+$.**
+
+More generally, the group generated by $k$ independent reflections is a
+**Coxeter group** $W$ of type $A$. The fundamental domain is a
+**Weyl chamber** — a simplex-shaped region whose $2^k$ reflections tile
+the sphere. The palindromic completion is the Coxeter group orbit of the
+fundamental domain.
+
+**Theorem 10.6** (Palindromic completion = Coxeter orbit). *The $k$-palindromic
+completion of a function $f$ defined on the Weyl chamber
+$C_W \subset S^{d-1}_+$ is:*
+
+$$\mathrm{Pal}_W(f)(x) = f(w \cdot x) \quad \text{where } w \in W \text{ is the unique element with } w \cdot x \in C_W \tag{10.9}$$
+
+*This extends $f$ from the Weyl chamber to the full sphere by the action of
+the Coxeter group. The extension is palindromic (invariant under $W$) by
+construction, and carries no information beyond $f|_{C_W}$.*
+
+### 10.5 The palindromic completion of the market manifold
+
+The market manifold $M^r \subset S^{d-1}_+$ may or may not have palindromic
+symmetry. Three cases:
+
+**Case 1: CAPM (great sphere $S^r_+$).** The CAPM manifold IS palindromic
+in all factor directions. The Jacobi process with symmetric parameters
+satisfies detailed balance — the forward and reverse transition probabilities
+are equal. The palindromic group is the full symmetric group $S_{r+1}$
+(permutations of factors). The fundamental domain is a single Weyl chamber.
+The market is maximally palindromic; information cost is minimal.
+
+**Case 2: Clifford torus ($T^2$).** The torus has two palindromic directions
+(the two circle factors) but the market manifold on it need NOT be symmetric
+in both. The momentum factor breaks the palindromic symmetry in the angular
+direction (momentum is directional; mean reversion is palindromic). The
+palindromic dimension is $k = 1$ (the mean-reversion direction is palindromic;
+the momentum direction is not). Information is halved, not quartered.
+
+**Case 3: Pseudo-Anosov ($\mathbb{H}^2$).** Hyperbolic geometry has NO
+global reflection symmetry that preserves the manifold. The pseudo-Anosov
+monodromy is a hyperbolic isometry with no fixed points — it is maximally
+non-palindromic. The palindromic dimension is $k = 0$. No free information.
+Every bit must be earned. This is the geometric reason why pseudo-Anosov
+markets (crises, chaos) are the hardest to predict.
+
+### 10.6 The palindromic MUP
+
+The MUP (Manifold Universal Portfolio) integrates over $M^r$:
+
+$$b^{\rm MUP}_T = \frac{\int_{M^r} b\, W_T(b)\, d\mathrm{vol}(b)}{\int_{M^r} W_T(b)\, d\mathrm{vol}(b)}$$
+
+If $M^r$ has $k$-palindromic symmetry, the integral over $M^r$ reduces to
+an integral over the fundamental domain $M^r_+$:
+
+$$b^{\rm MUP}_T = \frac{\int_{M^r_+} b\, W_T(b)\, d\mathrm{vol}(b) + \int_{M^r_+} R_\tau(b)\, W_T(R_\tau(b))\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.10}$$
+
+By palindromic symmetry, $W_T(b) = W_T(R_\tau(b))$ (palindromic functions
+have the same wealth on both sides). So:
+
+$$b^{\rm MUP}_T = \frac{\int_{M^r_+} (b + R_\tau(b))\, W_T(b)\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.11}$$
+
+The integration domain is HALVED for each palindromic dimension. For a
+$k$-palindromic market:
+
+$$\text{MUP computation cost} \propto \frac{\mathrm{Vol}(M^r)}{2^k} \tag{10.12}$$
+
+The palindromic MUP is exponentially cheaper to compute than the general MUP.
+This is the computational dividend of palindromic symmetry: you get the same
+optimal portfolio from integrating over the fundamental domain.
+
+### 10.7 Palindromic completion vs free completion: the efficiency ratio
+
+The free convex completion $\mathcal{P}(X)$ embeds $X$ into the space of ALL
+probability measures — it is maximally general but expensive. The palindromic
+completion $\mathrm{Pal}(X)$ exploits a specific symmetry to embed $X$ into
+a space of half the dimension — it is less general but exponentially cheaper.
+
+| Completion | Domain needed | Information cost | When it applies |
+|:---|:---|:---|:---|
+| Free $\mathcal{P}(X)$ | Full $X$ | Full $H(X)$ | Always (universal) |
+| Palindromic $\mathrm{Pal}(X)$ | Half-domain $X^+$ | $H(X)/2^k$ | When $X$ has palindromic symmetry |
+| Symmetry $\mathcal{C}_G(X)$ | Fundamental domain $X/G$ | $H(X)/|G|$ | When $G$ acts on $X$ |
+
+The palindromic completion is a special case of symmetry convexification
+(Section 5) with $G = (\mathbb{Z}/2)^k$ — the group generated by $k$
+independent reflections. But stating it as a palindromic operation connects
+it to the filtration theory (palindromes in the return sequence), the
+BWT/CFL decomposition (palindromic factors), and the Jacobi detailed
+balance (palindromic processes).
+
+**Theorem 10.7** (The six convexification operators). *The complete list of
+canonical convexification operators on the portfolio simplex is:*
+
+| # | Operator | Type | Information reduction |
+|:---|:---|:---|:---|
+| 1 | Free completion $\mathcal{P}$ | Universal | None (full embedding) |
+| 2 | Legendre-Fenchel $f^{{\ast}{\ast}}$ | Functional | Removes non-convexity |
+| 3 | Density matrix $\mathcal{D}_n$ | Quantum | Removes phase information |
+| 4 | Reynolds $\mathcal{R}_G$ | Group-symmetric | Reduces by $|G|$ |
+| 5 | Ergodic $\mathcal{E}$ | Time-average | Removes transient information |
+| 6 | Palindromic $\mathrm{Pal}$ | Reflection-symmetric | Reduces by $2^k$ |
+
+*All six are instances of $\mathcal{P}$. The palindromic completion is the
+most efficient when reflection symmetry exists: it provides the maximum
+information reduction per symmetry exploited.*
+
+---
+
+## 11. Open Problems
 
 **OP-F. The non-commutative Giry monad.**
 Is there a non-commutative version of the Giry monad where $\mathcal{P}(X)$
-is replaced by the space of density matrices on a $C^*$-algebra? If so,
+is replaced by the space of density matrices on a $C^{\ast}$-algebra? If so,
 what is the analogue of the Fisher-Rao metric? (The Bures metric is a
 candidate, but its uniqueness properties are different from Čencov's.)
 

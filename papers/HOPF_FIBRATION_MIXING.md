@@ -19,7 +19,7 @@ to the factor space (base). Topological mixing on the total space is the geometr
 content of market efficiency. The mixing rate is the spectral gap $\lambda_1$.
 Non-mixing markets have information bottlenecks — sectors where information
 propagates slowly — and these bottlenecks are measured by the Cheeger constant
-$h_M$ from GEOSPATIAL\_CONTAGION.md.
+$h_M$ from GEOSPATIAL_CONTAGION.md.
 
 Our principal results:
 
@@ -151,7 +151,7 @@ factor structure aligned to the Hopf base.*
 
 *Proof.* The fiber action on $S^{d-1}_+$ is $b \mapsto e^{i\theta} \cdot b$ in
 the complexified coordinates. In the real portfolio coordinates, this corresponds
-to rotations within the idiosyncratic subspace $N_{b^*}M$ that preserve the
+to rotations within the idiosyncratic subspace $N_{b^{\ast}}M$ that preserve the
 factor exposures $\Pi_{TM}(b) = \Pi_{TM}(b')$. The Kelly growth rate
 decomposes as
 
@@ -202,15 +202,15 @@ For a market with $d$ assets on $S^{d-1}_+$, the relevant fibration depends on $
 
 The structure group of each Hopf fibration determines the holonomy of the
 associated connection. This connects directly to the Dyson classification from
-RANDOM\_MATRIX.md.
+RANDOM_MATRIX.md.
 
 **Complex Hopf and $U(n)$ holonomy.** The complex Hopf bundle $S^{2n+1} \to
 \mathbb{C}P^n$ has structure group $U(1) \subset U(n)$. The connection 1-form
 is the canonical connection on the principal $U(1)$-bundle, with curvature equal
 to the Fubini-Study Kahler form $\omega_{FS}$ on $\mathbb{C}P^n$. For the
 Clifford torus market: the $U(n)$ holonomy of the complex Hopf fiber is precisely
-the GUE ($\beta = 2$) symmetry group from RANDOM\_MATRIX.md. The Berry phase
-accumulated around a closed loop on $M^r$ (identified in FIBER\_BUNDLES.md) is
+the GUE ($\beta = 2$) symmetry group from RANDOM_MATRIX.md. The Berry phase
+accumulated around a closed loop on $M^r$ (identified in FIBER_BUNDLES.md) is
 the holonomy of the Hopf connection.
 
 **Quaternionic Hopf and $Sp(n)$ holonomy.** The quaternionic Hopf bundle
@@ -248,7 +248,7 @@ For the CAPM market ($S^r_+$): the time-reversal symmetry
 $b(t) \mapsto b(T-t)$ is a symmetry of the Jacobi process, and $\mathcal{T}^2 = +1$.
 The fiber is trivial ($S^0$).
 
-For the Clifford torus ($T^2$): the Berry phase from FIBER\_BUNDLES.md breaks
+For the Clifford torus ($T^2$): the Berry phase from FIBER_BUNDLES.md breaks
 time-reversal symmetry — a portfolio traversing a closed loop on $T^2$ accumulates
 a non-zero geometric phase. This forces $\beta = 2$ and the complex Hopf fiber
 structure $S^1$.
@@ -259,7 +259,7 @@ satisfying $\mathcal{T}^2 = -1$. This forces $\beta = 4$ and the quaternionic Ho
 fiber structure $S^3$. $\blacksquare$
 
 **Remark 2.1.** Lemma H2 provides a new perspective on the Dyson-Manifold
-correspondence proved in RANDOM\_MATRIX.md Theorem 2.1. The original proof
+correspondence proved in RANDOM_MATRIX.md Theorem 2.1. The original proof
 works through the symmetry algebra of the Fisher information matrix. The Hopf
 fibration perspective is complementary: it identifies the fiber TYPE (trivial,
 complex, quaternionic) as the geometric origin of the symmetry class.
@@ -287,7 +287,7 @@ independence properties:
 
 The financial content of each level:
 - **Ergodic** is sufficient for Birkhoff's theorem $\Rightarrow$ the Kelly
-  criterion converges: $L_T(b^*) \to h_{\rm Kelly}$ a.s.
+  criterion converges: $L_T(b^{\ast}) \to h_{\rm Kelly}$ a.s.
 - **Mixing** is sufficient for the CLT on market returns $\Rightarrow$
   confidence intervals for the Sharpe ratio are valid.
 - **Bernoulli** is the efficient market in the strongest possible sense
@@ -306,7 +306,7 @@ the smallest non-zero eigenvalue of $-\Delta_M$.
 **Proposition 3.1.** *The WF diffusion on $M^r$ is mixing iff $\lambda_1 > 0$.
 The rate of mixing (correlation decay) is*
 
-$$|\operatorname{Corr}(\Phi_n^*(f), g)| \leq C \cdot e^{-\lambda_1 n/T} \tag{3.2}$$
+$$|\operatorname{Corr}(\Phi_n^{\ast}(f), g)| \leq C \cdot e^{-\lambda_1 n/T} \tag{3.2}$$
 
 *for all $f, g \in L^2(M, \mu)$ with $\int f\,d\mu = \int g\,d\mu = 0$.*
 
@@ -315,7 +315,7 @@ eigenfunction expansion of the heat kernel gives
 $p_t(x,y) = \sum_k e^{-\lambda_k t}\phi_k(x)\phi_k(y)$,
 and the correlation function decays as $e^{-\lambda_1 t}$ from the spectral gap.
 For compact $M^r$ without boundary, $\lambda_1 > 0$ always. For $M^r$ with the
-Feller boundary conditions of the simplex (SOBOLEV\_OPTIONS\_GREEKS.md), the
+Feller boundary conditions of the simplex (SOBOLEV_OPTIONS_GREEKS.md), the
 spectral gap remains strictly positive by the Feller boundary classification.
 $\blacksquare$
 
@@ -344,7 +344,7 @@ where $a, b$ are the torus periods. For the standard Clifford torus with
 $a = b = \pi/2$ (the quarter-torus in $S^3$): $\lambda_1 = 4\pi^2/((\pi/2)^2) \cdot 1 = 16$.
 The mixing is exponential but moderate. Crucially, the flat directions of the
 torus produce polynomial corrections: the theta function kernel $\vartheta_3$ from
-MARKET\_PROCESSES.md has algebraic tails from the lattice sum.
+MARKET_PROCESSES.md has algebraic tails from the lattice sum.
 
 **Pseudo-Anosov market ($\mathbb{H}^2$, hyperbolic BM).** On a compact
 hyperbolic surface $\Sigma_g$ of genus $g \geq 2$, the spectral gap satisfies
@@ -386,7 +386,7 @@ $\phi: \Sigma_g \to \Sigma_g$ has uniform hyperbolicity — there exist stable a
 unstable foliations $\mathcal{F}^s, \mathcal{F}^u$ with contraction/expansion
 rates $\lambda_{\rm pA}^{\pm 1}$. Ornstein's theorem (extended to Anosov systems
 by Ornstein-Weiss) states that all Anosov diffeomorphisms preserving a smooth
-measure are Bernoulli. The SRB measure from MARKET\_PROCESSES.md is absolutely
+measure are Bernoulli. The SRB measure from MARKET_PROCESSES.md is absolutely
 continuous along unstable manifolds, so the Ornstein-Weiss theorem applies.
 
 (b) The CAPM spectral gap $\lambda_1 = r + d - 2$ grows linearly in $d$, but the
@@ -421,16 +421,16 @@ chaotic one.
 
 The spectral gap controls not just abstract mixing but the concrete propagation
 of information through the market. A news shock at time $t = 0$ affecting a single
-asset $i$ displaces the log-optimal portfolio from $b^*$ to $b^* + \delta e_i$.
+asset $i$ displaces the log-optimal portfolio from $b^{\ast}$ to $b^{\ast} + \delta e_i$.
 The perturbation propagates through $M^r$ according to the heat equation on the
 manifold:
 
-$$\frac{\partial u}{\partial t} = \frac{1}{T}\Delta_M u, \quad u(0, x) = \delta_{b^*}(x) \tag{4.1}$$
+$$\frac{\partial u}{\partial t} = \frac{1}{T}\Delta_M u, \quad u(0, x) = \delta_{b^{\ast}}(x) \tag{4.1}$$
 
 where $u(t, x)$ is the "information density" at point $x \in M^r$ at time $t$.
 The solution expands in eigenfunctions:
 
-$$u(t,x) = \sum_k e^{-\lambda_k t/T}\phi_k(b^*)\phi_k(x). \tag{4.2}$$
+$$u(t,x) = \sum_k e^{-\lambda_k t/T}\phi_k(b^{\ast})\phi_k(x). \tag{4.2}$$
 
 The information reaches equilibrium (uniform distribution over $M$) at rate
 $\lambda_1/T$. The "half-life" of information asymmetry is
@@ -477,7 +477,7 @@ $C(r)$ depending only on the dimension $r$ and a lower Ricci curvature bound.
 geometric criterion for a market that fails to mix.*
 
 *(d) Crisis signature: $h_M \to 0$ before financial crises, as measured by the
-Delaunay graph from GEOSPATIAL\_CONTAGION.md. The Fiedler eigenvalue of the
+Delaunay graph from GEOSPATIAL_CONTAGION.md. The Fiedler eigenvalue of the
 Delaunay adjacency matrix $\lambda_2(L_{\mathcal{D}})$ converges to $h_M$ in the
 continuum limit and serves as a computable proxy.*
 
@@ -491,7 +491,7 @@ In the limit, $M$ develops a "bottleneck" of zero width — information in $A$
 cannot reach $B$. The spectral gap $\lambda_1 \to 0$ by Cheeger's inequality,
 and mixing ceases.
 
-For (d): the Delaunay graph $\mathcal{D}(M)$ from GEOSPATIAL\_CONTAGION.md has
+For (d): the Delaunay graph $\mathcal{D}(M)$ from GEOSPATIAL_CONTAGION.md has
 graph Cheeger constant $h_{\mathcal{D}} = \min_S |E(S, \bar{S})|/\min(|S|,
 |\bar{S}|)$ (the edge expansion). As the mesh of the Delaunay triangulation
 refines, $h_{\mathcal{D}} \to h_M$ (Dodziuk 1984). The Fiedler eigenvalue
@@ -499,7 +499,7 @@ $\lambda_2(L_{\mathcal{D}})$ of the graph Laplacian satisfies
 $\lambda_2 \geq h_{\mathcal{D}}^2/2$ (the discrete Cheeger inequality) and
 is computable in $O(d^2)$ operations from the correlation matrix. $\blacksquare$
 
-**Remark 4.1.** The connection to GEOSPATIAL\_CONTAGION.md is precise: the Cheeger
+**Remark 4.1.** The connection to GEOSPATIAL_CONTAGION.md is precise: the Cheeger
 constant $h_M$ identified there as the systemic risk measure is EXACTLY the
 minimum information flow rate of Lemma H4. A market with $h_M \to 0$ is
 simultaneously: (i) losing its mixing property, (ii) developing an information
@@ -514,7 +514,7 @@ three descriptions of the same geometric phenomenon.
 
 For a map $f: S^{2n-1} \to S^n$, the Hopf invariant $H(f) \in \mathbb{Z}$ is
 defined cohomologically: if $\omega \in H^n(S^n)$ is the generator and
-$f^*\omega = \alpha \in H^n(S^{2n-1})$, then $\alpha \cup \alpha =
+$f^{\ast}\omega = \alpha \in H^n(S^{2n-1})$, then $\alpha \cup \alpha =
 H(f)\cdot\sigma$ where $\sigma \in H^{2n}(S^{2n-1})$ is the fundamental class.
 Geometrically, $H(f)$ is the linking number of any two generic fiber preimages.
 
@@ -536,7 +536,7 @@ fiber topology.
 
 **$H(\pi) = \pm 1$: One unit of winding (Clifford torus).** The idiosyncratic
 fiber winds once around the factor base. This winding is the geometric origin
-of the Berry phase from FIBER\_BUNDLES.md: a portfolio that traverses a closed
+of the Berry phase from FIBER_BUNDLES.md: a portfolio that traverses a closed
 loop in factor space accumulates a non-zero geometric phase. The sign of $H$
 distinguishes the two possible orientations of the winding — in market terms,
 whether the Berry phase is positive (momentum-like) or negative (mean-reversion-like).
@@ -554,14 +554,14 @@ $$c_1(NM) = H(\pi) \cdot [\omega_{FS}] \in H^2(B^r, \mathbb{Z}) \tag{5.1}$$
 
 *where $[\omega_{FS}]$ is the Fubini-Study class on the factor base. In
 particular, the topologically protected alpha signals identified in
-FIBER\_BUNDLES.md Theorem 4.1 are quantised in units of $H(\pi)$.*
+FIBER_BUNDLES.md Theorem 4.1 are quantised in units of $H(\pi)$.*
 
 *Proof.* For the complex Hopf bundle $S^{2n+1} \to \mathbb{C}P^n$, the first
 Chern class is the generator of $H^2(\mathbb{C}P^n, \mathbb{Z}) \cong
 \mathbb{Z}$, and equals $[\omega_{FS}]$. The Hopf invariant of the fibration is
 $H(\pi) = 1$. For a general map $f: S^{d-1}_+ \to B^r$ that factors through
 the Hopf fibration as $f = \pi \circ g$, the first Chern class of the pullback
-bundle is $c_1(g^* \xi) = \deg(g) \cdot c_1(\xi) = \deg(g) \cdot [\omega_{FS}]$.
+bundle is $c_1(g^{\ast} \xi) = \deg(g) \cdot c_1(\xi) = \deg(g) \cdot [\omega_{FS}]$.
 The Hopf invariant $H(f) = \deg(g)$ counts the degree of the map from $M^r$ to
 the base, which equals the winding number of the fiber. $\blacksquare$
 
@@ -589,7 +589,7 @@ $(E, B, F, \pi, G)$ where:
   This determines the Dyson class $\beta$.
 - **Connection $\nabla$:** how factor movements affect individual stocks (the
   factor loadings). The parallel transport of $\nabla$ is the optimal hedge
-  updating rule from FIBER\_BUNDLES.md.
+  updating rule from FIBER_BUNDLES.md.
 - **Curvature $F_\nabla$:** the failure of factor models to explain returns.
   Non-zero curvature = alpha = residual.
 
@@ -723,7 +723,7 @@ re-establishes connections across the bottleneck. The Cheeger constant recovers,
 $\lambda_1$ jumps, and mixing resumes.
 
 This is the topological content of the contagion analysis in
-GEOSPATIAL\_CONTAGION.md: the Fiedler eigenvalue of the Delaunay graph is a
+GEOSPATIAL_CONTAGION.md: the Fiedler eigenvalue of the Delaunay graph is a
 computable, real-time proxy for $h_M$, and its decline is a leading indicator
 of crisis.
 
@@ -761,7 +761,7 @@ $(d-1)\log T/(2T)$ equals $r \log T/(2T)$ (base) $+ (d-1-r)\log T/(2T)$
 
 *Proof.* The Laplace approximation of the MUP integral (LAPLACE.md) gives
 
-$$\log\int_{M^r} W_T(b)\,d\mu_M = T \cdot h_{\rm Kelly} + \frac{r}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F_M(b^*) + O(1/T) \tag{8.4}$$
+$$\log\int_{M^r} W_T(b)\,d\mu_M = T \cdot h_{\rm Kelly} + \frac{r}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F_M(b^{\ast}) + O(1/T) \tag{8.4}$$
 
 where the $\frac{r}{2}\log T$ term comes from the $r$-dimensional Gaussian
 integral over the base manifold $M^r$. The fiber direction does not contribute
@@ -771,7 +771,7 @@ from the $r$-dimensional integration.
 
 Cover's integral over $\Delta_{d-1}$ produces
 
-$$\log\int_{\Delta_{d-1}} W_T(b)\,d\mu = T \cdot h_{\rm Kelly} + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F(b^*) + O(1/T) \tag{8.5}$$
+$$\log\int_{\Delta_{d-1}} W_T(b)\,d\mu = T \cdot h_{\rm Kelly} + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F(b^{\ast}) + O(1/T) \tag{8.5}$$
 
 with $(d-1)/2 \cdot \log T$ because the integration is $(d-1)$-dimensional.
 The difference in regret is $(d-1-r)\log T/(2T)$ — the wasted regret from
@@ -856,7 +856,7 @@ market structures? **Difficulty: ★★★.**
 
 **OP-H2** (Does the Hopf invariant constrain alpha?).
 Proposition 5.1 shows that the Hopf invariant $H(\pi)$ equals the
-first Chern class $c_1(NM)$. FIBER\_BUNDLES.md Theorem 4.1 shows
+first Chern class $c_1(NM)$. FIBER_BUNDLES.md Theorem 4.1 shows
 that $c_1 \neq 0$ implies topologically protected alpha. Quantitatively:
 is the magnitude of the topological alpha bounded below by $|H(\pi)|$
 times a universal constant depending only on the geometry of $M^r$?
@@ -905,17 +905,17 @@ does this affect the mixing rate? **Difficulty: ★★.**
 **Companion papers in this series:**
 - CLASSIFICATION.md — Classification of efficient market structures via Simons stability.
 - CONVERGENCE.md — MUP regret $r\log T/(2T)$, minimax optimality.
-- FIBER\_BUNDLES.md — Holonomy, Berry phase, topologically protected alpha.
-- GEOSPATIAL\_CONTAGION.md — Cheeger constant as systemic risk measure.
-- MARKET\_PROCESSES.md — Exact SDEs per market topology.
-- RANDOM\_MATRIX.md — Dyson class forced by manifold symmetry.
+- FIBER_BUNDLES.md — Holonomy, Berry phase, topologically protected alpha.
+- GEOSPATIAL_CONTAGION.md — Cheeger constant as systemic risk measure.
+- MARKET_PROCESSES.md — Exact SDEs per market topology.
+- RANDOM_MATRIX.md — Dyson class forced by manifold symmetry.
 - LAPLACE.md — WKB/Laplace approximation on the simplex.
-- SOBOLEV\_OPTIONS\_GREEKS.md — Feller boundary classification.
+- SOBOLEV_OPTIONS_GREEKS.md — Feller boundary classification.
 
 ---
 
 *Paper III.5 in the series "The Geometry of Efficient Markets."*
 *Cross-references: CLASSIFICATION (Section 1.3), CONVERGENCE (Section 8.1),
-FIBER\_BUNDLES (Sections 2.2, 5.2, 6.1), GEOSPATIAL\_CONTAGION (Sections 4.2, 7.3),
-MARKET\_PROCESSES (Section 3.3), RANDOM\_MATRIX (Section 2.2), LAPLACE (Section 8.1),
-SOBOLEV\_OPTIONS\_GREEKS (Section 3.2).*
+FIBER_BUNDLES (Sections 2.2, 5.2, 6.1), GEOSPATIAL_CONTAGION (Sections 4.2, 7.3),
+MARKET_PROCESSES (Section 3.3), RANDOM_MATRIX (Section 2.2), LAPLACE (Section 8.1),
+SOBOLEV_OPTIONS_GREEKS (Section 3.2).*

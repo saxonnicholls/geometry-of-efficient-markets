@@ -173,7 +173,7 @@ appreciation plus **psychic income** — the pleasure of living with the
 work, the social status it confers, the intellectual engagement it
 provides. Psychic income is real (collectors pay for it) but
 collector-specific and non-transferable. It does not appear in the return
-series. The Kelly criterion $b^* = \arg\max \mathbb{E}[\log\langle b, x \rangle]$
+series. The Kelly criterion $b^{\ast} = \arg\max \mathbb{E}[\log\langle b, x \rangle]$
 applies only to the capital appreciation component, systematically
 undervaluing art relative to a collector's true optimum.
 
@@ -193,7 +193,7 @@ In the language of filtrations (Paper III.2), the seller's filtration
 $\mathcal{F}^{\rm seller}_t$ is strictly finer than the buyer's
 $\mathcal{F}^{\rm buyer}_t$, and the difference
 $\mathcal{F}^{\rm seller}_t \setminus \mathcal{F}^{\rm buyer}_t$ is large,
-persistent, and resistant to reduction. The normal bundle $N_{b^*}M$ is fat
+persistent, and resistant to reduction. The normal bundle $N_{b^{\ast}}M$ is fat
 with unresolvable private information.
 
 ---
@@ -362,7 +362,7 @@ bound applies unconditionally.
 
 **Corollary 4.2** (Mandatory alpha). *The art market has
 $\|H\|_{L^2(M^r_{\rm art})} > 0$. That is, the Sharpe-curvature theorem
-$\mathrm{Sharpe}^* = \|H\|_{L^2}$ implies that the art market has strictly
+$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ implies that the art market has strictly
 positive attainable Sharpe ratio. There exist art investment strategies that
 systematically outperform naive allocation — not because the market is young
 or underdeveloped, but because its geometry forbids efficiency.*
@@ -893,9 +893,9 @@ Vickrey, W. (1961). Counterspeculation, auctions, and competitive sealed tenders
 ---
 
 *Paper VI.3 in the series "The Geometry of Efficient Markets."*
-*Cross-references: MINIMAL\_SURFACE.md (Willmore energy, Sharpe-curvature theorem);
+*Cross-references: MINIMAL_SURFACE.md (Willmore energy, Sharpe-curvature theorem);
 CLASSIFICATION.md (three market types, stability); CONVERGENCE.md (MUP, spectral gap);
-GEOSPATIAL\_CONTAGION.md (Cheeger constant, Delaunay graph);
-FIBER\_BUNDLES.md (connection, wealth coupling);
+GEOSPATIAL_CONTAGION.md (Cheeger constant, Delaunay graph);
+FIBER_BUNDLES.md (connection, wealth coupling);
 FILTRATIONS.md (information structure);
-HAMILTONIAN\_TAILS\_COMPLETENESS.md (Feller boundary).*
+HAMILTONIAN_TAILS_COMPLETENESS.md (Feller boundary).*

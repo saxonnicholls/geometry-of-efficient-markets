@@ -22,7 +22,7 @@ system can and cannot compute efficiently. This is not metaphor: it is a
 statement about spectral gaps, mixing rates, and the Cheeger constant.
 
 **(ii) Intelligence IS manifold dimension.** The effective dimension
-$r = \mathrm{stable\_rank}(F)$ of a system's Fisher information matrix
+$r = \mathrm{stable_rank}(F)$ of a system's Fisher information matrix
 measures how many independent concepts the system can represent simultaneously.
 A thermostat has $r=1$. A market has $r \approx 4$–$8$. A large language model
 has $r$ in the hundreds. A human brain has $r$ in the thousands.
@@ -259,7 +259,7 @@ and still reach conclusions.
 
 The effective dimension of an information-processing system is
 
-$$r = \mathrm{stable\_rank}(F) = \frac{\mathrm{tr}(F)}{\|F\|_{\mathrm{op}}} \tag{3.1}$$
+$$r = \mathrm{stable_rank}(F) = \frac{\mathrm{tr}(F)}{\|F\|_{\mathrm{op}}} \tag{3.1}$$
 
 where $F$ is the Fisher information matrix of the system's output distribution.
 This quantity measures the number of independent directions in state space
@@ -652,7 +652,7 @@ amount destroyed is computable.
 | Classifying | $\mathbb{R}^n$ (features) | $\{1, \ldots, K\}$ (labels) | Within-class variance |
 | Summarising | Text (high-dim) | Summary (low-dim) | Omitted mutual information |
 | Compressing | Sequence | Code | Redundancy $= H_0 - H$ |
-| Investing | $\Delta_{d-1}$ (all portfolios) | $b^* \in M^r$ (optimal) | MUP regret $r\log T / (2T)$ |
+| Investing | $\Delta_{d-1}$ (all portfolios) | $b^{\ast} \in M^r$ (optimal) | MUP regret $r\log T / (2T)$ |
 | Perceiving | Sensory input | Neural representation | Reconstruction error |
 
 The last column varies in its precise definition, but the structure is
@@ -919,7 +919,7 @@ It is about the geometry of knowing.
 ## 11. Open Problems
 
 **OP-A. Empirical measurement of LLM manifold dimension.**
-Estimate $r = \mathrm{stable\_rank}(F)$ for current large language models
+Estimate $r = \mathrm{stable_rank}(F)$ for current large language models
 by computing the Fisher information of the output distribution with respect
 to input perturbations. Does $r$ correlate with benchmark performance?
 Does it increase with model scale? Is there a phase transition at some

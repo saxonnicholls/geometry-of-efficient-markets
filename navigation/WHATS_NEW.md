@@ -7,11 +7,11 @@
 
 ## Tier 0: Foundational (1 result)
 
-**R0a. Convex Information Processing Theorem** *(CONVEX\_INFORMATION)*
+**R0a. Convex Information Processing Theorem** *(CONVEX_INFORMATION)*
 Any classical commutative information processing system satisfying closure
 under combination, the data processing inequality, continuity, normalisation,
 and Markov channels is isomorphic to a geodesically convex subset of
-$(\Delta\_{d-1}, g^{\rm FR})$. The Fisher-Rao metric is the unique geometry
+$(\Delta_{d-1}, g^{\rm FR})$. The Fisher-Rao metric is the unique geometry
 compatible with these axioms (Čencov 1982). The ambient convex space of
 the monograph is forced; the market manifold is the Kelly-optimal structure
 within it.
@@ -23,14 +23,14 @@ density matrices, Reynolds averaging, ergodic time-averaging — are all
 instances of $\mathcal{P}$. Convexification IS the passage from
 deterministic to probabilistic. Negative intrinsic curvature forces
 $\|H\| > 0$ (mandatory alpha for hyperbolic markets). Sobolev extension
-of Čencov to $W^{1,2}$ under Muckenhoupt $A\_2$ weights.
+of Čencov to $W^{1,2}$ under Muckenhoupt $A_2$ weights.
 
 ---
 
 ## Tier 1: Fully Proved and Publishable Today (26 results)
 
-**R1. Sharpe-Curvature Identity** *(MINIMAL\_SURFACE)*
-$\mathrm{Sharpe}^{\ast}=\|H\|\_{L^2(M,g\_M)}$.
+**R1. Sharpe-Curvature Identity** *(MINIMAL_SURFACE)*
+$\mathrm{Sharpe}^{\ast}=\|H\|_{L^2(M,g_M)}$.
 Vol skew of index options measures $H$ in real time.
 
 **R2. MUP Minimax Optimality, Regret $r\log T/2T$** *(CONVERGENCE)*
@@ -40,17 +40,17 @@ Vol skew of index options measures $H$ in real time.
 Clifford torus stability index 5 = LTCM's five simultaneous failure modes.
 The closed-manifold result is proved; the Dirichlet boundary case for $d \gg r$ is OP32.
 
-**R4. Fat Tails: $\alpha\_i = Tb^{\ast}\_i - 1/2$** *(HAMILTONIAN)*
+**R4. Fat Tails: $\alpha_i = Tb^{\ast}_i - 1/2$** *(HAMILTONIAN)*
 No free parameters. Predicts $\alpha\approx4.5$ for US equities.
 
-**R5. Fokker-Planck Stationary = Jeffreys Prior = Cover's Prior** *(FOKKER\_PLANCK)*
+**R5. Fokker-Planck Stationary = Jeffreys Prior = Cover's Prior** *(FOKKER_PLANCK)*
 Closes Cover's 30-year gap.
 
 **R6. Completeness = Normal Bundle Dimension** *(HAMILTONIAN)*
-Space of EMMs $\cong N\_{b^{\ast}}M$. Incompleteness dimension $=d-1-r$.
+Space of EMMs $\cong N_{b^{\ast}}M$. Incompleteness dimension $=d-1-r$.
 
 **R7. Vol Skew = Mean Curvature** *(DERIVATIVES)*
-$\partial\hat\sigma/\partial k|\_{k=0} = -\varepsilon^2H^2/(2\sigma\_I)$.
+$\partial\hat\sigma/\partial k|_{k=0} = -\varepsilon^2H^2/(2\sigma_I)$.
 
 **R8. Doob-Meyer Compensator = Time-Integrated Willmore Energy** *(MARTINGALE)*
 The predictable part of the Snell envelope IS the integrated curvature.
@@ -58,17 +58,17 @@ The predictable part of the Snell envelope IS the integrated curvature.
 **R9. Optimal Randomised Stopping = MUP Posterior** *(MARTINGALE)*
 Cover's portfolio re-derived from optimal stopping theory.
 
-**R10. Theta Function as Exact Transition Density** *(MARKET\_PROCESSES)*
-$p\_t=\vartheta\_3$ — exact option pricing for the Clifford torus market.
+**R10. Theta Function as Exact Transition Density** *(MARKET_PROCESSES)*
+$p_t=\vartheta_3$ — exact option pricing for the Clifford torus market.
 
 **R11. Geometric Vol Smile Without Stochastic Volatility** *(SOBOLEV)*
-Hyperbolic Gamma $y^2(\partial^2\_x+\partial^2\_y)V$: smile from curvature alone.
+Hyperbolic Gamma $y^2(\partial^2_x+\partial^2_y)V$: smile from curvature alone.
 
 **R12. Diversification: Feller Boundary Proof** *(SOBOLEV)*
-Portfolio weights never hit zero for $Tb^{\ast}\_i>3/2$. Geometric theorem.
+Portfolio weights never hit zero for $Tb^{\ast}_i>3/2$. Geometric theorem.
 
-**R13. Optimal Pairs Entry/Exit from Hamiltonian Free Boundary** *(PAIRS\_TRADING)*
-$z^{\ast}\_{\rm entry}=\sqrt{1+r/\kappa}$. Classical 2$\sigma$ rule is only optimal when $r=3\kappa$.
+**R13. Optimal Pairs Entry/Exit from Hamiltonian Free Boundary** *(PAIRS_TRADING)*
+$z^{\ast}_{\rm entry}=\sqrt{1+r/\kappa}$. Classical 2$\sigma$ rule is only optimal when $r=3\kappa$.
 
 **R14. LZ78 Prefix Tree = Filtration Tree** *(FILTRATIONS)*
 The LZ78 compressor applied to the Voronoi symbolic sequence generates a valid
@@ -76,49 +76,49 @@ filtration whose atoms refine the Voronoi filtration. Proved for LZ78; the gener
 statement for arbitrary grammar-based compressors (LZ77, CTW, PPM, BWT) is Conjecture C18.
 
 **R15. Martin-Löf Randomness of Efficient Returns** *(COMPLEXITY)*
-$K(\mathbf{x}\_{1:T})=Th\_{\rm Kelly}+\frac{r}{2}\log T+O(1)$.
+$K(\mathbf{x}_{1:T})=Th_{\rm Kelly}+\frac{r}{2}\log T+O(1)$.
 
 **R16. Willmore Energy = Return Sequence Compressibility** *(COMPLEXITY)*
 One bit of Willmore energy = one bit per period of exploitable structure.
 
-**R17. LMSR-Softmax-Fisher Identity** *(LLM\_MANIFOLD)*
+**R17. LMSR-Softmax-Fisher Identity** *(LLM_MANIFOLD)*
 LMSR cost function Hessian = $g^{\rm FR}$. Transformer attention = LMSR market making.
 Every transformer is an implicit financial market maker in Fisher-Rao geometry.
 
-**R18. LLM Convergence Theorem: No Model Beats the MUP** *(LLM\_MANIFOLD)*
+**R18. LLM Convergence Theorem: No Model Beats the MUP** *(LLM_MANIFOLD)*
 Proved: any transformer of sufficient capacity trained on all public market data
 converges to the heat kernel on $M^r$ and cannot outperform the MUP.
 Optimal hidden dimension = $r$.
 
-**R19. Kelly Rate = Minimum Cross-Entropy Loss** *(LLM\_MANIFOLD)*
-$\min\_\theta\mathcal{L}(\theta)=h\_{\rm Kelly}(b^{\ast})$. Calibration criterion for market ML models.
+**R19. Kelly Rate = Minimum Cross-Entropy Loss** *(LLM_MANIFOLD)*
+$\min_\theta\mathcal{L}(\theta)=h_{\rm Kelly}(b^{\ast})$. Calibration criterion for market ML models.
 
-**R20. Insider Information Lives in the Normal Bundle** *(LLM\_MANIFOLD)*
-$v\_\mathcal{G}\in N\_{b^{\ast}}M$; $\alpha=\varepsilon^2|v\_\mathcal{G}|\_{g^{\rm FR}}$.
+**R20. Insider Information Lives in the Normal Bundle** *(LLM_MANIFOLD)*
+$v_\mathcal{G}\in N_{b^{\ast}}M$; $\alpha=\varepsilon^2|v_\mathcal{G}|_{g^{\rm FR}}$.
 Co-location is temporal filtration shift (different and weaker).
 
-**R21. Dyson Class Forced by Manifold Symmetry** *(RANDOM\_MATRIX)*
+**R21. Dyson Class Forced by Manifold Symmetry** *(RANDOM_MATRIX)*
 CAPM $\to$ GOE ($\beta=1$); Clifford torus $\to$ GUE ($\beta=2$, Berry phase);
 pseudo-Anosov $\to$ GSE ($\beta=4$, symplectic foliation). Not a modelling choice.
 
-**R22. Selberg Integral = MUP Partition Function** *(RANDOM\_MATRIX)*
-$\mathcal{Z}\_T^M = S\_r(Tb^{\ast}-1/2,\, Tb^{\ast}-1/2,\, \beta/2)$. Exact closed form.
+**R22. Selberg Integral = MUP Partition Function** *(RANDOM_MATRIX)*
+$\mathcal{Z}_T^M = S_r(Tb^{\ast}-1/2,\, Tb^{\ast}-1/2,\, \beta/2)$. Exact closed form.
 MUP normalisation constant computable analytically for all three market types.
 
-**R23. Tracy-Widom $F\_\beta$ = Largest Factor Eigenvalue Distribution** *(RANDOM\_MATRIX)*
-Crisis signal: exceedance of the $F\_\beta$ edge. Market-type specific.
+**R23. Tracy-Widom $F_\beta$ = Largest Factor Eigenvalue Distribution** *(RANDOM_MATRIX)*
+Crisis signal: exceedance of the $F_\beta$ edge. Market-type specific.
 
-**R24. Vandermonde Repulsion = Fisher-Rao Diversification Pressure** *(RANDOM\_MATRIX)*
-$|\lambda\_i-\lambda\_j|^\beta$ is the Fisher-Rao force keeping factor loadings separated.
+**R24. Vandermonde Repulsion = Fisher-Rao Diversification Pressure** *(RANDOM_MATRIX)*
+$|\lambda_i-\lambda_j|^\beta$ is the Fisher-Rao force keeping factor loadings separated.
 GUE ($\beta=2$) provides stronger diversification than GOE ($\beta=1$).
 
-**R25. Shapley Attribution $\phi\_i = b^{\ast}\_i(\mu\_i-\bar\mu)$** *(HYPERCUBE\_SHAPLEY)*
+**R25. Shapley Attribution $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$** *(HYPERCUBE_SHAPLEY)*
 Proved: the Shapley value of asset $i$ in the Kelly cooperative game equals the
 Fisher-Rao gradient of the Kelly rate at $b^{\ast}$. Unique fair attribution satisfying
 all four Shapley axioms. Factor Shapley = unique fair factor attribution.
 
-**R26. Walsh Functions = Jacobi Polynomials on the Simplex** *(HYPERCUBE\_SHAPLEY)*
-Walsh functions restricted to $\Delta\_{d-1}$ are Jacobi polynomials. Barycentric
+**R26. Walsh Functions = Jacobi Polynomials on the Simplex** *(HYPERCUBE_SHAPLEY)*
+Walsh functions restricted to $\Delta_{d-1}$ are Jacobi polynomials. Barycentric
 subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier coefficient.
 
 ---
@@ -142,9 +142,9 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 **R73.** Replicator-diffusion linearisation = Jacobi operator: five unstable Clifford torus modes = five directions where posterior is repelled
 **R74.** Symbolic market dynamics on Voronoi partition is a subshift of finite type (SFT), strictly stronger than sofic
 **R75.** Euler characteristic in sub-leading regret: $O(1/T)$ correction to universal portfolio wealth contains $-\pi/6\cdot\chi(M)$ via Gauss-Bonnet
-**R80.** Cap-weight Kelly shortfall = $(1/2)d^2\_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})$ *(BETTER\_INDEX\_FUND)* — the Fisher-Rao distance from cap-weight to log-optimal quantifies suboptimality
-**R81.** Equal weight dominates cap weight in Fisher-Rao distance *(BETTER\_INDEX\_FUND)* — $\mathbb{E}[d\_{g^{\rm FR}}(b^{\rm ew}, b^{\ast})] \leq \mathbb{E}[d\_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})]$
-**R82.** Optimal rebalancing frequency = Jacobi spectral gap *(BETTER\_INDEX\_FUND)* — $f^{\ast} \approx \lambda\_1^{\rm CS} \approx 12$/year (monthly)
+**R80.** Cap-weight Kelly shortfall = $(1/2)d^2_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})$ *(BETTER_INDEX_FUND)* — the Fisher-Rao distance from cap-weight to log-optimal quantifies suboptimality
+**R81.** Equal weight dominates cap weight in Fisher-Rao distance *(BETTER_INDEX_FUND)* — $\mathbb{E}[d_{g^{\rm FR}}(b^{\rm ew}, b^{\ast})] \leq \mathbb{E}[d_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})]$
+**R82.** Optimal rebalancing frequency = Jacobi spectral gap *(BETTER_INDEX_FUND)* — $f^{\ast} \approx \lambda_1^{\rm CS} \approx 12$/year (monthly)
 
 ---
 
@@ -156,13 +156,13 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 **R39.** Voronoi filtration as a finite automaton (sofic shift)
 **R40.** H3/S2 geospatial indexing on the Bhattacharyya sphere
 **R41.** Hilbert curve minimises LZ complexity on $M$
-**R42.** Stochastic Stokes theorem on $\Delta\_{d-1}$
+**R42.** Stochastic Stokes theorem on $\Delta_{d-1}$
 **R43.** Manifold Black-Litterman: tangential vs normal views
 **R44.** Rebalancing frequency from Jacobi spectral gap
 **R45.** LMSR on the market manifold = MUP gradient
 **R46.** Market manifold = minimal sufficient statistic (Neyman-Fisher)
 **R47.** Takens embedding recovers $M^r$ from a single return series
-**R48.** Optimal Takens delay $\tau=1/\lambda\_1$ (Jacobi spectral gap)
+**R48.** Optimal Takens delay $\tau=1/\lambda_1$ (Jacobi spectral gap)
 **R49.** Path integral: incompleteness premium from normal bundle integration
 
 ---
@@ -170,12 +170,12 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 ## Tier 4: Conjectures With Strong Motivation (19 results)
 
 **R50.** Jones polynomial = market partition function
-**R51.** Topological EMH: $J\_\Gamma(q)=1\iff$CAPM
+**R51.** Topological EMH: $J_\Gamma(q)=1\iff$CAPM
 **R52.** #**P**-hardness of return prediction
 **R53.** Pseudo-Anosov markets simulate Rule 110 (Turing complete)
-**R54.** Topologically protected alpha from $c\_1(NM)\neq0$
+**R54.** Topologically protected alpha from $c_1(NM)\neq0$
 **R55.** Berry phase = adiabatic alpha from correlation cycles
-**R56.** RG beta function $\beta\_H=-H/2$ + running Sharpe (one-loop open)
+**R56.** RG beta function $\beta_H=-H/2$ + running Sharpe (one-loop open)
 **R57.** Penrose tilings on the five-asset simplex ($\phi^2$ appears four ways)
 **R58.** LLM training dynamics = MCF in model weight space
 **R59.** LMSR on options market = geometric Black-Scholes
@@ -185,9 +185,9 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 **R77.** Spectral gap lower bound from Sharpe ratio: $\lambda_1\geq f(\mathrm{Sharpe}^{\ast},\mathrm{vol}(M))$ via Cheeger inequality — lower bound on mean-reversion speed from observed Sharpe
 **R78.** MUP as exponential family MLE: normalising constant is exponential family on $M^r$ with sufficient statistic $L_T$; Cramér-Rao gives $\mathrm{Var}(\hat b)\geq(TF_M)^{-1}$
 **R79.** Bernstein-type theorem for market manifolds: minimal graph over factor simplex $\Rightarrow$ totally geodesic — independent proof of classification without Simons/Lawson-Simons
-**R83.** Inflation = dual Fisher-Rao norm of sectoral inflation covector *(INFLATION\_CAPITAL\_FLOWS)* — geometric definition recovers headline CPI for uniform inflation, captures sectoral structure
-**R84.** Fisher equation = holonomy of capital flow connection *(INFLATION\_CAPITAL\_FLOWS)* — real return = nominal minus Berry phase around goods market loop; path-dependent under heterogeneous inflation
-**R85.** Taylor rule = LQG geodesic steering *(INFLATION\_CAPITAL\_FLOWS)* — Taylor coefficients are the LQG gains of a geometric PID controller on the financial-goods fiber bundle
+**R83.** Inflation = dual Fisher-Rao norm of sectoral inflation covector *(INFLATION_CAPITAL_FLOWS)* — geometric definition recovers headline CPI for uniform inflation, captures sectoral structure
+**R84.** Fisher equation = holonomy of capital flow connection *(INFLATION_CAPITAL_FLOWS)* — real return = nominal minus Berry phase around goods market loop; path-dependent under heterogeneous inflation
+**R85.** Taylor rule = LQG geodesic steering *(INFLATION_CAPITAL_FLOWS)* — Taylor coefficients are the LQG gains of a geometric PID controller on the financial-goods fiber bundle
 
 ---
 

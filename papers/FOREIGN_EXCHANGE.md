@@ -218,7 +218,7 @@ multiple independent groups:
 
 **Factor 1: Dollar ($v_0$).** The first principal direction on $M^3_{\mathrm{FX}}$
 corresponds to uniform USD strengthening or weakening against all other currencies.
-In the Jacobi decomposition of the market process (MARKET\_PROCESSES.md), this is
+In the Jacobi decomposition of the market process (MARKET_PROCESSES.md), this is
 the market factor $v_0$ — the first eigenfunction of the Jacobi operator on
 $\Delta_{N-1}$. It explains $\sim 60\%$ of FX variance. A "strong dollar" regime
 means the FX state has moved in the $+v_0$ direction; "weak dollar" means $-v_0$.
@@ -251,7 +251,7 @@ stable topological types:
 The 1997 Asian crisis, the 2008 GFC carry unwind, and the 2015 SNB shock each
 exhibit a transition from CAPM-type to pseudo-Anosov-type FX dynamics — visible
 as a change in the Dyson class of the FX covariance eigenvalue statistics. This
-is the FX-specific instance of the market bifurcation described in CHAOS\_TAKENS.md.
+is the FX-specific instance of the market bifurcation described in CHAOS_TAKENS.md.
 
 ---
 
@@ -289,15 +289,15 @@ manifold is minimal in the carry direction.**
 
 **Theorem 4.1** (Carry = mean curvature).
 *Let $M^r_{\mathrm{FX}} \subset S^{N-1}_+$ be the FX market manifold and let
-$H$ be its mean curvature vector. Let $v_{\mathrm{carry}} \in T_{w^*}\Delta_{N-1}$
-be the carry direction with components $(v_{\mathrm{carry}})_i = (r_i - \bar{r})/\sqrt{w^*_i}$. Then the carry trade Sharpe ratio satisfies:*
+$H$ be its mean curvature vector. Let $v_{\mathrm{carry}} \in T_{w^{\ast}}\Delta_{N-1}$
+be the carry direction with components $(v_{\mathrm{carry}})_i = (r_i - \bar{r})/\sqrt{w^{\ast}_i}$. Then the carry trade Sharpe ratio satisfies:*
 
 $$\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2(M, g_M)}$$
 
 *where $H_{\mathrm{carry}} = \langle H, v_{\mathrm{carry}} \rangle$ is the
 component of the mean curvature in the carry direction.*
 
-*Proof.* This is the Sharpe–curvature identity of MINIMAL\_SURFACE.md (R1),
+*Proof.* This is the Sharpe–curvature identity of MINIMAL_SURFACE.md (R1),
 applied to the specific portfolio direction $v_{\mathrm{carry}}$. The carry
 portfolio $b^{\mathrm{carry}}$ has excess return
 $\mu_{\mathrm{carry}} = \sum_i b^{\mathrm{carry}}_i (r_i - \mathbb{E}[\Delta \log e_i])$
@@ -442,20 +442,20 @@ an assumption — it is a theorem.
 
 **Theorem 6.2** (Lie algebra structure).
 *The FX manifold $M^r_{\mathrm{FX}}$ is a sub-Lie-group of the currency revaluation
-group. Its Lie algebra $\mathfrak{g}_{\mathrm{FX}} = T_{w^*} M^r_{\mathrm{FX}}$
+group. Its Lie algebra $\mathfrak{g}_{\mathrm{FX}} = T_{w^{\ast}} M^r_{\mathrm{FX}}$
 consists of the $r$ independent factor directions. For $r = 3$:*
 
 $$\mathfrak{g}_{\mathrm{FX}} = \mathrm{span}\{v_0, v_1, v_2\} = \mathrm{span}\{v_{\mathrm{dollar}}, v_{\mathrm{carry}}, v_{\mathrm{risk}}\}$$
 
 *The exponential map $\exp: \mathfrak{g}_{\mathrm{FX}} \to M^3_{\mathrm{FX}}$
 gives the FX rate dynamics: a factor shock of magnitude $\alpha$ in direction
-$v_k$ moves the FX state from $w^*$ to $\exp(\alpha v_k) \cdot w^*$.*
+$v_k$ moves the FX state from $w^{\ast}$ to $\exp(\alpha v_k) \cdot w^{\ast}$.*
 
-*Proof.* The tangent space $T_{w^*} M^r$ at the log-optimal currency allocation
-$w^*$ is spanned by the $r$ principal directions of the FX return covariance
+*Proof.* The tangent space $T_{w^{\ast}} M^r$ at the log-optimal currency allocation
+$w^{\ast}$ is spanned by the $r$ principal directions of the FX return covariance
 matrix (restricted to $M^r$). These directions form a Lie algebra under the
 bracket induced by the multiplicative group structure:
-$[v_k, v_l]_i = v_{k,i} v_{l,i} (1/w^*_i) - v_{l,i} v_{k,i} (1/w^*_i) = 0$
+$[v_k, v_l]_i = v_{k,i} v_{l,i} (1/w^{\ast}_i) - v_{l,i} v_{k,i} (1/w^{\ast}_i) = 0$
 in the abelian case (which holds when the factors are orthogonal in $g^{\mathrm{FR}}$).
 The exponential map of the abelian group is componentwise exponentiation on
 the simplex. $\square$
@@ -464,7 +464,7 @@ The Lie group structure has a practical consequence: factor decomposition of FX
 returns is not just a statistical convenience — it is the unique algebraic
 decomposition of the currency revaluation group into its generating directions.
 The three FX factors are not "chosen" — they are forced by the group structure,
-just as the Dyson class is forced by manifold symmetry (RANDOM\_MATRIX.md).
+just as the Dyson class is forced by manifold symmetry (RANDOM_MATRIX.md).
 
 ---
 
@@ -714,7 +714,7 @@ consistency scores degrade before the full crisis unfolds).
 
 The FX geometry connects to the broader monograph in several ways:
 
-**MINIMAL\_SURFACE.md.** The Sharpe–curvature identity (R1) is applied here to the
+**MINIMAL_SURFACE.md.** The Sharpe–curvature identity (R1) is applied here to the
 specific case of the carry trade. The FX market provides the cleanest empirical
 test because the carry direction is directly observable from interest rate data
 (no latent factor estimation required).
@@ -722,26 +722,26 @@ test because the carry direction is directly observable from interest rate data
 **CLASSIFICATION.md.** The three FX regimes (normal/transitional/crisis) correspond
 to the three classified manifold types (CAPM/Clifford/pseudo-Anosov). The FX
 market transitions between these types during crises — a concrete instance of the
-bifurcation theory in CHAOS\_TAKENS.md.
+bifurcation theory in CHAOS_TAKENS.md.
 
-**MARKET\_PROCESSES.md.** The FX state evolves by the Jacobi diffusion on
-$\Delta_{N-1}$ in the CAPM regime. The Jacobi parameters $\alpha_i = T w^*_i - 1/2$
+**MARKET_PROCESSES.md.** The FX state evolves by the Jacobi diffusion on
+$\Delta_{N-1}$ in the CAPM regime. The Jacobi parameters $\alpha_i = T w^{\ast}_i - 1/2$
 are determined by the currency turnover weights — directly observable from BIS data.
 
 **FILTRATIONS.md.** The Voronoi partition of the currency simplex provides the
 discrete filtration for FX. The Voronoi cells correspond to "currency regimes" —
 regions of the simplex where the same set of carry trades is optimal.
 
-**GEOSPATIAL\_CONTAGION.md.** The cross-rate consistency graph $G$ is the Delaunay
+**GEOSPATIAL_CONTAGION.md.** The cross-rate consistency graph $G$ is the Delaunay
 graph of the FX manifold. Currency contagion propagates through this graph at a
 rate governed by the Jacobi spectral gap. The Cheeger constant $h_{\mathrm{FX}}$
 is the systemic risk of the FX market.
 
-**RANDOM\_MATRIX.md.** The Dyson class of the FX covariance matrix is forced by the
+**RANDOM_MATRIX.md.** The Dyson class of the FX covariance matrix is forced by the
 FX manifold topology. The transition from GOE ($\beta = 1$) to GSE ($\beta = 4$)
 during crises is detectable from eigenvalue spacing statistics.
 
-**GRASSBERGER\_PERCOLATION\_GENERATING.md.** The correlation dimension of
+**GRASSBERGER_PERCOLATION_GENERATING.md.** The correlation dimension of
 Takens-embedded FX returns should equal $\nu = r \approx 3$ — a cleaner test than
 equities due to lower dimensionality. The percolation threshold of the FX
 cross-rate graph is approximately the Cheeger constant $h_{\mathrm{FX}}$.
@@ -751,7 +751,7 @@ cross-rate graph is approximately the Cheeger constant $h_{\mathrm{FX}}$.
 ## 11. New Results
 
 We collect the principal results of this paper. Numbering continues from the
-monograph sequence (WHATS\_NEW.md).
+monograph sequence (WHATS_NEW.md).
 
 **Theorem FX1** (The FX market is one manifold).
 *The space of arbitrage-free exchange rates for $N$ currencies is the positive
@@ -864,10 +864,10 @@ time series should exhibit signatures distinct from normal market dynamics.
 12. Verdelhan, A. (2018). The share of systematic variation in bilateral exchange rates. *Journal of Finance* **73**(1), 375–418.
 
 **Companion papers in this monograph:**
-MINIMAL\_SURFACE.md (R1: Sharpe = curvature), CLASSIFICATION.md (three manifold types),
-MARKET\_PROCESSES.md (Jacobi diffusion), FILTRATIONS.md (Voronoi partition),
-GEOSPATIAL\_CONTAGION.md (Cheeger constant), RANDOM\_MATRIX.md (Dyson classification),
-CHAOS\_TAKENS.md (bifurcation theory), GRASSBERGER\_PERCOLATION\_GENERATING.md
+MINIMAL_SURFACE.md (R1: Sharpe = curvature), CLASSIFICATION.md (three manifold types),
+MARKET_PROCESSES.md (Jacobi diffusion), FILTRATIONS.md (Voronoi partition),
+GEOSPATIAL_CONTAGION.md (Cheeger constant), RANDOM_MATRIX.md (Dyson classification),
+CHAOS_TAKENS.md (bifurcation theory), GRASSBERGER_PERCOLATION_GENERATING.md
 (correlation dimension, percolation threshold).
 
 ---

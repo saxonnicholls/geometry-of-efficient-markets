@@ -67,9 +67,9 @@ and it is not replicable from a screen.
 
 **If your alpha source is a Bloomberg terminal, your alpha is probably 
 priced.**
-A terminal gives you $\mathcal{F}^X\_t$ — everything observable. In an 
-efficient market, nothing in $\mathcal{F}^X\_t$ generates excess return. 
-Real alpha requires $\mathcal{G}\_t$ — information genuinely outside the 
+A terminal gives you $\mathcal{F}^X_t$ — everything observable. In an 
+efficient market, nothing in $\mathcal{F}^X_t$ generates excess return. 
+Real alpha requires $\mathcal{G}_t$ — information genuinely outside the 
 market's information set. Satellite images of parking lots. Conversations 
 your competitor hasn't had. A genuine edge in a niche no one is watching.
 
@@ -357,7 +357,7 @@ on the manifold.
    Be honest about which is which.
 
 5. **Compute the Shapley attribution of your Kelly growth to each asset 
-   monthly.** $\phi\_i = b^{\ast}\_i \times (\mu\_i - \bar\mu)$. The assets with 
+   monthly.** $\phi_i = b^{\ast}_i \times (\mu_i - \bar\mu)$. The assets with 
    large positive Shapley values deserve their weight. The others do not.
 
 6. **Set your rebalancing frequency to the market's natural rate.** 
@@ -489,7 +489,7 @@ and "allow all insider trading."
 
 **The geometry suggests: prosecute MISINFORMATION, not insider trading.**
 
-The information value hierarchy from NETWORK\_INFORMATION\_THEORY.md:
+The information value hierarchy from NETWORK_INFORMATION_THEORY.md:
 
 | Rank | Type | Effect on efficiency | Current penalty |
 |:----:|:-----|:--------------------|:---------------|
@@ -545,7 +545,7 @@ says the market impact is what matters.
 
 ---
 
-**The Ten Geometric Reforms (from SECURITIES\_LAW\_REFORM.md):**
+**The Ten Geometric Reforms (from SECURITIES_LAW_REFORM.md):**
 
 1. **Deprioritise insider trading prosecution.** Redirect to anti-misinformation.
 2. **Mandate 60-second disclosure.** Every hour of delay costs $|H|^2$ in Willmore energy.
@@ -567,7 +567,7 @@ Every dollar spent prosecuting insider trading is a dollar NOT spent
 prosecuting pump-and-dump schemes, social media manipulation, spoofing,
 layering, and deliberate disinformation campaigns. The latter cause
 double the damage to market efficiency (the doubling principle from
-NETWORK\_INFORMATION\_THEORY Theorem N4). The enforcement ROI of
+NETWORK_INFORMATION_THEORY Theorem N4). The enforcement ROI of
 anti-misinformation prosecution is at least 4× higher than
 anti-insider-trading prosecution (2× from the doubling principle,
 2× from the fact that misinformation is more prevalent).

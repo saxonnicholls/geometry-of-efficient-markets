@@ -142,8 +142,8 @@ weighted 2 points.
 
 ### Test 1: The Sharpe-Curvature Identity
 
-**Theoretical claim.** $\mathrm{Sharpe}^* = \|H\|_{L^2(M, g_M)}$ (R1 in
-WHATS\_NEW.md). The maximum attainable Sharpe ratio from any strategy on the
+**Theoretical claim.** $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M, g_M)}$ (R1 in
+WHATS_NEW.md). The maximum attainable Sharpe ratio from any strategy on the
 market manifold equals the $L^2$-norm of the mean curvature vector $H$ of
 $M^r$ in $S^{d-1}_+$.
 
@@ -163,9 +163,9 @@ $p < 0.05$.
    \tfrac{1}{2} b^T \hat{\Sigma} b$ subject to $b \in \Delta_{d-1}$.
    (c) Perform PCA on $\hat{\Sigma}$; retain $r$ factors explaining 90% of
    variance.
-   (d) Project the vector $\eta_i = 1/(2\sqrt{b^*_i})$ onto the normal space
+   (d) Project the vector $\eta_i = 1/(2\sqrt{b^{\ast}_i})$ onto the normal space
    of the $r$-factor subspace. The norm of this projection estimates $\|H\|$.
-   (e) Compute the realised Sharpe ratio of the $b^*$ portfolio over the
+   (e) Compute the realised Sharpe ratio of the $b^{\ast}$ portfolio over the
    next 63 trading days (one quarter, out-of-sample).
 
 2. Collect all $(H_{\rm est}, \mathrm{Sharpe}_{\rm realised})$ pairs across
@@ -207,7 +207,7 @@ each rebalancing date, rolling 504-day (2-year) windows stepped quarterly,
 **Computation.** In each rolling window:
 
 1. **Stable rank.** Compute the Fisher information matrix
-   $\hat{I}_{ij} = \hat{\Sigma}_{ij} / (b^*_i b^*_j)$ where $b^*$ is the
+   $\hat{I}_{ij} = \hat{\Sigma}_{ij} / (b^{\ast}_i b^{\ast}_j)$ where $b^{\ast}$ is the
    equal-weight portfolio (as a neutral reference). The stable rank is
    $\mathrm{sr}(\hat{I}) = \mathrm{tr}(\hat{I}) / \|\hat{I}\|_{\rm op}$.
    Set $r_1 = \lfloor \mathrm{sr}(\hat{I}) \rceil$.
@@ -239,7 +239,7 @@ assumption.
 
 **Theoretical claim.** The Manifold Universal Portfolio (MUP) achieves regret
 $r \log T / (2T)$ versus Cover's Universal Portfolio regret of
-$(d-1) \log T / (2T)$, an improvement factor of $(d-1)/r$ (R2 in WHATS\_NEW.md).
+$(d-1) \log T / (2T)$, an improvement factor of $(d-1)/r$ (R2 in WHATS_NEW.md).
 
 **Falsifiable hypothesis.** The ratio of Cover's cumulative regret to MUP's
 cumulative regret converges to approximately $(d-1)/r$ as $T$ grows.
@@ -443,8 +443,8 @@ class correspondence (R21) is empirically vacuous.
 ### Test 8: Fat Tail Index $\alpha \approx r/2$
 
 **Hypothesis.** The tail index $\alpha$ of asset return distributions is
-approximately $r/2$, where $r$ is the manifold dimension (R4 in WHATS\_NEW.md,
-which gives the more precise formula $\alpha_i = Tb^*_i - 1/2$; the aggregate
+approximately $r/2$, where $r$ is the manifold dimension (R4 in WHATS_NEW.md,
+which gives the more precise formula $\alpha_i = Tb^{\ast}_i - 1/2$; the aggregate
 prediction is $\alpha \approx r/2$).
 
 **Dataset.** S&P 500 constituents, daily returns, 2000-2024. Estimate $r$ from
@@ -465,11 +465,11 @@ PCA; estimate $\alpha$ from tail behaviour.
 $\alpha$ for US equities are typically in the range $[2.5, 4.0]$, so the
 prediction is in the right ballpark. The test is whether $\bar{\alpha}$ and
 $r/2$ are in the same range, and whether cross-sectional variation in
-$\alpha_i$ correlates with $b^*_i$.
+$\alpha_i$ correlates with $b^{\ast}_i$.
 
 **Falsification.** $\bar{\alpha}$ and $r/2$ differ by more than a factor of
 2 (i.e. $\bar{\alpha} < r/4$ or $\bar{\alpha} > r$), or the cross-sectional
-rank correlation between $\alpha_i$ and $b^*_i$ is negative.
+rank correlation between $\alpha_i$ and $b^{\ast}_i$ is negative.
 
 ---
 
@@ -515,7 +515,7 @@ insistence on the simplex as the natural domain is unjustified.
 
 **Hypothesis.** Convergence/spread trading strategies cluster into
 approximately 5 independent failure modes, matching the theoretical stability
-index of the Clifford torus $\mathrm{ind}(T^2) = 5$ (R3 in WHATS\_NEW.md).
+index of the Clifford torus $\mathrm{ind}(T^2) = 5$ (R3 in WHATS_NEW.md).
 
 **Dataset.** Five canonical convergence trade spreads, monthly returns,
 1994-2000:
@@ -561,7 +561,7 @@ tools that outperform standard alternatives.
 ### Test 11: Manifold Index Fund vs Cap-Weight
 
 **Hypothesis.** The Manifold Index Fund (MIF), which weights assets by their
-Kelly-optimal weights $b^*$ restricted to $M^r$, outperforms the
+Kelly-optimal weights $b^{\ast}$ restricted to $M^r$, outperforms the
 capitalisation-weighted index.
 
 **Dataset.** S&P 500 constituents, daily returns, 2000-2024. Quarterly
@@ -572,8 +572,8 @@ rebalancing.
 1. At each quarterly rebalancing date:
    (a) Estimate $\hat{\mu}$ and $\hat{\Sigma}$ from the trailing 504 days.
    (b) Estimate $r$ from PCA (90% variance).
-   (c) Solve for $b^*$ on the $r$-dimensional factor subspace.
-   (d) Construct the MIF portfolio with weights $b^*_i$.
+   (c) Solve for $b^{\ast}$ on the $r$-dimensional factor subspace.
+   (d) Construct the MIF portfolio with weights $b^{\ast}_i$.
 
 2. Compute the MIF total return (with quarterly rebalancing) and the S&P 500
    total return over 2002-2024.
@@ -595,7 +595,7 @@ benchmark over two decades of data, the practical value of the theory is zero.
 ### Test 12: Geometric Pairs Entry Threshold
 
 **Hypothesis.** The geometric entry threshold $z^*_{\rm entry} = \sqrt{1 +
-r/\kappa}$ (R13 in WHATS\_NEW.md) outperforms the standard $2\sigma$ rule for
+r/\kappa}$ (R13 in WHATS_NEW.md) outperforms the standard $2\sigma$ rule for
 pairs trading.
 
 **Dataset.** Top 20 most cointegrated US equity pairs from the S&P 500,
@@ -606,12 +606,12 @@ identified by Engle-Granger test on 2008-2010 data, traded 2010-2024.
 1. For each pair, estimate the Ornstein-Uhlenbeck parameters
    $(\kappa, \sigma)$ from the spread.
 
-2. Compute the geometric threshold: $z^* = \sigma \sqrt{1 + r/\kappa}$
+2. Compute the geometric threshold: $z^{\ast} = \sigma \sqrt{1 + r/\kappa}$
    where $r$ is estimated from the pair's sector PCA dimension.
 
 3. Backtest both strategies with the same exit rule (mean-reversion to zero):
    (a) **Standard:** Enter when spread $> 2\sigma$, exit at 0.
-   (b) **Geometric:** Enter when spread $> z^*$, exit at 0.
+   (b) **Geometric:** Enter when spread $> z^{\ast}$, exit at 0.
 
 4. For both, compute annualised Sharpe ratio, win rate, and profit factor.
 
@@ -659,8 +659,8 @@ similar suggests combining them, which is still useful.)
 
 ### Test 14: Kelly-Shapley Attribution
 
-**Hypothesis.** The Shapley value $\phi_i = b^*_i (\mu_i - \bar{\mu})$
-(R25 in WHATS\_NEW.md) provides a meaningful decomposition of portfolio
+**Hypothesis.** The Shapley value $\phi_i = b^{\ast}_i (\mu_i - \bar{\mu})$
+(R25 in WHATS_NEW.md) provides a meaningful decomposition of portfolio
 performance that agrees with standard Brinson attribution on sign.
 
 **Dataset.** Fama-French 25 portfolios, monthly returns, 1963-2024.
@@ -668,8 +668,8 @@ performance that agrees with standard Brinson attribution on sign.
 **Computation.**
 
 1. Each month:
-   (a) Compute the Kelly-optimal portfolio $b^*$ from the trailing 60 months.
-   (b) Compute Shapley values: $\phi_i = b^*_i (\mu_i - \bar{\mu})$ where
+   (a) Compute the Kelly-optimal portfolio $b^{\ast}$ from the trailing 60 months.
+   (b) Compute Shapley values: $\phi_i = b^{\ast}_i (\mu_i - \bar{\mu})$ where
    $\mu_i$ is the next month's realised return and $\bar{\mu} = \sum_j
    b^*_j \mu_j$.
    (c) Compute Brinson attribution: allocation effect + selection effect for
@@ -698,7 +698,7 @@ the same economic content.
 
 **Hypothesis.** The LZ78 compression rate of the Voronoi symbolic sequence
 of returns converges to $h_{\rm Kelly}$ (the connection between R14 and R15
-in WHATS\_NEW.md).
+in WHATS_NEW.md).
 
 **Dataset.** S&P 500 daily returns, 1990-2024.
 
@@ -714,8 +714,8 @@ in WHATS\_NEW.md).
    $n_{\rm phrases}$ is the number of distinct phrases in the LZ78 dictionary.
 
 3. **Kelly growth rate:** Compute the log-optimal portfolio growth rate
-   $h_{\rm Kelly} = T^{-1} \sum_t \log\langle b^*_t, x_t \rangle$ where
-   $b^*_t$ is the sequentially-estimated Kelly portfolio.
+   $h_{\rm Kelly} = T^{-1} \sum_t \log\langle b^{\ast}_t, x_t \rangle$ where
+   $b^{\ast}_t$ is the sequentially-estimated Kelly portfolio.
 
 4. Compute both quantities in rolling 504-day windows. Compute the Pearson
    correlation between $c_{\rm LZ}$ and $h_{\rm Kelly}$ across windows.
@@ -960,7 +960,7 @@ its own death conditions is not a scientific theory.
 ### 8.1 Catastrophic failures (any one of these kills the monograph)
 
 **If Test 1 fails** — $\beta_1 \leq 0$ in the Sharpe-curvature regression —
-then the central theorem of the monograph ($\mathrm{Sharpe}^* = \|H\|$) does
+then the central theorem of the monograph ($\mathrm{Sharpe}^{\ast} = \|H\|$) does
 not hold empirically. This is the theorem from which almost everything else
 follows. Its failure would mean that mean curvature is not the right geometric
 quantity, or the Fisher-Rao metric is not the right geometry, or the market is

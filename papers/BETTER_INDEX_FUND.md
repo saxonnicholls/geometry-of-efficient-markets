@@ -110,13 +110,13 @@ without rebalancing, the further $b^{\rm cap}$ drifts from $b^{\ast}$.*
 *The expected Kelly growth shortfall of the cap-weighted portfolio relative to
 the log-optimal portfolio is:*
 
-$$\mathbb{E}[h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})] 
+$$\mathbb{E}[h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})]
 = \frac{1}{2}\mathbb{E}\!\left[d_{g^{\rm FR}}(b^{\rm cap}, b^{\ast})^2\right] + O(\varepsilon^4) \tag{1.5}$$
 
 *For the US equity market with cross-sectional return volatility $\sigma_{\rm cs}$
 and $d$ stocks:*
 
-$$\mathbb{E}[h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})] 
+$$\mathbb{E}[h_{\rm Kelly}(b^{\ast}) - h_{\rm Kelly}(b^{\rm cap})]
 \approx \frac{\sigma^2_{\rm cs}}{2d} \cdot T_{\rm no\text{-}rebal} \tag{1.6}$$
 
 *where $T_{\rm no\text{-}rebal}$ is the time since last rebalancing.*
@@ -347,17 +347,17 @@ The marginal cost of increasing frequency is:
 $$\frac{dC}{df} = \lambda_{\rm tc}\cdot\sigma_{\rm cs}/\sqrt{f} \tag{5.5}$$
 
 Setting marginal benefit magnitude = marginal cost:
-$$f^* = \left(\frac{c_2\sigma^3_{\rm cs}}{d^2\lambda_{\rm tc}}\right)^{2/3}
+$$f^{\ast} = \left(\frac{c_2\sigma^3_{\rm cs}}{d^2\lambda_{\rm tc}}\right)^{2/3}
 \approx \lambda_1^{\rm CS} \tag{5.6}$$
 
 — which equals the **cross-sectional Jacobi spectral gap** $\lambda_1^{\rm CS}$ —
 the rate at which individual stocks mean-revert to their log-optimal weight.
-The identification $f^* = \lambda_1^{\rm CS}$ holds because $c_2 \propto d^2/\lambda_1$
+The identification $f^{\ast} = \lambda_1^{\rm CS}$ holds because $c_2 \propto d^2/\lambda_1$
 from the spectral expansion of the Fisher-Rao drift.
 
 **For the S&P 500:** $\varepsilon^2 = 1/252$/day, $\lambda_{\rm tc} = 5$ bps,
 $\sigma_{\rm cs} = 2\%$/day:
-$$f^* \approx 12\text{ per year} = \text{monthly rebalancing}$$
+$$f^{\ast} \approx 12\text{ per year} = \text{monthly rebalancing}$$
 
 **Monthly rebalancing is geometrically optimal for most equity index funds.**
 Annual rebalancing leaves money on the table. Daily rebalancing costs more than it earns.

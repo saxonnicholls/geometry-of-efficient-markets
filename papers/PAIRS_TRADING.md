@@ -14,12 +14,12 @@
 We develop a rigorous geometric theory of pairs trading by applying the framework of
 this series to the two-asset case. The key insight is that each connection the
 prediction-market quantum framework draws by analogy is, in our setting, an exact
-theorem. The Bloch sphere IS the Bhattacharyya sphere (for two assets, $S^1\_+$
+theorem. The Bloch sphere IS the Bhattacharyya sphere (for two assets, $S^1_+$
 is literally the positive arc of the unit circle). The "density matrix" of a pairs
 trade IS the normalized Fisher information matrix of the two-asset subspace. The
 "phase" distinguishing two pairs at the same spread IS the Berry phase from
-FIBER\_BUNDLES.md. The OU mean-reversion speed IS the Jacobi spectral gap
-$\lambda\_1(L\_M)$. The optimal stopping boundary IS the free boundary of the
+FIBER_BUNDLES.md. The OU mean-reversion speed IS the Jacobi spectral gap
+$\lambda_1(L_M)$. The optimal stopping boundary IS the free boundary of the
 market Hamiltonian. The "decoherence" near expiry IS the MCF convergence to the
 minimal surface.
 
@@ -29,7 +29,7 @@ signals derived from the geometric invariants; (iii) the optimal stopping proble
 solved via the Hamiltonian theory; (iv) a C++ implementation connecting all three.
 
 The key practical result: **the optimal entry threshold for a pairs trade is the
-Jacobi eigenvalue $\lambda\_1$ of the pairs manifold, and the optimal exit is the
+Jacobi eigenvalue $\lambda_1$ of the pairs manifold, and the optimal exit is the
 free boundary $b^{\ast}$ of the Hamiltonian ground state problem.** Both are computable
 from the $(μ, σ, ρ)$ state alone.
 
@@ -44,33 +44,33 @@ connection it makes by analogy is an exact theorem in the geometric framework.
 
 | Article (analogy) | Our framework (theorem) | Rigorous statement |
 |:------------------|:-----------------------|:-------------------|
-| Bloch sphere for binary market | Bhattacharyya sphere $S^{d-1}\_+$ | Fisher-Rao isometry $b \mapsto \sqrt{b}$; proved in MINIMAL\_SURFACE |
-| "Phase" on Bloch sphere | Berry phase on market manifold | $\gamma\_{\rm Berry} = \oint\_\gamma A$; proved in FIBER\_BUNDLES |
+| Bloch sphere for binary market | Bhattacharyya sphere $S^{d-1}_+$ | Fisher-Rao isometry $b \mapsto \sqrt{b}$; proved in MINIMAL_SURFACE |
+| "Phase" on Bloch sphere | Berry phase on market manifold | $\gamma_{\rm Berry} = \oint_\gamma A$; proved in FIBER_BUNDLES |
 | Density matrix from $(μ,σ,ρ)$ | Fisher information matrix $F(b^{\ast})$ | $\rho = F(b^{\ast})/\mathrm{tr}(F(b^{\ast}))$; proved in LAPLACE |
 | Entanglement entropy | Von Neumann entropy of $F(b^{\ast})$ | $S = -\mathrm{tr}(\rho\log\rho)$; normal bundle dimension |
-| OU mean reversion | Jacobi spectral gap $\lambda\_1$ | $\kappa = \lambda\_1(L\_M)$; proved in CLASSIFICATION |
-| Decoherence threshold | MCF convergence to minimal surface | $H \to 0$ at rate $\lambda\_1$; proved in MINIMAL\_SURFACE |
+| OU mean reversion | Jacobi spectral gap $\lambda_1$ | $\kappa = \lambda_1(L_M)$; proved in CLASSIFICATION |
+| Decoherence threshold | MCF convergence to minimal surface | $H \to 0$ at rate $\lambda_1$; proved in MINIMAL_SURFACE |
 | Free boundary / optimal stop | Hamiltonian ground state free boundary | Variational inequality; proved in HAMILTONIAN paper |
-| Interference (non-additive probs) | Chern class / holonomy correction | $c\_1(NM) \neq 0$; proved in FIBER\_BUNDLES |
+| Interference (non-additive probs) | Chern class / holonomy correction | $c_1(NM) \neq 0$; proved in FIBER_BUNDLES |
 
 ### 1.2 The Bloch sphere IS the Bhattacharyya sphere
 
-For a two-asset portfolio $(b\_1, b\_2 = 1-b\_1) \in \Delta\_1$, the Bhattacharyya map is:
+For a two-asset portfolio $(b_1, b_2 = 1-b_1) \in \Delta_1$, the Bhattacharyya map is:
 
 $$\phi: b_1 \mapsto u = (\sqrt{b_1}, \sqrt{1-b_1}) \in S^1_+ \tag{1.1}$$
 
 This is literally the north-south arc of the unit circle — the positive octant of $S^1$.
-The polar angle on $S^1\_+$ is:
+The polar angle on $S^1_+$ is:
 
 $$\theta = 2\arccos(\sqrt{b_1}) \iff b_1 = \cos^2(\theta/2) \tag{1.2}$$
 
-**This is identical to the Bloch sphere parameterisation** with $p = b\_1$ (the weight on
+**This is identical to the Bloch sphere parameterisation** with $p = b_1$ (the weight on
 asset 1). The article's "price = $\cos^2(\theta/2)$" is our Fisher-Rao isometry, derived
 from first principles. No analogy needed — they are the same object.
 
-The "phase" $\varphi$ on the Bloch sphere is the azimuthal coordinate on $S^1\_+$.
+The "phase" $\varphi$ on the Bloch sphere is the azimuthal coordinate on $S^1_+$.
 For a single pair (one-dimensional market manifold), the manifold is a geodesic arc on
-$S^1\_+$ — the phase is constant along this arc, giving zero Berry phase for a CAPM-type
+$S^1_+$ — the phase is constant along this arc, giving zero Berry phase for a CAPM-type
 pair. **A non-zero Berry phase requires a two-dimensional manifold** ($r \geq 2$, i.e.,
 at least two correlated pairs or one pair with stochastic $\rho$).
 
@@ -80,8 +80,8 @@ at least two correlated pairs or one pair with stochastic $\rho$).
 
 ### 2.1 The $(μ, σ, ρ)$ state as a density matrix
 
-For two assets $A$, $B$ with log-returns $r\_A \sim \mathcal{N}(\mu\_A, \sigma\_A^2)$,
-$r\_B \sim \mathcal{N}(\mu\_B, \sigma\_B^2)$, correlation $\rho$, the covariance matrix is:
+For two assets $A$, $B$ with log-returns $r_A \sim \mathcal{N}(\mu_A, \sigma_A^2)$,
+$r_B \sim \mathcal{N}(\mu_B, \sigma_B^2)$, correlation $\rho$, the covariance matrix is:
 
 $$\Sigma = \begin{pmatrix}\sigma_A^2 & \rho\sigma_A\sigma_B\\ \rho\sigma_A\sigma_B & \sigma_B^2\end{pmatrix} \tag{2.1}$$
 
@@ -92,16 +92,16 @@ $$\rho_{\rm pair} = \frac{\Sigma^{-1}}{\mathrm{tr}(\Sigma^{-1})} = \frac{F(b^{\a
 This is a $2\times 2$ positive semidefinite matrix with unit trace — exactly a density
 matrix in the sense of quantum mechanics.
 
-**Eigenvalues of $\rho\_{\rm pair}$:**
+**Eigenvalues of $\rho_{\rm pair}$:**
 
 $$\lambda_\pm = \frac{1}{2} \pm \frac{1}{2}\sqrt{1 - 4\det(\rho_{\rm pair})} \tag{2.3}$$
 
 For perfectly correlated assets ($|\rho| \to 1$): $\det(\Sigma^{-1}) \to \infty$,
-$\det(\rho\_{\rm pair}) \to 0$, and $\lambda\_+ \to 1$, $\lambda\_- \to 0$ — the density
+$\det(\rho_{\rm pair}) \to 0$, and $\lambda_+ \to 1$, $\lambda_- \to 0$ — the density
 matrix approaches a pure state. The pair is maximally entangled.
 
-For uncorrelated assets ($\rho = 0$): $\Sigma^{-1} = \mathrm{diag}(\sigma\_A^{-2}, \sigma\_B^{-2})$,
-and $\rho\_{\rm pair} = \mathrm{diag}(\sigma\_B^2, \sigma\_A^2)/(\sigma\_A^2+\sigma\_B^2)$ —
+For uncorrelated assets ($\rho = 0$): $\Sigma^{-1} = \mathrm{diag}(\sigma_A^{-2}, \sigma_B^{-2})$,
+and $\rho_{\rm pair} = \mathrm{diag}(\sigma_B^2, \sigma_A^2)/(\sigma_A^2+\sigma_B^2)$ —
 a mixed state (separable). The pair is unentangled.
 
 ### 2.2 Von Neumann entropy as correlation health
@@ -121,7 +121,7 @@ pair is changing character — even before the scalar $\rho$ visibly declines.
 ### 2.3 The pairs market manifold
 
 For a pairs trade with correlation $\rho$, the market manifold $M^1$ is the arc on
-$S^1\_+$ connecting the "all-in-$A$" portfolio $(1,0)$ to the "all-in-$B$" portfolio
+$S^1_+$ connecting the "all-in-$A$" portfolio $(1,0)$ to the "all-in-$B$" portfolio
 $(0,1)$, weighted by the Fisher information.
 
 The **Fisher-Rao length** of the pairs manifold:
@@ -137,7 +137,7 @@ log-optimal $b^{\ast}$ sits.
 
 $$b^{\ast}_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}$$
 
-This is the Kelly fraction for a two-asset portfolio — the point on $S^1\_+$ where the
+This is the Kelly fraction for a two-asset portfolio — the point on $S^1_+$ where the
 Fisher-Rao gradient of log-growth vanishes.
 
 ---
@@ -146,12 +146,12 @@ Fisher-Rao gradient of log-growth vanishes.
 
 ### 3.1 The OU process for the spread
 
-Let $X\_t = \log(S\_{A,t}/S\_{B,t}) - \log(S\_{A,0}/S\_{B,0})$ be the log-spread.
-For a mean-reverting pair, $X\_t$ follows the Ornstein-Uhlenbeck process:
+Let $X_t = \log(S_{A,t}/S_{B,t}) - \log(S_{A,0}/S_{B,0})$ be the log-spread.
+For a mean-reverting pair, $X_t$ follows the Ornstein-Uhlenbeck process:
 
 $$dX_t = -\kappa(X_t - \theta)\,dt + \sigma_X\,dW_t \tag{3.1}$$
 
-with mean-reversion level $\theta$, speed $\kappa > 0$, and diffusion $\sigma\_X$.
+with mean-reversion level $\theta$, speed $\kappa > 0$, and diffusion $\sigma_X$.
 
 ### 3.2 The exact isomorphism
 
@@ -160,12 +160,12 @@ The OU generator acting on functions $f: \mathbb{R} \to \mathbb{R}$:
 $$\mathcal{L}_{\rm OU}f = -\kappa(x-\theta)f'(x) + \frac{\sigma_X^2}{2}f''(x) \tag{3.2}$$
 
 is related to the Quantum Harmonic Oscillator Hamiltonian by the **Doob $h$-transform**
-with the stationary density $\pi(x) = \mathcal{N}(\theta, \sigma\_X^2/(2\kappa))$:
+with the stationary density $\pi(x) = \mathcal{N}(\theta, \sigma_X^2/(2\kappa))$:
 
 $$\hat{\mathcal{H}}_{\rm QHO} = -\pi^{-1/2}\,\mathcal{L}_{\rm OU}\,\pi^{1/2}
 = \kappa\left(-\frac{d^2}{d\xi^2} + \xi^2 - 1\right) \tag{3.3}$$
 
-where $\xi = (x-\theta)\sqrt{2\kappa}/\sigma\_X$ is the dimensionless spread.
+where $\xi = (x-\theta)\sqrt{2\kappa}/\sigma_X$ is the dimensionless spread.
 
 **This is an exact similarity transformation** — not an analogy. The OU generator IS
 the QHO Hamiltonian, up to a change of basis.
@@ -179,11 +179,11 @@ $$\lambda_n = n\kappa, \quad n = 0, 1, 2, \ldots \tag{3.4}$$
 $$\psi_n(x) = H_n\!\left(\xi\right)\cdot e^{-\xi^2/2},
 \qquad \xi = \frac{(x-\theta)\sqrt{2\kappa}}{\sigma_X} \tag{3.5}$$
 
-where $H\_n$ are the Hermite polynomials.
+where $H_n$ are the Hermite polynomials.
 
 **Connection to Jacobi spectrum.** From CLASSIFICATION.md: the Jacobi eigenvalues of the
-one-dimensional market manifold $M^1 \subset S^1\_+$ are $\lambda\_n = n\kappa$ where
-$\kappa = \lambda\_1(L\_{M^1})$ is the spectral gap of the Jacobi operator. This is
+one-dimensional market manifold $M^1 \subset S^1_+$ are $\lambda_n = n\kappa$ where
+$\kappa = \lambda_1(L_{M^1})$ is the spectral gap of the Jacobi operator. This is
 **identical to the OU spectrum (3.4)** — the pairs trade mean-reversion speed is the
 Jacobi spectral gap of the market manifold.
 
@@ -191,38 +191,38 @@ Jacobi spectral gap of the market manifold.
 
 **Clarification on the spectral gap.** There are two related but distinct spectral gaps:
 
-(i) The **full 2D Jacobi spectral gap** $\lambda\_1(\text{full}) = \kappa$, which is the
-first eigenvalue of the Jacobi operator on the full two-asset market manifold $M^1 \subset S^1\_+$.
+(i) The **full 2D Jacobi spectral gap** $\lambda_1(\text{full}) = \kappa$, which is the
+first eigenvalue of the Jacobi operator on the full two-asset market manifold $M^1 \subset S^1_+$.
 This equals the OU mean-reversion speed $\kappa$ of the full process.
 
-(ii) The **projected spread spectral gap** $\lambda\_1(\text{spread}) = \kappa(1-\rho^2)$,
-which is the spectral gap of the projected spread process $X\_t = \log(S\_A/S\_B)$.
+(ii) The **projected spread spectral gap** $\lambda_1(\text{spread}) = \kappa(1-\rho^2)$,
+which is the spectral gap of the projected spread process $X_t = \log(S_A/S_B)$.
 The factor $(1-\rho^2)$ accounts for the information lost in projecting from the full
 pairs system (both assets) to the univariate spread.
 
 $$\lambda_1(\text{spread}) = \kappa(1-\rho^2) \tag{3.6}$$
 
 The formula follows from the projection: the spread variance is
-$\sigma\_X^2 = \sigma\_A^2 + \sigma\_B^2 - 2\rho\sigma\_A\sigma\_B$, and the full
+$\sigma_X^2 = \sigma_A^2 + \sigma_B^2 - 2\rho\sigma_A\sigma_B$, and the full
 2D process has mean-reversion speed $\kappa$. When projected onto the spread direction,
 the effective mean-reversion is reduced by the factor $(1-\rho^2)$ because correlation
 between the two assets absorbs part of the restoring force into co-movement rather
 than spread convergence.
 
-**Cross-check:** As $|\rho| \to 1$: $\lambda\_1(\text{spread}) \to 0$ (the spread
+**Cross-check:** As $|\rho| \to 1$: $\lambda_1(\text{spread}) \to 0$ (the spread
 barely reverts because the assets move together — consistent). As $\rho \to 0$:
-$\lambda\_1(\text{spread}) = \kappa$ (the full spectral gap applies to the spread,
+$\lambda_1(\text{spread}) = \kappa$ (the full spectral gap applies to the spread,
 since the assets are independent — also consistent). The formula is self-consistent
 and computable from $(\kappa, \rho)$ alone.
 
 ### 3.3 The mode decomposition: why a large spread reverts through superposition
 
-When the spread is at $X\_0 = \theta + z\sigma\_X$ (a $z$-sigma dislocation), the spread
+When the spread is at $X_0 = \theta + z\sigma_X$ (a $z$-sigma dislocation), the spread
 state decomposes into OU modes:
 
 $$\delta X(t) = X_t - \theta = \sum_{n=0}^\infty c_n\,e^{-n\kappa t}\,H_n(\xi_0) \tag{3.7}$$
 
-where $c\_n = \langle\delta X(0), \psi\_n\rangle/\|\psi\_n\|^2$.
+where $c_n = \langle\delta X(0), \psi_n\rangle/\|\psi_n\|^2$.
 
 **The mean reversion of a $z\sigma$ dislocation is a superposition of decaying modes.** Mode $n$ decays at rate $n\kappa$:
 
@@ -239,12 +239,12 @@ the spread at entry determines the optimal holding period** — a spread driven 
 mode $n=1$ (fundamental) requires patience; a spread driven by mode $n=2$ (noise)
 should be held briefly.
 
-**Practical identification of mode composition.** The mode amplitudes $c\_n$ are estimated from:
-- $c\_1$: proportional to the spread z-score minus any DC shift. Estimates from the
-  autocorrelation at lag 1: $c\_1 \approx \mathrm{Corr}(X\_t, X\_{t-1})/e^{-\kappa}$.
-- $c\_2$: from the excess kurtosis of the spread over the OU stationary distribution.
-- $c\_0$ (DC component): a non-zero $c\_0$ means the equilibrium has shifted —
-  a regime change signal, not a reversion signal. **Don't trade $c\_0$.**
+**Practical identification of mode composition.** The mode amplitudes $c_n$ are estimated from:
+- $c_1$: proportional to the spread z-score minus any DC shift. Estimates from the
+  autocorrelation at lag 1: $c_1 \approx \mathrm{Corr}(X_t, X_{t-1})/e^{-\kappa}$.
+- $c_2$: from the excess kurtosis of the spread over the OU stationary distribution.
+- $c_0$ (DC component): a non-zero $c_0$ means the equilibrium has shifted —
+  a regime change signal, not a reversion signal. **Don't trade $c_0$.**
 
 ---
 
@@ -262,16 +262,16 @@ For a pairs trade that traces a closed loop $\gamma$ on the market manifold $M^1
 
 $$\gamma_{\rm Berry} = \oint_\gamma A_{\rm Berry} \tag{4.1}$$
 
-where $A\_{\rm Berry} = i\langle\hat{b}^M|\nabla\_\theta|\hat{b}^M\rangle$ is the Berry
+where $A_{\rm Berry} = i\langle\hat{b}^M|\nabla_\theta|\hat{b}^M\rangle$ is the Berry
 connection on the bundle of MUP states parameterised by $(μ, σ, ρ)(t)$.
 
-**For a static pair** (constant $μ, σ, ρ$): the manifold $M^1$ is a fixed arc on $S^1\_+$
+**For a static pair** (constant $μ, σ, ρ$): the manifold $M^1$ is a fixed arc on $S^1_+$
 and the Berry phase is zero. The "phase" the article describes is not the Berry phase —
 it is just the velocity (phase) of the state vector on the Bloch sphere. This captures
 momentum effects.
 
 **For a dynamically correlated pair** (time-varying $\rho(t)$): the market parameters
-trace a path in the $(σ\_A, σ\_B, \rho)$ parameter space, and the Berry phase is non-zero.
+trace a path in the $(σ_A, σ_B, \rho)$ parameter space, and the Berry phase is non-zero.
 A complete correlation cycle (e.g., $\rho$ rises from 0.6 to 0.9 and returns) accumulates:
 
 $$\gamma_{\rm Berry} = \pi\left[\cos^{-1}(\rho_{\rm min}) - \cos^{-1}(\rho_{\rm max})\right] \tag{4.2}$$
@@ -284,19 +284,19 @@ reversion dynamics. This is the rigorous version of the article's phase proxy.
 
 ### 4.2 Phase as an entry filter: the rigorous version
 
-For a pairs entry at time $t$ with spread $z\_t$, the **phase-adjusted spread signal** is:
+For a pairs entry at time $t$ with spread $z_t$, the **phase-adjusted spread signal** is:
 
 $$z_{\rm adj}(t) = z_t \cdot \cos(\gamma_{\rm Berry}(t)) \tag{4.3}$$
 
-When $\gamma\_{\rm Berry} \approx 0$ (fresh entry, no accumulated phase): $z\_{\rm adj} = z\_t$ — enter on the full spread.
+When $\gamma_{\rm Berry} \approx 0$ (fresh entry, no accumulated phase): $z_{\rm adj} = z_t$ — enter on the full spread.
 
-When $\gamma\_{\rm Berry} \approx \pi/2$ (spread opened during a correlation rotation):
-$z\_{\rm adj} = 0$ — the spread signal is entirely phase-shifted, expect delayed reversion.
+When $\gamma_{\rm Berry} \approx \pi/2$ (spread opened during a correlation rotation):
+$z_{\rm adj} = 0$ — the spread signal is entirely phase-shifted, expect delayed reversion.
 
-When $\gamma\_{\rm Berry} \approx \pi$ (spread at phase inversion): $z\_{\rm adj} = -z\_t$ —
+When $\gamma_{\rm Berry} \approx \pi$ (spread at phase inversion): $z_{\rm adj} = -z_t$ —
 the spread is actually in the wrong direction for mean reversion; the pair has phase-inverted.
 
-**Practical proxy for $\gamma\_{\rm Berry}$:** The change in $\rho$ during the spread opening:
+**Practical proxy for $\gamma_{\rm Berry}$:** The change in $\rho$ during the spread opening:
 
 $$\hat\gamma_{\rm Berry}(t) \approx \pi\frac{\rho(t) - \rho(t-\tau)}{\rho_{\rm max} - \rho_{\rm min}} \tag{4.4}$$
 
@@ -308,8 +308,8 @@ where $\tau$ is the timescale over which the spread opened.
 
 ### 5.1 The optimal stopping problem
 
-Given the OU spread $X\_t$ with dynamics (3.1), the optimal stopping problem for a
-long-spread pairs trade asks: at what spread level $X\_{\rm exit}$ should we close the
+Given the OU spread $X_t$ with dynamics (3.1), the optimal stopping problem for a
+long-spread pairs trade asks: at what spread level $X_{\rm exit}$ should we close the
 position to maximise risk-adjusted PnL?
 
 The value function $V(x)$ satisfies the variational inequality:
@@ -321,14 +321,14 @@ converging to the mean), and $r$ is the risk-free rate (opportunity cost).
 
 ### 5.2 The free boundary from the Hamiltonian
 
-From our market Hamiltonian theory (HAMILTONIAN\_TAILS\_COMPLETENESS Section 1),
+From our market Hamiltonian theory (HAMILTONIAN_TAILS_COMPLETENESS Section 1),
 the stopping problem (5.1) is the **free boundary problem for the QHO ground state**.
 
 The free boundary $x^{\ast} = b^{\ast}$ is determined by the smooth pasting conditions:
 
 $$V(x^{\ast}) = g(x^{\ast}), \qquad V'(x^{\ast}) = g'(x^{\ast}) = 1 \tag{5.2}$$
 
-**Explicit solution.** In the QHO coordinates $\xi = (x-\theta)\sqrt{2\kappa}/\sigma\_X$,
+**Explicit solution.** In the QHO coordinates $\xi = (x-\theta)\sqrt{2\kappa}/\sigma_X$,
 the value function is:
 
 $$V(\xi) = \begin{cases}
@@ -336,11 +336,11 @@ A\cdot e^{-\xi^2/4}\cdot D_\nu(\xi\sqrt{2}) & \xi > \xi^{\ast} \\
 g(\xi) & \xi \leq \xi^{\ast}
 \end{cases} \tag{5.3}$$
 
-where $D\_\nu$ is the parabolic cylinder function, $\nu = r/(2\kappa) - 1/2$ is the
+where $D_\nu$ is the parabolic cylinder function, $\nu = r/(2\kappa) - 1/2$ is the
 fractional mode number, and $\xi^{\ast}$ is determined by the smooth pasting condition.
 
 **For low $r$ relative to $\kappa$ (fast mean reversion):** $\nu \approx -1/2$,
-$D\_{-1/2}(\xi) \approx \sqrt{\pi/2}\,e^{-\xi^2/4}$, giving $\xi^{\ast} \approx -1$.
+$D_{-1/2}(\xi) \approx \sqrt{\pi/2}\,e^{-\xi^2/4}$, giving $\xi^{\ast} \approx -1$.
 The optimal exit is 1σ below the entry — consistent with "exit at 1σ" rules of thumb.
 
 **For high $r$ relative to $\kappa$ (slow mean reversion or high rates):** $\nu$ increases,
@@ -352,7 +352,7 @@ cost of waiting dominates.
 $$x^{\ast}_{\rm exit} = \theta - \sigma_X\sqrt{\frac{1}{2\kappa}}\cdot\xi^{\ast} \approx \theta - \sigma_X\sqrt{\frac{r}{2\kappa^3}} \tag{5.4}$$
 
 For gold basis: $\kappa \approx 2$/year (from historical basis mean reversion),
-$\sigma\_X \approx \$5$/oz, $r \approx 0.05$:
+$\sigma_X \approx \$5$/oz, $r \approx 0.05$:
 
 $$x^{\ast}_{\rm exit} \approx \theta - 5\sqrt{\frac{0.05}{16}} \approx \theta - \$0.88\text{/oz} \tag{5.5}$$
 
@@ -365,13 +365,13 @@ convergence.
 The **optimal entry threshold** is the point at which the expected log-PnL exceeds
 the opportunity cost of being in the position. From the Jacobi theory:
 
-$$x^{\ast}\_{\rm entry} = \theta + z^{\ast}\_{\rm entry}\cdot\sigma\_X, \qquad
-z^{\ast}\_{\rm entry} = \sqrt{\frac{r + \lambda\_1}{\kappa}} \cdot \frac{\sigma\_X}{\sqrt{2}} \tag{5.6}$$
+$$x^{\ast}_{\rm entry} = \theta + z^{\ast}_{\rm entry}\cdot\sigma_X, \qquad
+z^{\ast}_{\rm entry} = \sqrt{\frac{r + \lambda_1}{\kappa}} \cdot \frac{\sigma_X}{\sqrt{2}} \tag{5.6}$$
 
 where $\lambda_1 = \kappa$ is the Jacobi spectral gap (same as OU mean-reversion speed
 in the one-dimensional case). This simplifies to:
 
-$$z^{\ast}\_{\rm entry} = \sqrt{\frac{r + \kappa}{\kappa}} \cdot \frac{1}{\sqrt{2}} \approx \sqrt{1 + r/\kappa} \tag{5.7}$$
+$$z^{\ast}_{\rm entry} = \sqrt{\frac{r + \kappa}{\kappa}} \cdot \frac{1}{\sqrt{2}} \approx \sqrt{1 + r/\kappa} \tag{5.7}$$
 
 For $r/\kappa \ll 1$ (fast mean reversion): $z^{\ast}_{\rm entry} \approx 1\sigma$ — entry
 at 1σ is optimal.
@@ -412,10 +412,10 @@ and compute:
 
 **Step 4: Signal composite.** Enter long-spread when ALL conditions met:
 ```
-z\_t > z*\_entry                    // amplitude threshold (geometric)
-S(ρ\_pair) < S\_max                  // correlation health (von Neumann entropy)
-cos(γ\_Berry) > 0.5                 // phase gate (Berry phase aligned)
-c\_0/z\_t < 0.2                      // DC component small (no regime change)
+z_t > z*_entry                    // amplitude threshold (geometric)
+S(ρ_pair) < S_max                  // correlation health (von Neumann entropy)
+cos(γ_Berry) > 0.5                 // phase gate (Berry phase aligned)
+c_0/z_t < 0.2                      // DC component small (no regime change)
 First Notice Day > 15 days         // decoherence window
 ```
 
@@ -423,7 +423,7 @@ Exit when spread crosses $x^{\ast}_{\rm exit}$ or when any condition breaks.
 
 **Step 5: Position sizing.** The Kelly fraction for the pairs trade:
 
-$$f^{\ast} = \frac{z\_t\kappa - r}{2\sigma\_X^2\kappa} \cdot (1 - S/\log 2) \tag{6.1}$$
+$$f^{\ast} = \frac{z_t\kappa - r}{2\sigma_X^2\kappa} \cdot (1 - S/\log 2) \tag{6.1}$$
 
 The first factor is the classic Kelly sizing for an OU process; the second factor
 $(1 - S/\log 2) \in [0,1]$ is the von Neumann entropy discount — reduce size
@@ -456,14 +456,14 @@ using namespace Eigen;
 
 // ============================================================
 // GEOMETRIC PAIRS TRADER
-// State: (mu\_A, mu\_B, sigma\_A, sigma\_B, rho)
+// State: (mu_A, mu_B, sigma_A, sigma_B, rho)
 // Core objects: density matrix, Jacobi gap, Berry phase,
 //               OU mode decomposition, optimal stopping
 // ============================================================
 
 struct PairsState {
-    double mu\_A, mu\_B;        // drift estimates
-    double sigma\_A, sigma\_B;  // volatility estimates
+    double mu_A, mu_B;        // drift estimates
+    double sigma_A, sigma_B;  // volatility estimates
     double rho;               // correlation
     double r;                 // risk-free rate
     double dt;                // time step (years)
@@ -473,20 +473,20 @@ struct PairsState {
 // 1. DENSITY MATRIX AND VON NEUMANN ENTROPY
 // ============================================================
 
-Matrix2d fishers\_density\_matrix(const PairsState& s) {
+Matrix2d fishers_density_matrix(const PairsState& s) {
     // Covariance matrix
     Matrix2d Sigma;
-    Sigma << s.sigma\_A*s.sigma\_A, s.rho*s.sigma\_A*s.sigma\_B,
-             s.rho*s.sigma\_A*s.sigma\_B, s.sigma\_B*s.sigma\_B;
+    Sigma << s.sigma_A*s.sigma_A, s.rho*s.sigma_A*s.sigma_B,
+             s.rho*s.sigma_A*s.sigma_B, s.sigma_B*s.sigma_B;
     
     // Fisher matrix (inverse covariance, normalised)
     Matrix2d F = Sigma.inverse();
     return F / F.trace();  // trace-1 density matrix
 }
 
-double von\_neumann\_entropy(const Matrix2d& rho\_mat) {
+double von_neumann_entropy(const Matrix2d& rho_mat) {
     // Eigenvalues of 2x2 density matrix
-    SelfAdjointEigenSolver<Matrix2d> es(rho\_mat);
+    SelfAdjointEigenSolver<Matrix2d> es(rho_mat);
     Vector2d evals = es.eigenvalues();
     double S = 0.0;
     for (int i = 0; i < 2; i++) {
@@ -496,10 +496,10 @@ double von\_neumann\_entropy(const Matrix2d& rho\_mat) {
     return S;  // in [0, log(2)]
 }
 
-double correlation\_health(const PairsState& s) {
+double correlation_health(const PairsState& s) {
     // Returns 1 = perfectly correlated, 0 = uncorrelated
-    Matrix2d rho\_mat = fishers\_density\_matrix(s);
-    double S = von\_neumann\_entropy(rho\_mat);
+    Matrix2d rho_mat = fishers_density_matrix(s);
+    double S = von_neumann_entropy(rho_mat);
     return 1.0 - S / std::log(2.0);
 }
 
@@ -507,19 +507,19 @@ double correlation\_health(const PairsState& s) {
 // 2. BHATTACHARYYA / BLOCH SPHERE — LOG-OPTIMAL WEIGHT
 // ============================================================
 
-double log\_optimal\_weight(const PairsState& s) {
+double log_optimal_weight(const PairsState& s) {
     // Kelly fraction for two-asset portfolio (equation 2.6)
-    double sA2 = s.sigma\_A * s.sigma\_A;
-    double sB2 = s.sigma\_B * s.sigma\_B;
-    double num = s.mu\_A*sB2 - s.mu\_B*s.rho*s.sigma\_A*s.sigma\_B;
-    double den = s.mu\_A*sB2 + s.mu\_B*sA2
-                 - (s.mu\_A + s.mu\_B)*s.rho*s.sigma\_A*s.sigma\_B;
+    double sA2 = s.sigma_A * s.sigma_A;
+    double sB2 = s.sigma_B * s.sigma_B;
+    double num = s.mu_A*sB2 - s.mu_B*s.rho*s.sigma_A*s.sigma_B;
+    double den = s.mu_A*sB2 + s.mu_B*sA2
+                 - (s.mu_A + s.mu_B)*s.rho*s.sigma_A*s.sigma_B;
     if (std::abs(den) < 1e-10) return 0.5;
     return std::clamp(num / den, 0.01, 0.99);
 }
 
-double bhattacharyya\_angle(double b1) {
-    // Maps portfolio weight to angle on S^1\_+
+double bhattacharyya_angle(double b1) {
+    // Maps portfolio weight to angle on S^1_+
     return 2.0 * std::acos(std::sqrt(b1));  // in [0, pi/2]
 }
 
@@ -528,39 +528,39 @@ double bhattacharyya\_angle(double b1) {
 // ============================================================
 
 struct OUParams {
-    double kappa;    // mean reversion speed = Jacobi gap lambda\_1
+    double kappa;    // mean reversion speed = Jacobi gap lambda_1
     double theta;    // equilibrium level
     double sigma;    // diffusion
 };
 
-double jacobi\_spectral\_gap(const PairsState& s, double kappa\_empirical) {
+double jacobi_spectral_gap(const PairsState& s, double kappa_empirical) {
     // The Jacobi spectral gap IS the OU mean-reversion speed
-    // Formula: lambda\_1 = kappa * (1 - rho^2)^(-1) scaled by Fisher geometry
+    // Formula: lambda_1 = kappa * (1 - rho^2)^(-1) scaled by Fisher geometry
     // In practice: calibrate kappa empirically, verify consistency with (3.6)
     double rho2 = s.rho * s.rho;
-    double sigma\_X2 = s.sigma\_A*s.sigma\_A + s.sigma\_B*s.sigma\_B
-                      - 2.0*s.rho*s.sigma\_A*s.sigma\_B;
-    // Consistency check: lambda\_1 from Fisher geometry
-    double lambda\_theoretical = 2.0 * kappa\_empirical * (1.0 - rho2);
-    return lambda\_theoretical;
+    double sigma_X2 = s.sigma_A*s.sigma_A + s.sigma_B*s.sigma_B
+                      - 2.0*s.rho*s.sigma_A*s.sigma_B;
+    // Consistency check: lambda_1 from Fisher geometry
+    double lambda_theoretical = 2.0 * kappa_empirical * (1.0 - rho2);
+    return lambda_theoretical;
 }
 
 // ============================================================
 // 4. BERRY PHASE ESTIMATION
 // ============================================================
 
-double berry\_phase\_estimate(double rho\_current, double rho\_prev,
-                            double rho\_min, double rho\_max) {
+double berry_phase_estimate(double rho_current, double rho_prev,
+                            double rho_min, double rho_max) {
     // Equation (4.4): approximate Berry phase from correlation momentum
-    double delta\_rho = rho\_current - rho\_prev;
-    double range = std::max(rho\_max - rho\_min, 0.01);
-    double gamma = M\_PI * delta\_rho / range;
+    double delta_rho = rho_current - rho_prev;
+    double range = std::max(rho_max - rho_min, 0.01);
+    double gamma = M_PI * delta_rho / range;
     return gamma;  // in radians
 }
 
-double phase\_adjusted\_zscore(double z\_raw, double gamma\_berry) {
+double phase_adjusted_zscore(double z_raw, double gamma_berry) {
     // Equation (4.3): phase adjustment to spread signal
-    return z\_raw * std::cos(gamma\_berry);
+    return z_raw * std::cos(gamma_berry);
 }
 
 // ============================================================
@@ -571,55 +571,55 @@ struct SpreadModes {
     double c0;   // DC component (regime shift — don't trade)
     double c1;   // Fundamental mean-reversion mode
     double c2;   // Second harmonic (fast noise)
-    double z\_fundamental;  // Effective z-score from mode 1 only
+    double z_fundamental;  // Effective z-score from mode 1 only
 };
 
-SpreadModes decompose\_spread(const std::vector<double>& spreads,
-                              double theta, double sigma\_X, double kappa) {
+SpreadModes decompose_spread(const std::vector<double>& spreads,
+                              double theta, double sigma_X, double kappa) {
     if (spreads.size() < 3) return {0,0,0,0};
     
     // c0: long-run mean deviation (DC shift)
-    double mean\_spread = 0.0;
-    for (double x : spreads) mean\_spread += x;
-    mean\_spread /= spreads.size();
-    double c0 = (mean\_spread - theta) / sigma\_X;
+    double mean_spread = 0.0;
+    for (double x : spreads) mean_spread += x;
+    mean_spread /= spreads.size();
+    double c0 = (mean_spread - theta) / sigma_X;
     
     // c1: estimate from lag-1 autocorrelation
     double acf1 = 0.0, var = 0.0;
-    for (size\_t i = 1; i < spreads.size(); i++) {
-        double xi = (spreads[i-1] - theta) / sigma\_X;
-        double xi1 = (spreads[i] - theta) / sigma\_X;
+    for (size_t i = 1; i < spreads.size(); i++) {
+        double xi = (spreads[i-1] - theta) / sigma_X;
+        double xi1 = (spreads[i] - theta) / sigma_X;
         acf1 += xi * xi1;
         var += xi * xi;
     }
     double rho1 = (var > 1e-10) ? acf1 / var : 0.0;
     // rho1 = exp(-kappa * dt), so kappa = -log(rho1)/dt
     // c1 proxy: current z-score minus DC component
-    double current\_z = (spreads.back() - theta) / sigma\_X;
-    double c1 = (current\_z - c0) * rho1;  // fundamental component
+    double current_z = (spreads.back() - theta) / sigma_X;
+    double c1 = (current_z - c0) * rho1;  // fundamental component
     
     // c2: residual after removing c0 and c1
-    double c2 = current\_z - c0 - c1;
+    double c2 = current_z - c0 - c1;
     
     // Effective z-score from fundamental mode only
-    double z\_fund = c1;  // trade this, not c0 or c2
+    double z_fund = c1;  // trade this, not c0 or c2
     
-    return {c0, c1, c2, z\_fund};
+    return {c0, c1, c2, z_fund};
 }
 
 // ============================================================
 // 6. OPTIMAL STOPPING — FREE BOUNDARY (equation 5.4)
 // ============================================================
 
-double optimal\_entry\_zscore(double kappa, double r) {
-    // Equation (5.7): z*\_entry = sqrt(1 + r/kappa)
+double optimal_entry_zscore(double kappa, double r) {
+    // Equation (5.7): z*_entry = sqrt(1 + r/kappa)
     return std::sqrt(1.0 + r / kappa);
 }
 
-double optimal\_exit\_spread(double theta, double sigma\_X,
+double optimal_exit_spread(double theta, double sigma_X,
                             double kappa, double r) {
-    // Equation (5.4): x*\_exit = theta - sigma\_X * sqrt(r/(2*kappa^3))
-    double delta = sigma\_X * std::sqrt(r / (2.0 * kappa * kappa * kappa));
+    // Equation (5.4): x*_exit = theta - sigma_X * sqrt(r/(2*kappa^3))
+    double delta = sigma_X * std::sqrt(r / (2.0 * kappa * kappa * kappa));
     return theta - delta;
 }
 
@@ -627,11 +627,11 @@ double optimal\_exit\_spread(double theta, double sigma\_X,
 // 7. KELLY POSITION SIZING WITH ENTROPY DISCOUNT
 // ============================================================
 
-double kelly\_fraction(double z\_score, double kappa, double r,
-                       double sigma\_X, double health) {
-    // Equation (6.1): f* = (z*kappa - r)/(2*sigma\_X^2*kappa) * health
-    double numerator = z\_score * kappa - r;
-    double denominator = 2.0 * sigma\_X * sigma\_X * kappa;
+double kelly_fraction(double z_score, double kappa, double r,
+                       double sigma_X, double health) {
+    // Equation (6.1): f* = (z*kappa - r)/(2*sigma_X^2*kappa) * health
+    double numerator = z_score * kappa - r;
+    double denominator = 2.0 * sigma_X * sigma_X * kappa;
     if (denominator < 1e-10 || numerator <= 0) return 0.0;
     return std::min((numerator / denominator) * health, 1.0);
 }
@@ -641,63 +641,63 @@ double kelly\_fraction(double z\_score, double kappa, double r,
 // ============================================================
 
 struct PairsSignal {
-    double z\_raw;           // raw spread z-score
-    double z\_adjusted;      // phase-adjusted z-score
-    double entry\_threshold; // geometric optimal entry
-    double exit\_target;     // free boundary exit
-    double kelly\_size;      // Kelly fraction
+    double z_raw;           // raw spread z-score
+    double z_adjusted;      // phase-adjusted z-score
+    double entry_threshold; // geometric optimal entry
+    double exit_target;     // free boundary exit
+    double kelly_size;      // Kelly fraction
     double health;          // von Neumann correlation health [0,1]
-    double berry\_phase;     // Berry phase in radians
+    double berry_phase;     // Berry phase in radians
     bool   enter;           // should we enter?
     bool   exit;            // should we exit?
     std::string reason;     // why
 };
 
-PairsSignal evaluate\_signal(
+PairsSignal evaluate_signal(
     const PairsState& s,
     const OUParams& ou,
-    const std::vector<double>& spread\_history,
-    double rho\_prev,          // correlation one window ago
-    double rho\_min, double rho\_max,  // correlation range
-    int days\_to\_expiry,
-    double current\_spread,
-    double current\_position\_spread)  // spread at which position was entered
+    const std::vector<double>& spread_history,
+    double rho_prev,          // correlation one window ago
+    double rho_min, double rho_max,  // correlation range
+    int days_to_expiry,
+    double current_spread,
+    double current_position_spread)  // spread at which position was entered
 {
     PairsSignal sig;
     
     // Current z-score
-    sig.z\_raw = (current\_spread - ou.theta) / ou.sigma;
+    sig.z_raw = (current_spread - ou.theta) / ou.sigma;
     
     // Berry phase
-    sig.berry\_phase = berry\_phase\_estimate(s.rho, rho\_prev, rho\_min, rho\_max);
-    sig.z\_adjusted = phase\_adjusted\_zscore(sig.z\_raw, sig.berry\_phase);
+    sig.berry_phase = berry_phase_estimate(s.rho, rho_prev, rho_min, rho_max);
+    sig.z_adjusted = phase_adjusted_zscore(sig.z_raw, sig.berry_phase);
     
     // Von Neumann entropy / health
-    sig.health = correlation\_health(s);
+    sig.health = correlation_health(s);
     
     // Geometric thresholds
-    sig.entry\_threshold = optimal\_entry\_zscore(ou.kappa, s.r);
-    sig.exit\_target = optimal\_exit\_spread(ou.theta, ou.sigma, ou.kappa, s.r);
+    sig.entry_threshold = optimal_entry_zscore(ou.kappa, s.r);
+    sig.exit_target = optimal_exit_spread(ou.theta, ou.sigma, ou.kappa, s.r);
     
     // Mode decomposition
-    SpreadModes modes = decompose\_spread(spread\_history, ou.theta, ou.sigma, ou.kappa);
+    SpreadModes modes = decompose_spread(spread_history, ou.theta, ou.sigma, ou.kappa);
     
     // Kelly size
-    sig.kelly\_size = kelly\_fraction(sig.z\_adjusted, ou.kappa, s.r, ou.sigma, sig.health);
+    sig.kelly_size = kelly_fraction(sig.z_adjusted, ou.kappa, s.r, ou.sigma, sig.health);
     
     // --- ENTRY LOGIC ---
     sig.enter = false;
     sig.reason = "";
     
-    if (days\_to\_expiry < 15) {
+    if (days_to_expiry < 15) {
         sig.reason = "DECOHERENCE: too close to expiry";
     } else if (sig.health < 0.3) {
         sig.reason = "LOW HEALTH: correlation breakdown (S > 0.7*log2)";
-    } else if (std::cos(sig.berry\_phase) < 0.5) {
+    } else if (std::cos(sig.berry_phase) < 0.5) {
         sig.reason = "PHASE GATE: Berry phase > 60 degrees, delayed reversion";
-    } else if (std::abs(modes.c0) > 0.2 * std::abs(sig.z\_raw)) {
+    } else if (std::abs(modes.c0) > 0.2 * std::abs(sig.z_raw)) {
         sig.reason = "REGIME FLAG: DC component too large, possible mean shift";
-    } else if (sig.z\_adjusted > sig.entry\_threshold) {
+    } else if (sig.z_adjusted > sig.entry_threshold) {
         sig.enter = true;
         sig.reason = "ENTER: all geometric conditions met";
     } else {
@@ -706,7 +706,7 @@ PairsSignal evaluate\_signal(
     
     // --- EXIT LOGIC ---
     sig.exit = false;
-    if (current\_spread <= sig.exit\_target) {
+    if (current_spread <= sig.exit_target) {
         sig.exit = true;
         sig.reason = "EXIT: reached free boundary target";
     } else if (sig.health < 0.2) {
@@ -726,14 +726,14 @@ int main() {
     
     // Gold spot vs front-month futures parameters
     // (representative values, not live data)
-    PairsState gold\_params;
-    gold\_params.mu\_A = 0.08;      // spot gold annualised drift
-    gold\_params.mu\_B = 0.08;      // futures drift (near-identical for basis)
-    gold\_params.sigma\_A = 0.15;   // spot vol
-    gold\_params.sigma\_B = 0.149;  // futures vol (slightly less at front end)
-    gold\_params.rho = 0.995;      // very high correlation
-    gold\_params.r = 0.053;        // SOFR
-    gold\_params.dt = 1.0/252.0;   // daily
+    PairsState gold_params;
+    gold_params.mu_A = 0.08;      // spot gold annualised drift
+    gold_params.mu_B = 0.08;      // futures drift (near-identical for basis)
+    gold_params.sigma_A = 0.15;   // spot vol
+    gold_params.sigma_B = 0.149;  // futures vol (slightly less at front end)
+    gold_params.rho = 0.995;      // very high correlation
+    gold_params.r = 0.053;        // SOFR
+    gold_params.dt = 1.0/252.0;   // daily
 
     // OU parameters for the RESIDUAL basis (after fair-value strip)
     OUParams ou;
@@ -765,9 +765,9 @@ int main() {
     
     // --- Step 4: Mode decomposition at 3-sigma dislocation ---
     // Simulate a history: basis opened to $15 (3-sigma)
-    std::vector<double> fake\_history;
-    for (int i = 0; i < 10; i++) fake\_history.push\_back(15.0 * std::exp(-0.1*i));
-    SpreadModes modes = decompose\_spread(fake\_history, 0.0, ou.sigma, ou.kappa);
+    std::vector<double> fake_history;
+    for (int i = 0; i < 10; i++) fake_history.push_back(15.0 * std::exp(-0.1*i));
+    SpreadModes modes = decompose_spread(fake_history, 0.0, ou.sigma, ou.kappa);
     std::cout << "MODE DECOMPOSITION (at current $" << fake_history.back() << " basis):\n";
     std::cout << "c0 (DC/regime) = " << modes.c0 << " sigma\n";
     std::cout << "c1 (fundamental) = " << modes.c1 << " sigma\n";
@@ -779,7 +779,7 @@ int main() {
     double x_exit = optimal_exit_spread(ou.theta, ou.sigma, ou.kappa, gold_params.r);
     std::cout << "OPTIMAL STOPPING (Hamiltonian free boundary):\n";
     std::cout << "Optimal entry threshold = " << z_entry << " sigma = $"
-              << z\_entry * ou.sigma << "/oz\n";
+              << z_entry * ou.sigma << "/oz\n";
     std::cout << "Optimal exit target = $" << x_exit << "/oz (from fair value)\n\n";
     
     // --- Step 6: Live signal at various spread levels ---
@@ -802,11 +802,11 @@ int main() {
         );
         std::printf("$%-9.1f %-10.2f %-10.2f %-8.1f %-8.1f %-8.1f %-12s\n",
             spread,
-            sig.z\_raw,
-            sig.z\_adjusted,
+            sig.z_raw,
+            sig.z_adjusted,
             sig.health * 100,
-            sig.berry\_phase * 180.0/M\_PI,
-            sig.kelly\_size * 100,
+            sig.berry_phase * 180.0/M_PI,
+            sig.kelly_size * 100,
             sig.enter ? "ENTER" : (sig.exit ? "EXIT" : "WAIT")
         );
     }
@@ -817,28 +817,28 @@ int main() {
     std::cout << std::string(50, '-') << "\n";
     
     // Simulate the 2020 conditions
-    PairsState crisis\_params = gold\_params;
-    crisis\_params.rho = 0.92;  // correlation dropped due to EFP dislocation
+    PairsState crisis_params = gold_params;
+    crisis_params.rho = 0.92;  // correlation dropped due to EFP dislocation
     
-    double crisis\_health = correlation\_health(crisis\_params);
-    double crisis\_S = von\_neumann\_entropy(fishers\_density\_matrix(crisis\_params));
+    double crisis_health = correlation_health(crisis_params);
+    double crisis_S = von_neumann_entropy(fishers_density_matrix(crisis_params));
     
-    std::cout << "Normal conditions: rho = " << gold\_params.rho
-              << ", health = " << correlation\_health(gold\_params)*100 << "%\n";
-    std::cout << "March 2020:       rho = " << crisis\_params.rho
-              << ", health = " << crisis\_health*100 << "%\n";
+    std::cout << "Normal conditions: rho = " << gold_params.rho
+              << ", health = " << correlation_health(gold_params)*100 << "%\n";
+    std::cout << "March 2020:       rho = " << crisis_params.rho
+              << ", health = " << crisis_health*100 << "%\n";
     std::cout << "Von Neumann entropy INCREASE: "
-              << (crisis\_S - S) * 100 / std::log(2) << "% of max entropy\n";
+              << (crisis_S - S) * 100 / std::log(2) << "% of max entropy\n";
     
     // Berry phase from correlation drop
-    double crisis\_gamma = berry\_phase\_estimate(0.92, 0.995, 0.90, 0.998);
-    double crisis\_z\_adj = phase\_adjusted\_zscore(14.0, crisis\_gamma);  // $70 spread
+    double crisis_gamma = berry_phase_estimate(0.92, 0.995, 0.90, 0.998);
+    double crisis_z_adj = phase_adjusted_zscore(14.0, crisis_gamma);  // $70 spread
     
-    std::cout << "\nSpread at $70 (14-sigma): z\_raw = 14.0\n";
-    std::cout << "Berry phase from rho drop = " << crisis\_gamma*180/M\_PI << " degrees\n";
-    std::cout << "Phase-adjusted z = " << crisis\_z\_adj << "\n";
-    std::cout << "Decision: " << (crisis\_health < 0.3 ? "STAY OUT (health collapsed)" :
-                                  std::cos(crisis\_gamma) < 0.5 ? "STAY OUT (phase gate)" :
+    std::cout << "\nSpread at $70 (14-sigma): z_raw = 14.0\n";
+    std::cout << "Berry phase from rho drop = " << crisis_gamma*180/M_PI << " degrees\n";
+    std::cout << "Phase-adjusted z = " << crisis_z_adj << "\n";
+    std::cout << "Decision: " << (crisis_health < 0.3 ? "STAY OUT (health collapsed)" :
+                                  std::cos(crisis_gamma) < 0.5 ? "STAY OUT (phase gate)" :
                                   "ENTER") << "\n";
     std::cout << "\nClassical z-score said: ENTER (14-sigma!!!)\n";
     std::cout << "Geometric framework said: STAY OUT\n";
@@ -848,7 +848,7 @@ int main() {
 }
 ```
 
-**To compile:** `g++ -std=c++17 -O2 -I/path/to/eigen pairs\_geo.cpp -o pairs\_geo`
+**To compile:** `g++ -std=c++17 -O2 -I/path/to/eigen pairs_geo.cpp -o pairs_geo`
 
 (Eigen is header-only, available at eigen.tuxfamily.org. The density matrix eigenvalue
 computation requires it; the rest of the code is self-contained.)

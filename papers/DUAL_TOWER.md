@@ -43,7 +43,7 @@ $\lambda_1$ from CLASSIFICATION.md determines the coarsest non-trivial resolutio
 
 **(iii) The finite group construction.** The symmetric group $S_d$ acts on
 $\Delta_{d-1}$ by permuting coordinates. The Peter-Weyl decomposition
-$L^2(\Delta) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^*$ over
+$L^2(\Delta) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^{\ast}$ over
 irreducible representations indexed by partitions $\lambda \vdash d$ gives a finite
 but rich dual structure. For any subgroup $G \leq S_d$, the $G$-invariant
 submanifold $M^r_G = \{b \in M^r : g \cdot b = b,\; \forall g \in G\}$ defines a
@@ -118,7 +118,7 @@ manifold $M^r \subset S^{d-1}_+$ (the number of systematic factors), and $T$
 the number of time periods. Portfolio weights $b = (b_1, \ldots, b_d) \in
 \Delta_{d-1}$. The Fisher-Rao metric is $g^{\rm FR}_{ij}(b) = \delta_{ij}/b_i$.
 The Bhattacharyya isometry is $\phi: b \mapsto \sqrt{b} \in S^{d-1}_+$. The
-log-optimal portfolio is $b^* = \arg\max_{b \in M^r} L_T(b)$ where
+log-optimal portfolio is $b^{\ast} = \arg\max_{b \in M^r} L_T(b)$ where
 $L_T(b) = \frac{1}{T}\sum_{t=1}^T \log\langle b, x_t \rangle$. The MUP is
 $\hat{b}^M_T = \int_{M^r} b\, W_T(b)\,d\mu_M(b) / \int_{M^r} W_T(b)\,d\mu_M(b)$.
 
@@ -201,21 +201,21 @@ The MUP portfolio $\hat{b}^M_T$ is the Level 1 shadow of the Level 2 posterior.
 ### 2.4 The Laplace approximation as level collapse
 
 The Laplace approximation (LAPLACE.md) says that as $T \to \infty$, the posterior
-$\pi_T$ concentrates on $b^*$:
+$\pi_T$ concentrates on $b^{\ast}$:
 
-$$\pi_T \;\xrightarrow{T\to\infty}\; \delta_{b^*} \tag{2.6}$$
+$$\pi_T \;\xrightarrow{T\to\infty}\; \delta_{b^{\ast}} \tag{2.6}$$
 
 The Laplace approximation collapses Level 2 to Level 1. The MUP regret
 
 $$\frac{r\,\log T}{2T} \tag{2.7}$$
 
 is the **information cost of this collapse** — the KL divergence between the
-full posterior $\pi_T$ and the point mass $\delta_{b^*}$, normalised by $T$.
+full posterior $\pi_T$ and the point mass $\delta_{b^{\ast}}$, normalised by $T$.
 Explicitly, by the Laplace approximation to the normalising constant:
 
-$$D_{\rm KL}(\pi_T \| \delta_{b^*}) \approx \frac{r}{2}\log T + \frac{1}{2}\log\det F_M(b^*) + O(1) \tag{2.8}$$
+$$D_{\rm KL}(\pi_T \| \delta_{b^{\ast}}) \approx \frac{r}{2}\log T + \frac{1}{2}\log\det F_M(b^{\ast}) + O(1) \tag{2.8}$$
 
-where $F_M(b^*)$ is the Fisher information matrix of $M^r$ at $b^*$. Dividing by
+where $F_M(b^{\ast})$ is the Fisher information matrix of $M^r$ at $b^{\ast}$. Dividing by
 $T$ gives the per-period regret $(r\log T)/(2T)$. Each dimension of the manifold
 contributes $(\log T)/(2T)$ to the cost of collapsing one level of the tower.
 
@@ -260,7 +260,7 @@ For general $d$, the eigenfunctions are the Dunkl-Xu orthogonal polynomials on
 the simplex (Dunkl and Xu [2014]), which generalise Jacobi polynomials to the
 multivariate setting. These are exactly the polynomials that appear in the MUP
 partition function (CONVERGENCE.md) and in the Walsh-Jacobi correspondence
-(HYPERCUBE\_SHAPLEY.md).
+(HYPERCUBE_SHAPLEY.md).
 
 ### 3.3 The spectral decomposition as MRA
 
@@ -329,12 +329,12 @@ the unique fixed point of the full $S_d$ action.
 By the Peter-Weyl theorem, the space of square-integrable functions on the simplex
 decomposes into isotypic components under the $S_d$ action:
 
-$$L^2(\Delta_{d-1}) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^* \tag{4.2}$$
+$$L^2(\Delta_{d-1}) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^{\ast} \tag{4.2}$$
 
 where the sum runs over partitions $\lambda$ of $d$ (equivalently, over irreducible
 representations of $S_d$), $V_\lambda$ is the irreducible representation space of
 dimension $\dim V_\lambda = f^\lambda$ (given by the hook-length formula), and
-$V_\lambda^*$ is its dual.
+$V_\lambda^{\ast}$ is its dual.
 
 The partitions $\lambda \vdash d$ correspond to Young diagrams, and the
 irreducible representations have a direct financial interpretation:
@@ -420,7 +420,7 @@ transitively on the assets (up to the market portfolio).*
 |:-----------|:------|:-------|:---------------|:---------------------|
 | $S_d$ | $d!$ | Partitions $\lambda \vdash d$ | Jacobi polynomial factors | Full permutation symmetry: all assets exchangeable |
 | $\mathbb{Z}_d$ | $d$ | Roots of unity $\omega^k$ | Fourier modes (DFT) | Cyclic/seasonal structure |
-| $(\mathbb{Z}_2)^d$ | $2^d$ | Characters $\chi_S$, $S \subseteq [d]$ | Walsh functions | Binary interactions (HYPERCUBE\_SHAPLEY) |
+| $(\mathbb{Z}_2)^d$ | $2^d$ | Characters $\chi_S$, $S \subseteq [d]$ | Walsh functions | Binary interactions (HYPERCUBE_SHAPLEY) |
 | $S_{d_1} \times \cdots \times S_{d_k}$ | $\prod d_j!$ | Tensor products $\bigotimes \lambda_j$ | Per-sector partitions | Sector structure: within vs between |
 | $D_d$ (dihedral) | $2d$ | 2D reps + signs | Pairs of Fourier modes | Pairs trading symmetries |
 | $A_d$ (alternating) | $d!/2$ | Self-associate partitions | Even permutations only | Orientation-preserving relabellings |
@@ -447,11 +447,11 @@ The group $(\mathbb{Z}_2)^d$ acts on $\Delta_{d-1}$ by sign flips $b_i \mapsto
 
 $$\chi_S(b) = \prod_{i \in S}(-1)^{\mathbf{1}_{b_i < 1/d}}, \qquad S \subseteq [d] \tag{5.2}$$
 
-**This is the Walsh-Jacobi correspondence of HYPERCUBE\_SHAPLEY.md.** The Walsh
+**This is the Walsh-Jacobi correspondence of HYPERCUBE_SHAPLEY.md.** The Walsh
 functions on the discrete hypercube $\{-1,+1\}^d$, restricted to $\Delta_{d-1}
 \subset [0,1]^d$, are proportional to Jacobi polynomials. The isotypic
 decomposition under $(\mathbb{Z}_2)^d$ recovers the multilinear structure of
-the Kelly growth rate, and the Shapley values $\phi_i = b^*_i(\mu_i - \bar{\mu})$
+the Kelly growth rate, and the Shapley values $\phi_i = b^{\ast}_i(\mu_i - \bar{\mu})$
 are the Level 1 Walsh-Fourier coefficients.
 
 ### 5.4 The sector group $S_{d_1} \times \cdots \times S_{d_k}$
@@ -483,7 +483,7 @@ irreducible representations pair Fourier modes $\chi_k$ and $\chi_{d-k}$ into
 real representations. The $D_d$-invariant portfolios are symmetric under both
 cyclic permutation and reversal — they are the "palindromic" portfolios.
 
-For pairs trading (PAIRS\_TRADING.md), the relevant group is $D_2 \cong
+For pairs trading (PAIRS_TRADING.md), the relevant group is $D_2 \cong
 \mathbb{Z}_2 \times \mathbb{Z}_2$, acting on a pair of assets by
 exchange and by joint reflection about the mean. The invariant submanifold
 $M^r_{D_2}$ consists of the symmetric spread positions, and the two-dimensional
@@ -503,7 +503,7 @@ multiresolution decomposition of the market, in the following precise sense:*
 is the direct sum of the irreducible representations of $S_d$ corresponding to
 partitions of degree $n$:*
 
-$$E_n = \bigoplus_{\substack{\lambda \vdash d \\ \deg(\lambda) = n}} V_\lambda \otimes V_\lambda^* \tag{6.1}$$
+$$E_n = \bigoplus_{\substack{\lambda \vdash d \\ \deg(\lambda) = n}} V_\lambda \otimes V_\lambda^{\ast} \tag{6.1}$$
 
 *where $\deg(\lambda) = \lambda_1 - 1$ is the degree of the associated spherical
 harmonic.*
@@ -574,17 +574,17 @@ For functions rather than sets, the canonical dual is the Legendre-Fenchel
 conjugate. The Kelly function $L_T: \Delta_{d-1} \to \mathbb{R}$ is concave. Its
 Legendre-Fenchel conjugate is:
 
-$$L_T^*(y) = \sup_{b \in \Delta_{d-1}} \left[\langle b, y \rangle - L_T(b)\right] \tag{7.1}$$
+$$L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}} \left[\langle b, y \rangle - L_T(b)\right] \tag{7.1}$$
 
-This is a convex function on $\mathbb{R}^d$. The conjugate $L_T^*$ is the
-**rate function** of portfolio large deviations: $L_T^*(y)$ measures the
+This is a convex function on $\mathbb{R}^d$. The conjugate $L_T^{\ast}$ is the
+**rate function** of portfolio large deviations: $L_T^{\ast}(y)$ measures the
 exponential cost of the portfolio achieving growth rate profile $y$ when the true
-optimal is at $b^*$.
+optimal is at $b^{\ast}$.
 
 **Proposition 7.1** *(Kelly-rate function duality).*
-*The rate function $L_T^*$ satisfies:*
+*The rate function $L_T^{\ast}$ satisfies:*
 
-*(i) $L_T^*(y) \geq 0$ with equality iff $y = \nabla L_T(b^*)$ (the optimal
+*(i) $L_T^{\ast}(y) \geq 0$ with equality iff $y = \nabla L_T(b^{\ast})$ (the optimal
 gradient).*
 
 *(ii) Near the optimum: $L_T^*(y^* + \delta y) \approx \frac{1}{2}\delta y^T
@@ -594,8 +594,8 @@ gradient).*
 \sup_{y}[\langle b, y \rangle - L_T^*(y)]$.*
 
 *Proof.* Part (i) is the definition of the conjugate at the dual optimum.
-Part (ii) follows from the second-order expansion of $L_T$ at $b^*$: the
-Hessian is $-F_M(b^*)$, so the conjugate's Hessian is the inverse.
+Part (ii) follows from the second-order expansion of $L_T$ at $b^{\ast}$: the
+Hessian is $-F_M(b^{\ast})$, so the conjugate's Hessian is the inverse.
 Part (iii) is the minimax theorem applied to the bilinear coupling. $\square$
 
 ### 7.2 Duality interpretation
@@ -640,7 +640,7 @@ lowest non-zero Fourier frequency $k = 1$.
 
 ### 8.3 The torus case: Clifford market Fourier analysis
 
-For the Clifford torus market $T^2$ (CLASSIFICATION.md, MARKET\_PROCESSES.md),
+For the Clifford torus market $T^2$ (CLASSIFICATION.md, MARKET_PROCESSES.md),
 the natural symmetry group is $U(1) \times U(1)$ — the continuous torus group.
 The Pontryagin dual of $T^r = U(1)^r$ is the **integer lattice**:
 
@@ -654,7 +654,7 @@ market is:
 $$f(\theta) = \sum_{n \in \mathbb{Z}^r} \hat{f}(n)\, e^{i\langle n, \theta\rangle} \tag{8.4}$$
 
 This connects directly to the theta-function transition density of
-MARKET\_PROCESSES.md: the heat kernel on $T^r$ is
+MARKET_PROCESSES.md: the heat kernel on $T^r$ is
 
 $$K_{T^r}(t, \theta, \theta') = \sum_{n \in \mathbb{Z}^r} e^{-|n|^2 t/(2\varepsilon^2)}\, e^{i\langle n, \theta - \theta'\rangle} \tag{8.5}$$
 
@@ -743,7 +743,7 @@ financial interpretation of "spectral measure" vs "spectral eigenvalue"?
 Difficulty: ★★.
 
 **OP-C.** *(The dual of the dual).* For the Legendre-Fenchel transform:
-$(L_T^*)^* = L_T$ (bidual = original, since $L_T$ is concave and upper
+$(L_T^{\ast})^{\ast} = L_T$ (bidual = original, since $L_T$ is concave and upper
 semicontinuous). For the Pontryagin dual: $\hat{\hat{A}} \cong A$ (by the
 Pontryagin duality theorem). For the Giry tower: does a notion of "dual monad"
 exist such that applying it twice returns to the original? Difficulty: ★★★.
@@ -761,7 +761,7 @@ reduction in effective dimension as correlations increase. In the representation
 framework, this is a **symmetry restoration**: the market's effective symmetry
 group grows (more assets become interchangeable), and higher representations
 collapse into lower ones. Is there a representation-theoretic early warning
-indicator analogous to the Feigenbaum bifurcation of CHAOS\_TAKENS.md?
+indicator analogous to the Feigenbaum bifurcation of CHAOS_TAKENS.md?
 Difficulty: ★★★.
 
 ---

@@ -26,13 +26,13 @@ DISCONNECTED from the present: no information from the current trade can
 influence them.
 
 This framework unifies several otherwise disconnected results:
-(i) the CFL condition for portfolio rebalancing (OBSERVERS\_AND\_CHANNELS
+(i) the CFL condition for portfolio rebalancing (OBSERVERS_AND_CHANNELS
 Theorem O6) IS the condition that the discretisation respects the lightcone;
-(ii) the O'Neill curvature of intermarket connections (FIBER\_BUNDLES,
-INTERMARKET\_GEOMETRY) IS the spacetime curvature of the Lorentzian market;
+(ii) the O'Neill curvature of intermarket connections (FIBER_BUNDLES,
+INTERMARKET_GEOMETRY) IS the spacetime curvature of the Lorentzian market;
 (iii) the braid word of BRAIDS.md IS the worldline history of asset prices
 in the Lorentzian spacetime;
-(iv) the insider's information advantage (NETWORK\_INFORMATION\_THEORY
+(iv) the insider's information advantage (NETWORK_INFORMATION_THEORY
 Theorem N3) IS the ability to see outside the public lightcone — they
 have a WIDER lightcone than the market.
 
@@ -70,7 +70,7 @@ universe."
 Lorentzian market manifold are the paths that MAXIMISE the proper time
 (the experienced return adjusted for carry cost). These are the
 Almgren-Chriss optimal execution trajectories from
-STOCHASTIC\_CONTROL\_KALMAN.md — now derived from the variational
+STOCHASTIC_CONTROL_KALMAN.md — now derived from the variational
 principle of Lorentzian geometry rather than from stochastic control.
 
 **Keywords.** Lorentzian geometry; semi-Riemannian; causal structure;
@@ -99,7 +99,7 @@ parameterisation.
 **Asymmetry 2: Finite propagation speed.** Information about a trade at
 time $t_0$ reaches other parts of the market at speed $c_M$ — NOT
 instantaneously. On a Voronoi tessellation, information must hop from
-cell to cell. The CFL condition from OBSERVERS\_AND\_CHANNELS limits how
+cell to cell. The CFL condition from OBSERVERS_AND_CHANNELS limits how
 fast portfolios can respond.
 
 **Asymmetry 3: The cost of time.** Holding a position through time has a
@@ -197,7 +197,7 @@ DIFFERENCE between the two lightcones:
 $$\alpha \propto \text{Vol}(\mathcal{J}^+_{\rm insider}) - \text{Vol}(\mathcal{J}^+_{\rm public}) \tag{2.5}$$
 
 This gives a NEW geometric interpretation of insider trading from
-NETWORK\_INFORMATION\_THEORY.md: the insider doesn't "cheat" — they
+NETWORK_INFORMATION_THEORY.md: the insider doesn't "cheat" — they
 simply have a wider lightcone. Their trades are CAUSAL from their
 perspective (inside their lightcone) but ACAUSAL from the public
 perspective (outside the public lightcone).
@@ -244,7 +244,7 @@ stated in braid theory, Lorentzian geometry, and finance respectively.
 
 ### 4.1 Fiber bundle = spacetime foliation
 
-The fiber bundle from FIBER\_BUNDLES.md has:
+The fiber bundle from FIBER_BUNDLES.md has:
 - Base $M^r_{\rm fin}$ (systematic factors)
 - Fiber (idiosyncratic returns)
 - Connection (how factors affect individual assets)
@@ -262,7 +262,7 @@ changes from one time slice to the next.
 
 ### 4.2 Intermarket connections as wormholes
 
-Two markets $M_1$ and $M_2$ connected by a neck (INTERMARKET\_GEOMETRY.md)
+Two markets $M_1$ and $M_2$ connected by a neck (INTERMARKET_GEOMETRY.md)
 are, in the Lorentzian framework, two spacetime regions connected by a
 THROAT — a wormhole-like structure. The neck width determines the causal
 connection: a wide neck allows fast information transfer (the two markets
@@ -284,7 +284,7 @@ bond markets became causally disconnected.
 For a market that has existed for $T$ periods, the **market horizon** is
 the sphere of Fisher-Rao radius $c_M T$ centred at the current state:
 
-$$\mathcal{H}(T) = \{b \in M^r : d_{g^{\rm FR}}(b, b^*) = c_M T\} \tag{5.1}$$
+$$\mathcal{H}(T) = \{b \in M^r : d_{g^{\rm FR}}(b, b^{\ast}) = c_M T\} \tag{5.1}$$
 
 Everything inside the horizon has been priced (it's in the market's causal
 past). Everything OUTSIDE has never been reached by market information —
@@ -292,7 +292,7 @@ it is UNPRICED.
 
 For a young market (small $T$): the horizon is small — many portfolio states
 have never been explored. The market is in Stage 1-2 of the five-stage
-evolution (WHY\_MARKETS\_EVOLVE.md).
+evolution (WHY_MARKETS_EVOLVE.md).
 
 For a mature market (large $T$): the horizon is large — most of $M^r$ has
 been explored. The market is in Stage 4-5.
@@ -335,7 +335,7 @@ $g^{\rm FR}_{ij}\dot{b}^i\dot{b}^j$ term is the COST of rebalancing
 of time passing (the risk-free rate, the carry).
 
 **The geodesic (maximum proper time) is the Almgren-Chriss optimal execution
-path.** This was derived from stochastic control in STOCHASTIC\_CONTROL\_KALMAN.md.
+path.** This was derived from stochastic control in STOCHASTIC_CONTROL_KALMAN.md.
 Here it emerges from the variational principle of Lorentzian geometry:
 $\delta\tau = 0$ gives the geodesic equation.
 

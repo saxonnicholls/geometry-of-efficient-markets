@@ -123,7 +123,7 @@ encode the factor structure of the economy.
 
 The Euro eliminated exchange rate risk between the 11 currencies, creating a
 single bond market from 11 separate ones. In the language of
-INTERMARKET\_GEOMETRY.md, this is a connected sum operation:
+INTERMARKET_GEOMETRY.md, this is a connected sum operation:
 
 $$M_{\text{Euro}} = M_{\text{DE}} \mathbin{\#} M_{\text{FR}} \mathbin{\#}
 M_{\text{IT}} \mathbin{\#} M_{\text{ES}} \mathbin{\#} M_{\text{NL}}
@@ -140,7 +140,7 @@ therefore 10 — one per non-German member.
 ### 2.3 The geometric cost
 
 Each neck carries Willmore energy $W_{\text{neck}} \geq 4\pi$ (equality for
-$r = 2$; see INTERMARKET\_GEOMETRY.md, Theorem 3.2). The total upfront cost
+$r = 2$; see INTERMARKET_GEOMETRY.md, Theorem 3.2). The total upfront cost
 of the Euro was:
 
 $$W_{\text{Euro}} = 10 \times 4\pi \approx 125.7 \text{ units of Willmore energy}$$
@@ -152,7 +152,7 @@ Euro cost ten times as much, with an average $k/r$ of 0.55.
 
 ### 2.4 The payback formula
 
-From INTERMARKET\_GEOMETRY.md (Theorem 4.1), the payback period for a neck
+From INTERMARKET_GEOMETRY.md (Theorem 4.1), the payback period for a neck
 connecting manifolds with $k$ shared out of $r$ total factors is:
 
 $$T_{\text{payback}} \approx \frac{W_{\text{neck}} \cdot 2T}{k \cdot \log T}$$
@@ -282,7 +282,7 @@ where $\delta$ depends on the neck radius and the target payback period.*
 Maastricht basis. If $|\sigma_j^{(1)} - \sigma_j^{(2)}| \to \infty$, then
 $\|F_1 - F_2\|_{\rm op} \geq |\sigma_j^{(1)} - \sigma_j^{(2)}| \to \infty$,
 and the neck curvature $\|H_{\rm neck}\|^2 \geq C\|F_1 - F_2\|_{\rm op}$
-(from INTERMARKET\_GEOMETRY.md, Proposition 5.3) is unbounded.
+(from INTERMARKET_GEOMETRY.md, Proposition 5.3) is unbounded.
 
 Part (ii): consider two Fisher matrices that agree on the four Maastricht
 directions but differ on an orthogonal direction $v \perp \{e_1, \ldots,
@@ -294,7 +294,7 @@ The neck curvature along the $v$-direction is unbounded.
 Part (iii): from the spectral decomposition $F_i = \sum_l \lambda_l^{(i)}
 u_l^{(i)} (u_l^{(i)})^\top$, the neck Willmore energy satisfies
 $W_{\rm neck} = 4\pi + C \sum_{l=1}^r (\lambda_l^{(1)} - \lambda_l^{(2)})^2
-+ O(\delta^3)$ (INTERMARKET\_GEOMETRY.md, Theorem 3.5). For the payback
++ O(\delta^3)$ (INTERMARKET_GEOMETRY.md, Theorem 3.5). For the payback
 condition $T_{\text{payback}} < T_{\rm horizon}$, we need $W_{\rm neck}$
 bounded, which requires each $|\lambda_l^{(1)} - \lambda_l^{(2)}| < \delta$
 for $\delta$ determined by $T_{\rm horizon}$ and $k$. $\square$
@@ -606,7 +606,7 @@ is the greedy algorithm: at each step, add the manifold $M_j$ not yet in
 the connected sum that has the highest $k/r$ with the current hub.*
 
 *Proof.* The payback period is monotonically decreasing in $k/r$
-(INTERMARKET\_GEOMETRY.md, Corollary 4.2). The weakest neck determines
+(INTERMARKET_GEOMETRY.md, Corollary 4.2). The weakest neck determines
 system vulnerability (Theorem E2). Therefore, minimising the maximum
 payback period at each stage requires adding the highest-$k/r$ candidate
 first. Since the payback period for each neck is independent of other
@@ -877,9 +877,9 @@ implications.
 
 ---
 
-*Cross-references:* INTERMARKET\_GEOMETRY.md (connected sum theory,
-payback formula), MINIMAL\_SURFACE.md (Willmore energy, Sharpe-curvature
+*Cross-references:* INTERMARKET_GEOMETRY.md (connected sum theory,
+payback formula), MINIMAL_SURFACE.md (Willmore energy, Sharpe-curvature
 theorem), CLASSIFICATION.md (stability, Jacobi operator),
-CONVERGENCE.md (MUP regret bounds), GEOSPATIAL\_CONTAGION.md (Cheeger
-constant, contagion propagation), RANDOM\_MATRIX.md (Dyson class,
+CONVERGENCE.md (MUP regret bounds), GEOSPATIAL_CONTAGION.md (Cheeger
+constant, contagion propagation), RANDOM_MATRIX.md (Dyson class,
 spectral structure).

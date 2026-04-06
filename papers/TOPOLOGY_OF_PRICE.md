@@ -155,27 +155,27 @@ largest eigenvalue $\rho(A) > 0$ with a strictly positive eigenvector.
 
 **Theorem 2.1** (Spectral Price Determination). *Let $G = (V, E, w)$ be a
 connected economic graph with adjacency matrix $A$. The equilibrium price
-vector $p^* \in \Delta_{d-1}$ is the Perron-Frobenius eigenvector of $A$,
+vector $p^{\ast} \in \Delta_{d-1}$ is the Perron-Frobenius eigenvector of $A$,
 normalised to lie on the simplex:*
 
-$$A p^* = \rho(A) \, p^*, \quad p^*_i > 0, \quad \sum_i p^*_i = 1 \tag{2.1}$$
+$$A p^{\ast} = \rho(A) \, p^{\ast}, \quad p^{\ast}_i > 0, \quad \sum_i p^{\ast}_i = 1 \tag{2.1}$$
 
-*The price ratios $p^*_i / p^*_j$ are determined entirely by the graph topology
+*The price ratios $p^{\ast}_i / p^{\ast}_j$ are determined entirely by the graph topology
 and the edge weights.*
 
-*Proof sketch.* The log-optimal portfolio $b^*$ maximises $L_T(b) = \frac{1}{T}
+*Proof sketch.* The log-optimal portfolio $b^{\ast}$ maximises $L_T(b) = \frac{1}{T}
 \sum_t \log \langle b, x_t \rangle$ over $\Delta_{d-1}$. In the geometric
-framework, $b^*$ lies on the market manifold $M^r \subset S^{d-1}_+$. The
-first-order condition $\nabla_{g^{\mathrm{FR}}} L_T(b^*) = 0$ is equivalent to
-$b^*$ being a fixed point of the return-weighted rebalancing map
+framework, $b^{\ast}$ lies on the market manifold $M^r \subset S^{d-1}_+$. The
+first-order condition $\nabla_{g^{\mathrm{FR}}} L_T(b^{\ast}) = 0$ is equivalent to
+$b^{\ast}$ being a fixed point of the return-weighted rebalancing map
 $b \mapsto b \odot \bar{x} / \langle b, \bar{x} \rangle$, where $\bar{x}$ is
 the expected return vector. In the graph formulation, $\bar{x}$ is encoded in
 $A$, and the fixed-point condition is the Perron-Frobenius eigenvalue equation.
-The normalisation $\sum p^*_i = 1$ places $p^*$ on the simplex. $\square$
+The normalisation $\sum p^{\ast}_i = 1$ places $p^{\ast}$ on the simplex. $\square$
 
 **Remark 2.2.** The Perron-Frobenius eigenvalue $\rho(A) = e^{h_{\mathrm{Kelly}}}$
 is the exponential of the Kelly growth rate, connecting this to the monograph's
-central identity (GRASSBERGER\_PERCOLATION\_GENERATING.md, Section 4.2).
+central identity (GRASSBERGER_PERCOLATION_GENERATING.md, Section 4.2).
 
 ### 2.2 The factor structure from eigenvectors
 
@@ -197,7 +197,7 @@ factors:
 **The number of significant eigenvalues equals $r$.** The spectral gap between
 $\lambda_r$ and $\lambda_{r+1}$ identifies the intrinsic dimension of the
 market manifold. This is the spectral version of the stable-rank estimator from
-MINIMAL\_SURFACE.md and the Takens dimension from CHAOS\_TAKENS.md — three
+MINIMAL_SURFACE.md and the Takens dimension from CHAOS_TAKENS.md — three
 independent estimators converging to the same $r$.
 
 ### 2.3 The spectral interpretation of equilibrium
@@ -226,7 +226,7 @@ The classical measure of deadweight loss from a tax $\tau$ on good $i$ is the
 curves, between the pre-tax and post-tax quantities, bounded by the tax wedge.
 For linear curves with elasticities $\epsilon_S$ and $\epsilon_D$:
 
-$$\mathrm{DWL}_{\mathrm{Harberger}} = \frac{1}{2} \tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^* \tag{3.1}$$
+$$\mathrm{DWL}_{\mathrm{Harberger}} = \frac{1}{2} \tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^{\ast} \tag{3.1}$$
 
 This formula has three limitations: (a) it assumes linear supply and demand;
 (b) it treats each market in isolation; (c) it ignores the dynamic path from
@@ -258,14 +258,14 @@ $\mathrm{DWL} = \mathcal{W}(\tilde{M}) = \int |H|^2 \, d\mathrm{vol}$.
 tax $\tau$ in the $|V| = 2$ economy with linear supply and demand, the Willmore
 deadweight loss reduces to the Harberger triangle:*
 
-$$\mathcal{W}(\tilde{M}) = \frac{1}{2}\tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^* + O(\tau^3) \tag{3.4}$$
+$$\mathcal{W}(\tilde{M}) = \frac{1}{2}\tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^{\ast} + O(\tau^3) \tag{3.4}$$
 
 *Proof.* In the $|V| = 2$ case, $M$ is 1-dimensional (a curve), and the mean
 curvature reduces to the ordinary curvature $\kappa$. The tax-induced
 displacement is $\delta \sim \tau \cdot (\epsilon_S \epsilon_D / (\epsilon_S +
 \epsilon_D))^{1/2}$, the curvature at the displaced point is
 $\kappa \sim \tau (\epsilon_S \epsilon_D / (\epsilon_S + \epsilon_D))^{1/2}$,
-and $\int \kappa^2 \, ds$ over the affected arc length $\Delta s \sim Q^*$
+and $\int \kappa^2 \, ds$ over the affected arc length $\Delta s \sim Q^{\ast}$
 gives the Harberger formula to leading order. $\square$
 
 The geometric formulation is strictly more general:
@@ -297,11 +297,11 @@ not affect the final equilibrium $M_\infty$, only the path.
 
 **Corollary 3.4** (Coasean Inefficiency). *When transaction costs delete edges
 from $G$, the market is constrained to a subgraph $G' \subset G$. The
-constrained minimal surface $M^*_{G'}$ has Willmore energy*
+constrained minimal surface $M^{\ast}_{G'}$ has Willmore energy*
 
-$$\mathcal{W}(M^*_{G'}) \geq \mathcal{W}(M^*_G) = 0 \tag{3.6}$$
+$$\mathcal{W}(M^{\ast}_{G'}) \geq \mathcal{W}(M^{\ast}_G) = 0 \tag{3.6}$$
 
-*The gap $\mathcal{W}(M^*_{G'}) - \mathcal{W}(M^*_G) \geq 0$ is the Coasean
+*The gap $\mathcal{W}(M^{\ast}_{G'}) - \mathcal{W}(M^{\ast}_G) \geq 0$ is the Coasean
 inefficiency: the deadweight loss attributable to transaction costs.*
 
 Each deleted edge prevents some pair of goods from being directly exchanged.
@@ -363,7 +363,7 @@ satisfies:*
 
 $$h(G') \geq h(G) \tag{4.3}$$
 
-*The Willmore energy satisfies $\mathcal{W}(M^*_{G'}) \leq \mathcal{W}(M^*_G)$.
+*The Willmore energy satisfies $\mathcal{W}(M^{\ast}_{G'}) \leq \mathcal{W}(M^{\ast}_G)$.
 The efficiency gain from anti-trust enforcement (adding competitors = adding
 edges) is bounded below by the increase in the Cheeger constant.*
 
@@ -706,7 +706,7 @@ The graph Laplacian $L = D - A$ of the economic graph encodes:
 |:---------|:------------|:--------|
 | Price structure (factors) | Eigenvectors $v_1, \ldots, v_r$ | Section 2 |
 | Market efficiency | Spectral gap $\lambda_1$ | Section 2 |
-| Deadweight loss | $\mathcal{W}(M^*_G)$ via spectrum of $L$ | Section 3 |
+| Deadweight loss | $\mathcal{W}(M^{\ast}_G)$ via spectrum of $L$ | Section 3 |
 | Market power | $h(G)$ via Cheeger inequality | Section 4 |
 | Famine vulnerability | $h(G_{\mathrm{food}})$ | Section 5 |
 | Social mobility | $\lambda_1(L_w)$ | Section 6 |
@@ -714,7 +714,7 @@ The graph Laplacian $L = D - A$ of the economic graph encodes:
 | Sector/class segmentation | Community structure (spectral clustering) | Section 2 |
 
 This is the economic counterpart of the monograph's central unifying result
-(GRASSBERGER\_PERCOLATION\_GENERATING.md, Section 4.2): the Delaunay adjacency
+(GRASSBERGER_PERCOLATION_GENERATING.md, Section 4.2): the Delaunay adjacency
 matrix of the market manifold simultaneously encodes the topology, the dynamics,
 the information content, the contagion structure, the generating function, and
 the Kelly rate. The graph Laplacian of the economic network is the same matrix,
@@ -724,8 +724,8 @@ extended from the market manifold to the full economy.
 
 The market manifold $M^r \subset S^{d-1}_+$ of the financial monograph is the
 *financial sector* of the full economic graph. The Delaunay graph
-$\mathcal{D}(M^r)$ studied in GEOSPATIAL\_CONTAGION.md and
-GRASSBERGER\_PERCOLATION\_GENERATING.md is a subgraph of the full economic
+$\mathcal{D}(M^r)$ studied in GEOSPATIAL_CONTAGION.md and
+GRASSBERGER_PERCOLATION_GENERATING.md is a subgraph of the full economic
 graph $G$. The spectral properties of the subgraph (the financial market)
 inherit from and contribute to the spectral properties of the full graph (the
 economy).
@@ -739,7 +739,7 @@ financial subgraph.
 
 ### 8.3 The transfer matrix interpretation
 
-From GRASSBERGER\_PERCOLATION\_GENERATING.md: the Delaunay adjacency matrix $A$
+From GRASSBERGER_PERCOLATION_GENERATING.md: the Delaunay adjacency matrix $A$
 is simultaneously the Voronoi automaton transition matrix, the Guttman-Brak
 transfer matrix, and the Wilf generating function coefficient matrix. In the
 economic context:
@@ -776,7 +776,7 @@ $\mathcal{W}$.
 subject to a revenue constraint. In the spectral framework, this is a
 constrained optimisation on the graph Laplacian: choose a tax vector
 $\tau \in \mathbb{R}^d$ to minimise $\mathcal{W}(\tilde{M}(\tau))$ subject to
-$\langle \tau, p^* \rangle \geq R$ (revenue at least $R$). The Ramsey rule
+$\langle \tau, p^{\ast} \rangle \geq R$ (revenue at least $R$). The Ramsey rule
 \[Ramsey 1927\] — tax goods with inelastic demand — is a first-order
 approximation to this optimisation. The spectral framework accounts for
 cross-market effects that the Ramsey rule ignores.
@@ -791,7 +791,7 @@ question.
 ensuring redundant distribution channels: multiple supply chains, strategic
 reserves, trade agreements, food aid networks. Monitor $h(G_{\mathrm{food}})$
 and intervene when it declines. This is the Cheeger early warning system from
-GEOSPATIAL\_CONTAGION.md applied to food networks rather than financial
+GEOSPATIAL_CONTAGION.md applied to food networks rather than financial
 networks. The mathematics is identical.
 
 **Social mobility.** Increase $\lambda_1$ of the wealth exchange graph by
@@ -865,7 +865,7 @@ Data exists; the spectral estimation is the main technical challenge.
 
 **OP-T3** (Optimal tax as Willmore minimisation). Formulate the Ramsey-Boiteux
 optimal tax problem as $\min_\tau \mathcal{W}(\tilde{M}(\tau))$ subject to
-$\langle \tau, p^* \rangle \geq R$. Does the spectral solution reduce to the
+$\langle \tau, p^{\ast} \rangle \geq R$. Does the spectral solution reduce to the
 Ramsey inverse-elasticity rule in the $|V| = 2$ limit? What corrections arise
 for $|V| \gg 2$? **Difficulty: ★★.** The variational problem is well-defined;
 the computational challenge is evaluating $\mathcal{W}$ for general tax vectors.
@@ -975,8 +975,8 @@ sealed tenders. *Journal of Finance*, 16(1):8-37, 1961.
 ---
 
 *This paper is part of the monograph "The Geometry of Efficient Markets" by
-Saxon Nicholls. Cross-references: MINIMAL\_SURFACE.md (Willmore energy),
-CLASSIFICATION.md (stability), GEOSPATIAL\_CONTAGION.md (Cheeger constant and
-contagion), GRASSBERGER\_PERCOLATION\_GENERATING.md (transfer matrix),
-HYPERCUBE\_SHAPLEY.md (Shapley attribution), RENORMALIZATION.md (MCF as RG
+Saxon Nicholls. Cross-references: MINIMAL_SURFACE.md (Willmore energy),
+CLASSIFICATION.md (stability), GEOSPATIAL_CONTAGION.md (Cheeger constant and
+contagion), GRASSBERGER_PERCOLATION_GENERATING.md (transfer matrix),
+HYPERCUBE_SHAPLEY.md (Shapley attribution), RENORMALIZATION.md (MCF as RG
 flow).*

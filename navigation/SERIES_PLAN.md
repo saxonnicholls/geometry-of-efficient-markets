@@ -18,20 +18,20 @@
 ## Part Structure
 
 ### Part I — Foundation: The Simplex and the Manifold (Ch. 1–4)
-*LAPLACE, FK\_SIMPLEX, MINIMAL\_SURFACE, CLASSIFICATION, CONVERGENCE*
+*LAPLACE, FK_SIMPLEX, MINIMAL_SURFACE, CLASSIFICATION, CONVERGENCE*
 
-Ch.1: FK functional on $(\Delta\_{d-1},g^{\rm FR})$; WKB identity; Van Vleck = Fisher;
+Ch.1: FK functional on $(\Delta_{d-1},g^{\rm FR})$; WKB identity; Van Vleck = Fisher;
        stochastic Stokes theorem; $O(1/T^2)$ accuracy explained
 Ch.2: Portfolio weights as barycentric coordinates; Bhattacharyya isometry;
-       market manifold $M^r\subset S^{d-1}\_+$; factor structure
+       market manifold $M^r\subset S^{d-1}_+$; factor structure
 Ch.3: Sharpe = curvature (proved); Willmore = inefficiency; EMH conjecture
 Ch.4: Classification (CAPMs only stable); MUP minimax regret $r\log T/2T$
 
 ### Part II — Physics, Processes, and Measure Theory (Ch. 5–9)
-*HAMILTONIAN, FOKKER\_PLANCK, MARKET\_PROCESSES, SOBOLEV, MARTINGALE,
-DERIVATIVES, RENORMALIZATION, INFORMATION\_THEORY, PORTFOLIO\_GEOMETRY*
+*HAMILTONIAN, FOKKER_PLANCK, MARKET_PROCESSES, SOBOLEV, MARTINGALE,
+DERIVATIVES, RENORMALIZATION, INFORMATION_THEORY, PORTFOLIO_GEOMETRY*
 
-Ch.5: Exact processes (Jacobi, $\vartheta\_3$, McKean); FP stationary = Jeffreys prior;
+Ch.5: Exact processes (Jacobi, $\vartheta_3$, McKean); FP stationary = Jeffreys prior;
        fat tails $\alpha=r/2$; Feller boundary = diversification
 Ch.6: Hamiltonian; completeness = normal bundle; geometric vol smile
 Ch.7: Martingale theory; Doob-Meyer = Willmore; optimal stopping = MUP posterior;
@@ -40,7 +40,7 @@ Ch.8: Derivative pricing; geometric Greeks; Sobolev framework; exact option form
 Ch.9: RG flows; universality; running Sharpe; information characterisations of efficiency
 
 ### Part III — Path Integrals and Random Matrices (Ch. 10–11)
-*PATH\_INTEGRAL, RANDOM\_MATRIX* ← **New**
+*PATH_INTEGRAL, RANDOM_MATRIX* ← **New**
 
 Ch.10: Feynman path integral on $M^r$; geometric Wiener measure; Onsager-Machlup;
         WKB=LAPLACE; theta function = winding sum; McKean = geodesic; Langevin/Parisi-Wu;
@@ -51,7 +51,7 @@ Ch.11: Dyson class forced by manifold symmetry (GOE/GUE/GSE);
         Dyson BM = factor eigenvalue dynamics; Wishart = sample Fisher matrix
 
 ### Part IV — Topology, Computation, and Filtrations (Ch. 12–16)
-*FIBER\_BUNDLES, KNOT\_THEORY, BRAIDS, COMPLEXITY, FILTRATIONS*
+*FIBER_BUNDLES, KNOT_THEORY, BRAIDS, COMPLEXITY, FILTRATIONS*
 
 Ch.12: Berry phase; parallel transport = hedge update; topologically protected alpha
 Ch.13: Knot classification; Jones polynomial; topological EMH; Alexander = factor rotation
@@ -61,22 +61,22 @@ Ch.16: Geometric filtrations; Voronoi atoms; LZ=filtration; general compressor t
         Clifford winding number; sofic shift; filtration complexity = Willmore
 
 ### Part V — Geospatial, Contagion, and Machine Learning (Ch. 17–18)
-*GEOSPATIAL\_CONTAGION, LLM\_MANIFOLD* ← **New**
+*GEOSPATIAL_CONTAGION, LLM_MANIFOLD* ← **New**
 
-Ch.17: H3/S2/Hilbert on $S^{d-1}\_+$; Cheeger = systemic risk; Hawkes criticality;
+Ch.17: H3/S2/Hilbert on $S^{d-1}_+$; Cheeger = systemic risk; Hawkes criticality;
         contagion = Delaunay graph; H3 portfolio fingerprint; multi-scale information flow
 Ch.18: LMSR-softmax-Fisher identity; LLM convergence theorem; optimal dim = $r$;
         Kelly rate = minimum cross-entropy loss; side-channel in normal bundle;
         transformer as market maker; training dynamics = MCF (conjectured)
 
 ### Part VI — Chaos, Embedding, and Attribution (Ch. 19–21)
-*CHAOS\_TAKENS, HYPERCUBE\_SHAPLEY, PAIRS\_TRADING* ← **New**
+*CHAOS_TAKENS, HYPERCUBE_SHAPLEY, PAIRS_TRADING* ← **New**
 
 Ch.19: Chaos ≡ stochastic on $M^r$ (Oseledets); Feigenbaum $\delta$ at bifurcation;
-        Takens embedding ($2r+1$ dimension); optimal delay $\tau=1/\lambda\_1$;
+        Takens embedding ($2r+1$ dimension); optimal delay $\tau=1/\lambda_1$;
         symbolic Takens = LZ tree; three-step practical manifold estimation algorithm
 Ch.20: Simplex inside hypercube; Walsh = Jacobi polynomials; barycentric = Voronoi;
-        Shapley $\phi\_i=b^{\ast}\_i(\mu\_i-\bar\mu)$; factor attribution; Banzhaf = Walsh-Fourier;
+        Shapley $\phi_i=b^{\ast}_i(\mu_i-\bar\mu)$; factor attribution; Banzhaf = Walsh-Fourier;
         ANOVA = Shapley; normal bundle Shapley = unexplained alpha
 Ch.21: Pairs trading from Hamiltonian; geometric thresholds; Berry phase entry filter;
         quantum pairs trading; C++ implementation
@@ -171,4 +171,4 @@ Day 2 agenda:
 3. Write the monograph Part I introduction (connecting all six layers)
 4. Add Experiments 11–17 (RMT tests, Takens test, Shapley attribution test,
    transformer dimension test, Kelly loss benchmark)
-5. Update WHATS\_NEW, CONJECTURES, OPEN\_PROBLEMS with today's additions
+5. Update WHATS_NEW, CONJECTURES, OPEN_PROBLEMS with today's additions

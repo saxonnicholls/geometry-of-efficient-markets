@@ -29,7 +29,7 @@ The shared filtration $\mathcal{F}^{A \cap B}_t$ sits between the trade
 filtration and the private filtrations. The information that LEAKS through
 the shared filtration is measured by Kyle's lambda, which IS the Fisher
 information of the trade about the true value
-(MARKET\_MICROSTRUCTURE.md Theorem M3).
+(MARKET_MICROSTRUCTURE.md Theorem M3).
 
 **(iii) The convex ambient space provides information shortcuts that
 the manifold does not.** On the manifold $M^r$, information propagates at
@@ -68,7 +68,7 @@ This means:
 
 **Two observers at different points experience different curvatures,
 different spectral gaps, and different Sharpe ratios** for the same
-underlying market. The Sharpe-curvature identity $\mathrm{Sharpe}^* = \|H\|$
+underlying market. The Sharpe-curvature identity $\mathrm{Sharpe}^{\ast} = \|H\|$
 holds at each point, but $\|H\|$ VARIES across the manifold.
 
 ### 1.2 Why this matters
@@ -154,7 +154,7 @@ For a market maker observing the tape: $\mathcal{G}_t = \mathcal{F}^{\rm trade}_
 $$\ell_t = \frac{1}{2}\lambda^2 \cdot \text{Var}(q_t) \tag{2.6}$$
 
 where $\lambda$ is Kyle's price impact coefficient. From
-MARKET\_MICROSTRUCTURE.md Theorem M3: $\lambda = (1/2) \cdot I_F(v; x)$ —
+MARKET_MICROSTRUCTURE.md Theorem M3: $\lambda = (1/2) \cdot I_F(v; x)$ —
 half the Fisher information of the order flow about the true value.
 
 ### 2.4 The shared filtration on the manifold
@@ -191,7 +191,7 @@ Each trader $k$ has:
 - A Willmore energy $\mathcal{W}_k$ (how far they are from their own efficient frontier)
 
 A trade between traders A and B creates a NECK between $M_A$ and $M_B$ — exactly
-the connected sum from INTERMARKET\_GEOMETRY.md:
+the connected sum from INTERMARKET_GEOMETRY.md:
 
 $$M_{\rm trade} = M_A \#_{(p_t, q_t)} M_B \tag{3.1}$$
 
@@ -282,10 +282,10 @@ If $\mathcal{W} > 0$ (the market has some inefficiency):
 
 **Theorem 4.2** *(Optimal inefficiency)*.
 *The total information capacity of a market is maximised at a positive
-Willmore energy $\mathcal{W}^* > 0$. The optimal inefficiency balances
+Willmore energy $\mathcal{W}^{\ast} > 0$. The optimal inefficiency balances
 the ambient shortcut capacity against the cost of being off-manifold:*
 
-$$\mathcal{W}^* = \arg\max_{\mathcal{W}} \left[C_{\rm geo}(\lambda_1) + C_{\rm shortcut}(\mathcal{W}) - \text{Cost}(\mathcal{W})\right] \tag{4.4}$$
+$$\mathcal{W}^{\ast} = \arg\max_{\mathcal{W}} \left[C_{\rm geo}(\lambda_1) + C_{\rm shortcut}(\mathcal{W}) - \text{Cost}(\mathcal{W})\right] \tag{4.4}$$
 
 *At the optimum: $\partial C_{\rm shortcut}/\partial\mathcal{W} = \partial\text{Cost}/\partial\mathcal{W}$
 — the marginal shortcut capacity equals the marginal cost of inefficiency.*
@@ -294,7 +294,7 @@ $$\mathcal{W}^* = \arg\max_{\mathcal{W}} \left[C_{\rm geo}(\lambda_1) + C_{\rm s
 closes the ambient channels.** The MCF drives $\mathcal{W}$ downward, but
 as $\mathcal{W} \to 0$, the ambient channels close, information slows, new
 inefficiencies form faster than they're removed, and $\mathcal{W}$ stabilises
-at a positive equilibrium $\mathcal{W}^*$.
+at a positive equilibrium $\mathcal{W}^{\ast}$.
 
 ### 4.4 The Convex Hull Portfolio
 
@@ -377,7 +377,7 @@ The information capacity of the ambient channel is $C_{\rm shortcut} \propto \ma
 A perfectly efficient market has zero shortcut capacity.
 
 **Theorem O5** *(Optimal inefficiency)*.
-The information-optimal market has $\mathcal{W}^* > 0$ — strictly positive
+The information-optimal market has $\mathcal{W}^{\ast} > 0$ — strictly positive
 Willmore energy. Perfect efficiency is suboptimal for information processing.
 
 **Theorem O6** *(CFL condition for portfolios)*.
@@ -388,7 +388,7 @@ The minimum rebalancing interval is $\Delta t_{\rm min} = \Delta x_{\rm cell}/c_
 
 ## 7. Open Problems
 
-**OP-O1.** Compute $\mathcal{W}^*$ (the optimal Willmore energy) for the US equity
+**OP-O1.** Compute $\mathcal{W}^{\ast}$ (the optimal Willmore energy) for the US equity
 market. What fraction of the observed inefficiency is "useful" (shortcut capacity)
 vs "wasteful" (excess curvature beyond the optimum)?
 

@@ -36,7 +36,7 @@ generation, a recognisable portfolio simplex had emerged — traders could hold 
 convex combination of VOC shares, VOC bonds, and cash.
 
 *The geometric reading:* The Amsterdam market of 1650 was a two-asset portfolio
-simplex $\Delta\_1 = [0,1]$ — the fraction of wealth in VOC stock vs cash. The
+simplex $\Delta_1 = [0,1]$ — the fraction of wealth in VOC stock vs cash. The
 natural diffusion on this simplex is the Jacobi process (Chapter 5). The stationary
 distribution was Beta$(\alpha, \beta)$ with parameters reflecting the market's
 assessment of VOC's long-run prospects. Contemporary accounts describe prices as
@@ -71,8 +71,8 @@ no production cost that anchored the value. In our language: $r = 0$. The market
 manifold was a single point — there was no $M^r$ to speak of.
 
 *The geometric reading:* When $r\to 0$, the market manifold degenerates. The Voronoi
-partition has only one cell. The Cheeger constant $h\_M\to\infty$ (a single cell has
-no bottleneck). But without a factor structure, the diffusion on $\Delta\_{d-1}$ is
+partition has only one cell. The Cheeger constant $h_M\to\infty$ (a single cell has
+no bottleneck). But without a factor structure, the diffusion on $\Delta_{d-1}$ is
 uncontrolled — there is no restoring force. The "stationary distribution" is
 degenerate: the Jacobi parameters $\alpha = T b^{\ast} - 1/2 \to 0$ as $b^{\ast} \to 0$,
 which is the Feller boundary — the **exactly regular boundary**, where the process
@@ -111,22 +111,22 @@ of bad news — then bought heavily before the official announcement.
 Chernow, and others debate the details). The mechanism is not.*
 
 *The geometric reading:* The Consols market had a two-cell Voronoi partition:
-$A\_0$ = "Napoleon wins" (Consols at ~57) and $A\_1$ = "Wellington wins" (Consols at ~72).
-On 18 June, the market was in cell $A\_0$ by consensus — the physical measure assigned
-$\mathbb{P}(A\_0) \approx 0.7$.
+$A_0$ = "Napoleon wins" (Consols at ~57) and $A_1$ = "Wellington wins" (Consols at ~72).
+On 18 June, the market was in cell $A_0$ by consensus — the physical measure assigned
+$\mathbb{P}(A_0) \approx 0.7$.
 
-Rothschild had normal bundle information: he knew the actual Voronoi cell ($A\_1$)
-while the market's filtration $\mathcal{F}^M\_t$ still assigned $\mathbb{P}(A\_1) = 0.3$.
-His information was in $\mathcal{F}^{\rm full}\_t \setminus \mathcal{F}^M\_t$ — the
+Rothschild had normal bundle information: he knew the actual Voronoi cell ($A_1$)
+while the market's filtration $\mathcal{F}^M_t$ still assigned $\mathbb{P}(A_1) = 0.3$.
+His information was in $\mathcal{F}^{\rm full}_t \setminus \mathcal{F}^M_t$ — the
 idiosyncratic filtration, specifically the normal bundle component corresponding to
 the "battle outcome" shock.
 
 The excess return from this position:
 $$\Delta\mathrm{PnL} = (72-57)\times\mathrm{position} \approx 26\%\text{ return in 48 hours}$$
 This is precisely the normal bundle alpha:
-$\Delta\mathrm{PnL} = \varepsilon^2|H\_{\rm battle}| \cdot T\_{\rm event}$
-where $H\_{\rm battle}$ is the mean curvature created by the known-but-undisclosed
-information, and $T\_{\rm event}$ is the time until the information becomes public.
+$\Delta\mathrm{PnL} = \varepsilon^2|H_{\rm battle}| \cdot T_{\rm event}$
+where $H_{\rm battle}$ is the mean curvature created by the known-but-undisclosed
+information, and $T_{\rm event}$ is the time until the information becomes public.
 
 **The Rothschild lesson** is not about illegality or sharp practice. It is the
 geometric theorem: **information in the normal bundle $\mathcal{F}^\perp$ generates
@@ -159,8 +159,8 @@ currency risk). The Cheeger constant of this manifold was small: the manifold ha
 thin neck connecting the "domestic debt" and "external credit" sectors.
 
 When Argentina's gold reserves collapsed (the external constraint binding), the
-Cheeger constant $h\_M$ went to zero — the neck connecting domestic and external
-credit manifolds pinched off. The spectral gap $\lambda\_1 \to 0$. Contagion was
+Cheeger constant $h_M$ went to zero — the neck connecting domestic and external
+credit manifolds pinched off. The spectral gap $\lambda_1 \to 0$. Contagion was
 total: all Argentine asset classes moved to their boundary values simultaneously.
 
 Baring's exposure was concentrated at the neck — they were precisely in the
@@ -257,12 +257,12 @@ but could not keep pace with the speculative inflows. By October 1929:
    through the thin neck — the spectral gap had already collapsed to near-zero.
 
 3. **The Jacobi spectral gap prediction:** Recall that the Jacobi spectral gap
-   $\lambda\_1$ controls the mean reversion speed. In the weeks before October 1929,
+   $\lambda_1$ controls the mean reversion speed. In the weeks before October 1929,
    the implied mean reversion speed of stock prices was declining (volatility was
-   rising but mean reversion was slowing — a signature of $\lambda\_1\to 0$).
+   rising but mean reversion was slowing — a signature of $\lambda_1\to 0$).
    Robert Shiller's data \[*Irrational Exuberance*, 2000\] shows exactly this:
    the Shiller P/E ratio (a proxy for $1/b^{\ast}$ in our notation) was at levels where
-   $\lambda\_1 = Tb^{\ast} - 1/2 \approx 0$ — the Feller boundary was being approached.
+   $\lambda_1 = Tb^{\ast} - 1/2 \approx 0$ — the Feller boundary was being approached.
 
 4. **The recovery** (such as it was, 1933-1937) corresponds to MCF restarting from
    a simpler manifold — a CAPM great sphere (the New Deal's simplification of the
@@ -273,7 +273,7 @@ but could not keep pace with the speculative inflows. By October 1929:
 Geometrically: the investment trust structure created a high-genus market manifold
 with a small Cheeger constant — a manifold perfectly designed for MCF singularity.
 Barry Eichengreen, *Golden Fetters* \[1992\]: the gold standard prevented the monetary
-policy that could have restored $\lambda\_1$ through reflationary expansion —
+policy that could have restored $\lambda_1$ through reflationary expansion —
 the spectral gap remained near zero through 1933.
 
 ---
@@ -289,12 +289,12 @@ The geometric theory offers an explanation.
 
 *The geometric reading:* Buffett operates exclusively on the CAPM great sphere —
 the $r=1$, totally geodesic, stably efficient market structure. His "circle of
-competence" is a precise geometric object: the Voronoi cell $A\_0$ of the great
+competence" is a precise geometric object: the Voronoi cell $A_0$ of the great
 sphere, centred on the log-optimal portfolio $b^{\ast}$ for high-quality businesses
 with durable competitive advantages.
 
 **"Circle of competence" = Voronoi cell.** Buffett will not invest outside his cell.
-He does not have alpha outside $A\_0$; he has information ($\mathcal{F}^{\rm full}$
+He does not have alpha outside $A_0$; he has information ($\mathcal{F}^{\rm full}$
 vs $\mathcal{F}^M$) within it. The cell boundary is defined by the Fisher-Rao
 distance beyond which his information advantage degenerates.
 
@@ -311,8 +311,8 @@ $\kappa$ large, $r/\kappa$ small, $z^{\ast}\approx 1$) from his circle. The opti
 threshold in his cell is fundamentally different from the threshold in adjacent cells.
 
 **"The market is there to serve you, not to instruct you"** (paraphrase of Graham,
-Buffett's teacher) = the Snell envelope (MARTINGALE\_GEOMETRY): the Snell envelope
-$S\_t$ dominates the gain function $G(b\_t)$ always, with equality at the optimal stopping
+Buffett's teacher) = the Snell envelope (MARTINGALE_GEOMETRY): the Snell envelope
+$S_t$ dominates the gain function $G(b_t)$ always, with equality at the optimal stopping
 time $\tau^{\ast}$. The market price is not the value; the market price is the current
 gain function; the value is the Snell envelope. Buffett waits until the market price
 (gain function) exceeds his estimate of the Snell envelope.
@@ -320,7 +320,7 @@ gain function; the value is the Snell envelope. Buffett waits until the market p
 **The patience equation.** The expected time to reach the optimal entry point in
 Buffett's Voronoi cell is:
 $$\mathbb{E}[\tau_{z^{\ast}}] = \frac{(z^{\ast})^2 - z_0^2}{2\varepsilon^2} \approx \frac{4-1}{2/T} = 1.5T$$
-— for a target $z^{\ast} = 2$ starting from $z\_0 = 1$, the expected waiting time is
+— for a target $z^{\ast} = 2$ starting from $z_0 = 1$, the expected waiting time is
 1.5 years (for annual return data). Buffett holds cash and waits. This is not a
 failure of imagination; it is the optimal stopping rule applied.
 
@@ -373,16 +373,16 @@ Clifford torus in all five unstable directions simultaneously:
 
 By the Jacobi stability analysis: all five modes had negative eigenvalues (they
 were unstable), and the shock excited all five simultaneously. The expected growth
-rate of the perturbation is $e^{|\lambda\_{\rm pA}|t}$ where $\lambda\_{\rm pA}$ is
+rate of the perturbation is $e^{|\lambda_{\rm pA}|t}$ where $\lambda_{\rm pA}$ is
 the dominant unstable Jacobi eigenvalue. For LTCM's leverage of 25:1, a 4% adverse
 move in each strategy was sufficient for bankruptcy. The manifold perturbation
 reached this level in approximately 6 weeks — consistent with the Jacobi timescale
-$1/|\lambda\_1| \approx 1/(5\times\kappa) \approx$ weeks.
+$1/|\lambda_1| \approx 1/(5\times\kappa) \approx$ weeks.
 
 **The rescue.** The Federal Reserve-organised rescue in September 1998 was a Cheeger
 constant intervention: by injecting capital into LTCM's positions (widening the
 bottleneck between liquid and illiquid markets), the Fed restored the spectral gap
-$\lambda\_1 > 0$ and allowed the Clifford torus to return toward its equilibrium.
+$\lambda_1 > 0$ and allowed the Clifford torus to return toward its equilibrium.
 The Fed essentially subsidised the MCF back toward the minimal surface.
 
 **What could have been predicted:** The stability index of the Clifford torus (5) was
@@ -416,7 +416,7 @@ thin neck between "AAA-rated" and "BBB-rated" tranches.
 **June 2007: Bear Stearns hedge funds.** Two Bear Stearns hedge funds collapsed
 on June 22, 2007 — the first visible sign that the MBS bottleneck was failing.
 The Cheeger constant of the credit manifold dropped sharply: the AAA/BBB neck
-thinned further. Importantly, the spectral gap $\lambda\_1$ declined — mean reversion
+thinned further. Importantly, the spectral gap $\lambda_1$ declined — mean reversion
 in credit spreads slowed.
 
 *The geospatial interpretation:* The H3 cells in the "structured credit" sector
@@ -440,7 +440,7 @@ Reynolds number $\mathrm{Re} = H\cdot T\cdot\mathrm{diam}(M)$ should have been
 elevated in 2007-2008. The geometric theory predicts $\mathrm{Re} > 10$ (turbulent
 regime) beginning in Q3 2007 — consistent with the empirical VIX behavior.
 
-**The gold basis blow-out of March 2020** (described in PAIRS\_TRADING.md) repeats
+**The gold basis blow-out of March 2020** (described in PAIRS_TRADING.md) repeats
 the same pattern at smaller scale: an apparent arbitrage (gold spot vs futures) that
 classical traders interpreted as a 14-sigma buying opportunity was actually a manifold
 disconnection — the physical delivery mechanism (air freight for gold bars) was severed,
@@ -467,7 +467,7 @@ Securities and Exchange Commission report \[2010\] attributed it to a large auto
 sell order interacting with high-frequency trading algorithms.
 
 *The geometric reading:* The Flash Crash was a Hawkes process supercriticality event
-(GEOSPATIAL\_CONTAGION Section 9). Recall that the efficient market operates at the
+(GEOSPATIAL_CONTAGION Section 9). Recall that the efficient market operates at the
 critical point of the Hawkes self-excitation process — excitation rate equals 1.
 The large sell order (a \$4.1 billion notional e-mini S&P futures order from a
 mutual fund) briefly pushed the excitation rate above 1 — making the process
@@ -558,7 +558,7 @@ cycle that threatened to spiral.
 *The geometric reading:* LDI strategies are long-duration gilt portfolios near the
 boundary of the portfolio simplex. The weight on long-dated gilts $b_{\rm gilt}$ was
 close to 1 for many LDI funds. By the Feller boundary classification
-(SOBOLEV ESC\_UNDER OPTIONS ESC\_UNDER GREEKS Section 3.1): the Jacobi parameter $\alpha = Tb^{\ast}_{\rm gilt} - 1/2$.
+(SOBOLEV ESC_UNDER OPTIONS ESC_UNDER GREEKS Section 3.1): the Jacobi parameter $\alpha = Tb^{\ast}_{\rm gilt} - 1/2$.
 For funds with $b^{\ast}_{\rm gilt} \approx 0.9$ and $T = 252$: $\alpha \approx 227$ — the
 weight is far from the Feller boundary, the portfolio is stable.
 
@@ -577,7 +577,7 @@ force.
 
 **The prediction this framework makes:** leveraged strategies with effective weights
 approaching or exceeding 1 are at the Feller exit boundary. The Feller condition
-$Tb^{\ast}_i > 3/2$ (SOBOLEV ESC\_UNDER OPTIONS ESC\_UNDER GREEKS, Lemma 1.3) is a stability criterion for
+$Tb^{\ast}_i > 3/2$ (SOBOLEV ESC_UNDER OPTIONS ESC_UNDER GREEKS, Lemma 1.3) is a stability criterion for
 portfolio weights. Any strategy violating this condition is vulnerable to the LDI
 dynamics — forced selling when the position moves adversely.
 

@@ -13,7 +13,7 @@
 **Abstract.**  
 We develop a fiber bundle theory for financial markets, identifying three natural
 bundles over the market manifold $M^r$: the **normal bundle** $NM$ (the space of
-unhedgeable risks, identified in HAMILTONIAN\_TAILS\_COMPLETENESS with the space of
+unhedgeable risks, identified in HAMILTONIAN_TAILS_COMPLETENESS with the space of
 equivalent martingale measures), the **frame bundle** $FM$ (the space of portfolio
 bases — relevant for benchmark-free investing), and the **Grassmannian bundle**
 $\mathcal{G}(r,d)$ (the space of factor subspaces — relevant for time-varying market
@@ -34,7 +34,7 @@ of the market cycle, not its specific path. Two strategies that trace homotopica
 equivalent paths in the factor space accumulate the same geometric phase —
 a deep equivalence class of market strategies.
 **(iv) Topologically protected alpha:** for a market manifold with non-trivial first
-Chern class $c\_1(NM) \neq 0$, there exist topologically protected alpha signals
+Chern class $c_1(NM) \neq 0$, there exist topologically protected alpha signals
 that cannot be eliminated by any continuous deformation of the market structure.
 These are quantized (integer multiples of a fundamental unit) and survive even
 in a market that is locally efficient ($H=0$ pointwise).
@@ -55,23 +55,23 @@ Grassmannian; frame bundle; normal bundle; adiabatic theorem; TKNN invariant.
 
 ### 1.1 The geometric setup
 
-The market manifold $M^r \subset (\Delta\_{d-1}, g^{\mathrm{FR}})$ is an $r$-dimensional
-Riemannian manifold embedded in the $(d-1)$-sphere $S^{d-1}\_+$. Three vector bundles
+The market manifold $M^r \subset (\Delta_{d-1}, g^{\mathrm{FR}})$ is an $r$-dimensional
+Riemannian manifold embedded in the $(d-1)$-sphere $S^{d-1}_+$. Three vector bundles
 arise naturally over $M$, each with a canonical connection and each with a direct
 financial interpretation.
 
 **Bundle 1: The Normal Bundle $NM$**
 
-Fiber at $b \in M$: $N\_bM = (T\_bM)^{\perp\_{g^{\mathrm{FR}}}} \subset T\_b\Delta\_{d-1}$,
+Fiber at $b \in M$: $N_bM = (T_bM)^{\perp_{g^{\mathrm{FR}}}} \subset T_b\Delta_{d-1}$,
 the $(d-1-r)$-dimensional space perpendicular to $M$ at $b$ in the Fisher-Rao metric.
 
 *Financial meaning:* The space of portfolio directions not explained by the factor
 structure — the idiosyncratic directions. As identified in
-HAMILTONIAN\_TAILS\_COMPLETENESS Theorem 3.1: the space of EMMs $\cong N\_{b^{\ast}}M$.
+HAMILTONIAN_TAILS_COMPLETENESS Theorem 3.1: the space of EMMs $\cong N_{b^{\ast}}M$.
 
 **Bundle 2: The Frame Bundle $FM$**
 
-Fiber at $b \in M$: $F\_bM = \{$orthonormal frames $(e\_1,\ldots,e\_r)$ for $T\_bM$ in
+Fiber at $b \in M$: $F_bM = \{$orthonormal frames $(e_1,\ldots,e_r)$ for $T_bM$ in
 $g^{\mathrm{FR}}\}$ — the space of choices of "factor basis" at $b$.
 
 *Financial meaning:* The choice of which linear combinations of assets to call
@@ -83,7 +83,7 @@ Gauge-invariant quantities (Willmore energy, Sharpe ratio) are independent of th
 Total space: $\{(t, V) : V \in \text{Gr}(r,d)\}$ where $V$ is the factor subspace at time $t$.
 
 *Financial meaning:* The evolution of the factor structure over time. As the economy
-changes (new sectors emerge, correlations shift), the factor subspace $V\_r(t) \in \text{Gr}(r,d)$ traces a path in the Grassmannian. The connection on this bundle
+changes (new sectors emerge, correlations shift), the factor subspace $V_r(t) \in \text{Gr}(r,d)$ traces a path in the Grassmannian. The connection on this bundle
 governs how portfolios should be updated to track the changing factor structure.
 
 ### 1.2 The canonical connections
@@ -96,9 +96,9 @@ embedded submanifold — the Levi-Civita covariant derivative projected onto $NM
 $$\nabla^N_X s = \Pi_{NM}(\bar\nabla_X s) \tag{1.1}$$
 
 for $X \in \Gamma(TM)$, $s \in \Gamma(NM)$, where $\bar\nabla$ is the Levi-Civita
-connection of $S^{d-1}\_+$.
+connection of $S^{d-1}_+$.
 
-**Frame bundle connection:** The Levi-Civita connection $\nabla^{g\_M}$ of the
+**Frame bundle connection:** The Levi-Civita connection $\nabla^{g_M}$ of the
 induced metric on $M$ — defines how the factor frame rotates as you move along $M$.
 
 **Grassmannian connection:** The tautological connection on the tautological bundle
@@ -112,7 +112,7 @@ $\mathcal{T} \to \text{Gr}(r,d)$, pulled back to the time-varying factor subspac
 
 A portfolio manager holds:
 - A position $b^{\ast}(t)$ in the factor portfolio (on the manifold $M$)
-- A derivative hedging position $s(t) \in N\_{b^{\ast}(t)}M$ (in the normal bundle)
+- A derivative hedging position $s(t) \in N_{b^{\ast}(t)}M$ (in the normal bundle)
 
 As the market evolves and $b^{\ast}(t)$ moves along $M$, how should the hedge position
 $s(t)$ be updated?
@@ -124,13 +124,13 @@ factor exposure because the meaning of asset $i$ in the factor frame changes as 
 **The correct answer:** parallel transport $s(t)$ along the path $b^{\ast}(t)$ using
 the normal bundle connection $\nabla^N$.
 
-**Definition 2.1** (Parallel transport on $NM$). *A section $s(t) \in N\_{b^{\ast}(t)}M$
+**Definition 2.1** (Parallel transport on $NM$). *A section $s(t) \in N_{b^{\ast}(t)}M$
 is **parallel** along $b^{\ast}(t)$ if:*
 
 $$\frac{D^N s}{dt} := \nabla^N_{\dot{b}^{\ast}} s = \Pi_{NM}(\bar\nabla_{\dot{b}^{\ast}}s) = 0 \tag{2.1}$$
 
-*The parallel transport $\tau\_{t\_0}^t: N\_{b^{\ast}(t\_0)}M \to N\_{b^{\ast}(t)}M$ is the unique
-isometry transporting $s(t\_0)$ to $s(t)$ while keeping it parallel.*
+*The parallel transport $\tau_{t_0}^t: N_{b^{\ast}(t_0)}M \to N_{b^{\ast}(t)}M$ is the unique
+isometry transporting $s(t_0)$ to $s(t)$ while keeping it parallel.*
 
 **Theorem 2.2** *(Parallel transport = minimal-cost hedge update)*.
 
@@ -138,7 +138,7 @@ isometry transporting $s(t\_0)$ to $s(t)$ while keeping it parallel.*
 
 $$C[s] = \int_{t_0}^t \left\|\frac{D^N s}{d\tau}\right\|^2_{g^{\mathrm{FR}}} d\tau \tag{2.2}$$
 
-*among all paths $s(\tau) \in N\_{b^{\ast}(\tau)}M$ connecting $s(t\_0)$ to $s(t)$.
+*among all paths $s(\tau) \in N_{b^{\ast}(\tau)}M$ connecting $s(t_0)$ to $s(t)$.
 Equivalently: parallel transport is the **zero-cost hedge update** — it moves the
 hedging position along the manifold without introducing any net force into the normal bundle.*
 
@@ -158,19 +158,19 @@ The parallel transport equation (2.1) expands using the Weingarten map:
 
 $$\frac{D^N s}{dt} = \dot{s} - A^{\ast}_s\,\dot{b}^{\ast} + \nabla^N_{\dot{b}^{\ast}}s_{\rm tang} = 0 \tag{2.3}$$
 
-where $A^{\ast}\_s: TM \to TM$ is the shape operator (adjoint of the second fundamental form)
+where $A^{\ast}_s: TM \to TM$ is the shape operator (adjoint of the second fundamental form)
 evaluated in direction $s$. Solving for $\dot{s}$:
 
 $$\dot{s} = A^{\ast}_s\,\dot{b}^{\ast} \tag{2.4}$$
 
 **This is the Weingarten equation:** the rate of change of the hedge position equals
-the shape operator applied to the market movement. The shape operator $A^{\ast}\_s$ is
+the shape operator applied to the market movement. The shape operator $A^{\ast}_s$ is
 exactly the matrix of second derivatives connecting the normal and tangential directions
 — it is the **second fundamental form** of $M$ in the direction $s$.
 
 **The trading signal from parallel transport:**
 
-If the market is at the Clifford torus ($M = \tau\_{1,1}$), the normal bundle has
+If the market is at the Clifford torus ($M = \tau_{1,1}$), the normal bundle has
 dimension 1 (for $d=4$) and the connection curvature is:
 
 $$F^N(\partial_\theta, \partial_\varphi) = \kappa_1\kappa_2 = -\kappa^2 \tag{2.5}$$
@@ -185,7 +185,7 @@ angle $\kappa^2 A$ — a measurable rotation of idiosyncratic positions.
 
 ### 3.1 The holonomy group
 
-For a closed loop $\gamma: [0,T] \to M$ with $\gamma(0) = \gamma(T) = b\_0$,
+For a closed loop $\gamma: [0,T] \to M$ with $\gamma(0) = \gamma(T) = b_0$,
 parallel transport defines a linear isomorphism:
 
 $$\mathrm{Hol}_\gamma: N_{b_0}M \to N_{b_0}M \tag{3.1}$$
@@ -199,7 +199,7 @@ equals the algebra generated by the curvature 2-form $R^N$ of the normal connect
 
 $$\mathfrak{hol}(NM) = \langle R^N(X,Y) : X,Y \in T_bM,\, b \in M\rangle_{\rm Lie} \tag{3.2}$$
 
-The curvature $R^N(X,Y) = \nabla^N\_X\nabla^N\_Y - \nabla^N\_Y\nabla^N\_X - \nabla^N\_{[X,Y]}$
+The curvature $R^N(X,Y) = \nabla^N_X\nabla^N_Y - \nabla^N_Y\nabla^N_X - \nabla^N_{[X,Y]}$
 is the **Riemann curvature of the normal bundle** — the "magnetic field" seen by
 normal bundle sections.
 
@@ -220,13 +220,13 @@ The ground state of the market Hamiltonian $\mathcal{H}[\theta(t)]$ (the log-opt
 $b^{\ast}(t)$) evolves adiabatically, tracking the instantaneous log-optimal portfolio.
 
 After a closed loop in parameter space ($\theta(T) = \theta(0)$), the portfolio
-$b^{\ast}(T) = b^{\ast}(0)$ returns to its starting point. But the universal portfolio $\hat{b}\_T^M$
+$b^{\ast}(T) = b^{\ast}(0)$ returns to its starting point. But the universal portfolio $\hat{b}_T^M$
 — the ground state wavefunction — has accumulated a phase:
 
 $$\hat{b}_T^M = e^{i\gamma_{\rm Berry}}\cdot e^{-i E_0 T}\cdot \hat{b}_0^M \tag{3.3}$$
 
-The **dynamic phase** $e^{-iE\_0 T}$ corresponds to the Kelly growth rate accumulated
-over the cycle. The **Berry phase** $e^{i\gamma\_{\rm Berry}}$ is a purely geometric
+The **dynamic phase** $e^{-iE_0 T}$ corresponds to the Kelly growth rate accumulated
+over the cycle. The **Berry phase** $e^{i\gamma_{\rm Berry}}$ is a purely geometric
 contribution from the curvature of the ground state bundle.
 
 **The Berry phase formula:**
@@ -234,7 +234,7 @@ contribution from the curvature of the ground state bundle.
 $$\gamma_{\rm Berry} = i\oint_\gamma \langle \hat{b}^M|\nabla_\theta|\hat{b}^M\rangle\, d\theta
 = \oint_\gamma A \tag{3.4}$$
 
-where $A = i\langle\hat{b}^M|\nabla\_\theta|\hat{b}^M\rangle$ is the **Berry connection
+where $A = i\langle\hat{b}^M|\nabla_\theta|\hat{b}^M\rangle$ is the **Berry connection
 1-form** on the space of market parameters. By Stokes' theorem:
 
 $$\gamma_{\rm Berry} = \int_\Sigma \mathcal{F}\,d^2\theta \tag{3.5}$$
@@ -242,7 +242,7 @@ $$\gamma_{\rm Berry} = \int_\Sigma \mathcal{F}\,d^2\theta \tag{3.5}$$
 where $\mathcal{F} = dA$ is the **Berry curvature** (the "market magnetic field" in
 parameter space) and $\Sigma$ is any surface bounded by $\gamma$.
 
-**Financial interpretation of the Berry phase.** The Berry phase $\gamma\_{\rm Berry}$
+**Financial interpretation of the Berry phase.** The Berry phase $\gamma_{\rm Berry}$
 is a geometric correction to portfolio returns that arises purely from the curvature
 of the market parameter space — not from the specific parameter values, but from the
 way they change over the economic cycle. Even in a market that is instantaneously
@@ -253,20 +253,20 @@ return over the naive dynamic strategy.
 **This is a new source of alpha:** not from market inefficiency (curvature of $M$)
 but from the geometric structure of the *path* the market takes through parameter
 space. We call this **adiabatic alpha** to distinguish it from the curvature alpha of
-MINIMAL\_SURFACE.md.
+MINIMAL_SURFACE.md.
 
 ### 3.3 Homotopy invariance
 
 **Theorem 3.2** *(Homotopy invariance of holonomy and Berry phase)*.
 
-*(i) If two loops $\gamma\_0$ and $\gamma\_1$ in $M$ are homotopic (can be continuously
+*(i) If two loops $\gamma_0$ and $\gamma_1$ in $M$ are homotopic (can be continuously
 deformed into each other, fixing the base point), then:*
 
 $$\mathrm{Hol}_{\gamma_0} = \mathrm{Hol}_{\gamma_1} \tag{3.6}$$
 
-*The holonomy depends only on the homotopy class $[\gamma] \in \pi\_1(M)$.*
+*The holonomy depends only on the homotopy class $[\gamma] \in \pi_1(M)$.*
 
-*(ii) If two parameter paths $\theta\_0(t)$ and $\theta\_1(t)$ are homotopic in parameter
+*(ii) If two parameter paths $\theta_0(t)$ and $\theta_1(t)$ are homotopic in parameter
 space, they accumulate the same Berry phase:*
 
 $$\gamma_{\rm Berry}[\theta_0] = \gamma_{\rm Berry}[\theta_1] \tag{3.7}$$
@@ -289,13 +289,13 @@ paths in $M$ are **geometrically equivalent** — they have the same:
 - Holonomy of the hedging position
 - Topological winding number
 
-This gives a classification of portfolio strategies by their homotopy class in $\pi\_1(M)$
+This gives a classification of portfolio strategies by their homotopy class in $\pi_1(M)$
 — the fundamental group of the market manifold.
 
-For the great sphere ($M = S^r\_+$): $\pi\_1(S^r\_+) = 0$ for $r \geq 2$ (simply connected).
+For the great sphere ($M = S^r_+$): $\pi_1(S^r_+) = 0$ for $r \geq 2$ (simply connected).
 **All strategies on the CAPM manifold are homotopically equivalent** — no adiabatic alpha.
 
-For the Clifford torus ($M = T^2$): $\pi\_1(T^2) = \mathbb{Z}^2$.
+For the Clifford torus ($M = T^2$): $\pi_1(T^2) = \mathbb{Z}^2$.
 **Strategies on the two-factor torus market classify into integer winding numbers**
 $(m,n) \in \mathbb{Z}^2$ — the number of times the portfolio winds around the two
 cycles of the torus. Strategies with different winding numbers are topologically
@@ -310,7 +310,7 @@ topological antipodes.**
 ### 4.1 The Chern-Weil theory
 
 The **Chern classes** of a complex vector bundle $E \to M$ are cohomology classes
-$c\_k(E) \in H^{2k}(M; \mathbb{Z})$ that measure the topological non-triviality of $E$.
+$c_k(E) \in H^{2k}(M; \mathbb{Z})$ that measure the topological non-triviality of $E$.
 They are computed from the curvature 2-form $\Omega$ of any connection on $E$ via the
 **Chern-Weil homomorphism**:
 
@@ -325,21 +325,21 @@ $$c_1(NM_\mathbb{C}) = \left[\frac{i}{2\pi}\mathrm{tr}(R^N)\right] \in H^2(M;\ma
 where $R^N$ is the curvature 2-form of the normal connection.
 
 **Theorem 4.1** *(Chern class of the normal bundle)*. *For the market manifold
-$M^r \subset S^{d-1}\_+$:*
+$M^r \subset S^{d-1}_+$:*
 
 $$c_1(NM_\mathbb{C}) = -\frac{1}{2\pi}\int_M K_\perp\,d\mathrm{vol}_M \in \mathbb{Z} \tag{4.3}$$
 
-*where $K\_\perp$ is the normal sectional curvature of $M$ in $S^{d-1}\_+$.
+*where $K_\perp$ is the normal sectional curvature of $M$ in $S^{d-1}_+$.
 This is an integer — the **topological charge** of the market manifold.*
 
-*For the great sphere: $c\_1 = 0$ (topologically trivial — no protected alpha).*
+*For the great sphere: $c_1 = 0$ (topologically trivial — no protected alpha).*
 *For the Clifford torus $T^2 \subset S^3$ (codimension 1): the normal bundle is trivial
 (a codimension-1 orientable surface in an orientable manifold admits a globally defined
-unit normal) and $c\_1(NM) = 0$. Topologically protected alpha therefore does NOT arise
+unit normal) and $c_1(NM) = 0$. Topologically protected alpha therefore does NOT arise
 in the codimension-1 case. However, for the Clifford torus embedded in higher codimension
-— $T^2 \subset S^{d-1}\_+$ with $d \geq 5$ — the normal bundle $NM$ has rank $d-3 \geq 2$,
+— $T^2 \subset S^{d-1}_+$ with $d \geq 5$ — the normal bundle $NM$ has rank $d-3 \geq 2$,
 and nontrivial Chern classes become possible. The topological alpha formula
-$\alpha\_{\rm top} = c\_1(NM)/T$ applies when $c\_1 \neq 0$, which requires codimension
+$\alpha_{\rm top} = c_1(NM)/T$ applies when $c_1 \neq 0$, which requires codimension
 $\geq 2$. For practical markets ($d \geq 5$, $r = 2$), this condition is met and the
 Berry phase may contribute quantized alpha.*
 
@@ -351,26 +351,26 @@ class of the market manifold bundle — i.e., if:*
 
 $$\alpha_{\rm top} = \frac{c_k(NM)}{T} \tag{4.4}$$
 
-*for some Chern class $c\_k \in \mathbb{Z}$. This alpha is:*
+*for some Chern class $c_k \in \mathbb{Z}$. This alpha is:*
 - *Quantized: it comes in integer multiples of $1/T$*
 - *Topologically protected: it cannot be eliminated by any continuous deformation of the market*
 - *Detectable even when the market is locally efficient ($H=0$ pointwise)*
 
 **Theorem 4.3** *(Topological alpha from non-trivial normal bundle)*. *If the
-normal bundle $NM$ has non-trivial first Chern class $c\_1(NM) \neq 0$, then there
-exists a portfolio strategy $\beta\_t$ with positive expected excess log-return:*
+normal bundle $NM$ has non-trivial first Chern class $c_1(NM) \neq 0$, then there
+exists a portfolio strategy $\beta_t$ with positive expected excess log-return:*
 
 $$\mathbb{E}[L(\beta_t)] - L(b^{\ast}) = \frac{c_1(NM)}{T} + O(1/T^2) > 0 \tag{4.5}$$
 
 *even if $H \equiv 0$ on $M$ (the market is efficient in the minimal surface sense).*
 
-*Proof.* The strategy $\beta\_t$ is the one that winds around the topological cycle
-corresponding to $c\_1 \neq 0$. By the Chern-Weil formula, this winding accumulates
-the Berry phase $\gamma\_{\rm Berry} = 2\pi c\_1$ per cycle. The Berry phase
-$\gamma\_{\rm Berry} = 2\pi c\_1$ is accumulated per cycle of the factor loop.
-Converting to log-return requires dividing by the cycle period $T\_{\rm cycle}$:
-$\alpha\_{\rm Berry} = \gamma\_{\rm Berry}/(2\pi \cdot T\_{\rm cycle}) = c\_1/T\_{\rm cycle}$.
-This gives an excess log-return of $c\_1/T\_{\rm cycle}$ per period, which is
+*Proof.* The strategy $\beta_t$ is the one that winds around the topological cycle
+corresponding to $c_1 \neq 0$. By the Chern-Weil formula, this winding accumulates
+the Berry phase $\gamma_{\rm Berry} = 2\pi c_1$ per cycle. The Berry phase
+$\gamma_{\rm Berry} = 2\pi c_1$ is accumulated per cycle of the factor loop.
+Converting to log-return requires dividing by the cycle period $T_{\rm cycle}$:
+$\alpha_{\rm Berry} = \gamma_{\rm Berry}/(2\pi \cdot T_{\rm cycle}) = c_1/T_{\rm cycle}$.
+This gives an excess log-return of $c_1/T_{\rm cycle}$ per period, which is
 topologically quantized but inversely proportional to the cycle length. $\square$
 
 **This is a profound refinement of the EMH.** An efficient market in the minimal
@@ -382,7 +382,7 @@ but rather due to the topological structure of the market's factor architecture.
 **Example:** Consider a market where the factor structure completes a "topological
 rotation" over an annual cycle — the factors rotate by $2\pi$ in the Grassmannian as
 the economy moves through the business cycle. The Chern class measures this rotation:
-$c\_1 = 1$. The topological alpha is $1/T = 1/252 \approx 0.4\%$ per year — small
+$c_1 = 1$. The topological alpha is $1/T = 1/252 \approx 0.4\%$ per year — small
 but non-zero, and protected against any continuous market change.
 
 ### 4.3 The TKNN invariant for markets
@@ -404,7 +404,7 @@ $$\nu = \frac{1}{2\pi}\int_M \sigma^{\rm Hall}\,d\mathrm{vol}_M = c_1(NM) \in \m
 is the **market Chern number** — an integer-valued topological invariant.
 
 **The market gap:** The market has a "gap" (by analogy with the spectral gap of the
-Jacobi operator) of size $\lambda\_1(L\_M)$. As long as the market gap is non-zero
+Jacobi operator) of size $\lambda_1(L_M)$. As long as the market gap is non-zero
 (Jacobi spectrum is non-degenerate), the Chern number $\nu$ cannot change — it is
 **topologically protected**.
 
@@ -418,18 +418,18 @@ the quantum Hall transition. This is the market analogue of a quantum critical p
 
 ### 5.1 Time-varying factor structure
 
-In a real market, the factor subspace $V\_r(t) \in \text{Gr}(r,d)$ changes over time
+In a real market, the factor subspace $V_r(t) \in \text{Gr}(r,d)$ changes over time
 as correlations shift, new sectors emerge, and the economic structure evolves.
-The path $t \mapsto V\_r(t)$ in the Grassmannian $\text{Gr}(r,d)$ carries a natural
+The path $t \mapsto V_r(t)$ in the Grassmannian $\text{Gr}(r,d)$ carries a natural
 connection — the **Kähler connection** on the tautological bundle.
 
 **The Kähler form on $\text{Gr}(r,d)$:** The Grassmannian is a complex manifold with
-a natural Kähler structure. The Kähler form $\omega\_K \in \Omega^2(\text{Gr}(r,d))$ is:
+a natural Kähler structure. The Kähler form $\omega_K \in \Omega^2(\text{Gr}(r,d))$ is:
 
 $$\omega_K = \mathrm{tr}(dV_r^\dagger\wedge dV_r) \tag{5.1}$$
 
-where $V\_r$ is a local frame for the tautological bundle (the $d\times r$ matrix
-of factor loadings). The symplectic form $\omega\_K$ gives the Grassmannian a
+where $V_r$ is a local frame for the tautological bundle (the $d\times r$ matrix
+of factor loadings). The symplectic form $\omega_K$ gives the Grassmannian a
 **symplectic structure** — the natural "phase space" for factor dynamics.
 
 **Theorem 5.1** *(The Willmore energy is a symplectic invariant)*. *The Willmore energy
@@ -439,30 +439,30 @@ Grassmannian:*
 $$\mathcal{W}_2(M) = \int_{M^2} \iota^{\ast}\omega_K \tag{5.2}$$
 
 *where $\iota: M^2 \to \text{Gr}(r,d)$ is the map sending each point $b \in M$ to
-the tangent subspace $T\_bM \in \text{Gr}(r,d)$ (the Gauss map of $M$).*
+the tangent subspace $T_bM \in \text{Gr}(r,d)$ (the Gauss map of $M$).*
 
-*Proof.* The Gauss map $\iota(b) = T\_bM$ pulls back the Kähler form to the second
-fundamental form: $\iota^{\ast}\omega\_K = \|II\|\_F^2\,d\mathrm{vol}\_M$.
-Integrating: $\int\_M \iota^{\ast}\omega\_K = \int\_M\|II\|\_F^2\,d\mathrm{vol}\_M = \mathcal{W}\_2(M)$. $\square$
+*Proof.* The Gauss map $\iota(b) = T_bM$ pulls back the Kähler form to the second
+fundamental form: $\iota^{\ast}\omega_K = \|II\|_F^2\,d\mathrm{vol}_M$.
+Integrating: $\int_M \iota^{\ast}\omega_K = \int_M\|II\|_F^2\,d\mathrm{vol}_M = \mathcal{W}_2(M)$. $\square$
 
 **The Willmore energy is the "symplectic area" of the Gauss map image in the
 Grassmannian.** A minimal surface has zero Willmore energy iff the Gauss map
 $\iota: M \to \text{Gr}(r,d)$ is a **holomorphic map** (preserves the complex structure).
 
 **For the efficient market ($\mathcal{W} = 0$):** The Gauss map is holomorphic —
-the factor subspace $T\_bM$ varies in a "complex-analytic" way as $b$ moves along $M$.
+the factor subspace $T_bM$ varies in a "complex-analytic" way as $b$ moves along $M$.
 This is the holomorphic version of the minimal surface condition.
 
 ### 5.2 Parallel transport along factor rotations
 
-When the factor structure $V\_r(t)$ rotates (due to economic structural change), the
+When the factor structure $V_r(t)$ rotates (due to economic structural change), the
 log-optimal portfolio must be updated. The **canonical update** is parallel transport
 along the Grassmannian path:
 
 $$b^{\ast}(t) = \Pi_\Delta\!\left(\mathcal{P}\exp\!\left(-\int_0^t A(\dot{V}_r(\tau))\,d\tau\right) V_r(0)\alpha^{\ast}\right) \tag{5.3}$$
 
 where $\mathcal{P}\exp$ is the path-ordered exponential of the Grassmannian connection
-$A = V\_r^\dagger dV\_r$ (the **Berry connection on the Grassmannian**).
+$A = V_r^\dagger dV_r$ (the **Berry connection on the Grassmannian**).
 
 **The rotation of the log-optimal portfolio under factor rotation is determined
 by the Berry connection.** If the factors rotate by a matrix $R \in O(r)$ (an
@@ -481,8 +481,8 @@ cost — the portfolio "lags" the rotating factor frame and accumulates tracking
 $$\left|\frac{\dot V_r}{V_r}\right| \ll \lambda_1(L_M) \tag{5.5}$$
 
 The factor structure must rotate slowly compared to the Jacobi spectral gap.
-For the CAPM: $\lambda\_1 = (d-2)/4 = 12$ (large gap — tracks fast rotations).
-For the Clifford torus: $\lambda\_1 = 5/2$ (smaller gap — more sensitive to rotation speed).
+For the CAPM: $\lambda_1 = (d-2)/4 = 12$ (large gap — tracks fast rotations).
+For the Clifford torus: $\lambda_1 = 5/2$ (smaller gap — more sensitive to rotation speed).
 **This gives a model-free bound on the factor rotation speed above which the portfolio
 strategy requires explicit rebalancing.**
 
@@ -511,12 +511,12 @@ perturbations that are neither stable nor unstable, but exactly marginal.
 ### 6.2 The index theorem applied
 
 **Theorem 6.1** *(Atiyah-Singer for market manifolds)*. *For a spin market manifold
-$M^r$ (manifolds with $r$ even and $w\_2(M) = 0$, i.e.\ the Clifford torus, the Veronese
+$M^r$ (manifolds with $r$ even and $w_2(M) = 0$, i.e.\ the Clifford torus, the Veronese
 for $r=2$, and Lawson surfaces with appropriate structure):*
 
 $$\mathrm{ind}(D) = \hat{A}(M) = \int_M 1 - \frac{1}{24}\mathrm{tr}(R^2) + \ldots \tag{6.3}$$
 
-*where $R$ is the Riemann curvature tensor of $(M, g\_M)$.
+*where $R$ is the Riemann curvature tensor of $(M, g_M)$.
 The index counts:*
 
 $$\mathrm{ind}(D) = \dim\ker D^+ - \dim\ker D^- \tag{6.4}$$
@@ -529,7 +529,7 @@ has $\mathrm{ind}(D) = 0$ (constant spinors of each chirality contribute equally
 $\dim\ker D^+ = 1$, $\dim\ker D^- = 1$, so $\mathrm{ind}(D) = 1 - 1 = 0$).
 The vanishing of the Dirac index is consistent with the torus being flat: there is
 no topological obstruction from the $\hat{A}$-genus in dimension 2. The Atiyah-Singer
-index theorem confirms: $\mathrm{ind}(D) = \frac{1}{8\pi}\int\_{T^2} R\,d\mathrm{vol} = 0$
+index theorem confirms: $\mathrm{ind}(D) = \frac{1}{8\pi}\int_{T^2} R\,d\mathrm{vol} = 0$
 since $R = 0$. The market interpretation: the Clifford torus market has no net chiral
 asymmetry in its factor structure.
 
@@ -570,13 +570,13 @@ $$(e_1,\ldots,e_r)(b) \mapsto (e_1,\ldots,e_r)(b)\cdot g(b)^{-1} \tag{7.1}$$
 **Gauge-invariant quantities** are those unchanged by this transformation:
 - The Willmore energy $\mathcal{W}(M)$ (invariant under $O(r)$ rotations of the factor frame)
 - The mean curvature $H(b)$ (scalar — obviously invariant)
-- The Sharpe ratio $\mathrm{Sharpe}^{\ast} = \|H\|\_{L^2}$ (invariant)
-- The Chern classes $c\_k(NM)$ (topological — invariant)
+- The Sharpe ratio $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ (invariant)
+- The Chern classes $c_k(NM)$ (topological — invariant)
 
 **Gauge-dependent quantities:**
-- The specific factor loading matrix $V\_r$ (depends on choice of factor frame)
-- The individual portfolio weights $b^{\ast}\_i$ (depend on the asset labeling)
-- The specific Jacobi eigenfunction $\phi\_k$ (depend on the frame choice)
+- The specific factor loading matrix $V_r$ (depends on choice of factor frame)
+- The individual portfolio weights $b^{\ast}_i$ (depend on the asset labeling)
+- The specific Jacobi eigenfunction $\phi_k$ (depend on the frame choice)
 
 **Implication:** The "right" objects to study in market theory are the gauge-invariant
 ones. Any result that depends on the specific choice of factor labeling (e.g.,
@@ -622,13 +622,13 @@ factor structure from one topological class to another.
 ### 8.1 The Berry connection on the universal portfolio
 
 **Theorem 8.1** *(Berry connection for the universal portfolio)*. *The Berry
-connection on the bundle of universal portfolio states $\{|\hat{b}\_T^M\rangle\}$
-parameterised by market data $x\_{1:T}$ is:*
+connection on the bundle of universal portfolio states $\{|\hat{b}_T^M\rangle\}$
+parameterised by market data $x_{1:T}$ is:*
 
 $$A_{\rm Berry} = \langle\hat{b}_T^M|\nabla_{x_{1:T}}|\hat{b}_T^M\rangle
 = \frac{1}{Z_T}\int_M b\,\nabla L_T(b)\,e^{TL_T(b)}\,d\mathrm{vol}_M \tag{8.1}$$
 
-*The Berry curvature $\mathcal{F} = dA\_{\rm Berry}$ is the second fundamental form of
+*The Berry curvature $\mathcal{F} = dA_{\rm Berry}$ is the second fundamental form of
 the posterior distribution in the space of market data — a measure of how curved the
 "information landscape" is.*
 
@@ -639,23 +639,23 @@ where $R^N$ is the normal bundle curvature.*
 ### 8.2 Quantization of adiabatic alpha
 
 **Theorem 8.2** *(Quantization of topological alpha)*. *For a market with Chern
-number $\nu = c\_1(NM) \in \mathbb{Z}$, the adiabatic alpha from one complete
+number $\nu = c_1(NM) \in \mathbb{Z}$, the adiabatic alpha from one complete
 economic cycle is quantized:*
 
 $$\alpha_{\rm adiabatic} = \frac{\nu}{T}\cdot\hbar_{\rm market},
 \qquad \hbar_{\rm market} = \frac{1}{\sqrt{T}} \tag{8.2}$$
 
-*The "market quantum of alpha" is $\hbar\_{\rm market} = 1/\sqrt{T}$ — the
+*The "market quantum of alpha" is $\hbar_{\rm market} = 1/\sqrt{T}$ — the
 uncertainty in portfolio estimation. The topological alpha is $\nu$ quanta —
 integer-valued and robust.*
 
-*For $T = 252$: $\hbar\_{\rm market} = 1/\sqrt{252} \approx 0.063$, and the
+*For $T = 252$: $\hbar_{\rm market} = 1/\sqrt{252} \approx 0.063$, and the
 topological alpha is $\nu \times 0.063/T \approx \nu \times 25\,\mathrm{bps}$ per cycle.*
 
 ### 8.3 The holonomy as a risk attribution
 
 When the market completes one business cycle (one year, approximately), the holonomy
-element $\mathrm{Hol}\_\gamma \in SO(d-1-r)$ rotates the idiosyncratic positions.
+element $\mathrm{Hol}_\gamma \in SO(d-1-r)$ rotates the idiosyncratic positions.
 This rotation mixes the $d-1-r$ idiosyncratic directions among themselves, redistributing
 idiosyncratic risk across the portfolio even without explicit trading.
 
@@ -665,7 +665,7 @@ where the idiosyncratic risk of a stock changes character over one business cycl
 holonomy is the precise mathematical description of this rotation.
 
 **Theorem 8.3** *(Holonomy risk attribution)*. *For a portfolio with initial
-idiosyncratic exposure $s\_0 \in N\_{b^{\ast}}M$, after one market cycle:*
+idiosyncratic exposure $s_0 \in N_{b^{\ast}}M$, after one market cycle:*
 
 $$s_T = \mathrm{Hol}_\gamma \cdot s_0 \tag{8.3}$$
 
@@ -674,8 +674,8 @@ $$s_T = \mathrm{Hol}_\gamma \cdot s_0 \tag{8.3}$$
 $$\text{Hedging error} = \|s_T - s_0\|^2_{g^{\mathrm{FR}}}
 = 2(1 - \cos\theta_{\rm hol})\|s_0\|^2 \tag{8.4}$$
 
-*where $\theta\_{\rm hol}$ is the rotation angle of the holonomy element.
-For the Clifford torus: $\theta\_{\rm hol} = \kappa^2\cdot\mathrm{Area}(M)$
+*where $\theta_{\rm hol}$ is the rotation angle of the holonomy element.
+For the Clifford torus: $\theta_{\rm hol} = \kappa^2\cdot\mathrm{Area}(M)$
 (principal curvature squared times manifold area).*
 
 ---
@@ -693,8 +693,8 @@ above the minimal surface theory:
 | Grassmannian bundle | Fiber = factor subspaces | Time-varying factor structure |
 | Connection $\nabla^N$ | Parallel transport law | Optimal hedge update rule |
 | Curvature $R^N$ | Berry curvature | Holonomy / adiabatic alpha |
-| Chern class $c\_1(NM)$ | Topological charge | Quantized protected alpha |
-| Holonomy $\mathrm{Hol}\_\gamma$ | Rotation over economic cycle | Factor rotation / idiosyncratic mixing |
+| Chern class $c_1(NM)$ | Topological charge | Quantized protected alpha |
+| Holonomy $\mathrm{Hol}_\gamma$ | Rotation over economic cycle | Factor rotation / idiosyncratic mixing |
 | $\hat A$-genus | Index theorem zero modes | Topologically unhedgeable payoffs |
 | Chern-Simons form | 3-manifold invariant | Market regime change amplitude |
 
@@ -706,12 +706,12 @@ market.
 
 The efficient market hypothesis, properly formulated, must include both:
 - The local condition: $H=0$ (no mean curvature alpha)
-- The global condition: $c\_k(NM) = 0$ for all $k$ (no topological alpha)
+- The global condition: $c_k(NM) = 0$ for all $k$ (no topological alpha)
 
 A market satisfying both is **topologically trivial and locally minimal** — the
 "truly efficient" market. Real markets likely satisfy neither condition exactly,
 with the local inefficiency ($H \neq 0$) giving the Sharpe-curvature alpha and
-the global topology ($c\_1 \neq 0$) giving the quantized adiabatic alpha.
+the global topology ($c_1 \neq 0$) giving the quantized adiabatic alpha.
 
 ---
 
@@ -719,7 +719,7 @@ the global topology ($c\_1 \neq 0$) giving the quantized adiabatic alpha.
 
 **Problem 1.** Compute the Berry curvature $\mathcal{F}$ and Chern number $\nu$ for
 the S\&P 500 using empirical return data. The Chern number should be computable from
-the winding number of the factor subspace $V\_r(t)$ as it traces one business cycle.
+the winding number of the factor subspace $V_r(t)$ as it traces one business cycle.
 
 **Problem 2.** Prove or disprove: for the Clifford torus market, the holonomy group
 $\mathrm{Hol}(NM)$ is $SO(2)$ (full rotation group for the 2D normal bundle for $d=6$,
@@ -735,7 +735,7 @@ manifolds. The level $k$ of the Chern-Simons theory determines the topological c
 of the market regime, and the instantons are the regime changes.
 
 **Problem 5.** Prove the Atiyah-Singer theorem (6.3) for market manifolds rigorously,
-including the appropriate boundary conditions at $\partial\Delta\_{d-1}$ (the simplex faces
+including the appropriate boundary conditions at $\partial\Delta_{d-1}$ (the simplex faces
 where some assets have zero weight). The boundary conditions affect the index computation
 and may give additional contributions to the count of unhedgeable payoffs.
 
@@ -743,7 +743,7 @@ and may give additional contributions to the count of unhedgeable payoffs.
 
 ### Connections to Other Papers
 
-The Berry phase accumulated over one market cycle, the writhe of the market knot (KNOT\_THEORY.md), and the Chern-Simons invariant are three manifestations of the same holonomy. Specifically, the writhe equals the Berry phase modulo $2\pi$: both measure the total rotation of the normal frame as the portfolio traces a closed loop on $M^r$. This means that topological knot invariants of the market braid (BRAIDS.md) encode quantised Berry phases, and the Jones polynomial evaluated at the market crossing data contains the full holonomy information of the fiber bundle.
+The Berry phase accumulated over one market cycle, the writhe of the market knot (KNOT_THEORY.md), and the Chern-Simons invariant are three manifestations of the same holonomy. Specifically, the writhe equals the Berry phase modulo $2\pi$: both measure the total rotation of the normal frame as the portfolio traces a closed loop on $M^r$. This means that topological knot invariants of the market braid (BRAIDS.md) encode quantised Berry phases, and the Jones polynomial evaluated at the market crossing data contains the full holonomy information of the fiber bundle.
 
 ---
 

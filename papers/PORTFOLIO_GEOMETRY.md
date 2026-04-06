@@ -20,7 +20,7 @@ construction frameworks arising from the four main minimal surface types: (i) th
 (ii) the **Clifford torus** gives four-fund separation with orthogonal within-group
 and between-group rebalancing, and an explicit group-balance threshold; (iii) the
 **Veronese surface** gives a three-fund rule with a cyclic symmetry constraint;
-(iv) the **Lawson surfaces** $\tau\_{m,n}$ give $mn+1$-fund separation with
+(iv) the **Lawson surfaces** $\tau_{m,n}$ give $mn+1$-fund separation with
 period-$m$ and period-$n$ rebalancing cycles. In each case, the **rebalancing rule
 is the geodesic flow on the minimal surface**, the **risk budget is the Fisher–Rao
 ball**, and the **alpha signal is the mean curvature drift** $-\vec{H}(b^{\ast})$.
@@ -41,37 +41,37 @@ flow; rebalancing frequency; risk budget.
 ### 1.1 Why standard rebalancing is wrong
 
 Standard portfolio rebalancing rules (calendar rebalancing, threshold rebalancing)
-are defined in Euclidean portfolio space — they trigger when $|b\_t - b^{\ast}|\_{\rm Euclidean}$
+are defined in Euclidean portfolio space — they trigger when $|b_t - b^{\ast}|_{\rm Euclidean}$
 exceeds a threshold. This is geometrically incorrect: the natural distance on the
-portfolio simplex is the Fisher–Rao distance $d\_{g^{\rm FR}}(b\_t, b^{\ast})$, not the
+portfolio simplex is the Fisher–Rao distance $d_{g^{\rm FR}}(b_t, b^{\ast})$, not the
 Euclidean distance.
 
 **The consequences of using the wrong metric:**
-- Over-trading in low-weight assets (Fisher-Rao magnifies movements near $b\_i \to 0$)
-- Under-trading in dominant positions (Fisher-Rao compresses movements near $b\_i \to 1$)
+- Over-trading in low-weight assets (Fisher-Rao magnifies movements near $b_i \to 0$)
+- Under-trading in dominant positions (Fisher-Rao compresses movements near $b_i \to 1$)
 - Ignoring the curvature of the market manifold when choosing the rebalancing direction
 
-**The correct rule:** Rebalance when $d\_{g^{\rm FR}}(b\_t, b^{\ast})$ exceeds a threshold
-$\delta$, and rebalance by following the **geodesic on $M$** from $b\_t$ toward $b^{\ast}$.
+**The correct rule:** Rebalance when $d_{g^{\rm FR}}(b_t, b^{\ast})$ exceeds a threshold
+$\delta$, and rebalance by following the **geodesic on $M$** from $b_t$ toward $b^{\ast}$.
 
 ### 1.2 The optimal rebalancing frequency
 
 **Theorem 1.1** *(Optimal rebalancing frequency from the Jacobi gap)*. *For a
-market near a minimal surface $M^{\ast}$ with first Jacobi eigenvalue $\lambda\_1$, the
+market near a minimal surface $M^{\ast}$ with first Jacobi eigenvalue $\lambda_1$, the
 optimal rebalancing frequency is:*
 
 $$f^{\ast} = \frac{\lambda_1}{\log(1/\varepsilon_{\rm tol})} \tag{1.1}$$
 
-*rebalances per unit time, where $\varepsilon\_{\rm tol}$ is the tolerance on the
+*rebalances per unit time, where $\varepsilon_{\rm tol}$ is the tolerance on the
 deviation from $M^{\ast}$. This is the frequency at which the geometric drift from
-the manifold curvature (which grows at rate $\lambda\_1$) is corrected before it
+the manifold curvature (which grows at rate $\lambda_1$) is corrected before it
 accumulates beyond tolerance.*
 
-*For the CAPM ($\lambda\_1 = (d-2)/4 = 12$ for $d=50$) and $\varepsilon\_{\rm tol} = 0.01$:
+*For the CAPM ($\lambda_1 = (d-2)/4 = 12$ for $d=50$) and $\varepsilon_{\rm tol} = 0.01$:
 $f^{\ast} = 12/\log(100) \approx 2.6$ rebalances per day — continuous rebalancing is
 approximately optimal.*
 
-*For the Clifford torus ($\lambda\_1 = 5/2$ for $d=4$, slowest mode):
+*For the Clifford torus ($\lambda_1 = 5/2$ for $d=4$, slowest mode):
 $f^{\ast} = 2.5/\log(100) \approx 0.54$ rebalances per day — rebalance roughly every two days.*
 
 ---
@@ -80,29 +80,29 @@ $f^{\ast} = 2.5/\log(100) \approx 0.54$ rebalances per day — rebalance roughly
 
 ### 2.1 The portfolio rule
 
-For the great $r$-sphere minimal surface in $S^{d-1}\_+$ (the CAPM universality class):
+For the great $r$-sphere minimal surface in $S^{d-1}_+$ (the CAPM universality class):
 
-- **Factor subspace:** $M = \{b = \Pi\_\Delta(V\_r\alpha) : \alpha \in \mathbb{R}^r\_+\}$
-- **Geodesics on $M$:** straight lines in the factor space $\alpha \in \Delta\_{r-1}$
-- **Optimal portfolio:** $b^{\ast} = \Pi\_\Delta(V\_r\alpha^{\ast})$ for $\alpha^{\ast} = \arg\max\_{\alpha \in \Delta\_{r-1}} L\_T(\Pi\_\Delta(V\_r\alpha))$
+- **Factor subspace:** $M = \{b = \Pi_\Delta(V_r\alpha) : \alpha \in \mathbb{R}^r_+\}$
+- **Geodesics on $M$:** straight lines in the factor space $\alpha \in \Delta_{r-1}$
+- **Optimal portfolio:** $b^{\ast} = \Pi_\Delta(V_r\alpha^{\ast})$ for $\alpha^{\ast} = \arg\max_{\alpha \in \Delta_{r-1}} L_T(\Pi_\Delta(V_r\alpha))$
 
 **Two-fund separation (general $r$):** Any portfolio on the great sphere is a
-convex combination of $r+1$ "pure factor portfolios" $\{f\_0, f\_1, \ldots, f\_r\}$
-where $f\_k = \Pi\_\Delta(V\_r e\_k)$. The $r=1$ case is the classical two-fund
+convex combination of $r+1$ "pure factor portfolios" $\{f_0, f_1, \ldots, f_r\}$
+where $f_k = \Pi_\Delta(V_r e_k)$. The $r=1$ case is the classical two-fund
 (risk-free + market portfolio); $r=4$ gives five-fund separation (Fama-French).
 
 **Portfolio construction rule (CAPM class):**
-1. Estimate $V\_r$ from PCA of the return covariance.
-2. Solve $\alpha^{\ast} = \arg\max L\_T(V\_r\alpha)$ — an $r$-dimensional convex program.
-3. Hold $b^{\ast} = \Pi\_\Delta(V\_r\alpha^{\ast})$.
-4. Rebalance when $\|b\_t - b^{\ast}\|\_{F(b^{\ast})} > \delta$ (Fisher-Rao threshold).
-5. Rebalance direction: geodesic on $M$ — proportionally adjust $\alpha\_t$ toward $\alpha^{\ast}$.
+1. Estimate $V_r$ from PCA of the return covariance.
+2. Solve $\alpha^{\ast} = \arg\max L_T(V_r\alpha)$ — an $r$-dimensional convex program.
+3. Hold $b^{\ast} = \Pi_\Delta(V_r\alpha^{\ast})$.
+4. Rebalance when $\|b_t - b^{\ast}\|_{F(b^{\ast})} > \delta$ (Fisher-Rao threshold).
+5. Rebalance direction: geodesic on $M$ — proportionally adjust $\alpha_t$ toward $\alpha^{\ast}$.
 
 **Minimum turnover:** For a portfolio drifting from $b^{\ast}$ due to price changes:
 
 $$\mathrm{Turnover} = \|\dot{b}_t\|_{g^{\rm FR}} = |F(b^{\ast})^{-1/2}\Sigma b^{\ast}\,r_t| \tag{2.1}$$
 
-where $r\_t$ is the period return vector. This is the **geodesic speed** on $M$ — the rate
+where $r_t$ is the period return vector. This is the **geodesic speed** on $M$ — the rate
 at which the portfolio moves in Fisher-Rao distance due to market returns. The minimum
 turnover to stay on $M$ is zero (on the great sphere, buy-and-hold is a geodesic if
 returns are proportional across assets). **The CAPM portfolio requires zero rebalancing
@@ -115,10 +115,10 @@ market-cap weighted portfolio is buy-and-hold optimal in the CAPM.
 
 ### 3.1 The structure
 
-The Clifford torus market ($d=4$, $r=2$, Section 8.2 of MINIMAL\_SURFACE):
-- Group 1: assets $\{1,2\}$ with aggregate weight $p = b\_1+b\_2$
+The Clifford torus market ($d=4$, $r=2$, Section 8.2 of MINIMAL_SURFACE):
+- Group 1: assets $\{1,2\}$ with aggregate weight $p = b_1+b_2$
 - Group 2: assets $\{3,4\}$ with aggregate weight $1-p$
-- The Clifford manifold: $p = 1/2$, $\theta = \arctan(b\_2/b\_1)$, $\varphi = \arctan(b\_4/b\_3)$
+- The Clifford manifold: $p = 1/2$, $\theta = \arctan(b_2/b_1)$, $\varphi = \arctan(b_4/b_3)$
 
 **Four-fund separation:** Any portfolio on the Clifford torus is determined by:
 1. Between-group balance: $p = 1/2$ (fixed on the efficient surface)
@@ -139,22 +139,22 @@ The mean curvature drift at $p \neq 1/2$ is:
 
 $$\dot{p} = -\varepsilon^2 H(p) = -\varepsilon^2\frac{|1-2p|}{4\sqrt{p(1-p)}} \tag{3.2}$$
 
-Rebalancing rule: **whenever $|p - 1/2| > \delta\_p$, trade toward $p = 1/2$ at rate $H(p)$**.
+Rebalancing rule: **whenever $|p - 1/2| > \delta_p$, trade toward $p = 1/2$ at rate $H(p)$**.
 This is the "group-relative value" trade — buy the underweight group, sell the overweight.
 
-**Threshold:** The optimal $\delta\_p$ from (1.1): $\delta\_p = \varepsilon\_{\rm tol}/H'(1/2)$
-where $H'(1/2) = \lim\_{p\to 1/2}H(p)/|p-1/2| = 1/2$ (from Example 3 of MINIMAL\_SURFACE).
-So $\delta\_p = 2\varepsilon\_{\rm tol}$ — a group imbalance of $2\varepsilon\_{\rm tol}$
+**Threshold:** The optimal $\delta_p$ from (1.1): $\delta_p = \varepsilon_{\rm tol}/H'(1/2)$
+where $H'(1/2) = \lim_{p\to 1/2}H(p)/|p-1/2| = 1/2$ (from Example 3 of MINIMAL_SURFACE).
+So $\delta_p = 2\varepsilon_{\rm tol}$ — a group imbalance of $2\varepsilon_{\rm tol}$
 triggers rebalancing.
 
 **Rule 2 (Within-group rebalancing — the momentum signal):**
 
-Within group 1, the angle $\theta\_t$ drifts due to relative returns:
+Within group 1, the angle $\theta_t$ drifts due to relative returns:
 
 $$\dot\theta = \frac{r_{t,1} - r_{t,2}}{2} + \varepsilon^2(\lambda_1\theta + \ldots) \tag{3.3}$$
 
 The mean curvature for within-group drift (mode $(1,0)$ of the Clifford torus Jacobi
-spectrum, $\lambda\_{10} = -1/2$ in Bhattacharyya normalisation) creates a predictable
+spectrum, $\lambda_{10} = -1/2$ in Bhattacharyya normalisation) creates a predictable
 within-group momentum signal:
 
 $$\text{Within-group Sharpe} = |\lambda_{10}|^{1/2}\varepsilon = \frac{1}{\sqrt{2T}} \tag{3.4}$$
@@ -165,13 +165,13 @@ Clifford torus market that is not at $p=1/2$.**
 
 **Portfolio construction rule (Clifford torus class):**
 1. Identify the two asset groups from the factor structure.
-2. Monitor $p\_t = b\_t^{(1)}$ (aggregate group-1 weight).
-3. When $|p\_t - 1/2| > \delta\_p$: execute group rebalancing trade toward $p=1/2$.
+2. Monitor $p_t = b_t^{(1)}$ (aggregate group-1 weight).
+3. When $|p_t - 1/2| > \delta_p$: execute group rebalancing trade toward $p=1/2$.
 4. Within each group: rebalance by within-group Kelly (log-optimal ratio of pairs).
 5. Rebalancing frequency: $f^{\ast} \approx 0.54$ per day (every 2 days).
 
 **Key insight:** The Clifford torus gives a **fully explicit quantitative rebalancing
-rule** directly from the manifold geometry. The threshold $\delta\_p$ and the frequency
+rule** directly from the manifold geometry. The threshold $\delta_p$ and the frequency
 $f^{\ast}$ are not free parameters — they are determined by the Jacobi eigenvalues.
 
 ---
@@ -181,21 +181,21 @@ $f^{\ast}$ are not free parameters — they are determined by the Jacobi eigenva
 ### 4.1 Structure
 
 The Veronese surface ($d=5$, $r=2$, Section 5.3 of CLASSIFICATION.md):
-Five assets with a cyclic $\mathbb{Z}\_3$ symmetry among three "base exposures"
-$(x\_1, x\_2, x\_3)$, with portfolio weights:
+Five assets with a cyclic $\mathbb{Z}_3$ symmetry among three "base exposures"
+$(x_1, x_2, x_3)$, with portfolio weights:
 
 $$b_i = v_i^2, \qquad v = \frac{1}{\sqrt{3}}(x_1x_2, x_2x_3, x_3x_1,
 \frac{x_1^2-x_2^2}{2}, \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}) \tag{4.1}$$
 
 **Three-fund separation:** The Veronese portfolio lies in the three-dimensional
-space of products $\{x\_ix\_j\}$ — it is a **pure second-harmonic portfolio**, holding
+space of products $\{x_ix_j\}$ — it is a **pure second-harmonic portfolio**, holding
 only pairwise factor products. The three "funds" are:
-- $f\_1$: long $b\_1 = x\_1x\_2$ (cross of factor 1 and factor 2)
-- $f\_2$: long $b\_4 = (x\_1^2-x\_2^2)/2$ (difference of squared factors)
-- $f\_3$: the normalisation fund
+- $f_1$: long $b_1 = x_1x_2$ (cross of factor 1 and factor 2)
+- $f_2$: long $b_4 = (x_1^2-x_2^2)/2$ (difference of squared factors)
+- $f_3$: the normalisation fund
 
-**Portfolio rule:** Allocate between $f\_1, f\_2, f\_3$ according to the current
-realisation of $(x\_1, x\_2, x\_3)$, with the $\mathbb{Z}\_3$ cyclic symmetry ensuring
+**Portfolio rule:** Allocate between $f_1, f_2, f_3$ according to the current
+realisation of $(x_1, x_2, x_3)$, with the $\mathbb{Z}_3$ cyclic symmetry ensuring
 the allocation is rotation-invariant under cyclic permutation of the three exposures.
 
 **Rebalancing:** Because the Veronese is stable (index 0, CLASSIFICATION Table 5.3),
@@ -215,9 +215,9 @@ products of the three underlying macro factors.
 
 ### 5.1 Structure
 
-Lawson surfaces $\tau\_{m,n}$ have genus $g = mn$, corresponding to $mn$ independent
+Lawson surfaces $\tau_{m,n}$ have genus $g = mn$, corresponding to $mn$ independent
 feedback loops between two factor groups. The portfolio parameterisation
-(MINIMAL\_SURFACE equation 8.16):
+(MINIMAL_SURFACE equation 8.16):
 
 $$b(\theta,\varphi) = (\sin^2\!\rho\cos^2(m\theta),\; \sin^2\!\rho\sin^2(m\theta),\;
 \cos^2\!\rho\cos^2(n\varphi),\; \cos^2\!\rho\sin^2(n\varphi)) \tag{5.1}$$
@@ -230,20 +230,20 @@ The parameter $\theta$ runs through $m$ cycles as $\varphi$ runs through one cyc
 This means: **Factor 1 rebalances $m$ times for every $n$ rebalances of Factor 2.**
 This is a **period-$m/n$ coupling** between the two factor groups.
 
-For $\tau\_{2,1}$ ($m=2$, $n=1$): Factor 1 has a 2-period cycle (mean-reverts over
+For $\tau_{2,1}$ ($m=2$, $n=1$): Factor 1 has a 2-period cycle (mean-reverts over
 2 periods) while Factor 2 is single-period. Portfolio construction:
 - Each period: rebalance Factor 2 allocation to Kelly-optimal
 - Every 2 periods: rebalance Factor 1 allocation to Kelly-optimal
-- Trigger: $\tau\_{2,1}$ Jacobi eigenvalue $\lambda\_1 \approx -5/2$ → frequency $f^{\ast} \approx 0.54/\text{day}$
+- Trigger: $\tau_{2,1}$ Jacobi eigenvalue $\lambda_1 \approx -5/2$ → frequency $f^{\ast} \approx 0.54/\text{day}$
 
-**Practical interpretation:** The $\tau\_{2,1}$ market structure corresponds to a
+**Practical interpretation:** The $\tau_{2,1}$ market structure corresponds to a
 momentum market (Factor 1 trends over 2 periods) coupled to a mean-reversion market
 (Factor 2 reverts each period). The rebalancing rule automatically captures:
 - **Trend following** in Factor 1 (hold for 2 periods, then rebalance)
 - **Mean reversion** in Factor 2 (rebalance every period)
 
 This is the geometric derivation of the empirically observed **momentum-mean reversion
-combination** in systematic strategies: it arises naturally from the $\tau\_{2,1}$
+combination** in systematic strategies: it arises naturally from the $\tau_{2,1}$
 Lawson surface structure.
 
 ---
@@ -261,10 +261,10 @@ $$\mu_{\rm BL} = [(\tau\Sigma)^{-1} + P^T\Omega^{-1}P]^{-1}
 where $\Pi$ is the equilibrium return vector, $P$ is the pick matrix, $Q$ is the
 view return vector, and $\Omega$ is the view uncertainty.
 
-The equilibrium prior is the market portfolio $b\_{\rm MKT}$ — the CAPM efficient point.
+The equilibrium prior is the market portfolio $b_{\rm MKT}$ — the CAPM efficient point.
 Views are linear combinations of assets. The result is a "tilted" portfolio.
 
-**Problem:** The Black-Litterman framework is Euclidean — it treats $\Delta\_{d-1}$
+**Problem:** The Black-Litterman framework is Euclidean — it treats $\Delta_{d-1}$
 as a flat space. The tilted portfolio may not lie on the market manifold $M$ (it may
 move off $M$ into the normal bundle), and the uncertainty matrix $\Omega$ is not
 informed by the Fisher–Rao geometry.
@@ -272,16 +272,16 @@ informed by the Fisher–Rao geometry.
 ### 6.2 Manifold Black–Litterman
 
 **Definition 6.1** (Manifold Black–Litterman). *Given the efficient market portfolio
-$b^{\ast} \in M$ and a view $v \in T\_{b^{\ast}}\Delta\_{d-1}$ with confidence $\omega > 0$:*
+$b^{\ast} \in M$ and a view $v \in T_{b^{\ast}}\Delta_{d-1}$ with confidence $\omega > 0$:*
 
-1. *Decompose the view: $v = v\_M + v\_N$ where $v\_M \in T\_{b^{\ast}}M$ (tangential) and $v\_N \in N\_{b^{\ast}}M$ (normal).*
+1. *Decompose the view: $v = v_M + v_N$ where $v_M \in T_{b^{\ast}}M$ (tangential) and $v_N \in N_{b^{\ast}}M$ (normal).*
 
-2. *The tangential view $v\_M$ moves the portfolio along $M$ to a new point $b^{**}$
-   via the geodesic on $(M, g\_M)$:*
+2. *The tangential view $v_M$ moves the portfolio along $M$ to a new point $b^{**}$
+   via the geodesic on $(M, g_M)$:*
    $$b^{**} = \exp_{b^{\ast}}^M(\omega\cdot v_M) \tag{6.2}$$
 
-3. *The normal view $v\_N$ moves the portfolio off $M$ by distance $\omega\|v\_N\|\_{g^{\rm FR}}$,
-   creating an idiosyncratic tilt with hedging error $\|v\_N\|^2\_{g^{\rm FR}}$.*
+3. *The normal view $v_N$ moves the portfolio off $M$ by distance $\omega\|v_N\|_{g^{\rm FR}}$,
+   creating an idiosyncratic tilt with hedging error $\|v_N\|^2_{g^{\rm FR}}$.*
 
 4. *The manifold Black-Litterman portfolio:*
    $$b_{\rm MBL} = \Pi_\Delta\left(b^{**} + \frac{\omega}{\omega + 1/T}v_N\right) \tag{6.3}$$
@@ -298,7 +298,7 @@ $b^{\ast} \in M$ and a view $v \in T\_{b^{\ast}}\Delta\_{d-1}$ with confidence $
 | No rebalancing structure | Geodesic rebalancing on $M$ |
 | No incompleteness accounting | Normal view has unhedgeable error |
 
-**The normal view uncertainty:** A view $v\_N$ in the normal bundle direction creates
+**The normal view uncertainty:** A view $v_N$ in the normal bundle direction creates
 a portfolio off $M$ with mean curvature $H \neq 0$. The expected alpha of this
 off-manifold position is:
 
@@ -336,36 +336,36 @@ Collecting the results into actionable rules:
 
 From return data $X \in \mathbb{R}^{T\times d}$:
 1. Compute $F(b^{\ast}) = V\Lambda V^T$ (Fisher matrix at log-optimal).
-2. Determine $r = r\_{\rm eff}(F)$ (stable rank).
+2. Determine $r = r_{\rm eff}(F)$ (stable rank).
 3. Identify the minimal surface type from the topology of $M$.
 
 **Diagnostic:** The manifold type is determined by:
 - $r=1$: CAPM (great circle)
-- $r=2$, symmetric: check for $p \approx 1/2$ (Clifford torus) or $\mathbb{Z}\_3$ (Veronese)
-- $r=2$, asymmetric period: check for momentum-mean reversion coupling ($\tau\_{2,1}$, $\tau\_{3,1}$, etc.)
+- $r=2$, symmetric: check for $p \approx 1/2$ (Clifford torus) or $\mathbb{Z}_3$ (Veronese)
+- $r=2$, asymmetric period: check for momentum-mean reversion coupling ($\tau_{2,1}$, $\tau_{3,1}$, etc.)
 - $r \geq 3$: higher Lawson surfaces or CAPM with more factors
 
 ### Step 2: Compute the portfolio
 
 | Market type | Portfolio | Dimension of problem |
 |:-----------|:----------|:--------------------|
-| CAPM ($r=1$) | $b^{\ast} = \Pi\_\Delta(\phi\alpha^{\ast})$ | 1D (scalar $\alpha$) |
-| Multi-CAPM ($r$ factors) | $b^{\ast} = \Pi\_\Delta(V\_r\alpha^{\ast})$ | $r$D |
+| CAPM ($r=1$) | $b^{\ast} = \Pi_\Delta(\phi\alpha^{\ast})$ | 1D (scalar $\alpha$) |
+| Multi-CAPM ($r$ factors) | $b^{\ast} = \Pi_\Delta(V_r\alpha^{\ast})$ | $r$D |
 | Clifford torus | $b^{\ast}(\theta^{\ast}, \varphi^{\ast})$ | 2D |
 | Veronese | $b^{\ast} = v^2(\alpha^{\ast})$ | 2D (constrained) |
-| $\tau\_{m,n}$ Lawson | $b^{\ast}(\theta^{\ast}, \varphi^{\ast})$ | 2D (nonlinear ODE) |
-| MUP (all cases) | $\hat{b}\_T^M$ from manifold integral | $r$D integral |
+| $\tau_{m,n}$ Lawson | $b^{\ast}(\theta^{\ast}, \varphi^{\ast})$ | 2D (nonlinear ODE) |
+| MUP (all cases) | $\hat{b}_T^M$ from manifold integral | $r$D integral |
 
 ### Step 3: Rebalancing rule
 
 For each market type, the rebalancing rule follows the geodesic on $M$:
 
-**Threshold:** $\delta = \varepsilon\_{\rm tol}/\sqrt{\lambda\_1}$ in Fisher-Rao distance
-(where $\lambda\_1$ is the first Jacobi eigenvalue of $M$).
+**Threshold:** $\delta = \varepsilon_{\rm tol}/\sqrt{\lambda_1}$ in Fisher-Rao distance
+(where $\lambda_1$ is the first Jacobi eigenvalue of $M$).
 
-**Direction:** Follow the geodesic from current $b\_t$ toward $b^{\ast}$ on $M$.
+**Direction:** Follow the geodesic from current $b_t$ toward $b^{\ast}$ on $M$.
 
-**Frequency:** $f^{\ast} = \lambda\_1/\log(1/\varepsilon\_{\rm tol})$ rebalances per period.
+**Frequency:** $f^{\ast} = \lambda_1/\log(1/\varepsilon_{\rm tol})$ rebalances per period.
 
 ### Step 4: Risk attribution
 
@@ -373,12 +373,12 @@ Decompose portfolio risk using the normal bundle:
 
 $$\text{Total risk} = \underbrace{|b_t - b^{\ast}|^2_{F_M}}_{\text{factor risk}} + \underbrace{|b_t - b^{\ast}|^2_{F_N}}_{\text{idiosyncratic risk}} + \underbrace{H^2\tau}_{\text{alpha risk}} \tag{7.1}$$
 
-where $F\_M = V\_r^TFV\_r$ and $F\_N = V\_N^TFV\_N$ are the factor and idiosyncratic
+where $F_M = V_r^TFV_r$ and $F_N = V_N^TFV_N$ are the factor and idiosyncratic
 Fisher matrices.
 
 ### Step 5: Alpha generation
 
-The alpha signal is the mean curvature drift $-\vec{H}(b\_t)$:
+The alpha signal is the mean curvature drift $-\vec{H}(b_t)$:
 
 $$\alpha = -\varepsilon^2\vec{H}(b_t) = -\frac{1}{T}\Pi_{N_{b_t}M}\nabla L_T(b_t) \tag{7.2}$$
 
@@ -390,13 +390,13 @@ Maximum Sharpe direction: $\vec{H}/|H|$ (normal to $M$ in the mean curvature dir
 ## 8. New Results: What We Have Not Seen Before
 
 **Result 8.1** *(Minimum-turnover frontier)*. *For a market manifold $M$ and a target
-tracking error $\varepsilon$ (maximum $d\_{g^{\rm FR}}$ deviation from $b^{\ast}$), the minimum
+tracking error $\varepsilon$ (maximum $d_{g^{\rm FR}}$ deviation from $b^{\ast}$), the minimum
 turnover portfolio on $M$ solving:*
 
 $$\min_{\tau\geq 0} \|\dot{b}\|_{g^{\rm FR}} \quad \text{s.t.} \quad d_{g^{\rm FR}}(b,b^{\ast}) \leq \varepsilon \tag{8.1}$$
 
 *is the portfolio that follows the **unit-speed geodesic** on $M$ — it moves toward $b^{\ast}$
-at constant Fisher-Rao speed. The minimum turnover is $\varepsilon\cdot\lambda\_1^{1/2}/\sqrt{2}$
+at constant Fisher-Rao speed. The minimum turnover is $\varepsilon\cdot\lambda_1^{1/2}/\sqrt{2}$
 (proportional to the square root of the spectral gap).*
 
 **Result 8.2** *(Diversification and manifold dimension)*. *The effective number of bets
@@ -415,7 +415,7 @@ $$\mathrm{Sharpe}_{\rm total}^2 = \sum_{k=r+1}^{d-1}\frac{(b^{\ast}\cdot\nu_k)^2
 
 *This decomposes additively across the $d-1-r$ normal directions — each normal direction
 contributes an independent Sharpe opportunity. The optimal allocation of the Sharpe budget:
-concentrate in the normal direction with smallest $\lambda\_k$ (largest idiosyncratic risk,
+concentrate in the normal direction with smallest $\lambda_k$ (largest idiosyncratic risk,
 hence most underpriced).*
 
 ---

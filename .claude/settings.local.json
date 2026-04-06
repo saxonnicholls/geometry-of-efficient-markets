@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(python3 tools/fix_markdown.py --apply)",
+      "Bash(python3 tools/fix_markdown.py --stats)",
+      "Bash(python3 tools/fix_markdown.py --file papers/BLOODSTOCK_MARKETS.md --apply)",
+      "Bash(python3 tools/fix_markdown.py --file papers/FILTRATIONS.md --apply)"
+    ]
+  }
+}
