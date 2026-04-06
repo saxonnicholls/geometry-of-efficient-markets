@@ -1,2 +1,12 @@
 CLAUDE.md
 latex/
+data/raw/
+data/processed/
+data/results/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+*.parquet
+build/
+*.egg-info/
