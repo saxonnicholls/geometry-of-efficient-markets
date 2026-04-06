@@ -4,7 +4,7 @@
 
 *Minimal Surfaces, Universal Portfolios, and the Mathematics of Financial Markets*
 
-**51 papers · ~281,000 words · 85+ results · 30 conjectures · 34 open problems**
+**57 papers · ~340,000 words · 100+ results · 30 conjectures · 40+ open problems**
 
 > **PREPRINT** — This is a working draft. None of these papers have been peer-reviewed.
 > Comments, corrections, and collaboration inquiries welcome: me@saxonnicholls.com

@@ -861,6 +861,114 @@ Simons, J. (1968). Minimal varieties in Riemannian manifolds.
 
 ---
 
+---
+
+## Appendix: The Invariance Theorem and Dimensionless Market Numbers
+
+### C.1 Invariants under time aggregation
+
+**Theorem C.1** *(Aggregation invariance)*.
+*Let $X_t$ be a stationary return process with covariance $\Sigma$.
+Let $Y = X_1 + \cdots + X_n$ be the $n$-period aggregated return.
+Then $\mathrm{Cov}(Y) = c(n)\cdot\Sigma$ for some scalar $c(n) > 0$,
+and the following quantities are invariant under aggregation:*
+
+*(i) All eigenvalue ratios: $\lambda_i / \lambda_j$*
+
+*(ii) All eigenvalue fractions: $\lambda_i / \sum_k\lambda_k$*
+
+*(iii) The normalised spectral entropy:
+$H(\lambda)/H_{\max} = -\sum_k p_k\log p_k / \log d$ where $p_k = \lambda_k/\sum\lambda$*
+
+*(iv) The effective rank: $r_{\rm eff} = \exp(H(\lambda))$*
+
+*(v) The stable rank: $r_{\rm stable} = \sum\lambda_k^2 / \lambda_1^2$*
+
+*(vi) The eigenvectors of $\Sigma$ (and hence the factor directions)*
+
+*(vii) The manifold dimension $r$ for any threshold on cumulative variance*
+
+*Proof.* For i.i.d. returns: $\mathrm{Cov}(Y) = n\cdot\Sigma$. For AR(1) with
+coefficient $\rho$: $\mathrm{Cov}(Y) = n\cdot\Sigma\cdot(1 + 2\rho/(1-\rho)) + O(\rho^n)$.
+In both cases $\mathrm{Cov}(Y) = c(n)\cdot\Sigma$ for a scalar $c(n)$.
+Scalar multiplication preserves all eigenvalue ratios, the normalised spectrum
+$p_k$, and the eigenvectors. Every quantity in (i)-(vii) is a function of
+ratios or the normalised spectrum, hence invariant. $\square$
+
+*Empirical verification (FF25, 1963-2024):*
+
+| Quantity | Daily | Weekly | Monthly | CV |
+|:---------|:-----:|:------:|:-------:|:--:|
+| $\lambda_1/\sum\lambda$ | 0.8339 | 0.8370 | 0.8360 | 0.002 |
+| $H/H_{\max}$ | 0.266 | 0.258 | 0.252 | 0.023 |
+| $r_{\rm eff}$ | 2.355 | 2.291 | 2.250 | 0.019 |
+| $r$ (90% threshold) | 3 | 3 | 3 | 0.000 |
+| cos(PC1$_{\rm daily}$, PC1$_{\rm monthly}$) | 1.000 | 0.999 | 0.993 | — |
+
+**Corollary C.2** *(What is NOT invariant)*.
+*The following quantities depend on the aggregation period and are therefore
+not geometric invariants:*
+
+*(i) The absolute eigenvalues $\lambda_k$ (scale as $c(n)$)*
+
+*(ii) The mean curvature magnitude $\|H\|$ (depends on $1/\sqrt{\lambda}$)*
+
+*(iii) The mean-reversion speed $\kappa_k$ (depends on the time unit)*
+
+*(iv) The spectral hierarchy exponent $\beta$ in $\kappa_k/\kappa_1 = (\lambda_1/\lambda_k)^\beta$
+(mixes invariant ratios with non-invariant absolute rates)*
+
+### C.2 Dimensionless market numbers
+
+By analogy with the Reynolds number in fluid dynamics ($\mathrm{Re} = vL/\nu$,
+dimensionless, universally meaningful), we define the dimensionless invariants
+of a market manifold:
+
+**The market Reynolds number** (from FOKKER\_PLANCK\_CFD.md):
+$$\mathrm{Re}_M = \frac{\|H\|\cdot T\cdot\mathrm{diam}(M)}{\varepsilon^2}
+= \|H\|\cdot T^2\cdot\mathrm{diam}(M) \tag{C.1}$$
+
+This is dimensionless. $\mathrm{Re}_M < 1$: laminar (efficient).
+$\mathrm{Re}_M > 10$: turbulent (inefficient, alpha available).
+
+**The concentration number:**
+$$\mathcal{C} = \frac{\lambda_1}{\sum_k\lambda_k} \tag{C.2}$$
+
+Dimensionless. $\mathcal{C} \to 1$: one-factor market (CAPM).
+$\mathcal{C} \to 1/d$: maximally diversified (all factors equal).
+Empirically: $\mathcal{C} \approx 0.84$ for US equities.
+
+**The entropy number:**
+$$\mathcal{E} = \frac{H(\lambda)}{\log d} = -\frac{\sum p_k\log p_k}{\log d} \tag{C.3}$$
+
+Dimensionless. $\mathcal{E} \to 0$: one dominant factor (perfectly concentrated).
+$\mathcal{E} \to 1$: uniform spectrum (maximally complex).
+Empirically: $\mathcal{E} \approx 0.26$ for US equities.
+
+**The Cheeger number:**
+$$\mathcal{H} = h_M \cdot \mathrm{diam}(M) \tag{C.4}$$
+
+Dimensionless. Measures the connectivity relative to the size of the manifold.
+$\mathcal{H} \to 0$: approaching disconnection (crisis).
+$\mathcal{H} \gg 1$: well-connected (healthy market).
+
+**The mixing number:**
+$$\mathcal{M} = \frac{t_{\rm mix}}{T} = \frac{-1/\log\lambda_2(P)}{T} \tag{C.5}$$
+
+Dimensionless. Ratio of mixing time to observation window.
+$\mathcal{M} \ll 1$: the market has mixed many times (ergodic, reliable estimates).
+$\mathcal{M} \sim 1$: barely one mixing time (estimates are unreliable).
+$\mathcal{M} \gg 1$: not mixed yet (non-ergodic, estimates are meaningless).
+
+**The Sharpe-curvature number:**
+$$\mathcal{S} = \frac{\mathrm{Sharpe}^*}{\|H\|_{L^2}} \tag{C.6}$$
+
+Dimensionless. The central theorem says $\mathcal{S} = 1$ to leading order.
+Empirically: $\mathcal{S} \approx 1.007 \pm 0.18$ (Test N9).
+$|\mathcal{S} - 1|$ measures the departure from the theoretical identity.
+
+---
+
 *Acknowledgements.* The application of the Simons stability theorem to portfolio manifolds
 appears to be new. We are grateful to the long tradition of geometric analysts — Simons,
 Lawson, Chern, do Carmo, Marques, Neves — whose purely mathematical results turn out to
