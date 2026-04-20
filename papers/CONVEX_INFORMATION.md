@@ -42,8 +42,8 @@ sphere.
 **(iii) The ambient convex space is forced.** Any financial market
 satisfying the five axioms (three information axioms plus normalisation
 and Markov channels) has its portfolio space embedded in
-$S^{d-1}_+$ via the Bhattacharyya isometry. The efficient market manifold
-$M^r \subset S^{d-1}_+$ is an additional optimality structure (selected by
+$S^{d-1}_{+}$ via the Bhattacharyya isometry. The efficient market manifold
+$M^r \subset S^{d-1}_{+}$ is an additional optimality structure (selected by
 the Kelly criterion) within this forced ambient space.
 
 **(iv) Jensen's inequality underlies the data processing inequality.** The
@@ -104,7 +104,7 @@ If convexity is necessary, then:
 3. **Machine learning is constrained.** Any ML system whose output is a
    probability distribution (i.e., any classifier, any language model)
    operates on $\Delta_{d-1}$ with Fisher-Rao geometry. The softmax function
-   is not an architectural choice — it is the unique map from $\mathbb{R}^d$
+   is not an architectural choice — it is the unique map from $\mathbb{R}^{d}$
    to the information processing space.
 
 4. **Quantum mechanics is a special case.** The density matrix formalism is
@@ -130,7 +130,7 @@ information processing system. We require three operations:
 
 - A **combination** $\circ_\lambda : \mathcal{S} \times \mathcal{S} \to \mathcal{S}$
   for each $\lambda \in [0,1]$, representing the mixture or consensus of two states
-- A **divergence** $D : \mathcal{S} \times \mathcal{S} \to \mathbb{R}_+$, measuring
+- A **divergence** $D : \mathcal{S} \times \mathcal{S} \to \mathbb{R}_{+}$, measuring
   how distinguishable two states are
 - A class of **channels** $\mathcal{C}$: maps $f: \mathcal{S} \to \mathcal{S}$
   representing information processing operations
@@ -263,9 +263,9 @@ of Čencov.
 $\circ_\lambda$. The mixture axioms (boundary, symmetry, associativity)
 characterise abstract convex sets. By the embedding theorem for abstract
 convex sets (Stone 1949; Phelps 1966), $\mathcal{S}$ is affinely isomorphic
-to a convex subset of $\mathbb{R}^n$ for some $n$. Axiom A4 (normalisation
+to a convex subset of $\mathbb{R}^{n}$ for some $n$. Axiom A4 (normalisation
 and non-negativity) restricts to the intersection of a hyperplane
-$\{\sum x_i = 1\}$ with the positive orthant $\mathbb{R}^n_+$. This
+$\{\sum x_i = 1\}$ with the positive orthant $\mathbb{R}^{n}_+$. This
 intersection is $\Delta_{n-1}$, the standard simplex with $d = n$.
 
 **Step 2: Metric uniqueness.** Axiom 2 gives monotonicity of $D$ under
@@ -315,21 +315,21 @@ normalisation. $\square$
 
 ### 4.2 Geodesic convexity of the positive orthant
 
-**Theorem 4.2** *(Geodesic convexity of $S^{d-1}_+$)*.
-*The image $\phi(\Delta_{d-1}) = S^{d-1}_+ = S^{d-1} \cap \mathbb{R}^d_+$ is
-geodesically convex in $S^{d-1}$: for any two points $u, v \in S^{d-1}_+$,
+**Theorem 4.2** *(Geodesic convexity of $S^{d-1}_{+}$)*.
+*The image $\phi(\Delta_{d-1}) = S^{d-1}_{+} = S^{d-1} \cap \mathbb{R}^{d}_+$ is
+geodesically convex in $S^{d-1}$: for any two points $u, v \in S^{d-1}_{+}$,
 the minimising geodesic (great circle arc) from $u$ to $v$ lies entirely
-in $S^{d-1}_+$.*
+in $S^{d-1}_{+}$.*
 
 *Proof.* The geodesic on $S^{d-1}$ from $u$ to $v$ is
 $$\gamma(t) = \frac{\sin((1-t)\theta)}{\sin\theta}\,u + \frac{\sin(t\theta)}{\sin\theta}\,v \tag{4.2}$$
-where $\theta = \arccos(u \cdot v)$. Since $u, v \in \mathbb{R}^d_+$ and
+where $\theta = \arccos(u \cdot v)$. Since $u, v \in \mathbb{R}^{d}_+$ and
 $\theta \leq \pi/2$ (because $u \cdot v = \sum \sqrt{p_i q_i} \geq 0$),
 both coefficients $\sin((1-t)\theta)/\sin\theta$ and $\sin(t\theta)/\sin\theta$
 are non-negative for $t \in [0,1]$. Hence every component of $\gamma(t)$
 is a non-negative linear combination of non-negative numbers, so
-$\gamma(t) \in \mathbb{R}^d_+$. Since $|\gamma(t)| = 1$ by construction,
-$\gamma(t) \in S^{d-1}_+$. $\square$
+$\gamma(t) \in \mathbb{R}^{d}_+$. Since $|\gamma(t)| = 1$ by construction,
+$\gamma(t) \in S^{d-1}_{+}$. $\square$
 
 ### 4.3 The main theorem
 
@@ -338,7 +338,7 @@ Combining Theorems 3.2, 4.1, and 4.2:
 **Theorem 4.3** *(Convex Information Processing Theorem)*.
 *Any information processing system $(\mathcal{S}, D, \circ)$ satisfying
 Axioms 1–3 is isomorphic to a geodesically convex subset of the
-Bhattacharyya sphere $(S^{d-1}_+, g_{\rm round})$ for some $d$.*
+Bhattacharyya sphere $(S^{d-1}_{+}, g_{\rm round})$ for some $d$.*
 
 *In particular:*
 - *The state space is convex*
@@ -380,7 +380,7 @@ distinguishability of portfolio strategies. No costless operation can
 increase the Fisher-Rao distance between two portfolio states. ✓
 Axiom 3: small changes in weights produce small changes in distance. ✓
 
-**Corollary.** The market manifold $M^r \subset S^{d-1}_+$ of the companion
+**Corollary.** The market manifold $M^r \subset S^{d-1}_{+}$ of the companion
 monograph is a geodesically convex subset of the Bhattacharyya sphere. This
 is not an assumption — it follows from Theorem 4.3 applied to portfolio
 information processing.
@@ -408,7 +408,7 @@ about the curvature of this geodesic at the limit point.
 ### 5.4 Machine learning
 
 **States:** $\sigma(z) \in \Delta_{d-1}$ (softmax output of a neural network
-with logits $z \in \mathbb{R}^d$).
+with logits $z \in \mathbb{R}^{d}$).
 **Combination:** $\sigma(z) \circ_\lambda \sigma(z') = (1-\lambda)\sigma(z) + \lambda\sigma(z')$
 (model averaging / ensembling).
 **Divergence:** Fisher-Rao distance, or equivalently KL divergence at
@@ -423,7 +423,7 @@ of the data processing inequality). This is why deeper networks lose
 information — each layer contracts. ✓
 Axiom 3: softmax is continuous. ✓
 
-**Corollary.** The softmax function $\sigma: \mathbb{R}^d \to \Delta_{d-1}$
+**Corollary.** The softmax function $\sigma: \mathbb{R}^{d} \to \Delta_{d-1}$
 is the unique continuous map from unconstrained logits to the information
 processing space that preserves the Fisher-Rao structure. The cross-entropy
 loss $-\sum y_i \log \sigma(z)_i$ is the Fisher-Rao divergence between
@@ -433,7 +433,7 @@ geometry on the simplex, whether it knows it or not.
 
 ### 5.5 Quantum mechanics
 
-**States:** Density matrices $\rho \in \mathcal{D}_d = \{\rho \succeq 0 : \mathrm{tr}(\rho) = 1\}$.
+**States:** Density matrices $\rho \in \mathcal{D}_{d} = \{\rho \succeq 0 : \mathrm{tr}(\rho) = 1\}$.
 **Combination:** $\rho \circ_\lambda \rho' = (1-\lambda)\rho + \lambda\rho'$
 (mixing of quantum states).
 **Divergence:** Quantum Fisher information metric (Bures metric):
@@ -441,7 +441,7 @@ $D_B(\rho, \sigma)^2 = 2(1 - \mathrm{tr}\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}})$.
 **Channels:** Completely positive trace-preserving (CPTP) maps.
 
 Axiom 1: mixture of density matrices is a density matrix (the set
-$\mathcal{D}_d$ is convex). ✓
+$\mathcal{D}_{d}$ is convex). ✓
 Axiom 2: CPTP maps contract the Bures metric (Uhlmann's monotonicity
 theorem, the quantum data processing inequality). ✓
 Axiom 3: Bures metric is continuous. ✓
@@ -487,11 +487,11 @@ Every major result is now derivable from the three axioms:
 ### 6.1 The market manifold is a theorem
 
 **Old formulation (axiom):** "A financial market is a minimal submanifold
-$M^r \subset S^{d-1}_+$."
+$M^r \subset S^{d-1}_{+}$."
 
 **New formulation (theorem):** A financial market satisfying Axioms 1–3
 has its state space isomorphic to a geodesically convex subset of
-$(S^{d-1}_+, g_{\rm round})$. The efficient market manifold $M^r$ is
+$(S^{d-1}_{+}, g_{\rm round})$. The efficient market manifold $M^r$ is
 the submanifold on which the Kelly growth rate is maximised — the
 zero set of the mean curvature vector.
 
@@ -553,8 +553,8 @@ every other point via a geodesic that stays in $\mathcal{S}$.
 
 The classification of efficient markets into three types (Paper I.4 —
 CAPM/sphere, Clifford torus, pseudo-Anosov/hyperbolic) is a classification
-of minimal submanifolds of $S^{d-1}_+$. Theorem 4.3 tells us that the
-ambient space $S^{d-1}_+$ is forced; the classification then follows from
+of minimal submanifolds of $S^{d-1}_{+}$. Theorem 4.3 tells us that the
+ambient space $S^{d-1}_{+}$ is forced; the classification then follows from
 the differential geometry of minimal submanifolds of spheres (Lawson 1969;
 Simons 1968).
 
@@ -592,7 +592,7 @@ Is there a categorical version of Theorem 4.3 that characterises the
 "category of convex information processing systems" abstractly?
 
 **OP-D. Operational characterisation of curvature.**
-In the companion monograph, the mean curvature $H$ of $M^r \subset S^{d-1}_+$
+In the companion monograph, the mean curvature $H$ of $M^r \subset S^{d-1}_{+}$
 determines the Sharpe ratio. Is there a purely operational characterisation
 of $H$ in terms of the axioms — without reference to the embedding?
 If so, this would make the Sharpe-curvature identity a theorem of

@@ -79,7 +79,7 @@ equilibrium; holonomy; Landauer bound.
 ### 1.1 The classical setup
 
 Consider an economy with $d$ commodities. A consumer has an endowment
-$\omega \in \mathbb{R}^d_+$ and consumes a bundle $q \in \mathbb{R}^d_+$.
+$\omega \in \mathbb{R}^{d}_+$ and consumes a bundle $q \in \mathbb{R}^{d}_+$.
 The classical approach treats each commodity's quantity as a separate
 variable; supply and demand curves are drawn in the price-quantity plane
 for ONE commodity at a time.
@@ -121,7 +121,7 @@ OBSERVERS_AND_CHANNELS.md applied to consumer theory.
 
 ### 2.1 The demand curve as a gradient
 
-The consumer's utility function $U: \mathbb{R}^d_+ \to \mathbb{R}$ depends
+The consumer's utility function $U: \mathbb{R}^{d}_+ \to \mathbb{R}$ depends
 on the consumption bundle $q$. The demand for commodity $i$ at price
 vector $p$ and income $I$ is:
 
@@ -408,7 +408,7 @@ the set of utility allocations $(u_1, \ldots, u_n)$ that are Pareto
 efficient — where no consumer can be made better off without making another
 worse off.
 
-The UPF is a surface in $\mathbb{R}^n$. It is the boundary of the set of
+The UPF is a surface in $\mathbb{R}^{n}$. It is the boundary of the set of
 feasible utility allocations, and its geometry encodes the economy's
 production possibilities and exchange efficiency.
 
@@ -612,7 +612,7 @@ channel.*
 
 The replicator dynamics of evolutionary game theory:
 
-$$\dot{x}_i = x_i (f_i(x) - \bar{f}(x)) \tag{10.2}$$
+$$\dot{x}_{i} = x_i (f_i(x) - \bar{f}(x)) \tag{10.2}$$
 
 where $x_i$ is the share of the population playing strategy $i$ and $f_i$
 is the strategy's fitness. This is EXACTLY the Wright-Fisher / Jacobi

@@ -11,7 +11,7 @@
 
 **Abstract.**  
 The single-market framework of this monograph — one efficient market manifold
-$M^r \subset S^{d-1}_+$ — extends naturally to an economy with multiple interacting
+$M^r \subset S^{d-1}_{+}$ — extends naturally to an economy with multiple interacting
 markets. We identify three fundamental market manifolds: the financial asset manifold
 $M^r_{\rm fin}$ (stocks, bonds, currencies), the goods market manifold $M^s_{\rm goods}$
 (consumer prices, commodities, real assets), and the labour market manifold
@@ -23,7 +23,7 @@ money, and the Taylor rule all emerge as geometric identities in this framework.
 **Principal results:**
 
 **(i) Inflation = dual Fisher-Rao norm of the sectoral inflation covector.**
-The sectoral inflation rates $\pi^{(i)} = \dot{p}_i/p_i$ form a covector on the
+The sectoral inflation rates $\pi^{(i)} = \dot{p}_{i}/p_i$ form a covector on the
 goods price simplex $\Delta_{d_g-1}$. The geometric inflation rate is the dual
 Fisher-Rao norm: $\pi_t^{\rm geo} = \sqrt{\sum_i w_i(\pi^{(i)})^2}$, where $w_i$
 are expenditure shares and the dual metric is $(g^{\rm FR})^{-1}_{ij} = w_i\delta_{ij}$.
@@ -75,7 +75,7 @@ $b = (b_1,\ldots,b_{d_f})$ on $d_f$ financial assets (equities, bonds, currencie
 commodities) with Fisher-Rao metric $g^{\rm FR}_{ij} = \delta_{ij}/b_i$.
 
 The log-optimal portfolio $b^{\ast}_{\rm fin}$ maximises log-wealth growth.
-The efficient financial market manifold $M^r_{\rm fin} \subset S^{d_f-1}_+$
+The efficient financial market manifold $M^r_{\rm fin} \subset S^{d_f-1}_{+}$
 has dimension $r$ — the number of independent financial risk factors.
 
 For the US economy: $r \approx 4$–$6$ (equity, rates, credit, FX, commodity, volatility).
@@ -107,7 +107,7 @@ where $\ell_i$ is the share of total labour employed in sector $i$.
 The Fisher-Rao metric on $\Delta_{d_l-1}$ gives the distance between
 employment structures.
 
-The efficient labour market manifold $M^t_{\rm lab} \subset S^{d_l-1}_+$
+The efficient labour market manifold $M^t_{\rm lab} \subset S^{d_l-1}_{+}$
 has dimension $t$ — the number of independent labour market factors
 (skill premium, sectoral demand, geographic mobility, etc.).
 
@@ -136,16 +136,16 @@ $$\pi_t^{\rm geo} = |\pi|_{(g^{\rm FR})^{-1}}
 *The Fisher-Rao metric on the goods simplex is $g^{\rm FR}_{ij} = \delta_{ij}/w_i$.
 The dual (inverse) metric is $(g^{\rm FR})^{-1}_{ij} = w_i\delta_{ij}$, so the
 dual norm of a covector $\alpha$ is $|\alpha|_{(g^{\rm FR})^{-1}} = \sqrt{\sum_i w_i\alpha_i^2}$.
-Sectoral inflation rates $\pi^{(i)} = \dot{p}_i/p_i$ are naturally covectors
+Sectoral inflation rates $\pi^{(i)} = \dot{p}_{i}/p_i$ are naturally covectors
 (they act on expenditure shares to give the CPI rate $\sum w_i\pi^{(i)}$),
 so the dual metric is the correct one.*
 
-**Remark.** When all prices rise uniformly at rate $\pi_0$ (i.e., $\dot{p}_i/p_i = \pi_0$
+**Remark.** When all prices rise uniformly at rate $\pi_0$ (i.e., $\dot{p}_{i}/p_i = \pi_0$
 for all $i$), the geometric rate gives $\pi_t^{\rm geo} = \pi_0\sqrt{\sum w_i} = \pi_0$,
 recovering the headline rate. When relative prices change, $\pi_t^{\rm geo}$ captures
 both level and compositional effects.
 
-The standard CPI rate $\pi^{\rm CPI}_t = \sum_i w_i \dot{p}_i/p_i$ is the $L^1$ (weighted
+The standard CPI rate $\pi^{\rm CPI}_{t} = \sum_i w_i \dot{p}_{i}/p_i$ is the $L^1$ (weighted
 average) norm of sectoral inflation rates. Our measure is the Fisher-Rao ($L^2$) norm.
 By Jensen's inequality, $\pi^{\rm geo} \geq |\pi^{\rm CPI}|$ always; equality holds iff
 inflation is uniform across sectors.
@@ -165,7 +165,7 @@ of the sectoral inflation covector.**
 
 ### 2.2 The inflation manifold
 
-The inflation state at time $t$ is a pair $(p_t, \dot{p}_t/p_t)$ — the vector of
+The inflation state at time $t$ is a pair $(p_t, \dot{p}_{t}/p_t)$ — the vector of
 prices and their rates of change. This lives in the **tangent bundle** $TM^s_{\rm goods}$,
 not in the goods manifold itself. The **inflation manifold** is a subset of the
 unit tangent bundle:
@@ -206,7 +206,7 @@ as a fiber bundle with:
 A **connection** on $\mathcal{B}$ specifies, for each financial market state $b \in M^r_{\rm fin}$
 and each tangent direction $v\in T_b M^r_{\rm fin}$, how the goods market state moves:
 
-$$\nabla^{\rm flow}_v w = \Gamma^{\rm flow}(b,w)\cdot v \tag{3.2}$$
+$$\nabla^{\rm flow}_{v} w = \Gamma^{\rm flow}(b,w)\cdot v \tag{3.2}$$
 
 where $\Gamma^{\rm flow}$ is the **capital flow connection coefficient** — a matrix
 encoding how much goods market displacement $dw$ results from a given financial
@@ -225,7 +225,7 @@ $$A^{\rm flow}_{ij}(b) = \frac{\partial w_j}{\partial b_i}\bigg|_{\rm equilibriu
 *The inflation rate is the contraction of the curvature 2-form with the capital
 flow velocity:*
 
-$$\pi_t = |\iota_v F^{\rm flow}_t|_{g^{\rm FR}} \tag{3.4}$$
+$$\pi_t = |\iota_v F^{\rm flow}_{t}|_{g^{\rm FR}} \tag{3.4}$$
 
 *where $F^{\rm flow} = dA^{\rm flow} + A^{\rm flow}\wedge A^{\rm flow}$ is the curvature
 2-form of $\nabla^{\rm flow}$, and $v$ is the capital flow velocity vector.*

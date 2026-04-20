@@ -40,7 +40,7 @@ $S_n(\alpha,\beta,\gamma) = \int_{[0,1]^n}\prod_i t_i^{\alpha-1}(1-t_i)^{\beta-1
 $\beta$-ensemble on the portfolio simplex with Jacobi-type potential. Setting
 $\alpha = \beta = Tb^{\ast} - 1/2$ (the Jacobi parameters from MARKET_PROCESSES.md)
 and $\gamma = \beta/2$: the Selberg integral equals the MUP normalisation constant
-$\int_{M^r}W_T(b)\,d\mathrm{vol}_M$.
+$\int_{M^r}W_T(b)\,d\mathrm{vol}_{M}$.
 
 **(iv) The bulk spectral distribution.** For all three ensembles, the
 empirical spectral distribution of the return covariance converges to the
@@ -115,8 +115,8 @@ going counterclockwise, so the forward and backward return processes are not equ
 The return covariance is a complex Hermitian matrix in the GUE class.
 
 **(iii) Pseudo-Anosov / hyperbolic market: GSE ($\beta=4$).**
-The pseudo-Anosov map has stable and unstable foliations $\mathcal{F}^s, \mathcal{F}^u$
-that are conjugate in the symplectic sense: $\Omega(\mathcal{F}^s, \mathcal{F}^u) \neq 0$
+The pseudo-Anosov map has stable and unstable foliations $\mathcal{F}^{s}, \mathcal{F}^{u}$
+that are conjugate in the symplectic sense: $\Omega(\mathcal{F}^{s}, \mathcal{F}^{u}) \neq 0$
 for the symplectic form $\Omega$ on the cotangent bundle. This gives the return
 covariance a quaternionic structure with Kramers degeneracy ($T^2 = -1$, GSE class).
 
@@ -198,7 +198,7 @@ degeneracy than the CAPM — the GUE Vandermonde provides a stronger diversifica
 The Selberg integral \[Selberg 1944\]:
 
 $$S_n(a,b,\gamma) = \int_0^1\cdots\int_0^1
-\prod_{i=1}^n t_i^{a-1}(1-t_i)^{b-1}
+\prod_{i=1}^{n} t_i^{a-1}(1-t_i)^{b-1}
 \prod_{1\leq i<j\leq n}|t_i-t_j|^{2\gamma}\,dt_1\cdots dt_n \tag{3.1}$$
 
 has the exact closed form:
@@ -215,34 +215,34 @@ conformal field theory, the quantum Hall effect, and random matrix theory.
 *The normalisation constant of the Manifold Universal Portfolio on the $r$-dimensional
 market manifold is a Selberg integral:*
 
-$$\mathcal{Z}_T^M = \int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)
-= S_r(Tb^{\ast}_1 - 1/2,\; Tb^{\ast}_2 - 1/2,\; \beta/2) \tag{3.3}$$
+$$\mathcal{Z}_{T}^{M} = \int_{M^r} W_T(b)\,d\mathrm{vol}_{M}(b)
+= S_r(Tb^{\ast}_{1} - 1/2, Tb^{\ast}_{2} - 1/2, \beta/2) \tag{3.3}$$
 
 *where $\beta$ is the Dyson index of the market manifold (1, 2, or 4), and
-$b^{\ast}_1, b^{\ast}_2,\ldots$ are the log-optimal portfolio weights at the factor vertices.*
+$b^{\ast}_{1}, b^{\ast}_{2},\ldots$ are the log-optimal portfolio weights at the factor vertices.*
 
 *Proof.* In eigenvalue coordinates on the market manifold, the wealth function
-$W_T(b) = \exp(TL_T(b))$ takes the form $\prod_i \lambda_i^{Tb^{\ast}_i-1}(1-\lambda_i)^{Tb^{\ast}(1-\bullet)-1}$
-(the Jacobi ensemble potential), and the Riemannian volume element $d\mathrm{vol}_M$
+$W_T(b) = \exp(TL_T(b))$ takes the form $\prod_i \lambda_i^{Tb^{\ast}_{i}-1}(1-\lambda_i)^{Tb^{\ast}(1-\bullet)-1}$
+(the Jacobi ensemble potential), and the Riemannian volume element $d\mathrm{vol}_{M}$
 includes the Vandermonde factor $|\mathrm{Van}(\lambda)|^\beta$ from the Fisher-Rao
-metric. The integral becomes the Selberg integral (3.1) with $a = Tb^{\ast}_1 - 1/2$,
-$b = Tb^{\ast}_2 - 1/2$, $\gamma = \beta/2$. The closed form (3.2) gives the MUP
+metric. The integral becomes the Selberg integral (3.1) with $a = Tb^{\ast}_{1} - 1/2$,
+$b = Tb^{\ast}_{2} - 1/2$, $\gamma = \beta/2$. The closed form (3.2) gives the MUP
 normalisation exactly. $\square$
 
 **Corollary 3.2** *(The MUP partition function is exactly computable)*.
 *For a CAPM market ($\beta=1$) with $n=r$ factors:*
 
-$$\mathcal{Z}_T^{\rm CAPM} = S_r(Tb^{\ast}/r - 1/2,\; Tb^{\ast}/r - 1/2,\; 1/2)
+$$\mathcal{Z}_{T}^{\rm CAPM} = S_r(Tb^{\ast}/r - 1/2, Tb^{\ast}/r - 1/2, 1/2)
 = \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^{\ast}/r - 1/2 + k/2)\Gamma(1+(k+1)/2)}
 {\Gamma(2Tb^{\ast}/r - 1 + (r-1+k)/2)\Gamma(3/2)} \tag{3.4}$$
 
 *For a GUE market ($\beta=2$, Clifford torus):*
 
-$$\mathcal{Z}_T^{\rm GUE} = S_r(Tb^{\ast}/r - 1/2,\; Tb^{\ast}/r - 1/2,\; 1)
+$$\mathcal{Z}_{T}^{\rm GUE} = S_r(Tb^{\ast}/r - 1/2, Tb^{\ast}/r - 1/2, 1)
 = \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^{\ast}/r-1/2+k)\Gamma(k+2)}
 {\Gamma(2Tb^{\ast}/r-1+(r-1+k))\Gamma(2)} \tag{3.5}$$
 
-*The ratio $\mathcal{Z}_T^{\rm GUE}/\mathcal{Z}_T^{\rm CAPM}$ is an explicit function
+*The ratio $\mathcal{Z}_{T}^{\rm GUE}/\mathcal{Z}_{T}^{\rm CAPM}$ is an explicit function
 of $r$ and $T$ that measures the excess diversification provided by the GUE Clifford
 torus structure relative to the CAPM.*
 
@@ -293,7 +293,7 @@ pressure.
 *The equilibrium measure $\mu^{\ast}_\beta$ of the $\beta$-ensemble with potential
 $V(\lambda) = -L_T(b)$ is the log-optimal portfolio distribution on $M^r$:*
 
-$$\mu^{\ast}_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_M(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}$$
+$$\mu^{\ast}_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_{M}(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}$$
 
 — the MUP posterior distribution. The variational problem for the RMT equilibrium
 measure IS the MUP optimisation problem.
@@ -440,8 +440,8 @@ with $\beta=2$. The bulk distribution has the same Marchenko-Pastur support as G
 stronger level repulsion produces more regular spacing.
 
 **The Jacobi parameters match.** From MARKET_PROCESSES.md: the Jacobi diffusion
-parameters are $\alpha_i = Tb^{\ast}_i - 1/2$. From (7.2): the Wishart Laguerre parameter
-is $a = \beta(T-d-1)/2$. Setting $b^{\ast}_i = 1/d$ (equal-weight CAPM):
+parameters are $\alpha_i = Tb^{\ast}_{i} - 1/2$. From (7.2): the Wishart Laguerre parameter
+is $a = \beta(T-d-1)/2$. Setting $b^{\ast}_{i} = 1/d$ (equal-weight CAPM):
 $\alpha = T/d - 1/2 = \beta(T-d-1)/(2d) + O(1)$ — consistent. The Jacobi diffusion
 and the Wishart random matrix are the same object in different parameterisations.
 
@@ -453,7 +453,7 @@ the empirical spectral distribution of Wishart matrices to the Marchenko-Pastur 
 **Geometric form of Bai-Silverstein:** For an efficient CAPM market, the empirical
 spectral distribution of $\hat F / \mathrm{tr}(\hat F)$ (the normalised Fisher matrix)
 converges almost surely to the Marchenko-Pastur law — the same distribution as the
-MUP stationary distribution $\rho_\infty = d\mathrm{vol}_M/\mathrm{vol}(M)$
+MUP stationary distribution $\rho_\infty = d\mathrm{vol}_{M}/\mathrm{vol}(M)$
 (uniform on $M$). **The Bai-Silverstein theorem IS the FP stationarity result
 (R5 of WHATS_NEW) in random matrix language.**
 
@@ -469,13 +469,13 @@ MUP stationary distribution $\rho_\infty = d\mathrm{vol}_M/\mathrm{vol}(M)$
 | GUE ($\beta=2$) | Clifford torus (Berry phase breaks T-reversal) | $M = T^2$ |
 | GSE ($\beta=4$) | Pseudo-Anosov (symplectic foliation pairing) | $M = \Sigma^2_g$ |
 | Vandermonde $|\lambda_i-\lambda_j|^\beta$ | Fisher-Rao eigenvalue repulsion | $g^{\rm FR}$ pressure |
-| Marchenko-Pastur bulk | Factor eigenvalue distribution | $d\mathrm{vol}_M$ |
+| Marchenko-Pastur bulk | Factor eigenvalue distribution | $d\mathrm{vol}_{M}$ |
 | Tracy-Widom edge $F_\beta$ | Largest factor eigenvalue | $\hat\lambda_{\rm max}$ |
 | Mesoscopic crossover | $TM\to NM$ transition | Jacobi gap $\lambda_1$ |
-| Selberg integral | MUP partition function | $\mathcal{Z}_T^M$ |
+| Selberg integral | MUP partition function | $\mathcal{Z}_{T}^{M}$ |
 | Equilibrium measure $\mu^{\ast}$ | MUP posterior | $\pi_T(db)$ |
 | Wishart matrix | Sample Fisher information | $\hat F = X^TX/T$ |
-| Bai-Silverstein | FP stationarity = Jeffreys prior | $\rho_\infty = d\mathrm{vol}_M$ |
+| Bai-Silverstein | FP stationarity = Jeffreys prior | $\rho_\infty = d\mathrm{vol}_{M}$ |
 | Ratio test $r_n$ | Symmetry class detector | $\beta\in\{1,2,4\}$ |
 
 ### 8.2 New testable predictions
@@ -496,7 +496,7 @@ A spike beyond the $1\%$ left tail of the appropriate $F_\beta$ is a TW crisis s
 distribution of such exceedances around known market crises (2008, 2020).
 
 **Prediction 8.3** *(Selberg ratio as factor model test)*.
-The ratio $\mathcal{Z}_T^{\rm GUE}/\mathcal{Z}_T^{\rm CAPM}$ (equation 3.5/3.4) is
+The ratio $\mathcal{Z}_{T}^{\rm GUE}/\mathcal{Z}_{T}^{\rm CAPM}$ (equation 3.5/3.4) is
 computable analytically. If the market is in the GUE regime, the MUP log-wealth
 should exceed the CAPM MUP log-wealth by $\log(\mathcal{Z}^{\rm GUE}/\mathcal{Z}^{\rm CAPM})/T$.
 This is a direct test of whether the market's symmetry class is GOE or GUE.
@@ -555,11 +555,11 @@ eigenvalue dynamics (Kramers doublets — eigenvalues come in pairs).
 
 ## Summary: The RMT-Geometry-Finance Triangle
 
-$$\boxed{\begin{array}{ccc}
+$$\begin{array}{ccc}
 \text{Random Matrix Theory} & \longleftrightarrow & \text{Market Geometry} \\[6pt]
 \beta\in\{1,2,4\} & \longleftrightarrow & \text{Symmetry of }M \\
 \text{Vandermonde }|\lambda_i-\lambda_j|^\beta & \longleftrightarrow & \text{Fisher-Rao repulsion} \\
-\text{Marchenko-Pastur} & \longleftrightarrow & d\mathrm{vol}_M\text{ (stationary dist.)} \\
+\text{Marchenko-Pastur} & \longleftrightarrow & d\mathrm{vol}_{M}\text{ (stationary dist.)} \\
 \text{Tracy-Widom }F_\beta & \longleftrightarrow & \text{Largest factor eigenvalue} \\
 \text{Selberg integral} & \longleftrightarrow & \text{MUP partition function} \\
 \text{Equilibrium measure} & \longleftrightarrow & \text{MUP posterior} \\
@@ -576,7 +576,7 @@ manifold via Dyson's threefold way — it is not a modelling choice, it is a the
 
 ### Connections to Other Papers
 
-The derivative of the log Selberg integral $\partial \log S_r / \partial a_i$ with respect to the $i$-th parameter should equal the Shapley value $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ from HYPERCUBE_SHAPLEY.md. Since the Selberg integral is the MUP partition function (Result (iii) above), this would give a closed-form computational tool for Shapley values directly from the partition function, bypassing the combinatorial sum entirely (Conjecture C28). If correct, the Shapley attribution of Kelly growth to individual assets is encoded in the sensitivity of the random matrix partition function to its parameters — a deep link between cooperative game theory and random matrix theory.
+The derivative of the log Selberg integral $\partial \log S_r / \partial a_i$ with respect to the $i$-th parameter should equal the Shapley value $\phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$ from HYPERCUBE_SHAPLEY.md. Since the Selberg integral is the MUP partition function (Result (iii) above), this would give a closed-form computational tool for Shapley values directly from the partition function, bypassing the combinatorial sum entirely (Conjecture C28). If correct, the Shapley attribution of Kelly growth to individual assets is encoded in the sensitivity of the random matrix partition function to its parameters — a deep link between cooperative game theory and random matrix theory.
 
 ---
 

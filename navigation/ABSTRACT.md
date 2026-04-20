@@ -75,7 +75,7 @@ filtration); Clifford torus winding number = momentum/contrarian classification.
 
 ## Part IV: Geospatial, Contagion, LLMs, Random Matrices, Path Integrals
 
-**Geospatial** (new): H3/S2/Hilbert on $S^{d-1}_+$; contagion = Delaunay graph
+**Geospatial** (new): H3/S2/Hilbert on $S^{d-1}_{+}$; contagion = Delaunay graph
 (endogenous, not exogenous); Cheeger constant = systemic risk; Hawkes criticality =
 efficiency.
 
@@ -92,9 +92,9 @@ Tracy-Widom $F_\beta$ = distribution of largest factor eigenvalue. Vandermonde r
 = Fisher-Rao diversification pressure. Dyson BM = factor eigenvalue dynamics.
 
 **Path integrals** (new): constrained geometric Wiener measure on $M^r$ rather than
-all of $\mathbb{R}^d$. WKB saddle = geodesic = LAPLACE.md (Van Vleck = Fisher matrix).
-Theta function = winding sum over $\pi_1(T^2)=\mathbb{Z}^2$. McKean = unique geodesic
-on $\mathbb{H}^2$. Risk-neutral measure on $M$: efficient market means $\mathbb{P}=\mathbb{Q}$.
+all of $\mathbb{R}^{d}$. WKB saddle = geodesic = LAPLACE.md (Van Vleck = Fisher matrix).
+Theta function = winding sum over $\pi_1(T^2)=\mathbb{Z}^{2}$. McKean = unique geodesic
+on $\mathbb{H}^{2}$. Risk-neutral measure on $M$: efficient market means $\mathbb{P}=\mathbb{Q}$.
 Novikov condition = finite Willmore energy. Normal bundle integration = incompleteness
 premium. Langevin equation generates the same diffusion via Parisi-Wu stochastic quantisation.
 
@@ -112,7 +112,7 @@ from one observable using diffusion maps.
 **Hypercubes/Shapley** (new): $\Delta_{d-1}\subset[0,1]^d$ (simplex inside hypercube);
 Walsh-Hadamard functions on $[0,1]^d$ restricted to $\Delta_{d-1}$ = Jacobi polynomials;
 barycentric subdivision = Voronoi Delaunay (proved); Walsh ANOVA = Shapley decomposition.
-Shapley value of asset $i$ in Kelly game = $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$ (proved —
+Shapley value of asset $i$ in Kelly game = $\phi_i = b^{\ast}_{i}(\mu_i-\bar\mu)$ (proved —
 the unique fair attribution of Kelly growth satisfying efficiency, symmetry, dummy, linearity).
 Factor Shapley = unique fair factor attribution. Normal bundle projection of Shapley =
 unexplained alpha. Banzhaf power index = Walsh-Fourier coefficient.
@@ -127,7 +127,7 @@ The monograph contains at least 25 fully proved new results. The five most impor
 2. Only CAPMs stably efficient (proved for closed manifolds; boundary-corrected case for $d \gg r$ is OP32) — explains LTCM (stability index 5)
 3. MUP regret $r\log T/2T$ — 12× practical improvement, minimax optimal
 4. Dyson class forced by manifold symmetry — not a modelling choice
-5. Shapley attribution $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$ — unique fair attribution proved
+5. Shapley attribution $\phi_i = b^{\ast}_{i}(\mu_i-\bar\mu)$ — unique fair attribution proved
 
 ---
 

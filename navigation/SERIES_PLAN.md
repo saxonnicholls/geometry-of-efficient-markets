@@ -23,7 +23,7 @@
 Ch.1: FK functional on $(\Delta_{d-1},g^{\rm FR})$; WKB identity; Van Vleck = Fisher;
        stochastic Stokes theorem; $O(1/T^2)$ accuracy explained
 Ch.2: Portfolio weights as barycentric coordinates; Bhattacharyya isometry;
-       market manifold $M^r\subset S^{d-1}_+$; factor structure
+       market manifold $M^r\subset S^{d-1}_{+}$; factor structure
 Ch.3: Sharpe = curvature (proved); Willmore = inefficiency; EMH conjecture
 Ch.4: Classification (CAPMs only stable); MUP minimax regret $r\log T/2T$
 
@@ -63,7 +63,7 @@ Ch.16: Geometric filtrations; Voronoi atoms; LZ=filtration; general compressor t
 ### Part V — Geospatial, Contagion, and Machine Learning (Ch. 17–18)
 *GEOSPATIAL_CONTAGION, LLM_MANIFOLD* ← **New**
 
-Ch.17: H3/S2/Hilbert on $S^{d-1}_+$; Cheeger = systemic risk; Hawkes criticality;
+Ch.17: H3/S2/Hilbert on $S^{d-1}_{+}$; Cheeger = systemic risk; Hawkes criticality;
         contagion = Delaunay graph; H3 portfolio fingerprint; multi-scale information flow
 Ch.18: LMSR-softmax-Fisher identity; LLM convergence theorem; optimal dim = $r$;
         Kelly rate = minimum cross-entropy loss; side-channel in normal bundle;
@@ -76,7 +76,7 @@ Ch.19: Chaos ≡ stochastic on $M^r$ (Oseledets); Feigenbaum $\delta$ at bifurca
         Takens embedding ($2r+1$ dimension); optimal delay $\tau=1/\lambda_1$;
         symbolic Takens = LZ tree; three-step practical manifold estimation algorithm
 Ch.20: Simplex inside hypercube; Walsh = Jacobi polynomials; barycentric = Voronoi;
-        Shapley $\phi_i=b^{\ast}_i(\mu_i-\bar\mu)$; factor attribution; Banzhaf = Walsh-Fourier;
+        Shapley $\phi_i=b^{\ast}_{i}(\mu_i-\bar\mu)$; factor attribution; Banzhaf = Walsh-Fourier;
         ANOVA = Shapley; normal bundle Shapley = unexplained alpha
 Ch.21: Pairs trading from Hamiltonian; geometric thresholds; Berry phase entry filter;
         quantum pairs trading; C++ implementation

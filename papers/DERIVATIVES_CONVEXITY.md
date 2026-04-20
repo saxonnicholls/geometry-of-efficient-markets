@@ -94,12 +94,12 @@ of the index process on $M$.
 The index $I_t = b^{\ast}(t)^T S_t$ depends on both $S_t$ (prices) and $b^{\ast}(t)$ (evolving
 weights). On the market manifold, $b^{\ast}(t)$ follows the WF diffusion restricted to $M^r$:
 
-$$db^{\ast}_i = -\varepsilon^2 H_i(b^{\ast}(t))\,dt + \varepsilon\sum_k \sigma_{ik}(b^{\ast}(t))\,dW_k \tag{2.3}$$
+$$db^{\ast}_{i} = -\varepsilon^2 H_i(b^{\ast}(t))\,dt + \varepsilon\sum_k \sigma_{ik}(b^{\ast}(t))\,dW_k \tag{2.3}$$
 
 (from FK_SIMPLEX.md equation 2.5). For an efficient market ($H=0$), the drift vanishes
 and the portfolio evolution is a pure diffusion on $M$. The index volatility is:
 
-$$\sigma_I^2(b^{\ast}, t) = \sum_{ij} b^{\ast}_i b^{\ast}_j\,\Sigma_{ij}^{\rm asset}(t)
+$$\sigma_I^2(b^{\ast}, t) = \sum_{ij} b^{\ast}_{i} b^{\ast}_{j}\,\Sigma_{ij}^{\rm asset}(t)
 = b^{*T}\Sigma^{\rm asset} b^{\ast} \tag{2.4}$$
 
 where $\Sigma^{\rm asset}$ is the asset return covariance. In Fisher–Rao geometry:
@@ -129,10 +129,10 @@ factor portfolio.*
 For a derivative with payoff $\Psi(b^{\ast}(T), S_T)$ at expiry $T$, the price
 $V(b^{\ast}, S, t)$ satisfies the **manifold pricing PDE**:
 
-$$\frac{\partial V}{\partial t} + \mathcal{L}^M V + r_f(S)\cdot V - r_f V = 0 \tag{2.8}$$
+$$\frac{\partial V}{\partial t} + \mathcal{L}^{M} V + r_f(S)\cdot V - r_f V = 0 \tag{2.8}$$
 
-where $\mathcal{L}^M$ is the generator of the joint process $(b^{\ast}(t), S_t)$ restricted
-to $M^r \times \mathbb{R}^d_+$.
+where $\mathcal{L}^{M}$ is the generator of the joint process $(b^{\ast}(t), S_t)$ restricted
+to $M^r \times \mathbb{R}^{d}_+$.
 
 For an index option (payoff depends only on $I_t = b^{*T}S_t$), the PDE reduces to
 a 1-dimensional equation in the index value:
@@ -219,7 +219,7 @@ pricing literature, to our knowledge.
 **Remark** (Scope of the Takahashi application). The application of Takahashi's theorem
 requires that the coordinate functions of the embedding are eigenfunctions of the
 Laplacian. For the Bhattacharyya embedding $\phi: b \mapsto \sqrt{b}$, the coordinates
-$\sqrt{b_i}$ are eigenfunctions of $\Delta_{S^{d-1}_+}$ with eigenvalue $d-1$.
+$\sqrt{b_i}$ are eigenfunctions of $\Delta_{S^{d-1}_{+}}$ with eigenvalue $d-1$.
 However, the portfolio weights $b_i = (\sqrt{b_i})^2$ are NOT eigenfunctions. The
 geometric Black–Scholes formula therefore applies to payoffs expressed in Bhattacharyya
 coordinates $\sqrt{b}$, not in portfolio weight coordinates $b$. The correction for
@@ -270,10 +270,10 @@ Options traders can estimate the mean curvature — and hence the maximum Sharpe
 **Theorem 2.5** *(Willmore energy and vol-of-vol)*. *The variance of the implied volatility
 (vol-of-vol) satisfies:*
 
-$$\mathbb{E}[(\hat\sigma - \bar\sigma)^2] = \varepsilon^4\cdot\mathcal{W}_2(M)
+$$\mathbb{E}[(\hat\sigma - \bar\sigma)^2] = \varepsilon^4\cdot\mathcal{W}_{2}(M)
 + O(\varepsilon^6) \tag{2.17}$$
 
-*where $\mathcal{W}_2(M) = \int_M |II|^2\,d\mathrm{vol}$ is the Willmore energy of the
+*where $\mathcal{W}_{2}(M) = \int_M |II|^2\,d\mathrm{vol}$ is the Willmore energy of the
 second fundamental form. The vol-of-vol is a direct measure of the Willmore energy.*
 
 *Proof.* The variance of $\hat\sigma$ arises from the variation of the curvature correction
@@ -289,7 +289,7 @@ characteristics connect directly to the three curvature objects of the series:
 |:----------------------|:----------------|:------|
 | ATM vol level $\bar\sigma$ | $\mathrm{tr}[F_M^{-1}]^{1/2}$ | LAPLACE.md |
 | Vol skew $\partial\hat\sigma/\partial k$ | Mean curvature $H$ | MINIMAL_SURFACE.md |
-| Vol-of-vol | Willmore energy $\mathcal{W}_2(M)$ | SVD_MANIFOLD.md |
+| Vol-of-vol | Willmore energy $\mathcal{W}_{2}(M)$ | SVD_MANIFOLD.md |
 
 The options market is a **readout device for the differential geometry of the market
 manifold.** An efficient market has flat ATM vol, zero skew, and zero vol-of-vol from
@@ -305,17 +305,17 @@ the deviation from the minimal surface.
 The log-optimal portfolio solves:
 
 $$\max_{b \in \Delta_{d-1}} L_T(b) = \max_{b \geq 0,\, \mathbf{1}^Tb=1}
-\frac{1}{T}\sum_{t=1}^T \log\langle b, x_t\rangle \tag{3.1}$$
+\frac{1}{T}\sum_{t=1}^{T} \log\langle b, x_t\rangle \tag{3.1}$$
 
 **This is a disciplined convex program** in the sense of Grant–Boyd \[2008\]:
 - Objective: $L_T(b) = \frac{1}{T}\sum_t\log(b^Tx_t)$ is concave in $b$ (log-sum of linear functions).
 - Constraints: $\Delta_{d-1}$ is a convex polytope.
 - DCP form: `maximize log_sum_exp(log(X @ b))` in CVXPY notation.
 
-The **sub-differential** of $L_T$ at a non-smooth point (e.g.\ when some $b^{\ast}_i = 0$):
+The **sub-differential** of $L_T$ at a non-smooth point (e.g.\ when some $b^{\ast}_{i} = 0$):
 
-$$\partial L_T(b^{\ast}) = \left\{g \in \mathbb{R}^d : g_i = \frac{1}{T}\sum_t\frac{x_{t,i}}{b^{*T}x_t}
-+ \lambda_i, \; \lambda_i \geq 0, \; \lambda_i b^{\ast}_i = 0\right\} \tag{3.2}$$
+$$\partial L_T(b^{\ast}) = \left\{g \in \mathbb{R}^{d} : g_i = \frac{1}{T}\sum_t\frac{x_{t,i}}{b^{*T}x_t}
++ \lambda_i, \lambda_i \geq 0, \lambda_i b^{\ast}_{i} = 0\right\} \tag{3.2}$$
 
 This is exactly the KKT sub-differential condition from Section 1 of CONVERGENCE.md —
 the normal gradient being in the sub-differential cone corresponds to $H \neq 0$ at a
@@ -331,7 +331,7 @@ $$L_T^{\ast}(p) = \sup_{b \in \Delta_{d-1}} \left[\langle p, b\rangle - (-L_T(b)
 
 **Theorem 3.1** *(Legendre transform = log-partition function)*. *The conjugate is:*
 
-$$L_T^{\ast}(p) = \frac{1}{T}\sum_{t=1}^T\log\sum_{i=1}^d e^{p_i}x_{t,i} - \frac{1}{T}\sum_t\log(b^{*T}x_t) \tag{3.4}$$
+$$L_T^{\ast}(p) = \frac{1}{T}\sum_{t=1}^{T}\log\sum_{i=1}^{d} e^{p_i}x_{t,i} - \frac{1}{T}\sum_t\log(b^{*T}x_t) \tag{3.4}$$
 
 *The Legendre transform of the log-growth rate is the log of the moment generating
 function of the return distribution — the **cumulant generating function** of $\log x_t$.*
@@ -346,7 +346,7 @@ log-return is the moment parameter, and the log-growth rate is the log-partition
 $$\frac{d\mathbb{Q}^\theta}{d\mathbb{P}} = \frac{\exp(\theta^T\log x_t)}
 {\mathbb{E}^\mathbb{P}[\exp(\theta^T\log x_t)]} \tag{3.5}$$
 
-defines a family of equivalent measures parameterised by $\theta \in \mathbb{R}^d$.
+defines a family of equivalent measures parameterised by $\theta \in \mathbb{R}^{d}$.
 The risk-neutral measure for option pricing is the $\theta^{\ast}$ such that
 $\mathbb{E}^{\mathbb{Q}^{\theta^{\ast}}}[x_t] = r_f\mathbf{1}$ (martingale condition). By
 the exponential family duality:
@@ -362,13 +362,13 @@ no-idiosyncratic-arbitrage.
 ### 3.3 Convexity of the Willmore energy
 
 **Theorem 3.2** *(Willmore energy as a convex function of the spectrum)*. *The Willmore
-energy $\mathcal{W}_2(M) = \int_M\sum_i\kappa_i^2\,d\mathrm{vol}$ is a convex function
+energy $\mathcal{W}_{2}(M) = \int_M\sum_i\kappa_i^2\,d\mathrm{vol}$ is a convex function
 of the principal curvature vector $\kappa = (\kappa_1,\ldots,\kappa_r)$:*
 
-$$\mathcal{W}_2(\lambda\kappa + (1-\lambda)\kappa') \leq \lambda\mathcal{W}_2(\kappa)
-+ (1-\lambda)\mathcal{W}_2(\kappa') \quad \forall\lambda \in [0,1] \tag{3.7}$$
+$$\mathcal{W}_{2}(\lambda\kappa + (1-\lambda)\kappa') \leq \lambda\mathcal{W}_{2}(\kappa)
++ (1-\lambda)\mathcal{W}_{2}(\kappa') \quad \forall\lambda \in [0,1] \tag{3.7}$$
 
-*Proof.* $\mathcal{W}_2 = \int\|\kappa\|_2^2\,d\mathrm{vol}$ is the integral of $\|\cdot\|_2^2$,
+*Proof.* $\mathcal{W}_{2} = \int\|\kappa\|_2^2\,d\mathrm{vol}$ is the integral of $\|\cdot\|_2^2$,
 which is convex in $\kappa$ for each fixed point. The integral of a convex function is
 convex. $\square$
 
@@ -500,7 +500,7 @@ The Fisher information matrix $F(b^{\ast})$ is:
 
 - The **negative Hessian** of $L_T$ (concave, so PSD Hessian is negative: $-\nabla^2 L_T = F \geq 0$)
 - The **Fisher information** of the return distribution (information-geometric PSD metric)
-- The **Gram matrix** of the normalised return vectors: $F = \frac{1}{T}X_{\rm norm}^T X_{\rm norm}$ where $X_{\rm norm,ti} = x_{ti}/(b^{*T}x_t)$
+- The **Gram matrix** of the normalised return vectors: $F = \frac{1}{T}X_{\rm norm}^{T} X_{\rm norm}$ where $X_{\rm norm,ti} = x_{ti}/(b^{*T}x_t)$
 - The **inverse covariance** of the log-optimal portfolio (Cramér–Rao)
 
 **Boyd connection:** Boyd's group has extensively studied Gram matrix optimisation
@@ -579,7 +579,7 @@ linearly.
 The log-optimal portfolio program (3.1) can be written as an unconstrained program
 using the log-barrier:
 
-$$\max_{b \in \mathbb{R}^d} L_T(b) + \mu\sum_{i=1}^d\log b_i
+$$\max_{b \in \mathbb{R}^{d}} L_T(b) + \mu\sum_{i=1}^{d}\log b_i
 - \mu\log(\mathbf{1}^Tb - 1)^2 \tag{5.8}$$
 
 (log-barrier for the simplex constraints $b_i \geq 0$, $\sum b_i = 1$). Boyd's interior
@@ -631,20 +631,20 @@ The manifold geometry provides a unified taxonomy of portfolio risks:
 **Definition 6.1** (Geometric risk decomposition). *For portfolio $b \in \Delta_{d-1}$
 relative to the log-optimal $b^{\ast}$ on market manifold $M$:*
 
-$$\mathrm{Risk}(b) = \underbrace{d_M^2(b^{\ast}, b_M)}_{\text{factor risk}} + \underbrace{d_N^2(b^{\ast}, b)}_{\text{idiosyncratic risk}} + \underbrace{H^2\cdot\tau}_{\text{efficiency risk}} + \underbrace{\mathcal{W}_2(M)\cdot\varepsilon^2}_{\text{curvature risk}} \tag{6.1}$$
+$$\mathrm{Risk}(b) = \underbrace{d_M^2(b^{\ast}, b_M)}_{\text{factor risk}} + \underbrace{d_N^2(b^{\ast}, b)}_{\text{idiosyncratic risk}} + \underbrace{H^2\cdot\tau}_{\text{efficiency risk}} + \underbrace{\mathcal{W}_{2}(M)\cdot\varepsilon^2}_{\text{curvature risk}} \tag{6.1}$$
 
 *where:*
 - *$d_M$ = Fisher–Rao distance along $M$ (systematic factor allocation error)*
 - *$d_N$ = Fisher–Rao distance to $M$ (idiosyncratic position)*
 - *$H^2\tau$ = mean curvature contribution (market inefficiency premium)*
-- *$\mathcal{W}_2\varepsilon^2$ = Willmore curvature risk (vol-of-vol contribution)*
+- *$\mathcal{W}_{2}\varepsilon^2$ = Willmore curvature risk (vol-of-vol contribution)*
 
 **Proposition 6.2** (Risk attribution). *The terms in (6.1) are mutually orthogonal in
 $g^{FR}$ and correspond to independent sources of portfolio return uncertainty.*
 
 This gives a four-component risk model, compared to the two components (systematic +
 idiosyncratic) of classical factor models. The two additional components — efficiency risk
-($H^2$) and curvature risk ($\mathcal{W}_2$) — are new contributions from the manifold
+($H^2$) and curvature risk ($\mathcal{W}_{2}$) — are new contributions from the manifold
 geometry and have direct option pricing interpretations (equations 2.15 and 2.17).
 
 ### 6.2 Stress testing as geodesic perturbation
@@ -657,7 +657,7 @@ $$d_{g^{FR}}(b^{\ast}, b_{\rm stress}) = \sqrt{(\delta b)^T F(b^{\ast})\delta b}
 measures the "information distance" of the stress scenario from the base case. The
 stress loss is:
 
-$$\Delta L = L(b_{\rm stress}) - L(b^{\ast}) = -\frac{1}{2}\|\delta b\|_{F(b^{\ast})}^2 + O(\|\delta b\|^3) \tag{6.3}$$
+$$\Delta L = L(b_{\rm stress}) - L(b^{\ast}) = -\frac{1}{2}\|\delta b\|_{F(b^{\ast})}^{2} + O(\|\delta b\|^3) \tag{6.3}$$
 
 The Fisher–Rao ball $\{b : d_{g^{FR}}(b,b^{\ast}) \leq \rho\}$ contains all scenarios with
 log-growth loss $\leq \rho^2/2$. **The CVaR at level $\alpha$ equals the worst-case
@@ -680,7 +680,7 @@ We collect the convex operators that appear naturally in the manifold market the
 |:-------|:--------------------|:---------------|
 | $L_T(b)$ | Concave function | DCP objective |
 | $F(b^{\ast})$ | PSD Hessian | SDP constraint |
-| $\mathcal{W}_2(M)$ | Convex in $\kappa$ | DCP objective |
+| $\mathcal{W}_{2}(M)$ | Convex in $\kappa$ | DCP objective |
 | CVaR$_\alpha(b)$ | Convex in $b$ | LP / SOCP |
 | $\|F_r\|_*$ | Convex relaxation of rank | Nuclear norm min |
 | $\mathrm{Area}(M)$ | Non-convex globally, locally | Gradient descent near min |
@@ -713,7 +713,7 @@ through the relation $\mathrm{Sharpe}^{\ast} = |H|$.
 from the return covariance?
 
 **Problem 3** (Geometric SABR model). The SABR stochastic volatility model
-\[Hagan et al. 2002\] is a diffusion on $\mathbb{R}^2_+$. Embed it in our framework as a
+\[Hagan et al. 2002\] is a diffusion on $\mathbb{R}^{2}_+$. Embed it in our framework as a
 diffusion on a 2-dimensional submanifold of the portfolio simplex and derive the
 manifold-corrected SABR implied vol formula. The standard SABR formula should arise as
 the flat-manifold ($H=0$) special case.

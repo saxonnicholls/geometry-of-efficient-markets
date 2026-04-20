@@ -27,7 +27,7 @@ as comprehensively as any model can fail a statistical test.
 Second, we construct a family of palindromically correct replacement
 SDEs. The key requirement: **time-reversibility**. A diffusion is
 time-reversible if and only if it satisfies detailed balance with respect
-to some stationary distribution. For assets on $\mathbb{R}_+$: log-OU
+to some stationary distribution. For assets on $\mathbb{R}_{+}$: log-OU
 (exponential Ornstein-Uhlenbeck). For portfolio weights on the simplex:
 symmetric Jacobi. For volatility: CIR. For a definitive innovation: the
 **fractional Jacobi process** with Hurst parameter $H < 1/2$, which

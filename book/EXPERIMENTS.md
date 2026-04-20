@@ -389,7 +389,7 @@ Predicted improvement factor: $(d-1)/r$. For $d=30$, $r=4$: factor $\approx 7.25
 **H0:** The MUP does not outperform Cover's portfolio in annualised log-wealth.
 
 **H1 (our theory):** The annualised log-wealth gap $L(b^{\ast}) - L(\hat b^{\rm Cover})$
-satisfies $L(\hat b^M_T) - L(\hat b^{\rm Cover}_T) \approx (d-1-r)\log T / 2T$
+satisfies $L(\hat b^M_T) - L(\hat b^{\rm Cover}_{T}) \approx (d-1-r)\log T / 2T$
 where $L = $ Kelly growth rate. The gap should increase with $d$ and decrease with $r$.
 
 **What would falsify this:** MUP does not improve over Cover's portfolio after
@@ -758,7 +758,7 @@ for S&P 500 options.
 **H0:** CBOE SKEW is uncorrelated with the estimated market manifold curvature $H$.
 
 **H1 (our theory):** The regression
-$\mathrm{SKEW}_t = \gamma_0 + \gamma_1 \hat H^2_t / (2\sigma_{I,t}) + \varepsilon_t$
+$\mathrm{SKEW}_{t} = \gamma_0 + \gamma_1 \hat H^2_t / (2\sigma_{I,t}) + \varepsilon_t$
 has slope $\gamma_1 > 0$ (p < 0.05) and explains at least 10% of SKEW variation.
 
 **What would falsify this:** No significant relationship, or VIX alone explains

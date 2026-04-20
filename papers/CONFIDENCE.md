@@ -15,8 +15,8 @@ investor confidence, business confidence — and treat it as a leading indicator
 of spending, investment, and growth. But what IS confidence, mathematically?
 We propose a precise answer within the geometric framework of this monograph:
 **confidence is the σ-algebra you are willing to act on.** Every agent has
-access to a filtration $\mathcal{F}^A_t$ (everything they know). But they act
-on only a sub-σ-algebra $\mathcal{F}^{\rm conf}_t \subseteq \mathcal{F}^A_t$
+access to a filtration $\mathcal{F}^{A}_t$ (everything they know). But they act
+on only a sub-σ-algebra $\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{A}_t$
 — the events they believe they can distinguish reliably enough to commit
 capital. Confidence is the ratio of the acted-upon σ-algebra to the available
 σ-algebra. When confidence is high, agents act on most of what they know.
@@ -52,7 +52,7 @@ longer distinguish good investment opportunities from bad ones.
 
 **(iv) Confidence in market efficiency is self-referential.** If agents
 believe the market is efficient, they stop looking for alpha — their
-$\mathcal{F}^{\rm conf}_t$ collapses to the market portfolio. But this
+$\mathcal{F}^{\rm conf}_{t}$ collapses to the market portfolio. But this
 reduces the number of active observers, which reduces the effective channel
 capacity, which makes the market LESS efficient. Conversely, if agents believe
 the market is inefficient, they search for alpha, increasing the observer
@@ -96,13 +96,13 @@ question: what formal object changes when confidence changes?
 We propose a precise answer: **confidence is the σ-algebra you are willing
 to act on.**
 
-**Definition 1.1** (Confidence σ-algebra). *Let $\mathcal{F}^A_t$ be the
+**Definition 1.1** (Confidence σ-algebra). *Let $\mathcal{F}^{A}_t$ be the
 full filtration available to agent $A$ at time $t$ — everything they know.
-The **confidence σ-algebra** $\mathcal{F}^{\rm conf,A}_t$ is the largest
-sub-σ-algebra of $\mathcal{F}^A_t$ such that $A$ is willing to condition
-their actions on any event in $\mathcal{F}^{\rm conf,A}_t$:*
+The **confidence σ-algebra** $\mathcal{F}^{\rm conf,A}_{t}$ is the largest
+sub-σ-algebra of $\mathcal{F}^{A}_t$ such that $A$ is willing to condition
+their actions on any event in $\mathcal{F}^{\rm conf,A}_{t}$:*
 
-$$\mathcal{F}^{\rm conf,A}_t = \{E \in \mathcal{F}^A_t : A \text{ will commit capital based on the occurrence of } E\} \tag{1.1}$$
+$$\mathcal{F}^{\rm conf,A}_{t} = \{E \in \mathcal{F}^{A}_t : A \text{ will commit capital based on the occurrence of } E\} \tag{1.1}$$
 
 This is a σ-algebra (closed under complements and countable unions) because:
 - If you're willing to bet on $E$, you're willing to bet on "not $E$"
@@ -113,7 +113,7 @@ This is a σ-algebra (closed under complements and countable unions) because:
 **Definition 1.2** (Confidence ratio). *The **confidence ratio** of agent $A$
 at time $t$ is:*
 
-$$\rho^A_t = \frac{\log |\mathcal{F}^{\rm conf,A}_t|}{\log |\mathcal{F}^A_t|} \in [0, 1] \tag{1.2}$$
+$$\rho^A_t = \frac{\log |\mathcal{F}^{\rm conf,A}_{t}|}{\log |\mathcal{F}^{A}_t|} \in [0, 1] \tag{1.2}$$
 
 *where $|\cdot|$ denotes the number of atoms (for discrete σ-algebras) or
 the dimension of the generated L² space (for continuous ones). When
@@ -128,11 +128,11 @@ zero confidence (act on nothing — hold cash).*
 | $\rho \approx 0.2$ | Distinguish "risk-on" vs "risk-off" | Binary allocation (equities or bonds) | Fearful but invested |
 | $\rho \approx 0.5$ | Distinguish sectors and major factors | Factor-level allocation | Normal cautious |
 | $\rho \approx 0.8$ | Distinguish individual assets | Stock picking | Normal confident |
-| $\rho = 1$ | Full $\mathcal{F}^A_t$ | Act on all information | Maximum conviction |
+| $\rho = 1$ | Full $\mathcal{F}^{A}_t$ | Act on all information | Maximum conviction |
 
 The key insight: **you don't lose information when you lose confidence. You
 lose the willingness to ACT on information.** The information is still in
-$\mathcal{F}^A_t$. But the agent retreats to a coarser σ-algebra, treating
+$\mathcal{F}^{A}_t$. But the agent retreats to a coarser σ-algebra, treating
 many distinguishable states as if they were the same.
 
 A consumer who "loses confidence" doesn't forget that restaurants exist. They
@@ -176,7 +176,7 @@ $\rho = 0$: 1 cell (the entire manifold is one undifferentiated blob).
 
 The filtration capacity (INCOMPLETENESS.md Theorem C) drops accordingly:
 
-$$\text{Cap}_t(\mathcal{F}^{\rm conf}) = \rho \cdot \log N = \rho \cdot \text{Cap}_t(\mathcal{F}^A) \tag{2.3}$$
+$$\text{Cap}_{t}(\mathcal{F}^{\rm conf}) = \rho \cdot \log N = \rho \cdot \text{Cap}_{t}(\mathcal{F}^{A}) \tag{2.3}$$
 
 Confidence scales the filtration capacity linearly. Half the confidence =
 half the bits per observation period.
@@ -217,7 +217,7 @@ The market's information-processing capacity (MANIFOLD_IS_THE_CHANNEL.md
 Theorem MC1) is $C = h_{\rm Kelly}$ — the Kelly growth rate. But this assumes
 all agents act on their full information. With heterogeneous confidence:
 
-$$C_{\rm eff} = \sum_{k=1}^K w_k \cdot \rho^{(k)} \cdot C^{(k)} \tag{3.1}$$
+$$C_{\rm eff} = \sum_{k=1}^{K} w_k \cdot \rho^{(k)} \cdot C^{(k)} \tag{3.1}$$
 
 where $K$ is the number of agents, $w_k$ is agent $k$'s market weight,
 $\rho^{(k)}$ is their confidence ratio, and $C^{(k)}$ is the channel capacity
@@ -319,10 +319,10 @@ on the σ-algebra others are willing to use — the shared filtration from
 OBSERVERS_AND_CHANNELS.md.
 
 If your counterparty retreats to a coarse σ-algebra, the shared filtration
-$\mathcal{F}^{A \cap B}_t$ coarsens even if YOUR filtration hasn't changed.
+$\mathcal{F}^{A \cap B}_{t}$ coarsens even if YOUR filtration hasn't changed.
 You can't trade on information that your counterparty can't distinguish:
 
-$$\mathcal{F}^{\rm shared}_t = \mathcal{F}^{\rm conf,A}_t \cap \mathcal{F}^{\rm conf,B}_t \tag{4.3}$$
+$$\mathcal{F}^{\rm shared}_{t} = \mathcal{F}^{\rm conf,A}_{t} \cap \mathcal{F}^{\rm conf,B}_{t} \tag{4.3}$$
 
 If agent B has $\rho^B = 0$ (no confidence), the shared filtration is
 trivial regardless of A's confidence. The trade can't happen. Confidence
@@ -495,7 +495,7 @@ Confidence determines which regime you're in.
 
 ### 7.1 Fear = retreat to coarser σ-algebra
 
-Fear, in our framework, is the contraction of $\mathcal{F}^{\rm conf}_t$:
+Fear, in our framework, is the contraction of $\mathcal{F}^{\rm conf}_{t}$:
 
 $$\text{Fear:} \quad \frac{d\rho}{dt} < 0 \tag{7.1}$$
 
@@ -520,9 +520,9 @@ the other side and gains what you lost).
 
 Greed is the OPPOSITE: claiming a finer σ-algebra than the data supports.
 
-$$\text{Greed:} \quad \mathcal{F}^{\rm conf}_t \supsetneq \mathcal{F}^{\rm justified}_t \tag{7.3}$$
+$$\text{Greed:} \quad \mathcal{F}^{\rm conf}_{t} \supsetneq \mathcal{F}^{\rm justified}_{t} \tag{7.3}$$
 
-where $\mathcal{F}^{\rm justified}_t$ is the σ-algebra that the data
+where $\mathcal{F}^{\rm justified}_{t}$ is the σ-algebra that the data
 actually supports at confidence level $1 - \alpha$ (for some significance
 level $\alpha$).
 
@@ -580,7 +580,7 @@ communication channel. Confidence adds a crucial qualification: the
 **effective** channel is not the manifold but the manifold RESTRICTED to the
 confidence σ-algebra:
 
-$$\mathcal{C}_{\rm eff} = \mathcal{C}_M |_{\mathcal{F}^{\rm conf}} \tag{8.1}$$
+$$\mathcal{C}_{\rm eff} = \mathcal{C}_{M} |_{\mathcal{F}^{\rm conf}} \tag{8.1}$$
 
 The full channel exists. But agents only use the part they're confident
 about. The unused capacity is the "dark matter" of market efficiency —
@@ -607,7 +607,7 @@ INCOMPLETENESS.md identifies three walls: observational, computational,
 axiomatic. Confidence creates a FOURTH wall that sits INSIDE the
 observational wall:
 
-$$\mathcal{F}^{\rm conf}_t \subseteq \mathcal{F}^{\rm comp}_t \subseteq \mathcal{F}^M_t \subseteq \mathcal{F}^{\rm oracle}_t \tag{8.2}$$
+$$\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{\rm comp}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{\rm oracle}_{t} \tag{8.2}$$
 
 The confidence wall is the innermost — the tightest constraint on what an
 agent actually DOES with their knowledge. The computational wall says
@@ -625,7 +625,7 @@ wall constrains what actually happens.
 
 **Theorem CF1** (Confidence is a σ-algebra). The set of events an agent is
 willing to condition their capital allocation on forms a σ-algebra
-$\mathcal{F}^{\rm conf}_t \subseteq \mathcal{F}^A_t$.
+$\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{A}_t$.
 
 **Theorem CF2** (Effective channel capacity). The market's effective
 information-processing capacity is $C_{\rm eff} = \bar{\rho} \cdot C_{\rm full}$,

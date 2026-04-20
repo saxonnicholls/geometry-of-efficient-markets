@@ -116,8 +116,8 @@ On 18 June, the market was in cell $A_0$ by consensus — the physical measure a
 $\mathbb{P}(A_0) \approx 0.7$.
 
 Rothschild had normal bundle information: he knew the actual Voronoi cell ($A_1$)
-while the market's filtration $\mathcal{F}^M_t$ still assigned $\mathbb{P}(A_1) = 0.3$.
-His information was in $\mathcal{F}^{\rm full}_t \setminus \mathcal{F}^M_t$ — the
+while the market's filtration $\mathcal{F}^{M}_t$ still assigned $\mathbb{P}(A_1) = 0.3$.
+His information was in $\mathcal{F}^{\rm full}_{t} \setminus \mathcal{F}^{M}_t$ — the
 idiosyncratic filtration, specifically the normal bundle component corresponding to
 the "battle outcome" shock.
 
@@ -138,7 +138,7 @@ carefully documents the family's information network and its role in the bond ma
 Ferguson's central thesis — that the Rothschilds succeeded through superior
 information infrastructure — is exactly the geometric claim: they consistently
 operated on a filtration $\mathcal{F}^{\rm full}$ while others operated on
-$\mathcal{F}^M$.
+$\mathcal{F}^{M}$.
 
 ---
 
@@ -205,13 +205,13 @@ $H$ changed sign).
 This is the efficient market condition $H=0$ stated without mathematics. The market
 is on a minimal surface; it has no exploitable drift; it is the sum of all information.
 Attempts to second-guess it based on opinion (rather than information in
-$\mathcal{F}^{\rm full}\setminus\mathcal{F}^M$) generate no alpha.
+$\mathcal{F}^{\rm full}\setminus\mathcal{F}^{M}$) generate no alpha.
 
 **"I know from experience that nobody can give me a tip or a series of tips that will
 make more money for me than my own judgement":**
-The log-optimal portfolio $b^{\ast}$ is the unique $\mathcal{F}^M$-adapted strategy that
+The log-optimal portfolio $b^{\ast}$ is the unique $\mathcal{F}^{M}$-adapted strategy that
 maximises log-growth. Tips (unless they are genuine $\mathcal{F}^\perp$ information)
-are in $\mathcal{F}^M$ — already priced in. Livermore had learned, empirically,
+are in $\mathcal{F}^{M}$ — already priced in. Livermore had learned, empirically,
 the complexity-theoretic EMH (#**P**-hardness of exact prediction).
 
 **Livermore's 1907 short and 1929 short:**
@@ -223,7 +223,7 @@ short through the eventual collapse.
 
 *His own ruin* in 1940 came from a characteristic failure: he tried to operate on
 $\mathcal{F}^\perp$ (idiosyncratic tips from his children and associates) rather than
-$\mathcal{F}^M$ (his natural habitat). The idiosyncratic information was worthless in
+$\mathcal{F}^{M}$ (his natural habitat). The idiosyncratic information was worthless in
 an efficient market and costly in transaction costs.
 
 **Scholar:** Jack Schwager, *Market Wizards* \[1989\]: "The great traders aren't
@@ -240,7 +240,7 @@ The US stock market of 1924-1929 was a market operating far from its minimal sur
 The Willmore energy $\mathcal{W}(M)$ was very large: speculative excess, margin
 buying, investment trusts leveraging leveraged positions. The mean curvature was
 high and positive ($H\gg 0$) — by the Sharpe-curvature theorem, enormous alpha was
-theoretically available for any strategy that could maintain $\mathcal{F}^M$-adapted
+theoretically available for any strategy that could maintain $\mathcal{F}^{M}$-adapted
 positioning.
 
 *The geometric reading of the crash:* MCF — the market's self-correction mechanism
@@ -295,7 +295,7 @@ with durable competitive advantages.
 
 **"Circle of competence" = Voronoi cell.** Buffett will not invest outside his cell.
 He does not have alpha outside $A_0$; he has information ($\mathcal{F}^{\rm full}$
-vs $\mathcal{F}^M$) within it. The cell boundary is defined by the Fisher-Rao
+vs $\mathcal{F}^{M}$) within it. The cell boundary is defined by the Fisher-Rao
 distance beyond which his information advantage degenerates.
 
 **"Wonderful businesses at fair prices"** = entering at $z^{\ast} = \sqrt{1+r/\kappa}$
@@ -577,7 +577,7 @@ force.
 
 **The prediction this framework makes:** leveraged strategies with effective weights
 approaching or exceeding 1 are at the Feller exit boundary. The Feller condition
-$Tb^{\ast}_i > 3/2$ (SOBOLEV ESC_UNDER OPTIONS ESC_UNDER GREEKS, Lemma 1.3) is a stability criterion for
+$Tb^{\ast}_{i} > 3/2$ (SOBOLEV ESC_UNDER OPTIONS ESC_UNDER GREEKS, Lemma 1.3) is a stability criterion for
 portfolio weights. Any strategy violating this condition is vulnerable to the LDI
 dynamics — forced selling when the position moves adversely.
 
@@ -597,7 +597,7 @@ constant declines, (4) MCF singularity forms, (5) manifold collapses to lower ge
 Minsky's "financial instability hypothesis": stability breeds instability. In geometric
 terms: a period of low volatility (small $H$, efficient market) encourages leverage
 (increasing effective portfolio weights), which moves portfolios toward the simplex
-boundary, which reduces the Feller stability parameter $\alpha = Tb^{\ast}_i - 1/2$,
+boundary, which reduces the Feller stability parameter $\alpha = Tb^{\ast}_{i} - 1/2$,
 which makes the market vulnerable to the LDI-type boundary failures. Minsky described
 the geometry without knowing it.
 

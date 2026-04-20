@@ -99,7 +99,7 @@ Compute rescaled $\hat\lambda_{\rm max}$ quarterly. Compare to $F_1$/$F_2$ CDFs.
 Test whether exceedances predict VIX spikes by 3-6 months.
 
 **OP18. Selberg Ratio Test ★★**
-Compute $\mathcal{Z}_T^{\rm GUE}/\mathcal{Z}_T^{\rm CAPM}$ analytically.
+Compute $\mathcal{Z}_{T}^{\rm GUE}/\mathcal{Z}_{T}^{\rm CAPM}$ analytically.
 Test whether empirical MUP log-wealth difference matches the Selberg ratio.
 
 **OP19. $E_8$ Symmetry in 9-Asset Markets ★★★★★**
@@ -124,7 +124,7 @@ Apply three-step algorithm to S\&P 500 data.
 Verify FNN fraction drops at $m^{\ast}=9$ (for $r=4$ factors).
 
 **OP24. Shapley Attribution Decomposition ★**
-Implement $\phi_i=b^{\ast}_i(\mu_i-\bar\mu)$ on Fama-French 25 portfolios.
+Implement $\phi_i=b^{\ast}_{i}(\mu_i-\bar\mu)$ on Fama-French 25 portfolios.
 Compare to standard factor attribution. Test normal bundle component = unexplained alpha.
 
 **OP25. Transformer Dimension Test ★**
@@ -173,7 +173,7 @@ Prove C26 (Clifford torus normal bundle holonomy $\subseteq U(n)$) and C27
 the full proof of the Dyson class correspondence. *(RANDOM_MATRIX)*
 
 **OP34. Establish the Selberg-Shapley Identity ★★**
-Prove C28: $\partial/\partial a_i \log S_r(a,b,\gamma) = \phi_i = b^{\ast}_i(\mu_i - \bar\mu)$.
+Prove C28: $\partial/\partial a_i \log S_r(a,b,\gamma) = \phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$.
 Would provide a deep algebraic connection between the MUP partition function
 and fair attribution. *(RANDOM_MATRIX, HYPERCUBE_SHAPLEY)*
 

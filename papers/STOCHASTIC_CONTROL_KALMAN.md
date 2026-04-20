@@ -11,7 +11,7 @@
 
 **Abstract.**  
 We develop the complete theory of stochastic optimal control and Kalman filtering
-for markets whose state lives on the efficient market manifold $M^r \subset S^{d-1}_+$.
+for markets whose state lives on the efficient market manifold $M^r \subset S^{d-1}_{+}$.
 The results are immediately practical: they give portfolio managers explicit,
 geometrically optimal rules for portfolio construction, rebalancing, signal
 processing, risk management, and optimal execution.
@@ -32,7 +32,7 @@ The value function IS the Kelly growth rate $L_T(b)$. The optimal control IS the
 Stochastic control theory and universal portfolio theory are the same problem.
 
 **(ii) The manifold Kalman-Bucy filter.** The optimal linear filter for estimating
-the market state $b^{\ast}(t)\in M^r$ from observed returns $x_t\in\mathbb{R}^d$ has
+the market state $b^{\ast}(t)\in M^r$ from observed returns $x_t\in\mathbb{R}^{d}$ has
 Riccati equation whose steady-state solution is the Fisher information matrix $F(b^{\ast})$.
 The Kalman gain is $K = F(b^{\ast})^{-1}V_r^T$ where $V_r$ is the factor loading matrix.
 The innovation process IS the normal bundle projection $\Pi_{NM}(x_t)$ — the
@@ -47,7 +47,7 @@ manifold analogue of VWAP execution — the trajectory of minimum Fisher-Rao len
 **(iv) Risk parity in Fisher-Rao geometry.** Risk parity (equal risk contribution)
 in the Fisher-Rao metric means each asset contributes equal Fisher-Rao distance
 from the log-optimal portfolio. The Fisher-Rao risk parity portfolio is:
-$b^{\rm FRP}_i \propto 1/\sqrt{F_{ii}(b^{\ast})}$ — inversely proportional to the
+$b^{\rm FRP}_{i} \propto 1/\sqrt{F_{ii}(b^{\ast})}$ — inversely proportional to the
 square root of the $i$-th diagonal of the Fisher information matrix.
 
 **(v) The separation theorem on $M^r$.** The optimal portfolio separates into
@@ -76,7 +76,7 @@ to maximise expected log-wealth over $[0,T]$:
 
 $$\sup_{b(\cdot)\in\mathcal{A}(M^r)}\mathbb{E}\!\left[\int_0^T L(b(t),\, x_t)\,dt\right] \tag{1.1}$$
 
-subject to: $b(t)\in M^r$ (manifold constraint), and $b(t)$ adapted to $\mathcal{F}^M_t$.
+subject to: $b(t)\in M^r$ (manifold constraint), and $b(t)$ adapted to $\mathcal{F}^{M}_t$.
 
 The running reward is $L(b,x) = \log\langle b, x\rangle$ (log-return per period).
 
@@ -95,12 +95,12 @@ with terminal condition $V(b,T) = 0$.
 **Theorem 1.1** *(HJB = FK PDE)*. *The HJB equation (1.3) is identical to the
 Feynman-Kac PDE for the universal portfolio:*
 
-$$V(b,t) = L_T(b) = \frac{1}{T-t}\log\mathbb{E}\!\left[\prod_{s=t}^T\langle b(s), x_s\rangle\,\bigg|\,b(t)=b\right] \tag{1.4}$$
+$$V(b,t) = L_T(b) = \frac{1}{T-t}\log\mathbb{E}\!\left[\prod_{s=t}^{T}\langle b(s), x_s\rangle\,\bigg|\,b(t)=b\right] \tag{1.4}$$
 
 *The value function of the stochastic control problem IS the Kelly growth rate function.
 The optimal control IS the MUP portfolio:*
 
-$$b^{\ast}(t) = \arg\max_{b\in M^r}V(b,t) = \hat{b}^M_T \tag{1.5}$$
+$$b^{\ast}(t) = \arg\max_{b\in M^r}V(b,t) = \hat{b}^{M}_T \tag{1.5}$$
 
 *Proof.* The HJB equation (1.3) is the backward Kolmogorov equation for the market
 diffusion on $M^r$ with running reward $L$. The Feynman-Kac formula gives its
@@ -133,20 +133,20 @@ of $b^{\ast}$. **The log-optimal portfolio satisfies the HJB transversality cond
 
 **State dynamics:** $db^{\ast} = -\varepsilon^2\vec{H}(b^{\ast})\,dt + \varepsilon\,dW_M$ (market diffusion)
 
-**Observation:** $x_t \in \mathbb{R}^d$ — the full return vector (observed each period)
+**Observation:** $x_t \in \mathbb{R}^{d}$ — the full return vector (observed each period)
 
 **Observation model:** 
-$$x_t = V_r\,\xi_t + \sigma_N\,\eta_t, \qquad \xi_t \in T_{b^{\ast}}M^r,\; \eta_t\in N_{b^{\ast}}M \tag{2.1}$$
+$$x_t = V_r\,\xi_t + \sigma_N\,\eta_t, \qquad \xi_t \in T_{b^{\ast}}M^r, \eta_t\in N_{b^{\ast}}M \tag{2.1}$$
 
 where $V_r\in\mathbb{R}^{d\times r}$ is the factor loading matrix (columns = factor directions
-in $\mathbb{R}^d$), $\xi_t$ is the factor shock (tangential), and $\eta_t$ is the
+in $\mathbb{R}^{d}$), $\xi_t$ is the factor shock (tangential), and $\eta_t$ is the
 idiosyncratic shock (normal bundle).
 
 ### 2.2 The manifold Kalman-Bucy equations
 
 The optimal linear filter for estimating $b^{\ast}(t)$ from $\{x_s:s\leq t\}$:
 
-**State estimate:** $\hat{b}^{\ast}(t) = \mathbb{E}[b^{\ast}(t)|\mathcal{F}^X_t]$
+**State estimate:** $\hat{b}^{\ast}(t) = \mathbb{E}[b^{\ast}(t)|\mathcal{F}^{X}_t]$
 
 **Innovation process:**
 $$\nu_t = x_t - V_r\xi_t = \Pi_{NM}(x_t) \tag{2.2}$$
@@ -154,7 +154,7 @@ $$\nu_t = x_t - V_r\xi_t = \Pi_{NM}(x_t) \tag{2.2}$$
 the part of the return not explained by the current factor state estimate.
 **The Kalman innovation IS the normal bundle projection of the return.**
 
-**Riccati equation** for the estimation error covariance $P(t) = \mathbb{E}[(b^{\ast}-\hat b^{\ast})(b^{\ast}-\hat b^{\ast})^T|\mathcal{F}^X_t]$:
+**Riccati equation** for the estimation error covariance $P(t) = \mathbb{E}[(b^{\ast}-\hat b^{\ast})(b^{\ast}-\hat b^{\ast})^T|\mathcal{F}^{X}_t]$:
 
 $$\dot{P} = \varepsilon^2 g_M^{-1}(b^{\ast}) - P\cdot V_r^T R_N^{-1}V_r\cdot P \tag{2.3}$$
 
@@ -198,7 +198,7 @@ $$d\hat{b}^{\ast} = K\nu_t\,dt = F(b^{\ast})^{-1}V_r^T R_N^{-1}\Pi_{NM}(x_t)\,dt
 $$\mathrm{SNR} = \frac{\|V_r^T x_t\|^2}{\|\Pi_{NM}(x_t)\|^2} = \frac{\text{factor variance}}{\text{idiosyncratic variance}} \tag{2.7}$$
 
 **The filter's steady-state tracking error:**
-$$\mathrm{tr}(P_\infty) = \mathrm{tr}(F(b^{\ast})^{-1}) = \sum_{k=1}^r \frac{1}{\lambda_k(F)} \tag{2.8}$$
+$$\mathrm{tr}(P_\infty) = \mathrm{tr}(F(b^{\ast})^{-1}) = \sum_{k=1}^{r} \frac{1}{\lambda_k(F)} \tag{2.8}$$
 
 is the sum of reciprocal factor eigenvalues — small when factors are strong,
 large when factors are weak. **The Kalman filter's tracking error is determined
@@ -275,7 +275,7 @@ In portfolio weight coordinates: $b^{\rm opt}(t) = (\cos(\theta_t)\sqrt{b_0} + \
 linear interpolation in the $(\theta,\varphi)$ coordinates. This gives the "factor-by-factor"
 execution schedule: trade the two factors independently at constant rates.
 
-**Hyperbolic ($M = \mathbb{H}^2$):** The geodesic is a circle arc orthogonal to the
+**Hyperbolic ($M = \mathbb{H}^{2}$):** The geodesic is a circle arc orthogonal to the
 real axis in the Poincaré half-plane. This gives a curved execution path that
 "bows away" from dangerous regions of the portfolio space — naturally avoiding
 concentrated positions.
@@ -300,18 +300,18 @@ For $T > T^{\ast}$: execute along the geodesic.**
 The **tracking error** of portfolio $b$ relative to the log-optimal portfolio $b^{\ast}$
 is the Fisher-Rao distance:
 
-$$\mathrm{TE}(b) = d_{g^{\rm FR}}(b, b^{\ast}) = 2\arccos\!\left(\sum_i\sqrt{b_i b^{\ast}_i}\right) \tag{4.1}$$
+$$\mathrm{TE}(b) = d_{g^{\rm FR}}(b, b^{\ast}) = 2\arccos\!\left(\sum_i\sqrt{b_i b^{\ast}_{i}}\right) \tag{4.1}$$
 
-This is the Bhattacharyya distance — the geodesic distance on $S^{d-1}_+$.
+This is the Bhattacharyya distance — the geodesic distance on $S^{d-1}_{+}$.
 
 **Properties:**
 - $\mathrm{TE} = 0$ iff $b = b^{\ast}$ (exact log-optimal)
 - $\mathrm{TE} \leq \pi/2$ (bounded by the hemisphere diameter)
 - $\mathrm{TE}$ is symmetric and satisfies the triangle inequality
-- $\mathrm{TE}^2 \approx \sum_i (b_i - b^{\ast}_i)^2/b^{\ast}_i$ for small deviations (the $\chi^2$ distance)
+- $\mathrm{TE}^{2} \approx \sum_i (b_i - b^{\ast}_{i})^2/b^{\ast}_{i}$ for small deviations (the $\chi^2$ distance)
 
 **The tracking error approximation for small deviations:**
-$$\mathrm{TE}^2 \approx (b-b^{\ast})^T F(b^{\ast})(b-b^{\ast}) \tag{4.2}$$
+$$\mathrm{TE}^{2} \approx (b-b^{\ast})^T F(b^{\ast})(b-b^{\ast}) \tag{4.2}$$
 
 the quadratic form in the Fisher information matrix. **Tracking error IS the Fisher-Rao squared distance** — the natural risk measure for portfolio deviation from the log-optimal.
 
@@ -324,16 +324,16 @@ variance is equal: $b_i\sigma_i = b_j\sigma_j$ for all $i,j$.
 Fisher-Rao distance from $b^{\ast}$ is equal. The Fisher-Rao risk contribution of
 asset $i$ is:
 
-$$\rho_i^{\rm FR}(b) = b_i\frac{\partial\,\mathrm{TE}^2(b)}{\partial b_i} = b_i\cdot 2F_{ii}(b^{\ast})(b_i-b^{\ast}_i) \tag{4.3}$$
+$$\rho_i^{\rm FR}(b) = b_i\frac{\partial\,\mathrm{TE}^{2}(b)}{\partial b_i} = b_i\cdot 2F_{ii}(b^{\ast})(b_i-b^{\ast}_{i}) \tag{4.3}$$
 
 **Equal Fisher-Rao risk contribution:** $\rho_i^{\rm FR} = c$ for all $i$ gives:
 
-$$b_i = b^{\ast}_i + \frac{c}{2F_{ii}(b^{\ast})\cdot b_i} \approx b^{\ast}_i + \frac{c}{2\cdot b^{*-1}_i\cdot b_i} \tag{4.4}$$
+$$b_i = b^{\ast}_{i} + \frac{c}{2F_{ii}(b^{\ast})\cdot b_i} \approx b^{\ast}_{i} + \frac{c}{2\cdot b^{*-1}_{i}\cdot b_i} \tag{4.4}$$
 
-For equal weight $b_i = 1/d$: $F_{ii}(b^{\ast}) = d$ and $\rho_i^{\rm FR} = 2d(1/d - b^{\ast}_i)$.
+For equal weight $b_i = 1/d$: $F_{ii}(b^{\ast}) = d$ and $\rho_i^{\rm FR} = 2d(1/d - b^{\ast}_{i})$.
 The Fisher-Rao risk parity portfolio is:
 
-$$b^{\rm FRP}_i = b^{\ast}_i + \frac{c}{2/b^{\ast}_i} = b^{\ast}_i\left(1 + \frac{c\,b^{\ast}_i}{2}\right) \approx b^{\ast}_i \tag{4.5}$$
+$$b^{\rm FRP}_{i} = b^{\ast}_{i} + \frac{c}{2/b^{\ast}_{i}} = b^{\ast}_{i}\left(1 + \frac{c\,b^{\ast}_{i}}{2}\right) \approx b^{\ast}_{i} \tag{4.5}$$
 
 to leading order in the deviation. **Fisher-Rao risk parity converges to the
 log-optimal portfolio — equal Fisher-Rao risk contribution is achieved by the
@@ -393,11 +393,11 @@ process in the normal bundle $NM$ (the idiosyncratic alpha, zero on an efficient
 the optimal portfolio is the MUP alone.*
 
 **The practical consequence:** A portfolio manager should:
-1. Hold the MUP as the core position (systematic factor exposure, $\mathcal{F}^M$-adapted)
+1. Hold the MUP as the core position (systematic factor exposure, $\mathcal{F}^{M}$-adapted)
 2. Add an alpha overlay in the normal bundle only if genuinely in possession of
-   information $\mathcal{G}_t\subset\mathcal{F}^{\rm oracle}$ not in $\mathcal{F}^X$
+   information $\mathcal{G}_{t}\subset\mathcal{F}^{\rm oracle}$ not in $\mathcal{F}^{X}$
 
-Any overlay that is $\mathcal{F}^X$-measurable (derived from public data) generates
+Any overlay that is $\mathcal{F}^{X}$-measurable (derived from public data) generates
 zero expected excess return on an efficient market by Theorem 3.2 of LLM_MANIFOLD.md.
 
 ### 5.2 The tangential vs normal P&L attribution
@@ -465,7 +465,7 @@ the optimal strategy is to estimate the state optimally (Kalman) and then contro
 as if the estimate were exact (LQG). **The estimation and control problems separate.**
 
 **Combined tracking error** (from both estimation error and control error):
-$$\mathrm{TE}^2_{\rm total} = \underbrace{\mathrm{tr}(P_\infty)}_{\text{Kalman error}} + \underbrace{\varepsilon^2/(2K_{\rm LQG})}_{\text{LQG error}} = \mathrm{tr}(F^{-1}) + \varepsilon^2\sqrt{\rho/q} \tag{6.5}$$
+$$\mathrm{TE}^{2}_{\rm total} = \underbrace{\mathrm{tr}(P_\infty)}_{\text{Kalman error}} + \underbrace{\varepsilon^2/(2K_{\rm LQG})}_{\text{LQG error}} = \mathrm{tr}(F^{-1}) + \varepsilon^2\sqrt{\rho/q} \tag{6.5}$$
 
 **Optimal cost coefficient ratio** minimising total tracking error:
 $$\frac{\rho^{\ast}}{q} = \left(\frac{\varepsilon^2}{2\mathrm{tr}(F^{-1})}\right)^2 \tag{6.6}$$
@@ -537,7 +537,7 @@ END OF DAY:
 | Kalman gain $K$ | $F^{-1}V_r^TR_N^{-1}$ | Optimal signal weight | Daily |
 | Rebal rate $\kappa$ | $\lambda_1(L_M)$ | Natural mean reversion | Monthly |
 | Tracking error TE | $d_{g^{\rm FR}}(b,b^{\ast})$ | Distance from optimal | Daily |
-| Shapley $\phi_i$ | $b^{\ast}_i(\mu_i-\bar\mu)$ | Asset contribution | Daily |
+| Shapley $\phi_i$ | $b^{\ast}_{i}(\mu_i-\bar\mu)$ | Asset contribution | Daily |
 
 ### 7.3 Warning signals for portfolio managers
 
@@ -565,7 +565,7 @@ END OF DAY:
 | Rebalancing rule | Heuristic (monthly) | LQG controller | Rate $= \lambda_1(L_M)$ |
 | Risk measure | Variance, VaR | Fisher-Rao distance | $\mathrm{TE} = d_{g^{\rm FR}}(b,b^{\ast})$ |
 | Risk parity | Equal variance | Equal Fisher-Rao | Converges to $b^{\ast}$ |
-| Attribution | Factor regression | Shapley value | $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$ |
+| Attribution | Factor regression | Shapley value | $\phi_i = b^{\ast}_{i}(\mu_i-\bar\mu)$ |
 | Crisis detection | VIX | Cheeger constant | $h_M \to 0$ before crisis |
 | Regime detection | Hidden Markov | Dyson class test | $\beta\in\{1,2,4\}$ |
 | Separation | Tobin two-fund | Tangential/Normal | $b = b^M_{\rm MUP} + \Pi_{NM}\alpha$ |

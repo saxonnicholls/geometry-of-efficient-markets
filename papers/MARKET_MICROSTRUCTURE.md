@@ -109,9 +109,9 @@ The LOB is thus a pair of points in the product simplex:
 $$\mathrm{LOB}(t) = \bigl(b^{\rm bid}(t),\, b^{\rm ask}(t)\bigr) \in \Delta_{d-1} \times \Delta_{d-1} \tag{1.2}$$
 
 Under the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$, each side maps
-to a point on the positive hemisphere $S^{d-1}_+$, and the full LOB maps to:
+to a point on the positive hemisphere $S^{d-1}_{+}$, and the full LOB maps to:
 
-$$\phi\bigl(\mathrm{LOB}(t)\bigr) \in S^{d-1}_+ \times S^{d-1}_+ \subset S^{2d-3}_+ \tag{1.3}$$
+$$\phi\bigl(\mathrm{LOB}(t)\bigr) \in S^{d-1}_{+} \times S^{d-1}_{+} \subset S^{2d-3}_{+} \tag{1.3}$$
 
 the product Bhattacharyya sphere.
 
@@ -140,7 +140,7 @@ dominant factors \[Cont, Stoikov, and Talreja 2010; Lehalle and Laruelle 2018\]:
 | Slope | How quickly depth decays from best | Curvature of the LOB at the touch |
 | Queue position | Priority at the best level | Tangent direction within the best-price face |
 
-The LOB manifold $M^{r_{\rm LOB}}_{\rm LOB} \subset S^{2d-3}_+$ is thus an
+The LOB manifold $M^{r_{\rm LOB}}_{\rm LOB} \subset S^{2d-3}_{+}$ is thus an
 $r_{\rm LOB}$-dimensional submanifold of the product Bhattacharyya sphere. It
 inherits the full geometric apparatus of the monograph: mean curvature $H$,
 Willmore energy $\mathcal{W}$, spectral gap $\lambda_1$, Cheeger constant $h_M$.
@@ -177,20 +177,20 @@ buyers and sellers.
 
 **Theorem 2.1** (Spread = Fisher-Rao distance). *The geometric bid-ask spread is:*
 
-$$s_{\rm FR} = d_{g^{\rm FR}}\bigl(b^{\rm bid},\, b^{\rm ask}\bigr) = 2\arccos\!\left(\sum_{i=1}^d \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right) \tag{2.1}$$
+$$s_{\rm FR} = d_{g^{\rm FR}}\bigl(b^{\rm bid},\, b^{\rm ask}\bigr) = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right) \tag{2.1}$$
 
 *where $d_{g^{\rm FR}}$ is the geodesic distance on $(\Delta_{d-1}, g^{\rm FR})$.
 The Bhattacharyya coefficient $\rho_B = \sum_i \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}$
 equals $\cos(s_{\rm FR}/2)$.*
 
 *Proof.* Under the Bhattacharyya isometry, the simplex $\Delta_{d-1}$ maps to
-$S^{d-1}_+$ with the round metric. The Fisher-Rao distance between two
+$S^{d-1}_{+}$ with the round metric. The Fisher-Rao distance between two
 distributions equals the arc length on the sphere between their images:
 
 $$d_{g^{\rm FR}}(p,q) = 2\arccos\!\left(\sum_i \sqrt{p_i\,q_i}\right) = 2\arccos\bigl(\langle\phi(p),\,\phi(q)\rangle\bigr)$$
 
 which is the angle between $\phi(p) = \sqrt{p}$ and $\phi(q) = \sqrt{q}$ in
-$\mathbb{R}^d$. Applied to $p = b^{\rm bid}$ and $q = b^{\rm ask}$, we
+$\mathbb{R}^{d}$. Applied to $p = b^{\rm bid}$ and $q = b^{\rm ask}$, we
 obtain (2.1). $\square$
 
 **Interpretation.** When $b^{\rm bid} \approx b^{\rm ask}$ (buyers and sellers
@@ -247,7 +247,7 @@ $$s_{\rm FR} = s_{\rm info} + s_{\rm inventory} + s_{\rm adverse} \tag{2.3}$$
   is the residual after information and inventory effects are removed.*
 
 *Proof sketch.* The displacement vector $v = \phi(b^{\rm ask}) - \phi(b^{\rm bid})$
-in the ambient space $\mathbb{R}^d \times \mathbb{R}^d$ decomposes orthogonally
+in the ambient space $\mathbb{R}^{d} \times \mathbb{R}^{d}$ decomposes orthogonally
 under the Fisher-Rao metric into tangent, mean curvature, and normal components:
 $v = \Pi_{TM}(v) + \langle v, \hat{H}\rangle\hat{H} + \Pi_{NM}^{\perp H}(v)$.
 The norms of these three components give the three spread terms. The identification
@@ -477,7 +477,7 @@ Almgren and Chriss \[2001\] formulated the optimal execution problem: sell
 $Q$ shares over the time interval $[0,T]$ to minimise the expected execution
 cost plus a risk penalty:
 
-$$\min_{x(\cdot)}\;\mathbb{E}\!\left[\int_0^T\!\bigl(\underbrace{\eta\,\dot{x}(t)^2}_{\text{temporary impact}} + \underbrace{\gamma\,\kappa_{\rm LOB}\,\dot{x}(t)}_{\text{permanent impact}}\bigr)dt + \underbrace{\alpha\,\mathrm{Var}\!\left[\int_0^T \sigma^2 x(t)^2\,dt\right]}_{\text{timing risk}}\right] \tag{5.1}$$
+$$\min_{x(\cdot)} \mathbb{E}\!\left[\int_0^T\!\bigl(\underbrace{\eta\,\dot{x}(t)^2}_{\text{temporary impact}} + \underbrace{\gamma\,\kappa_{\rm LOB}\,\dot{x}(t)}_{\text{permanent impact}}\bigr)dt + \underbrace{\alpha\,\mathrm{Var}\!\left[\int_0^T \sigma^2 x(t)^2\,dt\right]}_{\text{timing risk}}\right] \tag{5.1}$$
 
 subject to $x(0) = Q$, $x(T) = 0$, where $x(t)$ is the remaining inventory.
 
@@ -568,7 +568,7 @@ than the macro MCF.
 **Theorem 6.1** (HFT as microstructure curvature reduction). *HFT market
 making reduces the Willmore energy of the LOB manifold:*
 
-$$\mathcal{W}_{\rm LOB}^{\rm with\;HFT} < \mathcal{W}_{\rm LOB}^{\rm without\;HFT} \tag{6.1}$$
+$$\mathcal{W}_{\rm LOB}^{\rm with HFT} < \mathcal{W}_{\rm LOB}^{\rm without HFT} \tag{6.1}$$
 
 *The reduction is:*
 
@@ -697,7 +697,7 @@ Each type has a characteristic LOB geometry.
 **LOB geometry:** Deep book at every level. Tight spread
 ($s_{\rm FR} \ll 1$). One dominant factor in the LOB dynamics: the aggregate
 order flow. The LOB manifold is a great sphere section
-$M^{r_{\rm LOB}} = S^{r_{\rm LOB}}_+ \subset S^{2d-3}_+$ with constant
+$M^{r_{\rm LOB}} = S^{r_{\rm LOB}}_{+} \subset S^{2d-3}_{+}$ with constant
 positive curvature $K = 1/4$.
 
 **Spectral gap:** $\lambda_1^{\rm LOB} \sim 1/\text{second}$ — extremely
@@ -719,7 +719,7 @@ stocks during scheduled events (earnings, FOMC).
 
 **LOB geometry:** Two balanced factors — informed order flow and uninformed
 flow — of comparable magnitude. The LOB manifold is a Clifford torus
-$T^2 \subset S^{2d-3}_+$. Moderate spread, moderate depth.
+$T^2 \subset S^{2d-3}_{+}$. Moderate spread, moderate depth.
 
 **Periodicity:** The LOB exhibits periodic structure from the daily auction
 cycle: opening auction $\to$ continuous trading $\to$ closing auction creates
@@ -787,7 +787,7 @@ surface. At the microstructure level, the LOB manifold has small diameter
 spectral gap. At longer timescales, the effective manifold has larger diameter
 (multi-percent factor moves) and lower curvature, giving a smaller spectral
 gap. The hierarchy follows from the scaling of spectral gaps with manifold
-diameter: $\lambda_1 \sim 1/\mathrm{diam}^2$ (the Faber-Krahn inequality).
+diameter: $\lambda_1 \sim 1/\mathrm{diam}^{2}$ (the Faber-Krahn inequality).
 $\square$
 
 ### 9.2 What persists across timescales
@@ -820,7 +820,7 @@ This is not a slogan — it is a theorem. The Sharpe-curvature identity
 $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ applies at every timescale. The total
 curvature (total alpha available) decomposes spectrally:
 
-$$\|H\|_{L^2}^2 = \sum_{k=1}^\infty |h_k|^2 \tag{9.2}$$
+$$\|H\|_{L^2}^{2} = \sum_{k=1}^\infty |h_k|^2 \tag{9.2}$$
 
 where $h_k$ is the $k$-th Fourier coefficient of the mean curvature in the
 eigenbasis of the Laplace-Beltrami operator. HFTs capture the terms with
@@ -905,7 +905,7 @@ but fill probability $p_{\rm fill} < 1$.
 The expected cost of the split $(Q_{\rm lit},\, Q_{\rm dark})$ with
 $Q_{\rm lit} + p_{\rm fill}\,Q_{\rm dark} = Q$ is:
 
-$$C(Q_{\rm lit},\, Q_{\rm dark}) = \kappa_{\rm LOB}^{\rm lit}\,Q_{\rm lit}^2 + (1 - p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}\,Q_{\rm dark}^2 \tag{10.4}$$
+$$C(Q_{\rm lit},\, Q_{\rm dark}) = \kappa_{\rm LOB}^{\rm lit}\,Q_{\rm lit}^{2} + (1 - p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}\,Q_{\rm dark}^{2} \tag{10.4}$$
 
 The first term is the impact cost of the lit portion; the second is the cost
 of the unfilled dark pool quantity that must be re-routed to the lit market.
@@ -927,7 +927,7 @@ We collect the principal results of this paper.
 
 **Theorem M1** (Spread = Fisher-Rao distance). *The bid-ask spread is:*
 
-$$s_{\rm FR} = 2\arccos\!\left(\sum_{i=1}^d \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right)$$
+$$s_{\rm FR} = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right)$$
 
 *measuring the informational distance between the bid and ask distributions.*
 *(Proved: Section 2, Theorem 2.1.)*
@@ -986,7 +986,7 @@ market data).
 
 **OP-M2** (Geometry of latency arbitrage). The LOB state differs across
 exchanges connected by communication latencies of 1--100 microseconds. Each
-exchange hosts a LOB manifold $M^{r_{\rm LOB}}_e$, and the cross-exchange
+exchange hosts a LOB manifold $M^{r_{\rm LOB}}_{e}$, and the cross-exchange
 Fisher-Rao distance $d_{g^{\rm FR}}(M^{r_{\rm LOB}}_{e_1},\, M^{r_{\rm LOB}}_{e_2})$
 is nonzero due to latency. Latency arbitrage is the exploitation of this
 distance. What is the optimal latency arbitrage strategy in terms of the

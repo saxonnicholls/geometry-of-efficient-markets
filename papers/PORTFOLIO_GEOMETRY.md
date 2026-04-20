@@ -80,9 +80,9 @@ $f^{\ast} = 2.5/\log(100) \approx 0.54$ rebalances per day — rebalance roughly
 
 ### 2.1 The portfolio rule
 
-For the great $r$-sphere minimal surface in $S^{d-1}_+$ (the CAPM universality class):
+For the great $r$-sphere minimal surface in $S^{d-1}_{+}$ (the CAPM universality class):
 
-- **Factor subspace:** $M = \{b = \Pi_\Delta(V_r\alpha) : \alpha \in \mathbb{R}^r_+\}$
+- **Factor subspace:** $M = \{b = \Pi_\Delta(V_r\alpha) : \alpha \in \mathbb{R}^{r}_+\}$
 - **Geodesics on $M$:** straight lines in the factor space $\alpha \in \Delta_{r-1}$
 - **Optimal portfolio:** $b^{\ast} = \Pi_\Delta(V_r\alpha^{\ast})$ for $\alpha^{\ast} = \arg\max_{\alpha \in \Delta_{r-1}} L_T(\Pi_\Delta(V_r\alpha))$
 
@@ -100,7 +100,7 @@ where $f_k = \Pi_\Delta(V_r e_k)$. The $r=1$ case is the classical two-fund
 
 **Minimum turnover:** For a portfolio drifting from $b^{\ast}$ due to price changes:
 
-$$\mathrm{Turnover} = \|\dot{b}_t\|_{g^{\rm FR}} = |F(b^{\ast})^{-1/2}\Sigma b^{\ast}\,r_t| \tag{2.1}$$
+$$\mathrm{Turnover} = \|\dot{b}_{t}\|_{g^{\rm FR}} = |F(b^{\ast})^{-1/2}\Sigma b^{\ast}\,r_t| \tag{2.1}$$
 
 where $r_t$ is the period return vector. This is the **geodesic speed** on $M$ — the rate
 at which the portfolio moves in Fisher-Rao distance due to market returns. The minimum
@@ -128,8 +128,8 @@ The Clifford torus market ($d=4$, $r=2$, Section 8.2 of MINIMAL_SURFACE):
 The four "pure portfolios" are: $(1,0,0,0)$, $(0,1,0,0)$, $(0,0,1,0)$, $(0,0,0,1)$.
 The Clifford torus portfolio is:
 
-$$b^{\ast}(\theta,\varphi) = (\tfrac{1}{2}\cos^2\theta,\; \tfrac{1}{2}\sin^2\theta,\;
-\tfrac{1}{2}\cos^2\varphi,\; \tfrac{1}{2}\sin^2\varphi) \tag{3.1}$$
+$$b^{\ast}(\theta,\varphi) = (\tfrac{1}{2}\cos^2\theta, \tfrac{1}{2}\sin^2\theta, 
+\tfrac{1}{2}\cos^2\varphi, \tfrac{1}{2}\sin^2\varphi) \tag{3.1}$$
 
 ### 3.2 The explicit rebalancing rules
 
@@ -181,7 +181,7 @@ $f^{\ast}$ are not free parameters — they are determined by the Jacobi eigenva
 ### 4.1 Structure
 
 The Veronese surface ($d=5$, $r=2$, Section 5.3 of CLASSIFICATION.md):
-Five assets with a cyclic $\mathbb{Z}_3$ symmetry among three "base exposures"
+Five assets with a cyclic $\mathbb{Z}_{3}$ symmetry among three "base exposures"
 $(x_1, x_2, x_3)$, with portfolio weights:
 
 $$b_i = v_i^2, \qquad v = \frac{1}{\sqrt{3}}(x_1x_2, x_2x_3, x_3x_1,
@@ -195,7 +195,7 @@ only pairwise factor products. The three "funds" are:
 - $f_3$: the normalisation fund
 
 **Portfolio rule:** Allocate between $f_1, f_2, f_3$ according to the current
-realisation of $(x_1, x_2, x_3)$, with the $\mathbb{Z}_3$ cyclic symmetry ensuring
+realisation of $(x_1, x_2, x_3)$, with the $\mathbb{Z}_{3}$ cyclic symmetry ensuring
 the allocation is rotation-invariant under cyclic permutation of the three exposures.
 
 **Rebalancing:** Because the Veronese is stable (index 0, CLASSIFICATION Table 5.3),
@@ -219,8 +219,8 @@ Lawson surfaces $\tau_{m,n}$ have genus $g = mn$, corresponding to $mn$ independ
 feedback loops between two factor groups. The portfolio parameterisation
 (MINIMAL_SURFACE equation 8.16):
 
-$$b(\theta,\varphi) = (\sin^2\!\rho\cos^2(m\theta),\; \sin^2\!\rho\sin^2(m\theta),\;
-\cos^2\!\rho\cos^2(n\varphi),\; \cos^2\!\rho\sin^2(n\varphi)) \tag{5.1}$$
+$$b(\theta,\varphi) = (\sin^2\!\rho\cos^2(m\theta), \sin^2\!\rho\sin^2(m\theta), 
+\cos^2\!\rho\cos^2(n\varphi), \cos^2\!\rho\sin^2(n\varphi)) \tag{5.1}$$
 
 where $\rho = \rho(\theta,\varphi)$ solves a nonlinear ODE coupling the two groups.
 
@@ -278,7 +278,7 @@ $b^{\ast} \in M$ and a view $v \in T_{b^{\ast}}\Delta_{d-1}$ with confidence $\o
 
 2. *The tangential view $v_M$ moves the portfolio along $M$ to a new point $b^{**}$
    via the geodesic on $(M, g_M)$:*
-   $$b^{**} = \exp_{b^{\ast}}^M(\omega\cdot v_M) \tag{6.2}$$
+   $$b^{**} = \exp_{b^{\ast}}^{M}(\omega\cdot v_M) \tag{6.2}$$
 
 3. *The normal view $v_N$ moves the portfolio off $M$ by distance $\omega\|v_N\|_{g^{\rm FR}}$,
    creating an idiosyncratic tilt with hedging error $\|v_N\|^2_{g^{\rm FR}}$.*
@@ -315,13 +315,13 @@ is estimation uncertainty in $M$ itself. The **manifold estimation uncertainty**
 
 $$\Delta M \sim \sqrt{\frac{r(d-r)}{T}} \tag{6.5}$$
 
-(the Fisher information bound on estimating a $r$-dimensional subspace of $\mathbb{R}^d$
+(the Fisher information bound on estimating a $r$-dimensional subspace of $\mathbb{R}^{d}$
 from $T$ observations). For $d=50$, $r=4$, $T=252$: $\Delta M \approx \sqrt{4\times 46/252} \approx 0.85$ — substantial uncertainty in the manifold itself.
 
 The **full Manifold Black-Litterman** must account for both portfolio uncertainty (Fisher-Rao
 metric) and manifold uncertainty (6.5). The combined posterior is:
 
-$$b_{\rm full-MBL} = \hat{b}_T^M \otimes \hat{M}_T \tag{6.6}$$
+$$b_{\rm full-MBL} = \hat{b}_{T}^{M} \otimes \hat{M}_{T} \tag{6.6}$$
 
 the tensor product of the MUP weights and the estimated manifold — a distribution
 over both $b$ and $M$ simultaneously.
@@ -341,7 +341,7 @@ From return data $X \in \mathbb{R}^{T\times d}$:
 
 **Diagnostic:** The manifold type is determined by:
 - $r=1$: CAPM (great circle)
-- $r=2$, symmetric: check for $p \approx 1/2$ (Clifford torus) or $\mathbb{Z}_3$ (Veronese)
+- $r=2$, symmetric: check for $p \approx 1/2$ (Clifford torus) or $\mathbb{Z}_{3}$ (Veronese)
 - $r=2$, asymmetric period: check for momentum-mean reversion coupling ($\tau_{2,1}$, $\tau_{3,1}$, etc.)
 - $r \geq 3$: higher Lawson surfaces or CAPM with more factors
 
@@ -354,7 +354,7 @@ From return data $X \in \mathbb{R}^{T\times d}$:
 | Clifford torus | $b^{\ast}(\theta^{\ast}, \varphi^{\ast})$ | 2D |
 | Veronese | $b^{\ast} = v^2(\alpha^{\ast})$ | 2D (constrained) |
 | $\tau_{m,n}$ Lawson | $b^{\ast}(\theta^{\ast}, \varphi^{\ast})$ | 2D (nonlinear ODE) |
-| MUP (all cases) | $\hat{b}_T^M$ from manifold integral | $r$D integral |
+| MUP (all cases) | $\hat{b}_{T}^{M}$ from manifold integral | $r$D integral |
 
 ### Step 3: Rebalancing rule
 
@@ -411,7 +411,7 @@ funds without leaving the market manifold.*
 **Result 8.3** *(Geometric Sharpe budget allocation)*. *The total Sharpe budget of the
 manifold is:*
 
-$$\mathrm{Sharpe}_{\rm total}^2 = \sum_{k=r+1}^{d-1}\frac{(b^{\ast}\cdot\nu_k)^2}{\lambda_k} \tag{8.3}$$
+$$\mathrm{Sharpe}_{\rm total}^{2} = \sum_{k=r+1}^{d-1}\frac{(b^{\ast}\cdot\nu_k)^2}{\lambda_k} \tag{8.3}$$
 
 *This decomposes additively across the $d-1-r$ normal directions — each normal direction
 contributes an independent Sharpe opportunity. The optimal allocation of the Sharpe budget:

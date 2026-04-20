@@ -44,7 +44,7 @@ connection it makes by analogy is an exact theorem in the geometric framework.
 
 | Article (analogy) | Our framework (theorem) | Rigorous statement |
 |:------------------|:-----------------------|:-------------------|
-| Bloch sphere for binary market | Bhattacharyya sphere $S^{d-1}_+$ | Fisher-Rao isometry $b \mapsto \sqrt{b}$; proved in MINIMAL_SURFACE |
+| Bloch sphere for binary market | Bhattacharyya sphere $S^{d-1}_{+}$ | Fisher-Rao isometry $b \mapsto \sqrt{b}$; proved in MINIMAL_SURFACE |
 | "Phase" on Bloch sphere | Berry phase on market manifold | $\gamma_{\rm Berry} = \oint_\gamma A$; proved in FIBER_BUNDLES |
 | Density matrix from $(μ,σ,ρ)$ | Fisher information matrix $F(b^{\ast})$ | $\rho = F(b^{\ast})/\mathrm{tr}(F(b^{\ast}))$; proved in LAPLACE |
 | Entanglement entropy | Von Neumann entropy of $F(b^{\ast})$ | $S = -\mathrm{tr}(\rho\log\rho)$; normal bundle dimension |
@@ -135,7 +135,7 @@ log-optimal $b^{\ast}$ sits.
 
 **The log-optimal pairs weight:**
 
-$$b^{\ast}_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}$$
+$$b^{\ast}_{1} = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}$$
 
 This is the Kelly fraction for a two-asset portfolio — the point on $S^1_+$ where the
 Fisher-Rao gradient of log-growth vanishes.
@@ -262,7 +262,7 @@ For a pairs trade that traces a closed loop $\gamma$ on the market manifold $M^1
 
 $$\gamma_{\rm Berry} = \oint_\gamma A_{\rm Berry} \tag{4.1}$$
 
-where $A_{\rm Berry} = i\langle\hat{b}^M|\nabla_\theta|\hat{b}^M\rangle$ is the Berry
+where $A_{\rm Berry} = i\langle\hat{b}^{M}|\nabla_\theta|\hat{b}^{M}\rangle$ is the Berry
 connection on the bundle of MUP states parameterised by $(μ, σ, ρ)(t)$.
 
 **For a static pair** (constant $μ, σ, ρ$): the manifold $M^1$ is a fixed arc on $S^1_+$
@@ -314,7 +314,7 @@ position to maximise risk-adjusted PnL?
 
 The value function $V(x)$ satisfies the variational inequality:
 
-$$\max\!\left\{\mathcal{L}_{\rm OU}V(x) - rV(x),\; g(x) - V(x)\right\} = 0 \tag{5.1}$$
+$$\max\!\left\{\mathcal{L}_{\rm OU}V(x) - rV(x), g(x) - V(x)\right\} = 0 \tag{5.1}$$
 
 where $g(x) = x - \theta$ is the payoff from closing at spread $x$ (the PnL from
 converging to the mean), and $r$ is the risk-free rate (opportunity cost).

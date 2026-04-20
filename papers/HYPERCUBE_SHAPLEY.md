@@ -11,7 +11,7 @@
 ---
 
 **Abstract.**  
-The portfolio simplex $\Delta_{d-1} = \{b\in\mathbb{R}^d_+ : \sum b_i = 1\}$ embeds
+The portfolio simplex $\Delta_{d-1} = \{b\in\mathbb{R}^{d}_+ : \sum b_i = 1\}$ embeds
 naturally in the unit hypercube $[0,1]^d$. This embedding connects the Fisher-Rao
 geometry of the simplex integral to the Walsh-Hadamard-Fourier analysis on the
 hypercube, producing a new computational approach to the MUP and a new representation
@@ -53,7 +53,7 @@ $$\phi_i = \sum_{S\subseteq[d]\setminus\{i\}}\frac{|S|!(d-|S|-1)!}{d!}
 This satisfies all four Shapley axioms. We prove that the Shapley attribution equals
 the Fisher-Rao gradient of the Kelly growth rate projected onto the $i$-th coordinate:
 
-$$\phi_i = b^{\ast}_i\frac{\partial L_T}{\partial b_i}\bigg|_{b=b^{\ast}} = b^{\ast}_i(\mu_i - \bar\mu) \tag{0.2}$$
+$$\phi_i = b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{b=b^{\ast}} = b^{\ast}_{i}(\mu_i - \bar\mu) \tag{0.2}$$
 
 — the product of the log-optimal weight and the excess expected return. This is
 the **CAPM alpha attribution formula** derived from cooperative game theory.
@@ -70,7 +70,7 @@ attribution analysis; Fisher-Rao gradient; CAPM alpha; factor contribution.
 
 The portfolio simplex $\Delta_{d-1}$ sits inside the unit hypercube $[0,1]^d$:
 
-$$\Delta_{d-1} = \{b \in [0,1]^d : \textstyle\sum_{i=1}^d b_i = 1\} \tag{1.1}$$
+$$\Delta_{d-1} = \{b \in [0,1]^d : \textstyle\sum_{i=1}^{d} b_i = 1\} \tag{1.1}$$
 
 It is the intersection of the hypercube with the affine hyperplane $\sum b_i = 1$, which
 is a face of the hyperplane arrangement $\{x_1+\cdots+x_d = 1\}$.
@@ -78,11 +78,11 @@ is a face of the hyperplane arrangement $\{x_1+\cdots+x_d = 1\}$.
 **The vertices of $\Delta_{d-1}$** are the $d$ standard basis vectors $e_1,\ldots,e_d$
 — which are also $d$ of the $2^d$ vertices of $[0,1]^d$.
 
-**The Bhattacharyya image.** Under $b\mapsto\sqrt{b}$, the simplex maps to $S^{d-1}_+$.
+**The Bhattacharyya image.** Under $b\mapsto\sqrt{b}$, the simplex maps to $S^{d-1}_{+}$.
 Under $\sqrt{b}\mapsto 2\sqrt{b}-1$, the sphere is flipped to $[-1,1]^d$, and the
 Jacobi-type weight $\prod_i b_i^{\alpha_i-1} = \prod_i ((u_i+1)/2)^{\alpha_i-1}$
 becomes a Gegenbauer weight on $[-1,1]^d$. This connects to the Walsh-Hadamard
-transform on $\{-1,+1\}^d$ (the discrete hypercube).
+transform on $\{-1,+1\}^{d}$ (the discrete hypercube).
 
 ### 1.2 The barycentric subdivision and Delaunay
 
@@ -113,11 +113,11 @@ the barycentric cell condition. $\square$
 
 ### 2.1 Walsh functions on the hypercube
 
-The **Walsh functions** on $\{0,1\}^d$ (or $\{-1,+1\}^d$ in the $\pm 1$ basis) are:
+The **Walsh functions** on $\{0,1\}^{d}$ (or $\{-1,+1\}^{d}$ in the $\pm 1$ basis) are:
 
-$$w_S(x) = \prod_{i\in S}(-1)^{x_i} = \prod_{i\in S}x_i, \qquad S\subseteq[d],\; x\in\{-1,+1\}^d \tag{2.1}$$
+$$w_S(x) = \prod_{i\in S}(-1)^{x_i} = \prod_{i\in S}x_i, \qquad S\subseteq[d], x\in\{-1,+1\}^{d} \tag{2.1}$$
 
-They form an orthonormal basis: $\sum_{x\in\{-1,+1\}^d}w_S(x)w_T(x) = 2^d\delta_{ST}$.
+They form an orthonormal basis: $\sum_{x\in\{-1,+1\}^{d}}w_S(x)w_T(x) = 2^d\delta_{ST}$.
 
 **Continuous extension to the simplex.** For $b \in \Delta_{d-1}$, replacing $x_i$ with
 $2b_i - 1 \in [-1,+1]$:
@@ -150,17 +150,17 @@ the simplex.
 
 ### 2.3 The MUP partition function in Walsh coordinates
 
-The MUP normalisation constant $\mathcal{Z}_T = \int_{\Delta_{d-1}}W_T(b)\,d\mathrm{vol}(b)$
+The MUP normalisation constant $\mathcal{Z}_{T} = \int_{\Delta_{d-1}}W_T(b)\,d\mathrm{vol}(b)$
 has a Walsh expansion:
 
-$$\mathcal{Z}_T = \sum_{S\subseteq[d]}\hat W_S\cdot \hat{1}_S \tag{2.5}$$
+$$\mathcal{Z}_{T} = \sum_{S\subseteq[d]}\hat W_S\cdot \hat{1}_{S} \tag{2.5}$$
 
 where $\hat W_S = \int W_T(b)\,w_S(b)\,d\mathrm{vol}(b)$ are the Walsh coefficients
-of the wealth function and $\hat{1}_S = \int w_S(b)\,d\mathrm{vol}(b)$ are the
+of the wealth function and $\hat{1}_{S} = \int w_S(b)\,d\mathrm{vol}(b)$ are the
 volume coefficients.
 
 **For the CAPM ($d=2$):** The Walsh expansion has only the $S=\emptyset$ and $S=\{1\}$ terms:
-$\mathcal{Z}_T = B(\alpha,\beta) + \hat W_{\{1\}}\cdot 0$ (the $S=\{1\}$ term vanishes by
+$\mathcal{Z}_{T} = B(\alpha,\beta) + \hat W_{\{1\}}\cdot 0$ (the $S=\{1\}$ term vanishes by
 symmetry). The Selberg integral (RANDOM_MATRIX.md Theorem 3.1) = the $S=\emptyset$ Walsh coefficient.
 
 **The hypercube representation is computationally efficient.** For $d=50$: the full
@@ -198,36 +198,36 @@ given by the formula (0.1).
 *For a market with $d$ assets and log-optimal portfolio $b^{\ast}$, the Shapley value of
 asset $i$ in the Kelly game is:*
 
-$$\phi_i = b^{\ast}_i\frac{\partial L_T}{\partial b_i}\bigg|_{b^{\ast}} \tag{3.1}$$
+$$\phi_i = b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{b^{\ast}} \tag{3.1}$$
 
 *where $\partial L_T/\partial b_i|_{b^{\ast}} = \mu_i - \bar\mu$ is the excess expected
 return of asset $i$ over the portfolio mean (the log-optimal portfolio's KKT condition).*
 
 *Proof.* The Shapley value for a game with smooth characteristic function $v$ is:
 
-$$\phi_i = \int_0^1 \frac{\partial v(\lambda b^{\ast})}{\partial b^{\ast}_i}\,d\lambda \tag{3.2}$$
+$$\phi_i = \int_0^1 \frac{\partial v(\lambda b^{\ast})}{\partial b^{\ast}_{i}}\,d\lambda \tag{3.2}$$
 
 (the Owen \[1972\] integral formula). The Kelly game has $v(\lambda b^{\ast}) = L_T(\lambda b^{\ast})$.
 The integral gives:
 
-$$\phi_i = \int_0^1 \lambda b^{\ast}_i\frac{\partial^2 L_T}{\partial b_i^2}\bigg|_{\lambda b^{\ast}}
-+ b^{\ast}_i\frac{\partial L_T}{\partial b_i}\bigg|_{\lambda b^{\ast}}\,d\lambda \tag{3.3}$$
+$$\phi_i = \int_0^1 \lambda b^{\ast}_{i}\frac{\partial^2 L_T}{\partial b_i^2}\bigg|_{\lambda b^{\ast}}
++ b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{\lambda b^{\ast}}\,d\lambda \tag{3.3}$$
 
 At the log-optimal portfolio: $\partial L_T/\partial b_i|_{b^{\ast}} = \mu_i - \bar\mu$
 (the KKT condition, from CONVERGENCE.md equation 1.8). Substituting and integrating:
-$\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$. $\square$
+$\phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$. $\square$
 
 ### 3.3 The Shapley attribution in financial terms
 
-**The Shapley value $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ is:**
-- **Proportional to the Kelly weight** $b^{\ast}_i$: assets with higher log-optimal weight
+**The Shapley value $\phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$ is:**
+- **Proportional to the Kelly weight** $b^{\ast}_{i}$: assets with higher log-optimal weight
   receive higher attribution. A zero-weight asset gets zero Shapley value (dummy axiom ✓).
 - **Proportional to the excess return** $\mu_i - \bar\mu$: only assets that outperform
   the Kelly mean contribute. Assets with mean expected return get zero attribution.
 - **The CAPM alpha** for the log-optimal portfolio: this is the single-period excess
   return contribution of asset $i$ when held in the Kelly proportion.
 
-**The total attribution** $\sum_i\phi_i = \sum_i b^{\ast}_i(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu$
+**The total attribution** $\sum_i\phi_i = \sum_i b^{\ast}_{i}(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu$
 where $\bar\mu^{\ast} = b^{*T}\mu$ is the Kelly portfolio expected return. This equals the
 Kelly portfolio alpha — the excess return over the equal-weight mean. Efficiency axiom ✓.
 
@@ -236,12 +236,12 @@ Kelly portfolio alpha — the excess return over the equal-weight mean. Efficien
 For a multi-factor market with $r$ factors and $d$ assets, the Shapley value of factor $k$
 (rather than individual asset $i$) is:
 
-$$\Phi_k = \sum_{i=1}^d V_{ik} b^{\ast}_i (\mu_i - \bar\mu) \tag{3.4}$$
+$$\Phi_k = \sum_{i=1}^{d} V_{ik} b^{\ast}_{i} (\mu_i - \bar\mu) \tag{3.4}$$
 
 where $V_{ik}$ is the loading of asset $i$ on factor $k$ (from the PCA of the Fisher
 information matrix). The total factor attribution:
 
-$$\sum_{k=1}^r \Phi_k = \sum_i b^{\ast}_i(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu \tag{3.5}$$
+$$\sum_{k=1}^{r} \Phi_k = \sum_i b^{\ast}_{i}(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu \tag{3.5}$$
 
 equals the Kelly portfolio alpha — the Shapley attribution is complete.
 
@@ -259,10 +259,10 @@ The atoms of the Voronoi filtration (FILTRATIONS.md) are subsets $F_{s_0,\ldots,
 of the path space. In the hypercube representation:
 
 Each atom $F_{s_0,\ldots,s_n}$ corresponds to a **face** of the hypercube $[0,1]^d$:
-- The atom $F_{s_0}$ (initial cell $s_0$) = the face $\{b\in\Delta_{d-1}: b_{s_0}\geq b_i\;\forall i\}$
+- The atom $F_{s_0}$ (initial cell $s_0$) = the face $\{b\in\Delta_{d-1}: b_{s_0}\geq b_i \forall i\}$
   = the simplex face closest to vertex $e_{s_0}$ = a face of the barycentric subdivision
 
-The filtration hierarchy $\mathcal{F}^{\rm Vor}_0\subseteq\mathcal{F}^{\rm Vor}_1\subseteq\ldots$
+The filtration hierarchy $\mathcal{F}^{\rm Vor}_{0}\subseteq\mathcal{F}^{\rm Vor}_{1}\subseteq\ldots$
 corresponds to the hierarchy of faces of the hypercube: coarser filtrations correspond
 to higher-dimensional faces (closer to the boundary of the hypercube); finer filtrations
 correspond to lower-dimensional faces (closer to the vertices).
@@ -288,7 +288,7 @@ Higher-order interactions (pairwise, triple, etc.) are the correction terms.
 
 | Hypercube $[0,1]^d$ | Portfolio simplex $\Delta_{d-1}$ |
 |:--------------------|:---------------------------------|
-| Vertices $\{0,1\}^d$ | Includes $e_1,\ldots,e_d$ (pure-asset portfolios) |
+| Vertices $\{0,1\}^{d}$ | Includes $e_1,\ldots,e_d$ (pure-asset portfolios) |
 | Face of dim $k$ | $k$-asset coalition in Shapley game |
 | Walsh function $w_S$ | Jacobi polynomial of degree $|S|$ |
 | ANOVA main effect $f_i$ | Shapley value $\phi_i$ |
@@ -307,7 +307,7 @@ Higher-order interactions (pairwise, triple, etc.) are the correction terms.
 
 Combining Shapley values with the ANOVA decomposition:
 
-**Asset-level attribution:** $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$ — the Shapley value,
+**Asset-level attribution:** $\phi_i = b^{\ast}_{i}(\mu_i-\bar\mu)$ — the Shapley value,
 provably the unique fair attribution.
 
 **Factor-level attribution:** $\Phi_k = \sum_i V_{ik}\phi_i$ — the factor Shapley value,
@@ -351,13 +351,13 @@ analysis on the simplex are the same subject.**
 
 ## 6. Summary
 
-$$\boxed{
+$$
 \begin{array}{lcl}
 \Delta_{d-1}\subset[0,1]^d & & \text{simplex inside hypercube} \\
 \text{Walsh }w_S & = & \text{Jacobi polynomial degree }|S| \\
 \text{Barycentric subdivision} & = & \text{Voronoi Delaunay} \\
 \text{ANOVA main effect} & = & \text{Shapley value} \\
-\text{Shapley }\phi_i & = & b^{\ast}_i(\mu_i-\bar\mu)\text{ (proved)} \\
+\text{Shapley }\phi_i & = & b^{\ast}_{i}(\mu_i-\bar\mu)\text{ (proved)} \\
 \text{Factor Shapley }\Phi_k & = & \text{unique fair factor attribution} \\
 \text{Normal bundle }\Pi_{NM}\phi & = & \text{unexplained alpha} \\
 \text{Banzhaf }= & & \text{Walsh-Fourier coefficient} \\

@@ -36,7 +36,7 @@ This is a well-defined abstract simplicial complex functorial in the
 observed sequence.
 
 **(ii) The eertree filtration.** As the observed sequence grows, the
-palindromic complex grows monotonically: $\mathcal{P}_1 \subseteq \mathcal{P}_2 \subseteq \ldots$. This filtered complex admits PERSISTENT HOMOLOGY.
+palindromic complex grows monotonically: $\mathcal{P}_{1} \subseteq \mathcal{P}_{2} \subseteq \ldots$. This filtered complex admits PERSISTENT HOMOLOGY.
 
 **(iii) Homotopy type by universality class.** The six palindromic
 universality classes have distinct stable homotopy types:
@@ -55,7 +55,7 @@ have the same persistence diagram (up to stable isometry).
 **(v) Euler characteristic formula.** The Euler characteristic of the
 palindromic nerve complex of a sequence of length $T$ is:
 
-$$\chi(\mathcal{P}_T) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class})$$
+$$\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class})$$
 
 where $\rho_{\rm pal}$ is the palindromic density and $\chi_{\rm class}$
 is the class-specific Euler characteristic (from above table).
@@ -140,13 +140,13 @@ position space, so $\mathcal{P}$ captures the full topology of the sequence.*
 As the observed sequence grows, new palindromes appear, new overlaps form,
 and the palindromic nerve grows monotonically:
 
-$$\mathcal{P}_1 \subseteq \mathcal{P}_2 \subseteq \mathcal{P}_3 \subseteq \cdots \subseteq \mathcal{P}_T \tag{2.1}$$
+$$\mathcal{P}_{1} \subseteq \mathcal{P}_{2} \subseteq \mathcal{P}_{3} \subseteq \cdots \subseteq \mathcal{P}_{T} \tag{2.1}$$
 
 This is a FILTERED simplicial complex. Time parameter: sequence length.
 
 **Definition 2.1** (Eertree filtration). *The **eertree filtration** of a
 sequence $\sigma$ is the filtered simplicial complex
-$\{\mathcal{P}_t\}_{t=1}^T$ where $\mathcal{P}_t = \mathcal{P}(\sigma_{1:t})$ is
+$\{\mathcal{P}_{t}\}_{t=1}^{T}$ where $\mathcal{P}_{t} = \mathcal{P}(\sigma_{1:t})$ is
 the palindromic nerve complex of the prefix of length $t$.*
 
 ### 2.2 Growth rates by palindromic class
@@ -169,12 +169,12 @@ is exactly what persistent homology captures.
 
 **Definition 2.2** (Persistent homology). *The persistent homology of the
 eertree filtration in dimension $n$ is the family of homology groups
-$H_n(\mathcal{P}_t)$ for $t = 1, 2, \ldots, T$, together with the maps
-induced by the inclusions $\mathcal{P}_s \hookrightarrow \mathcal{P}_t$
+$H_n(\mathcal{P}_{t})$ for $t = 1, 2, \ldots, T$, together with the maps
+induced by the inclusions $\mathcal{P}_{s} \hookrightarrow \mathcal{P}_{t}$
 for $s \leq t$.*
 
 The persistence diagram $D_n$ plots each generator's birth and death times
-as a point in $\mathbb{R}^2$. Stable features (long-lived generators) appear
+as a point in $\mathbb{R}^{2}$. Stable features (long-lived generators) appear
 far from the diagonal; transient features (short-lived) appear near the
 diagonal.
 
@@ -216,7 +216,7 @@ For episturmian sequences over alphabet of size $N = r + 1$:
 complex of an episturmian sequence in an $r$-dimensional system has
 stable homotopy type:*
 
-$$\mathcal{P}^{\rm Episturmian}_r \simeq T^r \tag{3.2}$$
+$$\mathcal{P}^{\rm Episturmian}_{r} \simeq T^r \tag{3.2}$$
 
 *with Betti numbers $b_k = \binom{r}{k}$ (the standard torus Betti numbers)
 and Euler characteristic $\chi = 0$.*
@@ -300,7 +300,7 @@ nerve complexes.
 
 For each dimension $n$, the persistent homology of the eertree filtration
 yields a **persistence diagram** $D_n$ — a multiset of points
-$(b_i, d_i) \in \mathbb{R}^2$ where $b_i$ is the birth time and $d_i$ is
+$(b_i, d_i) \in \mathbb{R}^{2}$ where $b_i$ is the birth time and $d_i$ is
 the death time of the $i$-th generator.
 
 Long-lived generators (far from the diagonal) are ESSENTIAL topological
@@ -400,7 +400,7 @@ $\rho_{\rm pal} = 1$.*
 *For Clifford torus ($M = T^2$): palindromic sub-complex is $T^2$ when
 $\rho_{\rm pal} = 1$.*
 
-*For pseudo-Anosov ($M = \mathbb{H}^2$): palindromic sub-complex
+*For pseudo-Anosov ($M = \mathbb{H}^{2}$): palindromic sub-complex
 collapses to a lower-dimensional object (since hyperbolic dynamics are
 non-reversible).*
 
@@ -408,7 +408,7 @@ non-reversible).*
 
 **Theorem 5.3** (Euler characteristic of palindromic nerve).
 
-$$\chi(\mathcal{P}_T) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class}) \tag{5.1}$$
+$$\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class}) \tag{5.1}$$
 
 where:
 - $\rho_{\rm pal}(T)$ is the palindromic density (fraction of
@@ -564,7 +564,7 @@ contractible.
 persistence diagram of the eertree filtration is a complete invariant
 of the palindromic universality class.
 
-**Theorem PSC5** (Euler characteristic formula). $\chi(\mathcal{P}_T) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class})$.
+**Theorem PSC5** (Euler characteristic formula). $\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class})$.
 
 **Theorem PSC6** (Palindromic Morse theory). The eertree depth function
 is a discrete Morse function; critical cells correspond to topologically

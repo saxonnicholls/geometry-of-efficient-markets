@@ -69,7 +69,7 @@ These have no units regardless of how you measure them:
 | **Entropy** | $\mathcal{E}$ | $H(\lambda)/\log d$ | 0.26 | Evenness of the eigenvalue spectrum |
 | **Effective rank** | $r_{\rm eff}$ | $\exp(H(\lambda))$ | 2.35 | Continuous manifold dimension |
 | **Stable rank** | $r_{\rm stable}$ | $\|\Sigma\|_F^2/\|\Sigma\|_2^2$ | 1.01 | Participation ratio |
-| **Dimension** | $r$ | $\min\{k : \sum_{i=1}^k \lambda_i / \sum\lambda > 0.9\}$ | 3 | Manifold dimension (integer) |
+| **Dimension** | $r$ | $\min\{k : \sum_{i=1}^{k} \lambda_i / \sum\lambda > 0.9\}$ | 3 | Manifold dimension (integer) |
 | **Sharpe ratio** | $\mathrm{Sharpe}$ | $\mu / \sigma$ | — | Return per unit risk (dimensionless) |
 | **Eigenvalue ratio** | $\lambda_i/\lambda_j$ | — | — | Relative factor importance |
 
@@ -80,7 +80,7 @@ These require combining dimensional quantities to cancel units:
 | Number | Symbol | Formula | Meaning |
 |:-------|:------:|:--------|:--------|
 | **Sharpe-curvature** | $\mathcal{S}$ | $\mathrm{Sharpe}^{\ast}/\|H\|_{L^2}$ | Should equal 1.0 (the central theorem) |
-| **Reynolds** | $\mathrm{Re}_M$ | $\|H\| \cdot T^2 \cdot \mathrm{diam}(M)$ | Laminar (<1) vs turbulent (>10) |
+| **Reynolds** | $\mathrm{Re}_{M}$ | $\|H\| \cdot T^2 \cdot \mathrm{diam}(M)$ | Laminar (<1) vs turbulent (>10) |
 | **Cheeger** | $\mathcal{H}$ | $h_M \cdot \mathrm{diam}(M)$ | Connectivity relative to size |
 | **Mixing** | $\mathcal{M}$ | $t_{\rm mix} / T$ | Mixing time relative to observation |
 | **Regret ratio** | $\rho$ | $(d-1)/r$ | Dimension reduction factor |
@@ -97,11 +97,11 @@ characterise a market's geometric state completely:
 | 1 | **Sharpe-curvature** | $\mathcal{S}$ | $\mathrm{Sharpe}^{\ast}/\|H\|_{L^2}$ | $(0, \infty)$ | 1.0 = theory exact |
 | 2 | **Concentration** | $\mathcal{C}$ | $\lambda_1/\sum\lambda$ | $(1/d, 1)$ | 1 = one factor; 1/d = uniform |
 | 3 | **Entropy** | $\mathcal{E}$ | $H(\lambda)/\log d$ | $(0, 1)$ | 0 = concentrated; 1 = uniform |
-| 4 | **Reynolds** | $\mathrm{Re}_M$ | $\|H\|T^2\mathrm{diam}$ | $(0, \infty)$ | <1 efficient; >10 inefficient |
+| 4 | **Reynolds** | $\mathrm{Re}_{M}$ | $\|H\|T^2\mathrm{diam}$ | $(0, \infty)$ | <1 efficient; >10 inefficient |
 | 5 | **Cheeger** | $\mathcal{H}$ | $h_M\cdot\mathrm{diam}$ | $(0, \infty)$ | 0 = crisis; large = healthy |
 | 6 | **Mixing** | $\mathcal{M}$ | $t_{\rm mix}/T$ | $(0, \infty)$ | ≪1 = ergodic; ≫1 = non-ergodic |
 
-Together, $(\mathcal{S}, \mathcal{C}, \mathcal{E}, \mathrm{Re}_M, \mathcal{H}, \mathcal{M})$
+Together, $(\mathcal{S}, \mathcal{C}, \mathcal{E}, \mathrm{Re}_{M}, \mathcal{H}, \mathcal{M})$
 characterise the geometric state of any market. Two markets with the same six
 numbers have the same geometric structure — regardless of the number of assets,
 the time period, or the currency.
@@ -178,7 +178,7 @@ like $\lambda_k$ or $\kappa$.
 | MARKET_PROCESSES | Jacobi parameter $\alpha_i$ | dimensionless | **Yes** |
 | DERIVATIVES | Option price | currency | No |
 | DERIVATIVES | Implied vol $\sigma_{\rm impl}$ | $\sqrt{[R]^2/[T]}$ | No |
-| RENORMALIZATION | $\mathrm{Re}_M$ | dimensionless | **Yes** |
+| RENORMALIZATION | $\mathrm{Re}_{M}$ | dimensionless | **Yes** |
 | FOKKER_PLANCK | Stationary density $\rho$ | $1/\mathrm{vol}$ | No |
 
 ### Part III: Topology
@@ -196,7 +196,7 @@ like $\lambda_k$ or $\kappa$.
 | Paper | Key quantity | Unit | Dimensionless? |
 |:------|:-----------|:-----|:--------------:|
 | RANDOM_MATRIX | Dyson class $\beta$ | $\{1,2,4\}$ | Yes |
-| SHAPLEY | $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ | $[R]/[T]$ | No |
+| SHAPLEY | $\phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$ | $[R]/[T]$ | No |
 | CREDIT_RISK | Credit spread $s$ | $[R]/[T]$ | No |
 | CREDIT_RISK | Distance to default $d_{\rm FR}$ | dimensionless (radians) | **Yes** |
 | YIELD_CURVES | Nelson-Siegel $\lambda$ | $1/[T]$ | No |

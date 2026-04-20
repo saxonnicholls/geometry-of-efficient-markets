@@ -17,7 +17,7 @@ discovered, and the market DOES process information — slowly, imperfectly,
 with enormous curvature. We apply the geometric framework of this monograph
 to the art market: the hardest possible test case for the thesis that a
 financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
-$S^{d-1}_+$. The central insight is that the price of a Rothko is not
+$S^{d-1}_{+}$. The central insight is that the price of a Rothko is not
 \$86.9 million — it is a row of the Fisher information matrix, a web of
 relativities encoding that painting's relationship to every other tradeable
 object simultaneously. We establish that the art market manifold is
@@ -74,7 +74,7 @@ of total collection value allocated to work $i$. The portfolio simplex
 $\Delta_{d-1}$ is the collection allocation space.*
 
 **Definition 1.2** (Art market manifold). *The art market manifold
-$M^r_{\rm art} \subset S^{d-1}_+$ is the image under the Bhattacharyya
+$M^r_{\rm art} \subset S^{d-1}_{+}$ is the image under the Bhattacharyya
 embedding $\phi: b \mapsto \sqrt{b}$ of the set of log-optimal art
 portfolios over all realisations of the art market's systematic factors.*
 
@@ -190,9 +190,9 @@ sometimes deliberately obscured (a forger has every incentive to maintain
 asymmetry).
 
 In the language of filtrations (Paper III.2), the seller's filtration
-$\mathcal{F}^{\rm seller}_t$ is strictly finer than the buyer's
-$\mathcal{F}^{\rm buyer}_t$, and the difference
-$\mathcal{F}^{\rm seller}_t \setminus \mathcal{F}^{\rm buyer}_t$ is large,
+$\mathcal{F}^{\rm seller}_{t}$ is strictly finer than the buyer's
+$\mathcal{F}^{\rm buyer}_{t}$, and the difference
+$\mathcal{F}^{\rm seller}_{t} \setminus \mathcal{F}^{\rm buyer}_{t}$ is large,
 persistent, and resistant to reduction. The normal bundle $N_{b^{\ast}}M$ is fat
 with unresolvable private information.
 
@@ -276,7 +276,7 @@ $b^{\rm art}(0)$ be the reference allocation at a base date. The
 informationally correct art price index is*
 
 $$I^{\rm FR}(t) = d_{\rm FR}\bigl(b^{\rm art}(t),\, b^{\rm art}(0)\bigr)
-= 2\arccos\!\left(\sum_{i=1}^d \sqrt{b^{\rm art}_i(t)\, b^{\rm art}_i(0)}\right) \tag{3.1}$$
+= 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b^{\rm art}_{i}(t)\, b^{\rm art}_{i}(0)}\right) \tag{3.1}$$
 
 *This index is invariant under simultaneous rescaling of all prices (it
 lives on the simplex), is non-negative, equals zero iff the relative
@@ -288,7 +288,7 @@ $d_{\rm FR}(p, q) = 2\arccos\bigl(\sum_i \sqrt{p_i q_i}\bigr)$ (the
 Bhattacharyya angle). This is an intrinsic distance — it measures
 displacement on the allocation simplex without reference to any external
 numeraire. The repeat-sales index, by contrast, measures displacement in
-dollar space $\mathbb{R}_+$ and is contaminated by wealth effects, inflation,
+dollar space $\mathbb{R}_{+}$ and is contaminated by wealth effects, inflation,
 and currency movements. $\square$
 
 **Remark 3.1.** The Fisher-Rao index has a natural interpretation: it
@@ -306,7 +306,7 @@ Fisher-Rao index can.
 
 The classification theorem of Paper I.4 establishes three market types:
 CAPM (great sphere $S^r_+$, Jacobi diffusion, GOE), Clifford torus
-($T^2$, flat torus BM, GUE), and pseudo-Anosov ($\mathbb{H}^2$,
+($T^2$, flat torus BM, GUE), and pseudo-Anosov ($\mathbb{H}^{2}$,
 hyperbolic BM, GSE). Which is the art market?
 
 **Lemma A1** (Art market manifold type). *The art market manifold
@@ -354,9 +354,9 @@ itself qualitative.
 ### 4.2 The mandatory alpha theorem
 
 The pseudo-Anosov classification has a sharp consequence. By the embedding
-curvature bound for submanifolds of $S^{d-1}_+$ (Paper I.3, Corollary 4.2),
+curvature bound for submanifolds of $S^{d-1}_{+}$ (Paper I.3, Corollary 4.2),
 if $M^r$ has intrinsic sectional curvature satisfying $\kappa < 1/4$
-(the ambient curvature of $S^{d-1}_+$), then the mean curvature satisfies
+(the ambient curvature of $S^{d-1}_{+}$), then the mean curvature satisfies
 $\|H\| > 0$. For the pseudo-Anosov case, $\kappa < 0 < 1/4$, so this
 bound applies unconditionally.
 
@@ -465,7 +465,7 @@ intrinsic curvature $\kappa$, the Cheeger constant $h_M$, and the spectral
 gap $\lambda_1$. The bound is achieved in the limit of a homogeneous
 hyperbolic manifold ($\kappa = \mathrm{const}$, uniform connectivity).*
 
-*Proof sketch.* By the Gauss equation for a submanifold $M^r \subset S^{d-1}_+$:
+*Proof sketch.* By the Gauss equation for a submanifold $M^r \subset S^{d-1}_{+}$:
 
 $$\kappa_M = \frac{1}{4} + \langle II(e_i, e_i), II(e_j, e_j)\rangle - |II(e_i, e_j)|^2$$
 
@@ -662,18 +662,18 @@ under standard assumptions (independent private values, risk neutrality,
 symmetric bidders), all auction formats that assign the object to the
 highest bidder yield the same expected revenue.
 
-**Lemma A5** (Geometric revenue equivalence). *Let $\mathcal{P}^2(X)$
+**Lemma A5** (Geometric revenue equivalence). *Let $\mathcal{P}^{2}(X)$
 denote the space of ordered pairs of valuations (the two highest bidders'
-beliefs). Let $\pi: \mathcal{P}^2(X) \to \mathbb{R}_+$ be the pricing
+beliefs). Let $\pi: \mathcal{P}^{2}(X) \to \mathbb{R}_{+}$ be the pricing
 map of any incentive-compatible auction. The revenue equivalence theorem
 states that $\mathbb{E}[\pi]$ depends only on the marginal distributions
 of the highest and second-highest valuations — i.e., on the projection
-from $\mathcal{P}^2(X)$ to the space of order-statistic pairs. All
+from $\mathcal{P}^{2}(X)$ to the space of order-statistic pairs. All
 auction formats that induce the same projection yield the same expected
 revenue.*
 
 *In Fisher-Rao terms: the auction is a map from
-$(\mathcal{P}^2(X), g^{\rm FR})$ to $(\mathbb{R}_+, |\cdot|)$. Revenue
+$(\mathcal{P}^{2}(X), g^{\rm FR})$ to $(\mathbb{R}_{+}, |\cdot|)$. Revenue
 equivalence states that the expected image depends only on the
 $g^{\rm FR}$-projection onto the order-statistic submanifold.*
 
@@ -684,7 +684,7 @@ $G(v) = \Pr(\text{win} \mid v)$ is the allocation rule. Since $G$ depends
 only on the order statistics of the valuation distribution, the expected
 revenue depends only on the marginals, which are the projection of the
 joint distribution onto the order-statistic submanifold. The Fisher-Rao
-geometry enters because $\mathcal{P}^2(X)$ is a space of probability
+geometry enters because $\mathcal{P}^{2}(X)$ is a space of probability
 distributions. $\square$
 
 **Remark 8.1.** Revenue equivalence breaks down when the standard

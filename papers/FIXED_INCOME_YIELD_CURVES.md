@@ -11,7 +11,7 @@
 
 **Abstract.**
 The yield curve is a one-dimensional submanifold of the bond market manifold
-$M^r_{\mathrm{bond}} \subset S^{d-1}_+$, where $d$ is the number of distinct
+$M^r_{\mathrm{bond}} \subset S^{d-1}_{+}$, where $d$ is the number of distinct
 maturities traded. Its static shape is determined by the curvature of this curve
 in the ambient Fisher--Rao geometry. Its dynamic evolution follows mean curvature
 flow (MCF) on the space of curves. A yield curve inversion is a topological
@@ -30,7 +30,7 @@ We derive:
   the mean curvature $H(\gamma_t, \tau)$ of the yield curve $\gamma_t$ at that
   point, measured in the Fisher--Rao geometry of the bond simplex.
 - **Short-rate models = manifold diffusions.** Vasicek is OU on the level
-  component, CIR is the Jacobi diffusion on $\mathbb{R}_+$ (the Wright--Fisher
+  component, CIR is the Jacobi diffusion on $\mathbb{R}_{+}$ (the Wright--Fisher
   process restricted to one coordinate), and Hull--White is the geodesic through
   the current yield curve point.
 - **HJM = constrained MCF.** The Heath--Jarrow--Morton drift condition is the
@@ -78,17 +78,17 @@ $$\tau_1 = \tfrac{1}{12}, \quad \tau_2 = \tfrac{3}{12}, \quad \tau_3 = \tfrac{6}
 
 giving $d = 11$ maturities and a portfolio simplex
 
-$$\Delta_{10} = \bigl\{b = (b_1, \ldots, b_{11}) \in \mathbb{R}^{11}_+ : \textstyle\sum_{i=1}^{11} b_i = 1\bigr\} \tag{1.1}$$
+$$\Delta_{10} = \bigl\{b = (b_1, \ldots, b_{11}) \in \mathbb{R}^{11}_{+} : \textstyle\sum_{i=1}^{11} b_i = 1\bigr\} \tag{1.1}$$
 
 where $b_i$ is the fraction of wealth allocated to maturity $\tau_i$. The
 simplex carries the Fisher--Rao metric $g^{\mathrm{FR}}_{ij} = \delta_{ij}/b_i$,
 and the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$ embeds it into the
-positive orthant of $S^{10}_+$ with constant sectional curvature $K = 1/4$.
+positive orthant of $S^{10}_{+}$ with constant sectional curvature $K = 1/4$.
 
 Everything developed in the preceding papers applies verbatim: portfolio weights
 are barycentric coordinates, the log-optimal portfolio $b^\ast$ maximises the
-Kelly growth rate $L_T(b) = T^{-1}\sum_{t=1}^T \log\langle b, x_t\rangle$,
-and the market manifold $M^r_{\mathrm{bond}} \subset S^{10}_+$ is the
+Kelly growth rate $L_T(b) = T^{-1}\sum_{t=1}^{T} \log\langle b, x_t\rangle$,
+and the market manifold $M^r_{\mathrm{bond}} \subset S^{10}_{+}$ is the
 $r$-dimensional submanifold of log-optimal bond portfolios over all factor shock
 realisations.
 
@@ -116,9 +116,9 @@ exploits the $r = 3$ structure to its fullest.
 
 ### 1.3 The bond manifold $M^3_{\mathrm{bond}}$
 
-The bond market manifold is a 3-dimensional submanifold of $S^{10}_+$:
+The bond market manifold is a 3-dimensional submanifold of $S^{10}_{+}$:
 
-$$M^3_{\mathrm{bond}} = \bigl\{\phi(b^\ast(\xi)) : \xi \in \mathbb{R}^3\bigr\} \subset S^{10}_+ \tag{1.2}$$
+$$M^3_{\mathrm{bond}} = \bigl\{\phi(b^\ast(\xi)) : \xi \in \mathbb{R}^{3}\bigr\} \subset S^{10}_{+} \tag{1.2}$$
 
 where $\xi = (\xi_1, \xi_2, \xi_3)$ parameterises the three systematic factors.
 The induced metric $g_M = \iota^\ast g^{\mathrm{FR}}$ is a Riemannian metric on
@@ -127,7 +127,7 @@ the Willmore energy $\mathcal{W}$, the Jacobi operator $L_M$, the spectral gap
 $\lambda_1(L_M)$ — are well-defined and computable.
 
 The classification theorem (CLASSIFICATION.md) applies: $M^3_{\mathrm{bond}}$
-in the CAPM regime is the totally geodesic great 3-sphere $S^3_+ \subset S^{10}_+$,
+in the CAPM regime is the totally geodesic great 3-sphere $S^3_+ \subset S^{10}_{+}$,
 the unique stable minimal submanifold in this dimension. The Jacobi diffusion
 (MARKET_PROCESSES.md) governs the dynamics. The Feller boundary analysis
 (SOBOLEV_OPTIONS_GREEKS.md, HAMILTONIAN_TAILS_COMPLETENESS.md) determines what
@@ -228,14 +228,14 @@ We provide that foundation.
 ### 3.2 The Jacobi operator on $M^3_{\mathrm{bond}}$
 
 The Jacobi operator (CLASSIFICATION.md Section 3) on the bond manifold
-$M^3_{\mathrm{bond}} \subset S^{10}_+$ is
+$M^3_{\mathrm{bond}} \subset S^{10}_{+}$ is
 
 $$L_M = \Delta_M + |A|^2 + \overline{\mathrm{Ric}} \tag{3.2}$$
 
 where $\Delta_M$ is the Laplace--Beltrami operator on $(M^3, g_M)$, $|A|^2$
 is the squared norm of the second fundamental form, and $\overline{\mathrm{Ric}}$
 is the ambient Ricci curvature restricted to $M$. Since the ambient space
-$S^{10}_+$ has constant curvature $K = 1/4$, we have
+$S^{10}_{+}$ has constant curvature $K = 1/4$, we have
 $\overline{\mathrm{Ric}} = (d-2) \cdot K = 9/4$.
 
 The Jacobi operator has a discrete spectrum
@@ -264,9 +264,9 @@ $M^3_{\mathrm{bond}}$:*
 4. *The Nelson--Siegel decay parameter satisfies $\lambda \approx 1/\lambda_1$
    — it is the inverse of the spectral gap.*
 
-*Proof.* The Jacobi operator on $M^3 \subset S^{d-1}_+$ has eigenfunctions that
+*Proof.* The Jacobi operator on $M^3 \subset S^{d-1}_{+}$ has eigenfunctions that
 are the restrictions to $M^3$ of the spherical harmonics on $S^{d-1}$. For the
-totally geodesic embedding $S^3_+ \hookrightarrow S^{10}_+$ (the CAPM bond
+totally geodesic embedding $S^3_+ \hookrightarrow S^{10}_{+}$ (the CAPM bond
 market), these are the Jacobi polynomials $P_n^{(\alpha,\beta)}$ in the maturity
 coordinate, with $\alpha = \beta = d/2 - 1$.
 
@@ -323,7 +323,7 @@ from the manifold dimension and embedding, and the prediction matches the data.
 The term premium is the excess yield that investors demand for holding long-maturity
 bonds over a sequence of short-maturity bonds:
 
-$$\mathrm{TP}(\tau) = y(t, \tau) - \frac{1}{\tau}\int_t^{t+\tau} \mathbb{E}_t[r(s)]\,ds \tag{4.1}$$
+$$\mathrm{TP}(\tau) = y(t, \tau) - \frac{1}{\tau}\int_t^{t+\tau} \mathbb{E}_{t}[r(s)]\,ds \tag{4.1}$$
 
 where $r(s)$ is the short rate. The expectations hypothesis says $\mathrm{TP} = 0$;
 the data say otherwise. The term premium is positive on average (about 100--200 bps
@@ -413,8 +413,8 @@ curvature curve consistent with the current short rate $r$. The Vasicek yield
 curve has the smallest possible $\|H\|_{L^2}$ for a given $(r, \theta, \sigma)$.
 
 **Limitation.** Vasicek allows $r < 0$ because the OU process lives on
-$\mathbb{R}$, not on $\mathbb{R}_+$. In our framework: the process can leave
-the positive orthant $S^{d-1}_+$, which has no geometric meaning for interest
+$\mathbb{R}$, not on $\mathbb{R}_{+}$. In our framework: the process can leave
+the positive orthant $S^{d-1}_{+}$, which has no geometric meaning for interest
 rates prior to 2012. (Post-2012 European and Japanese rates showed that negative
 rates are empirically possible — see Section 12, OP-Y4.)
 
@@ -422,7 +422,7 @@ rates are empirically possible — see Section 12, OP-Y4.)
 
 $$dr = \kappa(\theta - r)\,dt + \sigma\sqrt{r}\,dW \tag{5.3}$$
 
-**Geometric interpretation.** This is the Jacobi diffusion on $\mathbb{R}_+$
+**Geometric interpretation.** This is the Jacobi diffusion on $\mathbb{R}_{+}$
 — the Wright--Fisher process restricted to one coordinate.
 
 **Theorem 5.1** (CIR = Jacobi diffusion). *The CIR process is the canonical
@@ -468,7 +468,7 @@ encoding the extrinsic curvature of this geodesic in the ambient space.
 The Hull--White model is the unique short-rate model that:
 1. Is Gaussian (OU process),
 2. Fits the current yield curve exactly,
-3. Minimises the extrinsic curvature of the model yield curve in $S^{10}_+$.
+3. Minimises the extrinsic curvature of the model yield curve in $S^{10}_{+}$.
 
 It is the *geodesic interpolation* of the bond manifold through the observed
 yield curve — the simplest geometric curve consistent with the data.
@@ -478,7 +478,7 @@ yield curve — the simplest geometric curve consistent with the data.
 | Model | Process on $M^3$ | Yield curve shape | $r < 0$? | Feller boundary | Spectral decomposition |
 |:------|:-----------------|:------------------|:---------|:----------------|:----------------------|
 | Vasicek | OU on $\mathbb{R}$ | Affine (geodesic) | Yes | None | Hermite functions |
-| CIR | Jacobi on $\mathbb{R}_+$ | Exponential affine | No | Entrance if $2\kappa\theta > \sigma^2$ | Laguerre polynomials |
+| CIR | Jacobi on $\mathbb{R}_{+}$ | Exponential affine | No | Entrance if $2\kappa\theta > \sigma^2$ | Laguerre polynomials |
 | Hull--White | OU + time-varying drift | Fits current curve | Yes | None | Time-dependent Hermite |
 | Black--Karasinski | Geometric OU | Log-affine | No | Natural boundary at 0 | Log-Hermite |
 | Dothan | GBM | Exponential | No | Exit at 0 | Bessel functions |
@@ -801,7 +801,7 @@ decomposes into three independent strategies along the Jacobi eigenmodes:*
 *The three strategies are orthogonal in the Fisher--Rao metric, and the combined
 Sharpe ratio satisfies:*
 
-$$\mathrm{Sharpe}^2_{\mathrm{total}} = \mathrm{Sharpe}^2_{\mathrm{level}} + \mathrm{Sharpe}^2_{\mathrm{slope}} + \mathrm{Sharpe}^2_{\mathrm{curvature}} \tag{9.2}$$
+$$\mathrm{Sharpe}^{2}_{\mathrm{total}} = \mathrm{Sharpe}^{2}_{\mathrm{level}} + \mathrm{Sharpe}^{2}_{\mathrm{slope}} + \mathrm{Sharpe}^{2}_{\mathrm{curvature}} \tag{9.2}$$
 
 *Proof.* The Jacobi eigenmodes $\{v_0, v_1, v_2\}$ are orthogonal in
 $L^2(M^3, g_M)$ by construction. The MUP on $M^3$ is the Bayesian average over
@@ -905,7 +905,7 @@ $M^3_{\mathrm{bond}}$.* The three Nelson--Siegel factors (level, slope, curvatur
 are the eigenfunctions $v_0, v_1, v_2$ of the Jacobi operator on the bond
 manifold. The decay parameter $\lambda \approx 1/\lambda_1$ is the inverse
 spectral gap. The empirical eigenvalue ratios match the Jacobi polynomial
-predictions for $S^3_+ \hookrightarrow S^{10}_+$.
+predictions for $S^3_+ \hookrightarrow S^{10}_{+}$.
 
 **Result Y2** (Theorem 4.1). *Term premium = mean curvature of the yield curve.*
 $\mathrm{TP}(\tau) = H(\gamma_t, \tau)$ in the Fisher--Rao geometry. The total
@@ -913,7 +913,7 @@ term premium is $\|H\|_{L^2}$, and by the Sharpe--curvature identity, the
 Sharpe ratio of duration strategies equals the RMS mean curvature of the yield
 curve.
 
-**Result Y3** (Theorem 5.1). *CIR = Jacobi diffusion on $\mathbb{R}_+$
+**Result Y3** (Theorem 5.1). *CIR = Jacobi diffusion on $\mathbb{R}_{+}$
 (Wright--Fisher restricted to one coordinate).* The $\sqrt{r}$ volatility arises
 from the Fisher--Rao metric. The Feller condition $2\kappa\theta > \sigma^2$
 determines boundary accessibility. The transition density is a special case of
@@ -933,7 +933,7 @@ recessions correctly predicted since 1955.
 **Result Y6** (Theorem 9.1). *Bond MUP = carry + steepener + butterfly
 (Pythagorean decomposition).* The MUP on $M^3_{\mathrm{bond}}$ decomposes along
 the three Jacobi eigenmodes. The combined Sharpe ratio satisfies
-$\mathrm{Sharpe}^2_{\mathrm{total}} = \sum_{n=0}^2 \mathrm{Sharpe}^2_n$
+$\mathrm{Sharpe}^{2}_{\mathrm{total}} = \sum_{n=0}^{2} \mathrm{Sharpe}^{2}_n$
 by orthogonality in the Fisher--Rao metric.
 
 ---
@@ -968,7 +968,7 @@ and Japanese government bonds traded at negative yields — the yield curve left
 positive orthant. In our framework, the portfolio simplex $\Delta_{d-1}$ has
 coordinates $b_i \geq 0$, and the Fisher--Rao metric $g^{\mathrm{FR}}_{ii} =
 1/b_i$ diverges as $b_i \to 0$. Negative yields correspond to... what? One
-possibility: the yield curve exits the Bhattacharyya sphere $S^{d-1}_+$ into the
+possibility: the yield curve exits the Bhattacharyya sphere $S^{d-1}_{+}$ into the
 full sphere $S^{d-1}$, entering a region where the Fisher--Rao geometry is
 no longer the correct metric. A geometric theory of negative rates requires
 extending the framework beyond the positive orthant.

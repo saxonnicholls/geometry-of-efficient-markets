@@ -20,7 +20,7 @@ propagation, and local portfolio hashing.
 
 The key connections:
 
-**(i) H3 on the Bhattacharyya sphere.** The Bhattacharyya hemisphere $S^{d-1}_+$ IS
+**(i) H3 on the Bhattacharyya sphere.** The Bhattacharyya hemisphere $S^{d-1}_{+}$ IS
 a sphere — Uber's H3 hexagonal hierarchical index applies directly. At resolution
 level $\ell$, the market manifold is partitioned into $7^\ell$ hexagonal cells (each
 cell subdividing into 7 children). The H3 index of a portfolio $b$ is a 64-bit
@@ -80,19 +80,19 @@ manifold of dimension $d-1$. The market manifold $M^r \subset \Delta_{d-1}$ is a
 $r$-dimensional Riemannian submanifold. These are precisely the objects that
 geospatial indexing systems are designed to handle efficiently:
 
-- **Uber H3:** Hierarchical hexagonal indexing on $S^2$ — applies to $S^{d-1}_+$
-- **Google S2:** Quad-tree on the cube mapped to $S^2$ — applies to $S^{d-1}_+$
+- **Uber H3:** Hierarchical hexagonal indexing on $S^2$ — applies to $S^{d-1}_{+}$
+- **Google S2:** Quad-tree on the cube mapped to $S^2$ — applies to $S^{d-1}_{+}$
 - **Geohash:** Z-order curve on $[0,1]^2$ — applies to the portfolio simplex directly
 - **R-trees:** Axis-aligned bounding rectangles — applies in the Bhattacharyya coordinates
 - **Hilbert curves:** Space-filling locality-preserving curves — applies on $M^r$
 
 The market manifold is not merely *analogous* to a geospatial object — it IS one,
-mapped to a sphere by the Bhattacharyya isometry $b \mapsto \sqrt{b} \in S^{d-1}_+$.
+mapped to a sphere by the Bhattacharyya isometry $b \mapsto \sqrt{b} \in S^{d-1}_{+}$.
 
 ### 1.2 The geospatial interpretation of portfolio weights
 
 **Portfolio weights as spherical coordinates.** In the Bhattacharyya coordinates
-$u = \sqrt{b} \in S^{d-1}_+$, the portfolio weight $b_i = u_i^2$ is the squared
+$u = \sqrt{b} \in S^{d-1}_{+}$, the portfolio weight $b_i = u_i^2$ is the squared
 $i$-th coordinate. The Fisher-Rao metric is the standard round metric on $S^{d-1}$
 (constant curvature $K=1/4$).
 
@@ -128,7 +128,7 @@ the H3 filtration at resolution $\ell$ are the H3 cells — they are exactly the
 Voronoi cells of the $7^\ell$ H3 centres in the Fisher-Rao metric. The H3 hierarchy
 therefore generates a filtration:
 $$\mathcal{F}^{\mathrm{H3},0} \subseteq \mathcal{F}^{\mathrm{H3},1} \subseteq \ldots
-\subseteq \mathcal{F}^{\mathrm{H3},15} \subseteq \mathcal{F}^M \tag{2.2}$$
+\subseteq \mathcal{F}^{\mathrm{H3},15} \subseteq \mathcal{F}^{M} \tag{2.2}$$
 
 At coarse resolution ($\ell=0$): 8 cells in the positive octant — the factor-level
 filtration. At fine resolution ($\ell=10$): $8\times 7^9 \approx 3.2\times 10^8$ cells
@@ -190,7 +190,7 @@ axes (as for the multi-CAPM, where $M = S^r_+$ and Voronoi cells are coordinate
 simplices), S2 cells are the natural partition.
 
 **S2 cell ID as a portfolio address.** An S2 cell ID at level 30 encodes a portfolio
-$b$ with precision $\approx 1\mathrm{cm}^2$ on the Earth's surface — or equivalently,
+$b$ with precision $\approx 1\mathrm{cm}^{2}$ on the Earth's surface — or equivalently,
 $\approx 10^{-7}$ in portfolio weight units for $d=3$. This gives a 64-bit lossless
 encoding of any portfolio to high precision.
 
@@ -200,7 +200,7 @@ The S2 hierarchy at level $\ell$ on portfolio $S^2_+$ partitions the market mani
 into $4^\ell$ cells, each corresponding to a specific range of factor exposures.
 
 **At level 1** ($4$ cells for $S^2_+$): the four "quadrant portfolios"
-$(b_1 \gtrless b^{\ast}_1, b_2 \gtrless b^{\ast}_2)$ — the Clifford torus Voronoi cells.
+$(b_1 \gtrless b^{\ast}_{1}, b_2 \gtrless b^{\ast}_{2})$ — the Clifford torus Voronoi cells.
 
 **At level 2** ($16$ cells): each quadrant further divided into sub-quadrants by
 within-group allocation — resolves the fine structure within each factor regime.
@@ -215,17 +215,17 @@ tree of FILTRATIONS.md Section 6.3.
 
 ### 4.1 The Hilbert curve on the market manifold
 
-A **Hilbert curve** $\mathcal{H}_r: [0,1] \to M^r$ is a space-filling curve that
+A **Hilbert curve** $\mathcal{H}_{r}: [0,1] \to M^r$ is a space-filling curve that
 maps the unit interval bijectively and continuously to the $r$-dimensional market
 manifold, with the locality property:
 
-$$|s_1 - s_2| \leq \delta \implies d_{g_M}(\mathcal{H}_r(s_1), \mathcal{H}_r(s_2)) \leq C\delta^{1/r} \tag{4.1}$$
+$$|s_1 - s_2| \leq \delta \implies d_{g_M}(\mathcal{H}_{r}(s_1), \mathcal{H}_{r}(s_2)) \leq C\delta^{1/r} \tag{4.1}$$
 
 Points that are close on the Hilbert index $s \in [0,1]$ are close on the manifold.
 
 **The Hilbert index** of a portfolio $b \in M^r$ is:
 
-$$\mathrm{HI}(b) = \mathcal{H}_r^{-1}(b) \in [0,1] \tag{4.2}$$
+$$\mathrm{HI}(b) = \mathcal{H}_{r}^{-1}(b) \in [0,1] \tag{4.2}$$
 
 — a single real number that encodes the portfolio's position on the manifold while
 preserving proximity.
@@ -233,7 +233,7 @@ preserving proximity.
 ### 4.2 The Hilbert ordering minimises LZ complexity
 
 **Theorem 4.1** *(Hilbert ordering minimises the prefix tree)*. *Among all
-orderings of the Voronoi cells $\{0,\ldots,r\}^n$ at depth $n$, the Hilbert
+orderings of the Voronoi cells $\{0,\ldots,r\}^{n}$ at depth $n$, the Hilbert
 ordering (cells ordered by their Hilbert index) gives the minimum LZ complexity:*
 
 $$c_{\rm LZ}^{\mathrm{Hilbert}} = \min_{\sigma \in S_n} c_{\rm LZ}^\sigma \tag{4.3}$$
@@ -263,9 +263,9 @@ has a remarkable property: the first $n$ bits $b_1\cdots b_n$ determine the dept
 Hilbert cell containing $b^{\ast}(t)$ — equivalently, the depth-$n$ atom of the Hilbert filtration.
 
 **The Hilbert filtration:**
-$$\mathcal{F}^{\mathrm{HI}}_t^n = \sigma(b_1(s),\ldots,b_n(s) : s \leq t) \tag{4.5}$$
+$$\mathcal{F}^{\mathrm{HI}}_{t}^{n} = \sigma(b_1(s),\ldots,b_n(s) : s \leq t) \tag{4.5}$$
 is generated by the first $n$ bits of the Hilbert index, and is equivalent to the
-depth-$n$ Voronoi filtration $\mathcal{F}^{\rm Vor,n}_t$ (by the locality correspondence
+depth-$n$ Voronoi filtration $\mathcal{F}^{\rm Vor,n}_{t}$ (by the locality correspondence
 4.3). **The Hilbert curve converts the multi-dimensional filtration into a sequence of
 binary decisions** — each bit of the Hilbert index is one binary split in the filtration tree.
 
@@ -277,7 +277,7 @@ binary decisions** — each bit of the Hilbert index is one binary split in the 
 
 An **R-tree** \[Guttman 1984\] organises spatial objects into a tree of minimum
 bounding rectangles (MBRs). For portfolio space:
-- Each portfolio $b \in M^r$ is a point in $\mathbb{R}^d$ (with $\sum b_i=1$ constraint)
+- Each portfolio $b \in M^r$ is a point in $\mathbb{R}^{d}$ (with $\sum b_i=1$ constraint)
 - Each MBR is an axis-aligned box $[l_1,u_1]\times\cdots\times[l_d,u_d]$ in portfolio space
 - The R-tree supports range queries: find all portfolios within a given MBR
 
@@ -381,7 +381,7 @@ with initial condition $\delta b(b,0) = \delta_i e_i\cdot\mathbf{1}_{b=b^{\ast}}
 **Theorem 7.1** *(Contagion kernel on the market manifold)*. *The solution to (7.2)
 is the manifold heat kernel:*
 
-$$\delta b(b,t) = \int_M p_t(b,b')\,\delta b(b',0)\,d\mathrm{vol}_M(b') \tag{7.3}$$
+$$\delta b(b,t) = \int_M p_t(b,b')\,\delta b(b',0)\,d\mathrm{vol}_{M}(b') \tag{7.3}$$
 
 *where $p_t(b,b')$ is the heat kernel on $(M^r, g_M)$ from MARKET_PROCESSES.*
 
@@ -391,7 +391,7 @@ polynomial series (MARKET_PROCESSES equation 2.3).*
 *For the Clifford torus ($M=T^2$): the contagion kernel is the theta function
 $\vartheta_3$ (MARKET_PROCESSES equation 4.4).*
 
-*For the hyperbolic market ($M=\mathbb{H}^2$): the contagion kernel is the McKean
+*For the hyperbolic market ($M=\mathbb{H}^{2}$): the contagion kernel is the McKean
 kernel (MARKET_PROCESSES equation 5.7).*
 
 *The contagion speed is $\varepsilon = 1/\sqrt{T}$ — one observation worth of
@@ -420,7 +420,7 @@ where $\boldsymbol{\delta}(t) \in \mathbb{R}^{r+1}$ is the shock at each Voronoi
 **Solution:**
 
 $$\boldsymbol{\delta}(t) = e^{-L^{\mathcal{D}}t}\boldsymbol{\delta}(0)
-= \sum_{k=0}^r e^{-\lambda_k^{\mathcal{D}} t}\langle\boldsymbol{\delta}(0),\phi_k\rangle\phi_k \tag{7.6}$$
+= \sum_{k=0}^{r} e^{-\lambda_k^{\mathcal{D}} t}\langle\boldsymbol{\delta}(0),\phi_k\rangle\phi_k \tag{7.6}$$
 
 where $\{\lambda_k^{\mathcal{D}}, \phi_k\}$ are the eigenvalues and eigenvectors of
 $L^{\mathcal{D}}$.
@@ -498,16 +498,16 @@ easily the optimal portfolio transitions between their factor regimes).
 
 **Adrian-Brunnermeier's CoVaR** \[2016\] defines the systemic contribution of
 institution $i$ as:
-$$\Delta\mathrm{CoVaR}^{j|i} = \mathrm{VaR}^j|\mathrm{distress}(i) - \mathrm{VaR}^j|\mathrm{median}(i) \tag{8.1}$$
+$$\Delta\mathrm{CoVaR}^{j|i} = \mathrm{VaR}^{j}|\mathrm{distress}(i) - \mathrm{VaR}^{j}|\mathrm{median}(i) \tag{8.1}$$
 
-In geometric terms: institution $i$ is in distress when $b^{\ast}_i \to \partial\Delta$
+In geometric terms: institution $i$ is in distress when $b^{\ast}_{i} \to \partial\Delta$
 (portfolio weight approaching zero — the Feller boundary). The VaR of institution $j$
 given $i$'s distress equals the VaR under the conditional distribution given that
-$b^{\ast}_i(t)$ is in the crisis cell $A^{\rm crisis} = B_{g^{\mathrm{FR}}}(\partial\Delta, \varepsilon)$:
+$b^{\ast}_{i}(t)$ is in the crisis cell $A^{\rm crisis} = B_{g^{\mathrm{FR}}}(\partial\Delta, \varepsilon)$:
 
-$$\Delta\mathrm{CoVaR}^{j|i}_{\rm geom} = \mathrm{VaR}^j\!\left(\,\cdot\, | b^{\ast}_i \in A^{\rm crisis}\right) - \mathrm{VaR}^j\!\left(\,\cdot\, | b^{\ast}_i \in A^{\ast}_i\right) \tag{8.2}$$
+$$\Delta\mathrm{CoVaR}^{j|i}_{\rm geom} = \mathrm{VaR}^{j}\!\left(\,\cdot\, | b^{\ast}_{i} \in A^{\rm crisis}\right) - \mathrm{VaR}^{j}\!\left(\,\cdot\, | b^{\ast}_{i} \in A^{\ast}_{i}\right) \tag{8.2}$$
 
-The geometric CoVaR is large when $A^{\rm crisis}$ is close to $A^{\ast}_j$ in the
+The geometric CoVaR is large when $A^{\rm crisis}$ is close to $A^{\ast}_{j}$ in the
 Delaunay graph — when institutions $i$ and $j$ are in adjacent Voronoi cells.
 **Two institutions have high mutual CoVaR iff they are Delaunay neighbours.**
 
@@ -555,7 +555,7 @@ Real financial shocks are self-exciting: a large move in stock $A$ tends to trig
 further large moves in correlated stocks. The **Hawkes process** \[Hawkes 1971\] on
 the Delaunay graph $\mathcal{D}(M)$ models this:
 
-$$\lambda_k(t) = \mu_k + \sum_{l: (k,l)\in\mathcal{D}}\int_{-\infty}^t \phi_{kl}(t-s)\,dN_l(s) \tag{9.1}$$
+$$\lambda_k(t) = \mu_k + \sum_{l: (k,l)\in\mathcal{D}}\int_{-\infty}^{t} \phi_{kl}(t-s)\,dN_l(s) \tag{9.1}$$
 
 where $\lambda_k(t)$ is the intensity of shocks to Voronoi cell $k$, $\mu_k$ is the
 baseline intensity, $\phi_{kl}(t)$ is the excitation kernel from cell $l$ to cell $k$,
@@ -609,7 +609,7 @@ distribution) and positive when the market is away from stationarity.
 **The total information flow rate:**
 
 $$I_{\rm total}(t) = \sum_{(k,l)\in\mathcal{D}} I_{kl}(t)
-= D_{\rm KL}(p_{b^{\ast}}(\cdot|\mathcal{F}^{\rm Vor}_t) \| \pi) \tag{10.2}$$
+= D_{\rm KL}(p_{b^{\ast}}(\cdot|\mathcal{F}^{\rm Vor}_{t}) \| \pi) \tag{10.2}$$
 
 — the KL divergence between the current conditional distribution and the stationary
 distribution. This is zero at the efficient market equilibrium and positive during
@@ -620,7 +620,7 @@ information events.
 At H3 resolution $\ell$, the information flow rate $I_{\rm total}^\ell(t)$ captures
 shocks at scale $C_\ell$. The **multi-scale information flow vector**:
 
-$$\mathbf{I}(t) = (I_{\rm total}^0(t), I_{\rm total}^1(t), \ldots, I_{\rm total}^{15}(t)) \tag{10.3}$$
+$$\mathbf{I}(t) = (I_{\rm total}^{0}(t), I_{\rm total}^{1}(t), \ldots, I_{\rm total}^{15}(t)) \tag{10.3}$$
 
 characterises the information event at each scale simultaneously.
 

@@ -24,7 +24,7 @@ Turing-complete frontier.
 Our principal results:
 
 **(i) Every market strategy is a braid.** A dynamic portfolio strategy in $d$ assets
-traces a braid in the configuration space $\mathrm{Conf}_d(S^1)$ — the space of $d$
+traces a braid in the configuration space $\mathrm{Conf}_{d}(S^1)$ — the space of $d$
 labeled points on a circle. The braid group $B_d$ acts on portfolio space; the market
 closes each strategy into a knot via Alexander's closure; the Jones polynomial of this
 knot is the strategy's topological performance measure.
@@ -79,14 +79,14 @@ partition; shift space; word problem; conjugacy problem.
 
 ### 1.1 The configuration space of assets
 
-Consider $d$ assets with prices $S_t = (S_{t,1},\ldots,S_{t,d}) \in \mathbb{R}^d_+$.
+Consider $d$ assets with prices $S_t = (S_{t,1},\ldots,S_{t,d}) \in \mathbb{R}^{d}_+$.
 The configuration space of distinct asset prices is:
 
-$$\mathrm{Conf}_d(\mathbb{R}_+) = \{(S_1,\ldots,S_d) \in \mathbb{R}^d_+ : S_i \neq S_j \text{ for } i \neq j\} \tag{1.1}$$
+$$\mathrm{Conf}_{d}(\mathbb{R}_{+}) = \{(S_1,\ldots,S_d) \in \mathbb{R}^{d}_+ : S_i \neq S_j \text{ for } i \neq j\} \tag{1.1}$$
 
 The **fundamental group** of this space:
 
-$$\pi_1(\mathrm{Conf}_d(\mathbb{R}_+)) = B_d \tag{1.2}$$
+$$\pi_1(\mathrm{Conf}_{d}(\mathbb{R}_{+})) = B_d \tag{1.2}$$
 
 is the **braid group on $d$ strands** — the group of all ways to move $d$ distinct
 points around each other, tracking their paths as braids.
@@ -107,7 +107,7 @@ The braid group $B_d$ has generators $\sigma_1, \ldots, \sigma_{d-1}$ with:
 
 A dynamic portfolio strategy that rebalances at times $t_1 < t_2 < \ldots < t_n$
 generates a sequence of portfolio transitions. Between rebalancing times, the asset
-prices follow a path in $\mathrm{Conf}_d(\mathbb{R}_+)$, accumulating a braid word:
+prices follow a path in $\mathrm{Conf}_{d}(\mathbb{R}_{+})$, accumulating a braid word:
 
 $$\beta_\text{strategy} = \sigma_{i_1}^{\epsilon_1}\sigma_{i_2}^{\epsilon_2}\cdots\sigma_{i_n}^{\epsilon_n}
 \in B_d, \qquad \epsilon_k \in \{\pm 1\} \tag{1.3}$$
@@ -207,10 +207,10 @@ believed to be computationally intractable even for quantum computers.
 
 **The efficient market computes the Jones polynomial.** The universal portfolio:
 
-$$\hat{b}_T^M = \frac{\int_{M^r} b\,W_T(b)\,d\mathrm{vol}_M}{\int_{M^r} W_T(b)\,d\mathrm{vol}_M} \tag{3.1}$$
+$$\hat{b}_{T}^{M} = \frac{\int_{M^r} b\,W_T(b)\,d\mathrm{vol}_{M}}{\int_{M^r} W_T(b)\,d\mathrm{vol}_{M}} \tag{3.1}$$
 
 is a path integral over all portfolio trajectories on the market manifold, weighted
-by the wealth function $W_T(b) = \prod_{t=1}^T \langle b, x_t\rangle$. By the
+by the wealth function $W_T(b) = \prod_{t=1}^{T} \langle b, x_t\rangle$. By the
 identification of the Jones polynomial with the Chern-Simons path integral
 (KNOT_THEORY Section 3), evaluating this integral at the appropriate coupling
 constant is equivalent to computing the Jones polynomial of the market knot.
@@ -275,9 +275,9 @@ is isotopic to one of three types:
 **Reducible:** $f$ preserves a collection of essential simple closed curves
 (the surface decomposes into invariant subsurfaces)
 
-**Pseudo-Anosov:** $f$ preserves a pair of transverse measured foliations $\mathcal{F}^s$
-(stable, contracting) and $\mathcal{F}^u$ (unstable, expanding) with
-$f(\mathcal{F}^s) = \lambda^{-1}\mathcal{F}^s$ and $f(\mathcal{F}^u) = \lambda\mathcal{F}^u$
+**Pseudo-Anosov:** $f$ preserves a pair of transverse measured foliations $\mathcal{F}^{s}$
+(stable, contracting) and $\mathcal{F}^{u}$ (unstable, expanding) with
+$f(\mathcal{F}^{s}) = \lambda^{-1}\mathcal{F}^{s}$ and $f(\mathcal{F}^{u}) = \lambda\mathcal{F}^{u}$
 for some $\lambda > 1$ (the **stretch factor** or **dilatation**).
 
 The monodromy of the market path $\Gamma$ around one business cycle induces a
@@ -363,17 +363,17 @@ $$\lambda_{\rm pA}(g) \geq \frac{1}{4g-2}\log(2g-1) \tag{4.1}$$
 **Definition 5.1** (Market alphabet and shift space). *The **market alphabet** is
 the set of return states:*
 
-$$\mathcal{A} = \{x \in \mathbb{R}^d_+ : x = \text{one-period return vector}\} \tag{5.1}$$
+$$\mathcal{A} = \{x \in \mathbb{R}^{d}_+ : x = \text{one-period return vector}\} \tag{5.1}$$
 
 *Discretised at resolution $\delta$: $\mathcal{A}_\delta = \{a_1,\ldots,a_N\}$,
-a finite set of return "symbols." The **market language** $\mathcal{L}_M$ is the
+a finite set of return "symbols." The **market language** $\mathcal{L}_{M}$ is the
 set of all finite admissible return sequences:*
 
-$$\mathcal{L}_M = \{(a_{i_1},\ldots,a_{i_T}) : \text{this sequence can occur in the market}\} \tag{5.2}$$
+$$\mathcal{L}_{M} = \{(a_{i_1},\ldots,a_{i_T}) : \text{this sequence can occur in the market}\} \tag{5.2}$$
 
 *The **market shift space** is:*
 
-$$X_M = \{(a_{i_t})_{t \in \mathbb{Z}} : (a_{i_1},\ldots,a_{i_T}) \in \mathcal{L}_M \forall T\}
+$$X_M = \{(a_{i_t})_{t \in \mathbb{Z}} : (a_{i_1},\ldots,a_{i_T}) \in \mathcal{L}_{M} \forall T\}
 \subset \mathcal{A}^\mathbb{Z} \tag{5.3}$$
 
 *with the shift map $\sigma: X_M \to X_M$, $(\sigma x)_t = x_{t+1}$.*
@@ -407,11 +407,11 @@ $$h_{\rm top}(X_M, \sigma) = h_{\rm Kelly}(b^{\ast}) = \mathbb{E}[\log\langle b^
 
 *Proof.* The topological entropy of $(X_M, \sigma)$ is:
 
-$$h_{\rm top} = \lim_{T\to\infty} \frac{1}{T}\log|\mathcal{L}_M(T)| \tag{5.5}$$
+$$h_{\rm top} = \lim_{T\to\infty} \frac{1}{T}\log|\mathcal{L}_{M}(T)| \tag{5.5}$$
 
-where $|\mathcal{L}_M(T)|$ is the number of admissible $T$-length return sequences.
+where $|\mathcal{L}_{M}(T)|$ is the number of admissible $T$-length return sequences.
 By the SMB theorem (INFORMATION_THEORY Theorem C): the empirical log-probability
-converges to $-h_{\rm Kelly}$, and $|\mathcal{L}_M(T)| \approx e^{T h_{\rm Kelly}}$
+converges to $-h_{\rm Kelly}$, and $|\mathcal{L}_{M}(T)| \approx e^{T h_{\rm Kelly}}$
 (the size of the typical set). Hence $h_{\rm top} = h_{\rm Kelly}$. $\square$
 
 **The Kelly growth rate is the topological complexity of the market's symbolic
@@ -473,9 +473,9 @@ in its center — sufficient for simulating infinite computation in finite time
 
 **Definition 6.2** (Market computation). *The **market computation** at time $T$ is:*
 
-$$\text{Input: } (x_1, \ldots, x_T) \in \mathbb{R}^{dT}_+ \quad\text{(return history)}$$
+$$\text{Input: } (x_1, \ldots, x_T) \in \mathbb{R}^{dT}_{+} \quad\text{(return history)}$$
 $$\text{Computation: universal portfolio evaluation}$$
-$$\text{Output: } \hat{b}_T^M \in \Delta_{d-1} \quad\text{(optimal portfolio weights)}$$
+$$\text{Output: } \hat{b}_{T}^{M} \in \Delta_{d-1} \quad\text{(optimal portfolio weights)}$$
 
 *This computation is equivalent to evaluating the Jones polynomial of the braid
 $\beta_{\text{market}}$ encoded by the return history — a #**P**-hard computation.*
@@ -548,9 +548,9 @@ implementing topological quantum gates.
 The **braid index** $b(K)$ of a knot $K$ is the minimum number of strands needed
 to represent $K$ as a closed braid. By the Morton-Williams-Franks inequality:
 
-$$b(K) \geq \frac{1}{2}(\text{span}_a J_K(a,z) + 2) \tag{7.1}$$
+$$b(K) \geq \frac{1}{2}(\text{span}_{a} J_K(a,z) + 2) \tag{7.1}$$
 
-where $\text{span}_a$ is the span of the HOMFLY polynomial in the $a$-variable.
+where $\text{span}_{a}$ is the span of the HOMFLY polynomial in the $a$-variable.
 
 **The braid index is the minimum number of assets needed** to implement the market's
 topological structure. For the trefoil: $b(3_1) = 2$ — you need at least 2 assets
@@ -689,7 +689,7 @@ Yang-Baxter consistency — the crisis as a collapse of braiding symmetry.
 
 ## 11. Summary: The Market Braiding Machine
 
-$$\boxed{\begin{array}{ll}
+$$\begin{array}{ll}
 \text{Asset price paths} & = \text{strands of the braid}\\
 \text{Trading decisions} & = \text{crossing generators } \sigma_i\\
 \text{Market dynamics} & = \text{braid word } \beta \in B_d\\

@@ -34,7 +34,7 @@ distributions.
   $M_{\rm price} \times M_{\rm vol}$, with the price-vol correlation $\rho$
   acting as a connection between the two factors.
 - The **vol-of-vol** (VVIX) is proportional to the Willmore energy of the ATM
-  term structure slice: $\mathrm{VVIX}^2 \propto \mathcal{W}(\Sigma_{\rm vol}|_{k=0})$.
+  term structure slice: $\mathrm{VVIX}^{2} \propto \mathcal{W}(\Sigma_{\rm vol}|_{k=0})$.
 - The vol surface evolves by **constrained mean curvature flow** (MCF): information
   arrival creates curvature, MCF smooths it, and the surface never reaches the
   Black-Scholes flat configuration because new information keeps arriving.
@@ -69,7 +69,7 @@ $$C(K,T) = \mathrm{BS}(S, K, T, r_f, q, \sigma_{\rm impl}). \tag{1.1}$$
 
 The implied volatility surface is the graph
 
-$$\Sigma_{\rm vol} = \{(k, T, \sigma(k,T)) : k \in \mathbb{R},\; T > 0\}, \tag{1.2}$$
+$$\Sigma_{\rm vol} = \{(k, T, \sigma(k,T)) : k \in \mathbb{R}, T > 0\}, \tag{1.2}$$
 
 where $k = \log(K/F)$ is the log-forward-moneyness and $F = Se^{(r_f - q)T}$ is the
 forward price. In the Black-Scholes world, $\sigma$ is constant and $\Sigma_{\rm vol}$
@@ -155,19 +155,19 @@ The connection to the market manifold geometry established in DERIVATIVES_CONVEX
 = -\varepsilon^2 H^2/(2\sigma_I)$. We now extend this to the full smile.
 
 **Theorem 2.1** *(Smile curvature = extrinsic curvature in the strike direction)*.
-*Let $M^r \subset S^{d-1}_+$ be the market manifold with mean curvature vector $\vec{H}$
+*Let $M^r \subset S^{d-1}_{+}$ be the market manifold with mean curvature vector $\vec{H}$
 and second fundamental form $II$. The implied volatility smile at maturity $T$ satisfies:*
 
 *(i) The normalised skew is:*
 
-$$\alpha_1(T) = -\frac{H_{\rm strike}}{2\sigma_{\rm ATM}^2 T}, \tag{2.3}$$
+$$\alpha_1(T) = -\frac{H_{\rm strike}}{2\sigma_{\rm ATM}^{2} T}, \tag{2.3}$$
 
 *where $H_{\rm strike} = \langle\vec{H}, e_{\rm strike}\rangle$ is the component of
 the mean curvature in the strike (log-moneyness) direction of the ambient space.*
 
 *(ii) The normalised convexity is:*
 
-$$\alpha_2(T) = \frac{1}{4\sigma_{\rm ATM}^2 T}\left(H_{\rm strike}^2
+$$\alpha_2(T) = \frac{1}{4\sigma_{\rm ATM}^{2} T}\left(H_{\rm strike}^{2}
 + K_{\rm Gauss}^{\rm strike}\right), \tag{2.4}$$
 
 *where $K_{\rm Gauss}^{\rm strike}$ is the contribution of the Gaussian curvature
@@ -179,7 +179,7 @@ $\Sigma_{\rm vol}$ — is:*
 $$\kappa_{\rm smile}(T) = \frac{2\alpha_2 - \alpha_1^2}{\sigma_{\rm ATM}(1 + \alpha_1^2)^{3/2}}
 \propto \|II\|^2_{\rm strike}. \tag{2.5}$$
 
-*Proof.* We work in the Bhattacharyya embedding $\phi: b \mapsto \sqrt{b} \in S^{d-1}_+$.
+*Proof.* We work in the Bhattacharyya embedding $\phi: b \mapsto \sqrt{b} \in S^{d-1}_{+}$.
 The option price $C(K,T)$ depends on the log-optimal portfolio $b^{\ast}$ through the
 index $I = b^{*T}S$. A perturbation in log-moneyness $k$ corresponds to a perturbation
 in the strike, which probes the curvature of the return distribution in a specific
@@ -258,7 +258,7 @@ $$\sigma_\infty = \sqrt{\mathrm{tr}[F_M^{-1}]}, \tag{3.2}$$
 Laplacian of the vol-of-vol process on $\Sigma_{\rm vol}$ — the spectral gap:*
 
 $$\lambda_1 = \inf\left\{\frac{\int_{\Sigma_{\rm vol}}|\nabla f|^2\,d\mathrm{vol}}
-{\int_{\Sigma_{\rm vol}}f^2\,d\mathrm{vol}} : f \not\equiv 0,\;\int f\,d\mathrm{vol} = 0\right\}.
+{\int_{\Sigma_{\rm vol}}f^2\,d\mathrm{vol}} : f \not\equiv 0, \int f\,d\mathrm{vol} = 0\right\}.
 \tag{3.3}$$
 
 *(iii) The term structure slope at $T = 0$ is:*
@@ -295,7 +295,7 @@ The term structure tells us how the vol surface curves in the time direction:
   long-run equilibrium. This rarely persists because information arrival continually
   perturbs the surface.
 
-The VIX term structure is precisely this curve: $\mathrm{VIX}_T = \sigma(0, T)$
+The VIX term structure is precisely this curve: $\mathrm{VIX}_{T} = \sigma(0, T)$
 for $T = 1, 2, 3, \ldots$ months. The VIX futures curve is the market's estimate
 of the vol term structure mean curvature. The slope of the VIX futures curve
 $\approx -\lambda_1 H_{\rm time}$ is a traded quantity with a geometric interpretation.
@@ -436,7 +436,7 @@ of the geodesic through ATM.*
 from $(k, T)$ to the minimum-variance point $(m, T)$ in the Fisher-Rao metric on
 the slice at maturity $T$, to leading order in the curvature:*
 
-$$d_{g^{\rm FR}}\big((k, T),\;(m, T)\big) = \sqrt{(k-m)^2 + \tilde\sigma^2} + O(\kappa^2).
+$$d_{g^{\rm FR}}\big((k, T), (m, T)\big) = \sqrt{(k-m)^2 + \tilde\sigma^2} + O(\kappa^2).
 \tag{5.2}$$
 
 *(iv) The linear coefficient $b\rho$ controls the geodesic direction (tilt), while
@@ -446,7 +446,7 @@ geodesics of the Fisher-Rao metric with asymptotic slopes $b(1 + \rho)$ (right
 wing) and $b(1 - \rho)$ (left wing).*
 
 *Proof.* On the vol surface with the Fisher-Rao metric (1.3)-(1.5), the geodesic
-equation in the strike direction at fixed $T$ is $\ddot{k} + \Gamma^k_{kk}\dot{k}^2 = 0$
+equation in the strike direction at fixed $T$ is $\ddot{k} + \Gamma^k_{kk}\dot{k}^{2} = 0$
 where $\Gamma^k_{kk} = -\partial_k\sigma/\sigma$ is the Christoffel symbol from
 the metric $g_{kk} = 1/(\sigma^2 T)$. For small curvature (near-BS regime), the
 geodesic distance from the minimum-variance point is $d(k, m) = \int_m^k
@@ -499,7 +499,7 @@ SABR is a **coupled diffusion on the product manifold**
 $M_{\rm price} \times M_{\rm vol}$:
 
 **The price component.** The process $dF = \sigma F^\beta\,dW_1$ is a CEV diffusion.
-For $\beta = 1$: geometric Brownian motion (the GBM on $\mathbb{R}_+$, the CAPM
+For $\beta = 1$: geometric Brownian motion (the GBM on $\mathbb{R}_{+}$, the CAPM
 case). For $\beta < 1$: a Jacobi-type process with an absorbing boundary at $F = 0$
 (consistent with the Feller boundary analysis of HAMILTONIAN_TAILS_COMPLETENESS.md).
 For $\beta = 0$: normal (Bachelier) dynamics. The CEV exponent $\beta$ selects the
@@ -507,9 +507,9 @@ For $\beta = 0$: normal (Bachelier) dynamics. The CEV exponent $\beta$ selects t
 $g_F = 1/(F^{2\beta}\sigma^2)$, which has curvature depending on $\beta$.
 
 **The vol component.** The process $d\sigma = \nu\sigma\,dW_2$ is geometric Brownian
-motion on $\mathbb{R}_+$: a diffusion on the positive half-line with the hyperbolic
+motion on $\mathbb{R}_{+}$: a diffusion on the positive half-line with the hyperbolic
 metric $g_\sigma = 1/(\nu^2\sigma^2)$. The vol manifold is **always hyperbolic** in
-SABR — vol lives on a geodesic of $\mathbb{H}^1$.
+SABR — vol lives on a geodesic of $\mathbb{H}^{1}$.
 
 **The coupling.** The correlation $\rho$ couples the two diffusions. In the product
 manifold framework, this coupling is a **connection** between the tangent spaces of
@@ -536,7 +536,7 @@ $\chi(\xi) = \log\left(\frac{\sqrt{1 - 2\rho\xi + \xi^2} + \xi - \rho}{1 - \rho}
 and $\hat\sigma$ is a known function of $(F, K, \beta)$.
 
 The geometric content is this: $\chi(\xi)$ is the **geodesic distance** on the
-hyperbolic plane $\mathbb{H}^2$ with curvature parameterised by $\rho$. The
+hyperbolic plane $\mathbb{H}^{2}$ with curvature parameterised by $\rho$. The
 Hagan formula is the **geodesic approximation** on $\Sigma_{\rm vol}$ — it
 computes the implied vol by finding the shortest path (geodesic) on the vol
 surface from the ATM point to the strike $K$, and computing the heat kernel
@@ -579,7 +579,7 @@ Willmore energy.
 *The CBOE VVIX index — the implied volatility of VIX options, measuring the
 vol-of-vol — satisfies:*
 
-$$\mathrm{VVIX}^2 = c_0 \cdot \mathcal{W}\!\left(\Sigma_{\rm vol}\big|_{k=0}\right)
+$$\mathrm{VVIX}^{2} = c_0 \cdot \mathcal{W}\!\left(\Sigma_{\rm vol}\big|_{k=0}\right)
 + O(\varepsilon^2), \tag{7.2}$$
 
 *where $c_0 > 0$ is a normalisation constant depending on the VIX calculation
@@ -588,13 +588,13 @@ methodology, and $\Sigma_{\rm vol}|_{k=0}$ is the ATM slice of the vol surface
 
 *Proof.* The VVIX is defined as the implied volatility of 30-day VIX options,
 computed by the CBOE methodology (a variance swap replication over VIX options).
-The VIX at maturity $T$ is $\mathrm{VIX}_T = \sigma(0, T)\sqrt{252}$ (annualised
+The VIX at maturity $T$ is $\mathrm{VIX}_{T} = \sigma(0, T)\sqrt{252}$ (annualised
 ATM vol). The variance of VIX is therefore the variance of $\sigma(0, T)$ as $T$
 varies, which from the Fokker-Planck analysis is controlled by the curvature of
 the term structure curve $T \mapsto \sigma(0, T)$. By the variance decomposition
 of DERIVATIVES_CONVEXITY.md (Theorem 2.5), the variance of implied volatility
-equals $\varepsilon^4 \mathcal{W}_2(M) + O(\varepsilon^6)$. Restricting to the
-ATM slice $k = 0$ and identifying $\varepsilon^4 \mathcal{W}_2|_{k=0}$ with the
+equals $\varepsilon^4 \mathcal{W}_{2}(M) + O(\varepsilon^6)$. Restricting to the
+ATM slice $k = 0$ and identifying $\varepsilon^4 \mathcal{W}_{2}|_{k=0}$ with the
 Willmore energy of the term structure curve yields (7.2). $\square$
 
 ### 7.3 The curvature invariant dictionary
@@ -605,8 +605,8 @@ vol surface:
 | Volatility index | Curvature invariant | Formula |
 |:----------------|:-------------------|:--------|
 | VIX | Trace of curvature at ATM | $\mathrm{VIX} = \sigma(0, T_{30})\sqrt{252}$ |
-| VVIX | Willmore energy of ATM slice | $\mathrm{VVIX}^2 \propto \mathcal{W}(\Sigma_{\rm vol}\|_{k=0})$ |
-| CBOE SKEW | Third moment of strike curvature | $\mathrm{SKEW} = 100 - 10\cdot\mathbb{E}^Q[(R/\sigma)^3]$ |
+| VVIX | Willmore energy of ATM slice | $\mathrm{VVIX}^{2} \propto \mathcal{W}(\Sigma_{\rm vol}\|_{k=0})$ |
+| CBOE SKEW | Third moment of strike curvature | $\mathrm{SKEW} = 100 - 10\cdot\mathbb{E}^{Q}[(R/\sigma)^3]$ |
 | Smile slope | Mean curvature in strike direction | $\partial_k\sigma\|_{k=0} \propto H_{\rm strike}$ |
 | Term structure slope | Mean curvature in time direction | $\partial_T\sigma\|_{k=0} \propto H_{\rm time}$ |
 | Put-call skew (25-delta) | Sectional curvature at 25-delta | $\sigma_{25P} - \sigma_{25C} \propto K_{\rm sec}(e_P, e_C)$ |
@@ -810,7 +810,7 @@ is the Gaussian curvature contribution. *(Theorem 2.1)*
 
 **Theorem V2** *(No-arbitrage = curvature bounds)*.
 The Gatheral no-arbitrage conditions (calendar spread, butterfly) are equivalent to
-the vol surface lying in a convex curvature cone $\mathcal{C} \subset \mathbb{R}^2$
+the vol surface lying in a convex curvature cone $\mathcal{C} \subset \mathbb{R}^{2}$
 in the $(H_T, \kappa_{\rm strike})$ plane. Arbitrage-free vol surfaces form a convex
 set. *(Theorem 4.1)*
 

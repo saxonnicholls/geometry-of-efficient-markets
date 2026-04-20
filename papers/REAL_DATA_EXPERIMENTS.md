@@ -15,7 +15,7 @@ markets, organised from most to least central. Each test uses freely available
 data (Fama-French, FRED, CBOE, yfinance), can be run on a laptop in under one
 hour, and has a specific falsification criterion stated in advance. The theory
 claims that a financial market is a minimal submanifold $M^r$ of the
-Bhattacharyya sphere $S^{d-1}_+$, that portfolio weights are barycentric
+Bhattacharyya sphere $S^{d-1}_{+}$, that portfolio weights are barycentric
 coordinates on $\Delta_{d-1}$ with the Fisher-Rao metric $g^{\rm FR}_{ij} =
 \delta_{ij}/b_i$, and that every important financial quantity is a computable
 geometric invariant of $M^r$. These are strong claims. They deserve strong
@@ -145,7 +145,7 @@ weighted 2 points.
 **Theoretical claim.** $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M, g_M)}$ (R1 in
 WHATS_NEW.md). The maximum attainable Sharpe ratio from any strategy on the
 market manifold equals the $L^2$-norm of the mean curvature vector $H$ of
-$M^r$ in $S^{d-1}_+$.
+$M^r$ in $S^{d-1}_{+}$.
 
 **Falsifiable hypothesis.** In a cross-sectional regression of realised Sharpe
 ratios on estimated mean curvature norms, the slope $\beta_1 > 0$ with
@@ -163,7 +163,7 @@ $p < 0.05$.
    \tfrac{1}{2} b^T \hat{\Sigma} b$ subject to $b \in \Delta_{d-1}$.
    (c) Perform PCA on $\hat{\Sigma}$; retain $r$ factors explaining 90% of
    variance.
-   (d) Project the vector $\eta_i = 1/(2\sqrt{b^{\ast}_i})$ onto the normal space
+   (d) Project the vector $\eta_i = 1/(2\sqrt{b^{\ast}_{i}})$ onto the normal space
    of the $r$-factor subspace. The norm of this projection estimates $\|H\|$.
    (e) Compute the realised Sharpe ratio of the $b^{\ast}$ portfolio over the
    next 63 trading days (one quarter, out-of-sample).
@@ -207,7 +207,7 @@ each rebalancing date, rolling 504-day (2-year) windows stepped quarterly,
 **Computation.** In each rolling window:
 
 1. **Stable rank.** Compute the Fisher information matrix
-   $\hat{I}_{ij} = \hat{\Sigma}_{ij} / (b^{\ast}_i b^{\ast}_j)$ where $b^{\ast}$ is the
+   $\hat{I}_{ij} = \hat{\Sigma}_{ij} / (b^{\ast}_{i} b^{\ast}_{j})$ where $b^{\ast}$ is the
    equal-weight portfolio (as a neutral reference). The stable rank is
    $\mathrm{sr}(\hat{I}) = \mathrm{tr}(\hat{I}) / \|\hat{I}\|_{\rm op}$.
    Set $r_1 = \lfloor \mathrm{sr}(\hat{I}) \rceil$.
@@ -293,7 +293,7 @@ returns, 1963-2024, rolling 504-day windows.
 **Computation.**
 
 1. In each window, compute the $5 \times 5$ factor covariance matrix
-   $\hat{\Sigma}_F$.
+   $\hat{\Sigma}_{F}$.
 
 2. Form the Fisher-Rao metric on the factor simplex: $g^{\rm FR}_{ij} =
    \hat{\Sigma}^F_{ij} / (w_i w_j)$ where $w$ is the factor loading vector
@@ -444,7 +444,7 @@ class correspondence (R21) is empirically vacuous.
 
 **Hypothesis.** The tail index $\alpha$ of asset return distributions is
 approximately $r/2$, where $r$ is the manifold dimension (R4 in WHATS_NEW.md,
-which gives the more precise formula $\alpha_i = Tb^{\ast}_i - 1/2$; the aggregate
+which gives the more precise formula $\alpha_i = Tb^{\ast}_{i} - 1/2$; the aggregate
 prediction is $\alpha \approx r/2$).
 
 **Dataset.** S&P 500 constituents, daily returns, 2000-2024. Estimate $r$ from
@@ -465,11 +465,11 @@ PCA; estimate $\alpha$ from tail behaviour.
 $\alpha$ for US equities are typically in the range $[2.5, 4.0]$, so the
 prediction is in the right ballpark. The test is whether $\bar{\alpha}$ and
 $r/2$ are in the same range, and whether cross-sectional variation in
-$\alpha_i$ correlates with $b^{\ast}_i$.
+$\alpha_i$ correlates with $b^{\ast}_{i}$.
 
 **Falsification.** $\bar{\alpha}$ and $r/2$ differ by more than a factor of
 2 (i.e. $\bar{\alpha} < r/4$ or $\bar{\alpha} > r$), or the cross-sectional
-rank correlation between $\alpha_i$ and $b^{\ast}_i$ is negative.
+rank correlation between $\alpha_i$ and $b^{\ast}_{i}$ is negative.
 
 ---
 
@@ -573,7 +573,7 @@ rebalancing.
    (a) Estimate $\hat{\mu}$ and $\hat{\Sigma}$ from the trailing 504 days.
    (b) Estimate $r$ from PCA (90% variance).
    (c) Solve for $b^{\ast}$ on the $r$-dimensional factor subspace.
-   (d) Construct the MIF portfolio with weights $b^{\ast}_i$.
+   (d) Construct the MIF portfolio with weights $b^{\ast}_{i}$.
 
 2. Compute the MIF total return (with quarterly rebalancing) and the S&P 500
    total return over 2002-2024.
@@ -659,7 +659,7 @@ similar suggests combining them, which is still useful.)
 
 ### Test 14: Kelly-Shapley Attribution
 
-**Hypothesis.** The Shapley value $\phi_i = b^{\ast}_i (\mu_i - \bar{\mu})$
+**Hypothesis.** The Shapley value $\phi_i = b^{\ast}_{i} (\mu_i - \bar{\mu})$
 (R25 in WHATS_NEW.md) provides a meaningful decomposition of portfolio
 performance that agrees with standard Brinson attribution on sign.
 
@@ -669,14 +669,14 @@ performance that agrees with standard Brinson attribution on sign.
 
 1. Each month:
    (a) Compute the Kelly-optimal portfolio $b^{\ast}$ from the trailing 60 months.
-   (b) Compute Shapley values: $\phi_i = b^{\ast}_i (\mu_i - \bar{\mu})$ where
+   (b) Compute Shapley values: $\phi_i = b^{\ast}_{i} (\mu_i - \bar{\mu})$ where
    $\mu_i$ is the next month's realised return and $\bar{\mu} = \sum_j
    b^*_j \mu_j$.
    (c) Compute Brinson attribution: allocation effect + selection effect for
    each of the 25 portfolios relative to the equal-weight benchmark.
 
 2. Across all months, compute:
-   (a) The sign agreement rate: fraction of $(\phi_i, \mathrm{Brinson}_i)$
+   (a) The sign agreement rate: fraction of $(\phi_i, \mathrm{Brinson}_{i})$
    pairs where both have the same sign.
    (b) The variance of each attribution method across months (lower variance
    = more stable).
@@ -705,7 +705,7 @@ in WHATS_NEW.md).
 **Computation.**
 
 1. **Discretise returns into symbols:** Apply $k$-means clustering ($k = 8$)
-   to the daily return vector $r_t \in \mathbb{R}^d$. Assign each day a
+   to the daily return vector $r_t \in \mathbb{R}^{d}$. Assign each day a
    symbol $s_t \in \{0, 1, \ldots, 7\}$.
 
 2. **LZ78 complexity rate:** Run LZ78 compression on the symbol sequence
@@ -714,8 +714,8 @@ in WHATS_NEW.md).
    $n_{\rm phrases}$ is the number of distinct phrases in the LZ78 dictionary.
 
 3. **Kelly growth rate:** Compute the log-optimal portfolio growth rate
-   $h_{\rm Kelly} = T^{-1} \sum_t \log\langle b^{\ast}_t, x_t \rangle$ where
-   $b^{\ast}_t$ is the sequentially-estimated Kelly portfolio.
+   $h_{\rm Kelly} = T^{-1} \sum_t \log\langle b^{\ast}_{t}, x_t \rangle$ where
+   $b^{\ast}_{t}$ is the sequentially-estimated Kelly portfolio.
 
 4. Compute both quantities in rolling 504-day windows. Compute the Pearson
    correlation between $c_{\rm LZ}$ and $h_{\rm Kelly}$ across windows.
@@ -747,7 +747,7 @@ markets correlates with the estimated mean curvature $\|H\|$ of the implied
 probability manifold.
 
 **Dataset.** UK horse racing Betfair Starting Prices, 2010-2024. Each race
-provides a vector of implied probabilities $p_i = 1/\mathrm{odds}_i$
+provides a vector of implied probabilities $p_i = 1/\mathrm{odds}_{i}$
 (normalised to sum to 1 after removing the overround).
 
 **Computation.**
@@ -756,9 +756,9 @@ provides a vector of implied probabilities $p_i = 1/\mathrm{odds}_i$
    (a) Compute implied probabilities $p_i$ from SP odds (normalised).
    (b) Compute $\sqrt{p_i}$ — the Bhattacharyya embedding.
    (c) Estimate $\|H\|$ as the deviation of $\sqrt{p}$ from the nearest
-   great-circle arc on $S^{d-1}_+$, measured in the round metric.
+   great-circle arc on $S^{d-1}_{+}$, measured in the round metric.
    (d) Compute the FLB magnitude: the slope $\gamma$ in the regression
-   $\mathrm{actual\ win\ rate}_i = \alpha + \gamma \cdot p_i + \varepsilon_i$
+   $\mathrm{actual\ win\ rate}_{i} = \alpha + \gamma \cdot p_i + \varepsilon_i$
    across all runners in all races with the same field size $d$.
    An FLB means $\gamma < 1$ (favourites win more often than implied;
    longshots less).
@@ -864,7 +864,7 @@ period when all four are liquid).
    _{\rm rolling})$ — the instability of the Sharpe ratio as a proxy for
    $\int |H|^2$.
    (b) Estimate the spectral gap $\lambda_1$ from the lag-1 autocorrelation
-   of returns: $\lambda_1 \approx -\log|\hat{\phi}_1|$.
+   of returns: $\lambda_1 \approx -\log|\hat{\phi}_{1}|$.
    (c) Estimate $r$ from PCA of the 4-crypto covariance matrix.
 
 2. Compare across cryptos and across time. Plot the "efficiency trajectory"
@@ -901,7 +901,7 @@ density.
    wealth exchange graph, which implies faster mixing and lower IGE
    (more mobility).
 
-3. Run OLS: $\mathrm{IGE}_i = \alpha + \beta \cdot \zeta_i + \varepsilon_i$.
+3. Run OLS: $\mathrm{IGE}_{i} = \alpha + \beta \cdot \zeta_i + \varepsilon_i$.
 
 **Expected.** $\beta < 0$ with $p < 0.05$. Countries with more connected
 economic networks (Scandinavia, Netherlands) have lower IGE (more mobility).

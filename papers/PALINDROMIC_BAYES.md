@@ -18,7 +18,7 @@ Bayesian foundation of palindromic market theory.
 
 **The central correspondence:**
 
-$$\text{PUP} = \text{Bayes}\left(\text{likelihood} = W_T(b),\; \text{prior} = \pi_{\rm pal}(b)\right)$$
+$$\text{PUP} = \text{Bayes}\left(\text{likelihood} = W_T(b), \text{prior} = \pi_{\rm pal}(b)\right)$$
 
 where $\pi_{\rm pal}$ is the uniform prior on the palindromic sub-graph
 (eertree embedding) of the de Bruijn graph.
@@ -69,7 +69,7 @@ because the log-likelihood is symmetric around the MAP (due to
 palindromic symmetry).
 
 **(vi) Bayesian universality class identification.** Posterior probabilities
-$P(\text{class}_k | \text{data})$ can be computed via Bayes factors,
+$P(\text{class}_{k} | \text{data})$ can be computed via Bayes factors,
 providing principled classification into P1-P6.
 
 **Keywords.** Bayesian inference; palindromic prior; Jeffreys prior;
@@ -92,7 +92,7 @@ $$\pi(\theta | x) = \frac{L(x | \theta) \pi(\theta)}{\int L(x | \theta') \pi(\th
 For sequential data $x_1, x_2, \ldots, x_T$, the posterior after $T$
 observations:
 
-$$\pi_T(\theta) \propto \pi(\theta) \prod_{t=1}^T L(x_t | \theta) \tag{1.2}$$
+$$\pi_T(\theta) \propto \pi(\theta) \prod_{t=1}^{T} L(x_t | \theta) \tag{1.2}$$
 
 The posterior CONCENTRATES around the MLE as $T \to \infty$, with
 Fisher-information-controlled rate.
@@ -100,9 +100,9 @@ Fisher-information-controlled rate.
 ### 1.2 The portfolio Bayesian problem
 
 For a portfolio $b \in \Delta_{d-1}$ facing return sequence
-$x_1, \ldots, x_T$ with $x_t \in \mathbb{R}^d_+$, the log-wealth is:
+$x_1, \ldots, x_T$ with $x_t \in \mathbb{R}^{d}_+$, the log-wealth is:
 
-$$\log W_T(b) = \sum_{t=1}^T \log \langle b, x_t \rangle \tag{1.3}$$
+$$\log W_T(b) = \sum_{t=1}^{T} \log \langle b, x_t \rangle \tag{1.3}$$
 
 Viewing $\log W_T(b)$ as a LOG-LIKELIHOOD for $b$ (an unnormalised Bayes
 factor for "portfolio $b$ is optimal"), the Bayesian posterior over
@@ -183,7 +183,7 @@ bounded by the palindromic deficit.*
 
 The Jeffreys prior on the portfolio simplex is:
 
-$$\pi_J(b) \propto \sqrt{\det g^{\rm FR}(b)} = \prod_{i=1}^d b_i^{-1/2} \tag{3.1}$$
+$$\pi_J(b) \propto \sqrt{\det g^{\rm FR}(b)} = \prod_{i=1}^{d} b_i^{-1/2} \tag{3.1}$$
 
 This is the symmetric Dirichlet($1/2, \ldots, 1/2$) distribution.
 
@@ -337,7 +337,7 @@ $$\mathrm{BF}_{ij}(x^T) = \frac{m_i(x^T)}{m_j(x^T)} \tag{6.2}$$
 
 Posterior probability of class $k$ (with uniform class prior):
 
-$$P(k | x^T) = \frac{m_k(x^T)}{\sum_{j=1}^6 m_j(x^T)} \tag{6.3}$$
+$$P(k | x^T) = \frac{m_k(x^T)}{\sum_{j=1}^{6} m_j(x^T)} \tag{6.3}$$
 
 ### 6.2 Computation via Laplace
 
@@ -373,7 +373,7 @@ excess.
 
 Use the class posterior probabilities to AVERAGE forecasts:
 
-$$\hat{x}_{t+1} = \sum_{k=1}^6 P(k | x^T) \cdot \hat{x}_{t+1}^{(k)} \tag{6.5}$$
+$$\hat{x}_{t+1} = \sum_{k=1}^{6} P(k | x^T) \cdot \hat{x}_{t+1}^{(k)} \tag{6.5}$$
 
 where $\hat{x}_{t+1}^{(k)}$ is the forecast under class $k$.
 

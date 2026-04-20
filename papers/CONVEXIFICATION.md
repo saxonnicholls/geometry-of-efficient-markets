@@ -22,7 +22,7 @@ We develop three answers. First, the **free convex completion** $\mathcal{P}(X)$
 the space of probability measures on $X$, with the Dirac embedding
 $x \mapsto \delta_x$. This is the universal convexification — it embeds any
 measurable space into a convex space while preserving all structure that can
-be preserved. Second, the **symmetry convexification** $\mathcal{C}_G(X)$:
+be preserved. Second, the **symmetry convexification** $\mathcal{C}_{G}(X)$:
 for a group $G$ acting on $X$, the orbit-averaged space, which convexifies
 by exploiting symmetry. Third, the **Sobolev convexification**: when $X$ lacks
 the smoothness required by Čencov's theorem, we work in the Sobolev space
@@ -50,7 +50,7 @@ from $\mathcal{P}(X)$ to a convex set $C$ factors uniquely through $\iota$.
 
 **(ii) The Convexification Dimension.** The minimum ambient dimension $N$
 required to embed a compact $r$-manifold $M^r$ into a convex subset of
-$S^{N-1}_+$ is bounded by $N \geq 2r + 1$ (Whitney) and $N \leq r(r+3)/2 + 1$
+$S^{N-1}_{+}$ is bounded by $N \geq 2r + 1$ (Whitney) and $N \leq r(r+3)/2 + 1$
 (Nash). The gap between these bounds is the *convexification overhead* — the
 price of making a non-convex space convex.
 
@@ -64,7 +64,7 @@ state space boundary.
 
 **(iv) Negative Curvature Embeds With Mandatory Alpha.** A compact manifold
 $M^r$ with sectional curvature $K_M \leq -\kappa^2 < 0$ embedded
-isometrically in $S^{N-1}_+$ must have extrinsic mean curvature
+isometrically in $S^{N-1}_{+}$ must have extrinsic mean curvature
 $\|H\| \geq c(r, \kappa)> 0$. By the Sharpe-curvature identity, this
 means hyperbolic markets necessarily have positive alpha: chaos creates
 exploitable inefficiency, with a lower bound determined by the intrinsic
@@ -93,7 +93,7 @@ But the world is full of non-convex objects:
 
 - The efficient market manifold $M^r$ can be a torus (non-convex: has a hole)
   or hyperbolic (negatively curved)
-- Pure quantum states form $\mathbb{CP}^n$ (projective space: non-convex)
+- Pure quantum states form $\mathbb{CP}^{n}$ (projective space: non-convex)
 - Combinatorial objects (graphs, trees, codes) are discrete (not even continuous)
 - Game-theoretic equilibria can lie on non-convex subsets of the strategy space
 - Financial time series have jumps and discontinuities (not smooth)
@@ -127,7 +127,7 @@ We develop three approaches, each suited to different situations:
 | Strategy | Input | Output | Mechanism |
 |:---------|:------|:-------|:----------|
 | **Free completion** $\mathcal{P}(X)$ | Any measurable space $X$ | Convex space of measures | Take all mixtures |
-| **Symmetry** $\mathcal{C}_G(X)$ | Space $X$ with group action $G$ | Convex orbit space | Average over orbits |
+| **Symmetry** $\mathcal{C}_{G}(X)$ | Space $X$ with group action $G$ | Convex orbit space | Average over orbits |
 | **Sobolev extension** | Non-smooth space | $W^{1,2}$ Riemannian | Weak Fisher-Rao metric |
 
 ---
@@ -179,10 +179,10 @@ to probabilistic.** Every known convexification is a special case:
 
 | Domain | $X$ (non-convex) | $\mathcal{P}(X)$ (convex) | Name of the passage |
 |:-------|:-----------------|:--------------------------|:-------------------|
-| Quantum mechanics | Pure states $\mathbb{CP}^n$ | Density matrices $\mathcal{D}_n$ | Purification → mixing |
+| Quantum mechanics | Pure states $\mathbb{CP}^{n}$ | Density matrices $\mathcal{D}_{n}$ | Purification → mixing |
 | Game theory | Pure strategies $\{1,\ldots,d\}$ | Mixed strategies $\Delta_{d-1}$ | Deterministic → randomised |
 | Finance | Individual assets $\{1,\ldots,d\}$ | Portfolios $\Delta_{d-1}$ | Single stock → diversification |
-| Dynamical systems | Phase space $M$ | Invariant measures $\mathcal{P}_T(M)$ | Trajectory → ergodic measure |
+| Dynamical systems | Phase space $M$ | Invariant measures $\mathcal{P}_{T}(M)$ | Trajectory → ergodic measure |
 | Statistics | Parameter space $\Theta$ | Priors/posteriors $\mathcal{P}(\Theta)$ | Point estimate → distribution |
 | Optimisation | Feasible set $S$ | Relaxation $\mathrm{conv}(S)$ | Integer → continuous |
 
@@ -237,11 +237,11 @@ infinite-dimensional version of Paper 0.1's main theorem.
 
 Given a compact $r$-dimensional manifold $M^r$ that is NOT convex, what is
 the minimum ambient dimension $N$ such that $M^r$ embeds in a convex subset
-of $S^{N-1}_+$?
+of $S^{N-1}_{+}$?
 
 **Definition 3.1** (Convexification dimension). *The convexification dimension
 $N_{\rm conv}(M)$ of a compact manifold $M$ is the minimum $N$ such that there
-exists an isometric embedding $M \hookrightarrow S^{N-1}_+$ where $S^{N-1}_+$
+exists an isometric embedding $M \hookrightarrow S^{N-1}_{+}$ where $S^{N-1}_{+}$
 is geodesically convex.*
 
 **Theorem 3.1** *(Bounds on convexification dimension)*.
@@ -368,14 +368,14 @@ possible.
 **Definition 5.1** (Reynolds/symmetry convexification). *Let $G$ be a compact
 group acting continuously on a space $X$ by isometries. The Reynolds operator is:*
 
-$$\mathcal{R}_G: X \to \mathrm{conv}(\mathrm{orbit}), \quad
-\mathcal{R}_G(x) = \int_G g \cdot x \, d\mu_G(g) \tag{5.1}$$
+$$\mathcal{R}_{G}: X \to \mathrm{conv}(\mathrm{orbit}), \quad
+\mathcal{R}_{G}(x) = \int_G g \cdot x \, d\mu_G(g) \tag{5.1}$$
 
 *where $\mu_G$ is the normalised Haar measure on $G$.*
 
 The Reynolds operator projects any point onto the convex hull of its orbit.
-It is idempotent ($\mathcal{R}_G^2 = \mathcal{R}_G$), linear, and $G$-invariant
-($\mathcal{R}_G(g\cdot x) = \mathcal{R}_G(x)$).
+It is idempotent ($\mathcal{R}_{G}^{2} = \mathcal{R}_{G}$), linear, and $G$-invariant
+($\mathcal{R}_{G}(g\cdot x) = \mathcal{R}_{G}(x)$).
 
 ### 5.2 Financial applications of symmetry convexification
 
@@ -404,11 +404,11 @@ restricted to the wealth-weighted invariant measure.
 
 ### 5.3 Orbit polytopes and the geometry of diversification
 
-For a finite group $G$ acting on $\mathbb{R}^d$, the orbit polytope of a
+For a finite group $G$ acting on $\mathbb{R}^{d}$, the orbit polytope of a
 point $x$ is:
 $$P_G(x) = \mathrm{conv}\{g \cdot x : g \in G\} \tag{5.4}$$
 
-The vertices are the orbit points; the centroid is $\mathcal{R}_G(x)$.
+The vertices are the orbit points; the centroid is $\mathcal{R}_{G}(x)$.
 
 **For the symmetric group $S_d$ acting on $\Delta_{d-1}$:** The orbit polytope
 of a generic portfolio $b$ is the **permutohedron** — a polytope with $d!$
@@ -436,7 +436,7 @@ factor structure. The limit (a ball) is the CAPM market — the most symmetric
 possible factor structure.
 
 This gives a new interpretation of the Minkowski inequality:
-$$\mathrm{vol}(\mathcal{R}_G(M)) \leq \mathrm{vol}(M)$$
+$$\mathrm{vol}(\mathcal{R}_{G}(M)) \leq \mathrm{vol}(M)$$
 
 **Symmetrisation reduces volume.** Diversification (the financial analogue of
 symmetrisation) reduces the effective size of the strategy space.
@@ -470,8 +470,8 @@ $$\|p\|^2_{W^{1,2}_{\rm FR}} = \int_{\Delta_{d-1}} p \, d\mathrm{vol}
 *where $\nabla_{\rm FR}$ is the gradient with respect to the Fisher-Rao metric.*
 
 In the Bhattacharyya coordinates $u = \sqrt{p}$, this becomes the standard
-Sobolev space $H^1(S^{d-1}_+)$ on the positive sphere:
-$$\|u\|^2_{H^1} = \int_{S^{d-1}_+} |u|^2 + |\nabla u|^2 \, d\mathrm{vol}_{S^{d-1}} \tag{6.2}$$
+Sobolev space $H^1(S^{d-1}_{+})$ on the positive sphere:
+$$\|u\|^2_{H^1} = \int_{S^{d-1}_{+}} |u|^2 + |\nabla u|^2 \, d\mathrm{vol}_{S^{d-1}} \tag{6.2}$$
 
 **The $1/b_i$ singularity is removable in Bhattacharyya coordinates.** The
 Fisher-Rao metric $g^{\rm FR}_{ij} = \delta_{ij}/b_i$ diverges as $b_i \to 0$.
@@ -488,7 +488,7 @@ all components satisfy $0 < \alpha_i < 2$ (from Paper II.5, SOBOLEV_OPTIONS_GREE
 *The Fisher-Rao metric weight $w(b) = \prod b_i^{-1}$ is in $A_2(\Delta_{d-1})$.
 Consequently:*
 
-*(i) The Sobolev embedding $W^{1,2}_w(\Delta) \hookrightarrow L^q_w(\Delta)$
+*(i) The Sobolev embedding $W^{1,2}_{w}(\Delta) \hookrightarrow L^q_w(\Delta)$
 holds for $q \leq 2d/(d-2)$.*
 
 *(ii) The Poincaré inequality holds:
@@ -496,7 +496,7 @@ $\int |f - \bar f|^2 w \, d\mathrm{vol} \leq C_P \int |\nabla f|^2 w \, d\mathrm
 with $C_P = 1/\lambda_1$ (spectral gap of the weighted Laplacian).*
 
 *(iii) Elliptic regularity: solutions of $\Delta_w f = g$ with
-$g \in L^2_w$ satisfy $f \in W^{2,2}_w$.*
+$g \in L^2_w$ satisfy $f \in W^{2,2}_{w}$.*
 
 *Proof.* The $A_2$ membership is verified by the Muckenhoupt criterion
 (SOBOLEV_OPTIONS_GREEKS Theorem 2.1). Parts (i)–(iii) follow from the
@@ -604,7 +604,7 @@ WF stationary measure).
 For functions (as opposed to sets), the canonical convexification is the
 Legendre-Fenchel biconjugate:
 
-**Definition 8.1** (Convex envelope). *The convex envelope of $f: \mathbb{R}^d \to \mathbb{R} \cup \{+\infty\}$ is:*
+**Definition 8.1** (Convex envelope). *The convex envelope of $f: \mathbb{R}^{d} \to \mathbb{R} \cup \{+\infty\}$ is:*
 $$f^{**}(x) = \sup\{g(x) : g \leq f, \, g \text{ convex}\} \tag{8.1}$$
 
 *Equivalently, $f^{**}$ is the Legendre-Fenchel biconjugate:*
@@ -643,7 +643,7 @@ Legendre-Fenchel transform.
 | $\mathcal{P}(X)$ | Sets | Take all mixtures | Free convex completion |
 | $f^{**}$ | Functions | Largest convex minorant | Legendre-Fenchel |
 | $\rho = \sum p_i \|\psi_i\rangle\langle\psi_i\|$ | Quantum states | Mix pure states | Density matrix |
-| $\mathcal{R}_G(x) = \int_G g\cdot x \, d\mu_G$ | Group actions | Average over orbits | Reynolds operator |
+| $\mathcal{R}_{G}(x) = \int_G g\cdot x \, d\mu_G$ | Group actions | Average over orbits | Reynolds operator |
 | $\mathcal{E}(x) = \lim \frac{1}{N}\sum \delta_{T^n x}$ | Dynamical systems | Time average | Ergodic measure |
 
 **Theorem 9.1** *(Unification)*.
@@ -652,10 +652,10 @@ completion $\mathcal{P}$:*
 
 *(i) Legendre-Fenchel: $f^{**}(x) = \inf\{\int f \, d\mu : \mu \in \mathcal{P}(\mathrm{dom}(f)),\, \int \mathrm{id}\, d\mu = x\}$ (the convex envelope is the infimum over representations as a mixture).*
 
-*(ii) Density matrix: $\mathcal{D}_n = \mathcal{P}(\mathbb{CP}^n)$ (density
+*(ii) Density matrix: $\mathcal{D}_{n} = \mathcal{P}(\mathbb{CP}^{n})$ (density
 matrices are probability measures on pure states).*
 
-*(iii) Reynolds: $\mathcal{R}_G(x) = \int_G g\cdot x \, d\mu_G = \int_{Gx} \mathrm{id}\, d(\iota_*\mu_G) \in \mathcal{P}(Gx)$ (the Reynolds average is the pushforward of Haar measure to the orbit).*
+*(iii) Reynolds: $\mathcal{R}_{G}(x) = \int_G g\cdot x \, d\mu_G = \int_{Gx} \mathrm{id}\, d(\iota_*\mu_G) \in \mathcal{P}(Gx)$ (the Reynolds average is the pushforward of Haar measure to the orbit).*
 
 *(iv) Ergodic: $\mathcal{E}(x) = \mu \in \mathcal{P}(X)$ (the ergodic
 measure is a probability measure, i.e., an element of the free convex completion).*
@@ -770,15 +770,15 @@ entropy is minimal.
 
 ### 10.4 Palindromic completion on the Bhattacharyya sphere
 
-Under the Bhattacharyya embedding $\phi(b) = \sqrt{b} \in S^{d-1}_+$, the
+Under the Bhattacharyya embedding $\phi(b) = \sqrt{b} \in S^{d-1}_{+}$, the
 palindromic reflection $R_\tau$ becomes a REFLECTION of the sphere:
 
 $$\hat{R}_\tau(\sqrt{b_1}, \ldots, \sqrt{b_d}) = (\sqrt{b_{\tau(1)}}, \ldots, \sqrt{b_{\tau(d)}}) \tag{10.8}$$
 
-This is an isometry of $S^{d-1}_+$ (it preserves the round metric). The
+This is an isometry of $S^{d-1}_{+}$ (it preserves the round metric). The
 palindromic half-sphere $S^+$ is a fundamental domain of the reflection group.
 
-**The palindromic completion of $S^+$ gives the full positive orthant $S^{d-1}_+$.**
+**The palindromic completion of $S^+$ gives the full positive orthant $S^{d-1}_{+}$.**
 
 More generally, the group generated by $k$ independent reflections is a
 **Coxeter group** $W$ of type $A$. The fundamental domain is a
@@ -788,9 +788,9 @@ fundamental domain.
 
 **Theorem 10.6** (Palindromic completion = Coxeter orbit). *The $k$-palindromic
 completion of a function $f$ defined on the Weyl chamber
-$C_W \subset S^{d-1}_+$ is:*
+$C_W \subset S^{d-1}_{+}$ is:*
 
-$$\mathrm{Pal}_W(f)(x) = f(w \cdot x) \quad \text{where } w \in W \text{ is the unique element with } w \cdot x \in C_W \tag{10.9}$$
+$$\mathrm{Pal}_{W}(f)(x) = f(w \cdot x) \quad \text{where } w \in W \text{ is the unique element with } w \cdot x \in C_W \tag{10.9}$$
 
 *This extends $f$ from the Weyl chamber to the full sphere by the action of
 the Coxeter group. The extension is palindromic (invariant under $W$) by
@@ -798,7 +798,7 @@ construction, and carries no information beyond $f|_{C_W}$.*
 
 ### 10.5 The palindromic completion of the market manifold
 
-The market manifold $M^r \subset S^{d-1}_+$ may or may not have palindromic
+The market manifold $M^r \subset S^{d-1}_{+}$ may or may not have palindromic
 symmetry. Three cases:
 
 **Case 1: CAPM (great sphere $S^r_+$).** The CAPM manifold IS palindromic
@@ -815,7 +815,7 @@ direction (momentum is directional; mean reversion is palindromic). The
 palindromic dimension is $k = 1$ (the mean-reversion direction is palindromic;
 the momentum direction is not). Information is halved, not quartered.
 
-**Case 3: Pseudo-Anosov ($\mathbb{H}^2$).** Hyperbolic geometry has NO
+**Case 3: Pseudo-Anosov ($\mathbb{H}^{2}$).** Hyperbolic geometry has NO
 global reflection symmetry that preserves the manifold. The pseudo-Anosov
 monodromy is a hyperbolic isometry with no fixed points — it is maximally
 non-palindromic. The palindromic dimension is $k = 0$. No free information.
@@ -826,17 +826,17 @@ markets (crises, chaos) are the hardest to predict.
 
 The MUP (Manifold Universal Portfolio) integrates over $M^r$:
 
-$$b^{\rm MUP}_T = \frac{\int_{M^r} b\, W_T(b)\, d\mathrm{vol}(b)}{\int_{M^r} W_T(b)\, d\mathrm{vol}(b)}$$
+$$b^{\rm MUP}_{T} = \frac{\int_{M^r} b\, W_T(b)\, d\mathrm{vol}(b)}{\int_{M^r} W_T(b)\, d\mathrm{vol}(b)}$$
 
 If $M^r$ has $k$-palindromic symmetry, the integral over $M^r$ reduces to
 an integral over the fundamental domain $M^r_+$:
 
-$$b^{\rm MUP}_T = \frac{\int_{M^r_+} b\, W_T(b)\, d\mathrm{vol}(b) + \int_{M^r_+} R_\tau(b)\, W_T(R_\tau(b))\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.10}$$
+$$b^{\rm MUP}_{T} = \frac{\int_{M^r_+} b\, W_T(b)\, d\mathrm{vol}(b) + \int_{M^r_+} R_\tau(b)\, W_T(R_\tau(b))\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.10}$$
 
 By palindromic symmetry, $W_T(b) = W_T(R_\tau(b))$ (palindromic functions
 have the same wealth on both sides). So:
 
-$$b^{\rm MUP}_T = \frac{\int_{M^r_+} (b + R_\tau(b))\, W_T(b)\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.11}$$
+$$b^{\rm MUP}_{T} = \frac{\int_{M^r_+} (b + R_\tau(b))\, W_T(b)\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.11}$$
 
 The integration domain is HALVED for each palindromic dimension. For a
 $k$-palindromic market:
@@ -858,7 +858,7 @@ a space of half the dimension — it is less general but exponentially cheaper.
 |:---|:---|:---|:---|
 | Free $\mathcal{P}(X)$ | Full $X$ | Full $H(X)$ | Always (universal) |
 | Palindromic $\mathrm{Pal}(X)$ | Half-domain $X^+$ | $H(X)/2^k$ | When $X$ has palindromic symmetry |
-| Symmetry $\mathcal{C}_G(X)$ | Fundamental domain $X/G$ | $H(X)/|G|$ | When $G$ acts on $X$ |
+| Symmetry $\mathcal{C}_{G}(X)$ | Fundamental domain $X/G$ | $H(X)/|G|$ | When $G$ acts on $X$ |
 
 The palindromic completion is a special case of symmetry convexification
 (Section 5) with $G = (\mathbb{Z}/2)^k$ — the group generated by $k$
@@ -874,8 +874,8 @@ canonical convexification operators on the portfolio simplex is:*
 |:---|:---|:---|:---|
 | 1 | Free completion $\mathcal{P}$ | Universal | None (full embedding) |
 | 2 | Legendre-Fenchel $f^{{\ast}{\ast}}$ | Functional | Removes non-convexity |
-| 3 | Density matrix $\mathcal{D}_n$ | Quantum | Removes phase information |
-| 4 | Reynolds $\mathcal{R}_G$ | Group-symmetric | Reduces by $|G|$ |
+| 3 | Density matrix $\mathcal{D}_{n}$ | Quantum | Removes phase information |
+| 4 | Reynolds $\mathcal{R}_{G}$ | Group-symmetric | Reduces by $|G|$ |
 | 5 | Ergodic $\mathcal{E}$ | Time-average | Removes transient information |
 | 6 | Palindromic $\mathrm{Pal}$ | Reflection-symmetric | Reduces by $2^k$ |
 

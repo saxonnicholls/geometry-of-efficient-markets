@@ -85,7 +85,7 @@ $H \equiv 0$ — i.e.\ $\Sigma$ is a minimal submanifold. This rules out strateg
 
 **Theorem B** *(Willmore energy as inefficiency measure)*. The Willmore functional
 $\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2\,d\mathrm{vol}_\Sigma$ is a non-negative functional on submanifolds (conformally invariant when $r=2$; isometry-invariant for all $r$)
-of $(\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_+$ satisfying:
+of $(\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_{+}$ satisfying:
 
 $$\widetilde{\mathcal{W}}(\Sigma) = 0 \iff \Sigma \text{ is minimal} \iff \text{market is strongly efficient}$$
 
@@ -131,7 +131,7 @@ return distribution concentrates on the $r$-dimensional factor subspace.
 is the closure of the set of log-optimal portfolios over all realisations of the factor shocks:*
 
 $$\Sigma = \overline{\left\{b^{\ast}(\omega) = \operatorname{argmax}_{b \in \Delta_{d-1}}
-\sum_{t=1}^T \log\langle b, x_t(\omega)\rangle : \omega \in \Omega \right\}} \tag{2.1}$$
+\sum_{t=1}^{T} \log\langle b, x_t(\omega)\rangle : \omega \in \Omega \right\}} \tag{2.1}$$
 
 *For a pure factor model ($D_e = 0$), $\Sigma$ is the image of the smooth map
 $\alpha \mapsto \Pi_\Delta(\Phi\alpha)$ from the factor simplex $\Delta_{r-1}$ into $\Delta_{d-1}$,
@@ -150,24 +150,24 @@ a Riemannian metric $g_\Sigma = \iota^{\ast} g^{\mathrm{FR}}$ on $\Sigma$ via th
 $\iota: \Sigma \hookrightarrow \Delta_{d-1}$.
 
 **Definition 2.1** (Bhattacharyya sphere). *The term "Bhattacharyya sphere" in this
-monograph refers specifically to the positive orthant of the unit sphere in $\mathbb{R}^d$:*
+monograph refers specifically to the positive orthant of the unit sphere in $\mathbb{R}^{d}$:*
 
-$$S^{d-1}_+ = \left\{u \in \mathbb{R}^d : u_i \geq 0,\, \|u\|^2 = 1\right\}$$
+$$S^{d-1}_{+} = \left\{u \in \mathbb{R}^{d} : u_i \geq 0,\, \|u\|^2 = 1\right\}$$
 
 *equipped with the round metric of curvature $K = 1/4$ (equivalently, radius 2).
 This is the image of the portfolio simplex $\Delta_{d-1}$ under the square-root map
 $\phi: b \mapsto \sqrt{b}$, which is an isometry from $(\Delta_{d-1}, g^{\rm FR})$ to
-$(S^{d-1}_+, g_{\rm round}/4)$. The name honours A. Bhattacharyya (1943), whose
+$(S^{d-1}_{+}, g_{\rm round}/4)$. The name honours A. Bhattacharyya (1943), whose
 statistical distance $\rho(p,q) = -\log\sum\sqrt{p_i q_i}$ induces exactly this
 geometry. In the literature, the term "Bhattacharyya space" sometimes refers to the
 full statistical manifold or to the distance function itself; here it always means
-the concrete Riemannian manifold $S^{d-1}_+$ with the induced round metric.*
+the concrete Riemannian manifold $S^{d-1}_{+}$ with the induced round metric.*
 
 Under this isometry, the market manifold maps to:
 
-$$\phi(\Sigma) \subset S^{d-1}_+ \tag{2.2}$$
+$$\phi(\Sigma) \subset S^{d-1}_{+} \tag{2.2}$$
 
-an $r$-dimensional submanifold of $S^{d-1}_+$ with constant ambient
+an $r$-dimensional submanifold of $S^{d-1}_{+}$ with constant ambient
 sectional curvature $K = 1/4$.
 
 ### 2.3 The second fundamental form
@@ -175,13 +175,13 @@ sectional curvature $K = 1/4$.
 The **second fundamental form** of $\Sigma \subset (\Delta_{d-1}, g^{\mathrm{FR}})$ at
 $b \in \Sigma$ is the symmetric bilinear form on $T_b\Sigma$:
 
-$$II_b(u,v) = \nabla^{\mathrm{FR}}_u v - \Pi_{T_b\Sigma}(\nabla^{\mathrm{FR}}_u v)
-= \Pi_{N_b\Sigma}(\nabla^{\mathrm{FR}}_u v) \tag{2.3}$$
+$$II_b(u,v) = \nabla^{\mathrm{FR}}_{u} v - \Pi_{T_b\Sigma}(\nabla^{\mathrm{FR}}_{u} v)
+= \Pi_{N_b\Sigma}(\nabla^{\mathrm{FR}}_{u} v) \tag{2.3}$$
 
 where $\nabla^{\mathrm{FR}}$ is the Levi-Civita connection of $g^{\mathrm{FR}}$ and
 $N_b\Sigma = (T_b\Sigma)^\perp$ is the normal bundle. The **mean curvature vector** is:
 
-$$\vec{H}(b) = \frac{1}{r}\sum_{a=1}^r II_b(e_a, e_a) \in N_b\Sigma \tag{2.4}$$
+$$\vec{H}(b) = \frac{1}{r}\sum_{a=1}^{r} II_b(e_a, e_a) \in N_b\Sigma \tag{2.4}$$
 
 where $\{e_a\}$ is any orthonormal frame of $T_b\Sigma$ under $g^{\mathrm{FR}}$. The
 scalar mean curvature is $H = |\vec{H}|_{g^{\mathrm{FR}}}$.
@@ -196,8 +196,8 @@ and the projection onto the normal bundle captures the extrinsic curvature of $\
 inside $(\Delta_{d-1}, g^{\mathrm{FR}})$.*
 
 *Proof.* The Bhattacharyya sphere has constant curvature $K = 1/4$; the second fundamental
-form of $S^{d-1}_+$ inside $\mathbb{R}^d$ is $II^{S}(u,v) = -\langle u,v\rangle_{\mathbb{R}^d}\,n$
-where $n = \phi(b)$ is the unit outward normal. For a submanifold $\phi(\Sigma) \subset S^{d-1}_+$,
+form of $S^{d-1}_{+}$ inside $\mathbb{R}^{d}$ is $II^{S}(u,v) = -\langle u,v\rangle_{\mathbb{R}^{d}}\,n$
+where $n = \phi(b)$ is the unit outward normal. For a submanifold $\phi(\Sigma) \subset S^{d-1}_{+}$,
 the Gauss equation gives the induced second fundamental form in terms of the ambient curvature
 and the factor loading directions. The computation in the $\sqrt{b}$ coordinates gives (2.5). $\square$
 
@@ -250,11 +250,11 @@ path $\{b^{\ast}(t)\}$ — the geodesic curvature of the portfolio path in $\Sig
 
 *Step 2: The mean curvature condition.*
 
-More precisely, at time $t$, an investor with information $\mathcal{F}_t$ observes the current
+More precisely, at time $t$, an investor with information $\mathcal{F}_{t}$ observes the current
 portfolio $b^{\ast}(t)$ and attempts to predict the deviation $b^{\ast}(t+1) - b^{\ast}(t)$. The expected
 movement of $b^{\ast}$ across the manifold $\Sigma$ under the Hamiltonian flow of Section 4 is:
 
-$$\mathbb{E}\!\left[b^{\ast}(t+1) - b^{\ast}(t)\,\big|\,\mathcal{F}_t\right] = -\varepsilon^2\vec{H}(b^{\ast}(t)) + O(\varepsilon^4) \tag{3.2}$$
+$$\mathbb{E}\!\left[b^{\ast}(t+1) - b^{\ast}(t)\,\big|\,\mathcal{F}_{t}\right] = -\varepsilon^2\vec{H}(b^{\ast}(t)) + O(\varepsilon^4) \tag{3.2}$$
 
 This follows from Itô's formula applied to $b^{\ast}(t)$ as a diffusion on $\Sigma$: the drift of
 the diffusion on a submanifold is $-\varepsilon^2\vec{H}$ (the extrinsic curvature drift), and
@@ -271,7 +271,7 @@ excess log-growth. This excess is strictly positive when $H \neq 0$, providing e
 
 *Step 3: Converse — $H = 0$ implies no exploitable signal.*
 
-If $H \equiv 0$ on $\Sigma$, equation (3.2) gives $\mathbb{E}[b^{\ast}(t+1) - b^{\ast}(t)\,|\,\mathcal{F}_t] = O(\varepsilon^4)$. The portfolio path is a martingale on $\Sigma$ to this order, and the excess growth (3.3) from any strategy based on the mean curvature drift is zero. Since the mean curvature is the leading-order drift term, and higher-order terms are genuinely higher-order in $\varepsilon^2 = 1/T$, no information-based strategy can earn positive excess log-growth. The market is efficient. $\square$
+If $H \equiv 0$ on $\Sigma$, equation (3.2) gives $\mathbb{E}[b^{\ast}(t+1) - b^{\ast}(t)\,|\,\mathcal{F}_{t}] = O(\varepsilon^4)$. The portfolio path is a martingale on $\Sigma$ to this order, and the excess growth (3.3) from any strategy based on the mean curvature drift is zero. Since the mean curvature is the leading-order drift term, and higher-order terms are genuinely higher-order in $\varepsilon^2 = 1/T$, no information-based strategy can earn positive excess log-growth. The market is efficient. $\square$
 
 **Corollary 3.2.** *The expected excess return from the optimal information-based strategy is:*
 
@@ -314,7 +314,7 @@ its minimal area — the Willmore energy measures this inflation.
 ### 4.1 Definition and properties
 
 **Definition 4.1** (Market inefficiency functional). *For an $r$-dimensional submanifold
-$\Sigma \subset (\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_+$, the **market inefficiency
+$\Sigma \subset (\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_{+}$, the **market inefficiency
 functional** is the Willmore energy:*
 
 $$\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_{g_\Sigma} \tag{4.1}$$
@@ -331,9 +331,9 @@ $$\mathcal{E}(\Sigma) = \exp(-\widetilde{\mathcal{W}}(\Sigma)) \in (0, 1] \tag{4
 
 *(ii) **Conformal invariance (surface case):** For $r=2$ (two-factor markets), $\widetilde{\mathcal{W}}(\Sigma)$ is invariant under Möbius transformations of $S^{d-1}$ (Li-Yau 1982), which correspond to portfolio rebalancing operations preserving the Fisher–Rao structure. For $r > 2$, conformal invariance fails and the conformally invariant functional is the $r$-dimensional Willmore integrand $\int(|H|^2 - K_{\mathrm{ext}})^{r/2}$, which reduces to $\int|H|^2$ only when $K_{\mathrm{ext}} = 0$. In general, $\widetilde{\mathcal{W}}$ is invariant under isometries of the ambient sphere but not under the full conformal group.*
 
-*(iii) **Lower bound:** For compact $\Sigma$, $\widetilde{\mathcal{W}}(\Sigma) \geq \widetilde{\mathcal{W}}_0(r,d)$
-where $\widetilde{\mathcal{W}}_0$ is the Willmore energy of the $r$-dimensional great sphere section of
-$S^{d-1}_+$.*
+*(iii) **Lower bound:** For compact $\Sigma$, $\widetilde{\mathcal{W}}(\Sigma) \geq \widetilde{\mathcal{W}}_{0}(r,d)$
+where $\widetilde{\mathcal{W}}_{0}$ is the Willmore energy of the $r$-dimensional great sphere section of
+$S^{d-1}_{+}$.*
 
 *(iv) **Gradient flow:** The $L^2$-gradient flow of $\widetilde{\mathcal{W}}$ with respect to normal
 deformations of $\Sigma$ is the Willmore flow:*
@@ -353,7 +353,7 @@ measures how far $\Sigma$ is from being totally geodesic; $\mathcal{W}_{\mathrm{
 the topological "kinkiness" of $\Sigma$.*
 
 **Proof of (ii)** (Conformal invariance, surface case). For $r = 2$: the classical Willmore conformal invariance \[Willmore 1965, Weiner 1978, Li-Yau 1982\] states that $\int_\Sigma |H|^2\,d\mathrm{vol}$ is invariant under conformal transformations of $S^n$ for 2-dimensional surfaces. The Bhattacharyya isometry identifies $(\Delta_{d-1}, g^{\mathrm{FR}})$
-with $(S^{d-1}_+, g_{\mathrm{round}}/4)$. For two-factor markets ($r=2$), the market manifold $\Sigma$ is a surface in $S^{d-1}_+$, and Möbius transformations — which correspond to portfolio rebalancing operations preserving the Fisher-Rao distance structure — leave $\widetilde{\mathcal{W}}$ invariant. This means the efficiency measure is **independent of the choice of return normalisation** for two-factor markets.
+with $(S^{d-1}_{+}, g_{\mathrm{round}}/4)$. For two-factor markets ($r=2$), the market manifold $\Sigma$ is a surface in $S^{d-1}_{+}$, and Möbius transformations — which correspond to portfolio rebalancing operations preserving the Fisher-Rao distance structure — leave $\widetilde{\mathcal{W}}$ invariant. This means the efficiency measure is **independent of the choice of return normalisation** for two-factor markets.
 
 For $r > 2$: $\widetilde{\mathcal{W}} = \int |H|^2\,d\mathrm{vol}$ is NOT conformally invariant in general. It remains invariant under isometries of the ambient sphere (rotations of the portfolio simplex), which suffices for the economic interpretation: $\widetilde{\mathcal{W}}$ is invariant under asset relabelling and orthogonal rotations of the factor structure. The conformally invariant generalisation for $r$-dimensional submanifolds involves the integrand $(|H|^2 - K_{\mathrm{ext}})^{r/2}$ \[cf. Guven 2005, Graham-Reichert 2017\], but this is not needed for the core efficiency interpretation. $\square$
 
@@ -378,7 +378,7 @@ For $r = 2$, this gives a **phase transition**: markets are either exactly effic
 or carry at least $4\pi$ units of inefficiency ($\widetilde{\mathcal{W}} \geq 4\pi$). There is no
 "nearly efficient" two-factor market in the continuum sense — only markets close to minimal surfaces.
 
-**Remark 4.3a** (General $r$). For $r > 2$, the Li-Yau $4\pi$ bound does not apply directly, since it is a result for 2-dimensional surfaces in $\mathbb{R}^3$ (or $S^n$), not for $r$-dimensional submanifolds. The phase transition threshold for general $r$ depends on the ambient curvature ($K = 1/4$ for the Bhattacharyya sphere) and the codimension $d - 1 - r$. Lower bounds on $\widetilde{\mathcal{W}}$ for higher-dimensional submanifolds exist \[cf. Chen 1971, Ejiri 1979\] but take the form $\widetilde{\mathcal{W}}(\Sigma) \geq c(r,d)\,\mathrm{vol}(\Sigma)$ where $c(r,d)$ depends on the geometry. The sharp threshold for $r$-dimensional market manifolds in $S^{d-1}_+$ is an open problem (see Problem 1).
+**Remark 4.3a** (General $r$). For $r > 2$, the Li-Yau $4\pi$ bound does not apply directly, since it is a result for 2-dimensional surfaces in $\mathbb{R}^{3}$ (or $S^n$), not for $r$-dimensional submanifolds. The phase transition threshold for general $r$ depends on the ambient curvature ($K = 1/4$ for the Bhattacharyya sphere) and the codimension $d - 1 - r$. Lower bounds on $\widetilde{\mathcal{W}}$ for higher-dimensional submanifolds exist \[cf. Chen 1971, Ejiri 1979\] but take the form $\widetilde{\mathcal{W}}(\Sigma) \geq c(r,d)\,\mathrm{vol}(\Sigma)$ where $c(r,d)$ depends on the geometry. The sharp threshold for $r$-dimensional market manifolds in $S^{d-1}_{+}$ is an open problem (see Problem 1).
 
 **Remark 4.4** (The Marques–Neves analogy). The Willmore conjecture, proved by Marques
 and Neves \[2012\], states that among tori in $S^3$, the Clifford torus minimises the
@@ -477,7 +477,7 @@ this is precisely MCF. $\square$
 ### 6.2 Convergence to the efficient market
 
 **Theorem 6.2** (MCF convergence to minimal surface). *For a compact, embedded market
-manifold $\Sigma_0$ in $(\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_+$, the mean curvature
+manifold $\Sigma_0$ in $(\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_{+}$, the mean curvature
 flow $\partial_t\Sigma = -H\vec{\nu}$ satisfies:*
 
 *(i) For short time, the flow exists and is smooth.*
@@ -535,45 +535,45 @@ have intrinsic dimension $r$ (the number of systematic factors). Then:*
 
 *(ii) The embedding dimension is tight: $\Sigma$ generally does not embed in $\mathbb{R}^{2r-1}$.*
 
-*(iii) Under the Bhattacharyya map, $\phi(\Sigma) \subset S^{d-1}_+$ is a smooth $r$-dimensional
+*(iii) Under the Bhattacharyya map, $\phi(\Sigma) \subset S^{d-1}_{+}$ is a smooth $r$-dimensional
 submanifold of a sphere of dimension $d-1 \geq 2r+1$ (for $d \geq 2r+2$), so Whitney is
 achievable within the ambient simplex.*
 
 *Proof.* Whitney's smooth embedding theorem states any smooth $r$-manifold embeds in $\mathbb{R}^{2r}$.
 The tightness comes from the fact that $\mathbb{R}P^r$ does not embed in $\mathbb{R}^{2r-1}$
-\[Whitney 1944\], and $\mathcal{M}^r$ generically has the topology of a projective-like object.
+\[Whitney 1944\], and $\mathcal{M}^{r}$ generically has the topology of a projective-like object.
 The ambient condition $d \geq 2r+2$ ensures $\Delta_{d-1}$ is large enough to contain the
 embedding — for $r = 4$ factors, $d \geq 10$ assets suffice (well below the $d = 50$
 of our setting). $\square$
 
-**Corollary 7.2** (The $d = 50$ portfolio lives in $\mathbb{R}^8$). *For US equities with
+**Corollary 7.2** (The $d = 50$ portfolio lives in $\mathbb{R}^{8}$). *For US equities with
 $d = 50$ and $r = 4$ systematic Fama-French-Carhart factors, the market manifold embeds in
-$\mathbb{R}^8$. The 49-dimensional simplex is vastly overparameterised: the economically
+$\mathbb{R}^{8}$. The 49-dimensional simplex is vastly overparameterised: the economically
 relevant geometry is 4-dimensional.*
 
 ### 7.2 Takens: reconstruction from time series
 
 **Theorem 7.3** (Takens embedding for the market manifold). *Suppose the market state
-$\xi_t \in \mathcal{M}^r$ evolves by a smooth dynamical system $\xi_{t+1} = F(\xi_t) + \eta_t$
-where $F: \mathcal{M}^r \to \mathcal{M}^r$ is the factor dynamics and $\eta_t$ is noise.
-Let $h: \mathcal{M}^r \to \mathbb{R}^d$ be the observation map ($h_i(\xi) = x_{t,i}$ is the return
+$\xi_t \in \mathcal{M}^{r}$ evolves by a smooth dynamical system $\xi_{t+1} = F(\xi_t) + \eta_t$
+where $F: \mathcal{M}^{r} \to \mathcal{M}^{r}$ is the factor dynamics and $\eta_t$ is noise.
+Let $h: \mathcal{M}^{r} \to \mathbb{R}^{d}$ be the observation map ($h_i(\xi) = x_{t,i}$ is the return
 of asset $i$ in state $\xi$). Then for generic $(F, h)$, the delay embedding:*
 
 $$\Phi_k(\xi) = (h(\xi),\, h(F(\xi)),\, \ldots,\, h(F^{2r}(\xi))) \in \mathbb{R}^{(2r+1)d} \tag{7.1}$$
 
 *is a diffeomorphism onto its image. In particular, $2r+1$ consecutive return observations
-$(x_{t-2r},\ldots,x_t)$ determine the current market state $\xi_t \in \mathcal{M}^r$
+$(x_{t-2r},\ldots,x_t)$ determine the current market state $\xi_t \in \mathcal{M}^{r}$
 up to diffeomorphism.*
 
-*Proof.* This is Takens' theorem \[1981\] applied to the smooth manifold $\mathcal{M}^r$.
+*Proof.* This is Takens' theorem \[1981\] applied to the smooth manifold $\mathcal{M}^{r}$.
 The condition "generic $(F,h)$" is equivalent to requiring that $F$ has no resonances and
-$h$ separates points on $\mathcal{M}^r$ — both hold generically. $\square$
+$h$ separates points on $\mathcal{M}^{r}$ — both hold generically. $\square$
 
 **Corollary 7.4** (Prediction horizon and EMH). *By the Takens theorem, the market manifold
 is reconstructible from $2r+1$ observations. This implies that:*
 
 *(i) For a **weak-form efficient** market (geodesic path), the current state $\xi_t$ is a
-Markov process on $\mathcal{M}^r$, and the delay reconstruction degenerates to 1 step.*
+Markov process on $\mathcal{M}^{r}$, and the delay reconstruction degenerates to 1 step.*
 
 *(ii) For a **semi-strong efficient** market, reconstruction requires at most $r+1$ steps
 (the factor dimension plus one).*
@@ -756,7 +756,7 @@ $\mathcal{W}(\Sigma^{\mathrm{eq}}) > 0$ but bounded.
 **Problem 1** (Quantitative EMH testing). *Develop a statistical test of $H = 0$ based on
 the estimator (8.2), with proper confidence intervals. The null hypothesis of zero curvature drift is
 $\widetilde{\mathcal{W}}(\Sigma) = 0$; for $r=2$ the alternative is $\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi$ (Li–Yau bound).
-For general $r$, determine the sharp phase transition threshold $\widetilde{\mathcal{W}}_0(r,d)$ for market manifolds in $S^{d-1}_+$.*
+For general $r$, determine the sharp phase transition threshold $\widetilde{\mathcal{W}}_{0}(r,d)$ for market manifolds in $S^{d-1}_{+}$.*
 
 **Problem 2** (Singularity classification for market crashes). *Classify the singularity
 types of the MCF on portfolio manifolds. Type I singularities (spherical blowup) correspond
@@ -803,7 +803,7 @@ We have established that market efficiency, in all three of its classical forms,
 statement about the differential geometry of the market portfolio manifold in the
 Fisher–Rao metric. The complete picture is:
 
-$$\boxed{\text{Efficient market} \;\iff\; \text{Minimal surface } \Sigma^{\ast} \;\iff\; \mathcal{W}(\Sigma) = 0 \;\iff\; \mathrm{Sharpe}^{\ast} = 0}$$
+$$\text{Efficient market} \iff \text{Minimal surface } \Sigma^{\ast} \iff \mathcal{W}(\Sigma) = 0 \iff \mathrm{Sharpe}^{\ast} = 0$$
 
 The Willmore energy $\widetilde{\mathcal{W}}(\Sigma)$ is the natural, non-negative, computable
 measure of market inefficiency (conformally invariant for $r=2$; isometry-invariant for all $r$). Its square root is the maximum attainable Sharpe ratio.
@@ -812,7 +812,7 @@ Its gradient flow is the dynamics of arbitrage. Its zeros are the efficient mark
 For US equities with $d = 50$ stocks and $r \approx 4$ factors:
 
 - The market manifold has intrinsic dimension **4**, not 49.
-- It embeds in $\mathbb{R}^8$, not $\mathbb{R}^{49}$.
+- It embeds in $\mathbb{R}^{8}$, not $\mathbb{R}^{49}$.
 - It is reconstructible from **9 consecutive daily return vectors**.
 - Its Willmore energy $\mathcal{W}(\Sigma)$ is computable from the spectral structure of the Fisher matrix.
 - For $r=2$, the factor zoo corresponds to $\lfloor \widetilde{\mathcal{W}}(\Sigma) / 4\pi \rfloor$ spurious extra dimensions (Li-Yau); for general $r$, the threshold depends on the ambient geometry.

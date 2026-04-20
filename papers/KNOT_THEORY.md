@@ -13,7 +13,7 @@
 **Abstract.**  
 We establish a deep connection between knot theory and the geometry of efficient
 financial markets. The log-optimal portfolio path $\Gamma = \{b^{\ast}(t) : t \in [0,T]\}$
-traces a curve in the Bhattacharyya sphere $S^{d-1}_+$, and for $d \geq 4$ this
+traces a curve in the Bhattacharyya sphere $S^{d-1}_{+}$, and for $d \geq 4$ this
 curve can be knotted. The knot type of $\Gamma$ is a topological market invariant —
 it determines which minimal surface the efficient market must span (via the Plateau
 problem), and hence which efficient market structure is "forced" by the market's
@@ -61,11 +61,11 @@ surfaces; Chern-Simons; market topology; writhe; unknotting number; satellite kn
 
 ## 1. How Knots Arise in Market Geometry
 
-### 1.1 The market path as a curve in $S^{d-1}_+$
+### 1.1 The market path as a curve in $S^{d-1}_{+}$
 
 The log-optimal portfolio path is:
 
-$$\Gamma: [0,T] \to S^{d-1}_+, \qquad t \mapsto \phi(b^{\ast}(t)) = \sqrt{b^{\ast}(t)} \tag{1.1}$$
+$$\Gamma: [0,T] \to S^{d-1}_{+}, \qquad t \mapsto \phi(b^{\ast}(t)) = \sqrt{b^{\ast}(t)} \tag{1.1}$$
 
 For $d = 3$ (three assets): $\Gamma$ is a curve in $S^2_+$ (a positive octant of the
 2-sphere). Curves on the 2-sphere cannot be knotted — the knot group of $S^2$ is
@@ -79,7 +79,7 @@ four-asset, two-factor market traces a curve in $S^3_+$ that may be:
 - A torus knot $T(m,n)$ (winding $m$ times in one direction and $n$ times in another)
 - More exotic knots (hyperbolic knots, satellite knots)
 
-For $d \geq 5$: knots exist in $S^{d-1}_+$ but are automatically unknotted for
+For $d \geq 5$: knots exist in $S^{d-1}_{+}$ but are automatically unknotted for
 $d \geq 5$ (Whitney embedding: knots in $S^n$ are trivial for $n \geq 4$). However,
 **links** (collections of multiple curves) can be non-trivially linked even in high
 dimensions through the theory of higher-dimensional linking.
@@ -153,10 +153,10 @@ the log-optimal path $\Gamma$ for a single-factor market is a great circle arc
 boundary face to another — topologically, the unknot.
 
 **Theorem 2.1** *(CAPM = unknot)*. *The log-optimal portfolio path of a CAPM
-($r=1$, totally geodesic market manifold) is homotopic to the unknot in $S^{d-1}_+$.
+($r=1$, totally geodesic market manifold) is homotopic to the unknot in $S^{d-1}_{+}$.
 The minimal spanning surface is a great disk, confirming the CAPM structure.*
 
-*Proof.* The CAPM path lies on a great circle $S^1_+ \subset S^{d-1}_+$ — a simple
+*Proof.* The CAPM path lies on a great circle $S^1_+ \subset S^{d-1}_{+}$ — a simple
 arc in the positive hemisphere. Simple arcs in any hemisphere are isotopic to the
 unknot (they have no room to knot since they lie in a 1-dimensional curve on a
 contractible region). $\square$
@@ -634,7 +634,7 @@ efficient in the topological sense (CAPM-type, no protected alpha), the Jones
 polynomial of the market path must equal 1 — the unknot condition. This is the
 strongest form of the Efficient Market Hypothesis, incorporating topological constraints.
 
-$$\boxed{\text{Topological EMH: } J_\Gamma(q) = 1 \iff \text{market is topologically trivial (CAPM)}} \tag{10.1}$$
+$$\text{Topological EMH: } J_\Gamma(q) = 1 \iff \text{market is topologically trivial (CAPM)} \tag{10.1}$$
 
 This is a new, computable, model-free test of market efficiency using knot invariants.
 
@@ -649,7 +649,7 @@ corresponding minimal spanning surface (efficient market structure).
 
 **Problem 2** *(The market concordance group)*. Is the concordance group of market
 paths finitely generated? The Milnor independence of torus knots suggests it is not,
-but the physical constraint that market paths must lie in $S^{d-1}_+$ (positive
+but the physical constraint that market paths must lie in $S^{d-1}_{+}$ (positive
 simplex hemisphere) may impose additional relations.
 
 **Problem 3** *(Khovanov homology as market risk)*. Develop the financial interpretation

@@ -34,7 +34,7 @@ function = Bessel function series.
 Log-returns are wrapped normal — **not Gaussian.** Periodic boundary conditions
 create characteristic interference peaks in the return distribution.
 
-**Figure-eight / hyperbolic ($\mathbb{H}^2$)** → **Hyperbolic Brownian motion.**
+**Figure-eight / hyperbolic ($\mathbb{H}^{2}$)** → **Hyperbolic Brownian motion.**
 Transition density = McKean heat kernel (integral involving $\cosh$). Long-time
 return distribution converges to Cauchy — power-law tails with $\alpha=1$.
 Characteristic function = $e^{-t(\xi^2 + 1/4)}$.
@@ -61,12 +61,12 @@ market topology; minimal surface diffusion.
 
 ### 1.1 Why the process is determined by the geometry
 
-Each market manifold $M^r \subset S^{d-1}_+$ carries a canonical diffusion: the
+Each market manifold $M^r \subset S^{d-1}_{+}$ carries a canonical diffusion: the
 intrinsic Brownian motion of the Riemannian manifold $(M^r, g_M)$ where $g_M = \iota^{\ast}g^{\mathrm{FR}}$
 is the induced Fisher-Rao metric. This is the unique diffusion satisfying:
 
 1. **Generator = half the Laplace-Beltrami operator**: $\mathcal{L} = \frac{\varepsilon^2}{2}\Delta_M$
-2. **Stationary distribution = normalised Riemannian volume**: $\rho_\infty = d\mathrm{vol}_M / \mathrm{vol}(M)$
+2. **Stationary distribution = normalised Riemannian volume**: $\rho_\infty = d\mathrm{vol}_{M} / \mathrm{vol}(M)$
 3. **No preferred direction** (invariance under the isometries of $M$)
 
 The process is not a modelling choice. It is the minimal diffusion compatible with
@@ -102,7 +102,7 @@ For the CAPM market ($r=1$, $M = S^1_+$, two assets), the natural coordinate is
 $b_1 \in (0,1)$ (the weight on asset 1). The canonical diffusion on $S^1_+$ in the
 Fisher-Rao metric $g^{\mathrm{FR}}_{11} = 1/(b_1(1-b_1))$ is:
 
-$$\boxed{db_t = \kappa(\theta - b_t)\,dt + \sqrt{2\varepsilon^2 b_t(1-b_t)}\,dW_t} \tag{2.1}$$
+$$db_t = \kappa(\theta - b_t)\,dt + \sqrt{2\varepsilon^2 b_t(1-b_t)}\,dW_t \tag{2.1}$$
 
 with:
 - $\kappa = \varepsilon^2\lambda_1$ (Jacobi spectral gap, from CLASSIFICATION.md)
@@ -117,7 +117,7 @@ in the Fisher-Rao metric.
 **Parameters from market data:**
 
 $$\kappa = \frac{(1-\rho^2)\sigma_A^2\sigma_B^2}{(\sigma_A - \sigma_B\rho)^2\cdot(\sigma_B - \sigma_A\rho)^2}\cdot\varepsilon^2, \quad
-\theta = b^{\ast}_1 = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.2}$$
+\theta = b^{\ast}_{1} = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.2}$$
 
 The **Jacobi parameters** are $\alpha = \kappa\theta/\varepsilon^2$ and $\beta = \kappa(1-\theta)/\varepsilon^2$.
 
@@ -158,7 +158,7 @@ $$\hat\phi_r(\xi) = \mathbb{E}[e^{i\xi\log(b_t/b_0)}] = \sum_{n=0}^\infty e^{-\l
 
 **Short-time limit** ($\kappa t \ll 1$): the Jacobi diffusion approximates GBM:
 
-$$r_t \approx \mathcal{N}\!\left(\left(\mu - \frac{\varepsilon^2}{2b_0(1-b_0)}\right)t,\; 2\varepsilon^2 b_0(1-b_0)\,t\right) \tag{2.7}$$
+$$r_t \approx \mathcal{N}\!\left(\left(\mu - \frac{\varepsilon^2}{2b_0(1-b_0)}\right)t, 2\varepsilon^2 b_0(1-b_0)\,t\right) \tag{2.7}$$
 
 This is a Gaussian with **position-dependent variance** $\sigma^2(b_0) = 2\varepsilon^2 b_0(1-b_0)$ — the
 Fisher-Rao diffusion coefficient. For $b_0 = 0.5$ (equal weight): $\sigma^2 = \varepsilon^2/2$,
@@ -229,7 +229,7 @@ natural coordinates are $(\theta, \varphi) \in [0, \pi/2]^2$. The induced metric
 the quarter-torus is flat ($g_{T^2} = \mathrm{diag}(1/4, 1/4)$ in normalised coordinates),
 giving the simplest possible diffusion:
 
-$$\boxed{d\theta_t = \varepsilon\,dW^1_t, \qquad d\varphi_t = \varepsilon\,dW^2_t} \tag{4.1}$$
+$$d\theta_t = \varepsilon\,dW^1_t, \qquad d\varphi_t = \varepsilon\,dW^2_t \tag{4.1}$$
 
 **with periodic boundary conditions** $\theta \sim \theta + \pi/2$, $\varphi \sim \varphi + \pi/2$.
 
@@ -251,7 +251,7 @@ $\lambda_1 = 4$ for the quarter-torus Laplacian, CLASSIFICATION.md Section 6.2).
 **Theorem 4.1** *(Clifford torus transition density — exact closed form)*. *The
 transition density of the flat torus BM (4.1) is:*
 
-$$\boxed{p_t(\theta,\varphi\,|\,\theta_0,\varphi_0) = \vartheta_3\!\!\left(\frac{\theta-\theta_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\vartheta_3\!\!\left(\frac{\varphi-\varphi_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\frac{4}{\pi^2}} \tag{4.4}$$
+$$p_t(\theta,\varphi\,|\,\theta_0,\varphi_0) = \vartheta_3\!\!\left(\frac{\theta-\theta_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\vartheta_3\!\!\left(\frac{\varphi-\varphi_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\frac{4}{\pi^2} \tag{4.4}$$
 
 *where the Jacobi theta function is:*
 
@@ -346,7 +346,7 @@ through the periodic corrections.
 
 For the figure-eight knot market (pseudo-Anosov type, minimum complexity), the
 market manifold $M$ carries a **hyperbolic metric** of constant negative curvature
-$K = -\kappa_{\rm hyp}^2$ (the hyperbolic curvature, distinct from the mean curvature $H$).
+$K = -\kappa_{\rm hyp}^{2}$ (the hyperbolic curvature, distinct from the mean curvature $H$).
 
 In the Bhattacharyya normalisation of our series ($K_{\rm ambient} = +1/4$ for $S^{d-1}$),
 the figure-eight market manifold has induced metric with $K_M = -(1/4 + |II|^2)$
@@ -363,7 +363,7 @@ a hyperbolic surface.
 In the Poincaré disc model $\mathbb{D} = \{z \in \mathbb{C}: |z| < 1\}$ with metric
 $ds^2 = 4|dz|^2/(1-|z|^2)^2$, the hyperbolic BM is:
 
-$$\boxed{dz_t = \frac{\varepsilon(1-|z_t|^2)}{2}\,dW_t^{\mathbb{C}}} \tag{5.2}$$
+$$dz_t = \frac{\varepsilon(1-|z_t|^2)}{2}\,dW_t^{\mathbb{C}} \tag{5.2}$$
 
 where $W_t^{\mathbb{C}} = W_t^1 + iW_t^2$ is complex Brownian motion. In real
 coordinates $(x_t, y_t)$ with $z_t = x_t + iy_t$:
@@ -390,12 +390,12 @@ the hyperbolic market drifts toward larger $y$ (toward the boundary at infinity)
 ### 5.3 The McKean heat kernel — exact formula
 
 **Theorem 5.1** *(McKean 1970)*. *The transition density of hyperbolic BM
-on $\mathbb{H}^2$ with curvature $K = -1$ (standard normalisation) is:*
+on $\mathbb{H}^{2}$ with curvature $K = -1$ (standard normalisation) is:*
 
-$$\boxed{p_t(z,z') = \frac{\sqrt{2}\,e^{-t/8}}{(2\pi t)^{3/2}}
+$$p_t(z,z') = \frac{\sqrt{2}\,e^{-t/8}}{(2\pi t)^{3/2}}
 \int_{\rho(z,z')}^\infty \frac{r\,e^{-r^2/(2t)}}{\sqrt{\cosh r - \cosh\rho(z,z')}}\,dr} \tag{5.6}$$
 
-*where $\rho(z,z') = d_{\mathbb{H}^2}(z,z')$ is the hyperbolic geodesic distance.*
+*where $\rho(z,z') = d_{\mathbb{H}^{2}}(z,z')$ is the hyperbolic geodesic distance.*
 
 *In our Bhattacharyya normalisation (curvature $K_M \approx -0.809$): rescale by
 $\rho \to \rho/\sqrt{|K_M|}$ and $t \to t/|K_M|$ in (5.6).*
@@ -424,7 +424,7 @@ This is the **characteristic function of a normal distribution with mean 0 and
 variance $2t$, shifted by $-t/4$** — but in hyperbolic space, not Euclidean space.
 
 **The long-time boundary distribution.** As $t\to\infty$, hyperbolic BM converges
-to a random point $Z_\infty$ on the boundary $\partial\mathbb{H}^2 = \mathbb{R}\cup\{\infty\}$.
+to a random point $Z_\infty$ on the boundary $\partial\mathbb{H}^{2} = \mathbb{R}\cup\{\infty\}$.
 The distribution of $Z_\infty$ is the **harmonic measure** — the **Cauchy distribution**:
 
 $$Z_\infty \sim \text{Cauchy}(x_0, y_0) \tag{5.9}$$
@@ -446,7 +446,7 @@ a **built-in positive drift** in the $y$-coordinate (the "distance to boundary")
 representing the market's tendency to drift toward increasingly extreme allocations
 under crisis dynamics. This is a geometric mechanism for the empirically observed
 **volatility feedback loop** in crisis markets: high volatility drives the process
-toward the boundary of $\mathbb{H}^2$ (the "infinitely leveraged" state), which
+toward the boundary of $\mathbb{H}^{2}$ (the "infinitely leveraged" state), which
 increases volatility further.
 
 ---
@@ -456,18 +456,18 @@ increases volatility further.
 ### 6.1 The covering space construction
 
 For a Lawson surface $\tau_{m,n}$ (genus $g=mn$), the universal covering space is
-the hyperbolic upper half-plane $\mathbb{H}^2$, and:
+the hyperbolic upper half-plane $\mathbb{H}^{2}$, and:
 
-$$\tau_{m,n} = \mathbb{H}^2 / \Gamma_{m,n} \tag{6.1}$$
+$$\tau_{m,n} = \mathbb{H}^{2} / \Gamma_{m,n} \tag{6.1}$$
 
 where $\Gamma_{m,n} \subset \mathrm{PSL}(2,\mathbb{R})$ is a **Fuchsian group**
-(discrete group of isometries of $\mathbb{H}^2$) with fundamental domain of area
+(discrete group of isometries of $\mathbb{H}^{2}$) with fundamental domain of area
 $4\pi(g-1) = 4\pi(mn-1)$ (by Gauss-Bonnet).
 
-The canonical diffusion on $\tau_{m,n}$ is hyperbolic BM on $\mathbb{H}^2$ projected
+The canonical diffusion on $\tau_{m,n}$ is hyperbolic BM on $\mathbb{H}^{2}$ projected
 to the quotient:
 
-$$d\tilde z_t = \text{hyperbolic BM on }\mathbb{H}^2 \pmod{\Gamma_{m,n}} \tag{6.2}$$
+$$d\tilde z_t = \text{hyperbolic BM on }\mathbb{H}^{2} \pmod{\Gamma_{m,n}} \tag{6.2}$$
 
 ### 6.2 The Selberg zeta function as the market's "partition function"
 
@@ -513,7 +513,7 @@ $$p_t(z,z') = \frac{1}{\mathrm{vol}(\tau_{m,n})} + \sum_{k=1}^\infty e^{-\lambda
 
 **The stationary distribution** is uniform on $\tau_{m,n}$ (with respect to the
 hyperbolic area measure). Long-run returns converge to the **hyperbolic Cauchy
-distribution** (the boundary measure of $\mathbb{H}^2$ projected to $\tau_{m,n}$).
+distribution** (the boundary measure of $\mathbb{H}^{2}$ projected to $\tau_{m,n}$).
 
 ---
 
@@ -522,8 +522,8 @@ distribution** (the boundary measure of $\mathbb{H}^2$ projected to $\tau_{m,n}$
 ### 7.1 The Anosov diffusion
 
 For a pseudo-Anosov market (BRAIDS.md Section 4), the manifold $M$ carries a
-pseudo-Anosov homeomorphism $f: M \to M$ with stable foliation $\mathcal{F}^s$
-(contracting at rate $\lambda_{\rm pA}^{-1}$) and unstable foliation $\mathcal{F}^u$
+pseudo-Anosov homeomorphism $f: M \to M$ with stable foliation $\mathcal{F}^{s}$
+(contracting at rate $\lambda_{\rm pA}^{-1}$) and unstable foliation $\mathcal{F}^{u}$
 (expanding at rate $\lambda_{\rm pA}$).
 
 The **natural stochastic process** on a pseudo-Anosov market is not isotropic BM but
@@ -570,7 +570,7 @@ $\chi = 1$, giving $p_{\rm SRB}(r) \sim |r|^{-2}$ — a power law with tail inde
 | CAPM | Jacobi (2.1) | Jacobi poly series (2.3) | Kummer $_1F_1$ (2.5) | $\alpha = T b^{\ast}-1/2$ |
 | Multi-CAPM $S^r_+$ | Spherical BM (3.1) | Gegenbauer series (3.2) | Bessel series | $r/2$ |
 | Clifford $T^2$ | Flat torus BM (4.1) | $\vartheta_3$ theta function (4.4) | $e^{-\varepsilon^2\xi^2 t}\vartheta_3$ (4.9) | Bounded! |
-| Figure-eight $\mathbb{H}^2$ | Hyperbolic BM (5.3) | McKean kernel (5.6-5.7) | $e^{-t(\xi^2+1/4)}$ (5.8) | 1 (Cauchy) |
+| Figure-eight $\mathbb{H}^{2}$ | Hyperbolic BM (5.3) | McKean kernel (5.6-5.7) | $e^{-t(\xi^2+1/4)}$ (5.8) | 1 (Cauchy) |
 | Lawson $\tau_{m,n}$ | Fuchsian BM (6.2) | Selberg/automorphic (6.7) | Ramanujan bound | $\leq 1/2$ |
 | Pseudo-Anosov | Anosov diffusion (7.1) | SRB measure (7.2-7.4) | Stable law | $1/\chi$ |
 
@@ -600,7 +600,7 @@ The diagram of limiting cases:
 **GBM is the large-$T$, CAPM, equal-weight limit of the Jacobi diffusion.**
 It is valid only for:
 - Single-factor markets ($r=1$, great circle manifold)
-- Portfolio near equal-weight ($b^{\ast}_i \approx 1/d$, so diffusion coefficient $\sqrt{b(1-b)}$ is nearly constant)
+- Portfolio near equal-weight ($b^{\ast}_{i} \approx 1/d$, so diffusion coefficient $\sqrt{b(1-b)}$ is nearly constant)
 - Short time horizons ($t \ll 1/\kappa$, so the mean-reversion hasn't kicked in)
 
 For all other market types: GBM is wrong, and using it introduces systematic errors in
@@ -708,12 +708,12 @@ stochastic process compatible with the Fisher-Rao metric, invariant under the
 isometries of $M$, and having the Jeffreys prior as its stationary distribution is
 determined by the topology of $M$:*
 
-$$\boxed{
+$$
 \begin{array}{lcl}
 S^1_+ & \to & \text{Jacobi diffusion, Beta stationary, Kummer CF}\\
 S^r_+ & \to & \text{Spherical BM, Uniform on }S^r, \text{Gegenbauer series}\\
 T^2 & \to & \text{Flat torus BM, Uniform on }T^2, \text{theta function CF}\\
-\mathbb{H}^2 & \to & \text{Hyperbolic BM, Cauchy boundary, McKean kernel}\\
+\mathbb{H}^{2} & \to & \text{Hyperbolic BM, Cauchy boundary, McKean kernel}\\
 \Sigma^2_g & \to & \text{Fuchsian BM, Uniform on }\Sigma^2_g, \text{Selberg zeta}\\
 M_{\rm pA} & \to & \text{Anosov diffusion, SRB measure, stable law CF}
 \end{array}

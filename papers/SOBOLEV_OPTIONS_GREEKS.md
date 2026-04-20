@@ -19,7 +19,7 @@ options, and the complete set of geometric Greeks for each market type.
 The Fisher-Rao metric $g^{\mathrm{FR}}_{ii} = 1/b_i$ diverges as $b_i \to 0$ —
 the simplex boundary is at infinite Fisher-Rao distance from any interior point.
 This degeneracy requires weighted Sobolev spaces
-$W^{k,2}(M, w\,d\mathrm{vol}_M)$ where the weight $w = \prod_i b_i^{\alpha_i-1}$
+$W^{k,2}(M, w\,d\mathrm{vol}_{M})$ where the weight $w = \prod_i b_i^{\alpha_i-1}$
 is the stationary Beta distribution. Mollifiers $M_\delta f$ regularise
 the degenerate boundary, producing uniformly elliptic approximations that
 converge in the weighted Sobolev norm. The option price is a classical
@@ -65,12 +65,12 @@ Classical Sobolev spaces $W^{k,2}(M)$ (without weights) are insufficient for bot
 and $k \geq 0$, the weighted Sobolev space is:*
 
 $$W^{k,2}(M, w) = \left\{u \in L^2(M, w) : \|u\|^2_{W^{k,2}(M,w)} = \sum_{|\alpha| \leq k}
-\int_M |D^\alpha u|^2_{g_M}\,w\,d\mathrm{vol}_M < \infty\right\} \tag{1.2}$$
+\int_M |D^\alpha u|^2_{g_M}\,w\,d\mathrm{vol}_{M} < \infty\right\} \tag{1.2}$$
 
 The natural weight for the market manifold is the stationary distribution of the
 Fokker-Planck operator:
 
-$$w_{\rm stat}(b) = \prod_{i=1}^r b_i^{\alpha_i - 1}(1-b_i)^{\beta_i - 1} \tag{1.3}$$
+$$w_{\rm stat}(b) = \prod_{i=1}^{r} b_i^{\alpha_i - 1}(1-b_i)^{\beta_i - 1} \tag{1.3}$$
 
 (the Dirichlet/Beta density, which is the Jeffreys prior from FOKKER_PLANCK_CFD).
 
@@ -94,13 +94,13 @@ $$\sup_{B \subset M}\left(\frac{1}{|B|}\int_B w\right)\!\!\left(\frac{1}{|B|}\in
 **Lemma 1.3** *(The stationary weight satisfies $A_2$)*. *The weight
 $w_{\rm stat} = \prod_i b_i^{\alpha_i-1}$ is a Muckenhoupt $A_2$ weight
 iff $0 < \alpha_i < 2$ for all $i$. In market terms: $A_2$ holds iff
-the Kelly weight satisfies $b^{\ast}_i \in (0, 1/T)^c$ — the log-optimal portfolio
+the Kelly weight satisfies $b^{\ast}_{i} \in (0, 1/T)^c$ — the log-optimal portfolio
 does not assign extreme weights close to 0 or 1/T.*
 
 *Proof.* The Muckenhoupt condition fails precisely when the weight concentrates near
 a boundary point with $\alpha_i \leq 0$ (weight too singular) or $\alpha_i \geq 2$
-(inverse weight too singular). For $\alpha_i = T b^{\ast}_i - 1/2 \in (0,\infty)$,
-the condition $\alpha_i < 2$ requires $b^{\ast}_i < 1/(2T) + 1/2 \approx 1$ — satisfied
+(inverse weight too singular). For $\alpha_i = T b^{\ast}_{i} - 1/2 \in (0,\infty)$,
+the condition $\alpha_i < 2$ requires $b^{\ast}_{i} < 1/(2T) + 1/2 \approx 1$ — satisfied
 for any non-trivial portfolio. $\square$
 
 **Consequence.** When $A_2$ holds, the FK operator $\mathcal{L}$ extends to a bounded
@@ -162,9 +162,9 @@ $$C_{\rm Jacobi}(b_0, T; K) = e^{-rT}\sum_{n=0}^\infty e^{-\lambda_n T}\,q_n(b_0
 
 $$J_0(K) = \frac{1}{B(\alpha,\beta)}\int_K^1 (b-K)b^{\alpha-1}(1-b)^{\beta-1}\,db \tag{2.3}$$
 
-$$= \frac{\alpha}{\alpha+\beta}\bar{I}_K(\alpha+1,\beta) - K\cdot\bar{I}_K(\alpha,\beta) \tag{2.4}$$
+$$= \frac{\alpha}{\alpha+\beta}\bar{I}_{K}(\alpha+1,\beta) - K\cdot\bar{I}_{K}(\alpha,\beta) \tag{2.4}$$
 
-where $\bar{I}_K(\alpha,\beta) = 1 - I_K(\alpha,\beta)$ is the **complementary regularised
+where $\bar{I}_{K}(\alpha,\beta) = 1 - I_K(\alpha,\beta)$ is the **complementary regularised
 incomplete Beta function** (available in all scientific computing libraries).
 
 For $n \geq 1$, using the Rodrigues formula for Jacobi polynomials:
@@ -174,15 +174,15 @@ $$J_n(K) = \frac{(-1)^n}{n!B(\alpha,\beta)}\int_K^1 (b-K)\frac{d^n}{db^n}\!\left
 Integration by parts $n$ times, using $(b-K)^{(j)} = \delta_{j1}$ (the $j$-th derivative
 of $(b-K)$ is 0 for $j\geq 2$ and 1 for $j=1$):
 
-$$J_n(K) = \frac{1}{B(\alpha,\beta)}\left[\bar{I}_K(\alpha+n, \beta+n)\cdot\frac{B(\alpha+n,\beta+n)}{n!} - K\cdot\delta_{n,0}\cdot\bar{I}_K(\alpha,\beta)\right] \tag{2.6}$$
+$$J_n(K) = \frac{1}{B(\alpha,\beta)}\left[\bar{I}_{K}(\alpha+n, \beta+n)\cdot\frac{B(\alpha+n,\beta+n)}{n!} - K\cdot\delta_{n,0}\cdot\bar{I}_{K}(\alpha,\beta)\right] \tag{2.6}$$
 
 **Theorem 2.1** *(Exact Jacobi call formula)*. *The European call on the
 log-optimal portfolio weight for a CAPM market is:*
 
-$$\boxed{C_{\rm Jacobi}(b_0,T;K) = e^{-rT}\sum_{n=0}^\infty e^{-\lambda_n T}
+$$C_{\rm Jacobi}(b_0,T;K) = e^{-rT}\sum_{n=0}^\infty e^{-\lambda_n T}
 \cdot P_n^{(\alpha-1,\beta-1)}(2b_0-1)
-\cdot \frac{\bar{I}_K(\alpha+n,\beta+n)}{B(\alpha,\beta)/B(\alpha+n,\beta+n)}
-+ e^{-rT} K\cdot\bar{I}_K(\alpha,\beta)} \tag{2.7}$$
+\cdot \frac{\bar{I}_{K}(\alpha+n,\beta+n)}{B(\alpha,\beta)/B(\alpha+n,\beta+n)}
++ e^{-rT} K\cdot\bar{I}_{K}(\alpha,\beta)} \tag{2.7}$$
 
 *The series converges exponentially: $|e^{-\lambda_n T}| \leq e^{-n\lambda_1 T}$,
 so the first $N$ terms give error $O(e^{-N\lambda_1 T})$.*
@@ -205,9 +205,9 @@ $$C_{\rm ATM}^{\rm sym} = e^{-rT}\cdot\frac{1}{2}\left[\frac{1}{2}\bar{I}_{1/2}(
 For the digital call $G(b_T) = \mathbf{1}_{b_T > K}$:
 
 $$D_{\rm Jacobi}(b_0, T; K) = e^{-rT}\sum_{n=0}^\infty e^{-\lambda_n T}
-P_n^{(\alpha-1,\beta-1)}(2b_0-1)\cdot\bar{I}_K(\alpha+n,\beta+n)\cdot\frac{B(\alpha+n,\beta+n)}{B(\alpha,\beta)} \tag{2.10}$$
+P_n^{(\alpha-1,\beta-1)}(2b_0-1)\cdot\bar{I}_{K}(\alpha+n,\beta+n)\cdot\frac{B(\alpha+n,\beta+n)}{B(\alpha,\beta)} \tag{2.10}$$
 
-For $n=0$: $D^{n=0} = e^{-rT}\bar{I}_K(\alpha,\beta)$ — the complementary CDF of the
+For $n=0$: $D^{n=0} = e^{-rT}\bar{I}_{K}(\alpha,\beta)$ — the complementary CDF of the
 Beta stationary distribution. **The digital call is the tail probability of the Beta
 distribution.** This is the exact formula that replaces the Black-Scholes $N(d_2)$.
 
@@ -225,9 +225,9 @@ Feller classification of the boundary:
 
 | Parameter | Feller class | Behavior |
 |:---------:|:------------:|:---------|
-| $\alpha < 1$ (i.e. $Tb^{\ast}_A < 3/2$) | Regular | Process can hit 0 and reflect |
+| $\alpha < 1$ (i.e. $Tb^{\ast}_{A} < 3/2$) | Regular | Process can hit 0 and reflect |
 | $\alpha = 1$ | Regular/entrance | Process reaches 0 instantaneously |
-| $\alpha > 1$ (i.e. $Tb^{\ast}_A > 3/2$) | Entrance | Process never reaches 0 |
+| $\alpha > 1$ (i.e. $Tb^{\ast}_{A} > 3/2$) | Entrance | Process never reaches 0 |
 
 For a typical CAPM market with $d=2$, $T=252$: $\alpha = Tb^{\ast} - 1/2 = 125.5$.
 **The boundary 0 is an entrance boundary: the portfolio weight never hits zero.**
@@ -309,10 +309,10 @@ $$\tau_{L} = \inf\{t : |X_t| = L\}, \qquad 0 < L < \pi/2 \tag{4.2}$$
 
 *The survival probability (spread stays within $(-L, L)$ until time $T$) is:*
 
-$$\mathbb{P}(|X_t| < L\;\forall\,t \leq T | X_0) = \sum_{n=0}^\infty c_n(X_0)\,e^{-\mu_n T} \tag{4.3}$$
+$$\mathbb{P}(|X_t| < L \forall\,t \leq T | X_0) = \sum_{n=0}^\infty c_n(X_0)\,e^{-\mu_n T} \tag{4.3}$$
 
 *where $\mu_n = 2\varepsilon^2\left(\frac{n\pi}{2L}\right)^2$ and
-$c_n(X_0) = \frac{2}{2L}\int_{-L}^L \sin\!\left(\frac{n\pi(X+L)}{2L}\right)\!\sin\!\left(\frac{n\pi(X_0+L)}{2L}\right)dX_0$.*
+$c_n(X_0) = \frac{2}{2L}\int_{-L}^{L} \sin\!\left(\frac{n\pi(X+L)}{2L}\right)\!\sin\!\left(\frac{n\pi(X_0+L)}{2L}\right)dX_0$.*
 
 *For the torus vs flat-space comparison: for $L < \pi/2$ (barriers inside one torus period),
 the result is identical to the standard double-barrier Brownian motion formula.
@@ -326,7 +326,7 @@ sine functions with $\mu_n = n^2\pi^2/(2L^2) \cdot 2\varepsilon^2$. $\square$
 **The double barrier option price** (pay $G(X_T)$ if the spread stays within $(-L,L)$):
 
 $$V_{\rm DB}(X_0, T; L) = e^{-rT}\sum_{n=1}^\infty e^{-\mu_n T}\sin\!\!\left(\frac{n\pi(X_0+L)}{2L}\right)
-\int_{-L}^L G(X)\sin\!\!\left(\frac{n\pi(X+L)}{2L}\right)dX \tag{4.4}$$
+\int_{-L}^{L} G(X)\sin\!\!\left(\frac{n\pi(X+L)}{2L}\right)dX \tag{4.4}$$
 
 For the "corridor" payoff $G(X) = 1$ (pay 1 if spread stays within $(-L,L)$):
 
@@ -338,7 +338,7 @@ e^{-\mu_{2n+1}T}\sin\!\left(\frac{(2n+1)\pi(X_0+L)}{2L}\right) \tag{4.5}$$
 When $L = \pi/2$ (the spread can range over the full torus period), the double barrier
 becomes a **periodic obstacle problem** and the theta function appears:
 
-$$\mathbb{P}(|X_t| < \pi/2\;\forall\,t\leq T|X_0) = \frac{\vartheta_3(0|\tau) - \vartheta_3(X_0|\tau)}{\vartheta_3(0|\tau)} \tag{4.6}$$
+$$\mathbb{P}(|X_t| < \pi/2 \forall\,t\leq T|X_0) = \frac{\vartheta_3(0|\tau) - \vartheta_3(X_0|\tau)}{\vartheta_3(0|\tau)} \tag{4.6}$$
 
 where $\tau = 2i\varepsilon^2 T / (\pi/2)^2$ — the modular parameter of the Clifford torus.
 
@@ -433,9 +433,9 @@ Standard 2D gradient — no metric correction (flat geometry).
 
 **For hyperbolic BM** (upper half-plane $(x,y)$):
 
-$$\vec{\Delta}_{\mathbb{H}^2} V = y^2\left(\frac{\partial V}{\partial x}, \frac{\partial V}{\partial y}\right) \tag{6.4}$$
+$$\vec{\Delta}_{\mathbb{H}^{2}} V = y^2\left(\frac{\partial V}{\partial x}, \frac{\partial V}{\partial y}\right) \tag{6.4}$$
 
-The factor $y^2$ (the inverse of the hyperbolic metric coefficient $g^{\mathbb{H}^2}_{11} = 1/y^2$)
+The factor $y^2$ (the inverse of the hyperbolic metric coefficient $g^{\mathbb{H}^{2}}_{11} = 1/y^2$)
 amplifies the gradient near the boundary $y \to 0$ — the hedging position must be
 **increased** near the hyperbolic boundary, consistent with the Cauchy tails requiring
 larger hedges for extreme events.
@@ -444,10 +444,10 @@ larger hedges for extreme events.
 
 The **geometric Gamma** is the covariant Hessian of the option price:
 
-$$\Gamma_{g_M} V = \nabla_{g_M}^2 V \tag{6.5}$$
+$$\Gamma_{g_M} V = \nabla_{g_M}^{2} V \tag{6.5}$$
 
-In components: $(\Gamma_{g_M}V)_{ij} = \partial_{ij}V - \Gamma_{ij}^k\partial_k V$
-where $\Gamma_{ij}^k$ are the Christoffel symbols of $g_M$.
+In components: $(\Gamma_{g_M}V)_{ij} = \partial_{ij}V - \Gamma_{ij}^{k}\partial_k V$
+where $\Gamma_{ij}^{k}$ are the Christoffel symbols of $g_M$.
 
 **For the Jacobi process** (1D):
 
@@ -476,7 +476,7 @@ $$\Gamma_{\rm spread} = \frac{\partial^2 V}{\partial X^2}, \qquad X = \theta - \
 
 **For hyperbolic BM**:
 
-$$\Gamma_{\mathbb{H}^2} V = y^2\left(\frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2}\right) \tag{6.10}$$
+$$\Gamma_{\mathbb{H}^{2}} V = y^2\left(\frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2}\right) \tag{6.10}$$
 
 The hyperbolic Gamma amplifies the standard Gamma by $y^2$ — a portfolio near the
 hyperbolic boundary (extreme leverage or crisis state) has dramatically larger Gamma.
@@ -508,12 +508,12 @@ has **faster time decay** — the option's theta is increased by the systematic 
 
 The **geometric Vega** is the derivative with respect to $\varepsilon$ (the WF parameter):
 
-$$\mathcal{V}_M V = \frac{\partial V}{\partial\varepsilon} \tag{6.12}$$
+$$\mathcal{V}_{M} V = \frac{\partial V}{\partial\varepsilon} \tag{6.12}$$
 
 From the FK PDE: $\partial_\varepsilon(\partial_t V) = \partial_t(\partial_\varepsilon V)$,
 and differentiating (6.7) with respect to $\varepsilon$:
 
-$$\frac{\partial}{\partial t}(\mathcal{V}_M V) + \frac{\varepsilon^2}{2}\Gamma_{g_M}(\mathcal{V}_M V) = -\varepsilon\Gamma_{g_M} V \tag{6.13}$$
+$$\frac{\partial}{\partial t}(\mathcal{V}_{M} V) + \frac{\varepsilon^2}{2}\Gamma_{g_M}(\mathcal{V}_{M} V) = -\varepsilon\Gamma_{g_M} V \tag{6.13}$$
 
 The Vega satisfies the **same PDE as the option price**, but with the Gamma as the
 source term. This is the geometric version of the Black-Scholes Vega identity
@@ -619,7 +619,7 @@ reappears as excess Theta for a Delta-hedged position.
 | Result | Formula | Classical analog |
 |:-------|:--------|:----------------|
 | Jacobi call (CAPM) | $e^{-rT}\sum_n e^{-\lambda_n T}P_n^{(\alpha-1,\beta-1)}(2b_0-1)\cdot I_n(K)$ | Black-Scholes |
-| Digital (CAPM) | $e^{-rT}\bar{I}_K(\alpha,\beta)$ | $e^{-rT}N(d_2)$ |
+| Digital (CAPM) | $e^{-rT}\bar{I}_{K}(\alpha,\beta)$ | $e^{-rT}N(d_2)$ |
 | Clifford torus call | Theta function formula (MARKET_PROCESSES 10.1) | B-S with $\vartheta_3$ |
 | Double barrier (Clifford) | Sine series (4.4) / theta function (4.6) | Standard double barrier |
 | Hyperbolic call (McKean) | Mehler-Fock spectral integral (5.3) | B-S with Legendre functions |

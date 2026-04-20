@@ -50,7 +50,7 @@ manifold IS (topologically) $M^r$.
 **(iv) Symbol sequence Takens embedding.** The Takens theorem applies to symbolic
 sequences as well as real-valued series. The Voronoi cell sequence $(s_0,s_1,\ldots)$,
 embedded as delay vectors $(s_t, s_{t-1}, \ldots, s_{t-2r})$ in $\{0,\ldots,r\}^{2r+1}$,
-reconstructs the filtration $\mathcal{F}^{\rm Vor}_t$ — the Voronoi filtration of
+reconstructs the filtration $\mathcal{F}^{\rm Vor}_{t}$ — the Voronoi filtration of
 FILTRATIONS.md. The LZ prefix tree is the symbolic analogue of the Takens embedding.
 
 **(v) Practical manifold estimation.** Combining Takens embedding with the diffusion
@@ -158,7 +158,7 @@ $$\lim_{n\to\infty}\frac{H_n - H_{n-1}}{H_{n+1}-H_n} = \delta_{\rm Feigenbaum} =
 *The self-similarity constant $\alpha = 2.5029\ldots$ governs the scaling of the
 Voronoi cell sizes at each bifurcation level.*
 
-*Proof.* The Jacobi operator $L_M = \Delta_M + |II|^2 + \mathrm{Ric}_M$ on $M^r$
+*Proof.* The Jacobi operator $L_M = \Delta_M + |II|^2 + \mathrm{Ric}_{M}$ on $M^r$
 has the same mathematical structure as the Ruelle-Perron-Frobenius operator of the
 logistic map restricted to the interval $[H_{\rm min}, H_{\rm max}]$. The universality
 theorem of Feigenbaum (which applies to all unimodal maps, not just the logistic map)
@@ -206,7 +206,7 @@ the market manifold!
 
 **The false nearest-neighbours (FNN) algorithm** \[Kennel-Brown-Abarbanel 1992\]:
 
-1. Embed the return series with dimension $m$: $\mathbf{x}(t) \in \mathbb{R}^m$
+1. Embed the return series with dimension $m$: $\mathbf{x}(t) \in \mathbb{R}^{m}$
 2. For each point $\mathbf{x}(t)$, find its nearest neighbour $\mathbf{x}(t')$
 3. Promote to dimension $m+1$: compute the ratio $|x_{t-m\tau} - x_{t'-m\tau}|/\|\mathbf{x}(t)-\mathbf{x}(t')\|$
 4. If this ratio exceeds a threshold $R_{\rm tol}$: the neighbour is "false" (only
@@ -232,7 +232,7 @@ factor dimension.
 ### 3.3 Diffusion maps for manifold reconstruction
 
 The Coifman-Lafon **diffusion maps** algorithm \[2006\] reconstructs the Riemannian
-geometry of the embedded manifold from the point cloud $\{\mathbf{x}(t)\}_{t=1}^T$:
+geometry of the embedded manifold from the point cloud $\{\mathbf{x}(t)\}_{t=1}^{T}$:
 
 1. Compute the kernel matrix $K_{ij} = \exp(-\|\mathbf{x}(t_i)-\mathbf{x}(t_j)\|^2/\epsilon)$
 2. Row-normalise: $P_{ij} = K_{ij}/\sum_k K_{ik}$ (the Markov matrix)
@@ -312,7 +312,7 @@ spectral gap timescale.**
 
 ## 5. Summary
 
-$$\boxed{
+$$
 \begin{array}{lcl}
 \text{Chaotic system on }M^r & \equiv & \text{Stochastic diffusion on }M^r \\
 \text{(in the limit }\varepsilon\to 0\text{)} & & \text{(same SRB measure)} \\[6pt]

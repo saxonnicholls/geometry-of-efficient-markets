@@ -100,7 +100,7 @@ of the log-optimal portfolio.
 Model the market as a discrete memoryless channel:
 - **Input**: factor shock $f_t \in \mathcal{F}$ (the "signal" from the economy)
 - **Channel**: return mapping $x_t = \Phi(f_t) + \varepsilon_t$ (linear factor model plus noise)
-- **Output**: return vector $x_t \in \mathbb{R}^d_+$ (what the investor observes)
+- **Output**: return vector $x_t \in \mathbb{R}^{d}_+$ (what the investor observes)
 
 The investor's problem is to decode the factor state $f_t$ from the observed returns
 $x_1, \ldots, x_T$ — and then to allocate portfolio weights optimally. The **channel capacity**
@@ -192,37 +192,37 @@ For a smooth manifold, this is determined by:
 **Definition 3.1** (Geometric Kolmogorov complexity). *The **description complexity** of
 a minimal market manifold $M \subset S^{d-1}$ is:*
 
-$$K(M) = r\log d + \log\!\left(\frac{1}{\mathrm{vol}(\mathcal{M}_r)}\right)
-+ \log\!\left(1 + \mathcal{W}_2(M)\right) \tag{3.1}$$
+$$K(M) = r\log d + \log\!\left(\frac{1}{\mathrm{vol}(\mathcal{M}_{r})}\right)
++ \log\!\left(1 + \mathcal{W}_{2}(M)\right) \tag{3.1}$$
 
-*where $\mathcal{M}_r$ is the moduli space of minimal $r$-submanifolds of $S^{d-1}_+$
-and $\mathcal{W}_2(M) = \int |II|^2 d\mathrm{vol}$ is the Willmore functional of the
+*where $\mathcal{M}_{r}$ is the moduli space of minimal $r$-submanifolds of $S^{d-1}_{+}$
+and $\mathcal{W}_{2}(M) = \int |II|^2 d\mathrm{vol}$ is the Willmore functional of the
 second fundamental form.*
 
 **Theorem 3.2** *(Theorem B: efficiency = minimum description length)*. *Among all market
 manifolds with fixed $d$ and $r$:*
 
-*(i) The totally geodesic surfaces (CAPM) have $\mathcal{W}_2 = 0$, hence minimum
-description complexity: $K_{\rm CAPM} = r\log d + \log|\mathcal{M}_r^{\rm geod}|^{-1}$.*
+*(i) The totally geodesic surfaces (CAPM) have $\mathcal{W}_{2} = 0$, hence minimum
+description complexity: $K_{\rm CAPM} = r\log d + \log|\mathcal{M}_{r}^{\rm geod}|^{-1}$.*
 
-*(ii) Any non-totally-geodesic minimal surface has $\mathcal{W}_2 > 0$ and hence
+*(ii) Any non-totally-geodesic minimal surface has $\mathcal{W}_{2} > 0$ and hence
 $K(M) > K_{\rm CAPM}$ — it requires additional bits to describe the curvature.*
 
-*(iii) The Simons gap implies a complexity gap: either $\mathcal{W}_2 = 0$ (CAPM, minimum
-complexity) or $\mathcal{W}_2 \geq \frac{d-2}{d-1}\cdot\mathrm{Area}(M)$ (non-CAPM
+*(iii) The Simons gap implies a complexity gap: either $\mathcal{W}_{2} = 0$ (CAPM, minimum
+complexity) or $\mathcal{W}_{2} \geq \frac{d-2}{d-1}\cdot\mathrm{Area}(M)$ (non-CAPM
 minimal surface, elevated complexity). There are no efficient market structures of
 intermediate description complexity.*
 
-*Proof.* Part (i): totally geodesic means $II = 0$, hence $\mathcal{W}_2 = 0$. The
+*Proof.* Part (i): totally geodesic means $II = 0$, hence $\mathcal{W}_{2} = 0$. The
 description needs only the linear factor loading matrix $\Phi$ — a point in the
 Grassmannian $\mathrm{Gr}(r, d)$ requiring $r(d-r)$ real parameters. Part (ii): any
 non-zero $II$ requires additional data beyond $\Phi$ — the shape functions $A_k(x)$ for
 $x \in M$ — increasing $K(M)$. Part (iii): the Simons gap $|II|^2 \geq (d-2)/(d-1)$
-(non-zero implies bounded below) translates directly to a gap in $\mathcal{W}_2 \geq (d-2)/(d-1) \cdot \mathrm{Area}$, and hence in $K(M)$. $\square$
+(non-zero implies bounded below) translates directly to a gap in $\mathcal{W}_{2} \geq (d-2)/(d-1) \cdot \mathrm{Area}$, and hence in $K(M)$. $\square$
 
 **The MDL principle** \[Rissanen 1978\] selects the model with minimum description length.
 Applied to market modelling: among all market structures consistent with the data, MDL
-selects the one with minimum $K(M)$ — which is the CAPM (totally geodesic, $\mathcal{W}_2 = 0$).
+selects the one with minimum $K(M)$ — which is the CAPM (totally geodesic, $\mathcal{W}_{2} = 0$).
 **The MDL principle selects the CAPM as the canonical efficient market model.** This is not
 an economic assumption — it is a logical consequence of the minimum complexity characterisation
 of market efficiency.
@@ -231,7 +231,7 @@ of market efficiency.
 
 The Lawson surface classification of CLASSIFICATION.md, reread through the lens of complexity:
 
-| Manifold | Genus | $\mathcal{W}_2$ | $K(M) - K_{\rm CAPM}$ | Complexity interpretation |
+| Manifold | Genus | $\mathcal{W}_{2}$ | $K(M) - K_{\rm CAPM}$ | Complexity interpretation |
 |:---------|:-----:|:---------------:|:---------------------:|:--------------------------|
 | Great sphere (CAPM) | 0 | 0 | 0 | Minimum: just a hyperplane |
 | Veronese | 0 ($\mathbb{R}P^2$) | $>0$ | $+\log(|II|_F^2)$ | One quadratic constraint |
@@ -251,13 +251,13 @@ high-genus Lawson surface rather than the CAPM.
 ### 4.1 The SMB theorem
 
 **Theorem 4.1** *(Shannon–McMillan–Breiman)*. Let $(x_t)_{t \geq 1}$ be a stationary
-ergodic process on $\mathbb{R}^d_+$ with entropy rate:
+ergodic process on $\mathbb{R}^{d}_+$ with entropy rate:
 
 $$h = \lim_{T\to\infty} -\frac{1}{T}\log p(x_1, \ldots, x_T) \quad \text{(a.s.)} \tag{4.1}$$
 
-The typical set $\mathcal{T}_T^\varepsilon$ — the set of sequences $(x_1,\ldots,x_T)$
+The typical set $\mathcal{T}_{T}^\varepsilon$ — the set of sequences $(x_1,\ldots,x_T)$
 satisfying $\left|-\frac{1}{T}\log p - h\right| < \varepsilon$ — has probability approaching 1,
-and $|\mathcal{T}_T^\varepsilon| \approx e^{Th}$.
+and $|\mathcal{T}_{T}^\varepsilon| \approx e^{Th}$.
 
 ### 4.2 The Kelly criterion as the SMB entropy rate
 
@@ -275,7 +275,7 @@ $$\max_{b \in \Delta_{d-1}} L(b) = L(b^{\ast}) = h_{\rm Kelly} \tag{4.3}$$
 *where $h_{\rm Kelly}$ is the **Kelly entropy rate** — the maximum log-growth rate of
 the return process achievable by any constantly rebalanced portfolio.*
 
-*The universal portfolio $\hat{b}_T$ achieves this rate asymptotically:*
+*The universal portfolio $\hat{b}_{T}$ achieves this rate asymptotically:*
 
 $$\frac{1}{T}\log S_T^{\ast} \to h_{\rm Kelly} \quad \text{a.s.} \tag{4.4}$$
 
@@ -296,7 +296,7 @@ $$\log S_T^{\ast} = T\cdot L(b^{\ast}) - \frac{d-1}{2}\log T - \frac{1}{2}\log\d
 **The SMB typical set in portfolio space.** The SMB theorem defines the typical set of
 return sequences as those achieving the entropy rate. In portfolio space, the dual object
 is the set of portfolios achieving the maximum log-growth rate — this is precisely the
-market manifold $M = \{b^{\ast}(x_{1:T}) : (x_1,\ldots,x_T) \in \mathcal{T}_T\}$.
+market manifold $M = \{b^{\ast}(x_{1:T}) : (x_1,\ldots,x_T) \in \mathcal{T}_{T}\}$.
 
 **Key insight:** The minimal surface condition $H = 0$ means $b^{\ast}$ does not drift
 systematically across the manifold as new data arrives — the portfolio is already at the
@@ -322,14 +322,14 @@ $$S(\pi_T) = -\int_\Delta \pi_T(b)\log\pi_T(b)\,d\mu(b) \tag{4.8}$$
 For the Laplace approximation around $b^{\ast}$, this is:
 
 $$S(\pi_T) = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^{\ast})^{-1}
-+ \frac{\mathcal{M}_0}{T} + O(1/T^2) \tag{4.9}$$
++ \frac{\mathcal{M}_{0}}{T} + O(1/T^2) \tag{4.9}$$
 
-where $\mathcal{M}_0$ is the Maslov correction from LAPLACE.md (Proposition 5.1 there),
+where $\mathcal{M}_{0}$ is the Maslov correction from LAPLACE.md (Proposition 5.1 there),
 which includes the Ricci curvature term $\frac{d-2}{4}\mathrm{tr}[F^{-1}]$.
 
 **The posterior entropy decreases at rate $\frac{d-1}{2}\log T$ per period** — the market
 "learns" at a rate controlled by the dimension of the factor space $(d-1)/2$. The Willmore
-correction $\mathcal{M}_0/T$ accounts for the non-flat geometry of the market manifold.
+correction $\mathcal{M}_{0}/T$ accounts for the non-flat geometry of the market manifold.
 For a minimal surface ($H=0$, $\mathrm{tr}[F^{-1}]$ is the Ricci contribution):
 
 $$S(\pi_T)|_{H=0} = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^{\ast})^{-1}
@@ -415,7 +415,7 @@ are needed to achieve the same capacity as $T$ observations in a unit-volatility
 The classical mean-variance efficient frontier is the set of portfolios achieving maximum
 expected return for a given level of variance:
 
-$$\mathcal{F}^{\rm MV} = \left\{b \in \Delta_{d-1} : \mathrm{Var}(b^Tx) = v,\;
+$$\mathcal{F}^{\rm MV} = \left\{b \in \Delta_{d-1} : \mathrm{Var}(b^Tx) = v, 
 \mathbb{E}[b^Tx] = \max\right\}_{v \geq 0} \tag{6.1}$$
 
 This is a 1-dimensional curve in $\Delta_{d-1}$. Its limitation: it ignores the
@@ -426,8 +426,8 @@ between movements along $M$ (factor bets) and movements off $M$ (idiosyncratic b
 
 **Definition 6.1** (Manifold efficient frontier). *For a market manifold $M \subset \Delta_{d-1}$, the **manifold efficient frontier** is:*
 
-$$\mathcal{F}(M) = \left\{b \in \Delta_{d-1} : b = b^{\ast} + \xi,\;
-\xi \in N_{b^{\ast}}M,\; |\xi|_{g^{\mathrm{FR}}} = \rho\right\}_{\rho \geq 0} \tag{6.2}$$
+$$\mathcal{F}(M) = \left\{b \in \Delta_{d-1} : b = b^{\ast} + \xi, 
+\xi \in N_{b^{\ast}}M, |\xi|_{g^{\mathrm{FR}}} = \rho\right\}_{\rho \geq 0} \tag{6.2}$$
 
 *the sphere bundle of the normal bundle of $M$ — the set of portfolios obtained by moving
 a distance $\rho$ off the market manifold in the normal direction.*
@@ -538,7 +538,7 @@ note that the symmetric group $S_d$ (permutations of $d$ assets) acts on the por
 simplex $\Delta_{d-1}$ by permuting coordinates, and that **exchangeable portfolios** — those
 invariant under this action — form the 1-dimensional subspace $\{b = c\cdot\mathbf{1}/d : c\in\mathbb{R}\}$.
 
-The harmonic analysis of functions on $S^{d-1}_+$ (Bhattacharyya sphere) decomposes
+The harmonic analysis of functions on $S^{d-1}_{+}$ (Bhattacharyya sphere) decomposes
 into irreducible representations of $O(d)$:
 
 $$f = \sum_{k=0}^\infty \sum_\alpha \hat{f}_{k,\alpha} Y_{k,\alpha} \tag{7.3}$$
@@ -563,9 +563,9 @@ The posterior $\pi_T(b) \propto W_T(b)\mu(b)$ is an exchangeable measure on
 $\{x_1,\ldots,x_T\}$ (the labelling of time steps is arbitrary for the log-optimal portfolio).
 The de Finetti–Diaconis–Freedman theorem gives:
 
-$$\|\pi_T - \pi^{\rm de Finetti}_T\|_{\rm TV} \leq \frac{r(d-1)}{T} = O\!\left(\frac{rd}{T}\right) \tag{7.4}$$
+$$\|\pi_T - \pi^{\rm de Finetti}_{T}\|_{\rm TV} \leq \frac{r(d-1)}{T} = O\!\left(\frac{rd}{T}\right) \tag{7.4}$$
 
-where $\pi^{\rm de Finetti}_T$ is the i.i.d. de Finetti mixture. This bound is exactly the
+where $\pi^{\rm de Finetti}_{T}$ is the i.i.d. de Finetti mixture. This bound is exactly the
 $O(1/T)$ Laplace correction from LAPLACE.md — the departure from the i.i.d. de Finetti
 mixture is precisely the Maslov correction. The minimal surface condition ($H=0$) is the
 condition under which the $O(1/T)$ correction vanishes to leading order (Theorem 4.2 of
@@ -627,7 +627,7 @@ the following are equivalent:*
 1. **Geometric** (MINIMAL_SURFACE): $H \equiv 0$ on $\Sigma$ — the market manifold is minimal.
 2. **Information-theoretic** (this paper, Theorem A): $\nabla_M C(b^{\ast}) = 0$ — the channel capacity is stationary over the manifold.
 3. **Statistical** (LAPLACE.md, Theorem 4.2): $\nabla\log\pi \equiv 0$ in the interior — the Jeffreys prior condition; the $O(1/T)$ Bayesian correction vanishes.
-4. **Complexity-theoretic** (this paper, Theorem B): $\mathcal{W}_2(M)$ achieves the minimum for its topological type — minimum description length consistent with topology.
+4. **Complexity-theoretic** (this paper, Theorem B): $\mathcal{W}_{2}(M)$ achieves the minimum for its topological type — minimum description length consistent with topology.
 5. **Ergodic-theoretic** (this paper, Theorem C): the empirical log-growth rate of the log-optimal portfolio equals the SMB entropy rate — no systematic drift in the typical set.
 
 *Each characterisation is equivalent to the others given Conjecture 3.1 of MINIMAL_SURFACE.
@@ -646,13 +646,13 @@ compressed, minimal representation.
 
 ### 9.1 The market as a universal source coder
 
-The universal portfolio $\hat{b}_T$ achieves the Kelly entropy rate $h_{\rm Kelly}$ without
+The universal portfolio $\hat{b}_{T}$ achieves the Kelly entropy rate $h_{\rm Kelly}$ without
 knowing the return distribution — it is a **universal source coder** in the information-theoretic
 sense \[Cover–Thomas 2006\]. The connection to the SMB theorem makes this precise: the universal
 portfolio is the **minimum-redundancy code** for the return process, and its excess redundancy
 over the optimal (Kelly) code is:
 
-$$\mathrm{Redundancy}(\hat{b}_T) = h_{\rm Kelly} - \frac{1}{T}\log S_T^{\ast}
+$$\mathrm{Redundancy}(\hat{b}_{T}) = h_{\rm Kelly} - \frac{1}{T}\log S_T^{\ast}
 = \frac{(d-1)\log T}{2T} + O(1/T) \tag{9.1}$$
 
 The $\frac{(d-1)\log T}{2T}$ term is the **parametric complexity penalty** — the cost of

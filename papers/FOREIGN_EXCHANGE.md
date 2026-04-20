@@ -17,13 +17,13 @@ triangular arbitrage constrains the exchange rate vector to an $(N-1)$-dimension
 subspace. Each currency pair (EURUSD, GBPJPY, AUDCHF) is a *projection* of the
 single FX state onto a specific direction on this manifold. We develop the complete
 geometric theory of foreign exchange within the framework of the market manifold
-$M^r \subset S^{d-1}_+$.
+$M^r \subset S^{d-1}_{+}$.
 
 Our principal results:
 
 **(i) The currency simplex.** The space of arbitrage-free exchange rates for $N$
-currencies is the positive projective space $\mathbb{RP}^{N-1}_+ \cong \Delta_{N-2}$,
-obtained as the quotient of the positive orthant $\mathbb{R}^N_+$ by the
+currencies is the positive projective space $\mathbb{RP}^{N-1}_{+} \cong \Delta_{N-2}$,
+obtained as the quotient of the positive orthant $\mathbb{R}^{N}_+$ by the
 multiplicative action of numeraire choice. The Fisher–Rao metric
 $g^{\mathrm{FR}}_{ij} = \delta_{ij}/w_i$ on this simplex, where $w_i$ is the
 share of global FX turnover in currency $i$, is the natural metric for FX geometry.
@@ -116,7 +116,7 @@ USD $\approx 44\%$, EUR $\approx 15\%$, JPY $\approx 8\%$, GBP $\approx 6\%$,
 with the remaining six major currencies sharing $\sim 27\%$. Since each FX
 transaction involves two currencies and the total sums to $200\%$, we normalise:
 
-$$w_i = \frac{\text{turnover share of currency } i}{\sum_j \text{turnover share of currency } j}, \qquad \sum_{i=1}^N w_i = 1, \qquad w_i > 0$$
+$$w_i = \frac{\text{turnover share of currency } i}{\sum_j \text{turnover share of currency } j}, \qquad \sum_{i=1}^{N} w_i = 1, \qquad w_i > 0$$
 
 The vector $w = (w_1, \ldots, w_N)$ lives on the interior of the $(N-1)$-simplex
 $\Delta_{N-1}$. But we have $N$ currencies and $N-1$ independent exchange rates,
@@ -126,7 +126,7 @@ parametrising the ratios of currency weights once the numeraire is fixed.
 More precisely, the space of arbitrage-free exchange rates is the **positive
 projective space**:
 
-$$\mathbb{RP}^{N-1}_+ = \mathbb{R}^N_+ / \mathbb{R}_+ \cong \Delta_{N-1}$$
+$$\mathbb{RP}^{N-1}_{+} = \mathbb{R}^{N}_+ / \mathbb{R}_{+} \cong \Delta_{N-1}$$
 
 where the equivalence identifies rate vectors that differ only by a global scaling
 (which is the numeraire choice). This is isomorphic to the simplex because every
@@ -145,9 +145,9 @@ configurations. A small change in a heavily-traded currency (high $w_i$) has les
 geometric impact than the same-sized change in a lightly-traded currency (low
 $w_i$) — exactly right for FX risk.
 
-The **Bhattacharyya embedding** $\phi: \Delta_{N-1} \to S^{N-1}_+$:
+The **Bhattacharyya embedding** $\phi: \Delta_{N-1} \to S^{N-1}_{+}$:
 
-$$\phi(w) = \left(\sqrt{w_1}, \ldots, \sqrt{w_N}\right) \in S^{N-1}_+$$
+$$\phi(w) = \left(\sqrt{w_1}, \ldots, \sqrt{w_N}\right) \in S^{N-1}_{+}$$
 
 maps the currency simplex isometrically into the positive orthant of the unit
 sphere with constant curvature $K = 1/4$. The FX manifold inherits this ambient
@@ -162,7 +162,7 @@ curvature.
 The central conceptual shift: **EURUSD is not a market. It is a direction on the
 currency simplex.**
 
-Let $e_i$ be the $i$-th standard basis vector in $\mathbb{R}^N$, projected onto
+Let $e_i$ be the $i$-th standard basis vector in $\mathbb{R}^{N}$, projected onto
 the tangent space of $\Delta_{N-1}$. The exchange rate pair $(A, B)$ corresponds to
 the direction vector:
 
@@ -184,7 +184,7 @@ periods. Its rank is at most $N - 1$ (from the triangular constraints). Its
 *effective* rank — the stable rank $\mathrm{srank}(\Sigma) = \mathrm{tr}(\Sigma)/\|\Sigma\|_{\mathrm{op}}$ — is typically $r \approx 3$ for major FX.
 
 This is the dimension of the **FX market manifold** $M^r_{\mathrm{FX}}$: a
-3-dimensional submanifold of $S^{N-1}_+$.
+3-dimensional submanifold of $S^{N-1}_{+}$.
 
 **Theorem 2.1** (FX manifold dimension).
 *The FX market manifold $M^r_{\mathrm{FX}} \subset \Delta_{N-1}$ has dimension
@@ -239,14 +239,14 @@ and captures the "peso problem" component of FX returns.
 ### 3.3 Connection to the classification theorem
 
 With $r = 3$, the FX manifold $M^3_{\mathrm{FX}}$ is a 3-dimensional submanifold
-of $S^{N-1}_+$. The classification theorem (CLASSIFICATION.md) identifies three
+of $S^{N-1}_{+}$. The classification theorem (CLASSIFICATION.md) identifies three
 stable topological types:
 
 | Regime | Manifold type | Dyson class | FX interpretation |
 |:-------|:-------------|:------------|:------------------|
 | Normal | $S^3_+$ (CAPM) | $\beta = 1$ (GOE) | All three factors stable, mean-reverting |
 | Transitional | $T^2 \times \mathbb{R}$ (Clifford) | $\beta = 2$ (GUE) | Two factors cycle (carry/risk rotation) |
-| Crisis | $\mathbb{H}^3$ (pseudo-Anosov) | $\beta = 4$ (GSE) | Factors decouple, chaotic dynamics |
+| Crisis | $\mathbb{H}^{3}$ (pseudo-Anosov) | $\beta = 4$ (GSE) | Factors decouple, chaotic dynamics |
 
 The 1997 Asian crisis, the 2008 GFC carry unwind, and the 2015 SNB shock each
 exhibit a transition from CAPM-type to pseudo-Anosov-type FX dynamics — visible
@@ -264,7 +264,7 @@ borrow in a low-interest-rate currency, invest in a high-interest-rate currency,
 and earn the differential. For a portfolio across $N$ currencies, the carry
 portfolio weights are:
 
-$$b^{\mathrm{carry}}_i \propto r_i - \bar{r}$$
+$$b^{\mathrm{carry}}_{i} \propto r_i - \bar{r}$$
 
 where $r_i$ is the short-term interest rate of currency $i$ and
 $\bar{r} = \frac{1}{N}\sum_j r_j$. This is long high-yield, short low-yield.
@@ -288,9 +288,9 @@ manifold is minimal in the carry direction.**
 ### 4.3 The Sharpe–curvature identity for FX
 
 **Theorem 4.1** (Carry = mean curvature).
-*Let $M^r_{\mathrm{FX}} \subset S^{N-1}_+$ be the FX market manifold and let
+*Let $M^r_{\mathrm{FX}} \subset S^{N-1}_{+}$ be the FX market manifold and let
 $H$ be its mean curvature vector. Let $v_{\mathrm{carry}} \in T_{w^{\ast}}\Delta_{N-1}$
-be the carry direction with components $(v_{\mathrm{carry}})_i = (r_i - \bar{r})/\sqrt{w^{\ast}_i}$. Then the carry trade Sharpe ratio satisfies:*
+be the carry direction with components $(v_{\mathrm{carry}})_i = (r_i - \bar{r})/\sqrt{w^{\ast}_{i}}$. Then the carry trade Sharpe ratio satisfies:*
 
 $$\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2(M, g_M)}$$
 
@@ -300,7 +300,7 @@ component of the mean curvature in the carry direction.*
 *Proof.* This is the Sharpe–curvature identity of MINIMAL_SURFACE.md (R1),
 applied to the specific portfolio direction $v_{\mathrm{carry}}$. The carry
 portfolio $b^{\mathrm{carry}}$ has excess return
-$\mu_{\mathrm{carry}} = \sum_i b^{\mathrm{carry}}_i (r_i - \mathbb{E}[\Delta \log e_i])$
+$\mu_{\mathrm{carry}} = \sum_i b^{\mathrm{carry}}_{i} (r_i - \mathbb{E}[\Delta \log e_i])$
 — the UIP violation. By the Sharpe–curvature identity, the Sharpe ratio of any
 portfolio direction equals the $L^2$-norm of the mean curvature projected onto
 that direction. The carry direction is the interest-rate-differential vector,
@@ -320,7 +320,7 @@ of the FX manifold.*
 
 The total Willmore energy of the FX manifold in the carry direction is:
 
-$$\mathcal{W}_{\mathrm{carry}}(M) = \int_M |H_{\mathrm{carry}}|^2 \, d\mathrm{vol}_M$$
+$$\mathcal{W}_{\mathrm{carry}}(M) = \int_M |H_{\mathrm{carry}}|^2 \, d\mathrm{vol}_{M}$$
 
 This is the integrated squared curvature in the yield-differential direction —
 the total "carry inefficiency" of the FX market. If the FX market were fully
@@ -408,14 +408,14 @@ participant operating at that timescale.
 
 ### 6.1 The multiplicative group of exchange rates
 
-An exchange rate $e_{AB} \in \mathbb{R}_+$ is an element of the multiplicative
-group $(\mathbb{R}_+, \times)$. The full set of exchange rates for $N$ currencies
+An exchange rate $e_{AB} \in \mathbb{R}_{+}$ is an element of the multiplicative
+group $(\mathbb{R}_{+}, \times)$. The full set of exchange rates for $N$ currencies
 is the quotient:
 
-$$\mathcal{E} = \mathbb{R}^N_+ / \mathbb{R}_+ \cong \mathbb{RP}^{N-1}_+ \cong \Delta_{N-1}$$
+$$\mathcal{E} = \mathbb{R}^{N}_+ / \mathbb{R}_{+} \cong \mathbb{RP}^{N-1}_{+} \cong \Delta_{N-1}$$
 
 where the quotient is by the diagonal action $v \mapsto \lambda v$ for
-$\lambda \in \mathbb{R}_+$ (numeraire rescaling). The group operation on
+$\lambda \in \mathbb{R}_{+}$ (numeraire rescaling). The group operation on
 $\mathcal{E}$ is componentwise multiplication: if $v = (v_1, \ldots, v_N)$ and
 $u = (u_1, \ldots, u_N)$ are currency value vectors, then $v \cdot u = (v_1 u_1, \ldots, v_N u_N)$.
 
@@ -455,7 +455,7 @@ $v_k$ moves the FX state from $w^{\ast}$ to $\exp(\alpha v_k) \cdot w^{\ast}$.*
 $w^{\ast}$ is spanned by the $r$ principal directions of the FX return covariance
 matrix (restricted to $M^r$). These directions form a Lie algebra under the
 bracket induced by the multiplicative group structure:
-$[v_k, v_l]_i = v_{k,i} v_{l,i} (1/w^{\ast}_i) - v_{l,i} v_{k,i} (1/w^{\ast}_i) = 0$
+$[v_k, v_l]_i = v_{k,i} v_{l,i} (1/w^{\ast}_{i}) - v_{l,i} v_{k,i} (1/w^{\ast}_{i}) = 0$
 in the abelian case (which holds when the factors are orthogonal in $g^{\mathrm{FR}}$).
 The exponential map of the abelian group is componentwise exponentiation on
 the simplex. $\square$
@@ -496,7 +496,7 @@ The FX manifold is confined to a half-space of $\Delta_{N-1}$. Near the constrai
 boundary, the manifold is forced away from its unconstrained minimal surface
 configuration. The **Willmore energy accumulates**:
 
-$$\mathcal{W}_{\mathrm{floor}}(t) = \int_{M^r(t)} |H_{\mathrm{boundary}}|^2 \, d\mathrm{vol}_M$$
+$$\mathcal{W}_{\mathrm{floor}}(t) = \int_{M^r(t)} |H_{\mathrm{boundary}}|^2 \, d\mathrm{vol}_{M}$$
 
 where $H_{\mathrm{boundary}}$ is the mean curvature induced by the constraint.
 The longer the floor is maintained, and the further the unconstrained equilibrium
@@ -651,7 +651,7 @@ experiments with Databento tick-level FX data.
 **Protocol.** For $N = 10$ major currencies over rolling 1-year windows:
 1. Compute the carry portfolio (weights $\propto r_i - \bar{r}$) and its realised Sharpe ratio.
 2. Estimate the FX manifold $M^3$ from the return covariance matrix (top 3 eigenvectors).
-3. Compute the mean curvature $H$ of $M^3$ in $S^{N-1}_+$ and project onto the carry direction.
+3. Compute the mean curvature $H$ of $M^3$ in $S^{N-1}_{+}$ and project onto the carry direction.
 4. Compare $\mathrm{Sharpe}_{\mathrm{carry}}$ with $\|H_{\mathrm{carry}}\|_{L^2}$.
 
 **Expected.** Correlation $> 0.3$ across rolling windows. This is the FX-specific
@@ -725,7 +725,7 @@ market transitions between these types during crises — a concrete instance of 
 bifurcation theory in CHAOS_TAKENS.md.
 
 **MARKET_PROCESSES.md.** The FX state evolves by the Jacobi diffusion on
-$\Delta_{N-1}$ in the CAPM regime. The Jacobi parameters $\alpha_i = T w^{\ast}_i - 1/2$
+$\Delta_{N-1}$ in the CAPM regime. The Jacobi parameters $\alpha_i = T w^{\ast}_{i} - 1/2$
 are determined by the currency turnover weights — directly observable from BIS data.
 
 **FILTRATIONS.md.** The Voronoi partition of the currency simplex provides the
@@ -755,8 +755,8 @@ monograph sequence (WHATS_NEW.md).
 
 **Theorem FX1** (The FX market is one manifold).
 *The space of arbitrage-free exchange rates for $N$ currencies is the positive
-projective space $\mathbb{RP}^{N-1}_+ \cong \Delta_{N-1}$. The FX market
-manifold $M^r_{\mathrm{FX}} \subset S^{N-1}_+$ has dimension $r \approx 3$.
+projective space $\mathbb{RP}^{N-1}_{+} \cong \Delta_{N-1}$. The FX market
+manifold $M^r_{\mathrm{FX}} \subset S^{N-1}_{+}$ has dimension $r \approx 3$.
 Each currency pair is a direction $e_A - e_B$ on the single manifold, not a
 separate market. Triangular arbitrage is automatically satisfied by the simplex
 structure.*
@@ -777,7 +777,7 @@ HFT triangular arbitrage is mean curvature flow at microsecond timescale.*
 
 **Theorem FX4** (Lie group structure; Fisher–Rao is left-invariant).
 *The FX manifold is a sub-Lie-group of the currency revaluation group
-$\mathbb{R}^N_+ / \mathbb{R}_+$. The Fisher–Rao metric is left-invariant under
+$\mathbb{R}^{N}_+ / \mathbb{R}_{+}$. The Fisher–Rao metric is left-invariant under
 revaluation (numeraire-invariant). The Lie algebra consists of the $r$ factor
 directions.*
 

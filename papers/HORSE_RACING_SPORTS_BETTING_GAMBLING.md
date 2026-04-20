@@ -98,7 +98,7 @@ portfolio is the universal bettor.
 ### 1.2 The race simplex
 
 **Definition 1.1** (Race simplex). *A horse race with $d$ runners has
-bet space $\Delta_d = \{b \in \mathbb{R}^{d+1}_+ : \sum b_i = 1\}$,
+bet space $\Delta_d = \{b \in \mathbb{R}^{d+1}_{+} : \sum b_i = 1\}$,
 where $b_0$ is the cash (no-bet) fraction and $b_i$ for $i \geq 1$ is the
 fraction wagered on horse $i$. The risky bet space is the face
 $\{b \in \Delta_d : b_0 = 0\}$, isomorphic to $\Delta_{d-1}$.*
@@ -106,7 +106,7 @@ $\{b \in \Delta_d : b_0 = 0\}$, isomorphic to $\Delta_{d-1}$.*
 The Fisher-Rao metric on the race simplex:
 $$g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.1}$$
 
-The Bhattacharyya embedding: $\phi: b \mapsto \sqrt{b} \in S^{d-1}_+$.
+The Bhattacharyya embedding: $\phi: b \mapsto \sqrt{b} \in S^{d-1}_{+}$.
 
 **Everything in this monograph applies.** The race simplex $\Delta_{d-1}$
 is the portfolio simplex. The Fisher-Rao metric is the information metric.
@@ -170,7 +170,7 @@ profitable bettor needs $d_{g^{\rm FR}}(p,q) > \sqrt{2\Omega/(1+\Omega)}$
 true probabilities $p$ against implied probabilities $q$ with overround
 $\Omega$, decomposes as:
 
-$$\mathbb{E}_p[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})] = D_{\rm KL}(p \| q) - \log(1 + \Omega)$$
+$$\mathbb{E}_{p}[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})] = D_{\rm KL}(p \| q) - \log(1 + \Omega)$$
 
 where $D_{\rm KL}(p \| q) = \sum_i p_i \log(p_i/q_i)$ is the
 Kullback-Leibler divergence (the information edge) and $\log(1+\Omega) \approx \Omega/(1+\Omega)$
@@ -233,7 +233,7 @@ and survives attempts to exploit it.
 
 **Theorem 3.1** *(FLB = mean curvature of the odds manifold)*.
 *The favourite-longshot bias is the mean curvature vector $\vec{H}$ of the
-bookmaker's odds manifold $\mathcal{O} \subset S^{d-1}_+$, pointing from
+bookmaker's odds manifold $\mathcal{O} \subset S^{d-1}_{+}$, pointing from
 longshots toward favourites.*
 
 *Proof sketch.* The bookmaker's odds $q$ are displaced from the true
@@ -289,7 +289,7 @@ The bettor allocates fraction $b_0$ to cash (kept regardless of outcome)
 and $b_i$ to horse $i$. The bet vector lives on $\Delta_d$ (the $d+1$-dimensional
 simplex including cash), with $b_0 = 1 - \sum_{i \geq 1} b_i$.
 
-The return vector for race $t$ is $x_t \in \mathbb{R}^{d+1}_+$ where
+The return vector for race $t$ is $x_t \in \mathbb{R}^{d+1}_{+}$ where
 $x_{t,0} = 1$ (cash) and $x_{t,i} = o_i$ if horse $i$ wins, $0$ otherwise.
 The wealth evolution is:
 
@@ -298,9 +298,9 @@ $$W_{t+1} = W_t \cdot (b_0 + b_{\rm winner} \cdot o_{\rm winner}) \tag{4.0}$$
 The Kelly growth rate is $\mathbb{E}[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})]$.
 Given true win probabilities $p$ and decimal odds $o$, the Kelly bet is:
 
-$$b^{\ast}_i = \max\left(0, \frac{p_i o_i - 1}{\sum_j p_j o_j - 1}\right) \tag{4.1}$$
+$$b^{\ast}_{i} = \max\left(0, \frac{p_i o_i - 1}{\sum_j p_j o_j - 1}\right) \tag{4.1}$$
 
-with the cash component $b^{\ast}_0 = 1 - \sum_{i \geq 1} b^{\ast}_i$ absorbing the
+with the cash component $b^{\ast}_{0} = 1 - \sum_{i \geq 1} b^{\ast}_{i}$ absorbing the
 residual. Note: without the cash asset, maximising $\mathbb{E}[\log\langle b, x\rangle]$
 on $\Delta_{d-1}$ with $x_i = o_i \cdot \mathbf{1}_{i=\rm winner}$ gives
 $b_i = p_i$ (independent of odds), which is clearly wrong. The cash asset
@@ -313,7 +313,7 @@ The Kelly bettor needs to know $p$ (the true probabilities). The MUP bettor
 does not — it integrates over all possible $p$ weighted by evidence from
 past races:
 
-$$b^{\rm MUP}_T = \frac{\int_{M^r} b(p)\, W_T(b(p))\, d\mathrm{vol}(p)}{\int_{M^r} W_T(b(p))\, d\mathrm{vol}(p)} \tag{4.2}$$
+$$b^{\rm MUP}_{T} = \frac{\int_{M^r} b(p)\, W_T(b(p))\, d\mathrm{vol}(p)}{\int_{M^r} W_T(b(p))\, d\mathrm{vol}(p)} \tag{4.2}$$
 
 where $M^r$ is the race manifold (the set of plausible true probability
 vectors, with $r$ independent factors — class, going, distance, jockey, etc.).
@@ -492,7 +492,7 @@ card remaining). As cards are dealt, the state moves through the simplex.
 
 **Card counting systems are factor projections.** The Hi-Lo system assigns
 $+1$ to cards 2–6, $0$ to 7–9, $-1$ to 10–A, and tracks the running count.
-This is a projection from $\Delta_{51}$ to $\mathbb{R}^1$ — a one-factor
+This is a projection from $\Delta_{51}$ to $\mathbb{R}^{1}$ — a one-factor
 model ($r = 1$) of the deck state.
 
 | Counting system | Factors $r$ | Projection type |
@@ -633,7 +633,7 @@ market scoring rule (LMSR, Hanson 2003):
 
 $$C(q) = b\log\sum_i e^{q_i/b} \tag{9.1}$$
 
-the cost function $C$ is convex on $\mathbb{R}^d$, and the prices
+the cost function $C$ is convex on $\mathbb{R}^{d}$, and the prices
 $p_i = \partial C/\partial q_i = e^{q_i/b}/\sum e^{q_j/b}$ are the softmax
 of the $q_i$. **The LMSR is the softmax function.** This is the same
 connection as Paper IV.2 (LLM_MANIFOLD): market-making = softmax = Fisher-Rao.

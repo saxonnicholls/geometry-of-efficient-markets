@@ -55,7 +55,7 @@ the five Fama-French factors.
 detected at time $t - j$ for some $j < k$, the next symbol is predictable:
 $\sigma_{t+1} = \sigma_{t-2j-1}$. The prediction is deterministic IF the
 palindromic hypothesis holds. The posterior probability of the palindromic
-hypothesis — the palindrome ratio $\mathcal{P}_k$ from FILTRATIONS.md — IS
+hypothesis — the palindrome ratio $\mathcal{P}_{k}$ from FILTRATIONS.md — IS
 the prediction confidence.
 
 **(v) Palindromic information halving.** A sequence of length $T$ with
@@ -86,15 +86,15 @@ minimum complexity; aperiodic order.
 Discretise a daily equity return sequence via a Voronoi partition with
 $N$ cells (typically $N = 4$ to $8$). For the S&P 500 with $r = 5$ factors
 and $N = 6$ Voronoi cells, we obtain a symbolic sequence
-$\sigma \in \{0, 1, 2, 3, 4, 5\}^T$ of length $T \approx 25{,}000$ (daily
+$\sigma \in \{0, 1, 2, 3, 4, 5\}^{T}$ of length $T \approx 25{,}000$ (daily
 data since 1926).
 
 Under a memoryless i.i.d. null with uniform cell probabilities, the expected
 frequency of palindromic subsequences of length $2k$ is:
 
-$$\mathbb{E}_0[\#\text{palindromes of length } 2k] = (T - 2k + 1) \cdot N^{-k} \tag{1.1}$$
+$$\mathbb{E}_{0}[\#\text{palindromes of length } 2k] = (T - 2k + 1) \cdot N^{-k} \tag{1.1}$$
 
-For $T = 25{,}000, N = 6, k = 4$: $\mathbb{E}_0 \approx 19$ palindromes of
+For $T = 25{,}000, N = 6, k = 4$: $\mathbb{E}_{0} \approx 19$ palindromes of
 length 8 under the null.
 
 The observed count in real data: approximately 85-120 palindromes of
@@ -122,19 +122,19 @@ $\Delta_{d-1}$ with symmetric parameters, discretised via a Voronoi
 partition with $N$ cells, the expected frequency of palindromic subsequences
 of length $2k$ exceeds the memoryless null by a factor:*
 
-$$\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_0[\#\text{palindromes}_{2k}]} = \prod_{j=1}^{k-1} \frac{P_{s_j, s_{j+1}} P_{s_{j+1}, s_j}}{1/N^2} \tag{1.3}$$
+$$\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_{0}[\#\text{palindromes}_{2k}]} = \prod_{j=1}^{k-1} \frac{P_{s_j, s_{j+1}} P_{s_{j+1}, s_j}}{1/N^2} \tag{1.3}$$
 
 *Under detailed balance, this product equals $e^{2k \cdot I(\sigma_1; \sigma_2)}$
 where $I$ is the mutual information between consecutive cells. For a
 mean-reverting process with spectral gap $\lambda_1$:*
 
-$$\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_0[\#\text{palindromes}_{2k}]} \sim e^{\lambda_1 k} \tag{1.4}$$
+$$\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_{0}[\#\text{palindromes}_{2k}]} \sim e^{\lambda_1 k} \tag{1.4}$$
 
 *The palindromic excess grows exponentially with length, with rate equal
 to the Jacobi spectral gap — the mean-reversion rate.*
 
 *Proof sketch.* Under detailed balance, $\pi_i P_{ij} = \pi_j P_{ji}$, so
-$P_{ij} P_{ji} = \pi_j P_{ji}^2 / \pi_i \geq (\pi_j/\pi_i) \cdot P_{ji}^2$.
+$P_{ij} P_{ji} = \pi_j P_{ji}^{2} / \pi_i \geq (\pi_j/\pi_i) \cdot P_{ji}^{2}$.
 The mutual information $I(\sigma_1; \sigma_2) = \sum_{ij} \pi_i P_{ij}
 \log(P_{ij}/\pi_j)$ is positive for any non-trivial Markov chain. For a
 Jacobi process with spectral gap $\lambda_1$, the per-step mutual
@@ -198,7 +198,7 @@ periodicity. The resulting tilings have:
   Senechal [1995])
 
 De Bruijn's cut-and-project construction: a Penrose tiling is a 2D
-projection of a slice through a regular lattice in $\mathbb{R}^5$. The
+projection of a slice through a regular lattice in $\mathbb{R}^{5}$. The
 5-dimensional origin gives the 5-fold symmetry. The irrationality of the
 slice slope gives the aperiodicity.
 
@@ -815,11 +815,11 @@ can be constructed in $O(T)$ time.
 
 **Theorem 11.2** (Eertree = palindromic filtration tree). *The nodes of
 the eertree of a market sequence $\sigma_{1:T}$ are in bijection with the
-atoms of the palindromic filtration $\mathcal{F}^{\rm pal}_T$ (from
+atoms of the palindromic filtration $\mathcal{F}^{\rm pal}_{T}$ (from
 FILTRATIONS.md Section 10.7). The number of nodes equals the number of
-distinct palindromic factors, which equals $|\mathcal{F}^{\rm pal}_T|$.*
+distinct palindromic factors, which equals $|\mathcal{F}^{\rm pal}_{T}|$.*
 
-*The eertree grows monotonically as $T$ increases: $\mathcal{F}^{\rm pal}_T \subseteq \mathcal{F}^{\rm pal}_{T+1}$. This is a valid
+*The eertree grows monotonically as $T$ increases: $\mathcal{F}^{\rm pal}_{T} \subseteq \mathcal{F}^{\rm pal}_{T+1}$. This is a valid
 filtration, just like the LZ78 trie filtration.*
 
 *For a Droubay-Justin-Pirillo rich sequence: eertree has exactly $T + 2$
@@ -878,7 +878,7 @@ $\mathcal{F}^{\rm pal}$ is a common refinement of the LZ78 filtration and
 the Voronoi filtration, intersected with the time-reversal symmetric
 events:*
 
-$$\mathcal{F}^{\rm pal}_t = (\mathcal{F}^{\rm LZ}_t \vee \mathcal{F}^{\rm Vor}_t)^{\rm time-reversal\,invariant} \tag{11.1}$$
+$$\mathcal{F}^{\rm pal}_{t} = (\mathcal{F}^{\rm LZ}_{t} \vee \mathcal{F}^{\rm Vor}_{t})^{\rm time-reversal\,invariant} \tag{11.1}$$
 
 This completes the filtration dictionary (FILTRATIONS.md Section 12.11):
 the eertree is the FIFTH canonical filtration, capturing time-reversal
@@ -1093,7 +1093,7 @@ the function value. Equivalently: projection onto a convex subspace
 reduces entropy.
 
 **Theorem 13.2** (Convex → less entropy). *Let $f: \Delta_{d-1} \to \mathbb{R}$ be a probability density with entropy
-$H(f) = -\int f \log f$. Let $\hat{f} = \mathrm{proj}_C(f)$ be the
+$H(f) = -\int f \log f$. Let $\hat{f} = \mathrm{proj}_{C}(f)$ be the
 projection of $f$ onto a convex subspace $C$. Then:*
 
 $$H(\hat{f}) \leq H(f) \tag{13.1}$$
@@ -1105,7 +1105,7 @@ $\hat{f}(b) = \mathbb{E}_{g \in G}[f(g \cdot b)]$ where $G$ is the
 symmetry group of $C$. By Jensen's inequality applied to the convex
 function $x \log x$ (integrated over the simplex):
 
-$$\int \hat{f} \log \hat{f}\, db \leq \int \mathbb{E}_g[f(g \cdot b) \log f(g \cdot b)]\, db = \int f \log f\, db$$
+$$\int \hat{f} \log \hat{f}\, db \leq \int \mathbb{E}_{g}[f(g \cdot b) \log f(g \cdot b)]\, db = \int f \log f\, db$$
 
 Therefore $-\int \hat{f} \log \hat{f}\, db \geq -\int f \log f\, db$, i.e.,
 $H(\hat{f}) \geq H(f)$... wait, this goes the wrong way.
@@ -1583,7 +1583,7 @@ of markets.
 Combining these results:
 
 **Theorem 15.8** (The palindromic entropy theorem). *For a market in
-palindromic universality class $\mathcal{P}_k$ (one of P1-P6):*
+palindromic universality class $\mathcal{P}_{k}$ (one of P1-P6):*
 
 *(i) Shannon entropy rate: $h_{\rm Shannon} = h_{\rm max} \cdot (1 - \rho_{\rm pal, k}/2)$*
 

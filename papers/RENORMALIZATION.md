@@ -177,7 +177,7 @@ metric by $k$ rescales lengths by $\sqrt{k}$, so curvatures scale as $1/\sqrt{k}
 
 So: $H^{(k)} = H/\sqrt{k}$, giving $\beta_H = k\partial H^{(k)}/\partial k = -H/2$.
 
-$$\boxed{\beta_H = -\frac{H}{2} + O(H^3)} \tag{2.3}$$
+$$\beta_H = -\frac{H}{2} + O(H^3) \tag{2.3}$$
 
 **The mean curvature has a negative beta function** — it is a *relevant* coupling in
 the infrared (it flows to zero at large scales / long times). This is the RG statement
@@ -470,7 +470,7 @@ of the theory. The RG flow is in the space of $(\sigma^2/r, \text{topology of }M
 
 The **critical line** is $h_{\rm entropy} = h_{\rm Kelly}$, which we have shown is
 equivalent to $H = 0$ (the minimal surface condition). This is not a line but a
-manifold of theories — the space of all minimal surfaces in $S^{d-1}_+$.
+manifold of theories — the space of all minimal surfaces in $S^{d-1}_{+}$.
 
 ### 6.2 The order parameter and the phase transition
 
@@ -603,12 +603,12 @@ non-CAPM efficient market.
 **Claim:** A market with:
 - $d = 4$ assets
 - $r = 2$ factors
-- A $\mathbb{Z}_2$ symmetry (swapping the two groups $\{1,2\} \leftrightarrow \{3,4\}$)
+- A $\mathbb{Z}_{2}$ symmetry (swapping the two groups $\{1,2\} \leftrightarrow \{3,4\}$)
 - Tuned to criticality ($H=0$)
 
 is in the **Ising universality class** with $c=1/2$.
 
-The $\mathbb{Z}_2$ symmetry is the symmetry of the tilted torus market at $p=1/2$
+The $\mathbb{Z}_{2}$ symmetry is the symmetry of the tilted torus market at $p=1/2$
 (Example 3 of MINIMAL_SURFACE) — swapping the two asset groups. The Clifford torus
 with this symmetry is the Ising critical point.
 
@@ -911,7 +911,7 @@ factor dynamics. The critical phase is the unique minimum of $\mathcal{W}$.*
 *Proof.* The disordered phase: $h > h_{\rm Kelly}$ means the entropy rate exceeds the
 Kelly rate — the market contains more randomness than can be exploited. In geometric terms,
 the market manifold degenerates ($r \to 0$, point manifold) and $H = 0$ trivially but
-$\mathcal{W}_2 = \int|II|^2 \to \infty$ from the noise terms. The ordered phase:
+$\mathcal{W}_{2} = \int|II|^2 \to \infty$ from the noise terms. The ordered phase:
 $h < h_{\rm Kelly}$ means the Kelly rate exceeds the entropy rate — there is a systematic
 drift in $b^{\ast}(t)$ that is not captured by the entropy rate, giving $H \neq 0$. The critical
 phase is the unique boundary. $\square$
@@ -951,7 +951,7 @@ to markets driven away from efficiency by stochastic information flow.
 The renormalization group framework provides the deepest explanation for why efficient
 markets sit at a critical point:
 
-$$\boxed{\begin{array}{c}
+$$\begin{array}{c}
 \text{Too random: } h > h_{\rm Kelly} \implies \text{mispricing (arbitrage)}\\[4pt]
 \text{Too ordered: } h < h_{\rm Kelly} \implies \text{predictability (arbitrage)}\\[4pt]
 \text{Critical: } h = h_{\rm Kelly} \implies H = 0 \text{ (efficient)}

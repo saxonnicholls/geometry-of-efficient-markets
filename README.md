@@ -32,7 +32,7 @@ The mathematics came later. The geometry was always there.
   <img src="code/visualisation/market_manifolds.png" width="100%" alt="The three classified market manifold types in the Bhattacharyya sphere"/>
 </p>
 
-**The classification theorem in one picture.** Every efficient market falls into one of three geometric types, each living as a submanifold of the Bhattacharyya sphere $S^{d-1}_+$. *Top left:* the ambient space — the positive octant of the unit sphere, where $\sqrt{b}$ coordinates give the Fisher-Rao isometry. *Top right:* **Type I (CAPM)** — a great circle with a Jacobi diffusion path mean-reverting around the log-optimal portfolio. The only stably efficient type. *Bottom left:* **Type II (Clifford torus)** — a flat torus with two generating circles, carrying $\vartheta_3$ transition densities and GUE statistics. *Bottom right:* **Type III (Pseudo-Anosov)** — a saddle surface with negative curvature. Five Brownian paths launched from the same point diverge exponentially.
+**The classification theorem in one picture.** Every efficient market falls into one of three geometric types, each living as a submanifold of the Bhattacharyya sphere $S^{d-1}_{+}$. *Top left:* the ambient space — the positive octant of the unit sphere, where $\sqrt{b}$ coordinates give the Fisher-Rao isometry. *Top right:* **Type I (CAPM)** — a great circle with a Jacobi diffusion path mean-reverting around the log-optimal portfolio. The only stably efficient type. *Bottom left:* **Type II (Clifford torus)** — a flat torus with two generating circles, carrying $\vartheta_3$ transition densities and GUE statistics. *Bottom right:* **Type III (Pseudo-Anosov)** — a saddle surface with negative curvature. Five Brownian paths launched from the same point diverge exponentially.
 
 ---
 
@@ -56,7 +56,7 @@ market manifold. Slope = 1.007 ± 0.18, p = 10⁻⁸ on empirical data.
 ## The Single Organising Principle
 
 > *A financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
-> $S^{d-1}_+$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
+> $S^{d-1}_{+}$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
 > Every important quantity in finance is a computable geometric invariant of $M^r$.*
 
 This is now a theorem, not an axiom. Five axioms of convex information
@@ -226,7 +226,7 @@ Fractional Palindromic SDE.
 Under FPS dynamics $dX_t = \kappa[\theta_t - X_t]dt + \sigma\,dB^H_t$,
 the European call option price is:
 
-$$\boxed{\; C_{\rm FPS}(S_0, K, T) \;=\; S_0\,\Phi(d_1^H) \;-\; K e^{-rT}\,\Phi(d_2^H) \;}$$
+$$ C_{\rm FPS}(S_0, K, T) = S_0\,\Phi(d_1^H) - K e^{-rT}\,\Phi(d_2^H) $$
 
 with modified $d$-values:
 
@@ -549,7 +549,7 @@ re-palindromisation.
 | `RANDOM_MATRIX.md` | Dyson class forced by geometry; Selberg = MUP; Tracy-Widom |
 | `PATH_INTEGRAL.md` | Constrained geometric Wiener measure on $M^r$; WKB = LAPLACE |
 | `CHAOS_TAKENS.md` | Chaos ≡ stochastic on $M^r$; Takens $m^{\ast}=2r+1$ |
-| `HYPERCUBE_SHAPLEY.md` | **Shapley $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ (proved)** |
+| `HYPERCUBE_SHAPLEY.md` | **Shapley $\phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$ (proved)** |
 | `GRASSBERGER_PERCOLATION_GENERATING.md` | Correlation dim $\nu=r$; transfer matrix = everything |
 | `SVD_MANIFOLD.md` | SVD preserves mean curvature locally |
 | `STOCHASTIC_CONTROL_KALMAN.md` | Manifold Kalman filter; Riccati = Fisher |
@@ -684,9 +684,9 @@ it's a σ-algebra.
 
 | Result | What to do with it |
 |:-------|:------------------|
-| $\phi_i = b^{\ast}_i(\mu_i - \bar\mu)$ | Fair attribution of P&L to assets |
+| $\phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$ | Fair attribution of P&L to assets |
 | Cheeger constant $h_M \to 0$ before crises | Early warning systemic risk indicator |
-| Palindrome ratio $\mathcal{P}_k$ | Model-free efficiency test at any timescale |
+| Palindrome ratio $\mathcal{P}_{k}$ | Model-free efficiency test at any timescale |
 | Optimal entry $z^{\ast} = \sqrt{1 + r/\kappa}$ | Replace the 2σ pairs trading rule |
 | De Bruijn depth $n^{\ast} = \lfloor\log_N T\rfloor$ | Maximum testable memory depth for your data |
 | Willmore decomposition | Separate tradeable alpha from structural/Landauer/confidence costs |

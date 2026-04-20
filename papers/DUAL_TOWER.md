@@ -25,7 +25,7 @@ abelian group action recovers the Fourier modes of the Clifford torus market.
 
 **Our principal results:**
 
-**(i) The Giry tower.** The iterated probability functor $\mathcal{P}^k(X)$ builds
+**(i) The Giry tower.** The iterated probability functor $\mathcal{P}^{k}(X)$ builds
 a countable tower of dual spaces: pure states, portfolios, fund-of-funds,
 $k$-th order beliefs. The Giry monad structure (unit = Dirac embedding,
 multiplication = averaging) makes each level collapse to the one below. The MUP
@@ -46,7 +46,7 @@ $\Delta_{d-1}$ by permuting coordinates. The Peter-Weyl decomposition
 $L^2(\Delta) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^{\ast}$ over
 irreducible representations indexed by partitions $\lambda \vdash d$ gives a finite
 but rich dual structure. For any subgroup $G \leq S_d$, the $G$-invariant
-submanifold $M^r_G = \{b \in M^r : g \cdot b = b,\; \forall g \in G\}$ defines a
+submanifold $M^r_G = \{b \in M^r : g \cdot b = b, \forall g \in G\}$ defines a
 dual market at that symmetry level. The lattice of subgroups gives a lattice of
 dual manifolds interpolating between the equal-weight portfolio ($G = S_d$) and
 the full market ($G = \{e\}$).
@@ -114,13 +114,13 @@ representations); an idiosyncratic market has no symmetry at all.
 ### 1.2 Notation and setup
 
 Throughout, $d$ denotes the number of assets, $r$ the dimension of the market
-manifold $M^r \subset S^{d-1}_+$ (the number of systematic factors), and $T$
+manifold $M^r \subset S^{d-1}_{+}$ (the number of systematic factors), and $T$
 the number of time periods. Portfolio weights $b = (b_1, \ldots, b_d) \in
 \Delta_{d-1}$. The Fisher-Rao metric is $g^{\rm FR}_{ij}(b) = \delta_{ij}/b_i$.
-The Bhattacharyya isometry is $\phi: b \mapsto \sqrt{b} \in S^{d-1}_+$. The
+The Bhattacharyya isometry is $\phi: b \mapsto \sqrt{b} \in S^{d-1}_{+}$. The
 log-optimal portfolio is $b^{\ast} = \arg\max_{b \in M^r} L_T(b)$ where
-$L_T(b) = \frac{1}{T}\sum_{t=1}^T \log\langle b, x_t \rangle$. The MUP is
-$\hat{b}^M_T = \int_{M^r} b\, W_T(b)\,d\mu_M(b) / \int_{M^r} W_T(b)\,d\mu_M(b)$.
+$L_T(b) = \frac{1}{T}\sum_{t=1}^{T} \log\langle b, x_t \rangle$. The MUP is
+$\hat{b}^{M}_T = \int_{M^r} b\, W_T(b)\,d\mu_M(b) / \int_{M^r} W_T(b)\,d\mu_M(b)$.
 
 ---
 
@@ -130,18 +130,18 @@ $\hat{b}^M_T = \int_{M^r} b\, W_T(b)\,d\mu_M(b) / \int_{M^r} W_T(b)\,d\mu_M(b)$.
 
 Fix a finite set $X = \{1, \ldots, d\}$ of pure states (individual assets). Define:
 
-- **Level 0:** $\mathcal{P}^0(X) = X$ — the space of pure states.
-- **Level 1:** $\mathcal{P}^1(X) = \mathcal{P}(X) = \Delta_{d-1}$ — probability
+- **Level 0:** $\mathcal{P}^{0}(X) = X$ — the space of pure states.
+- **Level 1:** $\mathcal{P}^{1}(X) = \mathcal{P}(X) = \Delta_{d-1}$ — probability
   distributions over $X$. These are portfolios.
-- **Level 2:** $\mathcal{P}^2(X) = \mathcal{P}(\Delta_{d-1})$ — probability
+- **Level 2:** $\mathcal{P}^{2}(X) = \mathcal{P}(\Delta_{d-1})$ — probability
   distributions over portfolios. These are fund-of-funds, or equivalently
   hyperpriors over the portfolio space.
-- **Level $k$:** $\mathcal{P}^k(X) = \mathcal{P}(\mathcal{P}^{k-1}(X))$ — the
+- **Level $k$:** $\mathcal{P}^{k}(X) = \mathcal{P}(\mathcal{P}^{k-1}(X))$ — the
   $k$-th order belief space.
 
 Each level is a convex space: convex combinations of distributions over
-distributions are well-defined. Moreover, each $\mathcal{P}^k(X)$ carries its
-own Fisher-Rao metric $g^{\rm FR}_k$ inherited from the convex structure, and
+distributions are well-defined. Moreover, each $\mathcal{P}^{k}(X)$ carries its
+own Fisher-Rao metric $g^{\rm FR}_{k}$ inherited from the convex structure, and
 each admits a Bhattacharyya embedding into a (generally infinite-dimensional)
 sphere.
 
@@ -151,9 +151,9 @@ sphere.
 |:------|:------|:----------------|:--------|
 | 0 | $X$ | Individual assets | Stock $i$ |
 | 1 | $\mathcal{P}(X) = \Delta_{d-1}$ | Portfolios | Hedge fund strategy |
-| 2 | $\mathcal{P}^2(X)$ | Distributions over portfolios | Fund-of-funds; Bayesian prior over strategies |
-| 3 | $\mathcal{P}^3(X)$ | Distributions over fund-of-funds | Meta-allocator; model uncertainty |
-| $k$ | $\mathcal{P}^k(X)$ | $k$-th order beliefs | $k$-th level of Bayesian hierarchy |
+| 2 | $\mathcal{P}^{2}(X)$ | Distributions over portfolios | Fund-of-funds; Bayesian prior over strategies |
+| 3 | $\mathcal{P}^{3}(X)$ | Distributions over fund-of-funds | Meta-allocator; model uncertainty |
+| $k$ | $\mathcal{P}^{k}(X)$ | $k$-th order beliefs | $k$-th level of Bayesian hierarchy |
 
 ### 2.2 The Giry monad
 
@@ -165,7 +165,7 @@ Dirac measure $\delta_x \in \Delta_{d-1}$. Financially: embed a single asset as
 the degenerate portfolio that holds only that asset. This is the Dirac embedding
 $\eta(i) = e_i$.
 
-**Multiplication.** The map $\mu: \mathcal{P}^2(X) \to \mathcal{P}(X)$ sends a
+**Multiplication.** The map $\mu: \mathcal{P}^{2}(X) \to \mathcal{P}(X)$ sends a
 distribution over distributions to its average:
 
 $$\mu(\Pi) = \int_{\Delta_{d-1}} b\, d\Pi(b) \in \Delta_{d-1} \tag{2.1}$$
@@ -184,7 +184,7 @@ triple tower in either order gives the same result (associativity of averaging).
 
 ### 2.3 The MUP as a Level 2 object
 
-The MUP posterior $\pi_T \in \mathcal{P}^2(X)$ is defined by:
+The MUP posterior $\pi_T \in \mathcal{P}^{2}(X)$ is defined by:
 
 $$d\pi_T(b) = \frac{W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{2.4}$$
 
@@ -194,16 +194,16 @@ $M^r \subset \Delta_{d-1}$ — a Level 2 object.
 
 The monad multiplication collapses it:
 
-$$\mu(\pi_T) = \int_{M^r} b\,d\pi_T(b) = \hat{b}^M_T \tag{2.5}$$
+$$\mu(\pi_T) = \int_{M^r} b\,d\pi_T(b) = \hat{b}^{M}_T \tag{2.5}$$
 
-The MUP portfolio $\hat{b}^M_T$ is the Level 1 shadow of the Level 2 posterior.
+The MUP portfolio $\hat{b}^{M}_T$ is the Level 1 shadow of the Level 2 posterior.
 
 ### 2.4 The Laplace approximation as level collapse
 
 The Laplace approximation (LAPLACE.md) says that as $T \to \infty$, the posterior
 $\pi_T$ concentrates on $b^{\ast}$:
 
-$$\pi_T \;\xrightarrow{T\to\infty}\; \delta_{b^{\ast}} \tag{2.6}$$
+$$\pi_T \xrightarrow{T\to\infty} \delta_{b^{\ast}} \tag{2.6}$$
 
 The Laplace approximation collapses Level 2 to Level 1. The MUP regret
 
@@ -223,7 +223,7 @@ contributes $(\log T)/(2T)$ to the cost of collapsing one level of the tower.
 
 Level 3 arises naturally when there is **model uncertainty**: a distribution over
 possible MUP posteriors, reflecting uncertainty about which manifold $M^r$ the
-market lives on. The collapse $\mathcal{P}^3 \to \mathcal{P}^2$ averages over
+market lives on. The collapse $\mathcal{P}^{3} \to \mathcal{P}^{2}$ averages over
 model uncertainty; its cost is the model selection penalty. Bayesian model
 averaging is exactly the Level 3 $\to$ Level 2 monad multiplication.
 
@@ -238,7 +238,7 @@ extends to countable infinity, and each level carries its own Fisher-Rao geometr
 
 The Laplace-Beltrami operator $\Delta_{g^{\rm FR}}$ on $(\Delta_{d-1},
 g^{\rm FR})$ has a complete orthonormal system of eigenfunctions. In the
-Bhattacharyya coordinates $u_i = \sqrt{b_i}$ on $S^{d-1}_+$, $\Delta_{g^{\rm FR}}$
+Bhattacharyya coordinates $u_i = \sqrt{b_i}$ on $S^{d-1}_{+}$, $\Delta_{g^{\rm FR}}$
 becomes the spherical Laplacian $\Delta_{S^{d-1}}$ restricted to the positive
 orthant. The eigenvalues are:
 
@@ -246,7 +246,7 @@ $$\lambda_n = n(n + d - 2), \qquad n = 0, 1, 2, \ldots \tag{3.1}$$
 
 with eigenspaces $E_n$ of dimension $\binom{n+d-2}{d-2}(2n+d-2)/(n+d-2)$ (the
 dimension of the space of spherical harmonics of degree $n$ on $S^{d-1}$,
-restricted by the Neumann boundary conditions on $\partial S^{d-1}_+$).
+restricted by the Neumann boundary conditions on $\partial S^{d-1}_{+}$).
 
 ### 3.2 Jacobi polynomial eigenfunctions
 
@@ -270,7 +270,7 @@ $$L^2(\Delta_{d-1}, g^{\rm FR}) = \bigoplus_{n=0}^\infty E_n \tag{3.2}$$
 
 is a multiresolution analysis (MRA) of functions on the market. Define the
 projection $\Pi_n: L^2 \to E_n$ and the partial sum
-$\Pi_{\leq N} = \sum_{n=0}^N \Pi_n$. Then:
+$\Pi_{\leq N} = \sum_{n=0}^{N} \Pi_n$. Then:
 
 | Eigenspace | Eigenvalue | Market interpretation | Time scale |
 |:-----------|:-----------|:---------------------|:-----------|
@@ -291,13 +291,13 @@ gap, corresponding to slower mean-reversion and richer factor structure.
 Any function $f \in L^2(\Delta, g^{\rm FR})$ — for instance, the Kelly growth
 rate $L_T(b)$ — has a spectral expansion:
 
-$$L_T(b) = \sum_{n=0}^\infty \hat{L}_n \cdot \psi_n(b) \tag{3.3}$$
+$$L_T(b) = \sum_{n=0}^\infty \hat{L}_{n} \cdot \psi_n(b) \tag{3.3}$$
 
 where $\psi_n$ are the orthonormal Jacobi eigenfunctions and $\hat{L}_n =
 \langle L_T, \psi_n \rangle_{L^2}$ are the spectral coefficients. The energy
-at level $n$ is $|\hat{L}_n|^2$.
+at level $n$ is $|\hat{L}_{n}|^2$.
 
-The **spectral profile** of the market is the sequence $\{|\hat{L}_n|^2\}_{n \geq 0}$.
+The **spectral profile** of the market is the sequence $\{|\hat{L}_{n}|^2\}_{n \geq 0}$.
 A market dominated by low-frequency modes (energy concentrated in small $n$) is
 a factor market with clean systematic structure. A market with energy spread
 across all frequencies has weak factor structure and is dominated by
@@ -320,7 +320,7 @@ The symmetric group $S_d$ acts on $\Delta_{d-1}$ by permuting coordinates:
 $$\sigma \cdot (b_1, \ldots, b_d) = (b_{\sigma^{-1}(1)}, \ldots, b_{\sigma^{-1}(d)}) \tag{4.1}$$
 
 This action preserves the Fisher-Rao metric ($g^{\rm FR}$ depends on coordinates
-only through the values $b_i$, not their labelling) and maps $S^{d-1}_+$ to itself
+only through the values $b_i$, not their labelling) and maps $S^{d-1}_{+}$ to itself
 isometrically. The equal-weight portfolio $b_{\rm eq} = (1/d, \ldots, 1/d)$ is
 the unique fixed point of the full $S_d$ action.
 
@@ -351,7 +351,7 @@ irreducible representations have a direct financial interpretation:
 
 For any subgroup $G \leq S_d$, define the **$G$-dual market manifold**:
 
-$$M^r_G = \{b \in M^r : g \cdot b = b \;\;\forall\, g \in G\} \tag{4.3}$$
+$$M^r_G = \{b \in M^r : g \cdot b = b \forall\, g \in G\} \tag{4.3}$$
 
 This is the submanifold of $M^r$ that is invariant under $G$ — the set of
 portfolios on $M$ that are unchanged by the permutations in $G$.
@@ -388,11 +388,11 @@ $$L^2(M^r) = \bigoplus_{\lambda \vdash d} m_\lambda \cdot V_\lambda \tag{4.5}$$
 $V_\lambda$ in the restricted action on $M^r$. The number of factors is*
 $r = \#\{\lambda : m_\lambda > 0\} - 1$ *(excluding the trivial representation).*
 
-*Proof sketch.* The return vector $x_t \in \mathbb{R}^d_+$ transforms under $S_d$ by
+*Proof sketch.* The return vector $x_t \in \mathbb{R}^{d}_+$ transforms under $S_d$ by
 the permutation representation. The component of $x_t$ in $V_{(d)}$ (the trivial
-representation) is the market return $\bar{x}_t = \frac{1}{d}\sum_i x_{t,i}$, which
+representation) is the market return $\bar{x}_{t} = \frac{1}{d}\sum_i x_{t,i}$, which
 carries no portfolio information. The component in $V_{(d-1,1)}$ (the standard
-representation) is the vector of deviations $x_{t,i} - \bar{x}_t$, which carries
+representation) is the vector of deviations $x_{t,i} - \bar{x}_{t}$, which carries
 all the CAPM factor information. Higher representations capture higher-order
 interactions.
 
@@ -419,39 +419,39 @@ transitively on the assets (up to the market portfolio).*
 | Group $G$ | Order | Irreps | Dual structure | Market interpretation |
 |:-----------|:------|:-------|:---------------|:---------------------|
 | $S_d$ | $d!$ | Partitions $\lambda \vdash d$ | Jacobi polynomial factors | Full permutation symmetry: all assets exchangeable |
-| $\mathbb{Z}_d$ | $d$ | Roots of unity $\omega^k$ | Fourier modes (DFT) | Cyclic/seasonal structure |
-| $(\mathbb{Z}_2)^d$ | $2^d$ | Characters $\chi_S$, $S \subseteq [d]$ | Walsh functions | Binary interactions (HYPERCUBE_SHAPLEY) |
+| $\mathbb{Z}_{d}$ | $d$ | Roots of unity $\omega^k$ | Fourier modes (DFT) | Cyclic/seasonal structure |
+| $(\mathbb{Z}_{2})^d$ | $2^d$ | Characters $\chi_S$, $S \subseteq [d]$ | Walsh functions | Binary interactions (HYPERCUBE_SHAPLEY) |
 | $S_{d_1} \times \cdots \times S_{d_k}$ | $\prod d_j!$ | Tensor products $\bigotimes \lambda_j$ | Per-sector partitions | Sector structure: within vs between |
 | $D_d$ (dihedral) | $2d$ | 2D reps + signs | Pairs of Fourier modes | Pairs trading symmetries |
 | $A_d$ (alternating) | $d!/2$ | Self-associate partitions | Even permutations only | Orientation-preserving relabellings |
 
-### 5.2 The cyclic group $\mathbb{Z}_d$
+### 5.2 The cyclic group $\mathbb{Z}_{d}$
 
-The cyclic group $\mathbb{Z}_d = \langle \sigma_{\rm cyc} \rangle$ acts on
+The cyclic group $\mathbb{Z}_{d} = \langle \sigma_{\rm cyc} \rangle$ acts on
 $\Delta_{d-1}$ by the cyclic permutation $\sigma_{\rm cyc}: (b_1, b_2, \ldots,
 b_d) \mapsto (b_d, b_1, \ldots, b_{d-1})$. Its irreducible representations
 are one-dimensional, indexed by the $d$-th roots of unity:
 
-$$\chi_k(\sigma_{\rm cyc}^j) = \omega^{jk}, \qquad \omega = e^{2\pi i/d}, \quad k = 0, 1, \ldots, d-1 \tag{5.1}$$
+$$\chi_k(\sigma_{\rm cyc}^{j}) = \omega^{jk}, \qquad \omega = e^{2\pi i/d}, \quad k = 0, 1, \ldots, d-1 \tag{5.1}$$
 
-The isotypic decomposition under $\mathbb{Z}_d$ is the **discrete Fourier transform**
+The isotypic decomposition under $\mathbb{Z}_{d}$ is the **discrete Fourier transform**
 on the simplex. The $k$-th Fourier mode captures variations at frequency $k/d$
 around the cyclic ordering of assets. This is the natural dual for markets with
 temporal or seasonal cyclical structure — for instance, commodity markets with
 annual production cycles, where the asset ordering reflects calendar months.
 
-### 5.3 The binary group $(\mathbb{Z}_2)^d$
+### 5.3 The binary group $(\mathbb{Z}_{2})^d$
 
-The group $(\mathbb{Z}_2)^d$ acts on $\Delta_{d-1}$ by sign flips $b_i \mapsto
+The group $(\mathbb{Z}_{2})^d$ acts on $\Delta_{d-1}$ by sign flips $b_i \mapsto
 1 - b_i$ (projected back to the simplex). Its characters are the Walsh functions:
 
 $$\chi_S(b) = \prod_{i \in S}(-1)^{\mathbf{1}_{b_i < 1/d}}, \qquad S \subseteq [d] \tag{5.2}$$
 
 **This is the Walsh-Jacobi correspondence of HYPERCUBE_SHAPLEY.md.** The Walsh
-functions on the discrete hypercube $\{-1,+1\}^d$, restricted to $\Delta_{d-1}
+functions on the discrete hypercube $\{-1,+1\}^{d}$, restricted to $\Delta_{d-1}
 \subset [0,1]^d$, are proportional to Jacobi polynomials. The isotypic
-decomposition under $(\mathbb{Z}_2)^d$ recovers the multilinear structure of
-the Kelly growth rate, and the Shapley values $\phi_i = b^{\ast}_i(\mu_i - \bar{\mu})$
+decomposition under $(\mathbb{Z}_{2})^d$ recovers the multilinear structure of
+the Kelly growth rate, and the Shapley values $\phi_i = b^{\ast}_{i}(\mu_i - \bar{\mu})$
 are the Level 1 Walsh-Fourier coefficients.
 
 ### 5.4 The sector group $S_{d_1} \times \cdots \times S_{d_k}$
@@ -508,9 +508,9 @@ $$E_n = \bigoplus_{\substack{\lambda \vdash d \\ \deg(\lambda) = n}} V_\lambda \
 *where $\deg(\lambda) = \lambda_1 - 1$ is the degree of the associated spherical
 harmonic.*
 
-*(ii) The $k$-th level of the Giry tower $\mathcal{P}^k(X)$ has, as its space of
+*(ii) The $k$-th level of the Giry tower $\mathcal{P}^{k}(X)$ has, as its space of
 linear functionals, the functions of polynomial degree at most $k$ on
-$\Delta_{d-1}$, which is $\bigoplus_{n=0}^k E_n$.*
+$\Delta_{d-1}$, which is $\bigoplus_{n=0}^{k} E_n$.*
 
 *(iii) Therefore the Giry tower, truncated at level $k$, is dual to the spectral
 truncation $\Pi_{\leq k}$, which is the sum of the first $k+1$ isotypic
@@ -524,8 +524,8 @@ polynomials that span $E_n$ (Section 3.2) are the zonal spherical functions of
 these representations.
 
 Part (ii) follows from the structure of the Giry monad on finite sets.
-$\mathcal{P}^k(X)$ is the space of $k$-th order type functionals on $X$. The
-moments of a distribution $\Pi \in \mathcal{P}^k(X)$ that distinguish it from
+$\mathcal{P}^{k}(X)$ is the space of $k$-th order type functionals on $X$. The
+moments of a distribution $\Pi \in \mathcal{P}^{k}(X)$ that distinguish it from
 lower-order objects are precisely the degree-$k$ polynomial moments — which lie
 in $E_k$. The Giry multiplication $\mu$ collapses the $k$-th level by integrating
 out the degree-$k$ variation, which is equivalent to the spectral projection
@@ -544,8 +544,8 @@ Consider a $d = 10$ asset market with $r = 3$ factors:
 |:------------|:-----|:---------|:------|:--------|
 | 0 | Pure states ($X$) | $E_0$ = constants | Trivial rep $(d)$ | Market portfolio |
 | 1 | Portfolios ($\Delta_9$) | $E_1$ = first Jacobi | Standard rep $(d-1,1)$ | CAPM factor |
-| 2 | Fund-of-funds ($\mathcal{P}^2$) | $E_2$ = second Jacobi | $(d-2,2)$ + $(d-2,1,1)$ | Value + size factors |
-| 3 | Meta-allocator ($\mathcal{P}^3$) | $E_3$ = third Jacobi | Degree-3 reps | Third factor (momentum?) |
+| 2 | Fund-of-funds ($\mathcal{P}^{2}$) | $E_2$ = second Jacobi | $(d-2,2)$ + $(d-2,1,1)$ | Value + size factors |
+| 3 | Meta-allocator ($\mathcal{P}^{3}$) | $E_3$ = third Jacobi | Degree-3 reps | Third factor (momentum?) |
 | $\geq 4$ | Higher beliefs | $E_{\geq 4}$ = high-frequency | Higher reps | Idiosyncratic noise |
 
 The three factors ($r = 3$) correspond to the three non-trivial levels at which
@@ -576,7 +576,7 @@ Legendre-Fenchel conjugate is:
 
 $$L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}} \left[\langle b, y \rangle - L_T(b)\right] \tag{7.1}$$
 
-This is a convex function on $\mathbb{R}^d$. The conjugate $L_T^{\ast}$ is the
+This is a convex function on $\mathbb{R}^{d}$. The conjugate $L_T^{\ast}$ is the
 **rate function** of portfolio large deviations: $L_T^{\ast}(y)$ measures the
 exponential cost of the portfolio achieving growth rate profile $y$ when the true
 optimal is at $b^{\ast}$.
@@ -602,7 +602,7 @@ Part (iii) is the minimax theorem applied to the bilinear coupling. $\square$
 
 The Legendre-Fenchel duality
 
-$$\text{concave Kelly landscape} \;\longleftrightarrow\; \text{convex rate function} \tag{7.2}$$
+$$\text{concave Kelly landscape} \longleftrightarrow \text{convex rate function} \tag{7.2}$$
 
 is the function-level analogue of the Giry tower's set-level duality. The Kelly
 function tells you the growth rate as a function of portfolio choice. The rate
@@ -626,8 +626,8 @@ with Fourier coefficients $\hat{f}(\chi) = \int_\Delta f(b)\,\overline{\chi(b)}
 
 ### 8.2 The cyclic case: market DFT
 
-For the cyclic group $\mathbb{Z}_d$ acting by cyclic permutation, the Pontryagin
-dual is $\hat{\mathbb{Z}}_d \cong \mathbb{Z}_d$ — the group is **self-dual**.
+For the cyclic group $\mathbb{Z}_{d}$ acting by cyclic permutation, the Pontryagin
+dual is $\hat{\mathbb{Z}}_{d} \cong \mathbb{Z}_{d}$ — the group is **self-dual**.
 The characters are the roots of unity $\chi_k(\sigma^j) = e^{2\pi ijk/d}$. The
 Fourier decomposition of returns is:
 
@@ -644,23 +644,23 @@ For the Clifford torus market $T^2$ (CLASSIFICATION.md, MARKET_PROCESSES.md),
 the natural symmetry group is $U(1) \times U(1)$ — the continuous torus group.
 The Pontryagin dual of $T^r = U(1)^r$ is the **integer lattice**:
 
-$$\widehat{T^r} = \mathbb{Z}^r \tag{8.3}$$
+$$\widehat{T^r} = \mathbb{Z}^{r} \tag{8.3}$$
 
 The characters are $\chi_{(n_1,\ldots,n_r)}(\theta_1,\ldots,\theta_r) =
 e^{i(n_1\theta_1 + \cdots + n_r\theta_r)}$ for $(n_1,\ldots,n_r) \in
 \mathbb{Z}^r$. The Fourier decomposition of a function on the Clifford torus
 market is:
 
-$$f(\theta) = \sum_{n \in \mathbb{Z}^r} \hat{f}(n)\, e^{i\langle n, \theta\rangle} \tag{8.4}$$
+$$f(\theta) = \sum_{n \in \mathbb{Z}^{r}} \hat{f}(n)\, e^{i\langle n, \theta\rangle} \tag{8.4}$$
 
 This connects directly to the theta-function transition density of
 MARKET_PROCESSES.md: the heat kernel on $T^r$ is
 
-$$K_{T^r}(t, \theta, \theta') = \sum_{n \in \mathbb{Z}^r} e^{-|n|^2 t/(2\varepsilon^2)}\, e^{i\langle n, \theta - \theta'\rangle} \tag{8.5}$$
+$$K_{T^r}(t, \theta, \theta') = \sum_{n \in \mathbb{Z}^{r}} e^{-|n|^2 t/(2\varepsilon^2)}\, e^{i\langle n, \theta - \theta'\rangle} \tag{8.5}$$
 
 which is the Jacobi theta function $\vartheta_3$. The Fourier modes indexed by
-$\mathbb{Z}^r$ are exactly the spectral dual tower (Section 3) applied to the
-flat torus geometry. The integer lattice $\mathbb{Z}^r$ is simultaneously:
+$\mathbb{Z}^{r}$ are exactly the spectral dual tower (Section 3) applied to the
+flat torus geometry. The integer lattice $\mathbb{Z}^{r}$ is simultaneously:
 
 - The Pontryagin dual of the torus symmetry group,
 - The eigenvalue indexing set of the Laplacian on $T^r$,
@@ -712,7 +712,7 @@ The VIX measures implied volatility of the S\&P 500 index — a market-wide
 average. In the tower framework, the VIX is a measurement of $E_0$ (the
 zero-frequency component). A "sector VIX" would measure $E_1$ (the first factor).
 The full term structure of VIX futures is a measurement of the spectral profile
-$\{|\hat{L}_n|^2\}$ at different time horizons.
+$\{|\hat{L}_{n}|^2\}$ at different time horizons.
 
 ### 9.4 Sector rotation as representation change
 
@@ -736,7 +736,7 @@ entanglement between portfolio strategies? Difficulty: ★★★.
 
 **OP-B.** *(The infinite-dimensional Giry tower).* For $d = \infty$ (a continuum
 of assets), the simplex $\Delta_\infty$ is the space of probability measures on
-$[0,\infty)$. The Giry tower $\mathcal{P}^k(\Delta_\infty)$ is a tower of
+$[0,\infty)$. The Giry tower $\mathcal{P}^{k}(\Delta_\infty)$ is a tower of
 infinite-dimensional convex spaces. Does the spectral decomposition remain
 discrete, or does a continuous spectrum appear? If continuous, what is the
 financial interpretation of "spectral measure" vs "spectral eigenvalue"?

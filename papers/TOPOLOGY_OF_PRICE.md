@@ -158,20 +158,20 @@ connected economic graph with adjacency matrix $A$. The equilibrium price
 vector $p^{\ast} \in \Delta_{d-1}$ is the Perron-Frobenius eigenvector of $A$,
 normalised to lie on the simplex:*
 
-$$A p^{\ast} = \rho(A) \, p^{\ast}, \quad p^{\ast}_i > 0, \quad \sum_i p^{\ast}_i = 1 \tag{2.1}$$
+$$A p^{\ast} = \rho(A) \, p^{\ast}, \quad p^{\ast}_{i} > 0, \quad \sum_i p^{\ast}_{i} = 1 \tag{2.1}$$
 
-*The price ratios $p^{\ast}_i / p^{\ast}_j$ are determined entirely by the graph topology
+*The price ratios $p^{\ast}_{i} / p^{\ast}_{j}$ are determined entirely by the graph topology
 and the edge weights.*
 
 *Proof sketch.* The log-optimal portfolio $b^{\ast}$ maximises $L_T(b) = \frac{1}{T}
 \sum_t \log \langle b, x_t \rangle$ over $\Delta_{d-1}$. In the geometric
-framework, $b^{\ast}$ lies on the market manifold $M^r \subset S^{d-1}_+$. The
+framework, $b^{\ast}$ lies on the market manifold $M^r \subset S^{d-1}_{+}$. The
 first-order condition $\nabla_{g^{\mathrm{FR}}} L_T(b^{\ast}) = 0$ is equivalent to
 $b^{\ast}$ being a fixed point of the return-weighted rebalancing map
 $b \mapsto b \odot \bar{x} / \langle b, \bar{x} \rangle$, where $\bar{x}$ is
 the expected return vector. In the graph formulation, $\bar{x}$ is encoded in
 $A$, and the fixed-point condition is the Perron-Frobenius eigenvalue equation.
-The normalisation $\sum p^{\ast}_i = 1$ places $p^{\ast}$ on the simplex. $\square$
+The normalisation $\sum p^{\ast}_{i} = 1$ places $p^{\ast}$ on the simplex. $\square$
 
 **Remark 2.2.** The Perron-Frobenius eigenvalue $\rho(A) = e^{h_{\mathrm{Kelly}}}$
 is the exponential of the Kelly growth rate, connecting this to the monograph's
@@ -242,12 +242,12 @@ forcing term:
 $$\partial_t M = -\vec{H} + \tau \cdot f_i \tag{3.2}$$
 
 where $f_i$ is the tax distortion field, concentrated on the $i$-th coordinate
-direction in the simplex. The new equilibrium manifold $\tilde{M}^r$ satisfies
+direction in the simplex. The new equilibrium manifold $\tilde{M}^{r}$ satisfies
 $\vec{H}(\tilde{M}) = \tau \cdot f_i$ — a *prescribed mean curvature* equation
 rather than the minimal surface equation.
 
 **Definition 3.1** (Geometric Deadweight Loss). The deadweight loss of a
-distortion that deforms the market manifold from $M^r$ to $\tilde{M}^r$ is:
+distortion that deforms the market manifold from $M^r$ to $\tilde{M}^{r}$ is:
 
 $$\mathrm{DWL}(M, \tilde{M}) = \mathcal{W}(\tilde{M}) - \mathcal{W}(M) = \int_{\tilde{M}} |H|^2 \, d\mathrm{vol} - \int_M |H|^2 \, d\mathrm{vol} \tag{3.3}$$
 
@@ -299,9 +299,9 @@ not affect the final equilibrium $M_\infty$, only the path.
 from $G$, the market is constrained to a subgraph $G' \subset G$. The
 constrained minimal surface $M^{\ast}_{G'}$ has Willmore energy*
 
-$$\mathcal{W}(M^{\ast}_{G'}) \geq \mathcal{W}(M^{\ast}_G) = 0 \tag{3.6}$$
+$$\mathcal{W}(M^{\ast}_{G'}) \geq \mathcal{W}(M^{\ast}_{G}) = 0 \tag{3.6}$$
 
-*The gap $\mathcal{W}(M^{\ast}_{G'}) - \mathcal{W}(M^{\ast}_G) \geq 0$ is the Coasean
+*The gap $\mathcal{W}(M^{\ast}_{G'}) - \mathcal{W}(M^{\ast}_{G}) \geq 0$ is the Coasean
 inefficiency: the deadweight loss attributable to transaction costs.*
 
 Each deleted edge prevents some pair of goods from being directly exchanged.
@@ -363,7 +363,7 @@ satisfies:*
 
 $$h(G') \geq h(G) \tag{4.3}$$
 
-*The Willmore energy satisfies $\mathcal{W}(M^{\ast}_{G'}) \leq \mathcal{W}(M^{\ast}_G)$.
+*The Willmore energy satisfies $\mathcal{W}(M^{\ast}_{G'}) \leq \mathcal{W}(M^{\ast}_{G})$.
 The efficiency gain from anti-trust enforcement (adding competitors = adding
 edges) is bounded below by the increase in the Cheeger constant.*
 
@@ -543,17 +543,17 @@ Consider $N$ agents with wealth shares $w = (w_1, \ldots, w_N) \in \Delta_{N-1}$
 The equal distribution is the centroid $w^{\mathrm{eq}} = (1/N, \ldots, 1/N)$.
 The Fisher-Rao distance from equality is:
 
-$$d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) = 2 \arccos\left(\sum_{i=1}^N \sqrt{w_i / N}\right) \tag{6.1}$$
+$$d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) = 2 \arccos\left(\sum_{i=1}^{N} \sqrt{w_i / N}\right) \tag{6.1}$$
 
 For moderate inequality (small perturbations from the centroid), this is
 approximately proportional to the Gini coefficient:
 
-$$\mathrm{Gini}(w) \approx \frac{1}{\sqrt{2}} \, d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) + O(d_{\mathrm{FR}}^2) \tag{6.2}$$
+$$\mathrm{Gini}(w) \approx \frac{1}{\sqrt{2}} \, d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) + O(d_{\mathrm{FR}}^{2}) \tag{6.2}$$
 
 The Gini coefficient is a first-order approximation to the Fisher-Rao distance
 from equality. The Fisher-Rao distance is the more natural measure: it is
 invariant under permutations, monotone in Lorenz dominance, and has a geometric
-interpretation as an angle in $S^{N-1}_+$.
+interpretation as an angle in $S^{N-1}_{+}$.
 
 ### 6.2 The wealth exchange graph
 
@@ -706,7 +706,7 @@ The graph Laplacian $L = D - A$ of the economic graph encodes:
 |:---------|:------------|:--------|
 | Price structure (factors) | Eigenvectors $v_1, \ldots, v_r$ | Section 2 |
 | Market efficiency | Spectral gap $\lambda_1$ | Section 2 |
-| Deadweight loss | $\mathcal{W}(M^{\ast}_G)$ via spectrum of $L$ | Section 3 |
+| Deadweight loss | $\mathcal{W}(M^{\ast}_{G})$ via spectrum of $L$ | Section 3 |
 | Market power | $h(G)$ via Cheeger inequality | Section 4 |
 | Famine vulnerability | $h(G_{\mathrm{food}})$ | Section 5 |
 | Social mobility | $\lambda_1(L_w)$ | Section 6 |
@@ -722,7 +722,7 @@ extended from the market manifold to the full economy.
 
 ### 8.2 Connection to the monograph's framework
 
-The market manifold $M^r \subset S^{d-1}_+$ of the financial monograph is the
+The market manifold $M^r \subset S^{d-1}_{+}$ of the financial monograph is the
 *financial sector* of the full economic graph. The Delaunay graph
 $\mathcal{D}(M^r)$ studied in GEOSPATIAL_CONTAGION.md and
 GRASSBERGER_PERCOLATION_GENERATING.md is a subgraph of the full economic
@@ -775,7 +775,7 @@ $\mathcal{W}$.
 **Tax policy.** The optimal tax minimises Willmore energy (deadweight loss)
 subject to a revenue constraint. In the spectral framework, this is a
 constrained optimisation on the graph Laplacian: choose a tax vector
-$\tau \in \mathbb{R}^d$ to minimise $\mathcal{W}(\tilde{M}(\tau))$ subject to
+$\tau \in \mathbb{R}^{d}$ to minimise $\mathcal{W}(\tilde{M}(\tau))$ subject to
 $\langle \tau, p^{\ast} \rangle \geq R$ (revenue at least $R$). The Ramsey rule
 \[Ramsey 1927\] — tax goods with inelastic demand — is a first-order
 approximation to this optimisation. The spectral framework accounts for

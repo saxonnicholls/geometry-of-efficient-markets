@@ -248,11 +248,11 @@ Fisher information matrix is a $d \times d$ positive-definite matrix whose
 eigenvalue decomposition reveals the full factor structure. The relationship
 between them is:
 
-$$\text{Maastricht scalar}_j = \langle e_j, F\, e_j \rangle$$
+$$\text{Maastricht scalar}_{j} = \langle e_j, F\, e_j \rangle$$
 
 for some fixed projection directions $e_j$. This is a projection from a
 $d(d+1)/2$-dimensional space (the space of symmetric positive-definite
-matrices) to $\mathbb{R}^4$. For a sovereign bond market with $d \approx 20$
+matrices) to $\mathbb{R}^{4}$. For a sovereign bond market with $d \approx 20$
 instruments, the Maastricht criteria discard:
 
 $$1 - \frac{4}{d(d+1)/2} = 1 - \frac{4}{210} \approx 98.1\%$$

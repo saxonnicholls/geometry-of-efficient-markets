@@ -134,11 +134,11 @@ frequencies.
 
 Our Voronoi transition matrix $P$ from Test 15V has eigenvalues:
 
-$$\mu(P) = \{1.000,\; 0.197,\; 0.108,\; 0.016\} \tag{2.2}$$
+$$\mu(P) = \{1.000, 0.197, 0.108, 0.016\} \tag{2.2}$$
 
 Applying equation (2.1) with $\Delta t = 1$ day:
 
-$$\lambda(L) = \{0,\; -1.62,\; -2.23,\; -4.15\}\;\text{per day} \tag{2.3}$$
+$$\lambda(L) = \{0, -1.62, -2.23, -4.15\} \text{per day} \tag{2.3}$$
 
 These are the **discrete Jacobi operator eigenvalues** on the 4-cell Voronoi
 mesh. The spectral gap is $|\lambda_1| = 1.62$/day, giving a mixing
@@ -217,7 +217,7 @@ def dmd(X, r=None):
 ### 3.1 Theory
 
 POD (Sirovich 1987) extracts the dominant spatial modes from a set of snapshots.
-Given snapshots $x_1, \ldots, x_T \in \mathbb{R}^d$, POD finds orthonormal
+Given snapshots $x_1, \ldots, x_T \in \mathbb{R}^{d}$, POD finds orthonormal
 modes $\phi_1, \ldots, \phi_r$ that maximise the captured variance:
 
 $$x_t \approx \bar{x} + \sum_{k=1}^{r} a_k(t)\,\phi_k \tag{3.1}$$
@@ -237,7 +237,7 @@ the factor returns.
 The key addition: project the Fokker-Planck equation (1.2) onto the POD modes.
 This gives a reduced-order model for the temporal coefficients:
 
-$$\dot{a}_k = \sum_j L_{kj}\,a_j + \text{noise} \tag{3.2}$$
+$$\dot{a}_{k} = \sum_j L_{kj}\,a_j + \text{noise} \tag{3.2}$$
 
 where $L_{kj} = \langle\phi_k,\, \mathcal{L}\phi_j\rangle$ is the Galerkin
 matrix — the projection of the Jacobi operator $\mathcal{L}$ onto the POD
@@ -253,7 +253,7 @@ basis.
 2. Extract the first 3 POD modes $\phi_1, \phi_2, \phi_3$
 3. Compare to Nelson-Siegel shapes (this is Test N1, which gave r = 0.894)
 4. NEW: compute the Galerkin matrix $L_{kj}$ from the temporal coefficient
-   dynamics: fit $\dot{a}_k = \sum_j L_{kj} a_j$ by regression
+   dynamics: fit $\dot{a}_{k} = \sum_j L_{kj} a_j$ by regression
 5. The diagonal elements $L_{kk}$ = the per-mode mean-reversion speed
 6. The off-diagonal elements $L_{kj}$ = the mode coupling
 
@@ -423,7 +423,7 @@ cells miss.
 1. Build an AMR mesh with very high resolution at $b_i \approx 0$ for each $i$
 2. Classify the boundary behaviour: does the process hit the boundary (exit)
    or bounce back (entrance)?
-3. For each portfolio $i$: estimate the Feller parameter $\alpha_i = Tb^{\ast}_i - 1/2$
+3. For each portfolio $i$: estimate the Feller parameter $\alpha_i = Tb^{\ast}_{i} - 1/2$
 4. Compare to the theoretical prediction from HAMILTONIAN_TAILS_COMPLETENESS
 
 ---

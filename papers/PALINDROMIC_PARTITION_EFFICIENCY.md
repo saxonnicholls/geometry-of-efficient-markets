@@ -87,7 +87,7 @@ of CUTS is $k - 1$.
 
 The DP for minimum cuts:
 
-$$\text{minCuts}(i) = \min_{0 \leq j < i, \; s[j+1:i] \in \text{Pal}} \text{minCuts}(j) + 1 \tag{1.2}$$
+$$\text{minCuts}(i) = \min_{0 \leq j < i, s[j+1:i] \in \text{Pal}} \text{minCuts}(j) + 1 \tag{1.2}$$
 
 with base case $\text{minCuts}(0) = -1$ (empty string, no cuts needed).
 
@@ -127,11 +127,11 @@ def min_cuts_palindrome(s):
 The **palindrome partition function** $P(s)$ counts the number of valid
 partitions:
 
-$$P(s) = |\{(p_1, \ldots, p_k) : s = p_1 \cdots p_k, \; p_i \in \text{Pal}\}| \tag{1.3}$$
+$$P(s) = |\{(p_1, \ldots, p_k) : s = p_1 \cdots p_k, p_i \in \text{Pal}\}| \tag{1.3}$$
 
 **DP:**
 
-$$P(i) = \sum_{0 \leq j < i, \; s[j+1:i] \in \text{Pal}} P(j) \tag{1.4}$$
+$$P(i) = \sum_{0 \leq j < i, s[j+1:i] \in \text{Pal}} P(j) \tag{1.4}$$
 
 with $P(0) = 1$.
 
@@ -165,7 +165,7 @@ $$\text{PEI}(\sigma) = 1 - \frac{\text{minCuts}(\sigma)}{T - 1} \tag{2.1}$$
 ### 2.3 Expected values by class
 
 **Theorem 2.2** (Expected PEI by universality class). *For large $T$, the
-expected PEI of a sequence from palindromic universality class $\mathcal{P}_k$ is:*
+expected PEI of a sequence from palindromic universality class $\mathcal{P}_{k}$ is:*
 
 | Class | Expected PEI | Class interpretation |
 |:---:|:---:|:---|
@@ -417,7 +417,7 @@ geometry with inverse relationships to efficiency.
 
 **Conjecture 5.2** (PEI-Kelly). *For efficient markets (PEI close to 1):*
 
-$$h_{\rm Kelly}(\sigma) \approx h_{\rm max} \cdot (1 - \text{PEI}^2) \tag{5.2}$$
+$$h_{\rm Kelly}(\sigma) \approx h_{\rm max} \cdot (1 - \text{PEI}^{2}) \tag{5.2}$$
 
 *The Kelly rate is suppressed by palindromic efficiency (consistent with
 the palindromic entropy halving).*

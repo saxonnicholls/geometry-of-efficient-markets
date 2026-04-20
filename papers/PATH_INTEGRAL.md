@@ -12,9 +12,9 @@
 
 **Abstract.**  
 We develop the Feynman path integral formulation of derivative pricing for markets
-whose price process lives on a minimal submanifold $M^r \subset S^{d-1}_+$.
+whose price process lives on a minimal submanifold $M^r \subset S^{d-1}_{+}$.
 The key departure from classical option pricing theory: the measure in the path
-integral is not the Wiener measure on the full space $\mathbb{R}^d$ but the
+integral is not the Wiener measure on the full space $\mathbb{R}^{d}$ but the
 **geometric Wiener measure on $M^r$** — a measure supported on paths that remain
 on the market manifold. This constrained path integral produces exact pricing formulas
 for each market type, recovers and explains our previous results (MARKET_PROCESSES,
@@ -26,8 +26,8 @@ the Langevin equation, stochastic quantisation, and the Feynman-Kac theory.
 **(i) The constrained path integral.** The price of a derivative with payoff $G(b_T)$
 on a market on manifold $M^r$ is:
 
-$$V(b,t) = e^{-r(T-t)}\int_{\mathrm{Paths}(M^r)} \mathcal{D}[b]\;
-e^{-S_M[b]/(2\varepsilon^2)}\; G(b_T) \tag{0.1}$$
+$$V(b,t) = e^{-r(T-t)}\int_{\mathrm{Paths}(M^r)} \mathcal{D}[b] 
+e^{-S_M[b]/(2\varepsilon^2)} G(b_T) \tag{0.1}$$
 
 where $S_M[b] = \int_t^T |\dot b_s + \varepsilon^2\vec{H}(b_s)|^2_{g_M}\,ds$ is the
 Onsager-Machlup action on $M^r$ and the integral is over all continuous paths
@@ -43,7 +43,7 @@ Jeffreys prior = stationary distribution.
 **(iii) The Clifford torus path integral = theta function.** The path integral on
 $T^2$ sums over homotopy classes — paths winding $(n_1,n_2)$ times around the two
 torus cycles. Each winding sector contributes a Gaussian. Summing over all
-$(n_1,n_2)\in\mathbb{Z}^2$ via Poisson resummation gives exactly
+$(n_1,n_2)\in\mathbb{Z}^{2}$ via Poisson resummation gives exactly
 $\vartheta_3\times\vartheta_3$ — the theta function transition density of
 MARKET_PROCESSES.md is the path integral summed over topological sectors.
 
@@ -55,7 +55,7 @@ on $M$. The path integral under $\mathbb{Q}$ equals the path integral under $\ma
 restricted to $M$.
 
 **(v) The Langevin equation on $M^r$.** The overdamped Langevin equation:
-$\dot{b}_t = -\varepsilon^2\nabla_{g_M}V(b_t) + \varepsilon\eta_t$
+$\dot{b}_{t} = -\varepsilon^2\nabla_{g_M}V(b_t) + \varepsilon\eta_t$
 (where $V = -L_T$ is the Kelly potential and $\eta_t$ is white noise on $(M^r,g_M)$)
 generates exactly the diffusion of MARKET_PROCESSES.md. Its stationary distribution
 is the Jeffreys prior (FOKKER_PLANCK_CFD R5). The Parisi-Wu stochastic quantisation
@@ -65,7 +65,7 @@ of the Langevin equation produces the same path integral (0.1).
 $\Delta_{d-1}$ (not just $M^r$) factors into a manifold integral (over $M^r$)
 and a normal bundle integral (over $NM$). Integrating out the idiosyncratic
 paths (over $NM$) with the normal bundle Gaussian measure produces an **effective
-action** on $M^r$ with a correction term proportional to $\mathrm{tr}(F^{-1}_N)$
+action** on $M^r$ with a correction term proportional to $\mathrm{tr}(F^{-1}_{N})$
 — the idiosyncratic Fisher-Rao radius. For the incomplete market: this gives a
 non-trivial effective action and a correction to option prices from idiosyncratic
 risk.
@@ -84,14 +84,14 @@ theta function; McKean; WKB; saddle point; instanton; normal bundle integration.
 The standard Black-Scholes option pricing formula arises from the path integral
 \[Kleinert 2004, Chapter 3\]:
 
-$$V(S,t) = e^{-r(T-t)}\int\mathcal{D}[S]\;
+$$V(S,t) = e^{-r(T-t)}\int\mathcal{D}[S] 
 \exp\!\left(-\frac{1}{2\sigma^2}\int_t^T\frac{(\dot S/S - \mu)^2}{\,1\,}\,ds\right)G(S_T) \tag{1.1}$$
 
 where $\mathcal{D}[S]$ is the Wiener measure on log-normal paths and the action is
 the Onsager-Machlup functional for GBM. The integral is over all continuous paths
-$S:[t,T]\to\mathbb{R}_+$.
+$S:[t,T]\to\mathbb{R}_{+}$.
 
-**The problem:** This integral is over all paths in $\mathbb{R}^d$ — including paths
+**The problem:** This integral is over all paths in $\mathbb{R}^{d}$ — including paths
 that are wildly inconsistent with the market's factor structure. A 50-asset market
 with 4 factors has 46 idiosyncratic directions — the standard path integral wastes
 most of its support on paths that never actually occur.
@@ -102,16 +102,16 @@ most of its support on paths that never actually occur.
 
 The **geometric Wiener measure** on paths $b:[t,T]\to M^r$ is:
 
-$$\mathcal{D}^M[b] = \lim_{N\to\infty}\prod_{k=0}^{N-1}
-\frac{d\mathrm{vol}_M(b_{t_k})}{(4\pi\varepsilon^2\Delta t)^{r/2}}
+$$\mathcal{D}^{M}[b] = \lim_{N\to\infty}\prod_{k=0}^{N-1}
+\frac{d\mathrm{vol}_{M}(b_{t_k})}{(4\pi\varepsilon^2\Delta t)^{r/2}}
 \cdot\exp\!\left(-\frac{|b_{t_{k+1}}-b_{t_k}|^2_{g_M}}{4\varepsilon^2\Delta t}\right) \tag{1.2}$$
 
-where $d\mathrm{vol}_M$ is the Riemannian volume element of $(M^r,g_M)$ and
+where $d\mathrm{vol}_{M}$ is the Riemannian volume element of $(M^r,g_M)$ and
 $|b-b'|_{g_M}$ is the geodesic distance. This is the heat kernel short-time
 approximation on the manifold, assembled into a path measure.
 
-**The key difference from flat-space Wiener measure:** the volume element $d\mathrm{vol}_M$
-carries the curvature of $M^r$. For the flat torus ($M=T^2$): $d\mathrm{vol}_{T^2} = d\theta\,d\varphi/((\pi/2)^2)$ — no correction. For the spherical CAPM ($M=S^r_+$): $d\mathrm{vol}_{S^r} = \sin^{r-1}\theta\,d\theta\,d\Omega_{r-1}$ — sine correction from the curvature. For the hyperbolic market ($M=\mathbb{H}^2$): $d\mathrm{vol}_{\mathbb{H}^2} = y^{-2}\,dx\,dy$ — the Poincaré volume element.
+**The key difference from flat-space Wiener measure:** the volume element $d\mathrm{vol}_{M}$
+carries the curvature of $M^r$. For the flat torus ($M=T^2$): $d\mathrm{vol}_{T^2} = d\theta\,d\varphi/((\pi/2)^2)$ — no correction. For the spherical CAPM ($M=S^r_+$): $d\mathrm{vol}_{S^r} = \sin^{r-1}\theta\,d\theta\,d\Omega_{r-1}$ — sine correction from the curvature. For the hyperbolic market ($M=\mathbb{H}^{2}$): $d\mathrm{vol}_{\mathbb{H}^{2}} = y^{-2}\,dx\,dy$ — the Poincaré volume element.
 
 ### 1.3 The Onsager-Machlup action on $M^r$
 
@@ -208,7 +208,7 @@ measure with the stationary prior.
 
 The **overdamped Langevin equation** on the Riemannian manifold $(M^r, g_M)$ is:
 
-$$\boxed{\dot b_t = -\varepsilon^2\nabla_{g_M}V(b_t) + \varepsilon\,\eta_t} \tag{3.1}$$
+$$\dot b_t = -\varepsilon^2\nabla_{g_M}V(b_t) + \varepsilon\,\eta_t \tag{3.1}$$
 
 where $V = -L_T(b)$ is the Kelly potential (negative log-growth rate), and $\eta_t$
 is white noise with covariance $\mathbb{E}[\eta_t^\mu\eta_s^\nu] = g_M^{\mu\nu}(b_t)\delta(t-s)$
@@ -259,7 +259,7 @@ as the direct construction.
 
 The **effective potential** is the free energy density of the path integral:
 
-$$V_{\rm eff}(b) = -\frac{1}{T}\log\int_{\rm paths:b_0=b}\mathcal{D}^M[b']\,
+$$V_{\rm eff}(b) = -\frac{1}{T}\log\int_{\rm paths:b_0=b}\mathcal{D}^{M}[b']\,
 e^{-S_M[b']/2\varepsilon^2} \tag{3.6}$$
 
 — the log-probability of the path integral arriving at $b$ starting from a stationary distribution.
@@ -289,15 +289,15 @@ For the Clifford torus market ($M = [0,\pi/2]^2$ with periodic identifications),
 the path integral propagator from $(\theta_0,\varphi_0)$ to $(\theta,\varphi)$
 in time $T$ is:
 
-$$K_{T^2}(\theta,\varphi|\theta_0,\varphi_0;T) = \sum_{(n_1,n_2)\in\mathbb{Z}^2}
-K_{\rm flat}\!\left(\theta-\theta_0+\frac{n_1\pi}{2},\;
-\varphi-\varphi_0+\frac{n_2\pi}{2};\;T\right) \tag{4.1}$$
+$$K_{T^2}(\theta,\varphi|\theta_0,\varphi_0;T) = \sum_{(n_1,n_2)\in\mathbb{Z}^{2}}
+K_{\rm flat}\!\left(\theta-\theta_0+\frac{n_1\pi}{2}, 
+\varphi-\varphi_0+\frac{n_2\pi}{2}; T\right) \tag{4.1}$$
 
 where $K_{\rm flat}(x,y;T) = \frac{1}{2\pi\varepsilon^2 T}e^{-(x^2+y^2)/(2\varepsilon^2 T)}$
 is the flat-space Gaussian propagator.
 
-**The sum over winding numbers** $(n_1,n_2)\in\mathbb{Z}^2$ is the Poisson resummation
-of the Gaussian over the lattice $(\pi/2)\mathbb{Z}^2$. By the Poisson summation formula:
+**The sum over winding numbers** $(n_1,n_2)\in\mathbb{Z}^{2}$ is the Poisson resummation
+of the Gaussian over the lattice $(\pi/2)\mathbb{Z}^{2}$. By the Poisson summation formula:
 
 $$\sum_{n\in\mathbb{Z}} e^{-(\theta+n\pi/2)^2/(2\varepsilon^2 T)}
 = \sqrt{2\pi\varepsilon^2 T}\cdot\sum_{k\in\mathbb{Z}}
@@ -313,10 +313,10 @@ $$p_T(\theta|\theta_0) = \frac{2}{\pi}\vartheta_3\!\!\left(\frac{\theta-\theta_0
 \frac{4i\varepsilon^2 T}{\pi}\right) \tag{4.3}$$
 
 *(from MARKET_PROCESSES.md equation 4.4) is EXACTLY the path integral (4.1)
-evaluated by Poisson resummation over the winding lattice $\mathbb{Z}^2 = \pi_1(T^2)$.*
+evaluated by Poisson resummation over the winding lattice $\mathbb{Z}^{2} = \pi_1(T^2)$.*
 
 *Each term in the theta function series corresponds to one topological sector
-$(n_1,n_2) \in \pi_1(T^2) = \mathbb{Z}^2$. The $n=0$ term is the direct path;
+$(n_1,n_2) \in \pi_1(T^2) = \mathbb{Z}^{2}$. The $n=0$ term is the direct path;
 $n\neq 0$ terms are paths winding around the torus.*
 
 **The theta function IS the topological sector sum.** This explains why the theta
@@ -333,25 +333,25 @@ dual theta function). This is the financial version of T-duality from string the
 
 ### 4.2 The McKean kernel as the hyperbolic path integral
 
-For the hyperbolic market ($M=\mathbb{H}^2$ with Poincaré metric), the path integral
+For the hyperbolic market ($M=\mathbb{H}^{2}$ with Poincaré metric), the path integral
 propagator is evaluated by summing over all classical paths (geodesics) from $(x_0,y_0)$
-to $(x,y)$. In $\mathbb{H}^2$, for each geodesic distance $\rho$, there is exactly
+to $(x,y)$. In $\mathbb{H}^{2}$, for each geodesic distance $\rho$, there is exactly
 one geodesic (unlike the torus, where there are infinitely many windings). The sum
 over classical paths gives:
 
-$$K_{\mathbb{H}^2}(\rho;T) = \frac{e^{-T/4}}{(4\pi T)^{1/2}}\cdot
+$$K_{\mathbb{H}^{2}}(\rho;T) = \frac{e^{-T/4}}{(4\pi T)^{1/2}}\cdot
 \frac{\rho\,e^{-\rho^2/(4T)}}{\sinh\rho} \tag{4.4}$$
 
 — the McKean heat kernel (MARKET_PROCESSES.md equation 5.7).
 
 **The factor $\rho/\sinh\rho$** is the ratio of the Euclidean to hyperbolic volume
-elements — it is the Jacobian of the geodesic exponential map on $\mathbb{H}^2$,
+elements — it is the Jacobian of the geodesic exponential map on $\mathbb{H}^{2}$,
 which is the Van Vleck-Morette determinant for the hyperbolic geometry.
 
 **The factor $e^{-T/4}$** is the scalar curvature correction (the DeWitt-Morette
-term from equation 1.4 with $R_{\mathbb{H}^2} = -1$, giving $-\varepsilon^2R/6 = +T/(6\cdot 4) \cdot 4 \approx T/4$
+term from equation 1.4 with $R_{\mathbb{H}^{2}} = -1$, giving $-\varepsilon^2R/6 = +T/(6\cdot 4) \cdot 4 \approx T/4$
 in appropriate normalisation). The negative curvature of the hyperbolic market
-ADDS to the path integral measure — paths on $\mathbb{H}^2$ are more probable than
+ADDS to the path integral measure — paths on $\mathbb{H}^{2}$ are more probable than
 on flat space. This is why the McKean kernel decays sub-Gaussianly: the negative
 curvature spreads the paths out.
 
@@ -399,7 +399,7 @@ Novikov condition IS the finite Willmore energy condition.**
 Under the risk-neutral measure $\mathbb{Q}$, the option price is:
 
 $$V(b,t) = e^{-r(T-t)}\mathbb{E}^{\mathbb{Q}}[G(b_T)|b_t=b]
-= e^{-r(T-t)}\int_{M^r}p^{\mathbb{Q}}_{T-t}(b,b')\,G(b')\,d\mathrm{vol}_M(b') \tag{5.4}$$
+= e^{-r(T-t)}\int_{M^r}p^{\mathbb{Q}}_{T-t}(b,b')\,G(b')\,d\mathrm{vol}_{M}(b') \tag{5.4}$$
 
 where $p^{\mathbb{Q}}_{T-t}$ is the heat kernel under $\mathbb{Q}$ — the transition
 density of the pure diffusion on $M^r$ (no drift).
@@ -412,7 +412,7 @@ At short times: reproduces the GBM/Black-Scholes formula.
 (theta function, no drift term). The option price is the theta function call formula
 (SOBOLEV_OPTIONS_GREEKS equation 10.1).
 
-**For the hyperbolic market:** $p^{\mathbb{Q}}_\tau = K_{\mathbb{H}^2}(\rho;\tau)$
+**For the hyperbolic market:** $p^{\mathbb{Q}}_\tau = K_{\mathbb{H}^{2}}(\rho;\tau)$
 (McKean kernel). The option price is the McKean call formula (SOBOLEV equation 5.1).
 
 **The critical observation:** The risk-neutral transition density under $\mathbb{Q}$
@@ -429,8 +429,8 @@ The physical paths and risk-neutral paths are the same.
 
 The full derivative price — accounting for all paths in $\Delta_{d-1}$, not just $M^r$ — is:
 
-$$V_{\rm full}(b,t) = e^{-r(T-t)}\int_{\rm all\;paths\;\Delta_{d-1}}
-\mathcal{D}^{\Delta}[b]\;e^{-S_\Delta[b]/(2\varepsilon^2)}\;G(b_T) \tag{6.1}$$
+$$V_{\rm full}(b,t) = e^{-r(T-t)}\int_{\rm all paths \Delta_{d-1}}
+\mathcal{D}^{\Delta}[b] e^{-S_\Delta[b]/(2\varepsilon^2)} G(b_T) \tag{6.1}$$
 
 **Splitting paths into manifold and normal components:**
 Any path $b(t) \in \Delta_{d-1}$ near $M^r$ can be written as:
@@ -454,8 +454,8 @@ $b^M$ and $\xi$.
 *Integrating out the normal bundle paths $\xi^\alpha$ in (6.1)-(6.3) gives an
 effective action on $M^r$:*
 
-$$V_{\rm full}(b,t) = e^{-r(T-t)}\int_{M^r}\mathcal{D}^M[b^M]
-\;e^{-S_{\rm eff}[b^M]/(2\varepsilon^2)}\;G^{\rm eff}(b^M_T) \tag{6.4}$$
+$$V_{\rm full}(b,t) = e^{-r(T-t)}\int_{M^r}\mathcal{D}^{M}[b^M]
+ e^{-S_{\rm eff}[b^M]/(2\varepsilon^2)} G^{\rm eff}(b^M_T) \tag{6.4}$$
 
 *where the effective action is:*
 
@@ -493,7 +493,7 @@ For each market type, the exact option pricing formula follows from the path int
 |:-----------|:---------------------|:----------------|:---------------|
 | CAPM | Jacobi Wiener on $S^r_+$ | Geodesics on sphere | Jacobi polynomial series |
 | Clifford $T^2$ | Flat Wiener on $T^2$ | Geodesics + all windings | Theta function $\vartheta_3$ |
-| Hyperbolic $\mathbb{H}^2$ | Poincaré Wiener on $\mathbb{H}^2$ | Unique geodesic (no windings) | McKean kernel |
+| Hyperbolic $\mathbb{H}^{2}$ | Poincaré Wiener on $\mathbb{H}^{2}$ | Unique geodesic (no windings) | McKean kernel |
 | Lawson $\Sigma^2_g$ | Fuchsian Wiener on $\Sigma^2_g$ | Geodesics + homology cycles | Selberg/automorphic |
 | GBM (limit) | Flat Wiener on $\mathbb{R}$ | Straight line | Black-Scholes |
 
@@ -554,13 +554,13 @@ The Feynman path integral for derivative pricing, when the market lives on $M^r$
 is a **constrained path integral over manifold paths** with the geometric Wiener
 measure. Key results:
 
-$$\boxed{
+$$
 \begin{array}{lcl}
 \text{WKB saddle} & = & \text{geodesic on }M^r \\
 \text{Van Vleck det.} & = & F(b^{\ast})\text{ (Fisher info)}\\
 \text{WKB accuracy }{O(1/T^2)} & = & \text{Jeffreys prior = stationary dist.}\\
 \text{Theta function} & = & \text{winding sum on }T^2\\
-\text{McKean kernel} & = & \text{unique geodesic on }\mathbb{H}^2\\
+\text{McKean kernel} & = & \text{unique geodesic on }\mathbb{H}^{2}\\
 \text{Novikov condition} & = & \text{finite Willmore energy}\\
 \text{Risk-neutral on }M^r & = & \text{efficient market: }P=Q\\
 \text{Normal bundle integral} & = & \text{incompleteness premium}\\

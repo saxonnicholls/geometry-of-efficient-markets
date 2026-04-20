@@ -58,9 +58,9 @@ Bhattacharyya sphere; portfolio simplex; market integration.
 ### 1.1 Two markets, two spheres
 
 Consider two financial markets. Market 1 has $d_1$ assets and $r_1$ systematic
-factors; its market manifold is $M_1^{r_1} \subset S^{d_1-1}_+$, a minimal
+factors; its market manifold is $M_1^{r_1} \subset S^{d_1-1}_{+}$, a minimal
 submanifold of the Bhattacharyya hemisphere. Market 2 has $d_2$ assets and $r_2$
-factors with manifold $M_2^{r_2} \subset S^{d_2-1}_+$. In general these live in
+factors with manifold $M_2^{r_2} \subset S^{d_2-1}_{+}$. In general these live in
 *different* ambient spheres — there is no natural inclusion of one into the other.
 
 A **correspondence map** is a smooth map $\Phi: M_1 \to M_2$ that sends each
@@ -95,7 +95,7 @@ Any spread admits a unique orthogonal decomposition into three components:
 $$\sigma = \sigma_{\rm fund} + \sigma_{\rm curv} + \sigma_{\rm top}. \tag{1.2}$$
 
 **Component 1: Fundamental spread** $\sigma_{\rm fund}$. This is the geodesic
-distance in the product geometry $S^{d_1-1}_+ \times S^{d_2-1}_+$ between the
+distance in the product geometry $S^{d_1-1}_{+} \times S^{d_2-1}_{+}$ between the
 graphs of $\Phi$ restricted to the respective minimal surfaces. It captures the
 structural cost of converting one asset into the other: shipping costs,
 grade differences, credit spreads, refining margins, regulatory frictions. The
@@ -148,7 +148,7 @@ markets are in equilibrium, trading lives ON $\Gamma_\Phi$. The spread is the
 
 $$\sigma(x, y) = d_{g^{\rm prod}}\!\big((x, y),\, \Gamma_\Phi\big) \tag{1.4}$$
 
-measured in the product Fisher-Rao metric $g^{\rm prod} = g^{\rm FR}_1 \oplus g^{\rm FR}_2$.
+measured in the product Fisher-Rao metric $g^{\rm prod} = g^{\rm FR}_{1} \oplus g^{\rm FR}_{2}$.
 
 **The normal bundle $N\Gamma_\Phi$** has fibre dimension $r_2$ (the dimension of
 $M_2$). The spread process evolves in this normal bundle. Near $\Gamma_\Phi$,
@@ -256,7 +256,7 @@ maximum eigenvalue of $A_\Phi^{\ast}A_\Phi$. $\square$
 The convergence rate of the curvature spread is determined by the spectral gap of
 the Laplacian on the product manifold. By the spectral theory of product spaces:
 
-$$\lambda_1(M_1 \times M_2) = \min\bigl(\lambda_1(M_1),\; \lambda_1(M_2)\bigr).
+$$\lambda_1(M_1 \times M_2) = \min\bigl(\lambda_1(M_1), \lambda_1(M_2)\bigr).
 \tag{2.4}$$
 
 The slowest-mixing market sets the convergence rate. A fast, liquid equity market
@@ -337,11 +337,11 @@ The spectral gap of $M_1 \mathbin{\#} M_2$ determines the mixing time of the
 merged market — how quickly information propagates across the full system.
 
 **Theorem 3.1** *(Spectral gap of connected sum)*.
-*Let $M_1 \mathbin{\#}_L M_2$ denote the connected sum with neck length $L$ and
+*Let $M_1 \mathbin{\#}_{L} M_2$ denote the connected sum with neck length $L$ and
 neck width $w$. The first non-zero eigenvalue of the Laplacian satisfies*
 
-$$\lambda_1(M_1 \mathbin{\#}_L M_2) \approx \min\!\left(\lambda_1(M_1),\;
-\lambda_1(M_2),\; \frac{\pi^2 w^{r-2}}{L^2 \cdot
+$$\lambda_1(M_1 \mathbin{\#}_{L} M_2) \approx \min\!\left(\lambda_1(M_1), 
+\lambda_1(M_2), \frac{\pi^2 w^{r-2}}{L^2 \cdot
 \max(\mathrm{vol}(M_1), \mathrm{vol}(M_2))}\right). \tag{3.1}$$
 
 *The third term is the "tunnel mode" — the eigenvalue of the neck itself.*

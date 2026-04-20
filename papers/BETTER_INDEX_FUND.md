@@ -39,7 +39,7 @@ weighted by their accumulated wealth. It achieves regret $r\log T/2T$ —
 the minimum possible for any strategy using only public market data.
 
 **(iii) Equal weight is closer to optimal than cap-weight, on average.**
-The equal-weight portfolio $b^{\rm ew}_i = 1/d$ has strictly lower Fisher-Rao
+The equal-weight portfolio $b^{\rm ew}_{i} = 1/d$ has strictly lower Fisher-Rao
 distance from $b^{\ast}$ than the cap-weight portfolio in expectation, across the
 joint distribution of market capitalisations. **Equal weighting is a better
 approximation to the log-optimal portfolio than cap weighting** — not because
@@ -71,7 +71,7 @@ Arnott; Sharpe; market manifold; factor investing.
 The market-cap weighted portfolio holds each stock $i$ in proportion to its
 market capitalisation $M_i = P_i \cdot N_i$ (price times shares outstanding):
 
-$$b^{\rm cap}_i = \frac{M_i}{\sum_j M_j} = \frac{P_i N_i}{\sum_j P_j N_j} \tag{1.1}$$
+$$b^{\rm cap}_{i} = \frac{M_i}{\sum_j M_j} = \frac{P_i N_i}{\sum_j P_j N_j} \tag{1.1}$$
 
 This is the standard S&P 500, MSCI World, and virtually every passive fund.
 CAPM theory says this is optimal — in equilibrium, the market portfolio is
@@ -80,11 +80,11 @@ mean-variance efficient. In our geometric framework: is it optimal?
 ### 1.2 The geometric answer: no
 
 **The log-optimal portfolio** $b^{\ast}$ maximises the Kelly growth rate:
-$$b^{\ast} = \arg\max_{b\in\Delta_{d-1}} \frac{1}{T}\sum_{t=1}^T\log\langle b, x_t\rangle \tag{1.2}$$
+$$b^{\ast} = \arg\max_{b\in\Delta_{d-1}} \frac{1}{T}\sum_{t=1}^{T}\log\langle b, x_t\rangle \tag{1.2}$$
 
 **The cap-weight portfolio** $b^{\rm cap}$ maximises nothing. It is driven by prices:
 
-$$b^{\rm cap}_i \propto P_i \cdot N_i \tag{1.3}$$
+$$b^{\rm cap}_{i} \propto P_i \cdot N_i \tag{1.3}$$
 
 When stock $i$'s price rises (relative to others), its cap-weight rises. But a rising
 price is not a rising log-optimal weight — it is a rising price. The cap-weight
@@ -93,7 +93,7 @@ stocks that have recently gone down.
 
 **Theorem 1.1** *(Cap-weighting overweights momentum and underweights value)*.
 *The cap-weight portfolio satisfies:*
-$$b^{\rm cap}_i = b^{\ast}_i \cdot \exp\!\left(\int_0^T (r_{i,t} - \bar r_t)\,dt + \text{flow terms}\right) \tag{1.4}$$
+$$b^{\rm cap}_{i} = b^{\ast}_{i} \cdot \exp\!\left(\int_0^T (r_{i,t} - \bar r_t)\,dt + \text{flow terms}\right) \tag{1.4}$$
 
 *where $r_{i,t} - \bar r_t$ is the excess return of stock $i$ over the market.
 Cap-weighting compounds the momentum factor: stocks that have outperformed get
@@ -138,7 +138,7 @@ from $b^{\ast}$ due to the momentum bias contributes a further $\approx 38$ bps/
 The **Manifold Index Fund** is the Manifold Universal Portfolio restricted to the
 investment universe of the index:
 
-$$b^{\rm MIF}_T = \frac{\int_{M^r}b\,W_T(b)\,d\mathrm{vol}_M(b)}{\int_{M^r}W_T(b)\,d\mathrm{vol}_M(b)} \tag{2.1}$$
+$$b^{\rm MIF}_{T} = \frac{\int_{M^r}b\,W_T(b)\,d\mathrm{vol}_{M}(b)}{\int_{M^r}W_T(b)\,d\mathrm{vol}_{M}(b)} \tag{2.1}$$
 
 — the wealth-weighted average over all log-optimal portfolios on the market manifold.
 
@@ -249,8 +249,8 @@ $$\mathbb{E}[d_{g^{\rm FR}}(b^{\rm ew}, b^{\ast})] \leq \mathbb{E}[d_{g^{\rm FR}
 and returns. Equal weighting is closer to the log-optimal portfolio than
 cap-weighting in expectation.*
 
-*Proof.* The log-optimal weight $b^{\ast}_i \propto \mu_i/\sigma_i^2$ (roughly,
-expected return divided by variance). The cap-weight $b^{\rm cap}_i \propto M_i$.
+*Proof.* The log-optimal weight $b^{\ast}_{i} \propto \mu_i/\sigma_i^2$ (roughly,
+expected return divided by variance). The cap-weight $b^{\rm cap}_{i} \propto M_i$.
 Market cap is driven by price history — it is proportional to $\exp(\int r_i\,dt)$.
 Over long horizons, price momentum pushes $b^{\rm cap}$ toward high-momentum stocks
 which are generally overvalued (price exceeded intrinsic value). The log-optimal
@@ -281,24 +281,24 @@ by equal-weight rebalancing.
 ### 4.1 What Arnott's fundamental index does
 
 The **RAFI Fundamental Index** (Arnott, Hsu, Moore 2005) weights stocks by:
-- Sales: $w^{\rm sales}_i \propto S_i$
-- Cash flow: $w^{\rm CF}_i \propto C_i$
-- Book value: $w^{\rm book}_i \propto B_i$
-- Dividends: $w^{\rm div}_i \propto D_i$
-- Composite: $w^{\rm fund}_i = (w^{\rm sales}_i + w^{\rm CF}_i + w^{\rm book}_i + w^{\rm div}_i)/4$
+- Sales: $w^{\rm sales}_{i} \propto S_i$
+- Cash flow: $w^{\rm CF}_{i} \propto C_i$
+- Book value: $w^{\rm book}_{i} \propto B_i$
+- Dividends: $w^{\rm div}_{i} \propto D_i$
+- Composite: $w^{\rm fund}_{i} = (w^{\rm sales}_{i} + w^{\rm CF}_{i} + w^{\rm book}_{i} + w^{\rm div}_{i})/4$
 
 ### 4.2 The geometric interpretation
 
 **Theorem 4.1** *(Fundamental indexing = first-order Fisher-Rao correction)*.
 *The log-optimal portfolio weight satisfies the first-order expansion:*
 
-$$b^{\ast}_i \approx b^{\rm ew}_i + \nabla_{b}L_T\big|_{b^{\rm ew}} \cdot \varepsilon
+$$b^{\ast}_{i} \approx b^{\rm ew}_{i} + \nabla_{b}L_T\big|_{b^{\rm ew}} \cdot \varepsilon
 = \frac{1}{d} + \frac{1}{d}\cdot(\mu_i - \bar\mu)\cdot\varepsilon + O(\varepsilon^2) \tag{4.1}$$
 
 *where $\mu_i - \bar\mu$ is the excess expected return of stock $i$.
 Under the accounting identity $\mu_i \approx E_i/P_i$ (earnings yield $\approx$ expected return):*
 
-$$b^{\ast}_i \approx \frac{1}{d} + \frac{1}{d}\cdot\frac{E_i/P_i - \bar{E/P}}{\bar{E/P}}\cdot\varepsilon \tag{4.2}$$
+$$b^{\ast}_{i} \approx \frac{1}{d} + \frac{1}{d}\cdot\frac{E_i/P_i - \bar{E/P}}{\bar{E/P}}\cdot\varepsilon \tag{4.2}$$
 
 *Fundamental indexing weights by $E_i$ (or $B_i$, $S_i$, $C_i$) — which is proportional
 to $E_i/P_i \cdot P_i$. This is approximately the first-order correction in (4.2)
@@ -387,7 +387,7 @@ Geometrically: move toward the sub-simplex of stocks with high $\mu_i/\sigma_i^2
 — the correct direction for log-optimality.
 
 **Low volatility tilt:** Move toward stocks with low $\sigma_i$. In Fisher-Rao
-geometry: this increases $b^{\ast}_i$ for low-vol stocks (since $b^{\ast}_i\propto\mu_i/\sigma_i^2$
+geometry: this increases $b^{\ast}_{i}$ for low-vol stocks (since $b^{\ast}_{i}\propto\mu_i/\sigma_i^2$
 for CAPM markets). Geometrically correct when the CAPM holds. Incorrect when
 there are multiple factors.
 

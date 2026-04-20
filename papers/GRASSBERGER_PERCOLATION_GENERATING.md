@@ -72,7 +72,7 @@ no-arbitrage; lattice eligibility; topological constraint.
 ### 1.1 The classical framework
 
 Grassberger and Procaccia \[1983\] proposed estimating the dimension of a strange
-attractor from a scalar time series $\{x_t\}_{t=1}^T$ via the **correlation integral**:
+attractor from a scalar time series $\{x_t\}_{t=1}^{T}$ via the **correlation integral**:
 
 $$C(\epsilon) = \lim_{N\to\infty}\frac{2}{N(N-1)}\sum_{1\leq i<j\leq N}\mathbf{1}[\|x_i - x_j\| < \epsilon] \tag{1.1}$$
 
@@ -93,7 +93,7 @@ or a statistical artefact of the finite sample?
 
 **Theorem 1.1** *(Grassberger correlation dimension = market manifold dimension)*.
 *For a market on $M^r$ with the natural diffusion (MARKET_PROCESSES.md), the
-delay-embedded return series $\{\mathbf{x}(t)\}_{t=1}^T$ with embedding dimension
+delay-embedded return series $\{\mathbf{x}(t)\}_{t=1}^{T}$ with embedding dimension
 $m\geq 2r+1$ has correlation dimension:*
 
 $$\nu = r \tag{1.2}$$
@@ -230,7 +230,7 @@ $$T_{ij} = \mathbf{1}[\text{step from cell }i\text{ to cell }j\text{ is allowed}
 the Delaunay adjacency matrix of the market manifold.
 
 **The number of admissible Voronoi paths of length $n$:**
-$$a_n = \mathbf{1}^T A^n \mathbf{1} = \sum_{i,j}(A^n)_{ij} = \mathrm{tr}(A^n) + (\text{off-diagonal terms}) \tag{2.3}$$
+$$a_n = \mathbf{1}^{T} A^n \mathbf{1} = \sum_{i,j}(A^n)_{ij} = \mathrm{tr}(A^n) + (\text{off-diagonal terms}) \tag{2.3}$$
 
 For the Clifford torus ($4\times4$ matrix $A^{T^2}$ from FILTRATIONS.md equation 3.7):
 $a_n = \mathrm{tr}((A^{T^2})^n) = 2\cdot2^n$ — consistent with the $2\cdot 2^n$ atom count
@@ -280,7 +280,7 @@ corrections at larger values.*
 
 *Rigorous proof would require establishing that the Cheeger constant controls
 the percolation threshold uniformly across the class of Delaunay graphs arising
-from minimal submanifolds of $S^{d-1}_+$. The heuristic argument via the spectral
+from minimal submanifolds of $S^{d-1}_{+}$. The heuristic argument via the spectral
 gap (Cheeger: $\lambda_1(L_G)/2 \leq h_G \leq \sqrt{2\lambda_1(L_G)}$, and
 $p_c \approx 1 - 1/\rho(A)$ for bond percolation) gives $p_c \approx h_M^2/4$ for
 small $h_M$, which is consistent with $p_c \approx h_M$ only when $h_M \approx 4$.
@@ -345,16 +345,16 @@ Delaunay-adjacent, and (2) the path does not create a Yang-Baxter arbitrage cycl
 
 **Computing $a_n$:** From the transfer matrix:
 
-$$a_n = \mathbf{1}^T A^n \mathbf{1}
-= \sum_k v_k^T \mathbf{1} \cdot \lambda_k^n \cdot \mathbf{1}^T v_k \tag{3.2}$$
+$$a_n = \mathbf{1}^{T} A^n \mathbf{1}
+= \sum_k v_k^T \mathbf{1} \cdot \lambda_k^n \cdot \mathbf{1}^{T} v_k \tag{3.2}$$
 
 where $\lambda_k$ and $v_k$ are eigenvalues/eigenvectors of $A$.
 
 **The generating function:**
 
 $$F(x) = \sum_{n=0}^\infty a_n x^n
-= \mathbf{1}^T\left(\sum_{n=0}^\infty (xA)^n\right)\mathbf{1}
-= \mathbf{1}^T(I - xA)^{-1}\mathbf{1} \tag{3.3}$$
+= \mathbf{1}^{T}\left(\sum_{n=0}^\infty (xA)^n\right)\mathbf{1}
+= \mathbf{1}^{T}(I - xA)^{-1}\mathbf{1} \tag{3.3}$$
 
 This is a rational function of $x$ with poles at $x_k = 1/\lambda_k$.
 
@@ -369,14 +369,14 @@ function is a rational function of $x$ with the Kelly rate encoding the dominant
 ### 3.2 The kernel method for the Clifford torus
 
 For the Clifford torus with adjacency matrix $A^{T^2}$ (FILTRATIONS.md equation 3.7),
-the generating function $F(x) = \mathbf{1}^T(I-xA^{T^2})^{-1}\mathbf{1}$ satisfies:
+the generating function $F(x) = \mathbf{1}^{T}(I-xA^{T^2})^{-1}\mathbf{1}$ satisfies:
 
 $$F(x) = \frac{1 - 4x^2}{1 - 2x - 2x^2} \tag{3.4}$$
 
 (after row-reducing the $4\times 4$ system). The poles are at $x^2+x/2-1/2=0$,
 giving $x_c = (-1+\sqrt{3})/2 \approx 0.366$. Check: $\rho(A^{T^2}) = 2$, so
 $x_c = 1/2$. The discrepancy comes from the constraint that paths must start from
-a specific cell — the full generating function $\mathbf{1}^T(I-xA)^{-1}\mathbf{1}$
+a specific cell — the full generating function $\mathbf{1}^{T}(I-xA)^{-1}\mathbf{1}$
 gives $x_c = 1/\rho(A) = 1/2$. ✓
 
 **Extracting asymptotics via singularity analysis** (Flajolet-Sedgewick \[2009\]):
@@ -454,7 +454,7 @@ its Delaunay graph $\mathcal{D}(M)$ — from different angles:
 | Guttman-Brak | Transfer matrix $A$ | Voronoi automaton | $A_{ij}=\mathbf{1}[(i,j)\in\mathcal{D}]$ |
 | Guttman-Brak | SAW connective constant $\mu$ | Kelly rate | $\mu = e^{h_{\rm Kelly}}$ |
 | Guttman-Brak | Percolation threshold $p_c$ | Cheeger constant $h_M$ | $p_c \approx h_M$ |
-| Wilf | Generating function $F(x)$ | Path count | $F(x)=\mathbf{1}^T(I-xA)^{-1}\mathbf{1}$ |
+| Wilf | Generating function $F(x)$ | Path count | $F(x)=\mathbf{1}^{T}(I-xA)^{-1}\mathbf{1}$ |
 | Wilf | Dominant pole $x_c$ | Kelly rate | $x_c = e^{-h_{\rm Kelly}}$ |
 | Euler formula | $V-E+F=\chi(M)$ | Lattice eligibility | Topological constraint |
 

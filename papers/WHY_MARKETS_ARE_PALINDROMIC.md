@@ -243,7 +243,7 @@ palindromic because the simplex is.
 
 ### 5.3 Level-space vs simplex-space
 
-Markets described in LEVEL SPACE (prices in $\mathbb{R}_+$) via GBM:
+Markets described in LEVEL SPACE (prices in $\mathbb{R}_{+}$) via GBM:
 non-reversible, non-palindromic.
 
 Markets described on the SIMPLEX (portfolio weights in $\Delta_{d-1}$)

@@ -70,7 +70,7 @@ possible and how fast they can be traversed.
 This is the central lesson of the preceding twenty-eight papers. The financial
 market is a dynamical system on the portfolio simplex $\Delta_{d-1}$ equipped
 with the Fisher-Rao metric $g^{\mathrm{FR}}_{ij} = \delta_{ij}/b_i$, embedded
-in the Bhattacharyya sphere $S^{d-1}_+$ of constant curvature $K=1/4$. The
+in the Bhattacharyya sphere $S^{d-1}_{+}$ of constant curvature $K=1/4$. The
 market manifold $M^r$ is the $r$-dimensional submanifold of log-optimal
 portfolios. Its curvature determines the Sharpe ratio (R1), its topology
 determines the Dyson class (R21), its spectral gap determines the mixing
@@ -93,8 +93,8 @@ theorem — it is a dictionary.
 | System | State space | Dimension | Curvature type | Metric |
 |:-------|:------------|:---------:|:---------------|:-------|
 | Turing machine | $\mathbb{Z}$ (tape) | 1 | $K=0$ (flat) | Discrete |
-| Cellular automaton | $\mathbb{Z}^d$ (lattice) | $d$ | $K=0$ (flat) | Discrete |
-| Classical neural net | $\mathbb{R}^n$ (weights) | $n$ | Variable | Fisher-Rao of parameters |
+| Cellular automaton | $\mathbb{Z}^{d}$ (lattice) | $d$ | $K=0$ (flat) | Discrete |
+| Classical neural net | $\mathbb{R}^{n}$ (weights) | $n$ | Variable | Fisher-Rao of parameters |
 | Quantum computer | $\mathbb{C}P^n$ (Hilbert) | $n$ | $K>0$ | Fubini-Study |
 | Financial market | $\Delta_{d-1}$ (simplex) | $d-1$ | $K=1/4$ (ambient) | Fisher-Rao |
 | Biological brain | $\Delta_{N-1}$ (firing rates) | $N-1$ | $K=1/4$ (ambient) | Fisher-Rao |
@@ -111,7 +111,7 @@ on the same geometric substrate that assets trade portfolio weight.
 
 The distinction between metaphor and mathematics is computability. When we say
 the market manifold has curvature $K$, we mean that $K$ is a computable number
-obtained from the second fundamental form of $M^r$ in $S^{d-1}_+$, measurable
+obtained from the second fundamental form of $M^r$ in $S^{d-1}_{+}$, measurable
 from return data, with statistical confidence intervals. When we say the brain's
 effective manifold has curvature, we mean the same thing applied to neural
 population firing rates — and neuroscientists have been measuring this since
@@ -148,7 +148,7 @@ approach each other over time. This is ideal for reaching consensus and
 terrible for exploring alternatives.
 
 The exemplars: quantum computing on $\mathbb{C}P^n$ with the Fubini-Study
-metric; CAPM markets (great sphere sections of $S^{d-1}_+$); any system whose
+metric; CAPM markets (great sphere sections of $S^{d-1}_{+}$); any system whose
 state space is a sphere or projective space.
 
 Properties:
@@ -165,7 +165,7 @@ search over large unstructured spaces and for creative recombination.
 In zero curvature, geodesics neither converge nor diverge. Different
 processes run independently and indefinitely without interfering.
 
-The exemplars: classical parallel computing on $\mathbb{Z}^d$ lattices;
+The exemplars: classical parallel computing on $\mathbb{Z}^{d}$ lattices;
 Clifford torus markets (flat torus $T^2$ embedded in $S^3$); any system
 whose state space is Euclidean or a flat torus.
 
@@ -188,7 +188,7 @@ distance $R$ of any given point grows as $e^{\sqrt{|K|}R}$ — exponentially
 many neighbours in a finite radius.
 
 The exemplars: tree-structured computation (every tree embeds quasi-isometrically
-in $\mathbb{H}^n$); pseudo-Anosov markets (hyperbolic surfaces); the
+in $\mathbb{H}^{n}$); pseudo-Anosov markets (hyperbolic surfaces); the
 attention mechanism in transformers (effective negative curvature via
 all-to-all connectivity); the brain's small-world network.
 
@@ -357,7 +357,7 @@ diameter with polynomial volume growth — and hyperbolic space achieves exactly
 this.
 
 Empirically: Krioukov et al. [2010] showed that the internet's autonomous
-system graph embeds naturally in $\mathbb{H}^2$. Allard and Serrano [2020]
+system graph embeds naturally in $\mathbb{H}^{2}$. Allard and Serrano [2020]
 extended this to biological neural networks. The brain IS a negatively curved
 computational manifold, not approximately but precisely in the sense that its
 connectivity graph embeds with low distortion in hyperbolic space.
@@ -428,17 +428,17 @@ Let $X$ be the space of external states (the world). Define:
 |:------|:------|:---------------|:--------|
 | 0 | $X$ | Raw input | Thermostat reading temperature |
 | 1 | $\mathcal{P}(X)$ | Perception | Animal forming belief about food location |
-| 2 | $\mathcal{P}^2(X)$ | Metacognition | "I think I know where the food is" |
-| 3 | $\mathcal{P}^3(X)$ | Self-awareness | "I know that I am uncertain about the food" |
-| $k$ | $\mathcal{P}^k(X)$ | $k$-th order introspection | Recursive self-modelling |
+| 2 | $\mathcal{P}^{2}(X)$ | Metacognition | "I think I know where the food is" |
+| 3 | $\mathcal{P}^{3}(X)$ | Self-awareness | "I know that I am uncertain about the food" |
+| $k$ | $\mathcal{P}^{k}(X)$ | $k$-th order introspection | Recursive self-modelling |
 
 Here $\mathcal{P}(X)$ denotes the space of probability measures on $X$,
-and $\mathcal{P}^k(X) = \mathcal{P}(\mathcal{P}^{k-1}(X))$ is the $k$-fold
+and $\mathcal{P}^{k}(X) = \mathcal{P}(\mathcal{P}^{k-1}(X))$ is the $k$-fold
 iteration. This is the **Giry tower** — the iteration of the Giry monad
 from categorical probability theory (Giry [1982]).
 
-Each level $\mathcal{P}^k(X)$ carries its own Fisher-Rao metric
-$g^{\mathrm{FR}}_k$. The Fisher information at Level $k$ measures how
+Each level $\mathcal{P}^{k}(X)$ carries its own Fisher-Rao metric
+$g^{\mathrm{FR}}_{k}$. The Fisher information at Level $k$ measures how
 sensitively $k$-th order beliefs respond to perturbation. A system with
 high Fisher information at Level 2 has sharp metacognition: it can
 distinguish finely between its own states of uncertainty. A system with
@@ -457,7 +457,7 @@ determine, reason about its own uncertainty.
 **A social animal** (primate, corvid, cetacean) operates at Level 2.
 Theory of mind — the ability to model what another agent believes — requires
 Level 2: you must form a distribution over another agent's distributions
-over the world. This is $\mathcal{P}^2(X)$.
+over the world. This is $\mathcal{P}^{2}(X)$.
 
 **A human** operates at Level 3 and intermittently higher. "I know that I
 don't know" is Level 3. "I know that you think that I know" is Level 3
@@ -481,8 +481,8 @@ uncertain agent — it must have a state that encodes "my current belief
 could be wrong in the following ways." This is the minimal structure that
 could generate the subjective experience of uncertainty, doubt, surprise.
 
-The Fisher-Rao metric at Level 2, $g^{\mathrm{FR}}_2$, measures the
-resolution of self-knowledge. Its spectral gap $\lambda_1(g^{\mathrm{FR}}_2)$
+The Fisher-Rao metric at Level 2, $g^{\mathrm{FR}}_{2}$, measures the
+resolution of self-knowledge. Its spectral gap $\lambda_1(g^{\mathrm{FR}}_{2})$
 determines how quickly the system can distinguish between its own states
 of uncertainty. A system with $\lambda_1 = 0$ at Level 2 has no ability
 to tell the difference between "I am confident" and "I am confused" — it
@@ -535,7 +535,7 @@ approaches to consciousness:
 - **Strange Loops** (Hofstadter [1979]): Hofstadter's thesis — that
   consciousness arises from self-referential loops — is the informal version
   of Giry tower ascent. The strange loop IS the map
-  $\mathcal{P}^k(X) \to \mathcal{P}^{k+1}(X)$: the system modelling its
+  $\mathcal{P}^{k}(X) \to \mathcal{P}^{k+1}(X)$: the system modelling its
   own modelling, recursively.
 
 - **Global Workspace Theory** (Baars [1988]): The global workspace is
@@ -649,7 +649,7 @@ amount destroyed is computable.
 |:----|:-----------|:-------------|:-------------|
 | Pricing | $\mathcal{P}(X)$ | $\mathbb{R}$ (scalar price) | KL divergence to pricing measure |
 | Measuring | $\mathcal{H}$ (Hilbert space) | Eigenvalue | Complementary uncertainty (Heisenberg) |
-| Classifying | $\mathbb{R}^n$ (features) | $\{1, \ldots, K\}$ (labels) | Within-class variance |
+| Classifying | $\mathbb{R}^{n}$ (features) | $\{1, \ldots, K\}$ (labels) | Within-class variance |
 | Summarising | Text (high-dim) | Summary (low-dim) | Omitted mutual information |
 | Compressing | Sequence | Code | Redundancy $= H_0 - H$ |
 | Investing | $\Delta_{d-1}$ (all portfolios) | $b^{\ast} \in M^r$ (optimal) | MUP regret $r\log T / (2T)$ |
@@ -804,7 +804,7 @@ Fisher-Rao metric, is the mean curvature vector of the fitness manifold.
 
 This is Fisher's fundamental theorem of natural selection (Fisher [1930]),
 reinterpreted geometrically: the rate of increase in mean fitness equals
-the genetic variance in fitness, which is $\|H\|_{L^2}^2$ — the squared
+the genetic variance in fitness, which is $\|H\|_{L^2}^{2}$ — the squared
 mean curvature of the fitness manifold in the Bhattacharyya sphere. The
 Sharpe-curvature identity (R1) IS Fisher's theorem, applied to a different
 simplex.
@@ -862,7 +862,7 @@ We have argued for five claims of increasing ambition:
 **Claim 1** (Proved in companion papers). All information processing systems
 operate on a common geometric substrate. The Fisher-Rao simplex
 $(\Delta_{d-1}, g^{\mathrm{FR}})$ embedded in the Bhattacharyya sphere
-$S^{d-1}_+$ is the unique geometry compatible with the axioms of classical
+$S^{d-1}_{+}$ is the unique geometry compatible with the axioms of classical
 probability. Any system whose state is a probability distribution inherits
 this geometry. The curvature, spectral gap, Cheeger constant, and dimension
 are computable invariants with measurable consequences.
@@ -945,7 +945,7 @@ channels. Does this provide a better model of cognitive phenomena
 empirical evidence for non-commutativity in neural population codes?
 
 **OP-E. The information-theoretic cost of free will.**
-A decision is a projection from $\mathcal{P}^k(X)$ (high-level belief) to
+A decision is a projection from $\mathcal{P}^{k}(X)$ (high-level belief) to
 an action in a finite action space. The information destroyed in this
 projection is a computable quantity. Is the subjective experience of "free
 will" related to the magnitude of this information destruction — the sense

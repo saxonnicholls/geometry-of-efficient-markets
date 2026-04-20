@@ -71,9 +71,9 @@ growth rate; information architecture.
 The Hopf fibration, discovered by Heinz Hopf in 1931, is the map
 $\pi: S^3 \to S^2$ defined by
 
-$$\pi(z_1, z_2) = (2\operatorname{Re}(\bar{z}_1 z_2),\; 2\operatorname{Im}(\bar{z}_1 z_2),\; |z_1|^2 - |z_2|^2) \tag{1.1}$$
+$$\pi(z_1, z_2) = (2\operatorname{Re}(\bar{z}_{1} z_2), 2\operatorname{Im}(\bar{z}_{1} z_2), |z_1|^2 - |z_2|^2) \tag{1.1}$$
 
-where $(z_1, z_2) \in \mathbb{C}^2$ with $|z_1|^2 + |z_2|^2 = 1$ parameterises
+where $(z_1, z_2) \in \mathbb{C}^{2}$ with $|z_1|^2 + |z_2|^2 = 1$ parameterises
 $S^3$. The fiber over each point $p \in S^2$ is a great circle $S^1 \subset S^3$.
 Every two fibers are linked exactly once — they cannot be separated by any
 continuous deformation. This linking is the topological content of the Hopf
@@ -89,14 +89,14 @@ Hopf fibrations), corresponding to the four normed division algebras.
 
 For a market with $d = 3$ assets, the portfolio simplex is
 
-$$\Delta_2 = \{(b_1, b_2, b_3) \in \mathbb{R}^3_+ : b_1 + b_2 + b_3 = 1\}$$
+$$\Delta_2 = \{(b_1, b_2, b_3) \in \mathbb{R}^{3}_+ : b_1 + b_2 + b_3 = 1\}$$
 
 and the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$ maps $\Delta_2$ to the
 positive octant of the unit sphere:
 
-$$S^2_+ = \{u \in \mathbb{R}^3 : u_i \geq 0,\; \|u\| = 1\}. \tag{1.2}$$
+$$S^2_+ = \{u \in \mathbb{R}^{3} : u_i \geq 0, \|u\| = 1\}. \tag{1.2}$$
 
-Now consider the ambient 3-sphere $S^3 \subset \mathbb{C}^2$. Writing
+Now consider the ambient 3-sphere $S^3 \subset \mathbb{C}^{2}$. Writing
 $z_j = u_{2j-1} + iu_{2j}$ for $j=1,2$, we have $S^3 = \{(u_1,u_2,u_3,u_4) :
 \sum u_i^2 = 1\}$. The Bhattacharyya hemisphere $S^2_+$ embeds in $S^3$ as the
 real locus $\{u_2 = 0, u_4 = 0, u_1 \geq 0, u_3 \geq 0\}$ — a great semicircle.
@@ -133,15 +133,15 @@ portfolios with those factor exposures but varying idiosyncratic composition.
 
 ### 1.4 Kelly invariance on fibers
 
-The Kelly growth rate function $L_T(b) = \frac{1}{T}\sum_{t=1}^T \log\langle b, x_t\rangle$
+The Kelly growth rate function $L_T(b) = \frac{1}{T}\sum_{t=1}^{T} \log\langle b, x_t\rangle$
 decomposes under the factor structure. Writing $\log\langle b, x_t\rangle =
 \log\langle b, \bar{x}_t\rangle + \log(1 + \langle b, \epsilon_t\rangle/\langle b, \bar{x}_t\rangle)$
-where $\bar{x}_t$ is the factor component and $\epsilon_t$ is idiosyncratic noise,
+where $\bar{x}_{t}$ is the factor component and $\epsilon_t$ is idiosyncratic noise,
 the idiosyncratic contribution averages to zero along the fiber.
 
 **Lemma H1** (Kelly invariance under Hopf fiber action). *Let $\pi: S^{2d-1} \to
 \mathbb{C}P^{d-1}$ be the complex Hopf fibration restricted to $S^{d-1}_+$.
-Let $b, b' \in S^{d-1}_+$ lie in the same Hopf fiber: $\pi(b) = \pi(b')$.
+Let $b, b' \in S^{d-1}_{+}$ lie in the same Hopf fiber: $\pi(b) = \pi(b')$.
 Then*
 
 $$\lim_{T \to \infty} L_T(b) = \lim_{T \to \infty} L_T(b') \quad \text{a.s.} \tag{1.4}$$
@@ -149,7 +149,7 @@ $$\lim_{T \to \infty} L_T(b) = \lim_{T \to \infty} L_T(b') \quad \text{a.s.} \ta
 *provided the return process satisfies a strong law of large numbers with the
 factor structure aligned to the Hopf base.*
 
-*Proof.* The fiber action on $S^{d-1}_+$ is $b \mapsto e^{i\theta} \cdot b$ in
+*Proof.* The fiber action on $S^{d-1}_{+}$ is $b \mapsto e^{i\theta} \cdot b$ in
 the complexified coordinates. In the real portfolio coordinates, this corresponds
 to rotations within the idiosyncratic subspace $N_{b^{\ast}}M$ that preserve the
 factor exposures $\Pi_{TM}(b) = \Pi_{TM}(b')$. The Kelly growth rate
@@ -185,7 +185,7 @@ normed division algebras $\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}$:
 | Quaternionic | $S^{4n+3} \to \mathbb{H}P^n$ | $S^3$ | $\mathbb{H}P^n$ | Quaternionic Hopf |
 | Octonionic | $S^{15} \to S^8$ | $S^7$ | $S^8$ | Exceptional (exists only for $n=1$) |
 
-For a market with $d$ assets on $S^{d-1}_+$, the relevant fibration depends on $d$:
+For a market with $d$ assets on $S^{d-1}_{+}$, the relevant fibration depends on $d$:
 
 - **$d = 2k$ (even):** The sphere $S^{2k-1}$ admits the complex Hopf fibration
   $S^{2k-1} \to \mathbb{C}P^{k-1}$ with fiber $S^1$. The factor base is the
@@ -240,12 +240,12 @@ to the type of Hopf fibration over the factor base space:*
 *Proof sketch.* The Dyson classification rests on the anti-unitary symmetries of
 the Hamiltonian (in the market context: the symmetries of the Fisher information
 matrix $F_M$). A system with time-reversal symmetry $\mathcal{T}$ and
-$\mathcal{T}^2 = +1$ has $\beta = 1$ (real eigenvalues, $O(n)$ invariance). If
-$\mathcal{T}^2 = -1$, then $\beta = 4$ (Kramers degeneracy, $Sp(n)$ invariance).
+$\mathcal{T}^{2} = +1$ has $\beta = 1$ (real eigenvalues, $O(n)$ invariance). If
+$\mathcal{T}^{2} = -1$, then $\beta = 4$ (Kramers degeneracy, $Sp(n)$ invariance).
 If $\mathcal{T}$ is broken, then $\beta = 2$ ($U(n)$ invariance).
 
 For the CAPM market ($S^r_+$): the time-reversal symmetry
-$b(t) \mapsto b(T-t)$ is a symmetry of the Jacobi process, and $\mathcal{T}^2 = +1$.
+$b(t) \mapsto b(T-t)$ is a symmetry of the Jacobi process, and $\mathcal{T}^{2} = +1$.
 The fiber is trivial ($S^0$).
 
 For the Clifford torus ($T^2$): the Berry phase from FIBER_BUNDLES.md breaks
@@ -253,9 +253,9 @@ time-reversal symmetry — a portfolio traversing a closed loop on $T^2$ accumul
 a non-zero geometric phase. This forces $\beta = 2$ and the complex Hopf fiber
 structure $S^1$.
 
-For the pseudo-Anosov market ($\mathbb{H}^2$): the stable and unstable foliations
-$\mathcal{F}^s, \mathcal{F}^u$ provide two anti-commuting complex structures
-satisfying $\mathcal{T}^2 = -1$. This forces $\beta = 4$ and the quaternionic Hopf
+For the pseudo-Anosov market ($\mathbb{H}^{2}$): the stable and unstable foliations
+$\mathcal{F}^{s}, \mathcal{F}^{u}$ provide two anti-commuting complex structures
+satisfying $\mathcal{T}^{2} = -1$. This forces $\beta = 4$ and the quaternionic Hopf
 fiber structure $S^3$. $\blacksquare$
 
 **Remark 2.1.** Lemma H2 provides a new perspective on the Dyson-Manifold
@@ -299,7 +299,7 @@ The financial content of each level:
 For the WF diffusion on $M^r$, the generator is the Laplace-Beltrami operator
 $\Delta_M$ (with respect to the induced metric $g_M$). The spectral gap is
 
-$$\lambda_1 = \inf\left\{\frac{\int_M |\nabla f|^2\,d\mathrm{vol}_M}{\int_M f^2\,d\mathrm{vol}_M} : \int_M f\,d\mathrm{vol}_M = 0\right\} \tag{3.1}$$
+$$\lambda_1 = \inf\left\{\frac{\int_M |\nabla f|^2\,d\mathrm{vol}_{M}}{\int_M f^2\,d\mathrm{vol}_{M}} : \int_M f\,d\mathrm{vol}_{M} = 0\right\} \tag{3.1}$$
 
 the smallest non-zero eigenvalue of $-\Delta_M$.
 
@@ -335,10 +335,10 @@ $\lambda_1 = 52$. Information propagates quickly — the CAPM is well-mixed with
 fast exponential decay of correlations at rate $e^{-52 t/T}$.
 
 **Clifford torus ($T^2$, flat torus BM).** The eigenvalues of the Laplacian on
-the flat torus $T^2 = \mathbb{R}^2 / \Lambda$ (where $\Lambda$ is the lattice)
+the flat torus $T^2 = \mathbb{R}^{2} / \Lambda$ (where $\Lambda$ is the lattice)
 are
 
-$$\lambda_{m,n} = 4\pi^2(m^2/a^2 + n^2/b^2),\quad (m,n) \in \mathbb{Z}^2 \setminus \{(0,0)\} \tag{3.4}$$
+$$\lambda_{m,n} = 4\pi^2(m^2/a^2 + n^2/b^2),\quad (m,n) \in \mathbb{Z}^{2} \setminus \{(0,0)\} \tag{3.4}$$
 
 where $a, b$ are the torus periods. For the standard Clifford torus with
 $a = b = \pi/2$ (the quarter-torus in $S^3$): $\lambda_1 = 4\pi^2/((\pi/2)^2) \cdot 1 = 16$.
@@ -346,7 +346,7 @@ The mixing is exponential but moderate. Crucially, the flat directions of the
 torus produce polynomial corrections: the theta function kernel $\vartheta_3$ from
 MARKET_PROCESSES.md has algebraic tails from the lattice sum.
 
-**Pseudo-Anosov market ($\mathbb{H}^2$, hyperbolic BM).** On a compact
+**Pseudo-Anosov market ($\mathbb{H}^{2}$, hyperbolic BM).** On a compact
 hyperbolic surface $\Sigma_g$ of genus $g \geq 2$, the spectral gap satisfies
 
 $$\lambda_1 \geq \frac{1}{4} - \frac{1}{4}\left(\frac{2\pi(2g-2)}{\mathrm{Area}(\Sigma_g)}\right)^2 \tag{3.5}$$
@@ -368,7 +368,7 @@ Combining these spectral results with the ergodic theory of each process:
 |:------------|:---------|:--------|:-----------|:------------|
 | CAPM ($S^r_+$) | Yes | Yes | Yes | $e^{-\lambda_1 t}$, $\lambda_1 = r+d-2$ |
 | Clifford torus ($T^2$) | Yes | Yes | No | $e^{-16t}$ with polynomial corrections |
-| Pseudo-Anosov ($\mathbb{H}^2$) | Yes | Yes | Yes | $e^{-\lambda_{\rm pA} t}$, $\lambda_{\rm pA} = \log \lambda_{\rm pA}$ |
+| Pseudo-Anosov ($\mathbb{H}^{2}$) | Yes | Yes | Yes | $e^{-\lambda_{\rm pA} t}$, $\lambda_{\rm pA} = \log \lambda_{\rm pA}$ |
 
 *The pseudo-Anosov market has the strongest mixing properties:*
 
@@ -383,7 +383,7 @@ from the flat directions prevent isomorphism with an i.i.d. process.*
 
 *Proof.* (a) For the Anosov property: the pseudo-Anosov diffeomorphism
 $\phi: \Sigma_g \to \Sigma_g$ has uniform hyperbolicity — there exist stable and
-unstable foliations $\mathcal{F}^s, \mathcal{F}^u$ with contraction/expansion
+unstable foliations $\mathcal{F}^{s}, \mathcal{F}^{u}$ with contraction/expansion
 rates $\lambda_{\rm pA}^{\pm 1}$. Ornstein's theorem (extended to Anosov systems
 by Ornstein-Weiss) states that all Anosov diffeomorphisms preserving a smooth
 measure are Bernoulli. The SRB measure from MARKET_PROCESSES.md is absolutely
@@ -496,7 +496,7 @@ graph Cheeger constant $h_{\mathcal{D}} = \min_S |E(S, \bar{S})|/\min(|S|,
 |\bar{S}|)$ (the edge expansion). As the mesh of the Delaunay triangulation
 refines, $h_{\mathcal{D}} \to h_M$ (Dodziuk 1984). The Fiedler eigenvalue
 $\lambda_2(L_{\mathcal{D}})$ of the graph Laplacian satisfies
-$\lambda_2 \geq h_{\mathcal{D}}^2/2$ (the discrete Cheeger inequality) and
+$\lambda_2 \geq h_{\mathcal{D}}^{2}/2$ (the discrete Cheeger inequality) and
 is computable in $O(d^2)$ operations from the correlation matrix. $\blacksquare$
 
 **Remark 4.1.** The connection to GEOSPATIAL_CONTAGION.md is precise: the Cheeger
@@ -524,7 +524,7 @@ $n = 1, 2, 4, 8$ — precisely the four Hopf fibrations.
 ### 5.2 Market interpretation
 
 For the market manifold: the Hopf invariant of the factor projection
-$\pi: S^{d-1}_+ \to B^{r}$ (where $B^r$ is the factor base) counts how many
+$\pi: S^{d-1}_{+} \to B^{r}$ (where $B^r$ is the factor base) counts how many
 times the idiosyncratic fiber "winds around" the factor base.
 
 **$H(\pi) = 0$: Trivial fiber (CAPM).** The factor model explains everything.
@@ -559,7 +559,7 @@ FIBER_BUNDLES.md Theorem 4.1 are quantised in units of $H(\pi)$.*
 *Proof.* For the complex Hopf bundle $S^{2n+1} \to \mathbb{C}P^n$, the first
 Chern class is the generator of $H^2(\mathbb{C}P^n, \mathbb{Z}) \cong
 \mathbb{Z}$, and equals $[\omega_{FS}]$. The Hopf invariant of the fibration is
-$H(\pi) = 1$. For a general map $f: S^{d-1}_+ \to B^r$ that factors through
+$H(\pi) = 1$. For a general map $f: S^{d-1}_{+} \to B^r$ that factors through
 the Hopf fibration as $f = \pi \circ g$, the first Chern class of the pullback
 bundle is $c_1(g^{\ast} \xi) = \deg(g) \cdot c_1(\xi) = \deg(g) \cdot [\omega_{FS}]$.
 The Hopf invariant $H(f) = \deg(g)$ counts the degree of the map from $M^r$ to
@@ -574,7 +574,7 @@ the base, which equals the winding number of the fiber. $\blacksquare$
 The "information architecture" of a market is the complete fiber bundle structure
 $(E, B, F, \pi, G)$ where:
 
-- **Total space $E = S^{d-1}_+$:** the full asset space. Each point is a
+- **Total space $E = S^{d-1}_{+}$:** the full asset space. Each point is a
   complete portfolio specification.
 - **Base $B = B^r$:** the factor space. Each point is a factor exposure vector.
   This is the "systematic" information — what drives correlated returns.
@@ -648,17 +648,17 @@ market can be balanced or unbalanced depending on the stretch factor.
 
 ### 7.1 The ambient mixing guarantee
 
-The ambient space $S^{d-1}_+$ is compact and connected. The WF diffusion on
-$S^{d-1}_+$ is therefore ergodic by the classical ergodic theorem for compact
+The ambient space $S^{d-1}_{+}$ is compact and connected. The WF diffusion on
+$S^{d-1}_{+}$ is therefore ergodic by the classical ergodic theorem for compact
 manifolds without boundary. In fact, it is mixing: the spectral gap of
-$-\Delta_{S^{d-1}_+}$ is $\lambda_1 = d - 1 > 0$ for all $d \geq 2$.
+$-\Delta_{S^{d-1}_{+}}$ is $\lambda_1 = d - 1 > 0$ for all $d \geq 2$.
 
 This means: on the FULL simplex, information always propagates. The question
 is whether it propagates on the SUBMANIFOLD $M^r$.
 
 ### 7.2 Mixing on the submanifold
 
-A submanifold $M^r \subset S^{d-1}_+$ inherits a Riemannian metric $g_M$ from
+A submanifold $M^r \subset S^{d-1}_{+}$ inherits a Riemannian metric $g_M$ from
 the ambient space. But it does NOT automatically inherit the mixing property
 of the ambient space. The obstruction is topological:
 
@@ -669,7 +669,7 @@ of the ambient space. The obstruction is topological:
   $\lambda_1(M) \approx 0$ and mixing is slow.
 
 **Theorem 7.1** (Informational efficiency = mixing = Cheeger positivity).
-*A market manifold $M^r \subset S^{d-1}_+$ is informationally efficient in the
+*A market manifold $M^r \subset S^{d-1}_{+}$ is informationally efficient in the
 mixing sense iff the following equivalent conditions hold:*
 
 *(a) $M^r$ is connected.*
@@ -735,7 +735,7 @@ of crisis.
 
 The Manifold Universal Portfolio (CONVERGENCE.md) is defined as
 
-$$\hat{b}_T^M = \frac{\int_{M^r} b\, W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{8.1}$$
+$$\hat{b}_{T}^{M} = \frac{\int_{M^r} b\, W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{8.1}$$
 
 where the integration is over the $r$-dimensional market manifold $M^r$.
 
@@ -743,7 +743,7 @@ In the Hopf fibration language: $M^r$ is the BASE of the fibration. The MUP
 integrates over the base, not the total space. Cover's original Universal Portfolio
 integrates over the TOTAL space:
 
-$$\hat{b}_T^{\rm Cover} = \frac{\int_{\Delta_{d-1}} b\, W_T(b)\,d\mu(b)}{\int_{\Delta_{d-1}} W_T(b)\,d\mu(b)}. \tag{8.2}$$
+$$\hat{b}_{T}^{\rm Cover} = \frac{\int_{\Delta_{d-1}} b\, W_T(b)\,d\mu(b)}{\int_{\Delta_{d-1}} W_T(b)\,d\mu(b)}. \tag{8.2}$$
 
 The passage from Cover to MUP is EXACTLY the Hopf projection: integrate out the
 fiber direction, retain only the base.
@@ -751,7 +751,7 @@ fiber direction, retain only the base.
 **Lemma H5** (MUP = Hopf projection of Kelly strategy).
 *The MUP regret decomposes as:*
 
-$$\text{Regret}(\hat{b}_T^M) = \underbrace{\frac{r \log T}{2T}}_{\text{base regret}} + \underbrace{0}_{\text{fiber regret}} + O(1/T). \tag{8.3}$$
+$$\text{Regret}(\hat{b}_{T}^{M}) = \underbrace{\frac{r \log T}{2T}}_{\text{base regret}} + \underbrace{0}_{\text{fiber regret}} + O(1/T). \tag{8.3}$$
 
 *The base regret is $r \log T/(2T)$ — the cost of learning the $r$-dimensional
 factor structure. The fiber regret is zero — the idiosyncratic direction

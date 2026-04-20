@@ -63,9 +63,9 @@ $$-\frac{\partial\psi}{\partial\tau} = \underbrace{\left(-\mathcal{L}^\varepsilo
 
 **Definition 1.1** (Efficient Market Hamiltonian). *The **efficient market Hamiltonian** is:*
 
-$$\boxed{\mathcal{H} = -\mathcal{L}^\varepsilon - r(b)
+$$\mathcal{H} = -\mathcal{L}^\varepsilon - r(b)
 = -\frac{1}{2T}\sum_{i,j}C_{ij}(b)\frac{\partial^2}{\partial b_i\partial b_j}
-- \frac{1}{T}\sum_{t=1}^T\log\langle b, x_t\rangle} \tag{1.3}$$
+- \frac{1}{T}\sum_{t=1}^{T}\log\langle b, x_t\rangle} \tag{1.3}$$
 
 *acting on $L^2(\Delta_{d-1}, d\mu)$ where $\mu$ is the uniform measure. The factor
 $1/T$ plays the role of $\hbar$ (the semiclassical parameter).*
@@ -81,9 +81,9 @@ state energy $E_0 = -\frac{1}{2T}\log\int_\Delta W_T(b)\,d\mu(b)$.*
 is the universal portfolio posterior distribution.*
 
 *(iii) The expectation value of $b$ in the ground state is the universal portfolio weight:
-$\langle\psi_0|b|\psi_0\rangle = \hat{b}_T$.*
+$\langle\psi_0|b|\psi_0\rangle = \hat{b}_{T}$.*
 
-*Proof.* The FK formula gives $u(b,0) = \mathbb{E}^b[e^{\int r\,d\tau}] = W_T(b)$ in
+*Proof.* The FK formula gives $u(b,0) = \mathbb{E}^{b}[e^{\int r\,d\tau}] = W_T(b)$ in
 the $\varepsilon\to 0$ limit. The ground state $\psi_0$ minimises $\langle\psi|\mathcal{H}|\psi\rangle$
 subject to $\|\psi\| = 1$. By the variational principle, $\psi_0 \propto u(\cdot,0)^{1/2} = W_T^{1/2}$.
 The posterior $|\psi_0|^2 \propto W_T\mu = \pi_T$ follows. $\square$
@@ -132,7 +132,7 @@ mechanics on the market manifold:
 | Ground state $\psi_0 \propto W_T^{1/2}$ | Saddle point $b^{\ast} = \mathrm{argmax}\,L_T$ |
 | Energy gap $\lambda_1/T$ | Jacobi stability $\lambda_1$ |
 | Tunnel splitting | Clifford torus instability |
-| $\langle b\rangle_{\psi_0} = \hat{b}_T$ | $\arg\max W_T = b^{\ast}$ |
+| $\langle b\rangle_{\psi_0} = \hat{b}_{T}$ | $\arg\max W_T = b^{\ast}$ |
 | Uncertainty $\Delta b \sim T^{-1/2}$ | Cramér-Rao bound $T^{-1/2}F^{-1/2}$ |
 
 **The WKB approximation** ($\varepsilon = 1/\sqrt{T} \to 0$) connects these:
@@ -195,7 +195,7 @@ $$\tilde\pi_T(b) \propto W_T(b)\cdot\prod_i b_i^{-1/2} \tag{2.1}$$
 This is a **Dirichlet$(1/2,\ldots,1/2)$ weighted posterior** — the half-integer
 Dirichlet prior introduced by Jeffreys. In terms of $u_i = \sqrt{b_i}$:
 
-$$\tilde\pi_T(u) \propto \exp\!\left(T\sum_{t=1}^T\log\langle u^2, x_t\rangle\right)\cdot 1 \tag{2.2}$$
+$$\tilde\pi_T(u) \propto \exp\!\left(T\sum_{t=1}^{T}\log\langle u^2, x_t\rangle\right)\cdot 1 \tag{2.2}$$
 
 (the Jacobian of $b \to u^2$ cancels the $\prod b_i^{-1/2}$ factor).
 
@@ -203,11 +203,11 @@ $$\tilde\pi_T(u) \propto \exp\!\left(T\sum_{t=1}^T\log\langle u^2, x_t\rangle\ri
 posterior is the pushforward of $\tilde\pi_T$ under the map $b \mapsto b_i x_{t,i}$.
 For a portfolio concentrated near $b^{\ast} = e_i$ (100% in asset $i$):
 
-$$p(x_{t,i}) \propto x_{t,i}^{T b^{\ast}_i} \cdot (T b^{\ast}_i)^{-1/2} \tag{2.3}$$
+$$p(x_{t,i}) \propto x_{t,i}^{T b^{\ast}_{i}} \cdot (T b^{\ast}_{i})^{-1/2} \tag{2.3}$$
 
-This is a **power-law distribution** with exponent $Tb^{\ast}_i - 1/2$ — precisely a
-**Pareto distribution** with tail index $\alpha = Tb^{\ast}_i - 1/2$. For a diversified
-portfolio ($b^{\ast}_i = 1/d$): $\alpha = T/d - 1/2$. For $T = 252$, $d = 50$:
+This is a **power-law distribution** with exponent $Tb^{\ast}_{i} - 1/2$ — precisely a
+**Pareto distribution** with tail index $\alpha = Tb^{\ast}_{i} - 1/2$. For a diversified
+portfolio ($b^{\ast}_{i} = 1/d$): $\alpha = T/d - 1/2$. For $T = 252$, $d = 50$:
 $\alpha = 252/50 - 0.5 = 4.54$.
 
 **Empirical equity returns have tail index $\alpha \approx 3\text{–}5$** \[Mantegna–Stanley 1995,
@@ -218,33 +218,33 @@ for $T=252$, $d=50$ — **exactly in the empirical range**.
 of asset $i$ under the natural Fisher–Rao posterior is a Pareto distribution with tail
 index:*
 
-$$\alpha_i = T\cdot b^{\ast}_i - \frac{1}{2} \tag{2.4}$$
+$$\alpha_i = T\cdot b^{\ast}_{i} - \frac{1}{2} \tag{2.4}$$
 
 *In particular: (i) all assets have fat tails ($\alpha_i < \infty$ for finite $T$);
-(ii) assets with smaller weight $b^{\ast}_i$ have heavier tails; (iii) as $T \to \infty$
-with $b^{\ast}_i$ fixed, $\alpha_i \to \infty$ (tails become Gaussian in the large-data limit);
+(ii) assets with smaller weight $b^{\ast}_{i}$ have heavier tails; (iii) as $T \to \infty$
+with $b^{\ast}_{i}$ fixed, $\alpha_i \to \infty$ (tails become Gaussian in the large-data limit);
 (iv) the tail index satisfies the portfolio constraint $\sum_i 1/(\alpha_i + 1/2) = 1/T$.*
 
 *Proof.* The natural posterior (2.1) is a deformation of the flat posterior by the
 Fisher–Rao volume factor $\prod_i b_i^{-1/2}$. Near $b^{\ast} = (1/d,\ldots,1/d)$ (uniform),
 the marginal density of coordinate $b_i$ is:
 
-$$\pi_T(b_i) \propto b_i^{Tb^{\ast}_i - 1}(1-b_i)^{T(1-b^{\ast}_i) - 1}\cdot b_i^{-1/2} = b_i^{Tb^{\ast}_i - 3/2}(1-b_i)^{T(1-b^{\ast}_i)-1} \tag{2.5}$$
+$$\pi_T(b_i) \propto b_i^{Tb^{\ast}_{i} - 1}(1-b_i)^{T(1-b^{\ast}_{i}) - 1}\cdot b_i^{-1/2} = b_i^{Tb^{\ast}_{i} - 3/2}(1-b_i)^{T(1-b^{\ast}_{i})-1} \tag{2.5}$$
 
-This is a Beta$(Tb^{\ast}_i - 1/2,\, T(1-b^{\ast}_i))$ distribution. The tail at $b_i \to 0$:
-$\pi_T(b_i) \sim b_i^{Tb^{\ast}_i - 3/2}$, which in terms of the return $x = b_i/b^{\ast}_i$
-gives $p(x) \sim x^{Tb^{\ast}_i - 3/2}$ — a power law with exponent $Tb^{\ast}_i - 1/2$. $\square$
+This is a Beta$(Tb^{\ast}_{i} - 1/2,\, T(1-b^{\ast}_{i}))$ distribution. The tail at $b_i \to 0$:
+$\pi_T(b_i) \sim b_i^{Tb^{\ast}_{i} - 3/2}$, which in terms of the return $x = b_i/b^{\ast}_{i}$
+gives $p(x) \sim x^{Tb^{\ast}_{i} - 3/2}$ — a power law with exponent $Tb^{\ast}_{i} - 1/2$. $\square$
 
 ### 2.3 Argument 2: Sphere curvature and the Atiyah–Singer index
 
-The Bhattacharyya sphere $S^{d-1}_+$ has constant sectional curvature $K = 1/4$.
+The Bhattacharyya sphere $S^{d-1}_{+}$ has constant sectional curvature $K = 1/4$.
 For a diffusion on a curved space, the **heat kernel** $p_t(b,b')$ has corrections
 from the curvature:
 
 $$p_t(b,b') = \frac{e^{-d_{\rm FR}(b,b')^2/(2t)}}{(4\pi t)^{(d-1)/2}}
 \left[1 + \frac{R}{6}t + O(t^2)\right] \tag{2.6}$$
 
-where $R = (d-1)(d-2)/4$ is the scalar curvature of $S^{d-1}_+$ and $d_{\rm FR}$
+where $R = (d-1)(d-2)/4$ is the scalar curvature of $S^{d-1}_{+}$ and $d_{\rm FR}$
 is the Fisher–Rao distance. The curvature correction $\frac{R}{6}t$ modifies the
 effective diffusion coefficient:
 
@@ -254,7 +254,7 @@ For a return process at time $t = T\varepsilon^2 = 1$: $\sigma^2_{\rm eff} \appr
 
 **The tails.** The heat kernel on $S^{d-1}$ — the sphere — has a universal large-argument
 behaviour determined by the Atiyah–Singer index theorem applied to the sphere's Dirac
-operator. For the positive hemisphere $S^{d-1}_+$, the **spectral zeta function** is:
+operator. For the positive hemisphere $S^{d-1}_{+}$, the **spectral zeta function** is:
 
 $$\zeta_{\mathcal{H}}(s) = \sum_k (\lambda_k + E_0)^{-s} \tag{2.8}$$
 
@@ -263,7 +263,7 @@ heat kernel asymptotics and hence the tail behaviour. Each pole at $s = (d-1-2k)
 contributes a term $\sim |r|^{-(d-1-2k)}$ to the return distribution tail — a power law.
 
 **Theorem 2.2** *(Power-law tails from sphere curvature)*. *For the return distribution
-under the WF diffusion on $S^{d-1}_+$ with $K=1/4$, the tail of the return
+under the WF diffusion on $S^{d-1}_{+}$ with $K=1/4$, the tail of the return
 distribution satisfies:*
 
 $$\mathbb{P}(|r_t| > x) \sim x^{-(d-1)/2}\cdot\left(1 + \sum_{k=1}^\infty a_k x^{-2k}\right)
@@ -274,7 +274,7 @@ light tails for the full simplex. But after restricting to the $r$-dimensional m
 $M^r$, the effective dimension is $r$ and the tail exponent becomes $r/2$. For $r=4$: tail
 exponent $= 2$ — consistent with the empirically observed power-law tails.*
 
-*Proof sketch.* The spectral theory of the WF diffusion on $S^{d-1}_+$ gives the return
+*Proof sketch.* The spectral theory of the WF diffusion on $S^{d-1}_{+}$ gives the return
 distribution as a sum over spherical harmonics. The large-$x$ tail comes from the
 low-frequency harmonics (small eigenvalues), which on the $r$-dimensional manifold
 $M^r$ are the Jacobi modes with eigenvalues $\lambda_k \sim k^2/r$. The number of
@@ -335,13 +335,13 @@ three different objects:
 
 | Argument | What it measures | Tail exponent | Symbol |
 |:---------|:-----------------|:-------------|:-------|
-| Fisher–Rao divergence | Posterior **portfolio weight** distribution | $\alpha_{\rm portfolio} = Tb^{\ast}_i - 1/2$ | (2.4) |
+| Fisher–Rao divergence | Posterior **portfolio weight** distribution | $\alpha_{\rm portfolio} = Tb^{\ast}_{i} - 1/2$ | (2.4) |
 | Sphere curvature / Weyl's law | Marginal **asset return** distribution via heat kernel on $M^r$ | $\alpha_{\rm return} = r/2$ | (2.9) |
 | RG criticality | **Scaling exponent** of largest eigenvalue of return covariance | $\alpha_{\rm RG} = (d-2)/(2r)$ | (2.10) |
 
 Argument 1 gives the tail index of the **posterior portfolio weight** distribution:
-$\alpha_{\rm portfolio} = Tb^{\ast}_i - 1/2$. This governs the distribution of the
-Kelly-optimal weight $b^{\ast}_i$ under the posterior.
+$\alpha_{\rm portfolio} = Tb^{\ast}_{i} - 1/2$. This governs the distribution of the
+Kelly-optimal weight $b^{\ast}_{i}$ under the posterior.
 
 Argument 2 gives the tail index of the **asset return** distribution via the heat
 kernel on $M$: $\alpha_{\rm return} = r/2$. This is the tail index of the marginal
@@ -355,9 +355,9 @@ fat-tail exponent for asset returns is $\alpha_{\rm return} = r/2$; the portfoli
 weight distribution has a different exponent $\alpha_{\rm portfolio}$; and the RG
 exponent governs eigenvalue scaling. The relationship between these requires the
 pushforward measure from portfolio weights to returns, which depends on the specific
-embedding of $M$ in $S^{d-1}_+$.
+embedding of $M$ in $S^{d-1}_{+}$.
 
-For the empirical case ($d=50$, $r=4$, $T=252$, $b^{\ast}_i = 1/50$):
+For the empirical case ($d=50$, $r=4$, $T=252$, $b^{\ast}_{i} = 1/50$):
 - Argument 1 (portfolio weights): $\alpha_{\rm portfolio} = 252/50 - 0.5 = 4.54$
 - Argument 2 (asset returns): $\alpha_{\rm return} = 4/2 = 2$
 - Argument 3 (eigenvalue scaling): $\alpha_{\rm RG} = 48/8 = 6$
@@ -426,7 +426,7 @@ $N_{b^{\ast}}M$ under the Fisher–Rao metric — the space of unit-norm unhedge
 For a derivative with payoff $\Psi(S_T)$, the **replication error** of the best
 hedging strategy using only the $r$ factor portfolios is:
 
-$$\text{Hedging error}^2 = \|\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi\|^2_{g^{\mathrm{FR}}} \tag{3.3}$$
+$$\text{Hedging error}^{2} = \|\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi\|^2_{g^{\mathrm{FR}}} \tag{3.3}$$
 
 — the squared norm of the projection of the payoff gradient onto the normal bundle.
 
@@ -562,7 +562,7 @@ $$\mathcal{H}_{d=2} = -\frac{1}{2T}b_1(1-b_1)\frac{d^2}{db_1^2} - \frac{1}{T}\su
 
 This is a **Sturm–Liouville operator** on $[0,1]$ with a concave potential. The
 potential $V(b_1) = -\frac{1}{T}\sum_t\log(b_1 x_1 + (1-b_1)x_2)$ is a concave
-function with minimum at $b^{\ast}_1$ — a quantum well.
+function with minimum at $b^{\ast}_{1}$ — a quantum well.
 
 **Ground state:** $\psi_0(b_1) \propto (b_1 x_1 + (1-b_1)x_2)^{T/2} / (b_1(1-b_1))^{1/4}$
 
@@ -572,10 +572,10 @@ from the WF diffusion coefficient).
 **Energy levels:** The spectrum of (5.1) is (leading order in $1/T$):
 
 $$E_k = E_0 + \frac{\omega}{T}\left(k + \frac{1}{2}\right),
-\qquad \omega = \sqrt{F_{11}(b^{\ast})\cdot b^{\ast}_1(1-b^{\ast}_1)} \tag{5.2}$$
+\qquad \omega = \sqrt{F_{11}(b^{\ast})\cdot b^{\ast}_{1}(1-b^{\ast}_{1})} \tag{5.2}$$
 
 (harmonic oscillator spectrum near the potential minimum, with frequency $\omega$
-determined by the Fisher information and the WF diffusion coefficient at $b^{\ast}_1$).
+determined by the Fisher information and the WF diffusion coefficient at $b^{\ast}_{1}$).
 
 ### 5.2 The four-asset Clifford torus Hamiltonian
 
@@ -587,7 +587,7 @@ where $\Delta_{T^2}$ is the flat torus Laplacian on $[0,\pi/2]^2$. The spectrum 
 Clifford torus Hamiltonian:
 
 $$E_{mn} = E_0 + \frac{2(m^2 + n^2)}{T} - \frac{5}{2T},
-\qquad (m,n) \in \mathbb{Z}^2_{\geq 0} \tag{5.4}$$
+\qquad (m,n) \in \mathbb{Z}^{2}_{\geq 0} \tag{5.4}$$
 
 The **negative energy levels** (below the ground state): $(m,n) \in \{(0,0),(1,0),(0,1)\}$
 (three modes in the positive quadrant) — consistent with the index-5 result of
@@ -614,9 +614,9 @@ CAPM equilibrium.
 Three foundational questions — the market Hamiltonian, fat tails, and completeness —
 are all answered by the same geometric structure:
 
-$$\boxed{\begin{array}{lcl}
+$$\begin{array}{lcl}
 \text{Hamiltonian} & \leftrightarrow & \mathcal{H} = -\mathcal{L}^\varepsilon - r(b)\\[4pt]
-\text{Ground state} & \leftrightarrow & \hat{b}_T \text{ (universal portfolio)}\\[4pt]
+\text{Ground state} & \leftrightarrow & \hat{b}_{T} \text{ (universal portfolio)}\\[4pt]
 \text{Fat tails} & \leftrightarrow & \text{Fisher-Rao divergence at } \partial\Delta\\[4pt]
 \text{Tail index} & \leftrightarrow & \alpha = r/2 \text{ (factor dimension)}\\[4pt]
 \text{Incompleteness} & \leftrightarrow & \dim N_{b^{\ast}}M = d-1-r\\[4pt]

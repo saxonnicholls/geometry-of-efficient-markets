@@ -11,7 +11,7 @@
 
 **Abstract.**
 We prove that financial markets evolve toward efficiency by mean curvature flow (MCF)
-on the Bhattacharyya sphere $S^{d-1}_+$, and that this convergence is a geometric
+on the Bhattacharyya sphere $S^{d-1}_{+}$, and that this convergence is a geometric
 necessity — a theorem about curvature evolution on Riemannian submanifolds — not a
 hypothesis about rational agents. The Willmore energy $\mathcal{W}(M) = \int_M |H|^2\,d\mathrm{vol}$
 measures total market inefficiency and satisfies a strict monotonicity:
@@ -35,7 +35,7 @@ any initial condition with finite Willmore energy, MCF with surgery converges
 asymptotically to the minimal surface, the number of singularities is bounded, and
 each surgery preserves or reduces total inefficiency.
 
-- Mean curvature flow on $S^{d-1}_+$ provides a dynamical theory of market efficiency evolution
+- Mean curvature flow on $S^{d-1}_{+}$ provides a dynamical theory of market efficiency evolution
 - Five laws of convergence: Willmore monotonicity, exponential decay, entropy production, singularity classification, and surgery
 - Crises are MCF singularities — Type I (corrections) vs Type II (crashes) — classified by curvature blowup rate
 - Historical crises (1929, 1987, 1998, 2008, 2020) classified by singularity type with geometric predictions verified
@@ -84,7 +84,7 @@ eigenvalue of $F$ emerges from the noise.
 ### Stage 1: Price Discovery (Nucleation)
 
 **Geometric signature.** $r = 1$. The market manifold is one-dimensional — a curve
-in $S^{d-1}_+$. The single factor is existential: "does this asset have value?" The
+in $S^{d-1}_{+}$. The single factor is existential: "does this asset have value?" The
 Willmore energy $\mathcal{W}$ is large and volatile. The spectral gap $\lambda_1$ is
 small and unstable.
 
@@ -206,7 +206,7 @@ not hypotheses, not empirical regularities.
 ### Law 1: Willmore Monotonicity
 
 **Theorem 2.1** *(Willmore monotonicity; cf. Kuwert-Schatzle [2001])*. *Let
-$M_t \subset S^{d-1}_+$ evolve by mean curvature flow
+$M_t \subset S^{d-1}_{+}$ evolve by mean curvature flow
 $\partial M/\partial t = -H\nu$. Then the Willmore energy is non-increasing:*
 
 $$\frac{d\mathcal{W}}{dt} = \frac{d}{dt}\int_{M_t} |H|^2\,d\mathrm{vol} = -2\int_{M_t}\left(|\nabla H|^2 + |H|^2\left(|A|^2 - \frac{1}{r}|H|^2 + \overline{\mathrm{Ric}}(\nu,\nu)\right)\right)d\mathrm{vol} \leq 0 \tag{2.1}$$
@@ -314,13 +314,13 @@ before the flow resolves them.
 
 **Theorem 2.5** *(Surgery preserves efficiency; cf. Perelman [2002] for Ricci flow,
 Huisken-Sinestrari [2009] for MCF)*. *When an MCF singularity forms at
-$t = T_{\rm sing}$, surgery produces a post-singularity manifold $M_{T_{\rm sing}^+}$
+$t = T_{\rm sing}$, surgery produces a post-singularity manifold $M_{T_{\rm sing}^{+}}$
 satisfying:*
 
-*(i) $\mathcal{W}(M_{T_{\rm sing}^+}) \leq \mathcal{W}(M_{T_{\rm sing}^-})$
+*(i) $\mathcal{W}(M_{T_{\rm sing}^{+}}) \leq \mathcal{W}(M_{T_{\rm sing}^{-}})$
 (surgery does not increase total inefficiency).*
 
-*(ii) The topology of $M_{T_{\rm sing}^+}$ may differ from $M_{T_{\rm sing}^-}$:
+*(ii) The topology of $M_{T_{\rm sing}^{+}}$ may differ from $M_{T_{\rm sing}^{-}}$:
 different dimension $r'$, different topological type, different spectral gap $\lambda_1'$.*
 
 *(iii) The surgery is constrained by the singularity topology: the post-surgery
@@ -537,7 +537,7 @@ predicts the precise number of simultaneous failure modes.
 **Pre-singularity manifold.** Long-Term Capital Management traded relative-value
 strategies across multiple asset classes: bond arbitrage, merger arbitrage, equity
 pairs, volatility arbitrage, emerging market debt. In the language of the monograph:
-LTCM's portfolio sat on the Clifford torus $T^2 \subset S^{d-1}_+$ — the balanced
+LTCM's portfolio sat on the Clifford torus $T^2 \subset S^{d-1}_{+}$ — the balanced
 two-factor minimal surface where the factors are "credit quality" and "liquidity."
 
 **The Clifford torus has stability index 5.** This is proved in CLASSIFICATION.md
@@ -746,13 +746,13 @@ economy simultaneously, and then to set prices that place the economy at $b^{\as
 The geometric impossibility is as follows.
 
 **Theorem 6.1** *(Geometric Socialist Calculation Problem)*. *Computing the minimal
-surface $M^r$ of the market manifold in $S^{d-1}_+$ requires solving the minimal
+surface $M^r$ of the market manifold in $S^{d-1}_{+}$ requires solving the minimal
 surface equation — a system of $r$ coupled nonlinear elliptic PDEs — on
 $\Delta_{d-1}$. For a modern economy with $d \sim 10^6$ distinct goods and services,
 this is computationally intractable: the problem is $\#\mathbf{P}$-hard (COMPLEXITY.md,
 Theorem 4.1), and the number of local minima grows exponentially in $d$.*
 
-*Proof sketch.* The minimal surface equation for $M^r \subset S^{d-1}_+$ in
+*Proof sketch.* The minimal surface equation for $M^r \subset S^{d-1}_{+}$ in
 local coordinates $(u^1, \ldots, u^r)$ is:
 
 $$g^{ab}\left(\frac{\partial^2 X^\mu}{\partial u^a \partial u^b} - \Gamma^c_{ab}\frac{\partial X^\mu}{\partial u^c} + \bar\Gamma^\mu_{\alpha\beta}\frac{\partial X^\alpha}{\partial u^a}\frac{\partial X^\beta}{\partial u^b}\right) = 0, \quad \mu = 1,\ldots,d \tag{6.1}$$
@@ -899,14 +899,14 @@ it operates smoothly.
 We now state the main theorem of this paper: the mathematical proof that markets
 evolve to efficiency.
 
-**Theorem 7.1** *(Market Efficiency Emergence)*. *Let $M_0 \subset S^{d-1}_+$ be
+**Theorem 7.1** *(Market Efficiency Emergence)*. *Let $M_0 \subset S^{d-1}_{+}$ be
 a compact $r$-dimensional submanifold with finite Willmore energy
 $\mathcal{W}(M_0) < \infty$, representing an initial market structure. Let $M_t$
 evolve by mean curvature flow with surgery (in the sense of Huisken-Sinestrari [2009]).
 Then:*
 
 *(i) (Asymptotic efficiency) $\mathcal{W}(M_t) \to 0$ as $t \to \infty$. The market
-converges to a minimal submanifold of $S^{d-1}_+$.*
+converges to a minimal submanifold of $S^{d-1}_{+}$.*
 
 *(ii) (Exponential convergence between singularities) Between consecutive surgery
 times $T_k$ and $T_{k+1}$:*

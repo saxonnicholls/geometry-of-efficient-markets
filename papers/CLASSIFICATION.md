@@ -13,11 +13,11 @@
 We prove that strongly efficient market structures — in the sense of the geometric
 Efficient Market Hypothesis developed in the companion papers of this series — are in
 bijective correspondence with minimal submanifolds of the Bhattacharyya hemisphere
-$S^{d-1}_+$, the image of the portfolio simplex $\Delta_{d-1}$ under the square-root
+$S^{d-1}_{+}$, the image of the portfolio simplex $\Delta_{d-1}$ under the square-root
 isometry. This correspondence reduces the classification of efficient markets to a solved
 (in low dimensions) and active (in higher dimensions) programme in differential geometry.
 Our main result is that the **only stable** efficient market structures are the totally
-geodesic ones — the great sphere sections of $S^{d-1}_+$ — corresponding precisely to
+geodesic ones — the great sphere sections of $S^{d-1}_{+}$ — corresponding precisely to
 the multi-factor CAPM models. All other efficient market structures (the Clifford torus,
 the Lawson surfaces $\tau_{m,n}$, higher-genus Lawson–Brendle surfaces) are **unstable**
 saddle points of the area functional: any perturbation drives the market *away* from them
@@ -65,15 +65,15 @@ with the Fisher–Rao metric. The key objects are:
 Under the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$, the simplex maps to the
 positive hemisphere:
 
-$$S^{d-1}_+ = \{u \in \mathbb{R}^d : u_i \geq 0,\; \|u\| = 1\} \tag{1.1}$$
+$$S^{d-1}_{+} = \{u \in \mathbb{R}^{d} : u_i \geq 0, \|u\| = 1\} \tag{1.1}$$
 
 which carries the round metric of constant sectional curvature $K = 1/4$. The market
-manifold maps to $\phi(\Sigma) \subset S^{d-1}_+$, and $\Sigma$ is minimal in
-$(\Delta_{d-1}, g^{\mathrm{FR}})$ iff $\phi(\Sigma)$ is minimal in $(S^{d-1}_+, g_{\rm round})$.
+manifold maps to $\phi(\Sigma) \subset S^{d-1}_{+}$, and $\Sigma$ is minimal in
+$(\Delta_{d-1}, g^{\mathrm{FR}})$ iff $\phi(\Sigma)$ is minimal in $(S^{d-1}_{+}, g_{\rm round})$.
 
 The question addressed in this paper is:
 
-> *Among all minimal submanifolds of $S^{d-1}_+$, which are stable? How do we classify them,
+> *Among all minimal submanifolds of $S^{d-1}_{+}$, which are stable? How do we classify them,
 > compute their invariants, and interpret the classification in portfolio terms?*
 
 ### 1.2 Why stability matters economically
@@ -105,7 +105,7 @@ here for the first time to the portfolio setting.
 
 | Result | Section | Status |
 |:-------|:-------:|:------:|
-| 1-1 correspondence: efficient markets $\leftrightarrow$ minimal submanifolds of $S^{d-1}_+$ | §2 | Proved (given Conjecture 3.1 of MS) |
+| 1-1 correspondence: efficient markets $\leftrightarrow$ minimal submanifolds of $S^{d-1}_{+}$ | §2 | Proved (given Conjecture 3.1 of MS) |
 | Jacobi operator and stability Sharpe | §3 | Proved |
 | Main theorem: only stable efficient markets are great spheres | §4 | Proved (closed manifolds); boundary case $r \ll d$ is OP32 |
 | Classification table for all known low-dimensional cases | §5 | Proved |
@@ -123,29 +123,29 @@ here for the first time to the portfolio setting.
 ### 2.1 Setup
 
 We work throughout with $d$ assets, $r$ systematic factors, and the Bhattacharyya sphere
-$S^{d-1}_+$. An efficient market structure is an equivalence class of factor loading
+$S^{d-1}_{+}$. An efficient market structure is an equivalence class of factor loading
 matrices $\Phi \in \mathbb{R}^{d \times r}$ that produce the same minimal manifold
-$\phi(\Sigma)$ in $S^{d-1}_+$, up to the action of the orthogonal group $O(r)$ on the
+$\phi(\Sigma)$ in $S^{d-1}_{+}$, up to the action of the orthogonal group $O(r)$ on the
 factor space.
 
 **Definition 2.1** (Category of efficient market structures). *An **efficient market
 structure** with $d$ assets and $r$ factors is a minimal $r$-dimensional submanifold
-$M \subset S^{d-1}_+$ (without boundary, or with boundary on $\partial S^{d-1}_+$
+$M \subset S^{d-1}_{+}$ (without boundary, or with boundary on $\partial S^{d-1}_{+}$
 corresponding to portfolios with some zero weights). Two factor models $\Phi_1, \Phi_2$
 define the same efficient market structure iff $\phi(\Sigma_{\Phi_1}) = \phi(\Sigma_{\Phi_2})$
-as subsets of $S^{d-1}_+$.*
+as subsets of $S^{d-1}_{+}$.*
 
 **Theorem 2.2** *(Classification correspondence)*. *There is a bijection:*
 
 $$\left\{\begin{array}{c}\text{strongly efficient market structures}\\ d \text{ assets}, r \text{ factors}\end{array}\right\}
-\;\xrightarrow{\;\phi\;}\;
-\left\{\begin{array}{c}\text{minimal } r\text{-submanifolds of } S^{d-1}_+\\ \text{(up to isometry of }S^{d-1}_+\text{)}\end{array}\right\} \tag{2.1}$$
+ \xrightarrow{ \phi } 
+\left\{\begin{array}{c}\text{minimal } r\text{-submanifolds of } S^{d-1}_{+}\\ \text{(up to isometry of }S^{d-1}_{+}\text{)}\end{array}\right\} \tag{2.1}$$
 
 *In particular: the set of strongly efficient market structures with $d$ assets and $r$
 factors is countable (finitely many for each topological type, by Choi–Schoen \[1985\]).*
 
-*Proof.* The map $\phi$ sends $\Sigma$ to its Bhattacharyya image $\phi(\Sigma) \subset S^{d-1}_+$.
-Since $\phi$ is an isometry from $(\Delta_{d-1}, g^{\mathrm{FR}})$ to $(S^{d-1}_+, g_{\rm round}/4)$,
+*Proof.* The map $\phi$ sends $\Sigma$ to its Bhattacharyya image $\phi(\Sigma) \subset S^{d-1}_{+}$.
+Since $\phi$ is an isometry from $(\Delta_{d-1}, g^{\mathrm{FR}})$ to $(S^{d-1}_{+}, g_{\rm round}/4)$,
 it sends minimal submanifolds to minimal submanifolds bijectively. The Choi–Schoen compactness
 theorem \[1985\] states that for any fixed genus $g$ and ambient sphere $S^n$, the space of
 compact embedded minimal surfaces of genus $g$ in $S^n$ is compact (and hence countable after
@@ -154,7 +154,7 @@ taking the discrete topology on the moduli space). $\square$
 ### 2.2 Finiteness in the physically relevant range
 
 **Proposition 2.3** *(Finiteness for bounded index)*. *For fixed $(d,r)$ and fixed stability
-index $k = \mathrm{ind}(\Sigma)$, the number of minimal $r$-submanifolds of $S^{d-1}_+$
+index $k = \mathrm{ind}(\Sigma)$, the number of minimal $r$-submanifolds of $S^{d-1}_{+}$
 with $\mathrm{ind}(\Sigma) \leq k$ is finite.*
 
 *Proof.* This follows from the Morse index bounds of Ejiri \[1988\] and the subsequent
@@ -166,9 +166,9 @@ factors — contains finitely many efficient market structures at each stability
 The number grows rapidly with $r$ and the genus of $\Sigma$, but for the practically
 important class of *stable* structures (index 0), there are very few:
 
-**Corollary 2.4** *(Scarcity of stable efficient markets)*. *In $S^{d-1}_+$ for $d \leq 6$:
+**Corollary 2.4** *(Scarcity of stable efficient markets)*. *In $S^{d-1}_{+}$ for $d \leq 6$:
 the only stable compact minimal submanifolds without boundary are great sphere sections
-and (for $d = 5$) the Veronese surface. In $S^{d-1}_+$ for $d \geq 7$: the space of
+and (for $d = 5$) the Veronese surface. In $S^{d-1}_{+}$ for $d \geq 7$: the space of
 stable minimal hypersurfaces ($r = d-2$) is richer, including the Clifford-type
 hypersurfaces $S^k(\sqrt{k/(d-1)}) \times S^{d-k-2}(\sqrt{(d-k-2)/(d-1)})$ for some
 values of $k$. For $r \ll d$ (the relevant portfolio case), great spheres remain
@@ -201,7 +201,7 @@ $$\overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu}) = \frac{d-2}{4} \tag{3.3}$$
 since $\overline{\mathrm{Ric}} = \frac{(d-2)K}{1} g = \frac{d-2}{4}g$ on $S^{d-1}$.
 So:
 
-$$\boxed{Lf = \Delta_\Sigma f + \left(|II|^2 + \frac{d-2}{4}\right)f} \tag{3.4}$$
+$$Lf = \Delta_\Sigma f + \left(|II|^2 + \frac{d-2}{4}\right)f \tag{3.4}$$
 
 The **stability index** is $\mathrm{ind}(\Sigma) = \\#\{\text{negative eigenvalues of }L\}$
 (counting multiplicity). The surface is **stable** iff $\mathrm{ind}(\Sigma) = 0$,
@@ -282,15 +282,15 @@ For $d = 50$: $t_{1/2} = \frac{4\log 2}{48} \approx 0.058$ arbitrage cycles. Ver
 
 ### 4.1 Statement
 
-**Remark on boundary.** The great hemisphere $S^r_+ = S^r \cap \mathbb{R}^{r+1}_+$ is a compact manifold *with* boundary $\partial S^r_+ = S^r \cap \partial\mathbb{R}^{r+1}_+$. The stability analysis below is for the Dirichlet problem (fixed boundary), which is the financially relevant case since portfolio weights are constrained to $[0,1]$. All minimal submanifolds of $S^{d-1}_+$ that arise as market manifolds inherit this boundary from the simplex constraint.
+**Remark on boundary.** The great hemisphere $S^r_+ = S^r \cap \mathbb{R}^{r+1}_{+}$ is a compact manifold *with* boundary $\partial S^r_+ = S^r \cap \partial\mathbb{R}^{r+1}_{+}$. The stability analysis below is for the Dirichlet problem (fixed boundary), which is the financially relevant case since portfolio weights are constrained to $[0,1]$. All minimal submanifolds of $S^{d-1}_{+}$ that arise as market manifolds inherit this boundary from the simplex constraint.
 
 **Theorem 4.1** *(Simons–Lawson–Simons theorem, portfolio formulation, boundary-corrected)*. *Among all
-compact minimal $r$-submanifolds of $S^{d-1}_+$ satisfying the Dirichlet boundary condition
+compact minimal $r$-submanifolds of $S^{d-1}_{+}$ satisfying the Dirichlet boundary condition
 on $\partial\Delta_{d-1}$:*
 
-*(i) If $r \geq d-2$, the great hemisphere $S^r_+ \subset S^{d-1}_+$ is stable among minimal submanifolds with boundary.*
+*(i) If $r \geq d-2$, the great hemisphere $S^r_+ \subset S^{d-1}_{+}$ is stable among minimal submanifolds with boundary.*
 
-*(ii) If $r < d-2$ (the generic case for financial markets, where factors are far fewer than assets), stability requires additional boundary correction terms of order $\pi^2/(\mathrm{diam}(M))^2$, and the effective stability condition becomes $\mu_1^{\rm eff} = \frac{r-(d-2)}{4} + \frac{\pi^2}{L^2} > 0$, where $L$ is the effective diameter of $M$ in $S^{d-1}_+$.*
+*(ii) If $r < d-2$ (the generic case for financial markets, where factors are far fewer than assets), stability requires additional boundary correction terms of order $\pi^2/(\mathrm{diam}(M))^2$, and the effective stability condition becomes $\mu_1^{\rm eff} = \frac{r-(d-2)}{4} + \frac{\pi^2}{L^2} > 0$, where $L$ is the effective diameter of $M$ in $S^{d-1}_{+}$.*
 
 *(iii) For the low-dimensional regime $d \leq 6$, the boundary corrections suffice and the great hemispheres are stable.*
 
@@ -298,7 +298,7 @@ on $\partial\Delta_{d-1}$:*
 
 *The following additional stable structures exist:*
 
-*(iv) Great $r$-sphere sections: $M = S^r_+ \subset S^{d-1}_+$ (any totally geodesic
+*(iv) Great $r$-sphere sections: $M = S^r_+ \subset S^{d-1}_{+}$ (any totally geodesic
 positive $r$-hemisphere). These exist for any $r < d$, and are stable in the low-$d$ regime.*
 
 *(v) (**Exceptional case**) The Veronese surface: the unique stable non-totally-geodesic
@@ -329,10 +329,10 @@ codimension is 1 and we are in the exceptional Clifford case. In codimension $\g
 assets), **stability implies totally geodesic**.
 
 **Chern–do Carmo–Kobayashi \[1970\]:** The totally geodesic submanifolds of $S^{d-1}$ are
-precisely the great sphere sections. In $S^{d-1}_+$ (positive hemisphere), they are the
-great $r$-sphere sections $S^r_+ \subset S^{d-1}_+$.
+precisely the great sphere sections. In $S^{d-1}_{+}$ (positive hemisphere), they are the
+great $r$-sphere sections $S^r_+ \subset S^{d-1}_{+}$.
 
-Combining: compact minimal $r$-submanifolds of $S^{d-1}_+$ with $\mathrm{ind} = 0$ and
+Combining: compact minimal $r$-submanifolds of $S^{d-1}_{+}$ with $\mathrm{ind} = 0$ and
 $r \leq d-2$ are totally geodesic, hence great sphere sections. For $r = d-2$ (minimal
 hypersurfaces), the Clifford hypersurfaces are additionally stable when $d \geq 8$.
 The Veronese is a special case in $S^4$ proved stable by direct computation. $\square$
@@ -356,7 +356,7 @@ singularity (crisis).
 
 **Why the Veronese is exceptional.** The Veronese surface in $S^4$ ($d=5$, $r=2$) is stable
 but not totally geodesic. It corresponds to a five-asset, two-factor market with a
-$\mathbb{Z}_3$ cyclic symmetry between the assets. It is the unique compact stable
+$\mathbb{Z}_{3}$ cyclic symmetry between the assets. It is the unique compact stable
 non-CAPM efficient market in $d=5$. In practice, few equity markets have exactly 5 assets
 with exact cyclic symmetry, making the Veronese a mathematical curiosity rather than an
 empirical object. For $d \geq 6$ with $r = 2$, the Lawson–Simons theorem eliminates all
@@ -411,7 +411,7 @@ $\overline{\mathrm{Ric}} = \frac{d-2}{4} = \frac{1}{2}$ (using $d=4$). The Jacob
 $$Lf = \Delta_{T^2} f + \frac{5}{2}f \tag{5.1}$$
 
 Eigenvalues of $\Delta_{T^2}$ on the Clifford torus (a flat square torus): $-2(m^2 + n^2)$
-for $(m,n) \in \mathbb{Z}^2$. The eigenvalues of $L$ are therefore:
+for $(m,n) \in \mathbb{Z}^{2}$. The eigenvalues of $L$ are therefore:
 
 $$\lambda_{mn}(L) = -2(m^2+n^2) + \frac{5}{2} \tag{5.2}$$
 
@@ -449,8 +449,8 @@ case appears.
 The Veronese surface is the image of the map:
 
 $$v: \mathbb{R}P^2 \to S^4, \qquad [x_1:x_2:x_3] \mapsto
-\frac{1}{\sqrt{3}}\!\left(x_1 x_2,\; x_2 x_3,\; x_3 x_1,\;
-\frac{x_1^2-x_2^2}{2},\; \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}\right) \tag{5.5}$$
+\frac{1}{\sqrt{3}}\!\left(x_1 x_2, x_2 x_3, x_3 x_1, 
+\frac{x_1^2-x_2^2}{2}, \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}\right) \tag{5.5}$$
 
 (normalised to lie on $S^4$). It is a minimal immersion of $\mathbb{R}P^2$ into $S^4$,
 with $|II|^2 = 4/3$ constant, stable with all Jacobi eigenvalues positive.
@@ -459,7 +459,7 @@ with $|II|^2 = 4/3$ constant, stable with all Jacobi eigenvalues positive.
 five asset weights $b_i = v_i^2$ (after Bhattacharyya). The underlying state space is
 $\mathbb{R}P^2$ — a projective plane, not a torus. This corresponds to a market with two
 factors that are **not separately identifiable**: swapping the signs of both factors
-simultaneously gives the same portfolio (the $\mathbb{Z}_2$ redundancy of projective space).
+simultaneously gives the same portfolio (the $\mathbb{Z}_{2}$ redundancy of projective space).
 This is the mathematical structure of a market where:
 
 - Factor 1 is "long-short" and Factor 2 is "quality-junk", but the *combined* sign flip
@@ -467,7 +467,7 @@ This is the mathematical structure of a market where:
 - Specifically: the five assets are the five "quadratic products" of the three factor
   exposures, and the optimal portfolio depends only on these products.
 
-Such a market exists (exactly) in a five-asset world with $\mathbb{Z}_3$ permutation
+Such a market exists (exactly) in a five-asset world with $\mathbb{Z}_{3}$ permutation
 symmetry between the base factor exposures. It is a genuine, stable efficient market
 structure — the unique non-CAPM stable example in $d=5$.
 
@@ -564,8 +564,8 @@ an unstable direction. On the *closed* great sphere $S^r \subset S^{d-1}$, the g
 sphere is therefore unstable when $r < d-2$.
 
 **Boundary correction for $S^r_+$.** However, the market manifold is not the closed
-great sphere but the great hemisphere $S^r_+ = S^r \cap \mathbb{R}^{r+1}_+$, which has
-boundary $\partial S^r_+ = S^r \cap \partial\mathbb{R}^{r+1}_+$ (the faces where portfolio
+great sphere but the great hemisphere $S^r_+ = S^r \cap \mathbb{R}^{r+1}_{+}$, which has
+boundary $\partial S^r_+ = S^r \cap \partial\mathbb{R}^{r+1}_{+}$ (the faces where portfolio
 weights are zero). The Dirichlet boundary condition $f = 0$ on $\partial S^r_+$
 eliminates the low-frequency modes: the $k=0$ (constant) and $k=1$ (linear) modes
 on the closed sphere do not satisfy $f|_{\partial S^r_+} = 0$ and are therefore excluded.
@@ -594,7 +594,7 @@ stability fails on the closed manifold analysis. Whether the specific portfolio
 constraints (non-negativity, unit sum) restore stability in this regime is an open problem.
 
 **Open Problem (large-$d$ stability).** Determine the precise Dirichlet eigenvalues
-of the Jacobi operator on $S^r_+ \subset S^{d-1}_+$ for $r \ll d$ and establish whether
+of the Jacobi operator on $S^r_+ \subset S^{d-1}_{+}$ for $r \ll d$ and establish whether
 boundary corrections suffice for stability in the physically relevant range $d \leq 100$,
 $r \leq 8$. The answer depends on the precise geometry of the positive orthant
 restriction, which changes the spectral gap significantly relative to the closed-manifold
@@ -615,7 +615,7 @@ The Jacobi operator is:
 
 $$Lf = \Delta_{T^2}f + \frac{5}{2}f \tag{6.6}$$
 
-Eigenvalues of $\Delta_{T^2}$ on the flat torus: $-2(m^2+n^2)$ for $(m,n) \in \mathbb{Z}^2$.
+Eigenvalues of $\Delta_{T^2}$ on the flat torus: $-2(m^2+n^2)$ for $(m,n) \in \mathbb{Z}^{2}$.
 The $L$-eigenvalues are therefore $\lambda_{mn}(L) = -2(m^2+n^2) + 5/2$.
 
 Positive eigenvalues (unstable directions): $\lambda_{mn}(L) > 0$ when $m^2+n^2 < 5/4$.
@@ -763,7 +763,7 @@ generalisation. Still totally geodesic, still stable in the low-$d$ regime. Fama
 3-factor, 5-factor models are instances with $r=3$ and $r=5$.
 
 **Level 3: Veronese** ($r=2$, $d=5$ only) — The unique exceptional stable non-CAPM
-market. Five assets, two factors with $\mathbb{Z}_3$ symmetry. Stable but exotic.
+market. Five assets, two factors with $\mathbb{Z}_{3}$ symmetry. Stable but exotic.
 
 **Level 4: Clifford hypersurfaces** ($r = d-2$, $d \geq 8$) — Balanced product markets.
 Stable in high dimensions only.
@@ -773,7 +773,7 @@ unstable efficient market structures, each corresponding to a coupled-regime fac
 All unstable. All have $\mathrm{Sharpe}^{\ast} = 0$ but positive stability Sharpe growing
 with genus.
 
-$$\boxed{\begin{array}{c}
+$$\begin{array}{c}
 \text{Stable efficient markets} = \{\text{great spheres}\} \cup \{\text{Veronese}\} \cup \{\text{Clifford hypersurfaces (}d\geq 8\text{)}\}\\[6pt]
 \text{All have Sharpe}^{\ast} = 0. \text{ Only great spheres are universal attractors under MCF.}
 \end{array}}$$
@@ -805,12 +805,12 @@ $50 \geq 4 + 3 = 7$ is satisfied with enormous margin.
 
 We verify the index-5 claim for the Clifford torus $\tau_{1,1} \subset S^3$ in detail.
 
-The Clifford torus is $C = S^1(1/\sqrt{2}) \times S^1(1/\sqrt{2}) \subset S^3 \subset \mathbb{R}^4$.
+The Clifford torus is $C = S^1(1/\sqrt{2}) \times S^1(1/\sqrt{2}) \subset S^3 \subset \mathbb{R}^{4}$.
 In standard normalisation (unit sphere, $K=1$), $|II|^2 = 2$ and the Jacobi operator is:
 
 $$Jf = -\Delta_{T^2}f - 2f \tag{B.1}$$
 
-on the flat torus $T^2 = \mathbb{R}^2/(2\pi\mathbb{Z})^2$ scaled so that $C$ has area $4\pi^2$.
+on the flat torus $T^2 = \mathbb{R}^{2}/(2\pi\mathbb{Z})^2$ scaled so that $C$ has area $4\pi^2$.
 Eigenfunctions of $-\Delta_{T^2}$: $e^{i(m\theta + n\varphi)}$ with eigenvalue $m^2 + n^2$.
 
 $J$-eigenvalues: $\nu_{mn} = m^2 + n^2 - 2$.
@@ -925,11 +925,11 @@ dimensionless, universally meaningful), we define the dimensionless invariants
 of a market manifold:
 
 **The market Reynolds number** (from FOKKER_PLANCK_CFD.md):
-$$\mathrm{Re}_M = \frac{\|H\|\cdot T\cdot\mathrm{diam}(M)}{\varepsilon^2}
+$$\mathrm{Re}_{M} = \frac{\|H\|\cdot T\cdot\mathrm{diam}(M)}{\varepsilon^2}
 = \|H\|\cdot T^2\cdot\mathrm{diam}(M) \tag{C.1}$$
 
-This is dimensionless. $\mathrm{Re}_M < 1$: laminar (efficient).
-$\mathrm{Re}_M > 10$: turbulent (inefficient, alpha available).
+This is dimensionless. $\mathrm{Re}_{M} < 1$: laminar (efficient).
+$\mathrm{Re}_{M} > 10$: turbulent (inefficient, alpha available).
 
 **The concentration number:**
 $$\mathcal{C} = \frac{\lambda_1}{\sum_k\lambda_k} \tag{C.2}$$

@@ -25,7 +25,7 @@ and we state the weakest such assumption sufficient to complete the proof.
 
 Second, we introduce the **Manifold Universal Portfolio** (MUP):
 
-$$\hat{b}_T^M = \frac{\displaystyle\int_{M^r} b\, W_T(b)\,d\mu_M(b)}{\displaystyle\int_{M^r} W_T(b)\,d\mu_M(b)}$$
+$$\hat{b}_{T}^{M} = \frac{\displaystyle\int_{M^r} b\, W_T(b)\,d\mu_M(b)}{\displaystyle\int_{M^r} W_T(b)\,d\mu_M(b)}$$
 
 which integrates over the $r$-dimensional market manifold rather than the full
 $(d-1)$-dimensional simplex. We prove:
@@ -105,7 +105,7 @@ The **KKT conditions** for $b^{\ast}(t)$ as the log-optimal on $\Delta_{d-1}$ gi
 $$\nabla L(b^{\ast}(t)) = \lambda(t)\mathbf{1} + \mu(t) \tag{1.3}$$
 
 where $\lambda(t)$ is the Lagrange multiplier for $\mathbf{1}^Tb = 1$ and $\mu(t)_i \geq 0$
-with $\mu_i b^{\ast}_i = 0$ (complementary slackness — assets not in the portfolio have
+with $\mu_i b^{\ast}_{i} = 0$ (complementary slackness — assets not in the portfolio have
 non-negative shadow price). For $b^{\ast}(t)$ in the interior of $\Delta_{d-1}$: $\mu = 0$
 and $\partial_i L(b^{\ast}(t)) = \lambda(t)$ for all $i$.
 
@@ -253,17 +253,17 @@ market manifold $M$ for large $T$ (by the Laplace approximation of LAPLACE.md).
 **Definition 2.1** (Manifold Universal Portfolio). *The **Manifold Universal Portfolio**
 (MUP) integrates only over the market manifold $M^r \subset \Delta_{d-1}$:*
 
-$$\hat{b}_T^M = \frac{\displaystyle\int_{M^r} b\, W_T(b)\,d\mathrm{vol}_M(b)}
-{\displaystyle\int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)} \tag{2.1}$$
+$$\hat{b}_{T}^{M} = \frac{\displaystyle\int_{M^r} b\, W_T(b)\,d\mathrm{vol}_{M}(b)}
+{\displaystyle\int_{M^r} W_T(b)\,d\mathrm{vol}_{M}(b)} \tag{2.1}$$
 
-*where $d\mathrm{vol}_M$ is the Riemannian volume element of $(M^r, g_M)$ — the induced
+*where $d\mathrm{vol}_{M}$ is the Riemannian volume element of $(M^r, g_M)$ — the induced
 Fisher–Rao metric on the manifold.*
 
 ### 2.2 The manifold wealth process
 
 **Theorem 2.2** *(MUP wealth, Laplace approximation on the manifold)*.
 
-$$\log S_T^{*,M} = \log\int_{M^r} W_T(b)\,d\mathrm{vol}_M(b)$$
+$$\log S_T^{*,M} = \log\int_{M^r} W_T(b)\,d\mathrm{vol}_{M}(b)$$
 
 $$= T\cdot L_T(b^{\ast}) - \frac{r}{2}\log T + \frac{r}{2}\log(2\pi)
 - \frac{1}{2}\log\det F_M(b^{\ast}) + O(1/T) \tag{2.2}$$
@@ -274,7 +274,7 @@ restricted to the tangent space of $M$, and $V_r$ spans $T_{b^{\ast}}M$.*
 *Proof.* The Laplace approximation of LAPLACE.md (Theorem 4.3) applies with $M$ in place
 of $\Delta_{d-1}$. The key change: the dimension is $r$ (not $d-1$), and the Fisher matrix
 is $F_M = V_r^T F V_r$ (the projection onto the factor directions). The uniform volume
-measure $d\mathrm{vol}_M$ is proportional to Lebesgue measure on $T_{b^{\ast}}M \cong \mathbb{R}^r$
+measure $d\mathrm{vol}_{M}$ is proportional to Lebesgue measure on $T_{b^{\ast}}M \cong \mathbb{R}^{r}$
 near $b^{\ast}$. The rest of the proof is identical. $\square$
 
 ### 2.3 Comparing MUP to Cover's universal portfolio
@@ -385,10 +385,10 @@ Take PCA: $\hat\Sigma = V\Lambda V^T$. The factor subspace is $V_r = [v_1|\cdots
 
 **Step 2.** Find the log-optimal portfolio on the manifold:
 
-$$b^{\ast} = \operatorname{argmax}_{b = \Pi_\Delta(V_r\alpha),\, \alpha\in\mathbb{R}^r}
-\frac{1}{T}\sum_{t=1}^T \log\langle b, x_t\rangle \tag{3.2}$$
+$$b^{\ast} = \operatorname{argmax}_{b = \Pi_\Delta(V_r\alpha),\, \alpha\in\mathbb{R}^{r}}
+\frac{1}{T}\sum_{t=1}^{T} \log\langle b, x_t\rangle \tag{3.2}$$
 
-This is a convex program in $\alpha \in \mathbb{R}^r$ — an $r$-dimensional problem
+This is a convex program in $\alpha \in \mathbb{R}^{r}$ — an $r$-dimensional problem
 instead of $(d-1)$-dimensional. For $r=4$: trivial.
 
 **Step 3.** Compute the manifold Fisher matrix:
@@ -398,23 +398,23 @@ $$F_M(b^{\ast}) = V_r^T F(b^{\ast}) V_r, \qquad F_{ij}(b^{\ast}) = \frac{1}{T}\s
 
 **Step 4.** Compute the Laplace correction:
 
-$$\hat{b}_T^M = b^{\ast} + \frac{1}{T}F_M(b^{\ast})^{-1}\nabla_{M} L_T(b^{\ast})
+$$\hat{b}_{T}^{M} = b^{\ast} + \frac{1}{T}F_M(b^{\ast})^{-1}\nabla_{M} L_T(b^{\ast})
 = b^{\ast} + O(1/T^2) \tag{3.4}$$
 
 For the uniform prior (Jeffreys), the $O(1/T)$ correction vanishes (Theorem 4.2 of
-LAPLACE.md) and $\hat{b}_T^M = b^{\ast} + O(1/T^2)$ exactly.
+LAPLACE.md) and $\hat{b}_{T}^{M} = b^{\ast} + O(1/T^2)$ exactly.
 
 **Step 5.** (Optional) Manifold MC for higher accuracy. Sample $N$ points
 $\{b_k\}$ uniformly on $M$ via the Halton sequence on the $r$-simplex $\Delta_{r-1}$
 (mapped to $M$ through the factor parameterisation $\alpha \mapsto \Pi_\Delta(V_r\alpha)$):
 
-$$\hat{b}_T^{M,\rm MC} = \frac{\sum_{k=1}^N b_k\, W_T(b_k)}{\sum_{k=1}^N W_T(b_k)} \tag{3.5}$$
+$$\hat{b}_{T}^{M,\rm MC} = \frac{\sum_{k=1}^{N} b_k\, W_T(b_k)}{\sum_{k=1}^{N} W_T(b_k)} \tag{3.5}$$
 
 For $r=4$ and $N=1000$ QMC points: error $O(1/N) = O(10^{-3})$, computation $O(1000 \times 252 \times 50) \approx 10^7$ flops — milliseconds. Cover's full simplex QMC with $N=1000$ and $d=50$ has error $O(1)$ (completely fails for $d=50$). The manifold restriction is what makes QMC work.
 
 ### 3.2 The MUP as a factor model portfolio
 
-The MUP $\hat{b}_T^M$ is always a convex combination of the $r+1$ extreme points of
+The MUP $\hat{b}_{T}^{M}$ is always a convex combination of the $r+1$ extreme points of
 $M$ (the vertices of the factor simplex mapped through $\Pi_\Delta \circ V_r$). These
 are the "pure factor portfolios" — portfolios that maximally load on a single factor.
 The MUP is a weighted average of these, with weights determined by the factor performance.
@@ -466,7 +466,7 @@ $$\mathrm{CR}(T,d,r) = \frac{Td}{r\log T/2 + \log\det F_M/2} \approx \frac{2Td}{
 *For $d=50$, $r=4$, $T=252$: $\mathrm{CR} \approx \frac{2 \times 252 \times 50}{4 \times 5.5} \approx 1145$.*
 *The return sequence can be compressed by a factor of over 1000 with negligible portfolio performance loss.*
 
-*Proof of (ii).* The optimal portfolio estimator is the MUP $\hat{b}_T^M$, which lies
+*Proof of (ii).* The optimal portfolio estimator is the MUP $\hat{b}_{T}^{M}$, which lies
 in the $r$-dimensional manifold $M$. Specifying a point on $M$ requires $r$ real numbers;
 at precision $1/\sqrt{T}$ (the posterior width from the Laplace approximation), each
 requires $\frac{1}{2}\log T$ bits (Shannon's source coding theorem). The determinant
@@ -486,7 +486,7 @@ of Shannon's source coding theorem:
 
 $$K(b | x_{1:T}) \approx \ell^{\ast} = \frac{r}{2}\log T + O(\log\log T) \text{ bits} \tag{4.5}$$
 
-(almost surely, for generic return processes). The universal portfolio $\hat{b}_T^M$
+(almost surely, for generic return processes). The universal portfolio $\hat{b}_{T}^{M}$
 is **Kolmogorov optimal** — it achieves the algorithmic complexity lower bound. The
 minimum-complexity strategy is the one that exploits only the factor structure (the
 $r$-dimensional manifold) and ignores the $d-1-r$ idiosyncratic dimensions. This
@@ -513,9 +513,9 @@ From Theorem 2.2 and LAPLACE.md Theorem 4.3:
 **Theorem 5.1** *(Tightened Cover bound)*. *For the Manifold Universal Portfolio:*
 
 $$\frac{1}{T}\log S_T^{*,M} = L(b^{\ast}) - \frac{r\,\log T}{2T}
-- \frac{\log\det F_M(b^{\ast})}{2T} + \frac{\mathcal{M}_0^M}{T^2} + O(1/T^3) \tag{5.2}$$
+- \frac{\log\det F_M(b^{\ast})}{2T} + \frac{\mathcal{M}_{0}^{M}}{T^2} + O(1/T^3) \tag{5.2}$$
 
-*where $\mathcal{M}_0^M$ is the manifold Maslov correction (Proposition 5.1 of LAPLACE.md
+*where $\mathcal{M}_{0}^{M}$ is the manifold Maslov correction (Proposition 5.1 of LAPLACE.md
 with $d$ replaced by $r+1$). This gives:*
 
 *(i) The exact leading constant: $r/2$ vs Cover's $d-1$.*
@@ -531,12 +531,12 @@ $\varepsilon$ of $L(b^{\ast})$ whenever $T \geq (r\log T + \log\det F_M)/(2\vare
 |:--|:---:|:---:|
 | Leading regret | $(d-1)\log T / T$ | $r\log T / T$ |
 | Sub-leading | $O(1/T)$ unknown | $\log\det F_M / T$ (explicit) |
-| Next order | unknown | $\mathcal{M}_0^M / T^2$ (explicit) |
+| Next order | unknown | $\mathcal{M}_{0}^{M} / T^2$ (explicit) |
 | Dimension | $d-1 = 49$ | $r = 4$ |
 
 ### 5.3 The minimax optimal regret
 
-**Theorem 5.2** *(Minimax lower bound)*. *For any portfolio strategy $\hat{b}_T$ and
+**Theorem 5.2** *(Minimax lower bound)*. *For any portfolio strategy $\hat{b}_{T}$ and
 for a market with factor dimension $r$:*
 
 $$\sup_{x_{1:T}} \left[L(b^{\ast}(x_{1:T})) - \frac{1}{T}\log S_T(\hat{b})\right]
@@ -564,7 +564,7 @@ the market manifold. We now make this constructive.
 
 **Algorithm 6.1** (Geometric efficient frontier).
 
-**Step 1.** Compute the MUP $\hat{b}_T^M \approx b^{\ast}$ and the normal frame $\{\nu_k\}_{k=r+1}^{d-1}$.
+**Step 1.** Compute the MUP $\hat{b}_{T}^{M} \approx b^{\ast}$ and the normal frame $\{\nu_k\}_{k=r+1}^{d-1}$.
 
 **Step 2.** The efficient frontier parameterised by risk level $\rho \geq 0$:
 
@@ -707,13 +707,13 @@ theory of the WF diffusion using Diaconis's hypercontractivity methods.
 
 ## Appendix: The MUP is Cover's Portfolio Restricted to M
 
-**Proposition A.1.** *The MUP $\hat{b}_T^M$ is the Cover universal portfolio of the
+**Proposition A.1.** *The MUP $\hat{b}_{T}^{M}$ is the Cover universal portfolio of the
 restricted market in which only portfolios on $M$ are permitted:*
 
-$$\hat{b}_T^M = \hat{b}_T^{\rm Cover}\!\left[\text{restricted to }M^r\right] \tag{A.1}$$
+$$\hat{b}_{T}^{M} = \hat{b}_{T}^{\rm Cover}\!\left[\text{restricted to }M^r\right] \tag{A.1}$$
 
 *Proof.* By the definition of the MUP (2.1), it has exactly the form of Cover's
-portfolio with the measure $d\mu$ replaced by the volume measure $d\mathrm{vol}_M$ on $M$.
+portfolio with the measure $d\mu$ replaced by the volume measure $d\mathrm{vol}_{M}$ on $M$.
 This is Cover's portfolio for a "world" in which the investor is constrained to choose
 $b \in M$. The universal portfolio in this restricted world is exactly the MUP. $\square$
 

@@ -28,7 +28,7 @@ framework of this monograph. The principal results:
 evolves under the Wright-Fisher diffusion on $\Delta_{d-1}$. The Feller
 boundary classification (entrance/regular/exit) determines whether default
 is impossible, recoverable, or permanent — and this classification is
-computable from the firm's cash flow parameters $\alpha_i = T b^{\ast}_i - 1/2$.
+computable from the firm's cash flow parameters $\alpha_i = T b^{\ast}_{i} - 1/2$.
 
 **(ii) Credit spread = Fisher-Rao distance to default.** The credit spread
 $s$ of a firm is determined, to leading order, by the inverse square of the
@@ -83,7 +83,7 @@ senior secured debt ($b_1$), senior unsecured debt ($b_2$), subordinated debt
 ($b_3$), ..., preferred equity ($b_{d-1}$), common equity ($b_d$). Each
 $b_i = V_i / V$ is the fraction of enterprise value held by class $i$, so:
 
-$$b = (b_1, \ldots, b_d) \in \Delta_{d-1} = \left\{b \in \mathbb{R}^d_+ : \sum_{i=1}^d b_i = 1\right\} \tag{1.1}$$
+$$b = (b_1, \ldots, b_d) \in \Delta_{d-1} = \left\{b \in \mathbb{R}^{d}_+ : \sum_{i=1}^{d} b_i = 1\right\} \tag{1.1}$$
 
 The capital structure of a firm IS a point on the portfolio simplex. This is not
 an analogy — it is an identity. The simplex $\Delta_{d-1}$ is simultaneously the
@@ -129,7 +129,7 @@ canonical Brownian motion of the Fisher-Rao metric (MARKET_PROCESSES.md Section 
 
 $$db_i = \varepsilon^2\left[\alpha_i - \left(\sum_j \alpha_j\right) b_i\right]dt + \varepsilon\sqrt{b_i(1-b_i)}\,dW_i^{\perp} \tag{1.4}$$
 
-where $\varepsilon^2 = 1/T$ is the diffusion scale parameter, $\alpha_i = T b^{\ast}_i - 1/2$
+where $\varepsilon^2 = 1/T$ is the diffusion scale parameter, $\alpha_i = T b^{\ast}_{i} - 1/2$
 are the drift parameters determined by the firm's "target" capital structure $b^{\ast}$,
 and $W^{\perp}$ denotes Brownian motion projected onto the simplex.
 
@@ -158,7 +158,7 @@ Default occurs when $V(T) < D$ (asset value falls below debt) at maturity $T$.
 Equity is a call option on $V$ with strike $D$.
 
 In our framework, the Merton model is a *projection*. The firm's asset value $V$
-evolves on $\mathbb{R}_+$, but the capital structure $b = (D/V, 1 - D/V)$ evolves
+evolves on $\mathbb{R}_{+}$, but the capital structure $b = (D/V, 1 - D/V)$ evolves
 on $\Delta_1$ (the unit interval). The Merton barrier $\{V = D\}$ maps to the
 boundary point $\{b_{\mathrm{equity}} = 0\}$ — the Feller boundary.
 
@@ -166,7 +166,7 @@ The geometric framework generalises Merton in three ways:
 1. **Multiple capital classes.** Merton has two classes (debt, equity). The WF
    diffusion on $\Delta_{d-1}$ handles arbitrary capital structures with $d$ classes,
    including the seniority waterfall.
-2. **The correct metric.** Merton uses the Euclidean metric on $\mathbb{R}_+$.
+2. **The correct metric.** Merton uses the Euclidean metric on $\mathbb{R}_{+}$.
    The Fisher-Rao metric on $\Delta_{d-1}$ accounts for the informational content
    of changes near the boundary, where the Euclidean metric is misleadingly flat.
 3. **Boundary classification.** Merton's barrier is absorbing. The Feller
@@ -207,13 +207,13 @@ The Feller boundary theory for one-dimensional diffusions (applied to the $b_d$
 component of the WF process) classifies the boundary $\{b_d = 0\}$ according to
 the drift parameter $\alpha_d$ (SOBOLEV_OPTIONS_GREEKS.md Section 5):
 
-**Theorem 2.1** *(Feller classification for default).* *Let $\alpha_d = T b^{\ast}_d - 1/2$
+**Theorem 2.1** *(Feller classification for default).* *Let $\alpha_d = T b^{\ast}_{d} - 1/2$
 be the equity drift parameter. The default boundary $\{b_d = 0\}$ is classified as:*
 
 *(i) Entrance boundary ($\alpha_d \geq 1$):* The WF process starting in the interior
 never reaches $b_d = 0$. The probability of default is zero:
 $$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 0$$
-*This corresponds to a strongly profitable firm with $b^{\ast}_d \geq 3/(2T)$ — the
+*This corresponds to a strongly profitable firm with $b^{\ast}_{d} \geq 3/(2T)$ — the
 equity drift is strong enough to repel the process from the boundary. These are
 investment-grade firms with negligible default risk.*
 
@@ -221,15 +221,15 @@ investment-grade firms with negligible default risk.*
 positive probability AND can re-enter the interior. Both default and recovery are
 possible:
 $$0 < \mathbb{P}(\exists\, t \leq T : b_d(t) = 0) < 1$$
-*This corresponds to a firm with moderate profitability $1/(2T) < b^{\ast}_d < 3/(2T)$.
+*This corresponds to a firm with moderate profitability $1/(2T) < b^{\ast}_{d} < 3/(2T)$.
 The firm can default but can also emerge from bankruptcy. These are high-yield
 (speculative grade) firms.*
 
 *(iii) Exit boundary ($\alpha_d \leq 0$):* The process reaches $b_d = 0$ with
 probability one, and once there, it is absorbed. Default is certain and permanent:
-$$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 1, \quad b_d(t) = 0 \;\forall\, t \geq \tau_{\mathcal{D}}$$
+$$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 1, \quad b_d(t) = 0 \forall\, t \geq \tau_{\mathcal{D}}$$
 *where $\tau_{\mathcal{D}}$ is the first hitting time. This corresponds to an
-unprofitable firm with $b^{\ast}_d \leq 1/(2T)$: equity is being consumed, and default
+unprofitable firm with $b^{\ast}_{d} \leq 1/(2T)$: equity is being consumed, and default
 is a matter of time.*
 
 The classification is sharp: it depends on a single parameter $\alpha_d$ that is
@@ -306,7 +306,7 @@ just the equity fraction $b_d$.
 
 The Fisher-Rao distance to the nearest boundary face (not just the equity face) is:
 
-$$d_{\mathrm{FR}}(b, \partial\Delta) = \min_{i=1,\ldots,d}\; 2\arcsin(\sqrt{b_i}) \tag{3.2}$$
+$$d_{\mathrm{FR}}(b, \partial\Delta) = \min_{i=1,\ldots,d} 2\arcsin(\sqrt{b_i}) \tag{3.2}$$
 
 For a firm with capital structure $b = (0.60, 0.10, 0.30)$ (senior, junior, equity):
 - Distance to equity boundary: $2\arcsin(\sqrt{0.30}) \approx 1.16$
@@ -532,7 +532,7 @@ The price of a CDO tranche is computed by integrating the tranche payoff functio
 
 $$V_{\mathrm{tranche}} = \mathbb{E}\!\left[e^{-rT}\,f_{\mathrm{tranche}}(L_T)\right] = \int_B f_{\mathrm{tranche}}(l)\,d\mu_L(l) \tag{6.2}$$
 
-where $L_T = \sum_{i=1}^N (1-R_i)\,\mathbf{1}_{\{\tau_i \leq T\}}$ is the portfolio
+where $L_T = \sum_{i=1}^{N} (1-R_i)\,\mathbf{1}_{\{\tau_i \leq T\}}$ is the portfolio
 loss and $f_{\mathrm{tranche}}$ is the tranche payoff function.
 
 ### 6.3 Curvature of the CDO bundle and the correlation smile
@@ -818,7 +818,7 @@ We collect the principal new results of this paper:
 
 **Result C1** *(Default probability from Feller classification).* The probability
 of default is determined by the Feller boundary type of the equity face, which
-depends on a single parameter $\alpha_d = T b^{\ast}_d - 1/2$. For the regular boundary
+depends on a single parameter $\alpha_d = T b^{\ast}_{d} - 1/2$. For the regular boundary
 case, the default probability is given by the Jacobi eigenvalue series (Theorem 2.2).
 *Status: Proved (Theorem 2.1, 2.2). Tier 2.*
 

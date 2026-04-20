@@ -41,13 +41,13 @@ have a WIDER lightcone than the market.
 **(i) The market spacetime metric.** The $(r+1)$-dimensional market spacetime
 has Lorentzian metric:
 $$ds^2 = -c_M^2\,dt^2 + g^{\rm FR}_{ij}\,db^i\,db^j \tag{0.1}$$
-where $c_M = \lambda_1 / \text{diam}_G$ is the information propagation speed,
+where $c_M = \lambda_1 / \text{diam}_{G}$ is the information propagation speed,
 $t$ is time, and $g^{\rm FR}$ is the Fisher-Rao metric on the spatial
 (portfolio) directions. The signature is $(-,+,+,\ldots,+)$.
 
 **(ii) The lightcone determines causality.** The future lightcone of a
 trade at $(t_0, b_0)$ is:
-$$\mathcal{J}^+(t_0, b_0) = \{(t, b) : t > t_0,\; d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{0.2}$$
+$$\mathcal{J}^{+}(t_0, b_0) = \{(t, b) : t > t_0, d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{0.2}$$
 — the set of future portfolio states reachable from $b_0$ at information speed
 $c_M$. Trades outside this cone CANNOT be influenced by the current state.
 
@@ -157,21 +157,21 @@ $$\mathcal{C}(t_0, b_0) = \{(t, b) : c_M^2(t - t_0)^2 = d_{g^{\rm FR}}(b, b_0)^2
 
 The **future lightcone** (causal future):
 
-$$\mathcal{J}^+(t_0, b_0) = \{(t, b) : t > t_0,\; d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{2.2}$$
+$$\mathcal{J}^{+}(t_0, b_0) = \{(t, b) : t > t_0, d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{2.2}$$
 
-Everything inside $\mathcal{J}^+$ can be influenced by a trade at $(t_0, b_0)$.
+Everything inside $\mathcal{J}^{+}$ can be influenced by a trade at $(t_0, b_0)$.
 Everything outside CANNOT — the information hasn't reached there yet.
 
 ### 2.2 The speed of light
 
 The information speed $c_M$ on the Voronoi-tessellated manifold:
 
-$$c_M = \frac{\text{diam}_{\rm FR}(M^r)}{\text{diam}_G \cdot \Delta t} \tag{2.3}$$
+$$c_M = \frac{\text{diam}_{\rm FR}(M^r)}{\text{diam}_{G} \cdot \Delta t} \tag{2.3}$$
 
-where $\text{diam}_G$ is the graph diameter of the Delaunay adjacency graph
+where $\text{diam}_{G}$ is the graph diameter of the Delaunay adjacency graph
 and $\Delta t$ is the time per observation step.
 
-For our Voronoi partition of FF25 ($N = 4$ cells, $\text{diam}_G = 1$):
+For our Voronoi partition of FF25 ($N = 4$ cells, $\text{diam}_{G} = 1$):
 $c_M = \text{diam}_{\rm FR} / \Delta t$. With $\Delta t = 1$ day and
 $\text{diam}_{\rm FR} \approx 0.5$ radians: $c_M \approx 0.5$ radians/day.
 
@@ -194,7 +194,7 @@ lightcone (not yet priced by the market) are INSIDE the insider's lightcone
 (they can already see and act on them). The insider alpha is the AREA
 DIFFERENCE between the two lightcones:
 
-$$\alpha \propto \text{Vol}(\mathcal{J}^+_{\rm insider}) - \text{Vol}(\mathcal{J}^+_{\rm public}) \tag{2.5}$$
+$$\alpha \propto \text{Vol}(\mathcal{J}^{+}_{\rm insider}) - \text{Vol}(\mathcal{J}^{+}_{\rm public}) \tag{2.5}$$
 
 This gives a NEW geometric interpretation of insider trading from
 NETWORK_INFORMATION_THEORY.md: the insider doesn't "cheat" — they
@@ -324,13 +324,13 @@ of the market.
 
 The **proper time** along a worldline $\gamma(t) = (t, b(t))$ is:
 
-$$\tau = \int \sqrt{c_M^2 - g^{\rm FR}_{ij}\dot{b}^i\dot{b}^j}\;dt \tag{6.1}$$
+$$\tau = \int \sqrt{c_M^2 - g^{\rm FR}_{ij}\dot{b}^{i}\dot{b}^{j}} dt \tag{6.1}$$
 
 This is maximised for timelike geodesics (the twin paradox: the traveller
 who stays still ages MOST; the traveller who moves fast ages less).
 
 In financial terms: $\tau$ is the risk-adjusted return. The
-$g^{\rm FR}_{ij}\dot{b}^i\dot{b}^j$ term is the COST of rebalancing
+$g^{\rm FR}_{ij}\dot{b}^{i}\dot{b}^{j}$ term is the COST of rebalancing
 (trading friction, market impact). The $c_M^2 dt^2$ term is the BENEFIT
 of time passing (the risk-free rate, the carry).
 
@@ -346,7 +346,7 @@ $\delta\tau = 0$ gives the geodesic equation.
 **Theorem L1** *(Market spacetime is Lorentzian)*.
 The $(r+1)$-dimensional market spacetime with metric
 $ds^2 = -c_M^2 dt^2 + g^{\rm FR}_{ij} db^i db^j$ has signature $(-,+,\ldots,+)$.
-The causal structure is determined by $c_M = \lambda_1 / \text{diam}_G$.
+The causal structure is determined by $c_M = \lambda_1 / \text{diam}_{G}$.
 
 **Theorem L2** *(The insider has a wider lightcone)*.
 The insider alpha is proportional to the area difference between the

@@ -13,7 +13,7 @@
 We derive ten specific securities law reforms from the geometric framework
 developed in this monograph. The unified principle: regulation should maximise
 $R_{\rm conv} = \min(\lambda_1, C)$ — the rate of convergence of the market
-manifold $M^r \subset S^{d-1}_+$ to the efficient configuration $H = 0$.
+manifold $M^r \subset S^{d-1}_{+}$ to the efficient configuration $H = 0$.
 Every regulation either adds edges to the market information graph (increasing
 connectivity, information flow, and resilience) or removes edges (creating
 bottlenecks, silos, and fragility). We can compute which.
@@ -53,7 +53,7 @@ Cheeger constant; information theory; regulatory design.
 ### 1.1 The regulator's objective function
 
 The preceding papers in this monograph establish that a financial market is a
-submanifold $M^r \subset S^{d-1}_+$ of the Bhattacharyya sphere, and that the
+submanifold $M^r \subset S^{d-1}_{+}$ of the Bhattacharyya sphere, and that the
 market converges to efficiency (the minimal surface condition $H = 0$) via mean
 curvature flow driven by arbitrage. The rate of this convergence is
 
@@ -142,7 +142,7 @@ identically.
 ### 2.2 The geometric case
 
 Theorem N3 of NETWORK_INFORMATION_THEORY.md proves: an insider with private
-signal $X \in \mathcal{F}^{\rm oracle}_t \setminus \mathcal{F}^{\rm public}_t$
+signal $X \in \mathcal{F}^{\rm oracle}_{t} \setminus \mathcal{F}^{\rm public}_{t}$
 who trades optimally contributes
 
 $$\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{2.1}$$
@@ -651,9 +651,9 @@ ESG (Environmental, Social, Governance) disclosure is:
 
 Climate risk, labour practices, and governance quality are latent factors.
 When undisclosed, they reside in the oracle filtration
-$\mathcal{F}^{\rm oracle}_t \setminus \mathcal{F}^{\rm public}_t$ — they
+$\mathcal{F}^{\rm oracle}_{t} \setminus \mathcal{F}^{\rm public}_{t}$ — they
 affect the market but are not priced. Mandatory disclosure converts them
-to $\mathcal{F}^{\rm public}_t$, increasing the effective manifold dimension
+to $\mathcal{F}^{\rm public}_{t}$, increasing the effective manifold dimension
 $r$ by the number of newly priced factors and increasing the channel
 capacity $C$.
 
@@ -722,11 +722,11 @@ quantities:
 
 | Stage | Criteria | Regulation |
 |:------|:---------|:-----------|
-| 4 | $\mathcal{W} < \mathcal{W}_0$, $\lambda_1 > \lambda_0$, $r \geq 2$ | Full securities regulation |
+| 4 | $\mathcal{W} < \mathcal{W}_{0}$, $\lambda_1 > \lambda_0$, $r \geq 2$ | Full securities regulation |
 | 2–3 | $\lambda_1 > 0$, $r \geq 1$ | Light regulation: anti-fraud, mandatory disclosure |
 | 1 | $\lambda_1 \approx 0$, $r < 1$ | Caveat emptor: mandatory risk warnings, no leverage |
 
-The thresholds $\mathcal{W}_0$ and $\lambda_0$ are calibrated to mature
+The thresholds $\mathcal{W}_{0}$ and $\lambda_0$ are calibrated to mature
 equity markets. Reclassification is automatic: when a token's estimated
 $\lambda_1$ (computed from rolling return autocorrelation) exceeds $\lambda_0$
 for a sustained period, heavier regulation applies. When a mature token's

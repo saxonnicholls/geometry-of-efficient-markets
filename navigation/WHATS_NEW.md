@@ -40,7 +40,7 @@ Vol skew of index options measures $H$ in real time.
 Clifford torus stability index 5 = LTCM's five simultaneous failure modes.
 The closed-manifold result is proved; the Dirichlet boundary case for $d \gg r$ is OP32.
 
-**R4. Fat Tails: $\alpha_i = Tb^{\ast}_i - 1/2$** *(HAMILTONIAN)*
+**R4. Fat Tails: $\alpha_i = Tb^{\ast}_{i} - 1/2$** *(HAMILTONIAN)*
 No free parameters. Predicts $\alpha\approx4.5$ for US equities.
 
 **R5. Fokker-Planck Stationary = Jeffreys Prior = Cover's Prior** *(FOKKER_PLANCK)*
@@ -65,7 +65,7 @@ $p_t=\vartheta_3$ — exact option pricing for the Clifford torus market.
 Hyperbolic Gamma $y^2(\partial^2_x+\partial^2_y)V$: smile from curvature alone.
 
 **R12. Diversification: Feller Boundary Proof** *(SOBOLEV)*
-Portfolio weights never hit zero for $Tb^{\ast}_i>3/2$. Geometric theorem.
+Portfolio weights never hit zero for $Tb^{\ast}_{i}>3/2$. Geometric theorem.
 
 **R13. Optimal Pairs Entry/Exit from Hamiltonian Free Boundary** *(PAIRS_TRADING)*
 $z^{\ast}_{\rm entry}=\sqrt{1+r/\kappa}$. Classical 2$\sigma$ rule is only optimal when $r=3\kappa$.
@@ -102,7 +102,7 @@ CAPM $\to$ GOE ($\beta=1$); Clifford torus $\to$ GUE ($\beta=2$, Berry phase);
 pseudo-Anosov $\to$ GSE ($\beta=4$, symplectic foliation). Not a modelling choice.
 
 **R22. Selberg Integral = MUP Partition Function** *(RANDOM_MATRIX)*
-$\mathcal{Z}_T^M = S_r(Tb^{\ast}-1/2,\, Tb^{\ast}-1/2,\, \beta/2)$. Exact closed form.
+$\mathcal{Z}_{T}^{M} = S_r(Tb^{\ast}-1/2,\, Tb^{\ast}-1/2,\, \beta/2)$. Exact closed form.
 MUP normalisation constant computable analytically for all three market types.
 
 **R23. Tracy-Widom $F_\beta$ = Largest Factor Eigenvalue Distribution** *(RANDOM_MATRIX)*
@@ -112,7 +112,7 @@ Crisis signal: exceedance of the $F_\beta$ edge. Market-type specific.
 $|\lambda_i-\lambda_j|^\beta$ is the Fisher-Rao force keeping factor loadings separated.
 GUE ($\beta=2$) provides stronger diversification than GOE ($\beta=1$).
 
-**R25. Shapley Attribution $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$** *(HYPERCUBE_SHAPLEY)*
+**R25. Shapley Attribution $\phi_i = b^{\ast}_{i}(\mu_i-\bar\mu)$** *(HYPERCUBE_SHAPLEY)*
 Proved: the Shapley value of asset $i$ in the Kelly cooperative game equals the
 Fisher-Rao gradient of the Kelly rate at $b^{\ast}$. Unique fair attribution satisfying
 all four Shapley axioms. Factor Shapley = unique fair factor attribution.
@@ -201,7 +201,7 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 
 **R91.** Palindrome-Arbitrage theorem *(FILTRATIONS)* — six equivalent conditions: palindromic cycles ⟺ detailed balance ⟺ no arbitrage ⟺ time-reversibility ⟺ zero Berry phase ⟺ Gibbs measure. FX triangular arbitrage = palindromic deficit.
 
-**R92.** De Bruijn graph IS the filtration *(FILTRATIONS)* — $B(N,n)$ at depth $n$ IS $\mathcal{F}^{\rm dB}_n$; iterated Delaunay. Directed graph is the market (Theorem 13.2).
+**R92.** De Bruijn graph IS the filtration *(FILTRATIONS)* — $B(N,n)$ at depth $n$ IS $\mathcal{F}^{\rm dB}_{n}$; iterated Delaunay. Directed graph is the market (Theorem 13.2).
 
 **R93.** Radford-Hopf algebra of markets *(FILTRATIONS)* — concatenation = sequential strategies; shuffle = parallel strategies; antipode = time-reversal = palindromic sub-algebra. Lyndon words are primitives.
 
@@ -217,7 +217,7 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 
 **R99.** Sturmian palindrome zeta = $\zeta(s-1) + \zeta(s)$ *(PALINDROMIC_SEQUENCES)* — Riemann zeta function literally appears in palindrome counting of Sturmian sequences. Direct identity.
 
-**R100.** Palindromic Takens attractors are orbifolds *(PALINDROMIC_ATTRACTORS)* — $\mathbb{Z}_2$-orbifolds with palindromic centres as fixed points. Six topological classes: $S^1$, $T^r$, Rauzy fractal, Cantor-like, space-filling.
+**R100.** Palindromic Takens attractors are orbifolds *(PALINDROMIC_ATTRACTORS)* — $\mathbb{Z}_{2}$-orbifolds with palindromic centres as fixed points. Six topological classes: $S^1$, $T^r$, Rauzy fractal, Cantor-like, space-filling.
 
 **R101.** Fisher-Rao is doubly natural *(PALINDROMIC_ATTRACTORS)* — unique metric that is both Čencov-invariant (reparameterisation) AND palindromic-invariant (reflection). Strengthens Čencov.
 

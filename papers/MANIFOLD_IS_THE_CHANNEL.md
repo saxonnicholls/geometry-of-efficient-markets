@@ -51,11 +51,11 @@ self-referential structure of a channel that transmits information about
 its own state.
 
 **(iv) The Gödelian tower.** Nested markets create a tower of theories:
-the sub-market's theory $\mathcal{T}_1$ is a sub-theory of the parent
-market's theory $\mathcal{T}_2$. Gödel's second incompleteness theorem:
-$\mathcal{T}_1$ cannot prove $\mathrm{Con}(\mathcal{T}_1)$, but
-$\mathcal{T}_2$ can. The meta-market resolves what the sub-market cannot —
-but has its own blind spots that require $\mathcal{T}_3$. This tower is the
+the sub-market's theory $\mathcal{T}_{1}$ is a sub-theory of the parent
+market's theory $\mathcal{T}_{2}$. Gödel's second incompleteness theorem:
+$\mathcal{T}_{1}$ cannot prove $\mathrm{Con}(\mathcal{T}_{1})$, but
+$\mathcal{T}_{2}$ can. The meta-market resolves what the sub-market cannot —
+but has its own blind spots that require $\mathcal{T}_{3}$. This tower is the
 logical structure of the Giry monad tower from DUAL_TOWER.md: each level
 adds a layer of meta-knowledge that resolves the previous level's
 incompleteness while introducing new unprovable statements.
@@ -106,15 +106,15 @@ input distribution is the one that "fills" the channel manifold most efficiently
 
 ### 1.2 A market manifold is a channel
 
-Now consider the market manifold $M^r \subset S^{d-1}_+$ with the Fokker-Planck
+Now consider the market manifold $M^r \subset S^{d-1}_{+}$ with the Fokker-Planck
 transition kernel $K_t(b'|b)$ — the probability of the portfolio state being at
 $b'$ at time $t+1$ given that it was at $b$ at time $t$.
 
 **Theorem 1.2** (Market-channel identity). *The Fokker-Planck kernel on $M^r$
-defines a DMC $\mathcal{C}_M = (M^r, K_t(b'|b), M^r)$ whose channel manifold
+defines a DMC $\mathcal{C}_{M} = (M^r, K_t(b'|b), M^r)$ whose channel manifold
 IS $M^r$ and whose capacity IS the Kelly growth rate:*
 
-$$C(\mathcal{C}_M) = h_{\rm Kelly}. \tag{1.3}$$
+$$C(\mathcal{C}_{M}) = h_{\rm Kelly}. \tag{1.3}$$
 
 *The Fisher-Rao metric of the channel manifold equals the Fisher-Rao metric
 of $M^r$.*
@@ -272,14 +272,14 @@ $$\mathcal{C}_{\rm EUR \to JPY} = \mathcal{C}_{\rm EUR \to USD} \circ \mathcal{C
 
 The composed channel has capacity:
 
-$$C(\mathcal{C}_1 \circ \mathcal{C}_2) \leq \min(C(\mathcal{C}_1), C(\mathcal{C}_2)) \tag{3.2}$$
+$$C(\mathcal{C}_{1} \circ \mathcal{C}_{2}) \leq \min(C(\mathcal{C}_{1}), C(\mathcal{C}_{2})) \tag{3.2}$$
 
 (the data processing inequality). The direct channel has capacity
 $C(\mathcal{C}_{\rm direct})$. When the composed capacity equals the direct
 capacity, the triangle is "lossless" — no information is lost by routing
 through USD. When they differ, the gap is the **triangular arbitrage profit**:
 
-$$\alpha_{\rm tri} = C(\mathcal{C}_{\rm direct}) - C(\mathcal{C}_1 \circ \mathcal{C}_2) \tag{3.3}$$
+$$\alpha_{\rm tri} = C(\mathcal{C}_{\rm direct}) - C(\mathcal{C}_{1} \circ \mathcal{C}_{2}) \tag{3.3}$$
 
 This gives triangular arbitrage an information-theoretic interpretation: it is
 the capacity gap between the direct and composed channels. HFT firms
@@ -295,7 +295,7 @@ information theory.
 **Theorem 3.1** (Connected sum = cascaded channel). *The connected sum
 $M_1 \#_{\rm neck} M_2$ defines a cascaded channel with:*
 
-$$C(M_1 \# M_2) = \min\left(C(M_1),\; C(M_2),\; \frac{\pi^2}{L_{\rm neck}^2}\right) \tag{3.4}$$
+$$C(M_1 \# M_2) = \min\left(C(M_1), C(M_2), \frac{\pi^2}{L_{\rm neck}^{2}}\right) \tag{3.4}$$
 
 *where $L_{\rm neck}$ is the neck length (the Fisher-Rao diameter of the
 connecting region). The channel capacity of the connected sum is limited by
@@ -480,21 +480,21 @@ participant in the larger market AND a market in its own right.
 
 ### 5.2 The tower of theories
 
-At each level $k$, there is a theory $\mathcal{T}_k$ — the set of provable
+At each level $k$, there is a theory $\mathcal{T}_{k}$ — the set of provable
 statements about the market at that level. The theories are nested:
 
-$$\mathcal{T}_0 \subset \mathcal{T}_1 \subset \mathcal{T}_2 \subset \mathcal{T}_3 \tag{5.1}$$
+$$\mathcal{T}_{0} \subset \mathcal{T}_{1} \subset \mathcal{T}_{2} \subset \mathcal{T}_{3} \tag{5.1}$$
 
 because everything provable about a sub-market is provable in the parent
 theory (the parent has access to more data and more structure).
 
 **Gödel's second incompleteness theorem** applied to this tower:
 
-$$\mathcal{T}_k \nvdash \mathrm{Con}(\mathcal{T}_k) \tag{5.2}$$
+$$\mathcal{T}_{k} \nvdash \mathrm{Con}(\mathcal{T}_{k}) \tag{5.2}$$
 
 No level can prove its own consistency. But:
 
-$$\mathcal{T}_{k+1} \vdash \mathrm{Con}(\mathcal{T}_k) \tag{5.3}$$
+$$\mathcal{T}_{k+1} \vdash \mathrm{Con}(\mathcal{T}_{k}) \tag{5.3}$$
 
 The parent market CAN prove the consistency of the sub-market theory. The
 parent market has a stronger theory — it can see things about the sub-market
@@ -543,16 +543,16 @@ from level $k$ to level $k+1$.
 ### 5.4 Resolution through the tower
 
 **Theorem 5.1** (Tower resolution). *Let $\phi$ be a statement about the
-market at level $k$ that is true but unprovable in $\mathcal{T}_k$. Then
+market at level $k$ that is true but unprovable in $\mathcal{T}_{k}$. Then
 there exists a level $k' > k$ such that $\mathcal{T}_{k'} \vdash \phi$.*
 
 *Proof.* By Gödel's completeness theorem (not incompleteness), every true
 first-order statement has a proof in some consistent theory. The tower
-$\bigcup_k \mathcal{T}_k$ is the union of all level theories. For any true
+$\bigcup_k \mathcal{T}_{k}$ is the union of all level theories. For any true
 $\phi$, there exists a $k'$ such that $\phi$ is provable in $\mathcal{T}_{k'}$.
 
 The question is: how much larger does $k'$ need to be? If $\phi$ is the
-Gödel sentence $G_k$ of $\mathcal{T}_k$, then $k' = k+1$ suffices
+Gödel sentence $G_k$ of $\mathcal{T}_{k}$, then $k' = k+1$ suffices
 (the parent market proves the sub-market's Gödel sentence). If $\phi$ involves
 interactions between levels, $k'$ may need to be larger. $\square$
 
@@ -578,17 +578,17 @@ determined by their position and their channel.
 **Definition 6.1** (Observer's walls). *An observer at position
 $b^{(\rm obs)} \in M^r$ with channel $\mathcal{C}_{\rm obs}$ faces:*
 
-- *Observational wall: $\mathcal{F}^{\rm obs}_t = \pi^{-1}(\mathcal{F}^M_t)$
+- *Observational wall: $\mathcal{F}^{\rm obs}_{t} = \pi^{-1}(\mathcal{F}^{M}_t)$
   — the filtration available through their channel. The fiber is invisible.*
 
-- *Computational wall: $\mathcal{F}^{\rm comp,obs}_t$ — the computably
+- *Computational wall: $\mathcal{F}^{\rm comp,obs}_{t}$ — the computably
   generated sub-filtration. This depends on the observer's computational
   resources AND their channel (a trader with a narrow channel has fewer
   computable predicates to evaluate).*
 
 - *Axiomatic wall: $\mathcal{T}_{\rm obs}$ — the theory available at their
-  level of the hierarchy. A EUR/USD trader operates within $\mathcal{T}_0$;
-  a global macro trader within $\mathcal{T}_3$.*
+  level of the hierarchy. A EUR/USD trader operates within $\mathcal{T}_{0}$;
+  a global macro trader within $\mathcal{T}_{3}$.*
 
 ### 6.2 The insider has a stronger theory
 
@@ -624,9 +624,9 @@ information within their causal past).
 **Theorem 6.2** (Lightcone = axiom set). *The theory $\mathcal{T}(t_0, b_0)$
 available to an observer at $(t_0, b_0)$ is generated by the axioms:*
 
-$$\mathcal{T}(t_0, b_0) = \langle \phi : \phi \text{ is witnessed in } \mathcal{J}^-(t_0, b_0) \rangle \tag{6.4}$$
+$$\mathcal{T}(t_0, b_0) = \langle \phi : \phi \text{ is witnessed in } \mathcal{J}^{-}(t_0, b_0) \rangle \tag{6.4}$$
 
-*where $\mathcal{J}^-(t_0, b_0)$ is the causal past (past lightcone) of the
+*where $\mathcal{J}^{-}(t_0, b_0)$ is the causal past (past lightcone) of the
 observer. Observers with wider lightcones have strictly stronger theories.*
 
 This unifies the Lorentzian framework (LIGHTCONE.md) with the incompleteness
@@ -868,7 +868,7 @@ $$\text{Cost}(n) \geq n \cdot s_{\rm min} \tag{9.1}$$
 *where $s_{\rm min}$ is the minimum half-spread in the market. The total
 cost of maintaining a filtration with $N_t$ atoms is:*
 
-$$\text{Cost}(\mathcal{F}_t) \geq \log_2(N_t) \cdot s_{\rm min} \tag{9.2}$$
+$$\text{Cost}(\mathcal{F}_{t}) \geq \log_2(N_t) \cdot s_{\rm min} \tag{9.2}$$
 
 *per time step.*
 
@@ -876,7 +876,7 @@ $$\text{Cost}(\mathcal{F}_t) \geq \log_2(N_t) \cdot s_{\rm min} \tag{9.2}$$
 On the market manifold, the minimum distance between distinguishable states
 is the half-spread $s_{\rm min}$ (two states are distinguishable if and only if
 they are on opposite sides of the bid-ask). The number of distinguishable
-states in a region of Fisher-Rao volume $V$ is $V / s_{\rm min}^r$ (a packing
+states in a region of Fisher-Rao volume $V$ is $V / s_{\rm min}^{r}$ (a packing
 argument). Each distinguishable state provides one bit of information, at cost
 $s_{\rm min}$. $\square$
 
@@ -895,7 +895,7 @@ inefficiency.**
 
 Formally:
 
-$$\mathcal{W}^{\ast} \geq \frac{\text{Cost of maintaining } \mathcal{F}^M_t}{C_{\rm relay}} \tag{9.3}$$
+$$\mathcal{W}^{\ast} \geq \frac{\text{Cost of maintaining } \mathcal{F}^{M}_t}{C_{\rm relay}} \tag{9.3}$$
 
 The optimal Willmore energy (optimal inefficiency from OBSERVERS_AND_CHANNELS
 Theorem O5) is bounded below by the ratio of observation cost to relay
@@ -928,7 +928,7 @@ efficient as thermodynamics permits.
 
 The observation cost sharpens each wall:
 
-**Observational wall:** Not just "what $\mathcal{F}_t$ cannot resolve" but
+**Observational wall:** Not just "what $\mathcal{F}_{t}$ cannot resolve" but
 "what you cannot AFFORD to resolve." A trader with a \$100 Bloomberg budget
 faces a tighter observational wall than a trader with a \$100M data
 infrastructure.
@@ -1160,7 +1160,7 @@ formal coding theorem: for any rate $R < h_{\rm Kelly}$, there exists a
 strategy achieving growth rate $R$ with probability $1 - \varepsilon$?
 
 **OP-MC7** (The manifold-channel functor). Is the assignment
-$M \mapsto \mathcal{C}_M$ (manifold to its Fokker-Planck channel) a functor
+$M \mapsto \mathcal{C}_{M}$ (manifold to its Fokker-Planck channel) a functor
 from the category of Riemannian manifolds with smooth maps to the category
 of channels with compositions? If so, what are its properties? Does it
 preserve limits? Colimits? Is it adjoint to anything?

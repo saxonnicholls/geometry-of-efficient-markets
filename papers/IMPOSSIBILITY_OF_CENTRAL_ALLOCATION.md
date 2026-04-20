@@ -76,9 +76,9 @@ about edges.
 
 The central problem of economics is: given $d$ goods and $N$ agents, find the
 allocation that maximises aggregate welfare. In the framework of this monograph,
-this means finding the minimal surface $M^r \subset S^{d-1}_+$ — the
+this means finding the minimal surface $M^r \subset S^{d-1}_{+}$ — the
 configuration where the mean curvature vector $H = 0$ everywhere, so that
-$\mathcal{W}(M) = \int |H|^2 \, d\mathrm{vol}_M = 0$ and there is no
+$\mathcal{W}(M) = \int |H|^2 \, d\mathrm{vol}_{M} = 0$ and there is no
 remaining inefficiency to exploit (MINIMAL_SURFACE.md, Theorem 1).
 
 **Theorem CA1** (Computational Impossibility). *Computing the efficient
@@ -93,7 +93,7 @@ For a modern economy with $d$ goods, the computation is intractable for
 $d > 10^3$.*
 
 *Proof.* The minimal surface equation (1.1) is the Euler-Lagrange equation for
-the area functional $\mathcal{A}(M) = \int_M d\mathrm{vol}_M$ on the market
+the area functional $\mathcal{A}(M) = \int_M d\mathrm{vol}_{M}$ on the market
 manifold. In local coordinates $(u^1, \ldots, u^{d-1})$ on $\Delta_{d-1}$,
 this is a system of $d - 1$ coupled nonlinear second-order elliptic PDEs. The
 standard Galerkin discretisation on a mesh with $n$ nodes per dimension requires
@@ -502,7 +502,7 @@ Environmental regulation adds the missing edges. A carbon tax, specifically,
 forces the firm to account for the cost to all affected agents by adding a
 price signal that represents the missing edges. The weight of the added edge
 is the social cost of carbon — the marginal damage from one additional tonne
-of $\mathrm{CO}_2$.
+of $\mathrm{CO}_{2}$.
 
 **A carbon tax is the most geometrically efficient environmental policy**
 because it adds the missing edge with the CORRECT weight (the social cost),
@@ -520,7 +520,7 @@ between competing suppliers. The Cheeger constant is $h = 2/N$ — the minimum
 possible for a connected graph on $N + 1$ vertices. The spectral gap is
 $\lambda_1 = 1$ (the slowest possible convergence for a connected graph). The
 monopolist extracts rent equal to the Willmore energy:
-$\mathcal{W}_{\rm monopoly} = \int |H|^2 \, d\mathrm{vol}_M > 0$
+$\mathcal{W}_{\rm monopoly} = \int |H|^2 \, d\mathrm{vol}_{M} > 0$
 (TOPOLOGY_OF_PRICE.md, Section 5.3).
 
 Anti-trust enforcement breaks the monopoly star into a denser graph of
@@ -634,7 +634,7 @@ government intervention adds them.*
 **Theorem CA5** (Optimal Government). *The government policy that maximises the
 rate of convergence to economic efficiency is:*
 
-$$G^{\ast} = \arg\max_{G \in \mathcal{G}} \; h_M\!\big(G_{\rm economy}(G)\big)
+$$G^{\ast} = \arg\max_{G \in \mathcal{G}} h_M\!\big(G_{\rm economy}(G)\big)
 \quad \text{subject to} \quad \mathrm{cost}(G) \leq B, \tag{5.1}$$
 
 *where $\mathcal{G}$ is the set of feasible policies (edge additions to the

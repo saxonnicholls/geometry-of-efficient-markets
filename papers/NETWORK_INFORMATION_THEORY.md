@@ -11,7 +11,7 @@
 
 **Abstract.**  
 The rate at which a financial market converges to the efficient manifold — the
-minimal surface $M^r \subset S^{d-1}_+$ with $H = 0$ — is bounded by two
+minimal surface $M^r \subset S^{d-1}_{+}$ with $H = 0$ — is bounded by two
 independent quantities: the geometric spectral gap $\lambda_1$ of the market
 manifold Laplacian (measuring how fast the mean curvature flow can operate) and
 the channel capacity $C$ of the information network connecting market participants
@@ -32,13 +32,13 @@ that constrains how quickly the market can price information.
 Our principal results:
 
 **(i) The dual bottleneck theorem.** The effective convergence rate of the Willmore
-energy $\mathcal{W}(M) = \int |H|^2\,d\mathrm{vol}_M$ under mean curvature flow
+energy $\mathcal{W}(M) = \int |H|^2\,d\mathrm{vol}_{M}$ under mean curvature flow
 with information arrival at rate $C$ is $R_{\rm conv} = \min(\lambda_1, C)$. The
 MUP regret with network constraints becomes $r\log(T)/(2T) + r/(CT)$ — the
 geometric term plus a network penalty.
 
 **(ii) Insider trading accelerates efficiency.** An insider with private signal
-$X \in \mathcal{F}^{\rm oracle}_t \setminus \mathcal{F}^{\rm public}_t$ who trades
+$X \in \mathcal{F}^{\rm oracle}_{t} \setminus \mathcal{F}^{\rm public}_{t}$ who trades
 optimally contributes $\Delta R_{\rm conv} = I(X; Y_{\rm trade})/T$ additional bits
 per period to the market's information channel. The insider's trade reduces the
 mean curvature $H$ at the traded point on $M^r$. The Willmore energy decreases
@@ -82,9 +82,9 @@ regulatory design; social media; information hierarchy.
 
 ### 1.1 The geometric rate
 
-The market manifold $M^r \subset S^{d-1}_+$ converges to the efficient configuration
+The market manifold $M^r \subset S^{d-1}_{+}$ converges to the efficient configuration
 (a minimal surface with $H = 0$) via mean curvature flow (MCF). The convergence
-rate of the Willmore energy $\mathcal{W}(M) = \int_M |H|^2\,d\mathrm{vol}_M$ under
+rate of the Willmore energy $\mathcal{W}(M) = \int_M |H|^2\,d\mathrm{vol}_{M}$ under
 MCF is controlled by the spectral gap $\lambda_1$ of the Jacobi operator $L_M =
 \Delta_M + |A|^2 + \mathrm{Ric}(\nu,\nu)$ on $M^r$. Specifically, the Willmore
 energy decays as:
@@ -121,7 +121,7 @@ $$R_{\rm conv} = \min(\lambda_1, C) \tag{1.2}$$
 
 *Proof.* The MCF requires specifying the direction $-\vec{H}(b)$ at each point
 $b \in M^r$ to first order. The curvature vector $\vec{H}$ at a point on an
-$r$-dimensional manifold in $S^{d-1}_+$ has $d - 1 - r$ normal components, each
+$r$-dimensional manifold in $S^{d-1}_{+}$ has $d - 1 - r$ normal components, each
 requiring $O(\log T)$ bits of precision at time-horizon $T$. The total information
 demand per unit time for the MCF to operate at rate $\lambda_1$ is therefore:
 
@@ -211,7 +211,7 @@ determines how much information the market can absorb from all analysts collecti
 **Independent analysts:** When the $K$ analysts have independent information
 (non-overlapping research), the sum capacity is additive:
 
-$$C_{\rm sum} = \sum_{k=1}^K C_k \tag{2.3}$$
+$$C_{\rm sum} = \sum_{k=1}^{K} C_k \tag{2.3}$$
 
 Each analyst contributes their full individual capacity. This is the ideal case.
 
@@ -219,7 +219,7 @@ Each analyst contributes their full individual capacity. This is the ideal case.
 read the same reports, attend the same conferences, use the same models — the sum
 capacity drops:
 
-$$C_{\rm sum}^{\rm herd} = I(X_1, \ldots, X_K; Y) < \sum_{k=1}^K I(X_k; Y) = \sum_{k=1}^K C_k \tag{2.4}$$
+$$C_{\rm sum}^{\rm herd} = I(X_1, \ldots, X_K; Y) < \sum_{k=1}^{K} I(X_k; Y) = \sum_{k=1}^{K} C_k \tag{2.4}$$
 
 The inequality is strict whenever the $X_k$ are positively correlated. The gap
 $\sum C_k - C_{\rm sum}^{\rm herd}$ is the **redundancy cost of herding**.
@@ -282,13 +282,13 @@ $$C_1 = I(X; Y_1), \qquad C_2 = I(X; Y_2) \leq C_1 \tag{2.5}$$
 
 **Market analogue.** The information hierarchy:
 
-$$X \;\to\; Y_1 \text{ (insider/market maker)} \;\to\; Y_2 \text{ (public)}$$
+$$X \to Y_1 \text{ (insider/market maker)} \to Y_2 \text{ (public)}$$
 
 The insider sees the source $X$ (or close to it). The market maker sees order flow
 $Y_1$ — a noisy function of $X$. The public sees prices $Y_2$ — a noisy function of
 $Y_1$. This IS the $\sigma$-algebra hierarchy of MARTINGALE_GEOMETRY.md:
 
-$$\mathcal{F}^{\rm oracle}_t \supseteq \mathcal{F}^{\rm MM}_t \supseteq \mathcal{F}^{\rm public}_t \tag{2.6}$$
+$$\mathcal{F}^{\rm oracle}_{t} \supseteq \mathcal{F}^{\rm MM}_{t} \supseteq \mathcal{F}^{\rm public}_{t} \tag{2.6}$$
 
 The capacity at each level:
 
@@ -337,7 +337,7 @@ A relay $Y_R$ helps communication between source $X$ and destination $Y$.
 Two fundamental strategies:
 
 - **Compress-and-forward (CF):** the relay compresses its observation $Y_R$ and
-  forwards it. Capacity: $C_{\rm CF} = I(X; Y, \hat{Y}_R)$ where $\hat{Y}_R$ is the
+  forwards it. Capacity: $C_{\rm CF} = I(X; Y, \hat{Y}_{R})$ where $\hat{Y}_{R}$ is the
   compressed relay signal.
 
 - **Decode-and-forward (DF):** the relay fully decodes $X$, re-encodes, and forwards.
@@ -437,7 +437,7 @@ $$\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{3.1}$$
 *additional bits per period to the market's information channel, where $Y_{\rm trade}$
 is the order flow generated by the insider's trade. The Willmore energy evolves as:*
 
-$$\frac{d\mathcal{W}}{dt}\bigg|_{\rm with\;insider} < \frac{d\mathcal{W}}{dt}\bigg|_{\rm without\;insider} \leq 0 \tag{3.2}$$
+$$\frac{d\mathcal{W}}{dt}\bigg|_{\rm with insider} < \frac{d\mathcal{W}}{dt}\bigg|_{\rm without insider} \leq 0 \tag{3.2}$$
 
 *The insider accelerates the MCF. The market becomes efficient faster.*
 
@@ -461,7 +461,7 @@ $$\Delta |H|^2 = -\frac{I(X; Y_{\rm trade})}{T} \cdot g^{\rm FR}(v_X, v_X) \tag{
 where $v_X \in N_{b^{\ast}}M$ is the normal bundle component of the insider's
 information (the direction in which the price is "wrong"). Integrating over $M^r$:
 
-$$\Delta \mathcal{W} = -\int_M \Delta |H|^2\,d\mathrm{vol}_M < 0 \tag{3.5}$$
+$$\Delta \mathcal{W} = -\int_M \Delta |H|^2\,d\mathrm{vol}_{M} < 0 \tag{3.5}$$
 
 The Willmore energy decreases. The inequality in (3.2) follows because $I(X;
 Y_{\rm trade}) > 0$ whenever the insider has genuine private information. $\square$
@@ -480,7 +480,7 @@ reducing its curvature.
 **Corollary 3.2** (Multiple insiders). *In a market with $N$ insiders, each with
 independent private signals $X_1, \ldots, X_N$:*
 
-$$R_{\rm conv}^{\rm insider} = R_{\rm conv}^{\rm public} + \sum_{k=1}^N \frac{I(X_k;\, Y_k)}{T} \tag{3.7}$$
+$$R_{\rm conv}^{\rm insider} = R_{\rm conv}^{\rm public} + \sum_{k=1}^{N} \frac{I(X_k;\, Y_k)}{T} \tag{3.7}$$
 
 *The convergence rate increases linearly in the number of insiders with independent
 information. More insider trading means faster efficiency.*
@@ -544,7 +544,7 @@ $$C_{\rm eff} = C - I(Z;\, Y \mid X) \tag{4.1}$$
 prices in the wrong direction, creating positive mean curvature where there should
 be none. The spurious Willmore energy is:*
 
-$$\mathcal{W}_{\rm spurious} = \int_M |H_{\rm false}|^2\,d\mathrm{vol}_M \;\propto\; I(Z;\, Y \mid X) \cdot \mathrm{Var}(Z - X) \tag{4.2}$$
+$$\mathcal{W}_{\rm spurious} = \int_M |H_{\rm false}|^2\,d\mathrm{vol}_{M} \propto I(Z;\, Y \mid X) \cdot \mathrm{Var}(Z - X) \tag{4.2}$$
 
 *The market must then undo this spurious curvature via MCF — at additional cost.
 The total damage is:*
@@ -772,21 +772,21 @@ an empirical question.
 Before approximately 2005, the market information network was a **degraded broadcast
 channel** with a small number of professional relays:
 
-$$\text{Source} \;\to\; \text{Wire service (AP/Reuters)} \;\to\; \text{Journalist} \;\to\; \text{Public}$$
+$$\text{Source} \to \text{Wire service (AP/Reuters)} \to \text{Journalist} \to \text{Public}$$
 
 The relay chain was short (3-4 links). The relays were professional (decode-and-forward,
 not compress-and-forward). The aggregate capacity was moderate ($C \sim 10^4$
 bits/day for a typical stock) but the signal quality was high: most of the
 transmitted information was type 1-2 (true, informative). The effective capacity was:
 
-$$C_{\rm eff}^{\rm pre} \approx p_{\rm true}^{\rm pre} \cdot C^{\rm pre} \approx 0.8 \cdot 10^4 = 8 \times 10^3 \;\text{bits/day} \tag{7.1}$$
+$$C_{\rm eff}^{\rm pre} \approx p_{\rm true}^{\rm pre} \cdot C^{\rm pre} \approx 0.8 \cdot 10^4 = 8 \times 10^3 \text{bits/day} \tag{7.1}$$
 
 ### 7.2 The post-social-media information architecture
 
 After 2010, the network became a massive **multiple access channel** with millions
 of sources:
 
-$$\text{Millions of sources} \;\xrightarrow{\text{MAC}}\; \text{Market}$$
+$$\text{Millions of sources} \xrightarrow{\text{MAC}} \text{Market}$$
 
 The aggregate bandwidth exploded: $C^{\rm post} \sim 10^{10}$ bits/day. But the
 composition of sources changed dramatically.

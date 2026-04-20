@@ -67,9 +67,9 @@ and it is not replicable from a screen.
 
 **If your alpha source is a Bloomberg terminal, your alpha is probably 
 priced.**
-A terminal gives you $\mathcal{F}^X_t$ — everything observable. In an 
-efficient market, nothing in $\mathcal{F}^X_t$ generates excess return. 
-Real alpha requires $\mathcal{G}_t$ — information genuinely outside the 
+A terminal gives you $\mathcal{F}^{X}_t$ — everything observable. In an 
+efficient market, nothing in $\mathcal{F}^{X}_t$ generates excess return. 
+Real alpha requires $\mathcal{G}_{t}$ — information genuinely outside the 
 market's information set. Satellite images of parking lots. Conversations 
 your competitor hasn't had. A genuine edge in a niche no one is watching.
 
@@ -357,7 +357,7 @@ on the manifold.
    Be honest about which is which.
 
 5. **Compute the Shapley attribution of your Kelly growth to each asset 
-   monthly.** $\phi_i = b^{\ast}_i \times (\mu_i - \bar\mu)$. The assets with 
+   monthly.** $\phi_i = b^{\ast}_{i} \times (\mu_i - \bar\mu)$. The assets with 
    large positive Shapley values deserve their weight. The others do not.
 
 6. **Set your rebalancing frequency to the market's natural rate.** 
@@ -512,7 +512,7 @@ A back-of-the-envelope calculation from the network information theory:
 
 The US equity market has approximately $50 trillion in capitalisation.
 The annual Willmore energy (total inefficiency) is approximately
-$\mathrm{Sharpe}^2 \times \mathrm{market\ cap} \approx 0.5^2 \times 50T = \$12.5T$
+$\mathrm{Sharpe}^{2} \times \mathrm{market\ cap} \approx 0.5^2 \times 50T = \$12.5T$
 in risk-adjusted terms. Insider trading accelerates the convergence to
 efficiency. If insider trading accounts for approximately 5% of total
 information flow (a common estimate), then the value of insider trading

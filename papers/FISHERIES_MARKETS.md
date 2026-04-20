@@ -108,7 +108,7 @@ MSY; TAC; tuna farming; aquaculture.
 
 Consider a fishery with $d$ licence holders (individuals, companies, or
 cooperatives) and a Total Allowable Catch (TAC) of $H$ tonnes. Each licence
-holder $i$ owns quota $Q_i$ tonnes, with $\sum_{i=1}^d Q_i = H$. The
+holder $i$ owns quota $Q_i$ tonnes, with $\sum_{i=1}^{d} Q_i = H$. The
 normalised quota vector:
 
 $$q = \left(\frac{Q_1}{H}, \ldots, \frac{Q_d}{H}\right) \in \Delta_{d-1} \tag{1.1}$$
@@ -161,7 +161,7 @@ where $h(q, p)$ is the harvest vector (how much of each species/age class
 is removed). The harvest depends on the quota (what you're allowed to catch)
 AND the population (what's available to catch).
 
-**Stock assessment map** $\mathcal{S}: \Delta^P \to \mathbb{R}_+$. The stock
+**Stock assessment map** $\mathcal{S}: \Delta^P \to \mathbb{R}_{+}$. The stock
 assessment estimates the population state and recommends a TAC:
 
 $$H_{\rm TAC} = \mathcal{S}(p) \tag{1.6}$$
@@ -658,7 +658,7 @@ through international waters.
 **The global fisheries management structure IS a patchwork of quota
 simplices connected by directed graphs:**
 
-$$M_{\rm ocean} = \bigcup_{\rm EEZs} M^{Q_k}_{\rm national} \;\cup\; \bigcup_{\rm RFMOs} M^{Q_j}_{\rm regional}$$
+$$M_{\rm ocean} = \bigcup_{\rm EEZs} M^{Q_k}_{\rm national} \cup \bigcup_{\rm RFMOs} M^{Q_j}_{\rm regional}$$
 
 with connected-sum necks at every boundary where fish stocks cross from one
 jurisdiction to another. The neck widths are determined by migration rates,

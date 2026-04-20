@@ -170,7 +170,7 @@ the horse population and $\text{srank}$ is the stable rank.
 
 **Definition 1.1** (Characteristic manifold). *The characteristic manifold
 $M_{\rm horse}$ is the $r_{\rm horse}$-dimensional submanifold of
-$S^{d_{\rm char}-1}_+$ obtained by projecting the characteristic vector
+$S^{d_{\rm char}-1}_{+}$ obtained by projecting the characteristic vector
 onto its principal components and embedding via the Bhattacharyya isometry
 $h \mapsto \sqrt{h}$.*
 
@@ -349,7 +349,7 @@ monotonically non-decreasing.*
 
 *Proof.* Each new observation (race, trial, veterinary report) is a
 projection that reduces the set of consistent futures. The filtration
-$\mathcal{F}_t$ is non-decreasing. The fiber $F_t = \pi^{-1}(\mathcal{F}_t)$
+$\mathcal{F}_{t}$ is non-decreasing. The fiber $F_t = \pi^{-1}(\mathcal{F}_{t})$
 is non-increasing. The channel capacity, as the difference between total
 entropy and fiber entropy, is non-decreasing. $\square$
 
@@ -358,10 +358,10 @@ entropy and fiber entropy, is non-decreasing. $\square$
 The price at each life stage is the expected value under the buyer's
 confidence σ-algebra, discounted by the fiber uncertainty:
 
-$$P_t = \mathbb{E}[V_{\rm lifetime} | \mathcal{F}^{\rm conf}_t] \cdot e^{-\lambda \cdot \dim(F_t)} \tag{3.2}$$
+$$P_t = \mathbb{E}[V_{\rm lifetime} | \mathcal{F}^{\rm conf}_{t}] \cdot e^{-\lambda \cdot \dim(F_t)} \tag{3.2}$$
 
 where $V_{\rm lifetime}$ is the total lifetime value (prizemoney + breeding
-value + sale value), $\mathcal{F}^{\rm conf}_t$ is the buyer's confidence
+value + sale value), $\mathcal{F}^{\rm conf}_{t}$ is the buyer's confidence
 σ-algebra at time $t$, and $\lambda > 0$ is the risk premium per unit of
 fiber dimension (the market's required compensation for uncertainty).
 
@@ -419,9 +419,9 @@ The stud fee is effectively a FUTURES CONTRACT on the weighted average
 performance of the stallion's progeny. The underlying asset is the stallion's
 genetic value $G_{\rm sire}$, which is revealed progressively as crops race:
 
-$$\hat{G}_{\rm sire}(n) = \frac{\sum_{k=1}^n w_k \cdot \text{Performance}_k}{\sum_{k=1}^n w_k} \tag{4.1}$$
+$$\hat{G}_{\rm sire}(n) = \frac{\sum_{k=1}^{n} w_k \cdot \text{Performance}_{k}}{\sum_{k=1}^{n} w_k} \tag{4.1}$$
 
-where $n$ is the number of crops, $\text{Performance}_k$ is the aggregate
+where $n$ is the number of crops, $\text{Performance}_{k}$ is the aggregate
 performance of crop $k$ (winners-to-runners, stakes winners, Group winners,
 average earnings index), and $w_k$ is the weight given to crop $k$ (more
 recent crops may be weighted more heavily if breeding quality changes).
@@ -645,7 +645,7 @@ $\|H\| > 0$ (some horses are better than others) and add weight to reduce
 the curvature (bringing the better horses closer to the others in expected
 performance).
 
-$$w_i = w_{\rm base} + \lambda \cdot \text{rating}_i \tag{5.4}$$
+$$w_i = w_{\rm base} + \lambda \cdot \text{rating}_{i} \tag{5.4}$$
 
 where $\lambda$ is the weight-for-ratings scale (typically 0.5 kg per rating
 point in Australia).
@@ -907,9 +907,9 @@ out of 10") or a verbal assessment ("beautiful type, a touch long in the back").
 
 The Fisher-Rao distance between two horses' conformations:
 
-$$d_{\rm FR}(h_1, h_2) = 2\arccos\left(\sum_i \sqrt{c^{(1)}_i \cdot c^{(2)}_i}\right) \tag{6.1}$$
+$$d_{\rm FR}(h_1, h_2) = 2\arccos\left(\sum_i \sqrt{c^{(1)}_{i} \cdot c^{(2)}_{i}}\right) \tag{6.1}$$
 
-where $c^{(k)}_i$ is the normalised conformation vector of horse $k$. This
+where $c^{(k)}_{i}$ is the normalised conformation vector of horse $k$. This
 distance measures how DIFFERENTLY two horses are built, weighted by the
 information content of each measurement.
 
@@ -958,13 +958,13 @@ $$p = (p_{AA}, p_{Aa}, p_{aa}), \qquad p_{AA} + p_{Aa} + p_{aa} = 1 \tag{7.1}$$
 For a breed with $L$ relevant loci, the population's genetic state is a
 point on the product simplex:
 
-$$\mathbf{p} = (p^{(1)}, p^{(2)}, \ldots, p^{(L)}) \in \prod_{\ell=1}^L \Delta_2^{(\ell)} \tag{7.2}$$
+$$\mathbf{p} = (p^{(1)}, p^{(2)}, \ldots, p^{(L)}) \in \prod_{\ell=1}^{L} \Delta_2^{(\ell)} \tag{7.2}$$
 
 Under linkage equilibrium (loci evolving independently), this product space
 IS the genetic manifold $M_{\rm genetic}$ — with the product Fisher-Rao
 metric:
 
-$$g^{\rm FR} = \bigoplus_{\ell=1}^L g^{\rm FR}_{(\ell)} \tag{7.3}$$
+$$g^{\rm FR} = \bigoplus_{\ell=1}^{L} g^{\rm FR}_{(\ell)} \tag{7.3}$$
 
 where $g^{\rm FR}_{(\ell)}$ is the Fisher-Rao metric on the $\ell$-th locus
 simplex. The total dimension is $\sum_\ell (\text{alleles at } \ell - 1) \approx L$
@@ -999,7 +999,7 @@ The identification:
 equation for the Wright-Fisher diffusion is the same Fokker-Planck equation
 we solve in FOKKER_PLANCK_CFD.md. The stationary distribution is the same
 Jacobi polynomial measure. The spectral gap is the same first non-trivial
-eigenvalue. The Bhattacharyya embedding maps the allele simplex to $S^{d-1}_+$
+eigenvalue. The Bhattacharyya embedding maps the allele simplex to $S^{d-1}_{+}$
 with the same curvature $K = 1/4$.
 
 **Theorem 7.1** (Wright-Fisher = Market process). *The Wright-Fisher
@@ -1248,7 +1248,7 @@ hormone regulation, neural adaptation, muscle development), which depends on
 past gene expression, which depends on earlier phenotype. The epigenetic
 state $\theta_t$ updates based on its own output:
 
-$$\theta_{t+1} = \Phi(\theta_t, \text{phenotype}_t) \tag{8.5}$$
+$$\theta_{t+1} = \Phi(\theta_t, \text{phenotype}_{t}) \tag{8.5}$$
 
 This is exactly the self-referential channel of Definition 7.1 in
 MANIFOLD_IS_THE_CHANNEL.md. The horse's development is a feedback loop
@@ -1440,9 +1440,9 @@ genomic CONTEXTS are (not just their raw sequences).
 **Definition 10.2** (BWT-Fisher distance). *Define the BWT-Fisher distance
 between two genomes as:*
 
-$$d_{\rm BWT\text{-}FR}(s_1, s_2) = d_{\rm FR}(\hat{p}_1, \hat{p}_2) \tag{10.2}$$
+$$d_{\rm BWT\text{-}FR}(s_1, s_2) = d_{\rm FR}(\hat{p}_{1}, \hat{p}_{2}) \tag{10.2}$$
 
-*where $\hat{p}_k$ is the empirical distribution of BWT run lengths for
+*where $\hat{p}_{k}$ is the empirical distribution of BWT run lengths for
 genome $k$, and $d_{\rm FR}$ is the Fisher-Rao distance on the simplex of
 run-length distributions.*
 
@@ -1460,7 +1460,7 @@ The BWT applies not only to genetic sequences but to market return sequences
 Discretise the market return sequence into symbols using the Voronoi
 partition (as in test 15V from the experiments): each day's return vector is
 assigned to a Voronoi cell, producing a symbolic sequence
-$\sigma = (\sigma_1, \sigma_2, \ldots, \sigma_T) \in \{1, \ldots, N\}^T$.
+$\sigma = (\sigma_1, \sigma_2, \ldots, \sigma_T) \in \{1, \ldots, N\}^{T}$.
 
 The BWT of $\sigma$ sorts trading days by their factor context. Days in
 the same BWT run experienced the same market regime. The number of BWT runs
@@ -1519,7 +1519,7 @@ decomposed into repetitions of shorter patterns.
 **Example.** Suppose the Voronoi alphabet is $\{1, 2, 3, 4\}$ (four market
 regimes: bull, bear, crisis, recovery). A return sequence might factorise as:
 
-$$\underbrace{1234}_{\ell_1}\;\underbrace{123}_{\ell_2}\;\underbrace{12}_{\ell_3}\;\underbrace{12}_{\ell_4}\;\underbrace{1}_{\ell_5}\;\underbrace{1}_{\ell_6}$$
+$$\underbrace{1234}_{\ell_1} \underbrace{123}_{\ell_2} \underbrace{12}_{\ell_3} \underbrace{12}_{\ell_4} \underbrace{1}_{\ell_5} \underbrace{1}_{\ell_6}$$
 
 Each Lyndon factor is an irreducible market cycle. The longest factors
 ($\ell_1 = 1234$: a full four-regime cycle) appear first. As the sequence
@@ -1538,7 +1538,7 @@ The free Lie algebra over an alphabet is the algebra generated by the
 letters under the Lie bracket $[x, y] = xy - yx$. Its dimension in degree
 $n$ is given by the necklace polynomial:
 
-$$\dim(\mathrm{Lie}_n(A)) = \frac{1}{n}\sum_{d | n} \mu(d) \cdot |A|^{n/d} \tag{10.5}$$
+$$\dim(\mathrm{Lie}_{n}(A)) = \frac{1}{n}\sum_{d | n} \mu(d) \cdot |A|^{n/d} \tag{10.5}$$
 
 where $\mu$ is the Möbius function.
 
@@ -1571,11 +1571,11 @@ $$\text{String } w \xrightarrow{\text{CFL}} (\ell_1, \ldots, \ell_k) \xrightarro
 
 Each step is reversible. The chain applies identically to:
 
-1. **A genome** $s \in \{A, C, G, T\}^n$: CFL decomposes into irreducible
+1. **A genome** $s \in \{A, C, G, T\}^{n}$: CFL decomposes into irreducible
    genetic motifs; BWT sorts by genomic context; compression measures
    genetic complexity.
 
-2. **A market return sequence** $\sigma \in \{1, \ldots, N\}^T$: CFL
+2. **A market return sequence** $\sigma \in \{1, \ldots, N\}^{T}$: CFL
    decomposes into irreducible market patterns; BWT sorts by market regime;
    compression measures market entropy (= Kelly rate).
 

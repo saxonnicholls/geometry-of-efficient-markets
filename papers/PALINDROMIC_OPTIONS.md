@@ -198,7 +198,7 @@ $$\phi_X(u; t) = \mathbb{E}[e^{iu X_t}] = e^{iu \theta + iu \mathbb{E}[Y_t - Y_0
 
 Plugging in:
 
-$$\boxed{\phi_X(u; T) = \exp\left(iu \theta(1 - e^{-\kappa T}) + iu X_0 e^{-\kappa T} - \frac{u^2}{2}\,\mathcal{V}(T, \kappa, H)\right)} \tag{2.7}$$
+$$\phi_X(u; T) = \exp\left(iu \theta(1 - e^{-\kappa T}) + iu X_0 e^{-\kappa T} - \frac{u^2}{2}\,\mathcal{V}(T, \kappa, H)\right) \tag{2.7}$$
 
 where:
 
