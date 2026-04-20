@@ -73,8 +73,8 @@ $(\Delta_{d-1}, g^{\mathrm{FR}})$ iff $\phi(\Sigma)$ is minimal in $(S^{d-1}_{+}
 
 The question addressed in this paper is:
 
-> *Among all minimal submanifolds of $S^{d-1}_{+}$, which are stable? How do we classify them,
-> compute their invariants, and interpret the classification in portfolio terms?*
+*Among all minimal submanifolds of $S^{d-1}_{+}$, which are stable? How do we classify them,
+compute their invariants, and interpret the classification in portfolio terms?*
 
 ### 1.2 Why stability matters economically
 

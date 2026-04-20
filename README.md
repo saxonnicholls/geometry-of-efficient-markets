@@ -55,9 +55,9 @@ market manifold. Slope = 1.007 ± 0.18, p = 10⁻⁸ on empirical data.
 
 ## The Single Organising Principle
 
-> *A financial market is a minimal submanifold $M^r$ of the Bhattacharyya sphere
-> $S^{d-1}_{+}$. Portfolio weights are barycentric coordinates on $\Delta_{d-1}$.
-> Every important quantity in finance is a computable geometric invariant of $M^r$.*
+A financial market is a minimal submanifold $`M^r`$ of the Bhattacharyya sphere
+$`S^{d-1}_{+}`$. Portfolio weights are barycentric coordinates on $`\Delta_{d-1}`$.
+Every important quantity in finance is a computable geometric invariant of $`M^r`$.
 
 This is now a theorem, not an axiom. Five axioms of convex information
 processing (closure, data processing inequality, continuity, normalisation,

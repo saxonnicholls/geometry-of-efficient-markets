@@ -285,8 +285,8 @@ market's current alpha — the maximum exploitable excess log-growth rate.*
 The path $\Gamma = \{b^{\ast}(t) : t \in [0,T]\} \subset \Delta_{d-1}$ is the trajectory of the
 log-optimal portfolio. The **Plateau problem** on $(\Delta_{d-1}, g^{\mathrm{FR}})$ asks:
 
-> Find the minimal submanifold $\Sigma^{\ast} \subset \Delta_{d-1}$ of minimal area with
-> $\partial\Sigma^{\ast} = \Gamma$.
+Find the minimal submanifold $\Sigma^{\ast} \subset \Delta_{d-1}$ of minimal area with
+$\partial\Sigma^{\ast} = \Gamma$.
 
 **Theorem 3.3** (Plateau and the efficient market). *The solution $\Sigma^{\ast}$ to the Plateau
 problem with boundary $\Gamma = \{b^{\ast}(t)\}$ is the market manifold of the efficient market

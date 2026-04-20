@@ -764,11 +764,11 @@ parameters.
 
 The ten reforms share a single organising principle:
 
-> **Regulation should maximise the rate of convergence to the efficient
-> manifold.** This means: maximise information flow ($C$), maximise
-> convergence speed ($\lambda_1$), maximise resilience ($h_M$), prevent
-> singularities (dynamic circuit breakers), and punish misinformation above
-> all else.
+**Regulation should maximise the rate of convergence to the efficient
+manifold.** This means: maximise information flow ($C$), maximise
+convergence speed ($\lambda_1$), maximise resilience ($h_M$), prevent
+singularities (dynamic circuit breakers), and punish misinformation above
+all else.
 
 The current system is inverted:
 

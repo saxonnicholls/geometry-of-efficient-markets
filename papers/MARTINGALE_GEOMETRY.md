@@ -18,12 +18,12 @@ theory of optimal stopping and free boundary problems \[Peskir-Shiryaev 2006\];
 optimal stopping \[Wong 2008\]; and (iv) Snell envelopes and the Bellman-HJB
 equation. The unifying insight is:
 
-> **An efficient market ($H=0$) has a unique risk-neutral measure and is a martingale
-> on its manifold. An inefficient market ($H\neq 0$) is a submartingale, with
-> drift $-\varepsilon^2\vec{H}$. Every classical martingale result has a geometric
-> translation in which $\vec{H}$ is the drift, the EMM family is the normal bundle
-> $NM$, the Snell envelope is the FK value function, and the HJB equation is the
-> manifold-restricted FK PDE.**
+**An efficient market ($H=0$) has a unique risk-neutral measure and is a martingale
+on its manifold. An inefficient market ($H\neq 0$) is a submartingale, with
+drift $-\varepsilon^2\vec{H}$. Every classical martingale result has a geometric
+translation in which $\vec{H}$ is the drift, the EMM family is the normal bundle
+$NM$, the Snell envelope is the FK value function, and the HJB equation is the
+manifold-restricted FK PDE.**
 
 Specifically: the Harrison-Pliska space of EMMs is $N_{b^{\ast}}M$ (proved in
 HAMILTONIAN_TAILS paper); the minimal martingale measure of Föllmer-Schweizer

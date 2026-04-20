@@ -104,13 +104,13 @@ How do these non-convex objects participate in information processing?
 
 The key distinction, which Paper 0.1 noted but did not develop:
 
-> **Ambient convexity** is a property of the space $\mathcal{S}$ in which
-> information processing occurs (the portfolio simplex, the space of
-> distributions). This is what the axioms force.
->
-> **Intrinsic geometry** is a property of the submanifold $M^r \subset \mathcal{S}$
-> on which the system's states actually lie. This can be non-convex, negatively
-> curved, or topologically complex.
+**Ambient convexity** is a property of the space $\mathcal{S}$ in which
+information processing occurs (the portfolio simplex, the space of
+distributions). This is what the axioms force.
+
+**Intrinsic geometry** is a property of the submanifold $M^r \subset \mathcal{S}$
+on which the system's states actually lie. This can be non-convex, negatively
+curved, or topologically complex.
 
 The market manifold $M^r$ lives INSIDE the convex simplex $\Delta_{d-1}$.
 The simplex is convex (forced by the axioms). The manifold need not be.
