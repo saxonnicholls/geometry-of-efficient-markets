@@ -226,8 +226,9 @@ def plot_smile(output_path, S0=100, r=0.05, sigma=0.2, kappa=1.5, H=0.35):
     ax.set_xlabel("Log-moneyness log(K/S₀)")
     ax.set_ylabel("Implied Volatility")
     ax.set_title(
-        f"The FPS Volatility Smile Emerges from First Principles\n"
-        f"FPS parameters: σ={sigma}, κ={kappa}, H={H}. No ad-hoc fitting."
+        f"FPS Implied Volatility: Term Structure (Curved), Strike Smile (Flat)\n"
+        f"Base FPS is log-normal per maturity. Strike-axis smile requires jumps/stochastic vol.\n"
+        f"σ={sigma}, κ={kappa}, H={H}."
     )
     ax.legend(loc="upper right", fontsize=10)
 
@@ -472,7 +473,7 @@ def main():
     parser.add_argument("--sigma", type=float, default=0.2)
     parser.add_argument("--kappa", type=float, default=1.5)
     parser.add_argument("--H", type=float, default=0.35)
-    parser.add_argument("--output_dir", default="data/results/option_pricing")
+    parser.add_argument("--output_dir", default="code/visualisation/option_pricing")
     args = parser.parse_args()
 
     out_dir = Path(args.output_dir)

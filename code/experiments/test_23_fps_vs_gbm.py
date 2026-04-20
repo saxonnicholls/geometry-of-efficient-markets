@@ -511,7 +511,7 @@ def main():
                         help="FPS mean-reversion rate (per day)")
     parser.add_argument("--H", type=float, default=0.42,
                         help="Hurst exponent for FPS (0.5 = GBM)")
-    parser.add_argument("--output_dir", default="data/results/fps_vs_gbm")
+    parser.add_argument("--output_dir", default="code/visualisation/fps_vs_gbm")
     args = parser.parse_args()
 
     out_dir = Path(args.output_dir)

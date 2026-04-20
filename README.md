@@ -254,21 +254,32 @@ The FPS formula has THREE parameters, replacing Black-Scholes's one:
 - **$\kappa \to 0$ (only):** pure fractional Brownian motion pricing.
 - **$H = 1/2$ (only):** Ornstein-Uhlenbeck pricing.
 
-### What this formula gives you for free
+### What this formula gives you
 
-**1. The volatility smile emerges from first principles.** With $H < 1/2$:
-- Short-dated options: steeper smile (anti-persistence amplifies short-term moves)
-- Long-dated options: flatter smile (mean-reversion caps variance)
-- No ad-hoc SVI/SABR parameterisation needed
-
-**2. Fat tails in the pricing measure.** The fractional noise naturally
-produces heavier tails in the risk-neutral distribution than Black-Scholes.
-
-**3. Term-structure of implied volatility.** The $T^{2H-1}$ scaling and
+**1. Term-structure of implied volatility.** The $T^{2H-1}$ scaling and
 the OU cap factor $(1-e^{-2\kappa T})/(2\kappa T)$ together produce the
-hump-shaped vol term structure observed empirically.
+characteristic hump-shaped ATM vol term structure observed empirically —
+Black-Scholes is flat across maturities.
 
-**4. A new Greek: Hurst Vega.**
+**2. Mean-reversion cap on long-dated variance.** As $T \to \infty$, the
+variance saturates at $\sigma^2/(2\kappa)$ instead of growing linearly
+with $T$. Long-dated options priced LOWER than Black-Scholes predicts —
+matches empirical long-dated observations.
+
+**3. Short-dated vol amplification.** For $H < 1/2$, $T^{2H-1} > 1$ at
+short horizons, pricing short-dated options HIGHER than BS. Matches the
+empirical vol peak near 1-3 months.
+
+**4. Honest caveat on the strike-axis smile.** Under the BASE FPS with
+Gaussian fractional noise, $S_T$ is log-normal for European options — so
+implied volatility is FLAT across strikes at any fixed maturity. This is
+correct log-normal model behaviour. **The smile across strikes requires
+extensions** — jumps, stochastic volatility, or non-Gaussian (Lévy)
+fractional noise. The base FPS correctly fixes the TERM STRUCTURE
+(maturity axis) but not the SKEW (strike axis). Full smile modelling
+needs FPS + jumps or FPS + stochastic vol as natural next steps.
+
+**5. A new Greek: Hurst Vega.**
 
 $$\mathcal{H}_{\rm FPS} = \frac{\partial C}{\partial H}$$
 
@@ -372,13 +383,18 @@ FPS gets it with three.
   <img src="code/visualisation/option_pricing/02_volatility_smile.png" width="100%" alt="The implied volatility smile from FPS"/>
 </p>
 
-**This is the money shot.** Black-Scholes implied volatility is flat
-(red dashed line at $\sigma = 0.20$). Real markets show a smile/skew.
-FPS produces a smile AUTOMATICALLY from the anti-persistent Hurst
-parameter. Short-dated options (1 month, dark red) show a steep smile
-peaking near 0.27. Long-dated options (2 years, purple) are nearly flat
-around 0.15. **The shape of the empirical vol surface emerges from
-first principles — no SVI, no SABR, no ad-hoc fitting.**
+**Implied volatility under pure FPS.** This chart shows what the base
+FPS formula (with Gaussian fractional noise) actually produces across
+strikes at different maturities. The TERM STRUCTURE changes dramatically
+— short-dated options price at ~27% implied vol, long-dated at ~15% —
+but the SMILE across strikes at fixed maturity is FLAT. This is the
+honest behaviour of a log-normal model. **The strike-axis smile
+observed empirically requires extensions** — FPS + jumps (Merton),
+FPS + stochastic volatility (Heston-FPS hybrid), or FPS with Lévy
+fractional noise. The base FPS CORRECTLY reproduces the TERM
+STRUCTURE (maturity axis, see next chart) — a structural improvement
+over flat Black-Scholes — but not the strike-axis skew. Natural
+extensions address the latter.
 
 #### The term structure hump
 
@@ -475,13 +491,9 @@ sub-graph).**
 
 **Every market has three structural layers:**
 
-- **Ambient:** the de Bruijn graph $B(N, n^{\ast})$ at empirical depth
-  $n^{\ast} = \lfloor\log_N T\rfloor$ — all possible length-$n^{\ast}$
-  contexts the market could exhibit
-- **Equilibrium:** the palindromic sub-graph (eertree embedding) — the
-  reversible patterns the market exhibits at rest
-- **Transient:** non-palindromic edges — arbitrage opportunities, consumed
-  over time by arbitrageurs
+- **Ambient:** the de Bruijn graph $B(N, n^{\ast})$ at empirical depth $n^{\ast} = \lfloor\log_N T\rfloor$ — all possible length-$n^{\ast}$ contexts the market could exhibit.
+- **Equilibrium:** the palindromic sub-graph (eertree embedding) — the reversible patterns the market exhibits at rest.
+- **Transient:** non-palindromic edges — arbitrage opportunities, consumed over time by arbitrageurs.
 
 **The palindromic fraction** $\rho_{\rm market} = |\mathcal{E}|/|\text{Walks}(B)|$
 is the key structural invariant. For mature equity markets: conjecturally

@@ -419,7 +419,7 @@ def main():
     parser.add_argument("--window", type=int, default=250,
                         help="Window size in days (smaller = finer resolution)")
     parser.add_argument("--stride", type=int, default=60)
-    parser.add_argument("--output_dir", default="data/results/pei")
+    parser.add_argument("--output_dir", default="code/visualisation/pei")
     args = parser.parse_args()
 
     # Setup output directory
