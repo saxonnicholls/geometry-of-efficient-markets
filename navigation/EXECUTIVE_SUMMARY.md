@@ -1,5 +1,5 @@
 # The Geometry of Efficient Markets — Executive Summary
-## 29 Papers · ~145,000 Words · 25+ Proved Results
+## 72 Papers · ~500,000 Words · 170+ Results · 112 Numbered Theorems
 
 **Saxon Nicholls** — me@saxonnicholls.com
 
@@ -65,6 +65,12 @@ Optimal delay $\tau=1/\lambda_1$. Three-step algorithm: embed→diffusion maps�
 $\Delta_{d-1}\subset[0,1]^d$; Walsh functions = Jacobi polynomials; barycentric = Voronoi.
 **Shapley** $\phi_i = b^{\ast}_i(\mu_i-\bar\mu)$ (proved — unique fair Kelly attribution).
 Banzhaf = Walsh-Fourier coefficient. Normal bundle Shapley = unexplained alpha.
+
+### 7 · The Palindromic Structural Theory *(PALINDROMIC_SEQUENCES, PALINDROMIC_SDE, PALINDROMIC_SDE_CONSTRUCTION, PALINDROMIC_OPTIONS, PALINDROMIC_ATTRACTORS, PALINDROMIC_SIMPLICIAL_COMPLEXES, WHY_MARKETS_ARE_PALINDROMIC, MARKET_STRUCTURE_THEOREM)*
+**Six palindromic universality classes** (Sturmian, Episturmian, Arnoux-Rauzy, Pisot, Thue-Morse, Bernoulli) with distinct topological signatures. **GBM rejected at Z = 8.27** on S&P 500 (p ≈ $10^{-16}$) — palindromes occur 2-11× above GBM's prediction. **Fractional Palindromic SDE** $dX_t = \kappa[\theta_t - X_t]dt + \sigma dB^H_t$ replaces GBM; closed-form Carr-Madan option pricing; vol smile emerges from first principles. **Eleven forces** (arbitrage, mean reversion, Landauer, Fisher-Rao, ESS, Maxwell's demon, regulation, microstructure, psychology, RG, Coase) each independently force palindromic structure — overdetermined canalisation. **Palindrome-arbitrage theorem**: six equivalent conditions unifying Kolmogorov cycle, detailed balance, no arbitrage, time-reversibility, zero Berry phase, Gibbs measure.
+
+### 8 · The Market Structure Theorem *(MARKET_STRUCTURE_THEOREM)*
+**A market is completely specified by $(B(N, n^{\ast}), \mathcal{E})$** — the de Bruijn graph at empirical depth plus the eertree embedding (palindromic sub-walks). Three structural layers: ambient (de Bruijn), equilibrium (palindromic sub-graph), transient (non-palindromic edges = arbitrage). **Palindromic fraction** $\rho_{\rm market} = |\mathcal{E}|/|\text{Walks}(B)|$ is the key invariant. Mature equity markets at $\rho_{\rm market} \approx 1/\phi^2 \approx 0.382$ (conjectured golden-ratio equilibrium). Market evolution = progressive palindromisation. Kelly rate = log Perron-Frobenius eigenvalue of PALINDROMIC adjacency matrix only.
 
 ---
 

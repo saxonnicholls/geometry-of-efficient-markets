@@ -189,6 +189,60 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 **R84.** Fisher equation = holonomy of capital flow connection *(INFLATION_CAPITAL_FLOWS)* — real return = nominal minus Berry phase around goods market loop; path-dependent under heterogeneous inflation
 **R85.** Taylor rule = LQG geodesic steering *(INFLATION_CAPITAL_FLOWS)* — Taylor coefficients are the LQG gains of a geometric PID controller on the financial-goods fiber bundle
 
+**R86.** Manifold IS the channel *(MANIFOLD_IS_THE_CHANNEL)* — Fokker-Planck kernel on $M^r$ is a DMC with capacity $h_{\rm Kelly}$; Fisher-Rao metric of the channel = metric of the manifold. Self-referential channel (new type). Landauer's principle for markets.
+
+**R87.** Confidence IS a σ-algebra *(CONFIDENCE)* — the set of events you're willing to commit capital on. Fourth wall of incompleteness (innermost). Grossman-Stiglitz as thermodynamic bound. Effective channel capacity $C_{\rm eff} = \bar\rho \cdot C_{\rm full}$.
+
+**R88.** Wright-Fisher IS Jacobi *(BLOODSTOCK_MARKETS)* — population genetics and market portfolio dynamics are literally the SAME EQUATION. $\varepsilon^2 = 1/(2N_e)$. Every Jacobi result applies verbatim to allele frequency evolution.
+
+**R89.** Thoroughbred $N_e \approx 300$ approaches Feller boundary *(BLOODSTOCK_MARKETS)* — closed Stud Book + small effective population → heterozygosity loss at rate $H/(2N_e)$. Dimension of $M_{\rm genetic}$ shrinking at rate $\sim 1/N_e$.
+
+**R90.** BWT/CFL/LZ are three canonical filtrations *(FILTRATIONS)* — all asymptotically optimal, all converging to $h_{\rm Kelly}$, but resolving different structure: novelty (LZ), context (BWT), algebraic (CFL).
+
+**R91.** Palindrome-Arbitrage theorem *(FILTRATIONS)* — six equivalent conditions: palindromic cycles ⟺ detailed balance ⟺ no arbitrage ⟺ time-reversibility ⟺ zero Berry phase ⟺ Gibbs measure. FX triangular arbitrage = palindromic deficit.
+
+**R92.** De Bruijn graph IS the filtration *(FILTRATIONS)* — $B(N,n)$ at depth $n$ IS $\mathcal{F}^{\rm dB}_n$; iterated Delaunay. Directed graph is the market (Theorem 13.2).
+
+**R93.** Radford-Hopf algebra of markets *(FILTRATIONS)* — concatenation = sequential strategies; shuffle = parallel strategies; antipode = time-reversal = palindromic sub-algebra. Lyndon words are primitives.
+
+**R94.** GBM rejected at Z = 8.27 *(PALINDROMIC_SDE)* — S&P 500 palindromes (1926-present): observed 214 vs GBM predicts 114 at length 6. Excess grows exponentially with length. Z-scores 5-8 across all lengths.
+
+**R95.** Fractional Palindromic SDE *(PALINDROMIC_SDE)* — the replacement for GBM: $dX_t = \kappa[\theta_t - X_t]dt + \sigma dB^H_t$ with $H < 1/2$ (anti-persistent). Reduces to GBM at $(\kappa \to 0, H \to 1/2)$.
+
+**R96.** FPS from nested Pólya urns *(PALINDROMIC_SDE_CONSTRUCTION)* — discrete construction: center-outward growth + Pólya (exchangeability) + nested scales → FPS in continuous limit. Nesting ratio $\tau \approx \phi$ (golden ratio).
+
+**R97.** Palindromic Black-Scholes formula *(PALINDROMIC_OPTIONS)* — $C = S\Phi(d_1^H) - Ke^{-rT}\Phi(d_2^H)$ with $d_i^H$ using effective variance $T^{2H} \cdot$ OU-factor. Vol smile emerges from first principles. New Greek: Hurst Vega.
+
+**R98.** Six palindromic universality classes *(PALINDROMIC_SEQUENCES)* — Sturmian, Episturmian, Arnoux-Rauzy, Pisot, Thue-Morse, Bernoulli. Each has distinct palindromic density, Fourier spectrum, and symbolic complexity.
+
+**R99.** Sturmian palindrome zeta = $\zeta(s-1) + \zeta(s)$ *(PALINDROMIC_SEQUENCES)* — Riemann zeta function literally appears in palindrome counting of Sturmian sequences. Direct identity.
+
+**R100.** Palindromic Takens attractors are orbifolds *(PALINDROMIC_ATTRACTORS)* — $\mathbb{Z}_2$-orbifolds with palindromic centres as fixed points. Six topological classes: $S^1$, $T^r$, Rauzy fractal, Cantor-like, space-filling.
+
+**R101.** Fisher-Rao is doubly natural *(PALINDROMIC_ATTRACTORS)* — unique metric that is both Čencov-invariant (reparameterisation) AND palindromic-invariant (reflection). Strengthens Čencov.
+
+**R102.** Persistent homology is complete invariant *(PALINDROMIC_SIMPLICIAL_COMPLEXES)* — six palindromic classes have six distinct homotopy types ($S^1$, $T^r$, Rauzy complex, $K(\mathbb{Z}[1/2], 1)$, etc). Persistence diagram uniquely identifies class.
+
+**R103.** MCF = discrete Morse gradient on eertree *(PALINDROMIC_SIMPLICIAL_COMPLEXES)* — two independent constructions (geometric flow on manifold, combinatorial flow on nerve complex) give the SAME FLOW.
+
+**R104.** Palindromes under RG flow *(RENORMALIZATION)* — palindromic density is RG-invariant; Hurst exponent is RG-invariant critical exponent; Sturmian is attractive IR fixed point; Willmore decreases monotonically (Zamolodchikov c-theorem).
+
+**R105.** Coase theorem IS palindrome-arbitrage theorem *(MICROECONOMIC_GEOMETRY)* — path-independence of bargaining = palindromic cycles = zero Berry phase. Transaction costs = Landauer costs = palindromic deficit.
+
+**R106.** Deadweight loss IS Willmore energy *(MICROECONOMIC_GEOMETRY)* — Harberger triangle is the leading-order approximation to the integrated squared mean curvature. Optimal taxation = Willmore minimisation.
+
+**R107.** MSY = Kelly rate *(FISHERIES_MARKETS)* — maximum sustainable yield of a fishery is the Kelly growth rate of the population simplex. ITQ = reflecting Feller boundary. Tuna farming = Type II reverse MCF singularity.
+
+**R108.** Markets are palindromic by overdetermination *(WHY_MARKETS_ARE_PALINDROMIC)* — eleven independent forces (arbitrage, mean reversion, Landauer, Fisher-Rao, ESS, Maxwell's demon, counter-cyclical regulation, microstructure, psychology, RG flow, Coase) each force palindromic structure. Canalised outcome.
+
+**R109.** Market Structure Theorem *(MARKET_STRUCTURE_THEOREM)* — a market is completely specified by $(B(N, n^{\ast}), \mathcal{E})$: the de Bruijn graph at empirical depth and the eertree embedding (palindromic sub-walks). Three structural layers: ambient (all contexts), equilibrium (palindromic sub-graph), transient (non-palindromic edges = arbitrage).
+
+**R110.** Palindromic fraction as efficiency measure *(MARKET_STRUCTURE_THEOREM)* — $\rho_{\rm market} = |\mathcal{E}|/|\text{Walks}(B)|$ is the key structural invariant. Mature equity markets conjecturally at $\rho_{\rm market} \approx 1/\phi^2 \approx 0.382$ (golden-ratio equilibrium). Crises cause rapid de-palindromisation.
+
+**R111.** Kelly rate comes from palindromic sub-graph only *(MARKET_STRUCTURE_THEOREM)* — $h_{\rm Kelly} = \log\rho(A_{\mathcal{E}})$, the Perron-Frobenius eigenvalue of the palindromic adjacency matrix. Non-palindromic edges contribute only transiently to wealth growth.
+
+**R112.** Palindrome-de Bruijn correspondence *(FILTRATIONS/MARKET_STRUCTURE_THEOREM)* — palindromic factors correspond to reversal-symmetric walks in the de Bruijn graph. The eertree is the palindromic sub-structure of de Bruijn.
+
 ---
 
 ## Tier 5: Existing Results Reread Geometrically (6 results)
@@ -211,7 +265,8 @@ subdivision = Voronoi Delaunay triangulation (proved). Banzhaf = Walsh-Fourier c
 | 3 — New frameworks | 14 |
 | 4 — Conjectures | 19 |
 | 5 — Reinterpretations | 6 |
-| **Total** | **85** |
+| 6 — Palindromic/structural (R86–R112) | 27 |
+| **Total** | **112** |
 
 ## Top Five
 
