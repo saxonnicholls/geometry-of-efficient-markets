@@ -75,7 +75,9 @@ A prediction market with $d$ mutually exclusive and exhaustive outcomes has
 prices $q = (q_1,\ldots,q_d)$ satisfying $q_i \geq 0$ and $\sum_{i=1}^{d} q_i = 1$.
 This is a point on the probability simplex:
 
-$$q \in \Delta_{d-1} = \{q \in \mathbb{R}^{d}_+ : \textstyle\sum_{i=1}^{d} q_i = 1\} \tag{1.1}$$
+```math
+q \in \Delta_{d-1} = \{q \in \mathbb{R}^{d}_+ : \textstyle\sum_{i=1}^{d} q_i = 1\} \tag{1.1}
+```
 
 The prediction market IS a point on $\Delta_{d-1}$. There is no metaphor here,
 no analogy, no approximation. The price vector of a prediction market with $d$
@@ -99,7 +101,9 @@ A market maker maintains a cost function $C: \mathbb{R}^{d} \to \mathbb{R}$ that
 determines the cost of purchasing a bundle of Arrow-Debreu securities. The
 quantities outstanding are $q = (q_1,\ldots,q_d)$, and the instantaneous prices are:
 
-$$p_i = \frac{\partial C}{\partial q_i} \tag{1.2}$$
+```math
+p_i = \frac{\partial C}{\partial q_i} \tag{1.2}
+```
 
 The cost of moving from quantity vector $q^{(0)}$ to $q^{(1)}$ is
 $C(q^{(1)}) - C(q^{(0)})$ — path-independent by construction. This is the
@@ -116,11 +120,15 @@ $\Delta_{d-1}$ with $C$ a potential function.
 
 The LMSR [Hanson 2003] is the cost function:
 
-$$C(q) = b\log\!\sum_{j=1}^{d} e^{q_j/b} \tag{1.3}$$
+```math
+C(q) = b\log\!\sum_{j=1}^{d} e^{q_j/b} \tag{1.3}
+```
 
 where $b > 0$ is the **liquidity parameter**. The prices are:
 
-$$p_i = \frac{\partial C}{\partial q_i} = \frac{e^{q_i/b}}{\sum_{k=1}^{d} e^{q_k/b}} = \mathrm{softmax}(q/b)_i \tag{1.4}$$
+```math
+p_i = \frac{\partial C}{\partial q_i} = \frac{e^{q_i/b}}{\sum_{k=1}^{d} e^{q_k/b}} = \mathrm{softmax}(q/b)_i \tag{1.4}
+```
 
 The LMSR prices are the softmax function at inverse temperature $1/b$.
 This is the same identity established in LLM_MANIFOLD.md (Theorem 1.1),
@@ -171,7 +179,9 @@ on $\{0,1\}^{n}$.
 **Definition 2.1** *(Marginal polytope)*.
 The **marginal polytope** of $n$ binary events is:
 
-$$\mathcal{M} = \{\pi \in [0,1]^n : \exists\, p \in \Delta_{2^n-1} \text{ with } \textstyle\sum_{x: x_i=1} p(x) = \pi_i \forall\, i\} \tag{2.1}$$
+```math
+\mathcal{M} = \{\pi \in [0,1]^n : \exists\, p \in \Delta_{2^n-1} \text{ with } \textstyle\sum_{x: x_i=1} p(x) = \pi_i \forall\, i\} \tag{2.1}
+```
 
 This is the set of all marginal probability vectors that are consistent with
 some joint distribution.
@@ -214,7 +224,9 @@ computational hardness of counting satisfying assignments.
 
 The belief simplex $\Delta_{d-1}$ carries the Fisher-Rao metric:
 
-$$g^{\mathrm{FR}}_{ij}(q) = \frac{\delta_{ij}}{q_i} \tag{3.1}$$
+```math
+g^{\mathrm{FR}}_{ij}(q) = \frac{\delta_{ij}}{q_i} \tag{3.1}
+```
 
 This is the unique Riemannian metric (up to scale) that is invariant under
 sufficient statistics [Cencov 1982]. For prediction markets, this means:
@@ -223,7 +235,9 @@ relabelling outcomes does not change distances.**
 
 The Bhattacharyya distance between two belief states $q^{(0)}, q^{(1)} \in \Delta_{d-1}$ is:
 
-$$d_B(q^{(0)}, q^{(1)}) = 2\arccos\!\sum_{i=1}^{d} \sqrt{q^{(0)}_{i} q^{(1)}_{i}} \tag{3.2}$$
+```math
+d_B(q^{(0)}, q^{(1)}) = 2\arccos\!\sum_{i=1}^{d} \sqrt{q^{(0)}_{i} q^{(1)}_{i}} \tag{3.2}
+```
 
 This measures the "information distance" between two belief states. In a
 prediction market, $d_B$ measures how much a trader must pay (in LMSR transaction
@@ -236,7 +250,9 @@ stochastically on $\Delta_{d-1}$. Under the assumption of efficient information
 processing (each trade moves the price by the correct amount), $q(t)$ follows
 a Jacobi diffusion on the simplex:
 
-$$dq_i = \frac{1}{2}(q^{\ast}_{i} - q_i)\,dt + \sqrt{q_i(1-q_i)}\,dW^{(i)}_{t} \tag{3.3}$$
+```math
+dq_i = \frac{1}{2}(q^{\ast}_{i} - q_i)\,dt + \sqrt{q_i(1-q_i)}\,dW^{(i)}_{t} \tag{3.3}
+```
 
 where $q^{\ast}$ is the "true" probability (the resolving value) and the noise
 terms $dW^{(i)}$ are correlated by the simplex constraint $\sum_i dq_i = 0$.
@@ -248,7 +264,9 @@ Dirichlet distribution $\mathrm{Dir}(Tq^{\ast})$ where $T$ is the effective
 
 **Binary markets** ($d = 2$) reduce to the classical Jacobi diffusion on $[0,1]$:
 
-$$dp = \frac{1}{2}(p^{\ast} - p)\,dt + \sqrt{p(1-p)}\,dW_t \tag{3.4}$$
+```math
+dp = \frac{1}{2}(p^{\ast} - p)\,dt + \sqrt{p(1-p)}\,dW_t \tag{3.4}
+```
 
 with absorbing boundaries at $p = 0$ and $p = 1$ (the event is resolved as
 false or true). The transition density is the Jacobi polynomial series
@@ -295,7 +313,9 @@ another.
 The liquidity parameter $b$ controls the sharpness of beliefs:
 
 **Low temperature ($b \to 0$):**
-$$\lim_{b\to 0} p_i = \begin{cases} 1 & \text{if } i = \arg\max_j q_j \\ 0 & \text{otherwise} \end{cases} \tag{4.1}$$
+```math
+\lim_{b\to 0} p_i = \begin{cases} 1 \& \text{if } i = \arg\max_j q_j \\ 0 \& \text{otherwise} \end{cases} \tag{4.1}
+```
 
 The market concentrates on the most likely outcome. This is the
 $\varepsilon^2 \to 0$ (equivalently $T \to \infty$) limit in the portfolio
@@ -303,7 +323,9 @@ theory — the WKB/Laplace limit of LAPLACE.md. In the zero-temperature limit,
 the prediction market becomes a deterministic prediction.
 
 **High temperature ($b \to \infty$):**
-$$\lim_{b\to\infty} p_i = \frac{1}{d} \qquad \forall\, i \tag{4.2}$$
+```math
+\lim_{b\to\infty} p_i = \frac{1}{d} \qquad \forall\, i \tag{4.2}
+```
 
 The market reverts to the uniform distribution — maximum entropy, no
 information. This is the $T \to 0$ limit in the portfolio theory: no data,
@@ -319,7 +341,9 @@ markets with $b$ replacing $\varepsilon^2$.
 The bid-ask spread of the LMSR at price $p$ is determined by the curvature
 of the cost function. For a small trade $\delta q$ in security $i$:
 
-$$\text{spread}_{i} = \frac{\partial^2 C}{\partial q_i^2}\,\delta q = \frac{p_i(1-p_i)}{b}\,\delta q \tag{4.3}$$
+```math
+\text{spread}_{i} = \frac{\partial^2 C}{\partial q_i^2}\,\delta q = \frac{p_i(1-p_i)}{b}\,\delta q \tag{4.3}
+```
 
 The spread is:
 - Proportional to $1/b$: lower liquidity = wider spread
@@ -363,7 +387,9 @@ prices $q^{A|B=j}$ change as we move along the base space (as new information
 about $B$ arrives). The natural connection is the one that preserves the joint
 distribution:
 
-$$\nabla_{\partial/\partial q^B_j} q^{A|B=k} = -\frac{q^{A,B}_{ik} - q^{A|B=k}\,q^B_k}{(q^B_k)^2}\,\delta_{jk} \tag{5.1}$$
+```math
+\nabla_{\partial/\partial q^B_j} q^{A|B=k} = -\frac{q^{A,B}_{ik} - q^{A|B=k}\,q^B_k}{(q^B_k)^2}\,\delta_{jk} \tag{5.1}
+```
 
 where $q^{A,B}_{ik} = P(A=i, B=k)$ is the joint price.
 
@@ -371,12 +397,16 @@ where $q^{A,B}_{ik} = P(A=i, B=k)$ is the joint price.
 *The curvature $\Omega$ of the conditional market connection vanishes if and only
 if $A$ and $B$ are conditionally independent:*
 
-$$\Omega = 0 \quad \Longleftrightarrow \quad P(A|B) = P(A) \tag{5.2}$$
+```math
+\Omega = 0 \quad \Longleftrightarrow \quad P(A|B) = P(A) \tag{5.2}
+```
 
 *When $\Omega \neq 0$, the curvature at a point $(q^B, q^{A|B})$ measures the
 degree to which learning about $B$ changes beliefs about $A$:*
 
-$$\|\Omega\|^2 = \sum_{j,k} \left(\frac{\partial q^{A|B=j}_{i}}{\partial q^B_k} - \frac{\partial q^{A|B=k}_{i}}{\partial q^B_j}\right)^2 \tag{5.3}$$
+```math
+\|\Omega\|^2 = \sum_{j,k} \left(\frac{\partial q^{A|B=j}_{i}}{\partial q^B_k} - \frac{\partial q^{A|B=k}_{i}}{\partial q^B_j}\right)^2 \tag{5.3}
+```
 
 *Proof.* If $A \perp B$, then $q^{A|B=j} = q^A$ for all $j$ — the conditional
 prices are constant over the base, and parallel transport is trivial. The
@@ -441,7 +471,9 @@ $2^n$ joint prices.
 **Definition 6.1** *(Marginal LMSR)*.
 The marginal LMSR is the cost function on $[0,1]^n$ defined by:
 
-$$C_{\mathcal{M}}(\pi) = \min_{p \in \Delta_{2^n-1}:\, \mathrm{marg}(p)=\pi} C(q(p)) \tag{6.1}$$
+```math
+C_{\mathcal{M}}(\pi) = \min_{p \in \Delta_{2^n-1}:\, \mathrm{marg}(p)=\pi} C(q(p)) \tag{6.1}
+```
 
 — the minimum LMSR cost over all joint distributions consistent with
 marginals $\pi$.
@@ -465,7 +497,9 @@ The **belief dimension** $r$ of a combinatorial prediction market is the
 dimension of the manifold $M^r \subset \mathcal{M}$ traced out by the marginal
 price vector as information arrives:
 
-$$r = \dim M^r = \mathrm{rank}\!\left(\mathrm{Cov}[\pi(t)]\right) \tag{6.2}$$
+```math
+r = \dim M^r = \mathrm{rank}\!\left(\mathrm{Cov}[\pi(t)]\right) \tag{6.2}
+```
 
 — the stable rank of the covariance matrix of marginal price changes.
 
@@ -479,7 +513,9 @@ $n = 100$ events may have a belief dimension of $r \approx 3$–$5$ independent
 *The MUP restricted to the marginal polytope $\mathcal{M}$ of a combinatorial
 prediction market with belief dimension $r$ achieves minimax regret:*
 
-$$R_T(\hat{b}^{\mathcal{M}}_{T}) = \frac{r\log T}{2T} + O\!\left(\frac{1}{T}\right) \tag{6.3}$$
+```math
+R_T(\hat{b}^{\mathcal{M}}_{T}) = \frac{r\log T}{2T} + O\!\left(\frac{1}{T}\right) \tag{6.3}
+```
 
 *where the comparison class is all fixed marginal price vectors in $\mathcal{M}$.*
 
@@ -507,14 +543,18 @@ a reward $S(q, i)$ to a forecaster who reports probability vector $q$ when
 outcome $i$ is realised. A scoring rule is **proper** if the expected score
 is maximised by reporting the true distribution:
 
-$$\arg\max_{q \in \Delta_{d-1}} \sum_{i=1}^{d} p_i\, S(q, i) = p \tag{7.1}$$
+```math
+\arg\max_{q \in \Delta_{d-1}} \sum_{i=1}^{d} p_i\, S(q, i) = p \tag{7.1}
+```
 
 for all $p \in \Delta_{d-1}$. It is **strictly proper** if the maximum is unique.
 
 The three classical proper scoring rules and their geometric interpretations:
 
 **Logarithmic (Kelly) scoring rule:**
-$$S_{\log}(q, i) = \log q_i \tag{7.2}$$
+```math
+S_{\log}(q, i) = \log q_i \tag{7.2}
+```
 
 Expected score: $\mathbb{E}_{p}[S_{\log}(q, \cdot)] = \sum_i p_i \log q_i = -H(p) - D_{\mathrm{KL}}(p\|q)$
 where $H(p)$ is the entropy and $D_{\mathrm{KL}}$ is the Kullback-Leibler divergence.
@@ -522,7 +562,9 @@ where $H(p)$ is the entropy and $D_{\mathrm{KL}}$ is the Kullback-Leibler diverg
 log-wealth.
 
 **Quadratic (Brier) scoring rule:**
-$$S_{\mathrm{Brier}}(q, i) = 2q_i - \|q\|^2 \tag{7.3}$$
+```math
+S_{\mathrm{Brier}}(q, i) = 2q_i - \|q\|^2 \tag{7.3}
+```
 
 Expected score: $\mathbb{E}_{p}[S_{\mathrm{Brier}}(q, \cdot)] = -\|p-q\|^2 + \|p\|^2 - 1$.
 This penalises the squared Euclidean distance between $q$ and the realised
@@ -530,7 +572,9 @@ outcome. **The Brier score measures Euclidean distance on the simplex** — the
 $L^2$ geometry, not the Fisher-Rao geometry.
 
 **Spherical scoring rule:**
-$$S_{\mathrm{sph}}(q, i) = \frac{q_i}{\|q\|} \tag{7.4}$$
+```math
+S_{\mathrm{sph}}(q, i) = \frac{q_i}{\|q\|} \tag{7.4}
+```
 
 Expected score: $\mathbb{E}_{p}[S_{\mathrm{sph}}(q, \cdot)] = \langle p, q/\|q\|\rangle = \cos\angle(p,q)\cdot\|p\|$.
 This is the cosine similarity between $p$ and $q$. Under the Bhattacharyya
@@ -546,7 +590,9 @@ scoring rule is the unique one (up to affine transformation) whose expected
 score loss $\mathbb{E}_{p}[S(p,\cdot)] - \mathbb{E}_{p}[S(q,\cdot)]$ is a
 function of the Fisher-Rao divergence $D_{\mathrm{KL}}(p\|q)$ alone:*
 
-$$\mathbb{E}_{p}[S_{\log}(p,\cdot)] - \mathbb{E}_{p}[S_{\log}(q,\cdot)] = D_{\mathrm{KL}}(p\|q) \tag{7.5}$$
+```math
+\mathbb{E}_{p}[S_{\log}(p,\cdot)] - \mathbb{E}_{p}[S_{\log}(q,\cdot)] = D_{\mathrm{KL}}(p\|q) \tag{7.5}
+```
 
 *No other proper scoring rule has its expected loss equal to a Bregman divergence
 that is simultaneously the unique $f$-divergence invariant under sufficient
@@ -612,7 +658,9 @@ The overround $\omega = \sum_i q_i - 1$ measures the deviation from the
 simplex. In the Fisher-Rao metric, the distance from the overround price
 vector to the nearest point on $\Delta_{d-1}$ is:
 
-$$d_{\mathrm{FR}}(q, \Delta_{d-1}) \approx \omega \cdot \sqrt{\sum_i 1/q_i} \tag{8.1}$$
+```math
+d_{\mathrm{FR}}(q, \Delta_{d-1}) \approx \omega \cdot \sqrt{\sum_i 1/q_i} \tag{8.1}
+```
 
 For typical prediction markets with $\omega \approx 0.02$ and $d = 2$,
 $q \approx (0.51, 0.51)$, this gives $d_{\mathrm{FR}} \approx 0.04$ —
@@ -626,7 +674,9 @@ the perturbation is five times larger.
 whose equilibrium prices equal the wealth-weighted geometric mean of trader
 beliefs:*
 
-$$p^{\mathrm{LMSR}}_{i} = \frac{\prod_k (p^{(k)}_{i})^{w_k}}{\sum_j \prod_k (p^{(k)}_{j})^{w_k}} \tag{8.2}$$
+```math
+p^{\mathrm{LMSR}}_{i} = \frac{\prod_k (p^{(k)}_{i})^{w_k}}{\sum_j \prod_k (p^{(k)}_{j})^{w_k}} \tag{8.2}
+```
 
 *where $p^{(k)}$ is the belief of trader $k$ and $w_k$ is the wealth of trader $k$.
 This is the exponential family mixture — the Fisher-Rao barycenter of the
@@ -659,7 +709,9 @@ polytope $\mathcal{M}$ acquires additional structure.
 For a graphical model $G = (V, \mathcal{E})$ with vertex set $V = \{1,\ldots,n\}$
 and edge set $\mathcal{E}$, the marginal polytope is:
 
-$$\mathcal{M}_{G} = \{\mu \in \mathbb{R}^{|V|+|\mathcal{E}|}_{+} : \mu \text{ consistent with some } p \in \Delta_{2^n-1} \text{ Markov w.r.t. } G\} \tag{9.1}$$
+```math
+\mathcal{M}_{G} = \{\mu \in \mathbb{R}^{|V|+|\mathcal{E}|}_{+} : \mu \text{ consistent with some } p \in \Delta_{2^n-1} \text{ Markov w.r.t. } G\} \tag{9.1}
+```
 
 The marginal polytope $\mathcal{M}_{G}$ is characterised by:
 - **Vertices:** deterministic assignments consistent with the graph structure
@@ -679,7 +731,9 @@ I-projection.
 $\mathcal{M}$ is the information projection (I-projection) of the uniform
 distribution $u = (1/d,\ldots,1/d)$ onto $\mathcal{M}$:*
 
-$$\hat{\pi}^{\mathcal{M}}_{T} = \arg\min_{\pi \in \mathcal{M}} D_{\mathrm{KL}}(\pi \| u) = \arg\max_{\pi \in \mathcal{M}} H(\pi) \tag{9.2}$$
+```math
+\hat{\pi}^{\mathcal{M}}_{T} = \arg\min_{\pi \in \mathcal{M}} D_{\mathrm{KL}}(\pi \| u) = \arg\max_{\pi \in \mathcal{M}} H(\pi) \tag{9.2}
+```
 
 *subject to the constraint that $\pi$ is consistent with the observed data
 up to time $T$.*
@@ -716,7 +770,9 @@ We collect the five principal lemmas that are new to this paper.
 **Lemma 10.1** *(LMSR-Fisher identity for prediction markets)*.
 *The Hessian of the LMSR cost function at price vector $p \in \Delta_{d-1}$ satisfies:*
 
-$$\nabla^2 C(q)\big|_{p = \mathrm{softmax}(q/b)} = \frac{1}{b}\,g^{\mathrm{FR}}(p) \tag{10.1}$$
+```math
+\nabla^2 C(q)\big|_{p = \mathrm{softmax}(q/b)} = \frac{1}{b}\,g^{\mathrm{FR}}(p) \tag{10.1}
+```
 
 *where $g^{\mathrm{FR}}(p)_{ij} = p_i(\delta_{ij} - p_j)$ is the Fisher information
 matrix on $\Delta_{d-1}$ at $p$.*
@@ -730,7 +786,9 @@ distribution, scaled by inverse liquidity.
 *The MUP on the marginal polytope $\mathcal{M}$ of a combinatorial prediction
 market with belief dimension $r$ achieves:*
 
-$$R_T = \frac{r\log T}{2T} + O(T^{-1}) \tag{10.2}$$
+```math
+R_T = \frac{r\log T}{2T} + O(T^{-1}) \tag{10.2}
+```
 
 *This is minimax optimal over the class of all strategies on $\mathcal{M}$.*
 
@@ -747,14 +805,18 @@ unique Bregman divergence invariant under sufficient statistics.*
 The proof is in Theorem 7.1. This connects the Kelly criterion to the
 Fisher-Rao geometry: Kelly is special because KL divergence is special because
 the Fisher-Rao metric is special. The chain of uniqueness runs:
-$$\text{Cencov} \to \text{Fisher-Rao} \to \text{KL divergence} \to \text{Log score} \to \text{Kelly}$$
+```math
+\text{Cencov} \to \text{Fisher-Rao} \to \text{KL divergence} \to \text{Log score} \to \text{Kelly}
+```
 
 **Lemma 10.4** *(Conditional market curvature)*.
 *The curvature of the conditional market fiber bundle $P(A|B)$ vanishes if and
 only if $A \perp B$. The curvature norm $\|\Omega\|^2$ equals the mutual
 information $I(A;B)$ to leading order:*
 
-$$\|\Omega\|^2 = 2\,I(A;B) + O(I(A;B)^2) \tag{10.3}$$
+```math
+\|\Omega\|^2 = 2\,I(A;B) + O(I(A;B)^2) \tag{10.3}
+```
 
 The proof follows from Theorem 5.2 and a Taylor expansion of the connection
 curvature around the flat (independent) case. This gives a geometric

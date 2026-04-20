@@ -83,11 +83,15 @@ portfolio implicitly models.
 For a portfolio $b_t$ evolving on $M$ and an asset $i$, the **portfolio return** at
 time $t$ is:
 
-$$R_{t,i} = \log(b_{t,i}/b_{t-1,i}) \tag{1.1}$$
+```math
+R_{t,i} = \log(b_{t,i}/b_{t-1,i}) \tag{1.1}
+```
 
 The **index return** is:
 
-$$R_t^{\rm index} = \log\langle b_t, x_t\rangle \approx \sum_i b_{t,i}R_{t,i} \tag{1.2}$$
+```math
+R_t^{\rm index} = \log\langle b_t, x_t\rangle \approx \sum_i b_{t,i}R_{t,i} \tag{1.2}
+```
 
 The distributional properties of $R_{t,i}$ and $R_t^{\rm index}$ are determined by
 the diffusion on $M$. For each market type we compute these explicitly.
@@ -102,7 +106,9 @@ For the CAPM market ($r=1$, $M = S^1_+$, two assets), the natural coordinate is
 $b_1 \in (0,1)$ (the weight on asset 1). The canonical diffusion on $S^1_+$ in the
 Fisher-Rao metric $g^{\mathrm{FR}}_{11} = 1/(b_1(1-b_1))$ is:
 
-$$db_t = \kappa(\theta - b_t)\,dt + \sqrt{2\varepsilon^2 b_t(1-b_t)}\,dW_t \tag{2.1}$$
+```math
+db_t = \kappa(\theta - b_t)\,dt + \sqrt{2\varepsilon^2 b_t(1-b_t)}\,dW_t \tag{2.1}
+```
 
 with:
 - $\kappa = \varepsilon^2\lambda_1$ (Jacobi spectral gap, from CLASSIFICATION.md)
@@ -116,8 +122,10 @@ in the Fisher-Rao metric.
 
 **Parameters from market data:**
 
-$$\kappa = \frac{(1-\rho^2)\sigma_A^2\sigma_B^2}{(\sigma_A - \sigma_B\rho)^2\cdot(\sigma_B - \sigma_A\rho)^2}\cdot\varepsilon^2, \quad
-\theta = b^{\ast}_{1} = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.2}$$
+```math
+\kappa = \frac{(1-\rho^2)\sigma_A^2\sigma_B^2}{(\sigma_A - \sigma_B\rho)^2\cdot(\sigma_B - \sigma_A\rho)^2}\cdot\varepsilon^2, \quad
+\theta = b^{\ast}_{1} = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.2}
+```
 
 The **Jacobi parameters** are $\alpha = \kappa\theta/\varepsilon^2$ and $\beta = \kappa(1-\theta)/\varepsilon^2$.
 
@@ -126,7 +134,9 @@ The **Jacobi parameters** are $\alpha = \kappa\theta/\varepsilon^2$ and $\beta =
 **Theorem 2.1** *(Jacobi transition density, Karlin-McGregor 1957)*. *The transition
 density of the Jacobi diffusion (2.1) is:*
 
-$$p(t,b|b_0) = \sum_{n=0}^\infty e^{-\lambda_n t} q_n(b_0) q_n(b) \cdot w(b) \tag{2.3}$$
+```math
+p(t,b|b_0) = \sum_{n=0}^\infty e^{-\lambda_n t} q_n(b_0) q_n(b) \cdot w(b) \tag{2.3}
+```
 
 *where:*
 - *$\lambda_n = \varepsilon^2 n(n+\alpha+\beta)/(2(\alpha+\beta)^2)$ are the eigenvalues*
@@ -138,7 +148,9 @@ $$p(t,b|b_0) = \sum_{n=0}^\infty e^{-\lambda_n t} q_n(b_0) q_n(b) \cdot w(b) \ta
 
 **The stationary distribution** (the $n=0$ term):
 
-$$\rho_\infty(b) = \text{Beta}(\alpha, \beta) = \frac{b^{\alpha-1}(1-b)^{\beta-1}}{B(\alpha,\beta)} \tag{2.4}$$
+```math
+\rho_\infty(b) = \text{Beta}(\alpha, \beta) = \frac{b^{\alpha-1}(1-b)^{\beta-1}}{B(\alpha,\beta)} \tag{2.4}
+```
 
 For the Jeffreys prior: $\alpha = \beta = 1/2$ → arcsine distribution, $\rho_\infty(b) = \frac{1}{\pi\sqrt{b(1-b)}}$.
 
@@ -146,7 +158,9 @@ For the Jeffreys prior: $\alpha = \beta = 1/2$ → arcsine distribution, $\rho_\
 
 For the Jacobi process, the moment generating function of $b_t$ given $b_0$:
 
-$$M(u,t) = \mathbb{E}[e^{ub_t}|b_0] = e^{ub_0 e^{-\kappa t}}\cdot {}_1F_1\!\left(\alpha; \alpha+\beta; u(1-e^{-\kappa t})\right) \tag{2.5}$$
+```math
+M(u,t) = \mathbb{E}[e^{ub_t}|b_0] = e^{ub_0 e^{-\kappa t}}\cdot {}_1F_1\!\left(\alpha; \alpha+\beta; u(1-e^{-\kappa t})\right) \tag{2.5}
+```
 
 where $_1F_1(a;c;z)$ is the Kummer confluent hypergeometric function. Setting $u = i\xi$
 gives the characteristic function of $b_t$.
@@ -154,11 +168,15 @@ gives the characteristic function of $b_t$.
 **Log-return distribution.** The log-return $r_t = \log(b_t/b_{t-1})$ does not have
 a simple closed form, but its characteristic function is:
 
-$$\hat\phi_r(\xi) = \mathbb{E}[e^{i\xi\log(b_t/b_0)}] = \sum_{n=0}^\infty e^{-\lambda_n t}\frac{B(\alpha+i\xi, \beta)}{B(\alpha,\beta)} q_n(b_0) P_n^{(i\xi-1, \beta-1)}(1-2b_0) \tag{2.6}$$
+```math
+\hat\phi_r(\xi) = \mathbb{E}[e^{i\xi\log(b_t/b_0)}] = \sum_{n=0}^\infty e^{-\lambda_n t}\frac{B(\alpha+i\xi, \beta)}{B(\alpha,\beta)} q_n(b_0) P_n^{(i\xi-1, \beta-1)}(1-2b_0) \tag{2.6}
+```
 
 **Short-time limit** ($\kappa t \ll 1$): the Jacobi diffusion approximates GBM:
 
-$$r_t \approx \mathcal{N}\!\left(\left(\mu - \frac{\varepsilon^2}{2b_0(1-b_0)}\right)t, 2\varepsilon^2 b_0(1-b_0)\,t\right) \tag{2.7}$$
+```math
+r_t \approx \mathcal{N}\!\left(\left(\mu - \frac{\varepsilon^2}{2b_0(1-b_0)}\right)t, 2\varepsilon^2 b_0(1-b_0)\,t\right) \tag{2.7}
+```
 
 This is a Gaussian with **position-dependent variance** $\sigma^2(b_0) = 2\varepsilon^2 b_0(1-b_0)$ — the
 Fisher-Rao diffusion coefficient. For $b_0 = 0.5$ (equal weight): $\sigma^2 = \varepsilon^2/2$,
@@ -188,7 +206,9 @@ For the $r$-factor CAPM ($M = S^r_+$), in angular coordinates
 $(\theta_1, \ldots, \theta_{r-1}) \in [0,\pi/2]^{r-1}$ with $b_k = \cos^2\theta_{k-1}\sin^2\theta_{k-2}\cdots$,
 the canonical diffusion on $S^r_+$ is:
 
-$$d\theta_k = -\frac{(r-k)\varepsilon^2}{2}\cot\theta_k\,dt + \varepsilon\,dW^k_t, \qquad k = 1,\ldots,r-1 \tag{3.1}$$
+```math
+d\theta_k = -\frac{(r-k)\varepsilon^2}{2}\cot\theta_k\,dt + \varepsilon\,dW^k_t, \qquad k = 1,\ldots,r-1 \tag{3.1}
+```
 
 The $-\cot\theta_k$ drift is the **geometric drift** from the sphere metric (the sphere
 has positive curvature, which creates a centripetal force pulling the process away from
@@ -199,8 +219,10 @@ the poles). For $r=1$: reduces to (2.1) since $\cot\theta \sim (1-2b_1)/\sqrt{b_
 **Theorem 3.1** *(Spherical heat kernel)*. *The transition density of spherical BM
 on $S^r$ (full sphere, then restrict to positive orthant) is:*
 
-$$p_t(\psi) = \sum_{k=0}^\infty e^{-k(k+r-1)\varepsilon^2 t/2} \frac{(2k+r-1)\Gamma((r-1)/2)}{2\pi^{(r-1)/2}\Gamma(r)}
-C_k^{(r-1)/2}(\cos\psi) \tag{3.2}$$
+```math
+p_t(\psi) = \sum_{k=0}^\infty e^{-k(k+r-1)\varepsilon^2 t/2} \frac{(2k+r-1)\Gamma((r-1)/2)}{2\pi^{(r-1)/2}\Gamma(r)}
+C_k^{(r-1)/2}(\cos\psi) \tag{3.2}
+```
 
 *where $\psi = d_{S^r}(b,b')$ is the geodesic distance and $C_k^{(r-1)/2}$ are the
 Gegenbauer (ultraspherical) polynomials.*
@@ -213,7 +235,9 @@ Gegenbauer (ultraspherical) polynomials.*
 **Return distribution tail.** For large $r$ (many factors), the returns from spherical BM
 have tail index:
 
-$$\alpha_{\rm tail} = \frac{r}{2} \tag{3.3}$$
+```math
+\alpha_{\rm tail} = \frac{r}{2} \tag{3.3}
+```
 
 (from the Weyl law applied to the $S^r$ heat kernel, as established in FOKKER_PLANCK_CFD).
 For $r=4$ (Fama-French): $\alpha_{\rm tail} = 2$ — consistent with empirical equity tail index.
@@ -229,7 +253,9 @@ natural coordinates are $(\theta, \varphi) \in [0, \pi/2]^2$. The induced metric
 the quarter-torus is flat ($g_{T^2} = \mathrm{diag}(1/4, 1/4)$ in normalised coordinates),
 giving the simplest possible diffusion:
 
-$$d\theta_t = \varepsilon\,dW^1_t, \qquad d\varphi_t = \varepsilon\,dW^2_t \tag{4.1}$$
+```math
+d\theta_t = \varepsilon\,dW^1_t, \qquad d\varphi_t = \varepsilon\,dW^2_t \tag{4.1}
+```
 
 **with periodic boundary conditions** $\theta \sim \theta + \pi/2$, $\varphi \sim \varphi + \pi/2$.
 
@@ -240,8 +266,12 @@ periodic boundaries.
 
 In portfolio weight coordinates ($b_1 = \cos^2\theta/2$, $b_3 = \cos^2\varphi/2$):
 
-$$db_{1,t} = -\kappa_1(b_{1,t} - 1/4)\,dt + \sqrt{\varepsilon^2 b_{1,t}(1/2-b_{1,t})}\,dW^1_t \tag{4.2}$$
-$$db_{3,t} = -\kappa_2(b_{3,t} - 1/4)\,dt + \sqrt{\varepsilon^2 b_{3,t}(1/2-b_{3,t})}\,dW^2_t \tag{4.3}$$
+```math
+db_{1,t} = -\kappa_1(b_{1,t} - 1/4)\,dt + \sqrt{\varepsilon^2 b_{1,t}(1/2-b_{1,t})}\,dW^1_t \tag{4.2}
+```
+```math
+db_{3,t} = -\kappa_2(b_{3,t} - 1/4)\,dt + \sqrt{\varepsilon^2 b_{3,t}(1/2-b_{3,t})}\,dW^2_t \tag{4.3}
+```
 
 with $\kappa_1 = \kappa_2 = 4\varepsilon^2$ (from the Clifford torus Jacobi eigenvalue
 $\lambda_1 = 4$ for the quarter-torus Laplacian, CLASSIFICATION.md Section 6.2).
@@ -251,19 +281,25 @@ $\lambda_1 = 4$ for the quarter-torus Laplacian, CLASSIFICATION.md Section 6.2).
 **Theorem 4.1** *(Clifford torus transition density — exact closed form)*. *The
 transition density of the flat torus BM (4.1) is:*
 
-$$p_t(\theta,\varphi\,|\,\theta_0,\varphi_0) = \vartheta_3\!\!\left(\frac{\theta-\theta_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\vartheta_3\!\!\left(\frac{\varphi-\varphi_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\frac{4}{\pi^2} \tag{4.4}$$
+```math
+p_t(\theta,\varphi\,|\,\theta_0,\varphi_0) = \vartheta_3\!\!\left(\frac{\theta-\theta_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\vartheta_3\!\!\left(\frac{\varphi-\varphi_0}{2}\bigg|\frac{i\pi\varepsilon^2 t}{(\pi/2)^2}\right)\cdot\frac{4}{\pi^2} \tag{4.4}
+```
 
 *where the Jacobi theta function is:*
 
-$$\vartheta_3(z|\tau) = \sum_{n=-\infty}^\infty e^{i\pi\tau n^2 + 2niz}
-= 1 + 2\sum_{n=1}^\infty e^{-n^2\pi^2\varepsilon^2 t/(\pi/2)^2}\cos(n(\theta-\theta_0)) \tag{4.5}$$
+```math
+\vartheta_3(z|\tau) = \sum_{n=-\infty}^\infty e^{i\pi\tau n^2 + 2niz}
+= 1 + 2\sum_{n=1}^\infty e^{-n^2\pi^2\varepsilon^2 t/(\pi/2)^2}\cos(n(\theta-\theta_0)) \tag{4.5}
+```
 
 *This is EXACTLY closed form — a convergent series in elementary functions.*
 
 **Alternative form** using the modular parameter $q = e^{-4\varepsilon^2 t}$:
 
-$$p_t(\theta\,|\,\theta_0) = \frac{2}{\pi}\sum_{n=-\infty}^\infty q^{n^2} e^{2ni(\theta-\theta_0)}
-= \frac{2}{\pi}\left[1 + 2\sum_{n=1}^\infty q^{n^2}\cos(2n(\theta-\theta_0))\right] \tag{4.6}$$
+```math
+p_t(\theta\,|\,\theta_0) = \frac{2}{\pi}\sum_{n=-\infty}^\infty q^{n^2} e^{2ni(\theta-\theta_0)}
+= \frac{2}{\pi}\left[1 + 2\sum_{n=1}^\infty q^{n^2}\cos(2n(\theta-\theta_0))\right] \tag{4.6}
+```
 
 **Key properties of the theta transition density:**
 
@@ -282,18 +318,24 @@ For a Clifford torus market, the **spread** between the two factor groups is
 $X_t = \theta_t - \varphi_t$ (the relative within-group allocation). This is a
 1D flat torus BM:
 
-$$dX_t = \varepsilon\sqrt{2}\,dW_t, \qquad X \in [-\pi/2, \pi/2] \text{ (periodic)} \tag{4.7}$$
+```math
+dX_t = \varepsilon\sqrt{2}\,dW_t, \qquad X \in [-\pi/2, \pi/2] \text{ (periodic)} \tag{4.7}
+```
 
 The transition density:
 
-$$p_t(X|X_0) = \frac{2}{\pi}\vartheta_3\!\left(X-X_0\,\Big|\,\frac{i\pi\cdot 2\varepsilon^2 t}{(\pi/2)^2}\right) \tag{4.8}$$
+```math
+p_t(X|X_0) = \frac{2}{\pi}\vartheta_3\!\left(X-X_0\,\Big|\,\frac{i\pi\cdot 2\varepsilon^2 t}{(\pi/2)^2}\right) \tag{4.8}
+```
 
 **The spread return distribution is a wrapped normal distribution** — Gaussian with
 periodic peaks at multiples of $\pi/2$ (corresponding to the torus boundary).
 
 **Characteristic function of the spread:**
 
-$$\hat\phi_{X_t}(\xi) = \mathbb{E}[e^{i\xi X_t}|X_0] = e^{-2\varepsilon^2\xi^2 t}\cdot\frac{\vartheta_3(\xi X_0 | \tau)}{\vartheta_3(0|\tau)} \tag{4.9}$$
+```math
+\hat\phi_{X_t}(\xi) = \mathbb{E}[e^{i\xi X_t}|X_0] = e^{-2\varepsilon^2\xi^2 t}\cdot\frac{\vartheta_3(\xi X_0 | \tau)}{\vartheta_3(0|\tau)} \tag{4.9}
+```
 
 This is a **Gaussian decay modulated by the theta function** — the characteristic
 function oscillates with frequency determined by the torus topology.
@@ -324,14 +366,18 @@ lags corresponding to the torus circumference.
 For a derivative with payoff $G(\theta_T, \varphi_T)$ on the Clifford torus market,
 the price is:
 
-$$V(\theta_0, \varphi_0, t) = e^{-r(T-t)}\int_0^{\pi/2}\!\!\int_0^{\pi/2}
-G(\theta,\varphi)\cdot p_{T-t}(\theta,\varphi|\theta_0,\varphi_0)\,d\theta\,d\varphi \tag{4.10}$$
+```math
+V(\theta_0, \varphi_0, t) = e^{-r(T-t)}\int_0^{\pi/2}\!\!\int_0^{\pi/2}
+G(\theta,\varphi)\cdot p_{T-t}(\theta,\varphi|\theta_0,\varphi_0)\,d\theta\,d\varphi \tag{4.10}
+```
 
 where $p_{T-t}$ is the theta function (4.4). For a European call on the spread
 $X = \theta - \varphi$ with strike $K$:
 
-$$C(\theta_0-\varphi_0, t) = e^{-r(T-t)}\int_{-\pi/2}^{\pi/2}\max(X-K, 0)\cdot
-\frac{2}{\pi}\vartheta_3\!\left(X-X_0\,\Big|\,\frac{2i\varepsilon^2(T-t)}{(\pi/2)^2}\right)dX \tag{4.11}$$
+```math
+C(\theta_0-\varphi_0, t) = e^{-r(T-t)}\int_{-\pi/2}^{\pi/2}\max(X-K, 0)\cdot
+\frac{2}{\pi}\vartheta_3\!\left(X-X_0\,\Big|\,\frac{2i\varepsilon^2(T-t)}{(\pi/2)^2}\right)dX \tag{4.11}
+```
 
 This is a **theta function option pricing formula** — more complex than Black-Scholes
 but exactly computable. For short maturities: reduces to Black-Scholes. For long
@@ -353,7 +399,9 @@ the figure-eight market manifold has induced metric with $K_M = -(1/4 + |II|^2)$
 (from the Gauss equation $K_M = K_{\rm ambient} - |II|^2$). For the figure-eight:
 $|II|^2 = (3-\sqrt{5})/2$ (related to the golden ratio), giving:
 
-$$K_M = -\frac{1}{4} - \frac{3-\sqrt{5}}{2} = -\frac{5-\sqrt{5}}{4} \approx -0.809 \tag{5.1}$$
+```math
+K_M = -\frac{1}{4} - \frac{3-\sqrt{5}}{2} = -\frac{5-\sqrt{5}}{4} \approx -0.809 \tag{5.1}
+```
 
 The market manifold has constant negative sectional curvature $K_M \approx -0.809$ —
 a hyperbolic surface.
@@ -363,26 +411,34 @@ a hyperbolic surface.
 In the Poincaré disc model $\mathbb{D} = \{z \in \mathbb{C}: |z| < 1\}$ with metric
 $ds^2 = 4|dz|^2/(1-|z|^2)^2$, the hyperbolic BM is:
 
-$$dz_t = \frac{\varepsilon(1-|z_t|^2)}{2}\,dW_t^{\mathbb{C}} \tag{5.2}$$
+```math
+dz_t = \frac{\varepsilon(1-|z_t|^2)}{2}\,dW_t^{\mathbb{C}} \tag{5.2}
+```
 
 where $W_t^{\mathbb{C}} = W_t^1 + iW_t^2$ is complex Brownian motion. In real
 coordinates $(x_t, y_t)$ with $z_t = x_t + iy_t$:
 
-$$dx_t = \frac{\varepsilon(1-x_t^2-y_t^2)}{2}\,dW^1_t, \qquad
-dy_t = \frac{\varepsilon(1-x_t^2-y_t^2)}{2}\,dW^2_t \tag{5.3}$$
+```math
+dx_t = \frac{\varepsilon(1-x_t^2-y_t^2)}{2}\,dW^1_t, \qquad
+dy_t = \frac{\varepsilon(1-x_t^2-y_t^2)}{2}\,dW^2_t \tag{5.3}
+```
 
 **In the Poincaré upper half-plane** $\mathbb{H} = \{(x,y): y > 0\}$ with metric $ds^2 = (dx^2+dy^2)/y^2$:
 
-$$dx_t = \varepsilon y_t\,dW^1_t, \qquad
-dy_t = \frac{\varepsilon^2 y_t}{2}\,dt + \varepsilon y_t\,dW^2_t \tag{5.4}$$
+```math
+dx_t = \varepsilon y_t\,dW^1_t, \qquad
+dy_t = \frac{\varepsilon^2 y_t}{2}\,dt + \varepsilon y_t\,dW^2_t \tag{5.4}
+```
 
 Note the **positive drift** in $y$ — the process is pushed toward larger $y$ values
 (toward the boundary $y\to\infty$), reflecting the hyperbolic geometry.
 
 In log coordinates $(u_t = \log x_t, v_t = \log y_t)$:
 
-$$du_t = -\frac{\varepsilon^2}{2}\,dt + \varepsilon\,dW^1_t, \qquad
-dv_t = \frac{\varepsilon^2}{2}\,dt + \varepsilon\,dW^2_t \tag{5.5}$$
+```math
+du_t = -\frac{\varepsilon^2}{2}\,dt + \varepsilon\,dW^1_t, \qquad
+dv_t = \frac{\varepsilon^2}{2}\,dt + \varepsilon\,dW^2_t \tag{5.5}
+```
 
 The $v$-coordinate is a Brownian motion with **positive drift** $\varepsilon^2/2$ —
 the hyperbolic market drifts toward larger $y$ (toward the boundary at infinity).
@@ -392,8 +448,10 @@ the hyperbolic market drifts toward larger $y$ (toward the boundary at infinity)
 **Theorem 5.1** *(McKean 1970)*. *The transition density of hyperbolic BM
 on $\mathbb{H}^{2}$ with curvature $K = -1$ (standard normalisation) is:*
 
-$$p_t(z,z') = \frac{\sqrt{2}\,e^{-t/8}}{(2\pi t)^{3/2}}
-\int_{\rho(z,z')}^\infty \frac{r\,e^{-r^2/(2t)}}{\sqrt{\cosh r - \cosh\rho(z,z')}}\,dr} \tag{5.6}$$
+```math
+p_t(z,z') = \frac{\sqrt{2}\,e^{-t/8}}{(2\pi t)^{3/2}}
+\int_{\rho(z,z')}^\infty \frac{r\,e^{-r^2/(2t)}}{\sqrt{\cosh r - \cosh\rho(z,z')}}\,dr} \tag{5.6}
+```
 
 *where $\rho(z,z') = d_{\mathbb{H}^{2}}(z,z')$ is the hyperbolic geodesic distance.*
 
@@ -402,7 +460,9 @@ $\rho \to \rho/\sqrt{|K_M|}$ and $t \to t/|K_M|$ in (5.6).*
 
 **Alternative formula** using the Legendre function:
 
-$$p_t(\rho) = \frac{e^{-t/4}}{(4\pi t)^{1/2}}\cdot\frac{\rho\,e^{-\rho^2/(4t)}}{\sinh\rho} \tag{5.7}$$
+```math
+p_t(\rho) = \frac{e^{-t/4}}{(4\pi t)^{1/2}}\cdot\frac{\rho\,e^{-\rho^2/(4t)}}{\sinh\rho} \tag{5.7}
+```
 
 where $\rho = \rho(z,z')$ is the hyperbolic distance. This is the **McKean formula**
 — an exact, closed-form transition density for hyperbolic BM.
@@ -418,7 +478,9 @@ where $\rho = \rho(z,z')$ is the hyperbolic distance. This is the **McKean formu
 The **characteristic function of the hyperbolic displacement** $\rho_t$ (geodesic
 distance from origin after time $t$):
 
-$$\mathbb{E}[e^{i\xi\rho_t}] = e^{-t(1/4 + \xi^2)} \tag{5.8}$$
+```math
+\mathbb{E}[e^{i\xi\rho_t}] = e^{-t(1/4 + \xi^2)} \tag{5.8}
+```
 
 This is the **characteristic function of a normal distribution with mean 0 and
 variance $2t$, shifted by $-t/4$** — but in hyperbolic space, not Euclidean space.
@@ -427,7 +489,9 @@ variance $2t$, shifted by $-t/4$** — but in hyperbolic space, not Euclidean sp
 to a random point $Z_\infty$ on the boundary $\partial\mathbb{H}^{2} = \mathbb{R}\cup\{\infty\}$.
 The distribution of $Z_\infty$ is the **harmonic measure** — the **Cauchy distribution**:
 
-$$Z_\infty \sim \text{Cauchy}(x_0, y_0) \tag{5.9}$$
+```math
+Z_\infty \sim \text{Cauchy}(x_0, y_0) \tag{5.9}
+```
 
 (for a process started at $(x_0, y_0) \in \mathbb{H}$, the boundary limit is Cauchy with
 location $x_0$ and scale $y_0$).
@@ -439,7 +503,9 @@ This is the geometric explanation of extreme fat tails in crisis markets.
 
 **The return process.** In the upper half-plane model, the portfolio "return" is:
 
-$$R_t = \log(y_t/y_0) = \frac{\varepsilon^2}{2}t + \varepsilon W^2_t \tag{5.10}$$
+```math
+R_t = \log(y_t/y_0) = \frac{\varepsilon^2}{2}t + \varepsilon W^2_t \tag{5.10}
+```
 
 — a Brownian motion with **drift** $\varepsilon^2/2 > 0$. The hyperbolic market has
 a **built-in positive drift** in the $y$-coordinate (the "distance to boundary"),
@@ -458,7 +524,9 @@ increases volatility further.
 For a Lawson surface $\tau_{m,n}$ (genus $g=mn$), the universal covering space is
 the hyperbolic upper half-plane $\mathbb{H}^{2}$, and:
 
-$$\tau_{m,n} = \mathbb{H}^{2} / \Gamma_{m,n} \tag{6.1}$$
+```math
+\tau_{m,n} = \mathbb{H}^{2} / \Gamma_{m,n} \tag{6.1}
+```
 
 where $\Gamma_{m,n} \subset \mathrm{PSL}(2,\mathbb{R})$ is a **Fuchsian group**
 (discrete group of isometries of $\mathbb{H}^{2}$) with fundamental domain of area
@@ -467,18 +535,24 @@ $4\pi(g-1) = 4\pi(mn-1)$ (by Gauss-Bonnet).
 The canonical diffusion on $\tau_{m,n}$ is hyperbolic BM on $\mathbb{H}^{2}$ projected
 to the quotient:
 
-$$d\tilde z_t = \text{hyperbolic BM on }\mathbb{H}^{2} \pmod{\Gamma_{m,n}} \tag{6.2}$$
+```math
+d\tilde z_t = \text{hyperbolic BM on }\mathbb{H}^{2} \pmod{\Gamma_{m,n}} \tag{6.2}
+```
 
 ### 6.2 The Selberg zeta function as the market's "partition function"
 
 The spectral theory of the Laplacian on $\tau_{m,n}$ is governed by the
 **Selberg trace formula** \[Selberg 1956\]:
 
-$$\sum_k e^{-(\lambda_k - 1/4)t} = \text{(identity contribution)} + \text{(hyperbolic conjugacy classes)} \tag{6.3}$$
+```math
+\sum_k e^{-(\lambda_k - 1/4)t} = \text{(identity contribution)} + \text{(hyperbolic conjugacy classes)} \tag{6.3}
+```
 
 The **Selberg zeta function**:
 
-$$Z(s) = \prod_{\gamma \in \Gamma_{\rm prim}} \prod_{k=0}^\infty (1 - e^{-(s+k)\ell(\gamma)}) \tag{6.4}$$
+```math
+Z(s) = \prod_{\gamma \in \Gamma_{\rm prim}} \prod_{k=0}^\infty (1 - e^{-(s+k)\ell(\gamma)}) \tag{6.4}
+```
 
 where the product is over primitive closed geodesics $\gamma$ of length $\ell(\gamma)$,
 encodes the spectrum $\{\lambda_k\}$ of $-\Delta_{\tau_{m,n}}$ through its zeros at
@@ -487,7 +561,9 @@ $s = 1/2 + i\sqrt{\lambda_k - 1/4}$.
 **The Selberg zeta function IS the market partition function** for the Lawson surface
 market:
 
-$$Z_M^{\rm Selberg}(s) = Z_{\rm CS}^{\rm market}(e^{-s}) \tag{6.5}$$
+```math
+Z_M^{\rm Selberg}(s) = Z_{\rm CS}^{\rm market}(e^{-s}) \tag{6.5}
+```
 
 (where $Z_{\rm CS}$ is the Chern-Simons partition function from KNOT_THEORY.md).
 The zeros of the Selberg zeta function are the **market resonances** — the characteristic
@@ -496,7 +572,9 @@ frequencies of market oscillations on the Lawson surface.
 **The Ramanujan conjecture** (proved for arithmetic surfaces by Deligne \[1974\]) states
 that all non-trivial eigenvalues of the Laplacian on arithmetic Fuchsian quotients satisfy:
 
-$$\lambda_k \geq 1/4 \tag{6.6}$$
+```math
+\lambda_k \geq 1/4 \tag{6.6}
+```
 
 For market manifolds with arithmetic Fuchsian symmetry: the spectral gap is
 $\lambda_1 \geq 1/4$ — the **Ramanujan bound on the market's mean-reversion speed**.
@@ -509,7 +587,9 @@ for why markets with rich symmetry structures are more efficient.
 The transition density on $\tau_{m,n}$ is expressed through automorphic forms — the
 Maass waveforms $\psi_k$ (eigenfunctions of the hyperbolic Laplacian on $\tau_{m,n}$):
 
-$$p_t(z,z') = \frac{1}{\mathrm{vol}(\tau_{m,n})} + \sum_{k=1}^\infty e^{-\lambda_k t}\psi_k(z)\overline{\psi_k(z')} \tag{6.7}$$
+```math
+p_t(z,z') = \frac{1}{\mathrm{vol}(\tau_{m,n})} + \sum_{k=1}^\infty e^{-\lambda_k t}\psi_k(z)\overline{\psi_k(z')} \tag{6.7}
+```
 
 **The stationary distribution** is uniform on $\tau_{m,n}$ (with respect to the
 hyperbolic area measure). Long-run returns converge to the **hyperbolic Cauchy
@@ -529,7 +609,9 @@ pseudo-Anosov homeomorphism $f: M \to M$ with stable foliation $\mathcal{F}^{s}$
 The **natural stochastic process** on a pseudo-Anosov market is not isotropic BM but
 rather an **anisotropic diffusion** along the unstable foliation:
 
-$$db_t = \varepsilon_u\,dW^u_t + \varepsilon_s\,dW^s_t \tag{7.1}$$
+```math
+db_t = \varepsilon_u\,dW^u_t + \varepsilon_s\,dW^s_t \tag{7.1}
+```
 
 where $dW^u_t$ is BM along the unstable foliation and $dW^s_t$ is BM along the
 stable foliation, with $\varepsilon_u \gg \varepsilon_s$ (the unstable direction
@@ -539,12 +621,16 @@ diffuses faster — it is the "chaotic" direction).
 
 The **stationary distribution** of the Anosov diffusion is the **Sinai-Ruelle-Bowen (SRB) measure** $\mu_{\rm SRB}$. For a pseudo-Anosov map:
 
-$$\mu_{\rm SRB} = \text{absolutely continuous on unstable manifolds, singular on stable manifolds} \tag{7.2}$$
+```math
+\mu_{\rm SRB} = \text{absolutely continuous on unstable manifolds, singular on stable manifolds} \tag{7.2}
+```
 
 The SRB measure is NOT the Riemannian volume element — it is a **fractal measure**
 that concentrates on the unstable foliation. Its Hausdorff dimension is:
 
-$$d_H(\mu_{\rm SRB}) = 1 + \frac{h_{\rm top}}{\log\lambda_{\rm pA}} \tag{7.3}$$
+```math
+d_H(\mu_{\rm SRB}) = 1 + \frac{h_{\rm top}}{\log\lambda_{\rm pA}} \tag{7.3}
+```
 
 where $h_{\rm top} = \log\lambda_{\rm pA}$ is the topological entropy.
 For the minimum pseudo-Anosov: $d_H = 2$ (the fractal measure fills the manifold).
@@ -552,7 +638,9 @@ For the minimum pseudo-Anosov: $d_H = 2$ (the fractal measure fills the manifold
 **The return distribution under the SRB measure.** The long-run distribution of
 log-returns $r_t = \log\langle b_t, x_t\rangle$ under the SRB measure is:
 
-$$p_{\rm SRB}(r) \sim |r|^{-1-1/\chi} \quad\text{as } r\to\infty \tag{7.4}$$
+```math
+p_{\rm SRB}(r) \sim |r|^{-1-1/\chi} \quad\text{as } r\to\infty \tag{7.4}
+```
 
 where $\chi = \lambda_u / |\lambda_s|$ is the ratio of unstable to stable Lyapunov exponents.
 For the minimum pseudo-Anosov ($\lambda_u = \log\phi^2 = 2\log\phi$, $\lambda_s = -2\log\phi$):
@@ -660,13 +748,17 @@ $v_{n+1} = v_n + \varepsilon\sqrt{\Delta t}\,Z^2_n$ — this is exact (Itô to S
 For a Clifford torus market with spread $X_t = \theta_t - \varphi_t$ following the
 wrapped Gaussian (4.7), the European call option price is:
 
-$$C(X_0, T) = e^{-rT}\int_{-\pi/2}^{\pi/2}\max(X-K, 0)\cdot\frac{2}{\pi}
-\vartheta_3\!\left(X-X_0\,\Big|\,\frac{4i\varepsilon^2 T}{\pi}\right)dX \tag{10.1}$$
+```math
+C(X_0, T) = e^{-rT}\int_{-\pi/2}^{\pi/2}\max(X-K, 0)\cdot\frac{2}{\pi}
+\vartheta_3\!\left(X-X_0\,\Big|\,\frac{4i\varepsilon^2 T}{\pi}\right)dX \tag{10.1}
+```
 
 **For at-the-money ($K=0$):** by symmetry,
 
-$$C_{\rm ATM} = e^{-rT}\cdot\frac{2}{\pi}\int_0^{\pi/2} X\cdot\vartheta_3(X|\tau)\,dX
-= e^{-rT}\cdot\varepsilon\sqrt{T}\cdot g(\varepsilon^2 T) \tag{10.2}$$
+```math
+C_{\rm ATM} = e^{-rT}\cdot\frac{2}{\pi}\int_0^{\pi/2} X\cdot\vartheta_3(X|\tau)\,dX
+= e^{-rT}\cdot\varepsilon\sqrt{T}\cdot g(\varepsilon^2 T) \tag{10.2}
+```
 
 where $g(u) = \frac{2}{\pi}\sqrt{u}\sum_{n=0}^\infty(-1)^n\frac{e^{-(2n+1)^2/(4u)}}{2n+1}$
 is a **theta function correction** to the Black-Scholes formula.
@@ -684,13 +776,17 @@ compared to Black-Scholes.
 For a hyperbolic market with McKean transition density (5.7), the call option price
 depends on the Legendre function:
 
-$$C_{\rm hyp}(T) = e^{-rT}\int_K^\infty(X-K)\cdot p_T^{\rm hyp}(X|X_0)\,dX \tag{10.3}$$
+```math
+C_{\rm hyp}(T) = e^{-rT}\int_K^\infty(X-K)\cdot p_T^{\rm hyp}(X|X_0)\,dX \tag{10.3}
+```
 
 The integral can be evaluated using the **Mehler-Fock transform** of the McKean kernel.
 For the case $K = X_0$ (ATM):
 
-$$C_{\rm ATM}^{\rm hyp} = e^{-rT}\cdot\frac{e^{-T/8}}{(8\pi T)^{1/2}}
-\int_0^\infty X\cdot\frac{X\,e^{-X^2/(4T)}}{\sinh X}\,dX \tag{10.4}$$
+```math
+C_{\rm ATM}^{\rm hyp} = e^{-rT}\cdot\frac{e^{-T/8}}{(8\pi T)^{1/2}}
+\int_0^\infty X\cdot\frac{X\,e^{-X^2/(4T)}}{\sinh X}\,dX \tag{10.4}
+```
 
 This integral involves the **Lerch transcendent** and cannot be simplified to elementary functions, but is rapidly convergent numerically.
 

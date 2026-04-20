@@ -259,7 +259,9 @@ and still reach conclusions.
 
 The effective dimension of an information-processing system is
 
-$$r = \mathrm{stable_rank}(F) = \frac{\mathrm{tr}(F)}{\|F\|_{\mathrm{op}}} \tag{3.1}$$
+```math
+r = \mathrm{stable_rank}(F) = \frac{\mathrm{tr}(F)}{\|F\|_{\mathrm{op}}} \tag{3.1}
+```
 
 where $F$ is the Fisher information matrix of the system's output distribution.
 This quantity measures the number of independent directions in state space
@@ -303,7 +305,9 @@ intermediate paths.
 Intelligence in the fullest sense requires both high $r$ AND negative curvature
 AND high Cheeger constant:
 
-$$\text{General intelligence} \sim r \cdot |K|^{1/2} \cdot h_M \tag{3.2}$$
+```math
+\text{General intelligence} \sim r \cdot |K|^{1/2} \cdot h_M \tag{3.2}
+```
 
 This is deliberately imprecise — a dimensionless product that captures the
 three requirements. A rigorous version would involve the spectral zeta function
@@ -373,7 +377,9 @@ unrelated ideas are connected through a path we did not expect.
 
 The transformer attention mechanism computes
 
-$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right) V \tag{4.1}$$
+```math
+\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right) V \tag{4.1}
+```
 
 The softmax function creates all-to-all connectivity: every token can attend
 to every other token in $O(1)$ computational steps. This is the discrete
@@ -569,7 +575,9 @@ to every other asset in the market — onto a single scalar. For a market
 with $d = 500$ assets, this is a projection from a 500-dimensional vector
 to a 1-dimensional number. The fraction of information retained is:
 
-$$\frac{1}{d} = \frac{1}{500} = 0.2\% \tag{6.1}$$
+```math
+\frac{1}{d} = \frac{1}{500} = 0.2\% \tag{6.1}
+```
 
 This is an undercount. The full information about Apple's market state is
 not a vector but a row of the Fisher information matrix $F$: a $d$-dimensional
@@ -772,7 +780,9 @@ Level 3 failures — inadequate ascent of the Giry tower.
 
 Each wall strictly constrains the next:
 
-$$\sigma\text{-algebra} \supset \text{Turing} \supset \text{Godel} \supset \text{Pricing} \supset \text{Consciousness}$$
+```math
+\sigma\text{-algebra} \supset \text{Turing} \supset \text{Godel} \supset \text{Pricing} \supset \text{Consciousness}
+```
 
 You cannot compute what you cannot observe. You cannot prove what you cannot
 compute. You cannot price what you cannot prove. And you cannot be aware of

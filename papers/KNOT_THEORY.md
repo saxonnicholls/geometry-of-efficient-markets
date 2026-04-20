@@ -65,7 +65,9 @@ surfaces; Chern-Simons; market topology; writhe; unknotting number; satellite kn
 
 The log-optimal portfolio path is:
 
-$$\Gamma: [0,T] \to S^{d-1}_{+}, \qquad t \mapsto \phi(b^{\ast}(t)) = \sqrt{b^{\ast}(t)} \tag{1.1}$$
+```math
+\Gamma: [0,T] \to S^{d-1}_{+}, \qquad t \mapsto \phi(b^{\ast}(t)) = \sqrt{b^{\ast}(t)} \tag{1.1}
+```
 
 For $d = 3$ (three assets): $\Gamma$ is a curve in $S^2_+$ (a positive octant of the
 2-sphere). Curves on the 2-sphere cannot be knotted — the knot group of $S^2$ is
@@ -92,14 +94,18 @@ the smallest market where non-trivial knot topology can arise.
 The **knotted Plateau problem** asks: given a knot $K \subset S^3$, find the minimal
 surface $\Sigma^{\ast}$ spanning $K$:
 
-$$\Sigma^{\ast} = \operatorname{argmin}_{\partial\Sigma = K} \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{1.2}$$
+```math
+\Sigma^{\ast} = \operatorname{argmin}_{\partial\Sigma = K} \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{1.2}
+```
 
 The topology of $\Sigma^{\ast}$ is constrained by the knot type of $K$:
 
 **Theorem 1.1** *(Seifert genus and the Plateau problem)*. *The minimum genus
 $g(\Sigma^{\ast})$ of any spanning surface for a knot $K$ is the Seifert genus $g(K)$:*
 
-$$g(\Sigma^{\ast}) = g(K) = \min_{\partial\Sigma = K} \text{genus}(\Sigma) \tag{1.3}$$
+```math
+g(\Sigma^{\ast}) = g(K) = \min_{\partial\Sigma = K} \text{genus}(\Sigma) \tag{1.3}
+```
 
 *For the unknot: $g = 0$ (spanning surface is a disk — CAPM, great sphere).*
 *For the trefoil: $g = 1$ (spanning surface is a torus — Clifford torus universality).*
@@ -189,7 +195,9 @@ of the Lawson surface $\tau_{m,n}$.**
 
 Witten \[1989\] established the profound connection:
 
-$$J_K(q) = Z_{\rm CS}[S^3, K] \tag{3.1}$$
+```math
+J_K(q) = Z_{\rm CS}[S^3, K] \tag{3.1}
+```
 
 The **Jones polynomial** $J_K(q)$ — a knot invariant that distinguishes most knots —
 equals the Chern-Simons partition function on $S^3$ with the knot $K$ inserted as a
@@ -197,12 +205,16 @@ Wilson loop. The parameter $q = e^{2\pi i/(k+2)}$ encodes the Chern-Simons level
 
 We established in FIBER_BUNDLES (equation 7.4) that the portfolio action is:
 
-$$\mathcal{S}[b, A] = \int_0^T L_T(b)\,dt + k\int_M \mathrm{CS}(A) \tag{3.2}$$
+```math
+\mathcal{S}[b, A] = \int_0^T L_T(b)\,dt + k\int_M \mathrm{CS}(A) \tag{3.2}
+```
 
 **Combining:** The path integral of the portfolio action with a fixed market path
 $\Gamma$ inserted as a "Wilson loop" gives:
 
-$$\int \mathcal{D}[b]\,e^{\mathcal{S}[b,A]}\,W(\Gamma) = J_\Gamma(e^{2\pi i/(k+2)}) \tag{3.3}$$
+```math
+\int \mathcal{D}[b]\,e^{\mathcal{S}[b,A]}\,W(\Gamma) = J_\Gamma(e^{2\pi i/(k+2)}) \tag{3.3}
+```
 
 where $W(\Gamma) = \mathrm{tr}(\mathcal{P}\exp\oint_\Gamma A)$ is the holonomy of the
 connection around $\Gamma$ (the Berry phase from FIBER_BUNDLES Section 3.2).
@@ -212,7 +224,9 @@ polynomial of the log-optimal portfolio path $\Gamma$ is the market partition fu
 summing over all portfolio trajectories consistent with the market structure, weighted
 by the portfolio action:*
 
-$$J_\Gamma(q) = \int_{\{b: \partial b = \Gamma\}} \mathcal{D}[b]\,e^{\mathcal{S}[b,A]} \tag{3.4}$$
+```math
+J_\Gamma(q) = \int_{\{b: \partial b = \Gamma\}} \mathcal{D}[b]\,e^{\mathcal{S}[b,A]} \tag{3.4}
+```
 
 *where the integration is over all portfolio paths whose boundary is the market path
 $\Gamma$, and $q = e^{2\pi i/(k+2)}$ encodes the Chern-Simons level (topological complexity).*
@@ -229,7 +243,9 @@ $\Gamma$, and $q = e^{2\pi i/(k+2)}$ encodes the Chern-Simons level (topological
 the CAPM has a unique market structure (the great sphere) and no topological complexity.
 
 **For the trefoil (Clifford torus market):**
-$$J_{3_1}(q) = -q^{-4} + q^{-3} + q^{-1} \tag{3.5}$$
+```math
+J_{3_1}(q) = -q^{-4} + q^{-3} + q^{-1} \tag{3.5}
+```
 
 This polynomial carries topological information:
 - It has three terms (corresponding to the three crossings of the trefoil)
@@ -237,13 +253,17 @@ This polynomial carries topological information:
 - It distinguishes the left-handed from right-handed trefoil (the Jones polynomial breaks chirality symmetry) — the two market chiralities (long-value-short-growth vs long-growth-short-value) are topologically distinct
 
 **For the torus knot $T(m,n)$ (Lawson surface market):**
-$$J_{T(m,n)}(q) = q^{(m-1)(n-1)/2}\cdot\frac{1 - q^{m+1} - q^{n+1} + q^{m+n}}{1 - q^2} \tag{3.6}$$
+```math
+J_{T(m,n)}(q) = q^{(m-1)(n-1)/2}\cdot\frac{1 - q^{m+1} - q^{n+1} + q^{m+n}}{1 - q^2} \tag{3.6}
+```
 
 The leading power $(m-1)(n-1)/2 = g(K)$ is the Seifert genus — consistent with our
 identification of the Lawson surface genus with the market complexity.
 
 **For the figure-eight knot (hyperbolic 2-factor market):**
-$$J_{4_1}(q) = q^2 - q + 1 - q^{-1} + q^{-2} \tag{3.7}$$
+```math
+J_{4_1}(q) = q^2 - q + 1 - q^{-1} + q^{-2} \tag{3.7}
+```
 
 This is palindromic (reads the same forwards and backwards) — reflecting the
 amphicheiral symmetry (long-short equivalence) of the figure-eight market.
@@ -252,7 +272,9 @@ amphicheiral symmetry (long-short equivalence) of the figure-eight market.
 
 The Jones polynomial evaluated at $q = -1$ gives the **determinant** of the knot:
 
-$$\det(K) = |J_K(-1)| \tag{3.8}$$
+```math
+\det(K) = |J_K(-1)| \tag{3.8}
+```
 
 | Knot | $\det(K)$ | Market interpretation |
 |:-----|:---------:|:---------------------|
@@ -276,13 +298,17 @@ lobes of the minimal Seifert surface.
 For a knot $K$ with Seifert surface $\Sigma$, the **Seifert matrix** $V$ encodes the
 linking numbers of cycles on $\Sigma$ with their push-offs in the normal direction:
 
-$$V_{ij} = \mathrm{lk}(\alpha_i, \alpha_j^+) \tag{4.1}$$
+```math
+V_{ij} = \mathrm{lk}(\alpha_i, \alpha_j^+) \tag{4.1}
+```
 
 where $\alpha_1,\ldots,\alpha_{2g}$ is a basis for $H_1(\Sigma; \mathbb{Z})$ and
 $\alpha_j^+$ is the push-off of $\alpha_j$ in the positive normal direction.
 
 **The Alexander polynomial:**
-$$\Delta_K(t) = \det(V - tV^T) \tag{4.2}$$
+```math
+\Delta_K(t) = \det(V - tV^T) \tag{4.2}
+```
 
 is a polynomial knot invariant, symmetric under $t \mapsto t^{-1}$ and normalised so
 $\Delta_K(1) = \pm 1$.
@@ -293,7 +319,9 @@ $\Delta_K(1) = \pm 1$.
 $V$ of the market knot $\Gamma$ equals the monodromy matrix of the normal bundle
 connection $\nabla^N$ around the market cycle $\Gamma$:*
 
-$$V = \mathrm{Hol}_\Gamma(\nabla^N) \in \mathrm{GL}(d-1-r; \mathbb{Z}) \tag{4.3}$$
+```math
+V = \mathrm{Hol}_\Gamma(\nabla^N) \in \mathrm{GL}(d-1-r; \mathbb{Z}) \tag{4.3}
+```
 
 *where the holonomy is computed in the $\mathbb{Z}$-module structure on
 $H_1(\Sigma;\mathbb{Z})$ (the integer first homology of the Seifert surface).*
@@ -389,7 +417,9 @@ to a **market regime change** — a discrete event where two factor loadings cro
 
 The Gordian distance gives a metric on the space of market structures:
 
-$$d_G(M_1, M_2) = \text{minimum regime changes to deform market } M_1 \text{ to market } M_2 \tag{5.1}$$
+```math
+d_G(M_1, M_2) = \text{minimum regime changes to deform market } M_1 \text{ to market } M_2 \tag{5.1}
+```
 
 **The Gordian distance is the market-structure distance** — a metric on the moduli
 space of market topological types, measuring how many discrete economic disruptions
@@ -412,7 +442,9 @@ $S(K,J)$ is constructed by:
 2. Replace it with $J$ embedded in the solid torus
 
 The Seifert genus of a satellite satisfies:
-$$g(S(K,J)) \geq g(K) + g(J) \tag{6.1}$$
+```math
+g(S(K,J)) \geq g(K) + g(J) \tag{6.1}
+```
 
 (with equality for many common cases).
 
@@ -424,12 +456,16 @@ structure $M_1$, and the outer market has additional factor structure $M_2$. The
 composite market manifold $M_{\rm comp}$ is the satellite of $M_2$ around $M_1$.*
 
 **The Seifert genus of the composite market:**
-$$g(M_{\rm comp}) \geq g(M_1) + g(M_2) \tag{6.2}$$
+```math
+g(M_{\rm comp}) \geq g(M_1) + g(M_2) \tag{6.2}
+```
 
 **The Jones polynomial of the composite market:**
 
 For a connected sum of knots $K_1 \\# K_2$ (the simplest form of composition):
-$$J_{K_1 \\# K_2}(q) = J_{K_1}(q) \cdot J_{K_2}(q) \tag{6.3}$$
+```math
+J_{K_1 \\# K_2}(q) = J_{K_1}(q) \cdot J_{K_2}(q) \tag{6.3}
+```
 
 The Jones polynomial factorises over the composite market structure. **The market
 partition function (Jones polynomial) of a composite market is the product of the
@@ -456,7 +492,9 @@ The Jones polynomial is a polynomial invariant, but it admits a richer invariant
 **Khovanov homology** \[Khovanov 2000\] is a bigraded chain complex whose Euler
 characteristic is the Jones polynomial:
 
-$$\chi(\mathrm{Kh}(K)) = J_K(q) \tag{7.1}$$
+```math
+\chi(\mathrm{Kh}(K)) = J_K(q) \tag{7.1}
+```
 
 Khovanov homology is strictly stronger than the Jones polynomial — it distinguishes
 knots that the Jones polynomial cannot.
@@ -464,7 +502,9 @@ knots that the Jones polynomial cannot.
 **For markets:** Khovanov homology of the market path $\Gamma$ is a bigraded
 abelian group $\mathrm{Kh}^{i,j}(\Gamma)$ whose generating function:
 
-$$P_\Gamma(t,q) = \sum_{i,j}(-1)^i q^j t^i\,\mathrm{rank}\,\mathrm{Kh}^{i,j}(\Gamma) \tag{7.2}$$
+```math
+P_\Gamma(t,q) = \sum_{i,j}(-1)^i q^j t^i\,\mathrm{rank}\,\mathrm{Kh}^{i,j}(\Gamma) \tag{7.2}
+```
 
 is the Poincaré polynomial of the market's topological structure. Setting $t=-1$
 recovers the Jones polynomial.
@@ -483,7 +523,9 @@ The rank of $\mathrm{Kh}^{0,j}$ (the zeroth homological grading) counts the numb
 Rasmussen \[2010\] defined an integer invariant $s(K)$ from the "s-grading" on
 Khovanov homology satisfying:
 
-$$|s(K)| \leq 2g_4(K) \leq 2g(K) \tag{7.3}$$
+```math
+|s(K)| \leq 2g_4(K) \leq 2g(K) \tag{7.3}
+```
 
 where $g_4(K)$ is the 4-ball genus (slice genus) and $g(K)$ is the Seifert genus.
 
@@ -634,7 +676,9 @@ efficient in the topological sense (CAPM-type, no protected alpha), the Jones
 polynomial of the market path must equal 1 — the unknot condition. This is the
 strongest form of the Efficient Market Hypothesis, incorporating topological constraints.
 
-$$\text{Topological EMH: } J_\Gamma(q) = 1 \iff \text{market is topologically trivial (CAPM)} \tag{10.1}$$
+```math
+\text{Topological EMH: } J_\Gamma(q) = 1 \iff \text{market is topologically trivial (CAPM)} \tag{10.1}
+```
 
 This is a new, computable, model-free test of market efficiency using knot invariants.
 

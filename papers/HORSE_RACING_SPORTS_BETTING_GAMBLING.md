@@ -104,7 +104,9 @@ fraction wagered on horse $i$. The risky bet space is the face
 $\{b \in \Delta_d : b_0 = 0\}$, isomorphic to $\Delta_{d-1}$.*
 
 The Fisher-Rao metric on the race simplex:
-$$g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.1}$$
+```math
+g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.1}
+```
 
 The Bhattacharyya embedding: $\phi: b \mapsto \sqrt{b} \in S^{d-1}_{+}$.
 
@@ -137,10 +139,14 @@ fields, unusual conditions) tend toward the Clifford or pseudo-Anosov types.
 
 A bookmaker offers decimal odds $o_1, \ldots, o_d$ on $d$ runners. The
 implied probabilities are:
-$$q_i = \frac{1}{o_i} \bigg/ \sum_j\frac{1}{o_j} \tag{2.1}$$
+```math
+q_i = \frac{1}{o_i} \bigg/ \sum_j\frac{1}{o_j} \tag{2.1}
+```
 
 The **overround** (vig, juice, margin) is:
-$$\Omega = \sum_i\frac{1}{o_i} - 1 > 0 \tag{2.2}$$
+```math
+\Omega = \sum_i\frac{1}{o_i} - 1 > 0 \tag{2.2}
+```
 
 For a fair book: $\Omega = 0$. For a typical bookmaker: $\Omega \approx 0.05$–$0.20$
 (5%–20% margin).
@@ -152,14 +158,18 @@ bookmaker's implied probabilities $q = (q_1, \ldots, q_d) \in \Delta_{d-1}$
 are two points on the race simplex. The Fisher-Rao distance between them
 measures how much information the bettor has that the bookmaker doesn't:
 
-$$d_{g^{\rm FR}}(p, q) = 2\arccos\sum_i\sqrt{p_i q_i} \tag{2.3}$$
+```math
+d_{g^{\rm FR}}(p, q) = 2\arccos\sum_i\sqrt{p_i q_i} \tag{2.3}
+```
 
 **Theorem 2.1** *(Edge = Fisher-Rao displacement)*.
 *The bettor's expected log-growth advantage over the bookmaker is determined
 by the Fisher-Rao distance between the true probabilities $p$ and the
 implied probabilities $q$:*
 
-$$\mathbb{E}[\text{log-growth per race}] = D_{\rm KL}(p \| q) - \frac{\Omega}{1+\Omega} \approx \frac{1}{2}d^2_{g^{\rm FR}}(p,q) - \frac{\Omega}{1+\Omega} \tag{2.4}$$
+```math
+\mathbb{E}[\text{log-growth per race}] = D_{\rm KL}(p \| q) - \frac{\Omega}{1+\Omega} \approx \frac{1}{2}d^2_{g^{\rm FR}}(p,q) - \frac{\Omega}{1+\Omega} \tag{2.4}
+```
 
 *The first term is the information edge (positive when you know $p$ better
 than the bookmaker). The second term is the vig (always negative). A
@@ -170,7 +180,9 @@ profitable bettor needs $d_{g^{\rm FR}}(p,q) > \sqrt{2\Omega/(1+\Omega)}$
 true probabilities $p$ against implied probabilities $q$ with overround
 $\Omega$, decomposes as:
 
-$$\mathbb{E}_{p}[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})] = D_{\rm KL}(p \| q) - \log(1 + \Omega)$$
+```math
+\mathbb{E}_{p}[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})] = D_{\rm KL}(p \| q) - \log(1 + \Omega)
+```
 
 where $D_{\rm KL}(p \| q) = \sum_i p_i \log(p_i/q_i)$ is the
 Kullback-Leibler divergence (the information edge) and $\log(1+\Omega) \approx \Omega/(1+\Omega)$
@@ -254,7 +266,9 @@ displacement) than longshots (small $p_i$, negative displacement). $\square$
 ### 3.3 The exploitable edge
 
 By the Sharpe-curvature identity:
-$$\mathrm{Sharpe}_{\rm FLB}^{\ast} = \|H\|_{L^2(\mathcal{O})} \tag{3.1}$$
+```math
+\mathrm{Sharpe}_{\rm FLB}^{\ast} = \|H\|_{L^2(\mathcal{O})} \tag{3.1}
+```
 
 The maximum Sharpe ratio of any betting strategy exploiting the FLB is
 computable from publicly available odds.
@@ -293,12 +307,16 @@ The return vector for race $t$ is $x_t \in \mathbb{R}^{d+1}_{+}$ where
 $x_{t,0} = 1$ (cash) and $x_{t,i} = o_i$ if horse $i$ wins, $0$ otherwise.
 The wealth evolution is:
 
-$$W_{t+1} = W_t \cdot (b_0 + b_{\rm winner} \cdot o_{\rm winner}) \tag{4.0}$$
+```math
+W_{t+1} = W_t \cdot (b_0 + b_{\rm winner} \cdot o_{\rm winner}) \tag{4.0}
+```
 
 The Kelly growth rate is $\mathbb{E}[\log(b_0 + b_{\rm winner} \cdot o_{\rm winner})]$.
 Given true win probabilities $p$ and decimal odds $o$, the Kelly bet is:
 
-$$b^{\ast}_{i} = \max\left(0, \frac{p_i o_i - 1}{\sum_j p_j o_j - 1}\right) \tag{4.1}$$
+```math
+b^{\ast}_{i} = \max\left(0, \frac{p_i o_i - 1}{\sum_j p_j o_j - 1}\right) \tag{4.1}
+```
 
 with the cash component $b^{\ast}_{0} = 1 - \sum_{i \geq 1} b^{\ast}_{i}$ absorbing the
 residual. Note: without the cash asset, maximising $\mathbb{E}[\log\langle b, x\rangle]$
@@ -313,7 +331,9 @@ The Kelly bettor needs to know $p$ (the true probabilities). The MUP bettor
 does not — it integrates over all possible $p$ weighted by evidence from
 past races:
 
-$$b^{\rm MUP}_{T} = \frac{\int_{M^r} b(p)\, W_T(b(p))\, d\mathrm{vol}(p)}{\int_{M^r} W_T(b(p))\, d\mathrm{vol}(p)} \tag{4.2}$$
+```math
+b^{\rm MUP}_{T} = \frac{\int_{M^r} b(p)\, W_T(b(p))\, d\mathrm{vol}(p)}{\int_{M^r} W_T(b(p))\, d\mathrm{vol}(p)} \tag{4.2}
+```
 
 where $M^r$ is the race manifold (the set of plausible true probability
 vectors, with $r$ independent factors — class, going, distance, jockey, etc.).
@@ -328,7 +348,9 @@ of races observed and $r$ is the number of independent racing factors.
 In practice, most serious punters use fractional Kelly — betting a fraction
 $f \in (0,1)$ of the Kelly-optimal amount. In our framework:
 
-$$b^f = (1-f)\cdot b^{\rm cash} + f\cdot b^{\ast} \tag{4.3}$$
+```math
+b^f = (1-f)\cdot b^{\rm cash} + f\cdot b^{\ast} \tag{4.3}
+```
 
 where $b^{\rm cash} = (1, 0, \ldots, 0)$ (keep everything in cash).
 
@@ -341,7 +363,9 @@ GEOMETRICALLY correct interpolation. For small $f$, the two agree to
 leading order.
 
 The log-growth rate of fractional Kelly is:
-$$g(f) = \mathbb{E}[\log(1 - f + f \cdot (b^{\ast} \cdot x))] \tag{4.4}$$
+```math
+g(f) = \mathbb{E}[\log(1 - f + f \cdot (b^{\ast} \cdot x))] \tag{4.4}
+```
 
 which is concave in $f$ with maximum at $f = 1$ (full Kelly) and $g(0) = 0$
 (no bet). The variance of log-wealth is approximately $f^2 \cdot \mathrm{Var}(\log(b^{\ast} \cdot x))$.
@@ -362,7 +386,9 @@ chooses $f$ to balance growth rate against drawdown risk.
 Harville (1973) proposed that the probability of a finishing order
 $(\sigma_1, \sigma_2, \ldots, \sigma_d)$ (horse $\sigma_k$ finishes $k$-th) is:
 
-$$P(\sigma_1, \ldots, \sigma_d) = \prod_{k=1}^{d}\frac{p_{\sigma_k}}{1 - \sum_{j=1}^{k-1}p_{\sigma_j}} \tag{5.1}$$
+```math
+P(\sigma_1, \ldots, \sigma_d) = \prod_{k=1}^{d}\frac{p_{\sigma_k}}{1 - \sum_{j=1}^{k-1}p_{\sigma_j}} \tag{5.1}
+```
 
 This is used to price exotic bets (exactas, trifectas, superfectas).
 
@@ -453,7 +479,9 @@ A tennis match has two outcomes: player A wins, player B wins. The bet
 simplex is $\Delta_1 = [0,1]$ — an interval. This is the simplest possible
 market: one-dimensional, and the Fisher-Rao metric is:
 
-$$g^{\rm FR}(b) = \frac{1}{b(1-b)} \tag{6.1}$$
+```math
+g^{\rm FR}(b) = \frac{1}{b(1-b)} \tag{6.1}
+```
 
 This is the metric of the Jacobi diffusion from Paper II.3. Tennis match
 probabilities evolve during the match as a Jacobi diffusion on $[0,1]$
@@ -631,7 +659,9 @@ simplex.
 **The market-making mechanism defines the geometry.** For a logarithmic
 market scoring rule (LMSR, Hanson 2003):
 
-$$C(q) = b\log\sum_i e^{q_i/b} \tag{9.1}$$
+```math
+C(q) = b\log\sum_i e^{q_i/b} \tag{9.1}
+```
 
 the cost function $C$ is convex on $\mathbb{R}^{d}$, and the prices
 $p_i = \partial C/\partial q_i = e^{q_i/b}/\sum e^{q_j/b}$ are the softmax

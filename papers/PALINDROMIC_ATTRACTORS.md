@@ -87,7 +87,9 @@ Given a scalar time series $\{\sigma_t\}_{t \geq 0}$ observed from a
 dynamical system on an $r$-dimensional manifold $M$, the **delay
 embedding** at lag $\tau$ and dimension $m$:
 
-$$\vec{\sigma}_{t} = (\sigma_t, \sigma_{t-\tau}, \sigma_{t-2\tau}, \ldots, \sigma_{t-(m-1)\tau}) \in \mathbb{R}^{m} \tag{1.1}$$
+```math
+\vec{\sigma}_{t} = (\sigma_t, \sigma_{t-\tau}, \sigma_{t-2\tau}, \ldots, \sigma_{t-(m-1)\tau}) \in \mathbb{R}^{m} \tag{1.1}
+```
 
 reconstructs the attractor of the underlying dynamical system.
 
@@ -109,7 +111,9 @@ conditional on $\sigma_t$.
 involution** $T: \mathbb{R}^{m} \to \mathbb{R}^{m}$ in delay coordinates is
 the reflection:*
 
-$$T(\sigma_t, \sigma_{t-\tau}, \ldots, \sigma_{t-(m-1)\tau}) = (\sigma_t, \sigma_{t+\tau}, \ldots, \sigma_{t+(m-1)\tau}) \tag{1.2}$$
+```math
+T(\sigma_t, \sigma_{t-\tau}, \ldots, \sigma_{t-(m-1)\tau}) = (\sigma_t, \sigma_{t+\tau}, \ldots, \sigma_{t+(m-1)\tau}) \tag{1.2}
+```
 
 *— replacing each past delay with its corresponding future delay.*
 
@@ -117,7 +121,9 @@ $$T(\sigma_t, \sigma_{t-\tau}, \ldots, \sigma_{t-(m-1)\tau}) = (\sigma_t, \sigma
 palindromic process, the Takens attractor is invariant under the
 time-reversal involution:*
 
-$$T(\vec{\sigma}(M)) = \vec{\sigma}(M) \tag{1.3}$$
+```math
+T(\vec{\sigma}(M)) = \vec{\sigma}(M) \tag{1.3}
+```
 
 *The attractor inherits a $\mathbb{Z}_{2}$ action.*
 
@@ -161,7 +167,9 @@ Specifically: let $R_\alpha: S^1 \to S^1$ be rotation by angle
 $2\pi\alpha$ with irrational $\alpha$. Partition $S^1$ into
 $I_0 = [0, 1-\alpha)$ and $I_1 = [1-\alpha, 1)$. The symbolic sequence:
 
-$$\sigma_t = \begin{cases} 0 & \text{if } R_\alpha^t(x) \in I_0 \\ 1 & \text{if } R_\alpha^t(x) \in I_1 \end{cases} \tag{2.1}$$
+```math
+\sigma_t = \begin{cases} 0 \& \text{if } R_\alpha^t(x) \in I_0 \\ 1 \& \text{if } R_\alpha^t(x) \in I_1 \end{cases} \tag{2.1}
+```
 
 is a Sturmian sequence with slope $\alpha$.
 
@@ -210,7 +218,9 @@ substitution sequence is a compact self-similar set $\mathcal{R}$ in
 $\mathbb{R}^{r-1}$ (one dimension less than the symbolic alphabet size)
 with Hausdorff dimension:*
 
-$$\dim_H(\mathcal{R}) = \frac{\log \beta}{\log|\beta^{-}|} \tag{2.2}$$
+```math
+\dim_H(\mathcal{R}) = \frac{\log \beta}{\log|\beta^{-}|} \tag{2.2}
+```
 
 *where $\beta$ is the Pisot dominant eigenvalue and $\beta^{-}$ is the
 second-largest eigenvalue in absolute value.*
@@ -249,7 +259,9 @@ between ordered (Pisot) and disordered (Bernoulli) symbolic dynamics.
 For a Bernoulli (i.i.d.) sequence, the Takens attractor fills the entire
 embedding space:
 
-$$\vec{\sigma}(M) = [0, 1]^m \quad \text{(for bounded alphabet)} \tag{2.3}$$
+```math
+\vec{\sigma}(M) = [0, 1]^m \quad \text{(for bounded alphabet)} \tag{2.3}
+```
 
 Hausdorff dimension = $m$ = embedding dimension. No finite-dimensional
 attractor structure. This is the RANDOM fixed point — no palindromic
@@ -283,7 +295,9 @@ $g$ on the Takens attractor:
 on a palindromic Takens attractor must be invariant under the time-reversal
 involution $T$:*
 
-$$T^{\ast} g = g \tag{3.1}$$
+```math
+T^{\ast} g = g \tag{3.1}
+```
 
 *Equivalently, in reflection-adapted coordinates $(x_1, \ldots, x_r)$
 where $T: (x_1, \ldots, x_r) \to (-x_1, x_2, \ldots, x_r)$:*
@@ -305,7 +319,9 @@ $\Delta_{d-1}$ is DIAGONAL. It automatically satisfies the palindromic
 invariance condition (3.1) for ANY palindromic reflection $\tau$ that
 permutes coordinate indices:*
 
-$$g^{\rm FR}(R_\tau(b)) = R_\tau^{\ast} g^{\rm FR}(b) \tag{3.2}$$
+```math
+g^{\rm FR}(R_\tau(b)) = R_\tau^{\ast} g^{\rm FR}(b) \tag{3.2}
+```
 
 *This is immediate: since Fisher-Rao is diagonal and the reflection
 permutes diagonal entries, the metric is preserved.*
@@ -334,7 +350,9 @@ having Pisot dominant eigenvalue $\beta$, then any Riemannian metric
 compatible with the fractal structure must be CONFORMALLY SELF-SIMILAR
 under the substitution action:*
 
-$$S^{\ast} g = \beta^{2} g \tag{3.3}$$
+```math
+S^{\ast} g = \beta^{2} g \tag{3.3}
+```
 
 *where $S$ is the self-similarity map (contraction by $\beta^{-1}$).*
 
@@ -381,7 +399,9 @@ For a process generating a Takens attractor with Hurst exponent $H$:
 dimension of a Takens attractor arising from a Gaussian process with
 Hurst exponent $H$ is:*
 
-$$\dim_H(\mathcal{A}) = m - (H - 1) \quad \text{for embedding dimension } m \tag{4.1}$$
+```math
+\dim_H(\mathcal{A}) = m - (H - 1) \quad \text{for embedding dimension } m \tag{4.1}
+```
 
 *where $m$ is the Whitney embedding dimension.*
 
@@ -392,7 +412,9 @@ this isn't quite right. Let me state the correct result.
 motion trajectory in $\mathbb{R}$ is $\dim_H = 2 - H$. The trajectory
 embedded in $\mathbb{R}^{m}$ has:*
 
-$$\dim_H(\mathcal{A}_{\rm fBM}) = \min(m, 1/H) \tag{4.2}$$
+```math
+\dim_H(\mathcal{A}_{\rm fBM}) = \min(m, 1/H) \tag{4.2}
+```
 
 For $H = 0.35$ (anti-persistent market): $\dim_H = 1/0.35 \approx 2.86$.
 So the Takens attractor of an FPS market with $H \approx 0.35$ has
@@ -450,7 +472,9 @@ attractor.
 with $k$ independent palindromic axes, the effective dimension is
 $r_{\rm eff} = r - k$, and the minimum embedding dimension is:*
 
-$$m^{\ast} = 2r_{\rm eff} + 1 = 2(r - k) + 1 \tag{5.1}$$
+```math
+m^{\ast} = 2r_{\rm eff} + 1 = 2(r - k) + 1 \tag{5.1}
+```
 
 *The palindromic structure REDUCES the embedding requirement by $2k$.*
 
@@ -476,7 +500,9 @@ structure effectively reduces the dimensionality.
 For a palindromic market in universality class P4 (Pisot), the effective
 dimension $r_{\rm eff}$ satisfies:
 
-$$r_{\rm eff} / r = 1/\phi \approx 0.618 \tag{5.2}$$
+```math
+r_{\rm eff} / r = 1/\phi \approx 0.618 \tag{5.2}
+```
 
 — the golden ratio reciprocal. This is a specific RG fixed-point relation
 for Pisot attractors.

@@ -139,7 +139,9 @@ information processing system. We require three operations:
 
 **Axiom 1 (Closure under combination).**
 *For all $p, q \in \mathcal{S}$ and $\lambda \in [0,1]$:*
-$$p \circ_\lambda q \in \mathcal{S} \tag{2.1}$$
+```math
+p \circ_\lambda q \in \mathcal{S} \tag{2.1}
+```
 
 *Moreover, $\circ$ satisfies the mixture axioms:*
 - *$p \circ_0 q = p$ and $p \circ_1 q = q$ (boundary)*
@@ -153,7 +155,9 @@ an invalid output. Information processing requires valid intermediate states.
 
 **Axiom 2 (Data processing inequality).**
 *For any channel $f \in \mathcal{C}$:*
-$$D(f(p), f(q)) \leq D(p, q) \quad \forall\, p, q \in \mathcal{S} \tag{2.2}$$
+```math
+D(f(p), f(q)) \leq D(p, q) \quad \forall\, p, q \in \mathcal{S} \tag{2.2}
+```
 
 **Interpretation.** Processing cannot increase the distinguishability of two
 states. This is the fundamental law of information: you cannot create
@@ -168,8 +172,12 @@ This axiom encodes:
 
 **Axiom 3 (Continuity).**
 *The combination $\circ_\lambda$ and divergence $D$ are continuous:*
-$$\lambda_n \to \lambda \implies p \circ_{\lambda_n} q \to p \circ_\lambda q \tag{2.3}$$
-$$p_n \to p, q_n \to q \implies D(p_n, q_n) \to D(p, q) \tag{2.4}$$
+```math
+\lambda_n \to \lambda \implies p \circ_{\lambda_n} q \to p \circ_\lambda q \tag{2.3}
+```
+```math
+p_n \to p, q_n \to q \implies D(p_n, q_n) \to D(p, q) \tag{2.4}
+```
 
 **Interpretation.** Small changes in the mixture parameter produce small
 changes in the state. Small changes in the states produce small changes in
@@ -220,7 +228,9 @@ The key result that converts the axioms into geometry:
 - *(iii) $D$ is continuous*
 
 *Then $g = c \cdot g^{\rm FR}$ for some constant $c > 0$, where*
-$$g^{\rm FR}_{ij}(p) = \frac{\delta_{ij}}{p_i} \tag{3.1}$$
+```math
+g^{\rm FR}_{ij}(p) = \frac{\delta_{ij}}{p_i} \tag{3.1}
+```
 *is the Fisher-Rao metric.*
 
 *The Fisher-Rao metric is the unique (up to scale) Riemannian metric on the
@@ -300,14 +310,18 @@ $\Delta_{d-1}$ satisfies A1 and A2 but is not continuous.
 
 **Theorem 4.1** *(Bhattacharyya isometry)*.
 *The map $\phi: \Delta_{d-1} \to S^{d-1}(\frac{1}{2})$ defined by*
-$$\phi(p) = \sqrt{p} = (\sqrt{p_1}, \ldots, \sqrt{p_d}) \tag{4.1}$$
+```math
+\phi(p) = \sqrt{p} = (\sqrt{p_1}, \ldots, \sqrt{p_d}) \tag{4.1}
+```
 *is an isometric embedding of $(\Delta_{d-1}, \frac{1}{4}g^{\rm FR})$ into
 the sphere $S^{d-1}(\frac{1}{2})$ of radius $\frac{1}{2}$ with the
 round metric.*
 
 *Proof.* Compute the pullback: let $v \in T_p\Delta_{d-1}$ with $\sum v_i = 0$.
 Then $d\phi(v)_i = v_i/(2\sqrt{p_i})$ and
-$$|d\phi(v)|^2 = \sum_i \frac{v_i^2}{4p_i} = \frac{1}{4}g^{\rm FR}(v,v)$$
+```math
+|d\phi(v)|^2 = \sum_i \frac{v_i^2}{4p_i} = \frac{1}{4}g^{\rm FR}(v,v)
+```
 The image satisfies $\sum \phi_i^2 = \sum p_i = 1$, hence
 $\phi(\Delta_{d-1}) \subset S^{d-1}(1)$. Rescaling by $\frac{1}{2}$
 normalises the curvature to $K = 1/4$, the standard Bhattacharyya
@@ -322,7 +336,9 @@ the minimising geodesic (great circle arc) from $u$ to $v$ lies entirely
 in $S^{d-1}_{+}$.*
 
 *Proof.* The geodesic on $S^{d-1}$ from $u$ to $v$ is
-$$\gamma(t) = \frac{\sin((1-t)\theta)}{\sin\theta}\,u + \frac{\sin(t\theta)}{\sin\theta}\,v \tag{4.2}$$
+```math
+\gamma(t) = \frac{\sin((1-t)\theta)}{\sin\theta}\,u + \frac{\sin(t\theta)}{\sin\theta}\,v \tag{4.2}
+```
 where $\theta = \arccos(u \cdot v)$. Since $u, v \in \mathbb{R}^{d}_+$ and
 $\theta \leq \pi/2$ (because $u \cdot v = \sum \sqrt{p_i q_i} \geq 0$),
 both coefficients $\sin((1-t)\theta)/\sin\theta$ and $\sin(t\theta)/\sin\theta$

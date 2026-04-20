@@ -112,7 +112,9 @@ sphere $S_+^{d_i - 1}$, where $d_i$ is the number of sovereign instruments
 and $r_i$ is the number of systematic factors driving returns. We index the
 founding members:
 
-$$\mathcal{E} = \{\text{DE, FR, IT, ES, NL, BE, AT, FI, IE, PT, LU}\}$$
+```math
+\mathcal{E} = \{\text{DE, FR, IT, ES, NL, BE, AT, FI, IE, PT, LU}\}
+```
 
 Each manifold $M_i^{r_i}$ carries its own induced metric $g_i$, its own
 spectral gap $\lambda_1^{(i)}$ (the rate of mean-reversion under the Jacobi
@@ -125,11 +127,13 @@ The Euro eliminated exchange rate risk between the 11 currencies, creating a
 single bond market from 11 separate ones. In the language of
 INTERMARKET_GEOMETRY.md, this is a connected sum operation:
 
-$$M_{\text{Euro}} = M_{\text{DE}} \mathbin{\#} M_{\text{FR}} \mathbin{\#}
+```math
+M_{\text{Euro}} = M_{\text{DE}} \mathbin{\#} M_{\text{FR}} \mathbin{\#}
 M_{\text{IT}} \mathbin{\#} M_{\text{ES}} \mathbin{\#} M_{\text{NL}}
 \mathbin{\#} M_{\text{BE}} \mathbin{\#} M_{\text{AT}} \mathbin{\#}
 M_{\text{FI}} \mathbin{\#} M_{\text{IE}} \mathbin{\#} M_{\text{PT}}
-\mathbin{\#} M_{\text{LU}}$$
+\mathbin{\#} M_{\text{LU}}
+```
 
 In principle, 11 manifolds can be connected by up to $\binom{11}{2} = 55$
 necks. In practice, the Euro created a **star graph** centred on Germany:
@@ -143,7 +147,9 @@ Each neck carries Willmore energy $W_{\text{neck}} \geq 4\pi$ (equality for
 $r = 2$; see INTERMARKET_GEOMETRY.md, Theorem 3.2). The total upfront cost
 of the Euro was:
 
-$$W_{\text{Euro}} = 10 \times 4\pi \approx 125.7 \text{ units of Willmore energy}$$
+```math
+W_{\text{Euro}} = 10 \times 4\pi \approx 125.7 \text{ units of Willmore energy}
+```
 
 This is the most expensive connected sum operation in the history of
 financial markets. By comparison, the NYSE–Euronext merger (2007) cost
@@ -155,7 +161,9 @@ Euro cost ten times as much, with an average $k/r$ of 0.55.
 From INTERMARKET_GEOMETRY.md (Theorem 4.1), the payback period for a neck
 connecting manifolds with $k$ shared out of $r$ total factors is:
 
-$$T_{\text{payback}} \approx \frac{W_{\text{neck}} \cdot 2T}{k \cdot \log T}$$
+```math
+T_{\text{payback}} \approx \frac{W_{\text{neck}} \cdot 2T}{k \cdot \log T}
+```
 
 For the Euro with $T$ measured in years and $W_{\text{neck}} = 4\pi$:
 - The **zone average** ($k/r \approx 0.55$, $k \approx 3.3$, $r = 6$) gives
@@ -248,14 +256,18 @@ Fisher information matrix is a $d \times d$ positive-definite matrix whose
 eigenvalue decomposition reveals the full factor structure. The relationship
 between them is:
 
-$$\text{Maastricht scalar}_{j} = \langle e_j, F\, e_j \rangle$$
+```math
+\text{Maastricht scalar}_{j} = \langle e_j, F\, e_j \rangle
+```
 
 for some fixed projection directions $e_j$. This is a projection from a
 $d(d+1)/2$-dimensional space (the space of symmetric positive-definite
 matrices) to $\mathbb{R}^{4}$. For a sovereign bond market with $d \approx 20$
 instruments, the Maastricht criteria discard:
 
-$$1 - \frac{4}{d(d+1)/2} = 1 - \frac{4}{210} \approx 98.1\%$$
+```math
+1 - \frac{4}{d(d+1)/2} = 1 - \frac{4}{210} \approx 98.1\%
+```
 
 of the information in the Fisher matrix. This is not a minor approximation.
 It is near-total information destruction.
@@ -389,7 +401,9 @@ apart.
 $M = M_0 \mathbin{\#} M_1 \mathbin{\#} \cdots \mathbin{\#} M_n$ with hub
 $M_0$, the system vulnerability is determined by the weakest neck:*
 
-$$h_M = \min_{i=1,\ldots,n} h(M_0 \mathbin{\#} M_i)$$
+```math
+h_M = \min_{i=1,\ldots,n} h(M_0 \mathbin{\#} M_i)
+```
 
 *where $h(\cdot)$ denotes the Cheeger constant. Moreover, a singularity at
 the weakest neck propagates stress to all other necks: if the $i$-th neck
@@ -511,8 +525,10 @@ For nine years (2001–2010), the market mispriced the Greek neck. Greek
 10-year yields traded within 50 basis points of German Bunds for most of
 this period. The market was pricing:
 
-$$\text{Spread} = \text{credit risk} + \text{liquidity premium} -
-\text{irreversibility guarantee}$$
+```math
+\text{Spread} = \text{credit risk} + \text{liquidity premium} -
+\text{irreversibility guarantee}
+```
 
 The irreversibility guarantee — the market's belief that the Euro could not
 be undone — compressed the spread by approximately 200–300 basis points.

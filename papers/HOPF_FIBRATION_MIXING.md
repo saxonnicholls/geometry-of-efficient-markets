@@ -71,7 +71,9 @@ growth rate; information architecture.
 The Hopf fibration, discovered by Heinz Hopf in 1931, is the map
 $\pi: S^3 \to S^2$ defined by
 
-$$\pi(z_1, z_2) = (2\operatorname{Re}(\bar{z}_{1} z_2), 2\operatorname{Im}(\bar{z}_{1} z_2), |z_1|^2 - |z_2|^2) \tag{1.1}$$
+```math
+\pi(z_1, z_2) = (2\operatorname{Re}(\bar{z}_{1} z_2), 2\operatorname{Im}(\bar{z}_{1} z_2), |z_1|^2 - |z_2|^2) \tag{1.1}
+```
 
 where $(z_1, z_2) \in \mathbb{C}^{2}$ with $|z_1|^2 + |z_2|^2 = 1$ parameterises
 $S^3$. The fiber over each point $p \in S^2$ is a great circle $S^1 \subset S^3$.
@@ -89,12 +91,16 @@ Hopf fibrations), corresponding to the four normed division algebras.
 
 For a market with $d = 3$ assets, the portfolio simplex is
 
-$$\Delta_2 = \{(b_1, b_2, b_3) \in \mathbb{R}^{3}_+ : b_1 + b_2 + b_3 = 1\}$$
+```math
+\Delta_2 = \{(b_1, b_2, b_3) \in \mathbb{R}^{3}_+ : b_1 + b_2 + b_3 = 1\}
+```
 
 and the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$ maps $\Delta_2$ to the
 positive octant of the unit sphere:
 
-$$S^2_+ = \{u \in \mathbb{R}^{3} : u_i \geq 0, \|u\| = 1\}. \tag{1.2}$$
+```math
+S^2_+ = \{u \in \mathbb{R}^{3} : u_i \geq 0, \|u\| = 1\}. \tag{1.2}
+```
 
 Now consider the ambient 3-sphere $S^3 \subset \mathbb{C}^{2}$. Writing
 $z_j = u_{2j-1} + iu_{2j}$ for $j=1,2$, we have $S^3 = \{(u_1,u_2,u_3,u_4) :
@@ -105,7 +111,9 @@ neighbourhood of $S^2_+$.
 
 The Clifford torus from CLASSIFICATION.md,
 
-$$T^2 = \{(z_1, z_2) \in S^3 : |z_1| = |z_2| = 1/\sqrt{2}\}, \tag{1.3}$$
+```math
+T^2 = \{(z_1, z_2) \in S^3 : |z_1| = |z_2| = 1/\sqrt{2}\}, \tag{1.3}
+```
 
 is a Hopf fiber: under $\pi$, it maps to the equator $\{|z_1|^2 = |z_2|^2\}
 \subset S^2$. This is the central observation: **the Clifford torus, which is the
@@ -144,7 +152,9 @@ the idiosyncratic contribution averages to zero along the fiber.
 Let $b, b' \in S^{d-1}_{+}$ lie in the same Hopf fiber: $\pi(b) = \pi(b')$.
 Then*
 
-$$\lim_{T \to \infty} L_T(b) = \lim_{T \to \infty} L_T(b') \quad \text{a.s.} \tag{1.4}$$
+```math
+\lim_{T \to \infty} L_T(b) = \lim_{T \to \infty} L_T(b') \quad \text{a.s.} \tag{1.4}
+```
 
 *provided the return process satisfies a strong law of large numbers with the
 factor structure aligned to the Hopf base.*
@@ -155,7 +165,9 @@ to rotations within the idiosyncratic subspace $N_{b^{\ast}}M$ that preserve the
 factor exposures $\Pi_{TM}(b) = \Pi_{TM}(b')$. The Kelly growth rate
 decomposes as
 
-$$L_T(b) = L_T^{\rm factor}(\pi(b)) + L_T^{\rm idio}(b) \tag{1.5}$$
+```math
+L_T(b) = L_T^{\rm factor}(\pi(b)) + L_T^{\rm idio}(b) \tag{1.5}
+```
 
 where $L_T^{\rm factor}$ depends only on the Hopf base coordinate and
 $L_T^{\rm idio}(b) \to 0$ a.s. by the law of large numbers applied to the
@@ -299,14 +311,18 @@ The financial content of each level:
 For the WF diffusion on $M^r$, the generator is the Laplace-Beltrami operator
 $\Delta_M$ (with respect to the induced metric $g_M$). The spectral gap is
 
-$$\lambda_1 = \inf\left\{\frac{\int_M |\nabla f|^2\,d\mathrm{vol}_{M}}{\int_M f^2\,d\mathrm{vol}_{M}} : \int_M f\,d\mathrm{vol}_{M} = 0\right\} \tag{3.1}$$
+```math
+\lambda_1 = \inf\left\{\frac{\int_M |\nabla f|^2\,d\mathrm{vol}_{M}}{\int_M f^2\,d\mathrm{vol}_{M}} : \int_M f\,d\mathrm{vol}_{M} = 0\right\} \tag{3.1}
+```
 
 the smallest non-zero eigenvalue of $-\Delta_M$.
 
 **Proposition 3.1.** *The WF diffusion on $M^r$ is mixing iff $\lambda_1 > 0$.
 The rate of mixing (correlation decay) is*
 
-$$|\operatorname{Corr}(\Phi_n^{\ast}(f), g)| \leq C \cdot e^{-\lambda_1 n/T} \tag{3.2}$$
+```math
+|\operatorname{Corr}(\Phi_n^{\ast}(f), g)| \leq C \cdot e^{-\lambda_1 n/T} \tag{3.2}
+```
 
 *for all $f, g \in L^2(M, \mu)$ with $\int f\,d\mu = \int g\,d\mu = 0$.*
 
@@ -328,7 +344,9 @@ type.
 $-\Delta_{S^r_+}$ with Dirichlet boundary conditions on the simplex boundary are
 the Jacobi polynomial eigenvalues:
 
-$$\lambda_k = k(k + r + d - 3),\quad k = 1, 2, 3, \ldots \tag{3.3}$$
+```math
+\lambda_k = k(k + r + d - 3),\quad k = 1, 2, 3, \ldots \tag{3.3}
+```
 
 The spectral gap is $\lambda_1 = r + d - 2$. For $d = 50$, $r = 4$:
 $\lambda_1 = 52$. Information propagates quickly — the CAPM is well-mixed with
@@ -338,7 +356,9 @@ fast exponential decay of correlations at rate $e^{-52 t/T}$.
 the flat torus $T^2 = \mathbb{R}^{2} / \Lambda$ (where $\Lambda$ is the lattice)
 are
 
-$$\lambda_{m,n} = 4\pi^2(m^2/a^2 + n^2/b^2),\quad (m,n) \in \mathbb{Z}^{2} \setminus \{(0,0)\} \tag{3.4}$$
+```math
+\lambda_{m,n} = 4\pi^2(m^2/a^2 + n^2/b^2),\quad (m,n) \in \mathbb{Z}^{2} \setminus \{(0,0)\} \tag{3.4}
+```
 
 where $a, b$ are the torus periods. For the standard Clifford torus with
 $a = b = \pi/2$ (the quarter-torus in $S^3$): $\lambda_1 = 4\pi^2/((\pi/2)^2) \cdot 1 = 16$.
@@ -349,7 +369,9 @@ MARKET_PROCESSES.md has algebraic tails from the lattice sum.
 **Pseudo-Anosov market ($\mathbb{H}^{2}$, hyperbolic BM).** On a compact
 hyperbolic surface $\Sigma_g$ of genus $g \geq 2$, the spectral gap satisfies
 
-$$\lambda_1 \geq \frac{1}{4} - \frac{1}{4}\left(\frac{2\pi(2g-2)}{\mathrm{Area}(\Sigma_g)}\right)^2 \tag{3.5}$$
+```math
+\lambda_1 \geq \frac{1}{4} - \frac{1}{4}\left(\frac{2\pi(2g-2)}{\mathrm{Area}(\Sigma_g)}\right)^2 \tag{3.5}
+```
 
 by the Cheeger-Buser inequality, with the Selberg $\frac{1}{4}$ conjecture
 asserting $\lambda_1 \geq 1/4$ for arithmetic surfaces. For the pseudo-Anosov
@@ -425,17 +447,23 @@ asset $i$ displaces the log-optimal portfolio from $b^{\ast}$ to $b^{\ast} + \de
 The perturbation propagates through $M^r$ according to the heat equation on the
 manifold:
 
-$$\frac{\partial u}{\partial t} = \frac{1}{T}\Delta_M u, \quad u(0, x) = \delta_{b^{\ast}}(x) \tag{4.1}$$
+```math
+\frac{\partial u}{\partial t} = \frac{1}{T}\Delta_M u, \quad u(0, x) = \delta_{b^{\ast}}(x) \tag{4.1}
+```
 
 where $u(t, x)$ is the "information density" at point $x \in M^r$ at time $t$.
 The solution expands in eigenfunctions:
 
-$$u(t,x) = \sum_k e^{-\lambda_k t/T}\phi_k(b^{\ast})\phi_k(x). \tag{4.2}$$
+```math
+u(t,x) = \sum_k e^{-\lambda_k t/T}\phi_k(b^{\ast})\phi_k(x). \tag{4.2}
+```
 
 The information reaches equilibrium (uniform distribution over $M$) at rate
 $\lambda_1/T$. The "half-life" of information asymmetry is
 
-$$t_{1/2} = \frac{T \log 2}{\lambda_1}. \tag{4.3}$$
+```math
+t_{1/2} = \frac{T \log 2}{\lambda_1}. \tag{4.3}
+```
 
 For the CAPM with $d = 50$, $r = 4$: $t_{1/2} = T\log 2/52 \approx 0.013T$.
 Information equilibrates in about 1.3\% of the sample period. For the
@@ -451,7 +479,9 @@ measured by the Cheeger constant.
 
 **Definition 4.1** (Cheeger constant). For a compact Riemannian manifold $M$,
 
-$$h_M = \inf_{\Sigma}\frac{\mathrm{Area}(\Sigma)}{\min(\mathrm{Vol}(A), \mathrm{Vol}(B))} \tag{4.4}$$
+```math
+h_M = \inf_{\Sigma}\frac{\mathrm{Area}(\Sigma)}{\min(\mathrm{Vol}(A), \mathrm{Vol}(B))} \tag{4.4}
+```
 
 where the infimum is over all hypersurfaces $\Sigma \subset M$ that partition $M$
 into two open sets $A \cup B = M \setminus \Sigma$.
@@ -550,7 +580,9 @@ deformation of the market structure.
 **Proposition 5.1.** *The Hopf invariant $H(\pi)$ is related to the first Chern
 class of the normal bundle by:*
 
-$$c_1(NM) = H(\pi) \cdot [\omega_{FS}] \in H^2(B^r, \mathbb{Z}) \tag{5.1}$$
+```math
+c_1(NM) = H(\pi) \cdot [\omega_{FS}] \in H^2(B^r, \mathbb{Z}) \tag{5.1}
+```
 
 *where $[\omega_{FS}]$ is the Fubini-Study class on the factor base. In
 particular, the topologically protected alpha signals identified in
@@ -624,7 +656,9 @@ fiber direction.
 
 The mixing rate of the TOTAL market is governed by the bottleneck:
 
-$$\lambda_1(M) \geq \lambda_1^{\rm base} + \lambda_1^{\rm fiber} - C \cdot \|F_\nabla\|^2 \tag{6.1}$$
+```math
+\lambda_1(M) \geq \lambda_1^{\rm base} + \lambda_1^{\rm fiber} - C \cdot \|F_\nabla\|^2 \tag{6.1}
+```
 
 where $\|F_\nabla\|^2$ is the curvature of the connection (the alpha). The
 inequality shows that the total mixing rate is approximately the SUM of the
@@ -633,7 +667,9 @@ base and fiber rates, minus a correction for the curvature that couples them.
 **Definition 6.1** (Informationally balanced market). A market is
 *informationally balanced* if
 
-$$\lambda_1^{\rm base} \approx \lambda_1^{\rm fiber}. \tag{6.2}$$
+```math
+\lambda_1^{\rm base} \approx \lambda_1^{\rm fiber}. \tag{6.2}
+```
 
 An informationally balanced market has no bottleneck between systematic and
 idiosyncratic information flow. The Clifford torus, with its equal periods
@@ -735,7 +771,9 @@ of crisis.
 
 The Manifold Universal Portfolio (CONVERGENCE.md) is defined as
 
-$$\hat{b}_{T}^{M} = \frac{\int_{M^r} b\, W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{8.1}$$
+```math
+\hat{b}_{T}^{M} = \frac{\int_{M^r} b\, W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{8.1}
+```
 
 where the integration is over the $r$-dimensional market manifold $M^r$.
 
@@ -743,7 +781,9 @@ In the Hopf fibration language: $M^r$ is the BASE of the fibration. The MUP
 integrates over the base, not the total space. Cover's original Universal Portfolio
 integrates over the TOTAL space:
 
-$$\hat{b}_{T}^{\rm Cover} = \frac{\int_{\Delta_{d-1}} b\, W_T(b)\,d\mu(b)}{\int_{\Delta_{d-1}} W_T(b)\,d\mu(b)}. \tag{8.2}$$
+```math
+\hat{b}_{T}^{\rm Cover} = \frac{\int_{\Delta_{d-1}} b\, W_T(b)\,d\mu(b)}{\int_{\Delta_{d-1}} W_T(b)\,d\mu(b)}. \tag{8.2}
+```
 
 The passage from Cover to MUP is EXACTLY the Hopf projection: integrate out the
 fiber direction, retain only the base.
@@ -751,7 +791,9 @@ fiber direction, retain only the base.
 **Lemma H5** (MUP = Hopf projection of Kelly strategy).
 *The MUP regret decomposes as:*
 
-$$\text{Regret}(\hat{b}_{T}^{M}) = \underbrace{\frac{r \log T}{2T}}_{\text{base regret}} + \underbrace{0}_{\text{fiber regret}} + O(1/T). \tag{8.3}$$
+```math
+\text{Regret}(\hat{b}_{T}^{M}) = \underbrace{\frac{r \log T}{2T}}_{\text{base regret}} + \underbrace{0}_{\text{fiber regret}} + O(1/T). \tag{8.3}
+```
 
 *The base regret is $r \log T/(2T)$ — the cost of learning the $r$-dimensional
 factor structure. The fiber regret is zero — the idiosyncratic direction
@@ -761,7 +803,9 @@ $(d-1)\log T/(2T)$ equals $r \log T/(2T)$ (base) $+ (d-1-r)\log T/(2T)$
 
 *Proof.* The Laplace approximation of the MUP integral (LAPLACE.md) gives
 
-$$\log\int_{M^r} W_T(b)\,d\mu_M = T \cdot h_{\rm Kelly} + \frac{r}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F_M(b^{\ast}) + O(1/T) \tag{8.4}$$
+```math
+\log\int_{M^r} W_T(b)\,d\mu_M = T \cdot h_{\rm Kelly} + \frac{r}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F_M(b^{\ast}) + O(1/T) \tag{8.4}
+```
 
 where the $\frac{r}{2}\log T$ term comes from the $r$-dimensional Gaussian
 integral over the base manifold $M^r$. The fiber direction does not contribute
@@ -771,7 +815,9 @@ from the $r$-dimensional integration.
 
 Cover's integral over $\Delta_{d-1}$ produces
 
-$$\log\int_{\Delta_{d-1}} W_T(b)\,d\mu = T \cdot h_{\rm Kelly} + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F(b^{\ast}) + O(1/T) \tag{8.5}$$
+```math
+\log\int_{\Delta_{d-1}} W_T(b)\,d\mu = T \cdot h_{\rm Kelly} + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F(b^{\ast}) + O(1/T) \tag{8.5}
+```
 
 with $(d-1)/2 \cdot \log T$ because the integration is $(d-1)$-dimensional.
 The difference in regret is $(d-1-r)\log T/(2T)$ — the wasted regret from
@@ -797,7 +843,9 @@ systematic exposure fixed while averaging out the idiosyncratic noise.
 
 The Hopf fibration thus gives a precise geometric definition of diversification:
 
-$$\text{Diversification} = \text{Hopf fiber integration} = \int_{\pi^{-1}(p)} d\mu_{\rm fiber}. \tag{8.6}$$
+```math
+\text{Diversification} = \text{Hopf fiber integration} = \int_{\pi^{-1}(p)} d\mu_{\rm fiber}. \tag{8.6}
+```
 
 A "fully diversified" portfolio at factor exposure $p$ is the conditional
 expectation over the fiber $\pi^{-1}(p)$. An "undiversified" portfolio is a

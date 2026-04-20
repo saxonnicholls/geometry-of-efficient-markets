@@ -41,7 +41,9 @@ $g_{ii}$). The quota market IS a financial market on a simplex.
 **(ii) The fish stock is a Wright-Fisher population.** The population simplex
 evolves under a modified Wright-Fisher diffusion with harvest:
 
-$$dp_j = p_j(r_j - \bar{r} - h_j)\,dt + \sqrt{\frac{p_j(1-p_j)}{2N_e}}\,dW_j$$
+```math
+dp_j = p_j(r_j - \bar{r} - h_j)\,dt + \sqrt{\frac{p_j(1-p_j)}{2N_e}}\,dW_j
+```
 
 where $r_j$ is the natural growth rate of species $j$, $\bar{r}$ is the mean
 growth rate, $h_j$ is the harvest rate, and $N_e$ is the effective population
@@ -83,7 +85,9 @@ singularity — the creation of a new market.
 **(vi) The coupled directed graph.** The fishery is a directed graph on TWO
 simplices connected by harvest and stock assessment edges:
 
-$$\Delta^Q \xrightleftharpoons[\text{stock assessment}]{\text{harvest}} \Delta^P$$
+```math
+\Delta^Q \xrightleftharpoons[\text{stock assessment}]{\text{harvest}} \Delta^P
+```
 
 The quota simplex influences the population simplex (through harvest). The
 population simplex influences the quota simplex (through stock assessment,
@@ -111,14 +115,18 @@ cooperatives) and a Total Allowable Catch (TAC) of $H$ tonnes. Each licence
 holder $i$ owns quota $Q_i$ tonnes, with $\sum_{i=1}^{d} Q_i = H$. The
 normalised quota vector:
 
-$$q = \left(\frac{Q_1}{H}, \ldots, \frac{Q_d}{H}\right) \in \Delta_{d-1} \tag{1.1}$$
+```math
+q = \left(\frac{Q_1}{H}, \ldots, \frac{Q_d}{H}\right) \in \Delta_{d-1} \tag{1.1}
+```
 
 is a point on the quota simplex. This IS a portfolio: $q_i$ is the fraction
 of the total resource allocated to holder $i$.
 
 The Fisher-Rao metric on the quota simplex:
 
-$$g^{\rm FR}_{ij}(q) = \frac{\delta_{ij}}{q_i} \tag{1.2}$$
+```math
+g^{\rm FR}_{ij}(q) = \frac{\delta_{ij}}{q_i} \tag{1.2}
+```
 
 A holder with a large share ($q_i$ large) is insensitive to small changes in
 quota allocation — they have a secure position. A holder with a tiny share
@@ -132,7 +140,9 @@ stand.
 The fish stock consists of $s$ species (or age classes within a single
 species) with abundances $(N_1, \ldots, N_s)$. The normalised abundance:
 
-$$p = \left(\frac{N_1}{N_{\rm total}}, \ldots, \frac{N_s}{N_{\rm total}}\right) \in \Delta_{s-1} \tag{1.3}$$
+```math
+p = \left(\frac{N_1}{N_{\rm total}}, \ldots, \frac{N_s}{N_{\rm total}}\right) \in \Delta_{s-1} \tag{1.3}
+```
 
 is a point on the population simplex. For a single-species fishery managed
 by age class (juveniles, sub-adults, adults, spawners), $s$ is the number
@@ -140,7 +150,9 @@ of age classes. For a multi-species fishery, $s$ is the number of species.
 
 The population simplex also carries the Fisher-Rao metric:
 
-$$g^{\rm FR}_{jk}(p) = \frac{\delta_{jk}}{p_j} \tag{1.4}$$
+```math
+g^{\rm FR}_{jk}(p) = \frac{\delta_{jk}}{p_j} \tag{1.4}
+```
 
 Species (or age classes) at low abundance have high metric sensitivity —
 small changes in their numbers are disproportionately important. This is
@@ -155,7 +167,9 @@ The two simplices are coupled by two maps:
 the quota allocation $q$ and current population $p$, the harvest map
 determines the post-harvest population:
 
-$$p' = \mathcal{H}(q, p) = \frac{p - h(q, p)}{1 - \|h(q, p)\|_1} \tag{1.5}$$
+```math
+p' = \mathcal{H}(q, p) = \frac{p - h(q, p)}{1 - \|h(q, p)\|_1} \tag{1.5}
+```
 
 where $h(q, p)$ is the harvest vector (how much of each species/age class
 is removed). The harvest depends on the quota (what you're allowed to catch)
@@ -164,7 +178,9 @@ AND the population (what's available to catch).
 **Stock assessment map** $\mathcal{S}: \Delta^P \to \mathbb{R}_{+}$. The stock
 assessment estimates the population state and recommends a TAC:
 
-$$H_{\rm TAC} = \mathcal{S}(p) \tag{1.6}$$
+```math
+H_{\rm TAC} = \mathcal{S}(p) \tag{1.6}
+```
 
 A lower population triggers a lower TAC, which reduces quota values. A higher
 population triggers a higher TAC, which increases quota values. The TAC IS
@@ -181,7 +197,9 @@ Between harvest events, the fish population evolves under birth, death,
 growth, and stochastic environmental variation. For a single-species fishery
 with $s$ age classes, the population dynamics on $\Delta_{s-1}$ are:
 
-$$dp_j = p_j\left(r_j(p) - \bar{r}(p) - h_j\right)dt + \sqrt{\frac{p_j(1-p_j)}{2N_e}}\,dW_j \tag{2.1}$$
+```math
+dp_j = p_j\left(r_j(p) - \bar{r}(p) - h_j\right)dt + \sqrt{\frac{p_j(1-p_j)}{2N_e}}\,dW_j \tag{2.1}
+```
 
 where:
 - $r_j(p)$ = per-capita growth rate of age class $j$ (depends on total
@@ -210,12 +228,16 @@ The identification (extending BLOODSTOCK_MARKETS.md Theorem BM7):
 The Maximum Sustainable Yield (MSY) is the largest harvest that can be
 sustained indefinitely:
 
-$$H_{\rm MSY} = \max_{h} \sum_j h_j p_j \quad \text{subject to} \quad \bar{r}(p) - \bar{h} \geq 0 \tag{2.2}$$
+```math
+H_{\rm MSY} = \max_{h} \sum_j h_j p_j \quad \text{subject to} \quad \bar{r}(p) - \bar{h} \geq 0 \tag{2.2}
+```
 
 **Theorem 2.1** (MSY = Kelly rate). *The MSY of a fishery is the Kelly
 growth rate of the population simplex:*
 
-$$H_{\rm MSY} = h_{\rm Kelly}(\Delta^P) \tag{2.3}$$
+```math
+H_{\rm MSY} = h_{\rm Kelly}(\Delta^P) \tag{2.3}
+```
 
 *The MSY-achieving harvest policy is the Kelly-optimal strategy: it maximises
 the long-run sustainable extraction rate, analogous to the Kelly criterion
@@ -278,7 +300,9 @@ $H_{\rm TAC} \leq H_{\rm MSY}$, the modified population process on
 $\Delta_{s-1}$ has a reflecting boundary condition at a positive distance
 from the Feller boundary:*
 
-$$p_j \geq p_{\rm min}(H_{\rm TAC}) > 0 \quad \text{for all } j \tag{3.1}$$
+```math
+p_j \geq p_{\rm min}(H_{\rm TAC}) > 0 \quad \text{for all } j \tag{3.1}
+```
 
 *The minimum population fraction $p_{\rm min}$ is determined by the TAC: a
 lower TAC gives a larger $p_{\rm min}$ (more conservative, further from
@@ -291,7 +315,9 @@ Once quotas are tradeable, they ARE a financial market. The quota price
 $P_i$ reflects the present value of the right to catch $q_i$ fraction of
 the TAC in perpetuity:
 
-$$P_i = \sum_{t=0}^{\infty} \frac{\mathbb{E}[q_i \cdot H_{\rm TAC}(t) \cdot \text{price}_{\rm fish}(t)]}{(1+\delta)^t} \tag{3.2}$$
+```math
+P_i = \sum_{t=0}^{\infty} \frac{\mathbb{E}[q_i \cdot H_{\rm TAC}(t) \cdot \text{price}_{\rm fish}(t)]}{(1+\delta)^t} \tag{3.2}
+```
 
 where $\delta$ is the discount rate.
 
@@ -506,7 +532,9 @@ The global market for bluefin tuna connects three simplices:
 
 These are connected by trade — the connected-sum structure:
 
-$$M_{\rm SBT}^{\rm Aus} \#_{\rm export} M_{\rm tuna}^{\rm Japan} \#_{\rm auction} M_{\rm buyer}^{\rm Toyosu}$$
+```math
+M_{\rm SBT}^{\rm Aus} \#_{\rm export} M_{\rm tuna}^{\rm Japan} \#_{\rm auction} M_{\rm buyer}^{\rm Toyosu}
+```
 
 The neck widths are determined by:
 - Export regulations (Australia → Japan: customs, health certification)
@@ -526,9 +554,13 @@ has edges that no purely economic model would predict.
 
 The fishery feedback loop is a map between the two simplices:
 
-$$\Phi: \Delta^Q \times \Delta^P \to \Delta^Q \times \Delta^P \tag{6.1}$$
+```math
+\Phi: \Delta^Q \times \Delta^P \to \Delta^Q \times \Delta^P \tag{6.1}
+```
 
-$$(q, p) \mapsto (q', p')$$
+```math
+(q, p) \mapsto (q', p')
+```
 
 where:
 - $p' = \mathcal{G}(\mathcal{H}(q, p))$ — harvest the population, then let it
@@ -540,8 +572,12 @@ where:
 **Theorem 6.1** (Fishery fixed point). *The coupled system $(q, p)$ has a
 fixed point $(q^{\ast}, p^{\ast})$ where:*
 
-$$\mathcal{H}(q^{\ast}, p^{\ast}) = \text{MSY harvest at } p^{\ast} \tag{6.2}$$
-$$\mathcal{S}(p^{\ast}) = H_{\rm MSY} \tag{6.3}$$
+```math
+\mathcal{H}(q^{\ast}, p^{\ast}) = \text{MSY harvest at } p^{\ast} \tag{6.2}
+```
+```math
+\mathcal{S}(p^{\ast}) = H_{\rm MSY} \tag{6.3}
+```
 
 *At the fixed point: the harvest equals the MSY, the TAC equals the MSY, the
 population is at the MSY equilibrium, and the quota market is in palindromic
@@ -658,7 +694,9 @@ through international waters.
 **The global fisheries management structure IS a patchwork of quota
 simplices connected by directed graphs:**
 
-$$M_{\rm ocean} = \bigcup_{\rm EEZs} M^{Q_k}_{\rm national} \cup \bigcup_{\rm RFMOs} M^{Q_j}_{\rm regional}$$
+```math
+M_{\rm ocean} = \bigcup_{\rm EEZs} M^{Q_k}_{\rm national} \cup \bigcup_{\rm RFMOs} M^{Q_j}_{\rm regional}
+```
 
 with connected-sum necks at every boundary where fish stocks cross from one
 jurisdiction to another. The neck widths are determined by migration rates,

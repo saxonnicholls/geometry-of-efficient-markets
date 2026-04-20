@@ -46,7 +46,9 @@ The mathematics came later. The geometry was always there.
 
 ## The Central Identity
 
-$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M,\, g_M)}$$
+```math
+\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M,\, g_M)}
+```
 
 The maximum achievable Sharpe ratio equals the RMS mean curvature of the
 market manifold. Slope = 1.007 ± 0.18, p = 10⁻⁸ on empirical data.
@@ -226,15 +228,21 @@ Fractional Palindromic SDE.
 Under FPS dynamics $dX_t = \kappa[\theta_t - X_t]dt + \sigma\,dB^H_t$,
 the European call option price is:
 
-$$ C_{\rm FPS}(S_0, K, T) = S_0\,\Phi(d_1^H) - K e^{-rT}\,\Phi(d_2^H) $$
+```math
+C_{\rm FPS}(S_0, K, T) = S_0\,\Phi(d_1^H) - K e^{-rT}\,\Phi(d_2^H)
+```
 
 with modified $d$-values:
 
-$$d_1^H = \frac{\log(S_0/K) + rT + \tfrac{1}{2}\sigma_H^2(T)}{\sigma_H(T)}, \qquad d_2^H = d_1^H - \sigma_H(T)$$
+```math
+d_1^H = \frac{\log(S_0/K) + rT + \tfrac{1}{2}\sigma_H^2(T)}{\sigma_H(T)}, \qquad d_2^H = d_1^H - \sigma_H(T)
+```
 
 and the effective FPS variance:
 
-$$\sigma_H^2(T) = \sigma^2 \cdot T^{2H} \cdot \underbrace{\frac{1 - e^{-2\kappa T}}{2\kappa T}}_{\text{OU mean-reversion cap}}$$
+```math
+\sigma_H^2(T) = \sigma^2 \cdot T^{2H} \cdot \underbrace{\frac{1 - e^{-2\kappa T}}{2\kappa T}}_{\text{OU mean-reversion cap}}
+```
 
 ### Three parameters, not one
 
@@ -281,7 +289,9 @@ needs FPS + jumps or FPS + stochastic vol as natural next steps.
 
 **5. A new Greek: Hurst Vega.**
 
-$$\mathcal{H}_{\rm FPS} = \frac{\partial C}{\partial H}$$
+```math
+\mathcal{H}_{\rm FPS} = \frac{\partial C}{\partial H}
+```
 
 measures sensitivity to the palindromic structure — a genuinely new
 hedging sensitivity not present in Black-Scholes.

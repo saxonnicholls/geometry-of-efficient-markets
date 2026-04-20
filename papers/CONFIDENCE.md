@@ -102,7 +102,9 @@ The **confidence σ-algebra** $\mathcal{F}^{\rm conf,A}_{t}$ is the largest
 sub-σ-algebra of $\mathcal{F}^{A}_t$ such that $A$ is willing to condition
 their actions on any event in $\mathcal{F}^{\rm conf,A}_{t}$:*
 
-$$\mathcal{F}^{\rm conf,A}_{t} = \{E \in \mathcal{F}^{A}_t : A \text{ will commit capital based on the occurrence of } E\} \tag{1.1}$$
+```math
+\mathcal{F}^{\rm conf,A}_{t} = \{E \in \mathcal{F}^{A}_t : A \text{ will commit capital based on the occurrence of } E\} \tag{1.1}
+```
 
 This is a σ-algebra (closed under complements and countable unions) because:
 - If you're willing to bet on $E$, you're willing to bet on "not $E$"
@@ -113,7 +115,9 @@ This is a σ-algebra (closed under complements and countable unions) because:
 **Definition 1.2** (Confidence ratio). *The **confidence ratio** of agent $A$
 at time $t$ is:*
 
-$$\rho^A_t = \frac{\log |\mathcal{F}^{\rm conf,A}_{t}|}{\log |\mathcal{F}^{A}_t|} \in [0, 1] \tag{1.2}$$
+```math
+\rho^A_t = \frac{\log |\mathcal{F}^{\rm conf,A}_{t}|}{\log |\mathcal{F}^{A}_t|} \in [0, 1] \tag{1.2}
+```
 
 *where $|\cdot|$ denotes the number of atoms (for discrete σ-algebras) or
 the dimension of the generated L² space (for continuous ones). When
@@ -149,7 +153,9 @@ The market manifold $M^r$ has dimension $r$ (the number of independent
 factors). An agent with confidence ratio $\rho$ effectively sees a manifold
 of dimension:
 
-$$r_{\rm eff} = \lfloor \rho \cdot r \rfloor \tag{2.1}$$
+```math
+r_{\rm eff} = \lfloor \rho \cdot r \rfloor \tag{2.1}
+```
 
 because they are projecting $M^r$ onto a lower-dimensional submanifold
 corresponding to the factors they're willing to distinguish.
@@ -167,7 +173,9 @@ The geometric filtration (FILTRATIONS.md) tessellates $M^r$ into Voronoi cells.
 An agent with full confidence has $N$ cells. An agent with confidence $\rho$
 has:
 
-$$N_{\rm eff} = N^{\rho} \tag{2.2}$$
+```math
+N_{\rm eff} = N^{\rho} \tag{2.2}
+```
 
 cells (exponential in the confidence ratio, because the number of cells grows
 exponentially with dimension). When $\rho = 1$: $N$ cells, full resolution.
@@ -176,7 +184,9 @@ $\rho = 0$: 1 cell (the entire manifold is one undifferentiated blob).
 
 The filtration capacity (INCOMPLETENESS.md Theorem C) drops accordingly:
 
-$$\text{Cap}_{t}(\mathcal{F}^{\rm conf}) = \rho \cdot \log N = \rho \cdot \text{Cap}_{t}(\mathcal{F}^{A}) \tag{2.3}$$
+```math
+\text{Cap}_{t}(\mathcal{F}^{\rm conf}) = \rho \cdot \log N = \rho \cdot \text{Cap}_{t}(\mathcal{F}^{A}) \tag{2.3}
+```
 
 Confidence scales the filtration capacity linearly. Half the confidence =
 half the bits per observation period.
@@ -217,7 +227,9 @@ The market's information-processing capacity (MANIFOLD_IS_THE_CHANNEL.md
 Theorem MC1) is $C = h_{\rm Kelly}$ — the Kelly growth rate. But this assumes
 all agents act on their full information. With heterogeneous confidence:
 
-$$C_{\rm eff} = \sum_{k=1}^{K} w_k \cdot \rho^{(k)} \cdot C^{(k)} \tag{3.1}$$
+```math
+C_{\rm eff} = \sum_{k=1}^{K} w_k \cdot \rho^{(k)} \cdot C^{(k)} \tag{3.1}
+```
 
 where $K$ is the number of agents, $w_k$ is agent $k$'s market weight,
 $\rho^{(k)}$ is their confidence ratio, and $C^{(k)}$ is the channel capacity
@@ -225,11 +237,15 @@ of their full information.
 
 The **aggregate confidence ratio:**
 
-$$\bar{\rho} = \frac{\sum_k w_k \rho^{(k)} C^{(k)}}{\sum_k w_k C^{(k)}} \tag{3.2}$$
+```math
+\bar{\rho} = \frac{\sum_k w_k \rho^{(k)} C^{(k)}}{\sum_k w_k C^{(k)}} \tag{3.2}
+```
 
 (the capacity-weighted average confidence). The effective capacity is:
 
-$$C_{\rm eff} = \bar{\rho} \cdot C_{\rm full} \tag{3.3}$$
+```math
+C_{\rm eff} = \bar{\rho} \cdot C_{\rm full} \tag{3.3}
+```
 
 When $\bar{\rho} = 1$: the market processes information at full capacity.
 When $\bar{\rho} \to 0$: the market freezes — information stops being
@@ -240,16 +256,22 @@ incorporated into prices.
 The Willmore energy $\mathcal{W}$ measures total market inefficiency.
 The Willmore decomposition from MANIFOLD_IS_THE_CHANNEL.md Section 9:
 
-$$\mathcal{W} = \mathcal{W}^{\ast}_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm excess} \tag{3.4}$$
+```math
+\mathcal{W} = \mathcal{W}^{\ast}_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm excess} \tag{3.4}
+```
 
 Confidence adds a fourth term:
 
-$$\mathcal{W} = \mathcal{W}^{\ast}_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm confidence} + \mathcal{W}_{\rm excess} \tag{3.5}$$
+```math
+\mathcal{W} = \mathcal{W}^{\ast}_{\rm structural} + \mathcal{W}_{\rm Landauer} + \mathcal{W}_{\rm confidence} + \mathcal{W}_{\rm excess} \tag{3.5}
+```
 
 where $\mathcal{W}_{\rm confidence}$ is the inefficiency due to agents not
 acting on information they possess:
 
-$$\mathcal{W}_{\rm confidence} = (1 - \bar{\rho}) \cdot C_{\rm full} \cdot \text{Vol}(M) \tag{3.6}$$
+```math
+\mathcal{W}_{\rm confidence} = (1 - \bar{\rho}) \cdot C_{\rm full} \cdot \text{Vol}(M) \tag{3.6}
+```
 
 This term is large in crises ($\bar{\rho}$ small) and small in normal times
 ($\bar{\rho}$ near 1). It is the geometric content of the "fear premium" —
@@ -286,7 +308,9 @@ states — their σ-algebra is TOO COARSE to separate them.
 The confidence index (typically normalised to 100 for a reference period)
 is a proxy for:
 
-$$\text{Index} \propto \log |\mathcal{F}^{\rm conf}_{\rm aggregate}| \tag{4.1}$$
+```math
+\text{Index} \propto \log |\mathcal{F}^{\rm conf}_{\rm aggregate}| \tag{4.1}
+```
 
 — the log of the number of distinguishable states in the aggregate
 confidence σ-algebra.
@@ -300,7 +324,9 @@ a coarse σ-algebra is the minimax action — the one that minimises the
 worst-case loss. For consumption decisions, the minimax action is:
 **don't spend.**
 
-$$\text{Spending} = f(\text{Income}) \cdot g(\rho) \tag{4.2}$$
+```math
+\text{Spending} = f(\text{Income}) \cdot g(\rho) \tag{4.2}
+```
 
 where $g(\rho)$ is increasing in $\rho$ with $g(0) = 0$ (zero confidence
 = zero discretionary spending) and $g(1) = 1$ (full confidence = spend
@@ -322,7 +348,9 @@ If your counterparty retreats to a coarse σ-algebra, the shared filtration
 $\mathcal{F}^{A \cap B}_{t}$ coarsens even if YOUR filtration hasn't changed.
 You can't trade on information that your counterparty can't distinguish:
 
-$$\mathcal{F}^{\rm shared}_{t} = \mathcal{F}^{\rm conf,A}_{t} \cap \mathcal{F}^{\rm conf,B}_{t} \tag{4.3}$$
+```math
+\mathcal{F}^{\rm shared}_{t} = \mathcal{F}^{\rm conf,A}_{t} \cap \mathcal{F}^{\rm conf,B}_{t} \tag{4.3}
+```
 
 If agent B has $\rho^B = 0$ (no confidence), the shared filtration is
 trivial regardless of A's confidence. The trade can't happen. Confidence
@@ -374,12 +402,16 @@ based on participants' beliefs about whether the channel is working.
 fraction of agents who believe the market is efficient (and therefore
 invest passively). The market's effective inefficiency is:*
 
-$$\mathcal{W}_{\rm eff}(\rho_{\rm EMH}) = \frac{\mathcal{W}_{\rm full}}{1 - \rho_{\rm EMH}} \tag{5.1}$$
+```math
+\mathcal{W}_{\rm eff}(\rho_{\rm EMH}) = \frac{\mathcal{W}_{\rm full}}{1 - \rho_{\rm EMH}} \tag{5.1}
+```
 
 *where $\mathcal{W}_{\rm full}$ is the inefficiency that would obtain if
 all agents were active. The equilibrium $\rho^{\ast}_{\rm EMH}$ satisfies:*
 
-$$\mathrm{Sharpe}(\rho^{\ast}_{\rm EMH}) = \sqrt{\frac{\mathcal{W}_{\rm eff}(\rho^{\ast}_{\rm EMH})}{\text{Vol}(M)}} = s_{\rm entry} \tag{5.2}$$
+```math
+\mathrm{Sharpe}(\rho^{\ast}_{\rm EMH}) = \sqrt{\frac{\mathcal{W}_{\rm eff}(\rho^{\ast}_{\rm EMH})}{\text{Vol}(M)}} = s_{\rm entry} \tag{5.2}
+```
 
 *where $s_{\rm entry}$ is the minimum Sharpe ratio that makes active
 management worth the cost (observation costs, data, computation, fees).
@@ -391,12 +423,16 @@ $(1 - \rho_{\rm EMH})$ of capital actively monitors curvature. The effective
 channel capacity is $(1 - \rho_{\rm EMH}) \cdot C_{\rm full}$. The rate at
 which inefficiency is removed is proportional to effective capacity:
 
-$$\frac{d\mathcal{W}}{dt} = -\kappa \cdot (1 - \rho_{\rm EMH}) \cdot \mathcal{W} + \sigma_{\rm shock}$$
+```math
+\frac{d\mathcal{W}}{dt} = -\kappa \cdot (1 - \rho_{\rm EMH}) \cdot \mathcal{W} + \sigma_{\rm shock}
+```
 
 where $\sigma_{\rm shock}$ is the rate of new information arrival (exogenous
 shocks that create curvature). In steady state:
 
-$$\mathcal{W}_{\rm ss} = \frac{\sigma_{\rm shock}}{\kappa(1 - \rho_{\rm EMH})} = \frac{\mathcal{W}_{\rm full}}{1 - \rho_{\rm EMH}}$$
+```math
+\mathcal{W}_{\rm ss} = \frac{\sigma_{\rm shock}}{\kappa(1 - \rho_{\rm EMH})} = \frac{\mathcal{W}_{\rm full}}{1 - \rho_{\rm EMH}}
+```
 
 The Sharpe ratio of active management is $\sqrt{\mathcal{W}_{\rm ss}/\text{Vol}(M)}$
 by the Sharpe-curvature identity. Agents switch between passive and active
@@ -440,7 +476,9 @@ and stable, agents can use nominal prices to distinguish between states
 nominal prices no longer carry clean information — the same nominal price
 could mean "expensive" today and "cheap" tomorrow.
 
-$$\text{Effective resolution} = \frac{\text{Price signal}}{\text{Inflation noise}} = \frac{\sigma_{\rm real}}{\sigma_{\rm inflation}} \tag{6.1}$$
+```math
+\text{Effective resolution} = \frac{\text{Price signal}}{\text{Inflation noise}} = \frac{\sigma_{\rm real}}{\sigma_{\rm inflation}} \tag{6.1}
+```
 
 High inflation reduces the effective resolution of the price σ-algebra.
 This is why high inflation correlates with low confidence: the σ-algebra
@@ -497,7 +535,9 @@ Confidence determines which regime you're in.
 
 Fear, in our framework, is the contraction of $\mathcal{F}^{\rm conf}_{t}$:
 
-$$\text{Fear:} \quad \frac{d\rho}{dt} < 0 \tag{7.1}$$
+```math
+\text{Fear:} \quad \frac{d\rho}{dt} < 0 \tag{7.1}
+```
 
 The agent is retreating to a coarser partition. They are:
 - Selling differentiated positions (they can no longer distinguish good from bad)
@@ -509,7 +549,9 @@ The Fisher-Rao cost of fear: contracting the σ-algebra is a move on the
 manifold. The trajectory from a fine partition to a coarse partition is a
 geodesic on the space of σ-algebras — and it has a Fisher-Rao length:
 
-$$d_{\rm FR}(\mathcal{F}^{\rm fine}, \mathcal{F}^{\rm coarse}) = \sqrt{\sum_i \frac{(\rho_i^{\rm fine} - \rho_i^{\rm coarse})^2}{\rho_i^{\rm fine}}} \tag{7.2}$$
+```math
+d_{\rm FR}(\mathcal{F}^{\rm fine}, \mathcal{F}^{\rm coarse}) = \sqrt{\sum_i \frac{(\rho_i^{\rm fine} - \rho_i^{\rm coarse})^2}{\rho_i^{\rm fine}}} \tag{7.2}
+```
 
 This is the COST of losing confidence — it is not free. Selling a
 differentiated portfolio to move to cash costs transaction costs,
@@ -520,7 +562,9 @@ the other side and gains what you lost).
 
 Greed is the OPPOSITE: claiming a finer σ-algebra than the data supports.
 
-$$\text{Greed:} \quad \mathcal{F}^{\rm conf}_{t} \supsetneq \mathcal{F}^{\rm justified}_{t} \tag{7.3}$$
+```math
+\text{Greed:} \quad \mathcal{F}^{\rm conf}_{t} \supsetneq \mathcal{F}^{\rm justified}_{t} \tag{7.3}
+```
 
 where $\mathcal{F}^{\rm justified}_{t}$ is the σ-algebra that the data
 actually supports at confidence level $1 - \alpha$ (for some significance
@@ -580,7 +624,9 @@ communication channel. Confidence adds a crucial qualification: the
 **effective** channel is not the manifold but the manifold RESTRICTED to the
 confidence σ-algebra:
 
-$$\mathcal{C}_{\rm eff} = \mathcal{C}_{M} |_{\mathcal{F}^{\rm conf}} \tag{8.1}$$
+```math
+\mathcal{C}_{\rm eff} = \mathcal{C}_{M} |_{\mathcal{F}^{\rm conf}} \tag{8.1}
+```
 
 The full channel exists. But agents only use the part they're confident
 about. The unused capacity is the "dark matter" of market efficiency —
@@ -607,7 +653,9 @@ INCOMPLETENESS.md identifies three walls: observational, computational,
 axiomatic. Confidence creates a FOURTH wall that sits INSIDE the
 observational wall:
 
-$$\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{\rm comp}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{\rm oracle}_{t} \tag{8.2}$$
+```math
+\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{\rm comp}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{\rm oracle}_{t} \tag{8.2}
+```
 
 The confidence wall is the innermost — the tightest constraint on what an
 agent actually DOES with their knowledge. The computational wall says

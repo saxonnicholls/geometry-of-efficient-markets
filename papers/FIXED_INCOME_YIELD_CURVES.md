@@ -74,11 +74,15 @@ Pythagorean Sharpe decomposition.
 A bond market consists of $d$ instruments distinguished by maturity. In the US
 Treasury market, the standard maturities are:
 
-$$\tau_1 = \tfrac{1}{12}, \quad \tau_2 = \tfrac{3}{12}, \quad \tau_3 = \tfrac{6}{12}, \quad \tau_4 = 1, \quad \tau_5 = 2, \quad \tau_6 = 3, \quad \tau_7 = 5, \quad \tau_8 = 7, \quad \tau_9 = 10, \quad \tau_{10} = 20, \quad \tau_{11} = 30$$
+```math
+\tau_1 = \tfrac{1}{12}, \quad \tau_2 = \tfrac{3}{12}, \quad \tau_3 = \tfrac{6}{12}, \quad \tau_4 = 1, \quad \tau_5 = 2, \quad \tau_6 = 3, \quad \tau_7 = 5, \quad \tau_8 = 7, \quad \tau_9 = 10, \quad \tau_{10} = 20, \quad \tau_{11} = 30
+```
 
 giving $d = 11$ maturities and a portfolio simplex
 
-$$\Delta_{10} = \bigl\{b = (b_1, \ldots, b_{11}) \in \mathbb{R}^{11}_{+} : \textstyle\sum_{i=1}^{11} b_i = 1\bigr\} \tag{1.1}$$
+```math
+\Delta_{10} = \bigl\{b = (b_1, \ldots, b_{11}) \in \mathbb{R}^{11}_{+} : \textstyle\sum_{i=1}^{11} b_i = 1\bigr\} \tag{1.1}
+```
 
 where $b_i$ is the fraction of wealth allocated to maturity $\tau_i$. The
 simplex carries the Fisher--Rao metric $g^{\mathrm{FR}}_{ij} = \delta_{ij}/b_i$,
@@ -118,7 +122,9 @@ exploits the $r = 3$ structure to its fullest.
 
 The bond market manifold is a 3-dimensional submanifold of $S^{10}_{+}$:
 
-$$M^3_{\mathrm{bond}} = \bigl\{\phi(b^\ast(\xi)) : \xi \in \mathbb{R}^{3}\bigr\} \subset S^{10}_{+} \tag{1.2}$$
+```math
+M^3_{\mathrm{bond}} = \bigl\{\phi(b^\ast(\xi)) : \xi \in \mathbb{R}^{3}\bigr\} \subset S^{10}_{+} \tag{1.2}
+```
 
 where $\xi = (\xi_1, \xi_2, \xi_3)$ parameterises the three systematic factors.
 The induced metric $g_M = \iota^\ast g^{\mathrm{FR}}$ is a Riemannian metric on
@@ -142,12 +148,16 @@ happens when a bond defaults ($b_i \to 0$, infinite Fisher--Rao distance).
 The fundamental object in fixed income is the discount function
 $P(t, \tau)$ — the price at time $t$ of a zero-coupon bond maturing at time $\tau$:
 
-$$P(t, \tau) = \exp\Bigl(-\int_t^\tau f(t, s)\,ds\Bigr) \tag{2.1}$$
+```math
+P(t, \tau) = \exp\Bigl(-\int_t^\tau f(t, s)\,ds\Bigr) \tag{2.1}
+```
 
 where $f(t, s)$ is the instantaneous forward rate. The continuously compounded
 yield is
 
-$$y(t, \tau) = -\frac{\log P(t, \tau)}{\tau - t} = \frac{1}{\tau - t}\int_t^\tau f(t, s)\,ds \tag{2.2}$$
+```math
+y(t, \tau) = -\frac{\log P(t, \tau)}{\tau - t} = \frac{1}{\tau - t}\int_t^\tau f(t, s)\,ds \tag{2.2}
+```
 
 At each instant $t$, the map $\tau \mapsto y(t, \tau)$ traces a curve in the space
 of yields. Our geometric reinterpretation: this curve lives on the bond manifold.
@@ -156,7 +166,9 @@ of yields. Our geometric reinterpretation: this curve lives on the bond manifold
 
 **Definition 2.1.** The *yield curve at time $t$* is the one-dimensional submanifold
 
-$$\gamma_t: [\tau_1, \tau_d] \to M^3_{\mathrm{bond}}, \qquad \tau \mapsto \phi\bigl(b^\ast_\tau(t)\bigr) \tag{2.3}$$
+```math
+\gamma_t: [\tau_1, \tau_d] \to M^3_{\mathrm{bond}}, \qquad \tau \mapsto \phi\bigl(b^\ast_\tau(t)\bigr) \tag{2.3}
+```
 
 where $b^\ast_\tau(t)$ is the log-optimal portfolio at time $t$ among bonds with
 maturity up to $\tau$. The image $\gamma_t([\tau_1, \tau_d])$ is a curve on the
@@ -207,7 +219,9 @@ is geometrically necessary to accommodate it.
 The Nelson--Siegel [1987] parameterisation of the yield curve has become the
 standard in central banking (adopted by over 20 central banks worldwide):
 
-$$y(\tau) = \beta_1 + \beta_2 \frac{1 - e^{-\tau/\lambda}}{\tau/\lambda} + \beta_3 \biggl(\frac{1 - e^{-\tau/\lambda}}{\tau/\lambda} - e^{-\tau/\lambda}\biggr) \tag{3.1}$$
+```math
+y(\tau) = \beta_1 + \beta_2 \frac{1 - e^{-\tau/\lambda}}{\tau/\lambda} + \beta_3 \biggl(\frac{1 - e^{-\tau/\lambda}}{\tau/\lambda} - e^{-\tau/\lambda}\biggr) \tag{3.1}
+```
 
 where:
 - $\beta_1$ is the long-run level (the asymptote as $\tau \to \infty$),
@@ -230,7 +244,9 @@ We provide that foundation.
 The Jacobi operator (CLASSIFICATION.md Section 3) on the bond manifold
 $M^3_{\mathrm{bond}} \subset S^{10}_{+}$ is
 
-$$L_M = \Delta_M + |A|^2 + \overline{\mathrm{Ric}} \tag{3.2}$$
+```math
+L_M = \Delta_M + |A|^2 + \overline{\mathrm{Ric}} \tag{3.2}
+```
 
 where $\Delta_M$ is the Laplace--Beltrami operator on $(M^3, g_M)$, $|A|^2$
 is the squared norm of the second fundamental form, and $\overline{\mathrm{Ric}}$
@@ -323,7 +339,9 @@ from the manifold dimension and embedding, and the prediction matches the data.
 The term premium is the excess yield that investors demand for holding long-maturity
 bonds over a sequence of short-maturity bonds:
 
-$$\mathrm{TP}(\tau) = y(t, \tau) - \frac{1}{\tau}\int_t^{t+\tau} \mathbb{E}_{t}[r(s)]\,ds \tag{4.1}$$
+```math
+\mathrm{TP}(\tau) = y(t, \tau) - \frac{1}{\tau}\int_t^{t+\tau} \mathbb{E}_{t}[r(s)]\,ds \tag{4.1}
+```
 
 where $r(s)$ is the short rate. The expectations hypothesis says $\mathrm{TP} = 0$;
 the data say otherwise. The term premium is positive on average (about 100--200 bps
@@ -336,7 +354,9 @@ for the 10-year Treasury), time-varying, and occasionally negative. Explaining
 curve at time $t$, viewed as a curve in $(M^3_{\mathrm{bond}}, g_M)$. The term
 premium at maturity $\tau$ equals the mean curvature of $\gamma_t$ at $\tau$:*
 
-$$\mathrm{TP}(\tau) = H(\gamma_t, \tau) \tag{4.2}$$
+```math
+\mathrm{TP}(\tau) = H(\gamma_t, \tau) \tag{4.2}
+```
 
 *where $H$ is the mean curvature of $\gamma_t$ in the ambient Fisher--Rao
 geometry of the bond simplex $(\Delta_{d-1}, g^{\mathrm{FR}})$.*
@@ -353,7 +373,9 @@ $\square$
 **Corollary 4.2.** *The total term premium across all maturities is the
 $L^2$-norm of the mean curvature:*
 
-$$\int_{\tau_1}^{\tau_d} |\mathrm{TP}(\tau)|^2\,d\tau = \int_{\tau_1}^{\tau_d} |H(\gamma_t, \tau)|^2\,d\tau = \|H\|^2_{L^2(\gamma_t)} \tag{4.3}$$
+```math
+\int_{\tau_1}^{\tau_d} |\mathrm{TP}(\tau)|^2\,d\tau = \int_{\tau_1}^{\tau_d} |H(\gamma_t, \tau)|^2\,d\tau = \|H\|^2_{L^2(\gamma_t)} \tag{4.3}
+```
 
 *By the Sharpe--curvature identity, the Sharpe ratio of duration strategies equals
 $\|H\|_{L^2(\gamma_t)}$ — the RMS mean curvature of the yield curve.*
@@ -397,7 +419,9 @@ they are specific geometric structures on the bond manifold.
 
 ### 5.2 Vasicek (1977)
 
-$$dr = \kappa(\theta - r)\,dt + \sigma\,dW \tag{5.1}$$
+```math
+dr = \kappa(\theta - r)\,dt + \sigma\,dW \tag{5.1}
+```
 
 **Geometric interpretation.** The Ornstein--Uhlenbeck process on the level
 component $v_0$ of $M^3$. The mean-reversion rate $\kappa = \lambda_1$ (the
@@ -406,7 +430,9 @@ of the minimal surface — the "natural rate" of interest in geometric terms.
 
 The yield curve under Vasicek is an affine function of maturity:
 
-$$y(\tau) = \theta + \frac{r - \theta}{\kappa\tau}(1 - e^{-\kappa\tau}) + \frac{\sigma^2}{2\kappa^2}\Bigl(1 - \frac{1 - e^{-\kappa\tau}}{\kappa\tau}\Bigr) \tag{5.2}$$
+```math
+y(\tau) = \theta + \frac{r - \theta}{\kappa\tau}(1 - e^{-\kappa\tau}) + \frac{\sigma^2}{2\kappa^2}\Bigl(1 - \frac{1 - e^{-\kappa\tau}}{\kappa\tau}\Bigr) \tag{5.2}
+```
 
 This is a geodesic on $M^3$ plus an exponential decay correction — the minimal
 curvature curve consistent with the current short rate $r$. The Vasicek yield
@@ -420,7 +446,9 @@ rates are empirically possible — see Section 12, OP-Y4.)
 
 ### 5.3 Cox--Ingersoll--Ross (1985)
 
-$$dr = \kappa(\theta - r)\,dt + \sigma\sqrt{r}\,dW \tag{5.3}$$
+```math
+dr = \kappa(\theta - r)\,dt + \sigma\sqrt{r}\,dW \tag{5.3}
+```
 
 **Geometric interpretation.** This is the Jacobi diffusion on $\mathbb{R}_{+}$
 — the Wright--Fisher process restricted to one coordinate.
@@ -457,7 +485,9 @@ restriction of the Beta stationary distribution to one component.
 
 ### 5.4 Hull--White (1990)
 
-$$dr = (\theta(t) - \kappa r)\,dt + \sigma\,dW \tag{5.4}$$
+```math
+dr = (\theta(t) - \kappa r)\,dt + \sigma\,dW \tag{5.4}
+```
 
 **Geometric interpretation.** The OU process with time-varying drift $\theta(t)$
 chosen so that the model exactly fits the current yield curve $y(0, \tau)$ for
@@ -497,11 +527,15 @@ coordinate choices on the same underlying manifold.
 Heath, Jarrow, and Morton [1992] proposed modelling the entire forward rate curve
 $f(t, \cdot)$ as a stochastic process in function space:
 
-$$df(t, \tau) = \alpha(t, \tau)\,dt + \sigma(t, \tau)\,dW(t) \tag{6.1}$$
+```math
+df(t, \tau) = \alpha(t, \tau)\,dt + \sigma(t, \tau)\,dW(t) \tag{6.1}
+```
 
 The HJM drift condition — the fundamental no-arbitrage constraint — requires:
 
-$$\alpha(t, \tau) = \sigma(t, \tau)\int_t^\tau \sigma(t, s)\,ds \tag{6.2}$$
+```math
+\alpha(t, \tau) = \sigma(t, \tau)\int_t^\tau \sigma(t, s)\,ds \tag{6.2}
+```
 
 This eliminates the drift as a free parameter: the volatility function
 $\sigma(t, \tau)$ completely determines the model. But (6.2) has always been
@@ -517,7 +551,9 @@ inherited from $(M^3, g_M)$.
 
 The mean curvature flow (MCF) on $\mathcal{C}$ evolves a curve $\gamma_t$ by:
 
-$$\frac{\partial \gamma_t}{\partial t} = H_{\mathcal{C}}(\gamma_t) \tag{6.3}$$
+```math
+\frac{\partial \gamma_t}{\partial t} = H_{\mathcal{C}}(\gamma_t) \tag{6.3}
+```
 
 where $H_{\mathcal{C}}(\gamma_t)$ is the mean curvature of $\gamma_t$ in
 $\mathcal{C}$ — a functional of the curve's shape and its position in $M^3$.
@@ -526,7 +562,9 @@ $\mathcal{C}$ — a functional of the curve's shape and its position in $M^3$.
 condition (6.2) is the mean curvature flow on $\mathcal{C}$ constrained by
 no-arbitrage:*
 
-$$\frac{\partial \gamma_t}{\partial t} = \Pi_{\mathrm{NA}}\bigl[H_{\mathcal{C}}(\gamma_t)\bigr] + \sigma(t, \cdot)\,dW(t) \tag{6.4}$$
+```math
+\frac{\partial \gamma_t}{\partial t} = \Pi_{\mathrm{NA}}\bigl[H_{\mathcal{C}}(\gamma_t)\bigr] + \sigma(t, \cdot)\,dW(t) \tag{6.4}
+```
 
 *where $\Pi_{\mathrm{NA}}$ is the projection onto the no-arbitrage subspace —
 the set of drifts satisfying (6.2). The HJM drift condition (6.2) is the
@@ -547,7 +585,9 @@ $\gamma^\ast(\tau) \equiv r^\ast$ for all $\tau$, where $r^\ast$ is the natural
 rate of interest. This is the flat curve — the minimal surface of the yield curve
 space.
 
-$$H_{\mathcal{C}}(\gamma^\ast) = 0 \tag{6.5}$$
+```math
+H_{\mathcal{C}}(\gamma^\ast) = 0 \tag{6.5}
+```
 
 The flat yield curve has zero curvature everywhere, zero torsion, zero term
 premium. It is the geometric equilibrium of the bond market.
@@ -563,7 +603,9 @@ The MCF interpretation says: absent these perturbations, the yield curve would
 evolve toward flat. The steepness of the yield curve is a measure of how far the
 market is from equilibrium — it is the Willmore energy of the yield curve:
 
-$$\mathcal{W}(\gamma_t) = \int_{\tau_1}^{\tau_d} |H(\gamma_t, \tau)|^2\,d\tau \tag{6.6}$$
+```math
+\mathcal{W}(\gamma_t) = \int_{\tau_1}^{\tau_d} |H(\gamma_t, \tau)|^2\,d\tau \tag{6.6}
+```
 
 A steep curve has high Willmore energy; a flat curve has zero. The MCF
 monotonically decreases $\mathcal{W}$ (this is a theorem in MCF theory), so the
@@ -583,7 +625,9 @@ $\tau \mapsto y(\tau)$, has a local maximum — it "bends back" on itself.
 More precisely, define the *signed curvature* of the yield curve (as a curve in
 the maturity--yield plane) by:
 
-$$\kappa_s(\tau) = \frac{y''(\tau)}{(1 + y'(\tau)^2)^{3/2}} \tag{7.1}$$
+```math
+\kappa_s(\tau) = \frac{y''(\tau)}{(1 + y'(\tau)^2)^{3/2}} \tag{7.1}
+```
 
 For a normal curve, $\kappa_s < 0$ everywhere (concave, upward-sloping). For an
 inverted curve, $\kappa_s > 0$ at the short end (convex, downward-sloping).
@@ -592,7 +636,9 @@ inverted curve, $\kappa_s > 0$ at the short end (convex, downward-sloping).
 
 **Definition 7.1.** The *winding number* of the yield curve is
 
-$$w(\gamma_t) = \frac{1}{2\pi}\int_{\tau_1}^{\tau_d} \kappa_g(\tau)\,d\tau \tag{7.2}$$
+```math
+w(\gamma_t) = \frac{1}{2\pi}\int_{\tau_1}^{\tau_d} \kappa_g(\tau)\,d\tau \tag{7.2}
+```
 
 where $\kappa_g$ is the geodesic curvature of $\gamma_t$ in $(M^3, g_M)$.
 
@@ -774,7 +820,9 @@ three geometric types of the market manifold, forced by the topology.
 The Manifold Universal Portfolio on $M^3_{\mathrm{bond}}$ (CONVERGENCE.md)
 achieves regret
 
-$$R_T = \frac{3\log T}{2T} \tag{9.1}$$
+```math
+R_T = \frac{3\log T}{2T} \tag{9.1}
+```
 
 versus Cover's universal portfolio regret of $(d-1)\log T / (2T) = 5\log T / T$
 for $d = 11$. The MUP exploits the $r = 3$ structure: it integrates over
@@ -801,7 +849,9 @@ decomposes into three independent strategies along the Jacobi eigenmodes:*
 *The three strategies are orthogonal in the Fisher--Rao metric, and the combined
 Sharpe ratio satisfies:*
 
-$$\mathrm{Sharpe}^{2}_{\mathrm{total}} = \mathrm{Sharpe}^{2}_{\mathrm{level}} + \mathrm{Sharpe}^{2}_{\mathrm{slope}} + \mathrm{Sharpe}^{2}_{\mathrm{curvature}} \tag{9.2}$$
+```math
+\mathrm{Sharpe}^{2}_{\mathrm{total}} = \mathrm{Sharpe}^{2}_{\mathrm{level}} + \mathrm{Sharpe}^{2}_{\mathrm{slope}} + \mathrm{Sharpe}^{2}_{\mathrm{curvature}} \tag{9.2}
+```
 
 *Proof.* The Jacobi eigenmodes $\{v_0, v_1, v_2\}$ are orthogonal in
 $L^2(M^3, g_M)$ by construction. The MUP on $M^3$ is the Bayesian average over
@@ -822,7 +872,9 @@ capital appreciation as its yield falls.
 **Geometric interpretation.** The roll-down return is the geodesic curvature of
 the yield curve in the maturity direction:
 
-$$r_{\mathrm{roll}}(\tau) = -\frac{dy}{d\tau}\bigg|_\tau \cdot \mathrm{duration}(\tau) = \kappa_g(\tau) \cdot \|\gamma'(\tau)\| \tag{9.3}$$
+```math
+r_{\mathrm{roll}}(\tau) = -\frac{dy}{d\tau}\bigg|_\tau \cdot \mathrm{duration}(\tau) = \kappa_g(\tau) \cdot \|\gamma'(\tau)\| \tag{9.3}
+```
 
 The roll-down return is positive when the yield curve slopes upward (positive
 geodesic curvature in the roll direction) and negative when it slopes downward.
@@ -868,7 +920,9 @@ After 1999, the ECB's single policy rate forces all Eurozone yield curves to
 share the same short end. The German Bund curve serves as the risk-free reference.
 Other countries' curves are:
 
-$$y_i(\tau) = y_{\mathrm{Bund}}(\tau) + s_i(\tau) \tag{10.1}$$
+```math
+y_i(\tau) = y_{\mathrm{Bund}}(\tau) + s_i(\tau) \tag{10.1}
+```
 
 where $s_i(\tau)$ is the sovereign spread for country $i$ at maturity $\tau$.
 

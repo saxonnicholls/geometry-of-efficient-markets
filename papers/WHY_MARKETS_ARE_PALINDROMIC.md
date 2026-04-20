@@ -117,7 +117,9 @@ Non-palindromic cycles carry statistical arbitrage.
 an ARBITRAGE OPPORTUNITY. Specifically, if the forward probability around
 a cycle differs from the reverse probability:
 
-$$\Pi_+(\gamma) \neq \Pi_-(\gamma)$$
+```math
+\Pi_+(\gamma) \neq \Pi_-(\gamma)
+```
 
 then trading in the direction of higher probability earns
 $\delta(\gamma) = \log(\Pi_+/\Pi_-) > 0$ per cycle.
@@ -166,7 +168,9 @@ This is literally the Jacobi restoring force $b_i(1-b_i)$ on the simplex.
 A mean-reverting trajectory that goes out to some extreme value $v_{\max}$
 and returns to equilibrium traces a PATH with:
 
-$$\sigma_{t - k} = \sigma_{t + k} \text{ for small } k$$
+```math
+\sigma_{t - k} = \sigma_{t + k} \text{ for small } k
+```
 
 (the path out mirrors the path back).
 
@@ -225,7 +229,9 @@ minimise.)
 The natural diffusion on the Fisher-Rao simplex $\Delta_{d-1}$ is the
 Jacobi process:
 
-$$db_i = b_i(\mu_i - \bar\mu)\,dt + \sqrt{b_i(1-b_i)/T}\,dW_i$$
+```math
+db_i = b_i(\mu_i - \bar\mu)\,dt + \sqrt{b_i(1-b_i)/T}\,dW_i
+```
 
 With symmetric parameters ($\mu_i = \mu$ for all $i$), this process has:
 - Stationary distribution: Dirichlet $\pi \propto \prod b_i^{a-1}$
@@ -332,7 +338,9 @@ Central banks practice COUNTER-CYCLICAL monetary policy:
 - Economy recessing (below trend): loosen policy (cut rates)
 
 This is a PALINDROMIC feedback:
-$$\text{Policy response}(+\delta) = -\text{Policy response}(-\delta)$$
+```math
+\text{Policy response}(+\delta) = -\text{Policy response}(-\delta)
+```
 
 ### 8.2 Impact on market dynamics
 

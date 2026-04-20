@@ -90,7 +90,9 @@ achieves $L(b^{\ast}) = \max_i \log\bar x_i$ (just hold the best asset).
 Between the extremes of maximum entropy (too random) and zero entropy (too ordered)
 there is a unique critical point — the efficient market — where:
 
-$$h_{\rm entropy} = h_{\rm Kelly} \tag{1.1}$$
+```math
+h_{\rm entropy} = h_{\rm Kelly} \tag{1.1}
+```
 
 The entropy rate of the return process *equals* the Kelly log-growth rate. This is the
 **market criticality condition**: the information content of returns (entropy rate) is
@@ -133,7 +135,9 @@ For financial markets, the natural RG procedure is **temporal coarse-graining**:
 **Step 1 (Block spinning):** Replace $k$ consecutive return observations $(x_t, x_{t+1}, \ldots, x_{t+k-1})$
 with their geometric average:
 
-$$\tilde x_t^{(k)} = \left(\prod_{s=0}^{k-1} x_{t+s}\right)^{1/k} \tag{2.1}$$
+```math
+\tilde x_t^{(k)} = \left(\prod_{s=0}^{k-1} x_{t+s}\right)^{1/k} \tag{2.1}
+```
 
 **Step 2 (Rescaling):** The block-averaged market has $T/k$ observations instead of $T$.
 Rescale time so the number of observations stays $T$: this rescales the volatility as
@@ -153,7 +157,9 @@ $b^{\ast}$ may change under this averaging. The RG "coupling constants" are:
 **Theorem 2.1** *(The market beta function)*. *Under temporal coarse-graining (2.1),
 the evolution of the mean curvature $H$ satisfies:*
 
-$$\beta_H \equiv k\frac{\partial H}{\partial k} = -H + O(H^3) \tag{2.2}$$
+```math
+\beta_H \equiv k\frac{\partial H}{\partial k} = -H + O(H^3) \tag{2.2}
+```
 
 *The mean curvature is a relevant coupling with RG eigenvalue $\lambda_H = -1$: it
 decreases (flows toward zero) under coarse-graining for markets near the efficient
@@ -163,7 +169,9 @@ fixed point.*
 transforms as $F^{(k)} = F/k$ (averaging reduces information by factor $k$). The mean
 curvature from MINIMAL_SURFACE Proposition 2.2:
 
-$$H^2 = \sum_{j>r}\frac{(b^{\ast}\cdot\nu_j)^2}{\lambda_j(F)}$$
+```math
+H^2 = \sum_{j>r}\frac{(b^{\ast}\cdot\nu_j)^2}{\lambda_j(F)}
+```
 
 scales as $H^{(k)2} = k\cdot H^2$ under $F \to F/k$. Wait — this gives $H^{(k)} = \sqrt{k}\cdot H$,
 meaning $H$ grows under coarse-graining. Let us be more careful.
@@ -177,7 +185,9 @@ metric by $k$ rescales lengths by $\sqrt{k}$, so curvatures scale as $1/\sqrt{k}
 
 So: $H^{(k)} = H/\sqrt{k}$, giving $\beta_H = k\partial H^{(k)}/\partial k = -H/2$.
 
-$$\beta_H = -\frac{H}{2} + O(H^3) \tag{2.3}$$
+```math
+\beta_H = -\frac{H}{2} + O(H^3) \tag{2.3}
+```
 
 **The mean curvature has a negative beta function** — it is a *relevant* coupling in
 the infrared (it flows to zero at large scales / long times). This is the RG statement
@@ -189,7 +199,9 @@ of the return distribution. $\square$
 
 **Connection to the MCF.** The MCF on the market manifold:
 
-$$\partial_t M = -H\vec{\nu}$$
+```math
+\partial_t M = -H\vec{\nu}
+```
 
 is precisely the real-time version of the RG flow — the temporal coarse-graining in
 continuous time. The beta function (2.3) is the infinitesimal generator of the MCF.
@@ -229,11 +241,15 @@ the linearised RG flow — the eigenvalues of the Jacobi operator $L$ of CLASSIF
 
 For a perturbation $M = M^{\ast} + \delta M$ with $\delta M = \varepsilon f\vec{\nu}$:
 
-$$\beta_H[\delta M] = -\lambda_f\,\varepsilon f + O(\varepsilon^2) \tag{3.1}$$
+```math
+\beta_H[\delta M] = -\lambda_f\,\varepsilon f + O(\varepsilon^2) \tag{3.1}
+```
 
 where $\lambda_f$ is the eigenvalue of $L$ for eigenfunction $f$:
 
-$$L f = \Delta_{M^{\ast}} f + (|II^{\ast}|^2 + \frac{d-2}{4})f = \lambda_f f \tag{3.2}$$
+```math
+L f = \Delta_{M^{\ast}} f + (|II^{\ast}|^2 + \frac{d-2}{4})f = \lambda_f f \tag{3.2}
+```
 
 **Critical exponents from the Jacobi spectrum:**
 
@@ -243,7 +259,9 @@ The Jacobi eigenvalues (with boundary conditions) are $\lambda_k = k(k+r-1)/4 - 
 In the RG language, eigenvalues $\lambda_k < 0$ correspond to **relevant operators** (grow under RG),
 $\lambda_k = 0$ to **marginal operators**, $\lambda_k > 0$ to **irrelevant operators** (decay):
 
-$$\nu_k = \frac{1}{|\lambda_k|}: \text{ correlation length exponent for mode } k \tag{3.3}$$
+```math
+\nu_k = \frac{1}{|\lambda_k|}: \text{ correlation length exponent for mode } k \tag{3.3}
+```
 
 For $d=50$, $r=4$ (the realistic market):
 - $\lambda_0 = -(d-2)/4 = -12$ (uniform mode — relevant, decay rate 12)
@@ -267,14 +285,18 @@ $\nu_{\rm Cliff} = 1/|\nu_{00}| = 1/2$.
 
 The **correlation length** for a market near the Clifford torus scales as:
 
-$$\xi \sim |\varepsilon|^{-\nu_{\rm Cliff}} = |\varepsilon|^{-1/2} \tag{3.4}$$
+```math
+\xi \sim |\varepsilon|^{-\nu_{\rm Cliff}} = |\varepsilon|^{-1/2} \tag{3.4}
+```
 
 where $\varepsilon = p - 1/2$ is the distance from the balanced group constraint
 (Example 3 of MINIMAL_SURFACE). The correlation time (how long it takes for the
 inefficiency to be arbitraged away) scales as $\tau \sim \xi^z$ with dynamical exponent
 $z = 2$ (from the MCF diffusion time), giving:
 
-$$\tau_{\rm arb} \sim |p - 1/2|^{-1} \tag{3.5}$$
+```math
+\tau_{\rm arb} \sim |p - 1/2|^{-1} \tag{3.5}
+```
 
 Markets near the Clifford torus (balanced two-factor) have arbitrage decay time inversely
 proportional to the deviation from balance. This is a precise, testable prediction.
@@ -322,7 +344,9 @@ $c$-function of the market RG:*
 
 *(ii) $\mathcal{W}(M)$ decreases monotonically along the RG flow (MCF):*
 
-$$\frac{d\mathcal{W}}{d\log k} \leq 0 \tag{4.1}$$
+```math
+\frac{d\mathcal{W}}{d\log k} \leq 0 \tag{4.1}
+```
 
 *(iii) $\mathcal{W}$ is stationary iff $M$ is a fixed point (minimal surface).*
 
@@ -350,13 +374,17 @@ is irreversible.
 In conformal field theory, the central charge $c$ of the fixed point counts the number
 of massless degrees of freedom. In our framework, at the CAPM fixed point:
 
-$$c_{\rm CAPM}(r,d) = \mathcal{W}(S^r_+)\big|_{H=0}
-= \frac{r-1}{4}\cdot\mathrm{Area}(S^r_+) = \frac{r-1}{4}\cdot\frac{\omega_r}{2} \tag{4.2}$$
+```math
+c_{\rm CAPM}(r,d) = \mathcal{W}(S^r_+)\big|_{H=0}
+= \frac{r-1}{4}\cdot\mathrm{Area}(S^r_+) = \frac{r-1}{4}\cdot\frac{\omega_r}{2} \tag{4.2}
+```
 
 where $\omega_r$ is the volume of the positive $r$-hemisphere.
 
 For the Clifford torus:
-$$c_{\rm Cliff} = \mathcal{W}(\tau_{1,1}) = 2\pi^2 \tag{4.3}$$
+```math
+c_{\rm Cliff} = \mathcal{W}(\tau_{1,1}) = 2\pi^2 \tag{4.3}
+```
 
 (the minimum over all tori — Marques–Neves).
 
@@ -375,7 +403,9 @@ At a critical point (efficient market, $H=0$), the Willmore energy is conformall
 (MINIMAL_SURFACE Theorem 4.2). This means the market manifold satisfies the conformal
 Ward identities of a 2D CFT:
 
-$$T(z) = -\frac{c}{12}\partial^2\log\det F_M(z) + \mathcal{O}(H^2) \tag{5.1}$$
+```math
+T(z) = -\frac{c}{12}\partial^2\log\det F_M(z) + \mathcal{O}(H^2) \tag{5.1}
+```
 
 where $T(z)$ is the stress tensor of the 2D theory living on the market manifold,
 $c$ is the central charge (4.2), and $z$ is a complex coordinate on $M^2$ (for $r=2$).
@@ -392,7 +422,9 @@ At a critical point, correlation functions are power laws. For the market:
 
 **Return autocorrelations** at the CAPM critical point:
 
-$$\mathbb{E}[r_t r_{t+\tau}] \sim \tau^{-\alpha} \tag{5.2}$$
+```math
+\mathbb{E}[r_t r_{t+\tau}] \sim \tau^{-\alpha} \tag{5.2}
+```
 
 where $\alpha = 2 - \eta$ and $\eta$ is the anomalous dimension of the return operator.
 For the CAPM universality class: $\eta = 0$ (no anomalous dimension for the marginal
@@ -401,13 +433,17 @@ at all lags at the critical point. This is the **efficient market: zero autocorr
 
 **Cross-asset correlations** near the Clifford torus critical point:
 
-$$\mathbb{E}[(b_i - b_i^{\ast})(b_j - b_j^{\ast})] \sim |i-j|^{-2\Delta_\phi} \tag{5.3}$$
+```math
+\mathbb{E}[(b_i - b_i^{\ast})(b_j - b_j^{\ast})] \sim |i-j|^{-2\Delta_\phi} \tag{5.3}
+```
 
 where $\Delta_\phi$ is the scaling dimension of the fundamental field $\phi = b - b^{\ast}$.
 For the Clifford torus: $\Delta_\phi = 1/4$ (from the $c=1$ free boson with compactification
 radius $R=1$), giving:
 
-$$\mathbb{E}[(b_i - b_i^{\ast})(b_j - b_j^{\ast})] \sim |i-j|^{-1/2} \tag{5.4}$$
+```math
+\mathbb{E}[(b_i - b_i^{\ast})(b_j - b_j^{\ast})] \sim |i-j|^{-1/2} \tag{5.4}
+```
 
 Power-law decay of portfolio weight correlations across assets, with exponent $1/2$, is
 the signature of a market near the Clifford torus critical point.
@@ -442,8 +478,12 @@ in this expansion.
 
 The market's behaviour is controlled by two parameters:
 
-$$\sigma^2 = \text{total return variance (noise level)} \tag{6.1}$$
-$$r = \text{factor dimension (signal dimension)} \tag{6.2}$$
+```math
+\sigma^2 = \text{total return variance (noise level)} \tag{6.1}
+```
+```math
+r = \text{factor dimension (signal dimension)} \tag{6.2}
+```
 
 The ratio $\sigma^2/r$ is the "noise-to-signal" ratio — the natural coupling constant
 of the theory. The RG flow is in the space of $(\sigma^2/r, \text{topology of }M)$.
@@ -476,7 +516,9 @@ manifold of theories — the space of all minimal surfaces in $S^{d-1}_{+}$.
 
 The natural **order parameter** for the market phase transition is the mean curvature $H$:
 
-$$\langle H\rangle = \begin{cases}0 & \text{efficient phase}\\|H| > 0 & \text{inefficient phase}\end{cases} \tag{6.3}$$
+```math
+\langle H\rangle = \begin{cases}0 \& \text{efficient phase}\\|H| > 0 \& \text{inefficient phase}\end{cases} \tag{6.3}
+```
 
 The phase transition is:
 
@@ -509,7 +551,9 @@ specific correlations (5.4) on short time scales before flowing to the CAPM clas
 
 The **crossover scale** from Clifford to CAPM behaviour:
 
-$$\tau^{\ast} \sim e^{(c_{\rm Cliff} - c_{\rm CAPM})/\beta_0} = e^{2\pi^2/\beta_0} \tag{6.4}$$
+```math
+\tau^{\ast} \sim e^{(c_{\rm Cliff} - c_{\rm CAPM})/\beta_0} = e^{2\pi^2/\beta_0} \tag{6.4}
+```
 
 where $\beta_0 = |d\mathcal{W}/d\log k|$ is the rate of decrease of $\mathcal{W}$.
 For typical equity markets, $\tau^{\ast}$ corresponds to the time scale at which momentum
@@ -536,11 +580,15 @@ stability index $\mathrm{ind}(M)$ counts the number of relevant operators.
 **Theorem 7.2** *(Relevant operators and anomaly half-lives)*. *For a relevant perturbation
 $\delta M$ with Jacobi eigenvalue $\lambda_f < 0$:*
 
-$$|\delta M_k| \sim k^{\lambda_f}\,|\delta M_0| \to 0 \text{ as } k \to \infty \tag{7.1}$$
+```math
+|\delta M_k| \sim k^{\lambda_f}\,|\delta M_0| \to 0 \text{ as } k \to \infty \tag{7.1}
+```
 
 *The half-life of the associated anomaly (in units of the coarse-graining block size $k$) is:*
 
-$$k_{1/2} = 2^{1/|\lambda_f|} \tag{7.2}$$
+```math
+k_{1/2} = 2^{1/|\lambda_f|} \tag{7.2}
+```
 
 *For the most relevant mode ($\lambda_0 = -(d-2)/4$): $k_{1/2} = 2^{4/(d-2)}$. For $d=50$:
 $k_{1/2} = 2^{1/12} \approx 1.06$ — the anomaly decays in about one block-doubling,
@@ -559,7 +607,9 @@ efficient market.
 
 For the CAPM fixed point, the marginal operators satisfy:
 
-$$\Delta_{M^{\ast}} f + \frac{d-2}{4}f = 0 \tag{7.3}$$
+```math
+\Delta_{M^{\ast}} f + \frac{d-2}{4}f = 0 \tag{7.3}
+```
 
 These are the harmonic functions on $M^{\ast}$ with frequency $\sqrt{(d-2)/4}$ — a specific
 set of portfolio deformations. In the CAPM with $r=1$: the marginal operator corresponds
@@ -584,7 +634,9 @@ The **small-cap premium** is precisely an asymptotic freedom effect: small-cap s
 larger mean curvature $H$ (more exploitable alpha) at short horizons, which flows toward
 zero at longer horizons. The premium decays logarithmically with the holding period:
 
-$$H(k) = \frac{H_0}{1 + \beta_0 H_0^2\log k} + O(H_0^5) \tag{7.4}$$
+```math
+H(k) = \frac{H_0}{1 + \beta_0 H_0^2\log k} + O(H_0^5) \tag{7.4}
+```
 
 (one-loop RG running of $H$ including the cubic correction in (2.3)). This is the
 one-loop **running of the curvature coupling** — the analogue of the running coupling
@@ -658,7 +710,9 @@ equilibrium).
 
 Given a Voronoi-discretised return sequence $\sigma_1, \sigma_2, \ldots, \sigma_T$, define the **block RG transformation** $R_b$:
 
-$$R_b(\sigma)_i = \mathrm{majority}(\sigma_{(i-1)b+1}, \sigma_{(i-1)b+2}, \ldots, \sigma_{ib}) \tag{9.1}$$
+```math
+R_b(\sigma)_i = \mathrm{majority}(\sigma_{(i-1)b+1}, \sigma_{(i-1)b+2}, \ldots, \sigma_{ib}) \tag{9.1}
+```
 
 — block-averaging with block size $b$. The coarse-grained sequence has
 length $T/b$ over the same alphabet (or a coarser one, depending on the
@@ -677,7 +731,9 @@ $\rho_{\rm pal}(\sigma)$ denote the palindromic density of sequence $\sigma$
 (fraction of positions that are palindromic centres). Under the block RG
 transformation $R_b$ with a symmetric block function:*
 
-$$\rho_{\rm pal}(R_b(\sigma)) = \rho_{\rm pal}(\sigma) + O(b^{-2(1-H)}) \tag{9.2}$$
+```math
+\rho_{\rm pal}(R_b(\sigma)) = \rho_{\rm pal}(\sigma) + O(b^{-2(1-H)}) \tag{9.2}
+```
 
 *where $H$ is the effective Hurst exponent. Palindromic density is
 invariant under RG to leading order; the correction is suppressed by
@@ -726,7 +782,9 @@ scales is so pronounced.
 
 In the Fractional Palindromic SDE (PALINDROMIC_SDE.md):
 
-$$dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t \tag{9.3}$$
+```math
+dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t \tag{9.3}
+```
 
 the Hurst parameter $H$ is an RG-invariant critical exponent.
 
@@ -760,7 +818,9 @@ UV fixed point has the largest $c$; the IR fixed point has the smallest.
 $\mathcal{W}(M^r)$. From MINIMAL_SURFACE.md and RENORMALIZATION.md
 Section 4:
 
-$$\mathcal{W}(M^r) = \int_{M^r} \|H\|^2\,d\mathrm{vol} \tag{9.4}$$
+```math
+\mathcal{W}(M^r) = \int_{M^r} \|H\|^2\,d\mathrm{vol} \tag{9.4}
+```
 
 decreases monotonically along MCF — which IS the RG flow.
 
@@ -785,7 +845,9 @@ more palindromic-rich as we flow from UV to IR.*
 RG analysis predicts scaling relations between the various exponents.
 
 **Scaling relation 1** (Hurst-spectral):
-$$H = 1 - \lambda_1 / (2\lambda_1^{\max}) \tag{9.5}$$
+```math
+H = 1 - \lambda_1 / (2\lambda_1^{\max}) \tag{9.5}
+```
 
 The Hurst exponent and the Jacobi spectral gap are related. For a market
 at critical efficiency ($\lambda_1 = \lambda_1^{\max}$): $H = 1/2$ (BM).
@@ -793,13 +855,17 @@ For highly mean-reverting markets ($\lambda_1 \to 0$): $H \to 1$. Markets
 with $H < 1/2$ are in the "super-efficient" regime.
 
 **Scaling relation 2** (Palindromic density and dimension):
-$$\rho_{\rm pal} \sim \dim(M^r) \cdot (1 - 2H) \tag{9.6}$$
+```math
+\rho_{\rm pal} \sim \dim(M^r) \cdot (1 - 2H) \tag{9.6}
+```
 
 Higher-dimensional manifolds with more anti-persistent noise have more
 palindromic density.
 
 **Scaling relation 3** (Fibonacci spacing):
-$$\tau = e^{\lambda_1} \approx \phi \text{ at criticality} \tag{9.7}$$
+```math
+\tau = e^{\lambda_1} \approx \phi \text{ at criticality} \tag{9.7}
+```
 
 The optimal nesting ratio for palindromic scales is the golden ratio.
 This is RG fixed-point behaviour — the golden ratio is the attractive
@@ -879,7 +945,9 @@ measure $\beta_0 = |d\mathcal{W}/d\log T|$ from returns data at different time s
 
 **Prediction 4** *(Running Sharpe with horizon)*. From equation (7.4):
 
-$$\mathrm{Sharpe}^{\ast}(k) \approx \frac{\mathrm{Sharpe}^{\ast}(1)}{(1 + \beta_0\,\mathrm{Sharpe}^{\ast}(1)^2\log k)^{1/2}} \tag{9.1}$$
+```math
+\mathrm{Sharpe}^{\ast}(k) \approx \frac{\mathrm{Sharpe}^{\ast}(1)}{(1 + \beta_0\,\mathrm{Sharpe}^{\ast}(1)^2\log k)^{1/2}} \tag{9.1}
+```
 
 The Sharpe ratio of factor strategies should decrease logarithmically with the investment
 horizon. **Testing:** measure Sharpe ratios of momentum, value, and quality factors at
@@ -951,11 +1019,13 @@ to markets driven away from efficiency by stochastic information flow.
 The renormalization group framework provides the deepest explanation for why efficient
 markets sit at a critical point:
 
-$$\begin{array}{c}
+```math
+\begin{array}{c}
 \text{Too random: } h > h_{\rm Kelly} \implies \text{mispricing (arbitrage)}\\[4pt]
 \text{Too ordered: } h < h_{\rm Kelly} \implies \text{predictability (arbitrage)}\\[4pt]
 \text{Critical: } h = h_{\rm Kelly} \implies H = 0 \text{ (efficient)}
-\end{array}}$$
+\end{array}}
+```
 
 The RG flow is the MCF; the fixed points are the minimal surfaces; the $c$-function is
 the Willmore energy. The CAPM is the unique IR-stable fixed point — the long-run attractor

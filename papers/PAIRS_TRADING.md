@@ -57,12 +57,16 @@ connection it makes by analogy is an exact theorem in the geometric framework.
 
 For a two-asset portfolio $(b_1, b_2 = 1-b_1) \in \Delta_1$, the Bhattacharyya map is:
 
-$$\phi: b_1 \mapsto u = (\sqrt{b_1}, \sqrt{1-b_1}) \in S^1_+ \tag{1.1}$$
+```math
+\phi: b_1 \mapsto u = (\sqrt{b_1}, \sqrt{1-b_1}) \in S^1_+ \tag{1.1}
+```
 
 This is literally the north-south arc of the unit circle — the positive octant of $S^1$.
 The polar angle on $S^1_+$ is:
 
-$$\theta = 2\arccos(\sqrt{b_1}) \iff b_1 = \cos^2(\theta/2) \tag{1.2}$$
+```math
+\theta = 2\arccos(\sqrt{b_1}) \iff b_1 = \cos^2(\theta/2) \tag{1.2}
+```
 
 **This is identical to the Bloch sphere parameterisation** with $p = b_1$ (the weight on
 asset 1). The article's "price = $\cos^2(\theta/2)$" is our Fisher-Rao isometry, derived
@@ -83,18 +87,24 @@ at least two correlated pairs or one pair with stochastic $\rho$).
 For two assets $A$, $B$ with log-returns $r_A \sim \mathcal{N}(\mu_A, \sigma_A^2)$,
 $r_B \sim \mathcal{N}(\mu_B, \sigma_B^2)$, correlation $\rho$, the covariance matrix is:
 
-$$\Sigma = \begin{pmatrix}\sigma_A^2 & \rho\sigma_A\sigma_B\\ \rho\sigma_A\sigma_B & \sigma_B^2\end{pmatrix} \tag{2.1}$$
+```math
+\Sigma = \begin{pmatrix}\sigma_A^2 \& \rho\sigma_A\sigma_B\\ \rho\sigma_A\sigma_B \& \sigma_B^2\end{pmatrix} \tag{2.1}
+```
 
 The **density matrix** of the pairs trade is the normalized Fisher information:
 
-$$\rho_{\rm pair} = \frac{\Sigma^{-1}}{\mathrm{tr}(\Sigma^{-1})} = \frac{F(b^{\ast})}{\mathrm{tr}(F(b^{\ast}))} \tag{2.2}$$
+```math
+\rho_{\rm pair} = \frac{\Sigma^{-1}}{\mathrm{tr}(\Sigma^{-1})} = \frac{F(b^{\ast})}{\mathrm{tr}(F(b^{\ast}))} \tag{2.2}
+```
 
 This is a $2\times 2$ positive semidefinite matrix with unit trace — exactly a density
 matrix in the sense of quantum mechanics.
 
 **Eigenvalues of $\rho_{\rm pair}$:**
 
-$$\lambda_\pm = \frac{1}{2} \pm \frac{1}{2}\sqrt{1 - 4\det(\rho_{\rm pair})} \tag{2.3}$$
+```math
+\lambda_\pm = \frac{1}{2} \pm \frac{1}{2}\sqrt{1 - 4\det(\rho_{\rm pair})} \tag{2.3}
+```
 
 For perfectly correlated assets ($|\rho| \to 1$): $\det(\Sigma^{-1}) \to \infty$,
 $\det(\rho_{\rm pair}) \to 0$, and $\lambda_+ \to 1$, $\lambda_- \to 0$ — the density
@@ -108,7 +118,9 @@ a mixed state (separable). The pair is unentangled.
 
 The **von Neumann entropy** of the pairs state:
 
-$$S(\rho_{\rm pair}) = -\lambda_+\log\lambda_+ - \lambda_-\log\lambda_- \in [0, \log 2] \tag{2.4}$$
+```math
+S(\rho_{\rm pair}) = -\lambda_+\log\lambda_+ - \lambda_-\log\lambda_- \in [0, \log 2] \tag{2.4}
+```
 
 - $S = 0$: pure state, $|\rho| = 1$. Perfect correlation, maximum trading edge.
 - $S = \log 2$: maximally mixed, $\rho = 0$. No correlation, no pairs signal.
@@ -126,7 +138,9 @@ $(0,1)$, weighted by the Fisher information.
 
 The **Fisher-Rao length** of the pairs manifold:
 
-$$L(M^1) = \int_0^1 \sqrt{g^{\mathrm{FR}}_{11}(b_1)}\,db_1 = \pi/2 \tag{2.5}$$
+```math
+L(M^1) = \int_0^1 \sqrt{g^{\mathrm{FR}}_{11}(b_1)}\,db_1 = \pi/2 \tag{2.5}
+```
 
 (a quarter-circle arc — the full positive octant of $S^1$). This is universal: every
 single-pair market manifold has the same length $\pi/2$ in the Fisher-Rao metric,
@@ -135,7 +149,9 @@ log-optimal $b^{\ast}$ sits.
 
 **The log-optimal pairs weight:**
 
-$$b^{\ast}_{1} = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}$$
+```math
+b^{\ast}_{1} = \frac{\mu_A\sigma_B^2 - \mu_B\rho\sigma_A\sigma_B}{\mu_A\sigma_B^2 + \mu_B\sigma_A^2 - (\mu_A+\mu_B)\rho\sigma_A\sigma_B} \tag{2.6}
+```
 
 This is the Kelly fraction for a two-asset portfolio — the point on $S^1_+$ where the
 Fisher-Rao gradient of log-growth vanishes.
@@ -149,7 +165,9 @@ Fisher-Rao gradient of log-growth vanishes.
 Let $X_t = \log(S_{A,t}/S_{B,t}) - \log(S_{A,0}/S_{B,0})$ be the log-spread.
 For a mean-reverting pair, $X_t$ follows the Ornstein-Uhlenbeck process:
 
-$$dX_t = -\kappa(X_t - \theta)\,dt + \sigma_X\,dW_t \tag{3.1}$$
+```math
+dX_t = -\kappa(X_t - \theta)\,dt + \sigma_X\,dW_t \tag{3.1}
+```
 
 with mean-reversion level $\theta$, speed $\kappa > 0$, and diffusion $\sigma_X$.
 
@@ -157,13 +175,17 @@ with mean-reversion level $\theta$, speed $\kappa > 0$, and diffusion $\sigma_X$
 
 The OU generator acting on functions $f: \mathbb{R} \to \mathbb{R}$:
 
-$$\mathcal{L}_{\rm OU}f = -\kappa(x-\theta)f'(x) + \frac{\sigma_X^2}{2}f''(x) \tag{3.2}$$
+```math
+\mathcal{L}_{\rm OU}f = -\kappa(x-\theta)f'(x) + \frac{\sigma_X^2}{2}f''(x) \tag{3.2}
+```
 
 is related to the Quantum Harmonic Oscillator Hamiltonian by the **Doob $h$-transform**
 with the stationary density $\pi(x) = \mathcal{N}(\theta, \sigma_X^2/(2\kappa))$:
 
-$$\hat{\mathcal{H}}_{\rm QHO} = -\pi^{-1/2}\,\mathcal{L}_{\rm OU}\,\pi^{1/2}
-= \kappa\left(-\frac{d^2}{d\xi^2} + \xi^2 - 1\right) \tag{3.3}$$
+```math
+\hat{\mathcal{H}}_{\rm QHO} = -\pi^{-1/2}\,\mathcal{L}_{\rm OU}\,\pi^{1/2}
+= \kappa\left(-\frac{d^2}{d\xi^2} + \xi^2 - 1\right) \tag{3.3}
+```
 
 where $\xi = (x-\theta)\sqrt{2\kappa}/\sigma_X$ is the dimensionless spread.
 
@@ -172,12 +194,16 @@ the QHO Hamiltonian, up to a change of basis.
 
 **Spectrum (exact):**
 
-$$\lambda_n = n\kappa, \quad n = 0, 1, 2, \ldots \tag{3.4}$$
+```math
+\lambda_n = n\kappa, \quad n = 0, 1, 2, \ldots \tag{3.4}
+```
 
 **Eigenfunctions (exact):**
 
-$$\psi_n(x) = H_n\!\left(\xi\right)\cdot e^{-\xi^2/2},
-\qquad \xi = \frac{(x-\theta)\sqrt{2\kappa}}{\sigma_X} \tag{3.5}$$
+```math
+\psi_n(x) = H_n\!\left(\xi\right)\cdot e^{-\xi^2/2},
+\qquad \xi = \frac{(x-\theta)\sqrt{2\kappa}}{\sigma_X} \tag{3.5}
+```
 
 where $H_n$ are the Hermite polynomials.
 
@@ -200,7 +226,9 @@ which is the spectral gap of the projected spread process $X_t = \log(S_A/S_B)$.
 The factor $(1-\rho^2)$ accounts for the information lost in projecting from the full
 pairs system (both assets) to the univariate spread.
 
-$$\lambda_1(\text{spread}) = \kappa(1-\rho^2) \tag{3.6}$$
+```math
+\lambda_1(\text{spread}) = \kappa(1-\rho^2) \tag{3.6}
+```
 
 The formula follows from the projection: the spread variance is
 $\sigma_X^2 = \sigma_A^2 + \sigma_B^2 - 2\rho\sigma_A\sigma_B$, and the full
@@ -220,7 +248,9 @@ and computable from $(\kappa, \rho)$ alone.
 When the spread is at $X_0 = \theta + z\sigma_X$ (a $z$-sigma dislocation), the spread
 state decomposes into OU modes:
 
-$$\delta X(t) = X_t - \theta = \sum_{n=0}^\infty c_n\,e^{-n\kappa t}\,H_n(\xi_0) \tag{3.7}$$
+```math
+\delta X(t) = X_t - \theta = \sum_{n=0}^\infty c_n\,e^{-n\kappa t}\,H_n(\xi_0) \tag{3.7}
+```
 
 where $c_n = \langle\delta X(0), \psi_n\rangle/\|\psi_n\|^2$.
 
@@ -260,7 +290,9 @@ For a pairs trade that traces a closed loop $\gamma$ on the market manifold $M^1
 (a complete mean-reversion cycle: spread opens, peaks, then reverts to mean), the
 **Berry phase** accumulated is:
 
-$$\gamma_{\rm Berry} = \oint_\gamma A_{\rm Berry} \tag{4.1}$$
+```math
+\gamma_{\rm Berry} = \oint_\gamma A_{\rm Berry} \tag{4.1}
+```
 
 where $A_{\rm Berry} = i\langle\hat{b}^{M}|\nabla_\theta|\hat{b}^{M}\rangle$ is the Berry
 connection on the bundle of MUP states parameterised by $(μ, σ, ρ)(t)$.
@@ -274,7 +306,9 @@ momentum effects.
 trace a path in the $(σ_A, σ_B, \rho)$ parameter space, and the Berry phase is non-zero.
 A complete correlation cycle (e.g., $\rho$ rises from 0.6 to 0.9 and returns) accumulates:
 
-$$\gamma_{\rm Berry} = \pi\left[\cos^{-1}(\rho_{\rm min}) - \cos^{-1}(\rho_{\rm max})\right] \tag{4.2}$$
+```math
+\gamma_{\rm Berry} = \pi\left[\cos^{-1}(\rho_{\rm min}) - \cos^{-1}(\rho_{\rm max})\right] \tag{4.2}
+```
 
 **This Berry phase is measurable** — it corresponds to the systematic rotation of the
 Bloch sphere state vector over a correlation cycle, observable as a phase lag between
@@ -286,7 +320,9 @@ reversion dynamics. This is the rigorous version of the article's phase proxy.
 
 For a pairs entry at time $t$ with spread $z_t$, the **phase-adjusted spread signal** is:
 
-$$z_{\rm adj}(t) = z_t \cdot \cos(\gamma_{\rm Berry}(t)) \tag{4.3}$$
+```math
+z_{\rm adj}(t) = z_t \cdot \cos(\gamma_{\rm Berry}(t)) \tag{4.3}
+```
 
 When $\gamma_{\rm Berry} \approx 0$ (fresh entry, no accumulated phase): $z_{\rm adj} = z_t$ — enter on the full spread.
 
@@ -298,7 +334,9 @@ the spread is actually in the wrong direction for mean reversion; the pair has p
 
 **Practical proxy for $\gamma_{\rm Berry}$:** The change in $\rho$ during the spread opening:
 
-$$\hat\gamma_{\rm Berry}(t) \approx \pi\frac{\rho(t) - \rho(t-\tau)}{\rho_{\rm max} - \rho_{\rm min}} \tag{4.4}$$
+```math
+\hat\gamma_{\rm Berry}(t) \approx \pi\frac{\rho(t) - \rho(t-\tau)}{\rho_{\rm max} - \rho_{\rm min}} \tag{4.4}
+```
 
 where $\tau$ is the timescale over which the spread opened.
 
@@ -314,7 +352,9 @@ position to maximise risk-adjusted PnL?
 
 The value function $V(x)$ satisfies the variational inequality:
 
-$$\max\!\left\{\mathcal{L}_{\rm OU}V(x) - rV(x), g(x) - V(x)\right\} = 0 \tag{5.1}$$
+```math
+\max\!\left\{\mathcal{L}_{\rm OU}V(x) - rV(x), g(x) - V(x)\right\} = 0 \tag{5.1}
+```
 
 where $g(x) = x - \theta$ is the payoff from closing at spread $x$ (the PnL from
 converging to the mean), and $r$ is the risk-free rate (opportunity cost).
@@ -326,15 +366,19 @@ the stopping problem (5.1) is the **free boundary problem for the QHO ground sta
 
 The free boundary $x^{\ast} = b^{\ast}$ is determined by the smooth pasting conditions:
 
-$$V(x^{\ast}) = g(x^{\ast}), \qquad V'(x^{\ast}) = g'(x^{\ast}) = 1 \tag{5.2}$$
+```math
+V(x^{\ast}) = g(x^{\ast}), \qquad V'(x^{\ast}) = g'(x^{\ast}) = 1 \tag{5.2}
+```
 
 **Explicit solution.** In the QHO coordinates $\xi = (x-\theta)\sqrt{2\kappa}/\sigma_X$,
 the value function is:
 
-$$V(\xi) = \begin{cases}
-A\cdot e^{-\xi^2/4}\cdot D_\nu(\xi\sqrt{2}) & \xi > \xi^{\ast} \\
-g(\xi) & \xi \leq \xi^{\ast}
-\end{cases} \tag{5.3}$$
+```math
+V(\xi) = \begin{cases}
+A\cdot e^{-\xi^2/4}\cdot D_\nu(\xi\sqrt{2}) \& \xi > \xi^{\ast} \\
+g(\xi) \& \xi \leq \xi^{\ast}
+\end{cases} \tag{5.3}
+```
 
 where $D_\nu$ is the parabolic cylinder function, $\nu = r/(2\kappa) - 1/2$ is the
 fractional mode number, and $\xi^{\ast}$ is determined by the smooth pasting condition.
@@ -349,12 +393,16 @@ cost of waiting dominates.
 
 **The optimal stopping formula:**
 
-$$x^{\ast}_{\rm exit} = \theta - \sigma_X\sqrt{\frac{1}{2\kappa}}\cdot\xi^{\ast} \approx \theta - \sigma_X\sqrt{\frac{r}{2\kappa^3}} \tag{5.4}$$
+```math
+x^{\ast}_{\rm exit} = \theta - \sigma_X\sqrt{\frac{1}{2\kappa}}\cdot\xi^{\ast} \approx \theta - \sigma_X\sqrt{\frac{r}{2\kappa^3}} \tag{5.4}
+```
 
 For gold basis: $\kappa \approx 2$/year (from historical basis mean reversion),
 $\sigma_X \approx \$5$/oz, $r \approx 0.05$:
 
-$$x^{\ast}_{\rm exit} \approx \theta - 5\sqrt{\frac{0.05}{16}} \approx \theta - \$0.88\text{/oz} \tag{5.5}$$
+```math
+x^{\ast}_{\rm exit} \approx \theta - 5\sqrt{\frac{0.05}{16}} \approx \theta - \$0.88\text{/oz} \tag{5.5}
+```
 
 Exit when the basis is within \$0.88 of fair value — not at zero. This is the
 risk-adjusted optimal exit, accounting for the opportunity cost of waiting for full
@@ -365,13 +413,17 @@ convergence.
 The **optimal entry threshold** is the point at which the expected log-PnL exceeds
 the opportunity cost of being in the position. From the Jacobi theory:
 
-$$x^{\ast}_{\rm entry} = \theta + z^{\ast}_{\rm entry}\cdot\sigma_X, \qquad
-z^{\ast}_{\rm entry} = \sqrt{\frac{r + \lambda_1}{\kappa}} \cdot \frac{\sigma_X}{\sqrt{2}} \tag{5.6}$$
+```math
+x^{\ast}_{\rm entry} = \theta + z^{\ast}_{\rm entry}\cdot\sigma_X, \qquad
+z^{\ast}_{\rm entry} = \sqrt{\frac{r + \lambda_1}{\kappa}} \cdot \frac{\sigma_X}{\sqrt{2}} \tag{5.6}
+```
 
 where $\lambda_1 = \kappa$ is the Jacobi spectral gap (same as OU mean-reversion speed
 in the one-dimensional case). This simplifies to:
 
-$$z^{\ast}_{\rm entry} = \sqrt{\frac{r + \kappa}{\kappa}} \cdot \frac{1}{\sqrt{2}} \approx \sqrt{1 + r/\kappa} \tag{5.7}$$
+```math
+z^{\ast}_{\rm entry} = \sqrt{\frac{r + \kappa}{\kappa}} \cdot \frac{1}{\sqrt{2}} \approx \sqrt{1 + r/\kappa} \tag{5.7}
+```
 
 For $r/\kappa \ll 1$ (fast mean reversion): $z^{\ast}_{\rm entry} \approx 1\sigma$ — entry
 at 1σ is optimal.
@@ -423,7 +475,9 @@ Exit when spread crosses $x^{\ast}_{\rm exit}$ or when any condition breaks.
 
 **Step 5: Position sizing.** The Kelly fraction for the pairs trade:
 
-$$f^{\ast} = \frac{z_t\kappa - r}{2\sigma_X^2\kappa} \cdot (1 - S/\log 2) \tag{6.1}$$
+```math
+f^{\ast} = \frac{z_t\kappa - r}{2\sigma_X^2\kappa} \cdot (1 - S/\log 2) \tag{6.1}
+```
 
 The first factor is the classic Kelly sizing for an OU process; the second factor
 $(1 - S/\log 2) \in [0,1]$ is the von Neumann entropy discount — reduce size

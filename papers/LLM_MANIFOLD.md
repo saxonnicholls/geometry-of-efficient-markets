@@ -74,12 +74,16 @@ insider information; intrinsic dimension; representation learning; MUP; universa
 The LMSR \[Hanson 2003\] is a market mechanism where a market maker offers $d$
 securities at prices determined by the cost function:
 
-$$C(q_1,\ldots,q_d) = b\log\!\sum_{j=1}^{d} e^{q_j/b} \tag{1.1}$$
+```math
+C(q_1,\ldots,q_d) = b\log\!\sum_{j=1}^{d} e^{q_j/b} \tag{1.1}
+```
 
 where $q_j$ is the quantity of security $j$ outstanding and $b>0$ is the liquidity
 parameter. The price of security $j$ is:
 
-$$p_j = \frac{\partial C}{\partial q_j} = \frac{e^{q_j/b}}{\sum_k e^{q_k/b}} = \mathrm{softmax}(q/b)_j \tag{1.2}$$
+```math
+p_j = \frac{\partial C}{\partial q_j} = \frac{e^{q_j/b}}{\sum_k e^{q_k/b}} = \mathrm{softmax}(q/b)_j \tag{1.2}
+```
 
 **The LMSR prices are the softmax function.** This is not a coincidence: the LMSR
 is the unique proper scoring rule whose prices are given by the softmax.
@@ -87,7 +91,9 @@ is the unique proper scoring rule whose prices are given by the softmax.
 **Theorem 1.1** *(LMSR Hessian = Fisher information matrix)*.
 *The Hessian of the LMSR cost function at price vector $p = (p_1,\ldots,p_d)$ is:*
 
-$$H_C = \nabla^2 C = \frac{1}{b}\!\left(\mathrm{diag}(p) - pp^T\right) = \frac{1}{b}g^{\mathrm{FR}}(p) \tag{1.3}$$
+```math
+H_C = \nabla^2 C = \frac{1}{b}\!\left(\mathrm{diag}(p) - pp^T\right) = \frac{1}{b}g^{\mathrm{FR}}(p) \tag{1.3}
+```
 
 *where $g^{\mathrm{FR}}(p)_{ij} = \delta_{ij}/p_i - 1$ is the Fisher-Rao information
 matrix on the probability simplex at $p$.*
@@ -105,7 +111,9 @@ cost of moving between them in the LMSR.
 
 The scaled dot-product attention in a transformer \[Vaswani et al. 2017\] is:
 
-$$\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right)V \tag{1.4}$$
+```math
+\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right)V \tag{1.4}
+```
 
 where $Q,K,V \in \mathbb{R}^{n\times d_k}$ are the query, key, and value matrices.
 
@@ -120,7 +128,9 @@ market of "attention tokens," where each token $j$ is a security with quantity
 $q_j = (QK^T)_{ij}/\sqrt{d_k}$ and the liquidity parameter is $b=1$. The attention
 cost function is:*
 
-$$C_{\rm attn}(q^{(i)}) = \log\!\sum_j e^{q^{(i)}_{j}} = \log\!\sum_j e^{(QK^T)_{ij}/\sqrt{d_k}} \tag{1.5}$$
+```math
+C_{\rm attn}(q^{(i)}) = \log\!\sum_j e^{q^{(i)}_{j}} = \log\!\sum_j e^{(QK^T)_{ij}/\sqrt{d_k}} \tag{1.5}
+```
 
 *The attention weight matrix IS the LMSR price matrix.*
 
@@ -129,11 +139,17 @@ $$C_{\rm attn}(q^{(i)}) = \log\!\sum_j e^{q^{(i)}_{j}} = \log\!\sum_j e^{(QK^T)_
 All three objects — the Fisher-Rao metric, the LMSR, and the transformer attention — 
 share the same mathematical skeleton:
 
-$$\text{Log-partition function} \quad Z = \log\!\sum_j e^{\theta_j}$$
+```math
+\text{Log-partition function} \quad Z = \log\!\sum_j e^{\theta_j}
+```
 
-$$\text{Softmax prices} \quad p_j = \partial Z/\partial\theta_j = e^{\theta_j}/\sum_k e^{\theta_k}$$
+```math
+\text{Softmax prices} \quad p_j = \partial Z/\partial\theta_j = e^{\theta_j}/\sum_k e^{\theta_k}
+```
 
-$$\text{Fisher matrix} \quad g^{\mathrm{FR}}_{ij} = \partial^2 Z/\partial\theta_i\partial\theta_j = p_i(\delta_{ij} - p_j)$$
+```math
+\text{Fisher matrix} \quad g^{\mathrm{FR}}_{ij} = \partial^2 Z/\partial\theta_i\partial\theta_j = p_i(\delta_{ij} - p_j)
+```
 
 This is the exponential family geometry \[Amari 1985\]. The transformer attention
 is an instance of exponential family inference on the key-query product space; the LMSR
@@ -193,7 +209,9 @@ future returns is contained in an $r$-dimensional manifold.*
 **The data is massively overparameterised relative to its intrinsic dimension.** For
 US equities: $d = 5000$+ stocks, $T = $ millions of ticks per day, $L = 10$+ order book
 levels. The intrinsic dimension is $r \approx 4$–$8$. The compression ratio is:
-$$\frac{d \times T \times L}{r} \approx \frac{5000 \times 10^6 \times 10}{6} \approx 10^{10}$$
+```math
+\frac{d \times T \times L}{r} \approx \frac{5000 \times 10^6 \times 10}{6} \approx 10^{10}
+```
 
 A factor of ten billion. No machine learning model needs more than $r$ independent
 dimensions to represent the market's predictive content.
@@ -207,12 +225,16 @@ dimensions to represent the market's predictive content.
 A transformer with context length $T$, hidden dimension $d_{\rm model}$, and $L$ layers
 applied to the market data sequence $(x_1,\ldots,x_T)$ learns a predictive model:
 
-$$\hat{p}_\theta(x_{T+1}|x_{1:T}) = \mathrm{Transformer}_\theta(x_{1:T}) \tag{3.1}$$
+```math
+\hat{p}_\theta(x_{T+1}|x_{1:T}) = \mathrm{Transformer}_\theta(x_{1:T}) \tag{3.1}
+```
 
 parameterised by weights $\theta$. The transformer is trained by minimising the
 negative log-likelihood (cross-entropy loss):
 
-$$\mathcal{L}(\theta) = -\frac{1}{T}\sum_{t=1}^{T}\log\hat{p}_\theta(x_{t+1}|x_{1:t}) \tag{3.2}$$
+```math
+\mathcal{L}(\theta) = -\frac{1}{T}\sum_{t=1}^{T}\log\hat{p}_\theta(x_{t+1}|x_{1:t}) \tag{3.2}
+```
 
 **Theorem 3.1** *(Transformer convergence to the manifold representation)*.
 *Let $p^{\ast}$ be the true market distribution (generated by an efficient market on $M^r$).
@@ -222,14 +244,18 @@ Let $\hat{p}_\theta$ be the transformer's learned distribution. Then:*
 transformer exactly learns the true market distribution.*
 
 *(ii) The true market distribution $p^{\ast}$ is the heat kernel on $M^r$:*
-$$p^{\ast}(x_{t+1}|x_{1:t}) = p_{\Delta t}(b^{\ast}(t), x_{t+1}) \tag{3.3}$$
+```math
+p^{\ast}(x_{t+1}|x_{1:t}) = p_{\Delta t}(b^{\ast}(t), x_{t+1}) \tag{3.3}
+```
 
 *where $p_{\Delta t}$ is the transition density of the market process on $M^r$
 (Jacobi polynomial series / theta function / McKean kernel, per MARKET_PROCESSES.md).*
 
 *(iii) In the limit of infinite data and sufficient capacity ($d_{\rm model} \geq r$),
 the transformer's optimal weights $\theta^{\ast}$ satisfy:*
-$$\hat{p}_{\theta^{\ast}}(x_{t+1}|x_{1:t}) = p_{\Delta t}(b^{\ast}(t), x_{t+1}) \tag{3.4}$$
+```math
+\hat{p}_{\theta^{\ast}}(x_{t+1}|x_{1:t}) = p_{\Delta t}(b^{\ast}(t), x_{t+1}) \tag{3.4}
+```
 
 *— the transformer learns to represent the market state as a point $b^{\ast}(t) \in M^r$
 and predict the next return from the heat kernel on $M^r$.*
@@ -247,7 +273,9 @@ The minimiser satisfies (3.4) by (i) and (ii). $\square$
 *Let $\beta^{\rm LLM}_{t}$ be any portfolio strategy derived from the transformer's
 predictions. For an efficient market ($H=0$ on $M^r$):*
 
-$$\limsup_{T\to\infty}\frac{1}{T}\log\frac{W_T(\beta^{\rm LLM})}{W_T(\hat{b}^{M})} \leq 0 \quad\text{a.s.} \tag{3.5}$$
+```math
+\limsup_{T\to\infty}\frac{1}{T}\log\frac{W_T(\beta^{\rm LLM})}{W_T(\hat{b}^{M})} \leq 0 \quad\text{a.s.} \tag{3.5}
+```
 
 *The LLM-derived portfolio cannot asymptotically outperform the MUP.*
 
@@ -265,7 +293,9 @@ asymptotically. $\square$
 
 *(i) Underdimensioned ($d_{\rm model} < r$): the transformer cannot represent $M^r$
 faithfully. Its predictions have irreducible error:*
-$$D_{\rm KL}(\hat{p}_\theta \| p^{\ast}) \geq c(r - d_{\rm model})/T \tag{3.6}$$
+```math
+D_{\rm KL}(\hat{p}_\theta \| p^{\ast}) \geq c(r - d_{\rm model})/T \tag{3.6}
+```
 
 *(ii) Overdimensioned ($d_{\rm model} > r$): the transformer has excess capacity
 that is wasted on overfitting. The effective rank of the learned weight matrices
@@ -300,19 +330,25 @@ a small number — and no architectural sophistication changes this.
 
 Recall the three filtrations from FILTRATIONS.md:
 
-$$\mathcal{F}^{\rm Vor}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{X}_t \tag{4.1}$$
+```math
+\mathcal{F}^{\rm Vor}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{X}_t \tag{4.1}
+```
 
 where $\mathcal{F}^{X}_t = \sigma(x_1,\ldots,x_t)$ is the full data filtration. To this
 we add:
 
 **Definition 4.1** (Oracle filtration). *The oracle filtration is:*
-$$\mathcal{F}^{\rm oracle}_{t} = \mathcal{F}^{X}_t \vee \mathcal{G}_{t} \tag{4.2}$$
+```math
+\mathcal{F}^{\rm oracle}_{t} = \mathcal{F}^{X}_t \vee \mathcal{G}_{t} \tag{4.2}
+```
 
 *where $\mathcal{G}_{t}$ is the sigma-algebra of side-channel information — events
 observable by the privileged party but not appearing in any public data stream.*
 
 The complete hierarchy:
-$$\mathcal{F}^{\rm Vor}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{X}_t \subseteq \mathcal{F}^{\rm oracle}_{t} \tag{4.3}$$
+```math
+\mathcal{F}^{\rm Vor}_{t} \subseteq \mathcal{F}^{M}_t \subseteq \mathcal{F}^{X}_t \subseteq \mathcal{F}^{\rm oracle}_{t} \tag{4.3}
+```
 
 A transformer trained on market data has access to $\mathcal{F}^{X}_t$. An insider has
 access to $\mathcal{F}^{\rm oracle}_{t}$. The difference $\mathcal{G}_{t}$ is the
@@ -324,12 +360,16 @@ access to $\mathcal{F}^{\rm oracle}_{t}$. The difference $\mathcal{G}_{t}$ is th
 *Side-channel information $\mathcal{G}_{t}$ that generates alpha corresponds to a
 non-zero displacement in the normal bundle $N_{b^{\ast}}M$:*
 
-$$v_{\mathcal{G}} = \mathbb{E}[b^{\ast}_{\rm oracle}(t) - b^{\ast}(t)|\mathcal{G}_{t}] \in N_{b^{\ast}}M \tag{4.4}$$
+```math
+v_{\mathcal{G}} = \mathbb{E}[b^{\ast}_{\rm oracle}(t) - b^{\ast}(t)|\mathcal{G}_{t}] \in N_{b^{\ast}}M \tag{4.4}
+```
 
 *where $b^{\ast}_{\rm oracle}$ is the log-optimal portfolio if $\mathcal{G}_{t}$ were publicly
 known. The alpha generated by $\mathcal{G}_{t}$ is:*
 
-$$\alpha_{\mathcal{G}} = \varepsilon^2|v_{\mathcal{G}}|_{g^{\mathrm{FR}}} \cdot \mathrm{sign}(\langle v_{\mathcal{G}}, \vec{H}\rangle) \tag{4.5}$$
+```math
+\alpha_{\mathcal{G}} = \varepsilon^2|v_{\mathcal{G}}|_{g^{\mathrm{FR}}} \cdot \mathrm{sign}(\langle v_{\mathcal{G}}, \vec{H}\rangle) \tag{4.5}
+```
 
 *Side-channel information aligned with $\vec{H}$ (the mean curvature direction)
 generates the maximum alpha; information orthogonal to $\vec{H}$ generates zero alpha
@@ -376,7 +416,9 @@ the filtration complexity per unit time: $c_{\rm LZ}(s_{0:T})\cdot h_{\rm Kelly}
 - Dark pool order flow (not observable in public data)
 
 **The fundamental bound:**
-$$\mathrm{KL}(\hat{p}_\theta \| p^{\ast}) \geq 0 \quad \text{with equality iff } \hat{p}_\theta = p^{\ast} \tag{4.6}$$
+```math
+\mathrm{KL}(\hat{p}_\theta \| p^{\ast}) \geq 0 \quad \text{with equality iff } \hat{p}_\theta = p^{\ast} \tag{4.6}
+```
 
 Equality requires $d_{\rm model} \geq r$ and infinite data. Below the bound: no
 architecture, no training procedure, no amount of compute can improve on the MUP.
@@ -410,7 +452,9 @@ The transformer's self-attention is aggregating information from $n$ "prediction
 
 For a market operating on $M^r \subset S^{d-1}_{+}$, the LMSR restricted to $M^r$ is:
 
-$$C^M(q) = b\log\!\int_{M^r} e^{\langle q, b\rangle/b}\,d\mathrm{vol}_{M}(b) \tag{5.1}$$
+```math
+C^M(q) = b\log\!\int_{M^r} e^{\langle q, b\rangle/b}\,d\mathrm{vol}_{M}(b) \tag{5.1}
+```
 
 This is the **log-partition function of the MUP** — it is the logarithm of the
 normalisation constant of the wealth-weighted measure on $M^r$.
@@ -418,7 +462,9 @@ normalisation constant of the wealth-weighted measure on $M^r$.
 **Theorem 5.1** *(LMSR on the manifold = MUP)*. *The gradient of the manifold LMSR
 cost function (5.1) is the MUP portfolio:*
 
-$$\frac{\partial C^M}{\partial q}\bigg|_{q=L_T} = \hat{b}^{M}_T \tag{5.2}$$
+```math
+\frac{\partial C^M}{\partial q}\bigg|_{q=L_T} = \hat{b}^{M}_T \tag{5.2}
+```
 
 *where $L_T = (L_T(b_1),\ldots,L_T(b_d))$ is the vector of Kelly growth rates
 at the portfolio vertices.*
@@ -435,11 +481,15 @@ computes the MUP weights implicitly when its attention distribution concentrates
 
 The cross-entropy loss of the transformer:
 
-$$\mathcal{L}(\theta) = -\frac{1}{T}\sum_{t=1}^{T}\log\hat{p}_\theta(x_{t+1}|x_{1:t}) \tag{5.3}$$
+```math
+\mathcal{L}(\theta) = -\frac{1}{T}\sum_{t=1}^{T}\log\hat{p}_\theta(x_{t+1}|x_{1:t}) \tag{5.3}
+```
 
 is minimised at exactly the Kelly growth rate $h_{\rm Kelly}$ when $\hat{p}_\theta = p^{\ast}$:
 
-$$\min_\theta\mathcal{L}(\theta) = h_{\rm Kelly}(b^{\ast}) \tag{5.4}$$
+```math
+\min_\theta\mathcal{L}(\theta) = h_{\rm Kelly}(b^{\ast}) \tag{5.4}
+```
 
 (from the SMB theorem: the optimal compression rate equals the entropy of the source,
 which for the efficient market equals the Kelly growth rate).
@@ -565,7 +615,9 @@ t, t+1, \ldots, t+k)$ around the current position $t$.
 
 **Palindromic attention** is an attention pattern satisfying:
 
-$$A_{t, t-j} = A_{t, t+j} \quad \text{for all } j \tag{8.1}$$
+```math
+A_{t, t-j} = A_{t, t+j} \quad \text{for all } j \tag{8.1}
+```
 
 — equal weight to symmetric past/future positions. This captures
 reversal symmetry.
@@ -591,7 +643,9 @@ be a causal transformer trained on palindromic data with palindromic
 density $\rho_{\rm pal}$. Let $\mathcal{M}_{\rm bidir}$ be a bidirectional
 transformer on the same data. Then:*
 
-$$L_{\rm causal} - L_{\rm bidir} \geq \rho_{\rm pal} \cdot h_{\rm Kelly} \cdot \log(\text{context length}) \tag{8.2}$$
+```math
+L_{\rm causal} - L_{\rm bidir} \geq \rho_{\rm pal} \cdot h_{\rm Kelly} \cdot \log(\text{context length}) \tag{8.2}
+```
 
 *The causal model has an IRREDUCIBLE extra loss proportional to the
 palindromic density. For fully palindromic data ($\rho_{\rm pal} = 1$):
@@ -614,7 +668,9 @@ The difference should equal $\rho_{\rm pal} \cdot h_{\rm Kelly} \cdot \log T$.
 
 Theorem 3.1 of this paper (LLM Convergence Theorem) states:
 
-$$L^{\ast}(\theta) = h_{\rm Kelly}$$
+```math
+L^{\ast}(\theta) = h_{\rm Kelly}
+```
 
 — the optimal cross-entropy loss equals the Kelly rate. For palindromic
 data:
@@ -623,7 +679,9 @@ data:
 trained on a palindromic market sequence with palindromic fraction
 $\rho_{\rm pal}$:*
 
-$$L^{\ast}_{\rm palindromic}(\theta) \geq h_{\rm Kelly}^{\rm palindromic} = h_{\rm Kelly} \cdot (1 - \rho_{\rm pal}/2) \tag{8.3}$$
+```math
+L^{\ast}_{\rm palindromic}(\theta) \geq h_{\rm Kelly}^{\rm palindromic} = h_{\rm Kelly} \cdot (1 - \rho_{\rm pal}/2) \tag{8.3}
+```
 
 *The palindromic minimum loss is HALVED by palindromic density —
 consistent with the palindromic entropy halving (PALINDROMIC_SEQUENCES.md
@@ -639,7 +697,9 @@ theory predicts.
 To build palindromic structure INTO a transformer architecture, one can
 TIE THE WEIGHTS of symmetric positions:
 
-$$W_{\rm attn}(t, t-j) = W_{\rm attn}(t, t+j) \tag{8.4}$$
+```math
+W_{\rm attn}(t, t-j) = W_{\rm attn}(t, t+j) \tag{8.4}
+```
 
 This is a hard constraint that enforces palindromic attention. It reduces
 the number of parameters by a factor of 2 and imposes a strong inductive
@@ -660,7 +720,9 @@ The empirical test: does weight-tying help or hurt on market data?
 of a bidirectional transformer on palindromic market data converge to
 the palindromic sub-manifold of the model parameter space:*
 
-$$\theta^{\ast} = \arg\min_{\theta} L(\theta) \text{ subject to } \theta \in \Theta_{\rm palindromic} \tag{8.5}$$
+```math
+\theta^{\ast} = \arg\min_{\theta} L(\theta) \text{ subject to } \theta \in \Theta_{\rm palindromic} \tag{8.5}
+```
 
 *where $\Theta_{\rm palindromic}$ is the manifold of parameter
 configurations that produce palindromic attention patterns. Standard
@@ -678,7 +740,9 @@ The Palindromic Universal Portfolio from our discussion (eertree-based
 PUP) has an attention-aggregation interpretation. Each eertree node is
 like an attention head; the PUP aggregation over eertree:
 
-$$b_{\rm PUP}(t) = \sum_{p \in \text{eertree}(t)} w_p \cdot b_p$$
+```math
+b_{\rm PUP}(t) = \sum_{p \in \text{eertree}(t)} w_p \cdot b_p
+```
 
 is structurally analogous to multi-head attention aggregation. Each
 palindromic factor $p$ serves as a specialised "attention head" focused

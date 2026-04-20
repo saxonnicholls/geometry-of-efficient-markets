@@ -47,13 +47,17 @@ from FOKKER_PLANCK_CFD.md, now seen as the natural simplicial complex of the hyp
 **(iv) Shapley values = Fisher-Rao attribution.** The Shapley value of asset $i$ in
 the Kelly growth cooperative game $v(S) = \max_{b\in\Delta_{|S|-1}} L_T(b|S)$ is:
 
-$$\phi_i = \sum_{S\subseteq[d]\setminus\{i\}}\frac{|S|!(d-|S|-1)!}{d!}
-\left[v(S\cup\{i\}) - v(S)\right] \tag{0.1}$$
+```math
+\phi_i = \sum_{S\subseteq[d]\setminus\{i\}}\frac{|S|!(d-|S|-1)!}{d!}
+\left[v(S\cup\{i\}) - v(S)\right] \tag{0.1}
+```
 
 This satisfies all four Shapley axioms. We prove that the Shapley attribution equals
 the Fisher-Rao gradient of the Kelly growth rate projected onto the $i$-th coordinate:
 
-$$\phi_i = b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{b=b^{\ast}} = b^{\ast}_{i}(\mu_i - \bar\mu) \tag{0.2}$$
+```math
+\phi_i = b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{b=b^{\ast}} = b^{\ast}_{i}(\mu_i - \bar\mu) \tag{0.2}
+```
 
 — the product of the log-optimal weight and the excess expected return. This is
 the **CAPM alpha attribution formula** derived from cooperative game theory.
@@ -70,7 +74,9 @@ attribution analysis; Fisher-Rao gradient; CAPM alpha; factor contribution.
 
 The portfolio simplex $\Delta_{d-1}$ sits inside the unit hypercube $[0,1]^d$:
 
-$$\Delta_{d-1} = \{b \in [0,1]^d : \textstyle\sum_{i=1}^{d} b_i = 1\} \tag{1.1}$$
+```math
+\Delta_{d-1} = \{b \in [0,1]^d : \textstyle\sum_{i=1}^{d} b_i = 1\} \tag{1.1}
+```
 
 It is the intersection of the hypercube with the affine hyperplane $\sum b_i = 1$, which
 is a face of the hyperplane arrangement $\{x_1+\cdots+x_d = 1\}$.
@@ -89,7 +95,9 @@ transform on $\{-1,+1\}^{d}$ (the discrete hypercube).
 **The barycentric subdivision** of $\Delta_{d-1}$ is the simplicial complex obtained
 by ordering coordinates: for each permutation $\sigma\in S_d$, the simplex
 
-$$\Delta_\sigma = \{b\in\Delta_{d-1} : b_{\sigma(1)} \geq b_{\sigma(2)} \geq \cdots \geq b_{\sigma(d)}\}$$
+```math
+\Delta_\sigma = \{b\in\Delta_{d-1} : b_{\sigma(1)} \geq b_{\sigma(2)} \geq \cdots \geq b_{\sigma(d)}\}
+```
 
 forms one of $d!$ sub-simplices. Together they triangulate $\Delta_{d-1}$.
 
@@ -115,20 +123,26 @@ the barycentric cell condition. $\square$
 
 The **Walsh functions** on $\{0,1\}^{d}$ (or $\{-1,+1\}^{d}$ in the $\pm 1$ basis) are:
 
-$$w_S(x) = \prod_{i\in S}(-1)^{x_i} = \prod_{i\in S}x_i, \qquad S\subseteq[d], x\in\{-1,+1\}^{d} \tag{2.1}$$
+```math
+w_S(x) = \prod_{i\in S}(-1)^{x_i} = \prod_{i\in S}x_i, \qquad S\subseteq[d], x\in\{-1,+1\}^{d} \tag{2.1}
+```
 
 They form an orthonormal basis: $\sum_{x\in\{-1,+1\}^{d}}w_S(x)w_T(x) = 2^d\delta_{ST}$.
 
 **Continuous extension to the simplex.** For $b \in \Delta_{d-1}$, replacing $x_i$ with
 $2b_i - 1 \in [-1,+1]$:
 
-$$w_S(b) = \prod_{i\in S}(2b_i - 1) \tag{2.2}$$
+```math
+w_S(b) = \prod_{i\in S}(2b_i - 1) \tag{2.2}
+```
 
 The set $\{w_S : S\subseteq[d]\}$ is not orthonormal on $\Delta_{d-1}$, but is a
 polynomial basis. The Walsh expansion of any function $f:\Delta_{d-1}\to\mathbb{R}$:
 
-$$f(b) = \sum_{S\subseteq[d]}\hat f_S\, w_S(b), \qquad
-\hat f_S = \int_{\Delta_{d-1}} f(b)\, w_S(b)\, d\mathrm{vol}(b) \tag{2.3}$$
+```math
+f(b) = \sum_{S\subseteq[d]}\hat f_S\, w_S(b), \qquad
+\hat f_S = \int_{\Delta_{d-1}} f(b)\, w_S(b)\, d\mathrm{vol}(b) \tag{2.3}
+```
 
 is the **Walsh-Fourier expansion on the simplex**.
 
@@ -138,7 +152,9 @@ is the **Walsh-Fourier expansion on the simplex**.
 *For $d=2$ (two-asset simplex $\Delta_1 = [0,1]$), the Walsh functions restricted to
 $\Delta_1$ are proportional to the Jacobi polynomials:*
 
-$$w_{\{1\}}(b) = 2b_1 - 1 = P_1^{(0,0)}(2b_1-1) \tag{2.4}$$
+```math
+w_{\{1\}}(b) = 2b_1 - 1 = P_1^{(0,0)}(2b_1-1) \tag{2.4}
+```
 
 *More generally: the multilinear Walsh function $w_S(b) = \prod_{i\in S}(2b_i-1)$
 equals the degree-$|S|$ multivariate Jacobi polynomial on $\Delta_{d-1}$ evaluated
@@ -153,7 +169,9 @@ the simplex.
 The MUP normalisation constant $\mathcal{Z}_{T} = \int_{\Delta_{d-1}}W_T(b)\,d\mathrm{vol}(b)$
 has a Walsh expansion:
 
-$$\mathcal{Z}_{T} = \sum_{S\subseteq[d]}\hat W_S\cdot \hat{1}_{S} \tag{2.5}$$
+```math
+\mathcal{Z}_{T} = \sum_{S\subseteq[d]}\hat W_S\cdot \hat{1}_{S} \tag{2.5}
+```
 
 where $\hat W_S = \int W_T(b)\,w_S(b)\,d\mathrm{vol}(b)$ are the Walsh coefficients
 of the wealth function and $\hat{1}_{S} = \int w_S(b)\,d\mathrm{vol}(b)$ are the
@@ -198,20 +216,26 @@ given by the formula (0.1).
 *For a market with $d$ assets and log-optimal portfolio $b^{\ast}$, the Shapley value of
 asset $i$ in the Kelly game is:*
 
-$$\phi_i = b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{b^{\ast}} \tag{3.1}$$
+```math
+\phi_i = b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{b^{\ast}} \tag{3.1}
+```
 
 *where $\partial L_T/\partial b_i|_{b^{\ast}} = \mu_i - \bar\mu$ is the excess expected
 return of asset $i$ over the portfolio mean (the log-optimal portfolio's KKT condition).*
 
 *Proof.* The Shapley value for a game with smooth characteristic function $v$ is:
 
-$$\phi_i = \int_0^1 \frac{\partial v(\lambda b^{\ast})}{\partial b^{\ast}_{i}}\,d\lambda \tag{3.2}$$
+```math
+\phi_i = \int_0^1 \frac{\partial v(\lambda b^{\ast})}{\partial b^{\ast}_{i}}\,d\lambda \tag{3.2}
+```
 
 (the Owen \[1972\] integral formula). The Kelly game has $v(\lambda b^{\ast}) = L_T(\lambda b^{\ast})$.
 The integral gives:
 
-$$\phi_i = \int_0^1 \lambda b^{\ast}_{i}\frac{\partial^2 L_T}{\partial b_i^2}\bigg|_{\lambda b^{\ast}}
-+ b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{\lambda b^{\ast}}\,d\lambda \tag{3.3}$$
+```math
+\phi_i = \int_0^1 \lambda b^{\ast}_{i}\frac{\partial^2 L_T}{\partial b_i^2}\bigg|_{\lambda b^{\ast}}
++ b^{\ast}_{i}\frac{\partial L_T}{\partial b_i}\bigg|_{\lambda b^{\ast}}\,d\lambda \tag{3.3}
+```
 
 At the log-optimal portfolio: $\partial L_T/\partial b_i|_{b^{\ast}} = \mu_i - \bar\mu$
 (the KKT condition, from CONVERGENCE.md equation 1.8). Substituting and integrating:
@@ -236,12 +260,16 @@ Kelly portfolio alpha — the excess return over the equal-weight mean. Efficien
 For a multi-factor market with $r$ factors and $d$ assets, the Shapley value of factor $k$
 (rather than individual asset $i$) is:
 
-$$\Phi_k = \sum_{i=1}^{d} V_{ik} b^{\ast}_{i} (\mu_i - \bar\mu) \tag{3.4}$$
+```math
+\Phi_k = \sum_{i=1}^{d} V_{ik} b^{\ast}_{i} (\mu_i - \bar\mu) \tag{3.4}
+```
 
 where $V_{ik}$ is the loading of asset $i$ on factor $k$ (from the PCA of the Fisher
 information matrix). The total factor attribution:
 
-$$\sum_{k=1}^{r} \Phi_k = \sum_i b^{\ast}_{i}(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu \tag{3.5}$$
+```math
+\sum_{k=1}^{r} \Phi_k = \sum_i b^{\ast}_{i}(\mu_i-\bar\mu) = \bar\mu^{\ast} - \bar\mu \tag{3.5}
+```
 
 equals the Kelly portfolio alpha — the Shapley attribution is complete.
 
@@ -271,7 +299,9 @@ correspond to lower-dimensional faces (closer to the vertices).
 
 The **ANOVA (Analysis of Variance) decomposition** of a function $f:\Delta_{d-1}\to\mathbb{R}$:
 
-$$f(b) = f_\emptyset + \sum_i f_i(b_i) + \sum_{i<j}f_{ij}(b_i,b_j) + \cdots \tag{4.1}$$
+```math
+f(b) = f_\emptyset + \sum_i f_i(b_i) + \sum_{i<j}f_{ij}(b_i,b_j) + \cdots \tag{4.1}
+```
 
 (where $f_\emptyset$ is the mean, $f_i$ is the main effect of asset $i$, etc.) is the
 Walsh-Fourier decomposition restricted to the simplex.
@@ -319,7 +349,9 @@ attribution not explained by factors = the normal bundle component of the Shaple
 **Theorem 5.1** *(Attribution decomposition via normal bundle)*.
 *The Shapley value decomposes as:*
 
-$$\phi_i = \underbrace{\Pi_{TM}\phi_i}_{\text{systematic}} + \underbrace{\Pi_{NM}\phi_i}_{\text{idiosyncratic}} \tag{5.1}$$
+```math
+\phi_i = \underbrace{\Pi_{TM}\phi_i}_{\text{systematic}} + \underbrace{\Pi_{NM}\phi_i}_{\text{idiosyncratic}} \tag{5.1}
+```
 
 *where $\Pi_{TM}$ and $\Pi_{NM}$ project onto the tangent and normal bundle of the
 market manifold. For an efficient market ($H=0$): the idiosyncratic component
@@ -331,12 +363,16 @@ unexplained alpha.*
 
 The **Banzhaf power index** \[1965\] — a close relative of the Shapley value — is:
 
-$$\beta_i = \frac{1}{2^{d-1}}\sum_{S\subseteq[d]\setminus\{i\}}[v(S\cup\{i\})-v(S)] \tag{5.2}$$
+```math
+\beta_i = \frac{1}{2^{d-1}}\sum_{S\subseteq[d]\setminus\{i\}}[v(S\cup\{i\})-v(S)] \tag{5.2}
+```
 
 Unlike Shapley, the Banzhaf index does not satisfy efficiency (the values do not sum to $v(N)$).
 In the Kelly game:
 
-$$\beta_i = \mathbb{E}_{S\subseteq[d]\setminus\{i\}}[v(S\cup\{i\})-v(S)] \tag{5.3}$$
+```math
+\beta_i = \mathbb{E}_{S\subseteq[d]\setminus\{i\}}[v(S\cup\{i\})-v(S)] \tag{5.3}
+```
 
 — the expected marginal contribution of asset $i$ over a uniformly random coalition.
 

@@ -89,7 +89,9 @@ MCF is controlled by the spectral gap $\lambda_1$ of the Jacobi operator $L_M =
 \Delta_M + |A|^2 + \mathrm{Ric}(\nu,\nu)$ on $M^r$. Specifically, the Willmore
 energy decays as:
 
-$$\mathcal{W}(M_t) \leq \mathcal{W}(M_0)\,e^{-2\lambda_1 t} \tag{1.1}$$
+```math
+\mathcal{W}(M_t) \leq \mathcal{W}(M_0)\,e^{-2\lambda_1 t} \tag{1.1}
+```
 
 (cf. CLASSIFICATION.md Theorem 3.1; RENORMALIZATION.md Section 2). The spectral
 gap $\lambda_1$ sets the **geometric ceiling** — the maximum rate at which the
@@ -117,7 +119,9 @@ The effective convergence rate cannot exceed either bottleneck:
 arriving at aggregate rate $C$ bits per unit time. The effective convergence rate
 of $\mathcal{W}(M_t)$ is:*
 
-$$R_{\rm conv} = \min(\lambda_1, C) \tag{1.2}$$
+```math
+R_{\rm conv} = \min(\lambda_1, C) \tag{1.2}
+```
 
 *Proof.* The MCF requires specifying the direction $-\vec{H}(b)$ at each point
 $b \in M^r$ to first order. The curvature vector $\vec{H}$ at a point on an
@@ -125,7 +129,9 @@ $r$-dimensional manifold in $S^{d-1}_{+}$ has $d - 1 - r$ normal components, eac
 requiring $O(\log T)$ bits of precision at time-horizon $T$. The total information
 demand per unit time for the MCF to operate at rate $\lambda_1$ is therefore:
 
-$$I_{\rm demand} = \lambda_1 \cdot (d-1-r) \cdot O(\log T) \tag{1.3}$$
+```math
+I_{\rm demand} = \lambda_1 \cdot (d-1-r) \cdot O(\log T) \tag{1.3}
+```
 
 When $C \geq I_{\rm demand}$, information arrives fast enough to specify the curvature
 field, and the MCF operates at its geometric rate $\lambda_1$. When $C < I_{\rm demand}$,
@@ -158,7 +164,9 @@ version of $x_t$, degraded by the channel. The regret becomes:
 **Theorem 1.2** (Network-constrained MUP regret). *The MUP with information arriving
 through a channel of capacity $C$ achieves regret:*
 
-$$\mathrm{Regret}(T) = \frac{r\log T}{2T} + \frac{r}{CT} \tag{1.4}$$
+```math
+\mathrm{Regret}(T) = \frac{r\log T}{2T} + \frac{r}{CT} \tag{1.4}
+```
 
 *The first term is the geometric regret (intrinsic to the manifold dimension $r$).
 The second is the network penalty (the cost of finite channel capacity). The
@@ -181,7 +189,9 @@ $\log$ of the concentration rate times $r/2$, yielding equation (1.4). $\square$
 The simplest architecture: one information source (encoder $X$), one market
 (decoder $Y$), one channel $p(y|x)$. Capacity:
 
-$$C = \max_{p(x)} I(X; Y) \tag{2.1}$$
+```math
+C = \max_{p(x)} I(X; Y) \tag{2.1}
+```
 
 **Market analogue.** A single stock reacting to a single news source — an earnings
 report, an FDA approval, a regulatory filing. The source encodes information into
@@ -200,7 +210,9 @@ instantaneously relative to the MCF timescale.
 $K$ independent sources $(X_1, \ldots, X_K)$ transmit simultaneously to one market $Y$.
 The MAC capacity region is the set of rate tuples $(R_1, \ldots, R_K)$ satisfying:
 
-$$\sum_{k \in S} R_k \leq I(X_S; Y \mid X_{S^c}) \quad \forall\, S \subseteq \{1,\ldots,K\} \tag{2.2}$$
+```math
+\sum_{k \in S} R_k \leq I(X_S; Y \mid X_{S^c}) \quad \forall\, S \subseteq \{1,\ldots,K\} \tag{2.2}
+```
 
 The sum capacity is $C_{\rm sum} = I(X_1, \ldots, X_K; Y)$.
 
@@ -211,7 +223,9 @@ determines how much information the market can absorb from all analysts collecti
 **Independent analysts:** When the $K$ analysts have independent information
 (non-overlapping research), the sum capacity is additive:
 
-$$C_{\rm sum} = \sum_{k=1}^{K} C_k \tag{2.3}$$
+```math
+C_{\rm sum} = \sum_{k=1}^{K} C_k \tag{2.3}
+```
 
 Each analyst contributes their full individual capacity. This is the ideal case.
 
@@ -219,7 +233,9 @@ Each analyst contributes their full individual capacity. This is the ideal case.
 read the same reports, attend the same conferences, use the same models — the sum
 capacity drops:
 
-$$C_{\rm sum}^{\rm herd} = I(X_1, \ldots, X_K; Y) < \sum_{k=1}^{K} I(X_k; Y) = \sum_{k=1}^{K} C_k \tag{2.4}$$
+```math
+C_{\rm sum}^{\rm herd} = I(X_1, \ldots, X_K; Y) < \sum_{k=1}^{K} I(X_k; Y) = \sum_{k=1}^{K} C_k \tag{2.4}
+```
 
 The inequality is strict whenever the $X_k$ are positively correlated. The gap
 $\sum C_k - C_{\rm sum}^{\rm herd}$ is the **redundancy cost of herding**.
@@ -278,26 +294,36 @@ A special case of the broadcast: the receivers form a Markov chain $X \to Y_1 \t
 Receiver $Y_1$ sees a strictly better signal than receiver $Y_2$. The capacity
 region is fully characterised (Bergmans \[1973\], Gallager \[1974\]):
 
-$$C_1 = I(X; Y_1), \qquad C_2 = I(X; Y_2) \leq C_1 \tag{2.5}$$
+```math
+C_1 = I(X; Y_1), \qquad C_2 = I(X; Y_2) \leq C_1 \tag{2.5}
+```
 
 **Market analogue.** The information hierarchy:
 
-$$X \to Y_1 \text{ (insider/market maker)} \to Y_2 \text{ (public)}$$
+```math
+X \to Y_1 \text{ (insider/market maker)} \to Y_2 \text{ (public)}
+```
 
 The insider sees the source $X$ (or close to it). The market maker sees order flow
 $Y_1$ — a noisy function of $X$. The public sees prices $Y_2$ — a noisy function of
 $Y_1$. This IS the $\sigma$-algebra hierarchy of MARTINGALE_GEOMETRY.md:
 
-$$\mathcal{F}^{\rm oracle}_{t} \supseteq \mathcal{F}^{\rm MM}_{t} \supseteq \mathcal{F}^{\rm public}_{t} \tag{2.6}$$
+```math
+\mathcal{F}^{\rm oracle}_{t} \supseteq \mathcal{F}^{\rm MM}_{t} \supseteq \mathcal{F}^{\rm public}_{t} \tag{2.6}
+```
 
 The capacity at each level:
 
-$$C_{\rm oracle} = H(X), \qquad C_{\rm MM} = I(X; Y_1), \qquad C_{\rm public} = I(X; Y_2) \tag{2.7}$$
+```math
+C_{\rm oracle} = H(X), \qquad C_{\rm MM} = I(X; Y_1), \qquad C_{\rm public} = I(X; Y_2) \tag{2.7}
+```
 
 The **insider alpha** $\alpha = \varepsilon^2 |v_G|_{g^{\rm FR}}$ from
 HAMILTONIAN_TAILS_COMPLETENESS.md is bounded by the capacity gap:
 
-$$\alpha \leq C_{\rm oracle} - C_{\rm public} = I(X; Y_1 | Y_2) + I(Y_1; Y_2) - I(X; Y_2) \tag{2.8}$$
+```math
+\alpha \leq C_{\rm oracle} - C_{\rm public} = I(X; Y_1 | Y_2) + I(Y_1; Y_2) - I(X; Y_2) \tag{2.8}
+```
 
 The insider can earn alpha precisely because they have access to a higher-capacity
 channel than the public. The alpha is the geometric value of the capacity gap.
@@ -307,7 +333,9 @@ channel than the public. The alpha is the geometric value of the capacity gap.
 Two source-destination pairs $(X_1 \to Y_1, X_2 \to Y_2)$ sharing the same
 medium. Each receiver sees a superposition of both signals:
 
-$$Y_1 = f(X_1, X_2, Z_1), \qquad Y_2 = f(X_1, X_2, Z_2) \tag{2.9}$$
+```math
+Y_1 = f(X_1, X_2, Z_1), \qquad Y_2 = f(X_1, X_2, Z_2) \tag{2.9}
+```
 
 The capacity region is not fully known in general; the Han-Kobayashi \[1981\]
 inner bound is the best known achievable region.
@@ -364,7 +392,9 @@ information content: $I(X; Y_{\rm relay}) \leq I(X; Y_{\rm source})$. A chain
 of $L$ relays (source $\to$ wire service $\to$ journalist $\to$ editor $\to$ reader)
 loses information at each step. The effective capacity decays:
 
-$$C_{\rm chain} \leq \min_{l=1,\ldots,L} C_l \tag{2.10}$$
+```math
+C_{\rm chain} \leq \min_{l=1,\ldots,L} C_l \tag{2.10}
+```
 
 The weakest link in the relay chain determines the capacity. This is why direct
 access to primary sources (SEC filings, central bank transcripts) yields higher
@@ -389,13 +419,17 @@ regime-specific capacity. A CAPM regime (GOE, $\beta = 1$) has different factor
 structure than a pseudo-Anosov regime (GSE, $\beta = 4$). The informed trader
 exploits this knowledge:
 
-$$C_{\rm GP} = \max_{p(u|s)} [I(U; Y) - I(U; S)] > C_{\rm compound} \tag{2.11}$$
+```math
+C_{\rm GP} = \max_{p(u|s)} [I(U; Y) - I(U; S)] > C_{\rm compound} \tag{2.11}
+```
 
 **State unknown (compound channel):** During regime transitions — when nobody knows
 whether the market is CAPM or pseudo-Anosov — the effective capacity drops to the
 worst case:
 
-$$C_{\rm compound} = \min_{s \in \{1,2,4\}} C(s) \tag{2.12}$$
+```math
+C_{\rm compound} = \min_{s \in \{1,2,4\}} C(s) \tag{2.12}
+```
 
 This is the minimum capacity across all regimes. Since the pseudo-Anosov regime
 has the most complex factor structure ($\beta = 4$, quaternionic, highest-dimensional
@@ -432,12 +466,16 @@ market manifold with current Willmore energy $\mathcal{W}(M) > 0$ (inefficient m
 An insider with private signal $X \in \mathcal{F}^{\rm oracle}_t \setminus
 \mathcal{F}^{\rm public}_t$ who trades optimally contributes:*
 
-$$\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{3.1}$$
+```math
+\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{3.1}
+```
 
 *additional bits per period to the market's information channel, where $Y_{\rm trade}$
 is the order flow generated by the insider's trade. The Willmore energy evolves as:*
 
-$$\frac{d\mathcal{W}}{dt}\bigg|_{\rm with insider} < \frac{d\mathcal{W}}{dt}\bigg|_{\rm without insider} \leq 0 \tag{3.2}$$
+```math
+\frac{d\mathcal{W}}{dt}\bigg|_{\rm with insider} < \frac{d\mathcal{W}}{dt}\bigg|_{\rm without insider} \leq 0 \tag{3.2}
+```
 
 *The insider accelerates the MCF. The market becomes efficient faster.*
 
@@ -447,7 +485,9 @@ available through any public channel. The market maker (or other traders) observ
 the order flow and extracts information from it. This is the Kyle \[1985\] mechanism:
 the market maker updates the price by the Kyle lambda:
 
-$$\Delta p = \lambda \cdot (\text{order flow}) \tag{3.3}$$
+```math
+\Delta p = \lambda \cdot (\text{order flow}) \tag{3.3}
+```
 
 where $\lambda = \Sigma_{v|y} / \Sigma_{y}$ is the regression coefficient of the
 asset value on order flow. The price adjustment $\Delta p$ reduces the discrepancy
@@ -456,12 +496,16 @@ the mean curvature $|H|$ at the traded point on $M^r$.
 
 The curvature reduction is:
 
-$$\Delta |H|^2 = -\frac{I(X; Y_{\rm trade})}{T} \cdot g^{\rm FR}(v_X, v_X) \tag{3.4}$$
+```math
+\Delta |H|^2 = -\frac{I(X; Y_{\rm trade})}{T} \cdot g^{\rm FR}(v_X, v_X) \tag{3.4}
+```
 
 where $v_X \in N_{b^{\ast}}M$ is the normal bundle component of the insider's
 information (the direction in which the price is "wrong"). Integrating over $M^r$:
 
-$$\Delta \mathcal{W} = -\int_M \Delta |H|^2\,d\mathrm{vol}_{M} < 0 \tag{3.5}$$
+```math
+\Delta \mathcal{W} = -\int_M \Delta |H|^2\,d\mathrm{vol}_{M} < 0 \tag{3.5}
+```
 
 The Willmore energy decreases. The inequality in (3.2) follows because $I(X;
 Y_{\rm trade}) > 0$ whenever the insider has genuine private information. $\square$
@@ -470,7 +514,9 @@ Y_{\rm trade}) > 0$ whenever the insider has genuine private information. $\squa
 identity (MINIMAL_SURFACE.md, Theorem 2.1), the risk-adjusted return earned by the
 insider is:
 
-$$\text{Sharpe}_{\rm insider} = \|H_{\rm before}\|_{L^2} - \|H_{\rm after}\|_{L^2} = \|\Delta H\|_{L^2} \tag{3.6}$$
+```math
+\text{Sharpe}_{\rm insider} = \|H_{\rm before}\|_{L^2} - \|H_{\rm after}\|_{L^2} = \|\Delta H\|_{L^2} \tag{3.6}
+```
 
 to first order. The insider earns exactly the inefficiency they eliminate. This is
 not rent extraction — it is compensation for a service: injecting information into
@@ -480,7 +526,9 @@ reducing its curvature.
 **Corollary 3.2** (Multiple insiders). *In a market with $N$ insiders, each with
 independent private signals $X_1, \ldots, X_N$:*
 
-$$R_{\rm conv}^{\rm insider} = R_{\rm conv}^{\rm public} + \sum_{k=1}^{N} \frac{I(X_k;\, Y_k)}{T} \tag{3.7}$$
+```math
+R_{\rm conv}^{\rm insider} = R_{\rm conv}^{\rm public} + \sum_{k=1}^{N} \frac{I(X_k;\, Y_k)}{T} \tag{3.7}
+```
 
 *The convergence rate increases linearly in the number of insiders with independent
 information. More insider trading means faster efficiency.*
@@ -504,7 +552,9 @@ Kyle \[1985\] modelled a single insider trading against noise traders in the pre
 of a competitive market maker. The market maker sets the Kyle lambda $\lambda$ such
 that the price change per unit order flow is:
 
-$$\lambda = \frac{\sigma_v}{2\sigma_u} \tag{3.8}$$
+```math
+\lambda = \frac{\sigma_v}{2\sigma_u} \tag{3.8}
+```
 
 where $\sigma_v$ is the standard deviation of the fundamental value and $\sigma_u$
 is the noise trader volume.
@@ -513,7 +563,9 @@ In our framework: $\sigma_v^2 = |H|^2_{g^{\rm FR}}$ (the curvature at the traded
 point — the mispricing), and $\sigma_u$ is the noise trader volume (which provides
 the channel through which the insider's signal propagates). The Kyle lambda becomes:
 
-$$\lambda = \frac{\|H\|}{2\sigma_u} \tag{3.9}$$
+```math
+\lambda = \frac{\|H\|}{2\sigma_u} \tag{3.9}
+```
 
 The price impact is proportional to the curvature: more mispricing means larger
 price adjustment per unit of informed order flow. The insider trades until $|H| = 0$
@@ -538,25 +590,33 @@ mutual information between the false signal and the market response, conditional
 on the true state. This is bandwidth consumed by the false signal that could have
 carried true information:*
 
-$$C_{\rm eff} = C - I(Z;\, Y \mid X) \tag{4.1}$$
+```math
+C_{\rm eff} = C - I(Z;\, Y \mid X) \tag{4.1}
+```
 
 *(ii) Spurious curvature creation.* *The misinformation causes the market to adjust
 prices in the wrong direction, creating positive mean curvature where there should
 be none. The spurious Willmore energy is:*
 
-$$\mathcal{W}_{\rm spurious} = \int_M |H_{\rm false}|^2\,d\mathrm{vol}_{M} \propto I(Z;\, Y \mid X) \cdot \mathrm{Var}(Z - X) \tag{4.2}$$
+```math
+\mathcal{W}_{\rm spurious} = \int_M |H_{\rm false}|^2\,d\mathrm{vol}_{M} \propto I(Z;\, Y \mid X) \cdot \mathrm{Var}(Z - X) \tag{4.2}
+```
 
 *The market must then undo this spurious curvature via MCF — at additional cost.
 The total damage is:*
 
-$$\Delta \mathcal{W}_{\rm total} = 2\,\mathcal{W}_{\rm spurious} \tag{4.3}$$
+```math
+\Delta \mathcal{W}_{\rm total} = 2\,\mathcal{W}_{\rm spurious} \tag{4.3}
+```
 
 *The doubling principle: cost 1 is creating the false curvature (the market moves
 away from the minimal surface); cost 2 is identifying and removing the false
 curvature (the MCF works against the misinformation). The effective convergence rate
 with misinformation:*
 
-$$R_{\rm conv}^{\rm misinfo} = R_{\rm conv}^{\rm public} - \frac{2\,I(Z;\, Y \mid X)}{T} \tag{4.4}$$
+```math
+R_{\rm conv}^{\rm misinfo} = R_{\rm conv}^{\rm public} - \frac{2\,I(Z;\, Y \mid X)}{T} \tag{4.4}
+```
 
 *Proof.* (i) The capacity waste follows directly from the definition: the channel
 processes the false signal $Z$ as if it were informative, allocating $I(Z; Y|X)$
@@ -567,7 +627,9 @@ pure noise — it carries zero bits about the true curvature direction.
 real time (if they could, they would ignore it). The price adjusts according to
 the Kyle mechanism:
 
-$$\Delta p_{\rm false} = \lambda \cdot (\text{misinformation order flow}) \tag{4.5}$$
+```math
+\Delta p_{\rm false} = \lambda \cdot (\text{misinformation order flow}) \tag{4.5}
+```
 
 This adjustment moves the manifold in a direction determined by $Z$, not by $X$.
 Since $Z \neq X$, the adjustment creates curvature where there was none (or
@@ -609,7 +671,9 @@ to process the false signal, one bit to undo its effect.
 We now rank all information types by their effect on the convergence rate. Define
 the **information value** of a signal of type $k$:
 
-$$\Delta R_{\rm conv}(k) = \frac{I(X_{\rm true};\, Y_k)}{T} - \frac{2\,I(X_{\rm false};\, Y_k \mid X_{\rm true})}{T} \tag{5.1}$$
+```math
+\Delta R_{\rm conv}(k) = \frac{I(X_{\rm true};\, Y_k)}{T} - \frac{2\,I(X_{\rm false};\, Y_k \mid X_{\rm true})}{T} \tag{5.1}
+```
 
 where $X_{\rm true}$ is the true information content and $X_{\rm false}$ is the false
 content of the signal. For a purely true signal, the second term vanishes. For a
@@ -772,21 +836,27 @@ an empirical question.
 Before approximately 2005, the market information network was a **degraded broadcast
 channel** with a small number of professional relays:
 
-$$\text{Source} \to \text{Wire service (AP/Reuters)} \to \text{Journalist} \to \text{Public}$$
+```math
+\text{Source} \to \text{Wire service (AP/Reuters)} \to \text{Journalist} \to \text{Public}
+```
 
 The relay chain was short (3-4 links). The relays were professional (decode-and-forward,
 not compress-and-forward). The aggregate capacity was moderate ($C \sim 10^4$
 bits/day for a typical stock) but the signal quality was high: most of the
 transmitted information was type 1-2 (true, informative). The effective capacity was:
 
-$$C_{\rm eff}^{\rm pre} \approx p_{\rm true}^{\rm pre} \cdot C^{\rm pre} \approx 0.8 \cdot 10^4 = 8 \times 10^3 \text{bits/day} \tag{7.1}$$
+```math
+C_{\rm eff}^{\rm pre} \approx p_{\rm true}^{\rm pre} \cdot C^{\rm pre} \approx 0.8 \cdot 10^4 = 8 \times 10^3 \text{bits/day} \tag{7.1}
+```
 
 ### 7.2 The post-social-media information architecture
 
 After 2010, the network became a massive **multiple access channel** with millions
 of sources:
 
-$$\text{Millions of sources} \xrightarrow{\text{MAC}} \text{Market}$$
+```math
+\text{Millions of sources} \xrightarrow{\text{MAC}} \text{Market}
+```
 
 The aggregate bandwidth exploded: $C^{\rm post} \sim 10^{10}$ bits/day. But the
 composition of sources changed dramatically.
@@ -797,7 +867,9 @@ are noise, $p_{\rm herd}$ are herding, and $p_{\rm false}$ are misinformation
 ($p_{\rm true} + p_{\rm noise} + p_{\rm herd} + p_{\rm false} = 1$), has
 effective capacity:*
 
-$$C_{\rm eff} = N \cdot p_{\rm true} \cdot \bar{C} - 2N \cdot p_{\rm false} \cdot \bar{C} \tag{7.2}$$
+```math
+C_{\rm eff} = N \cdot p_{\rm true} \cdot \bar{C} - 2N \cdot p_{\rm false} \cdot \bar{C} \tag{7.2}
+```
 
 *where $\bar{C}$ is the average per-source capacity. The noise sources do not affect
 the effective capacity (they average out by the law of large numbers). The herding
@@ -808,7 +880,9 @@ $p_{\rm true}$ fraction). The misinformation sources subtract at double rate
 *Corollary.* *The effective capacity is negative (the market DIVERGES from efficiency)
 when:*
 
-$$p_{\rm false} > \frac{p_{\rm true}}{2} \tag{7.3}$$
+```math
+p_{\rm false} > \frac{p_{\rm true}}{2} \tag{7.3}
+```
 
 *That is: when the fraction of misinformation sources exceeds half the fraction of
 truthful sources, the social media channel is net harmful — the market would converge
@@ -827,7 +901,9 @@ estimate the composition:
 
 By Theorem 7.1:
 
-$$C_{\rm eff}^{\rm GME} = 10^7 \cdot (0.001 - 2 \times 0.009) \cdot \bar{C} = 10^7 \cdot (-0.017) \cdot \bar{C} < 0 \tag{7.4}$$
+```math
+C_{\rm eff}^{\rm GME} = 10^7 \cdot (0.001 - 2 \times 0.009) \cdot \bar{C} = 10^7 \cdot (-0.017) \cdot \bar{C} < 0 \tag{7.4}
+```
 
 The effective capacity was **negative**. The social media channel was net harmful:
 the misinformation fraction ($0.009$) exceeded half the truthful fraction

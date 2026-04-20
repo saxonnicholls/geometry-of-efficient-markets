@@ -79,11 +79,15 @@ empirical validation.
 
 The Wright-Fisher diffusion on the portfolio simplex:
 
-$$db_i = \varepsilon^2\!\left(\alpha_i - |\alpha|\,b_i\right)dt + \varepsilon\sqrt{b_i}\,dW_i \tag{1.1}$$
+```math
+db_i = \varepsilon^2\!\left(\alpha_i - |\alpha|\,b_i\right)dt + \varepsilon\sqrt{b_i}\,dW_i \tag{1.1}
+```
 
 is an advection-diffusion equation. Its Fokker-Planck form:
 
-$$\frac{\partial\rho}{\partial t} = -\nabla\cdot(v\rho) + \frac{\varepsilon^2}{2}\Delta_{g^{\rm FR}}\rho \tag{1.2}$$
+```math
+\frac{\partial\rho}{\partial t} = -\nabla\cdot(v\rho) + \frac{\varepsilon^2}{2}\Delta_{g^{\rm FR}}\rho \tag{1.2}
+```
 
 is exactly the equation CFD solves every day — a convection term ($v\rho$) plus
 a diffusion term ($\Delta\rho$) on a domain with boundaries.
@@ -125,7 +129,9 @@ eigenvalues of $A$ are the **discrete-time Koopman eigenvalues**.
 For a continuous-time system $\dot{x} = Lx$, the DMD eigenvalues $\mu_k$ of
 $A$ relate to the continuous-time eigenvalues $\lambda_k$ of $L$ by:
 
-$$\lambda_k = \frac{\log\mu_k}{\Delta t} \tag{2.1}$$
+```math
+\lambda_k = \frac{\log\mu_k}{\Delta t} \tag{2.1}
+```
 
 The real parts give decay/growth rates; the imaginary parts give oscillation
 frequencies.
@@ -134,11 +140,15 @@ frequencies.
 
 Our Voronoi transition matrix $P$ from Test 15V has eigenvalues:
 
-$$\mu(P) = \{1.000, 0.197, 0.108, 0.016\} \tag{2.2}$$
+```math
+\mu(P) = \{1.000, 0.197, 0.108, 0.016\} \tag{2.2}
+```
 
 Applying equation (2.1) with $\Delta t = 1$ day:
 
-$$\lambda(L) = \{0, -1.62, -2.23, -4.15\} \text{per day} \tag{2.3}$$
+```math
+\lambda(L) = \{0, -1.62, -2.23, -4.15\} \text{per day} \tag{2.3}
+```
 
 These are the **discrete Jacobi operator eigenvalues** on the 4-cell Voronoi
 mesh. The spectral gap is $|\lambda_1| = 1.62$/day, giving a mixing
@@ -220,7 +230,9 @@ POD (Sirovich 1987) extracts the dominant spatial modes from a set of snapshots.
 Given snapshots $x_1, \ldots, x_T \in \mathbb{R}^{d}$, POD finds orthonormal
 modes $\phi_1, \ldots, \phi_r$ that maximise the captured variance:
 
-$$x_t \approx \bar{x} + \sum_{k=1}^{r} a_k(t)\,\phi_k \tag{3.1}$$
+```math
+x_t \approx \bar{x} + \sum_{k=1}^{r} a_k(t)\,\phi_k \tag{3.1}
+```
 
 where $a_k(t)$ are the temporal coefficients.
 
@@ -237,7 +249,9 @@ the factor returns.
 The key addition: project the Fokker-Planck equation (1.2) onto the POD modes.
 This gives a reduced-order model for the temporal coefficients:
 
-$$\dot{a}_{k} = \sum_j L_{kj}\,a_j + \text{noise} \tag{3.2}$$
+```math
+\dot{a}_{k} = \sum_j L_{kj}\,a_j + \text{noise} \tag{3.2}
+```
 
 where $L_{kj} = \langle\phi_k,\, \mathcal{L}\phi_j\rangle$ is the Galerkin
 matrix — the projection of the Jacobi operator $\mathcal{L}$ onto the POD
@@ -313,11 +327,15 @@ polynomial bases within each element, and assembling the global system.
 
 For the Jacobi eigenvalue problem on the simplex:
 
-$$\mathcal{L}\psi_k = \lambda_k\,\psi_k \tag{4.1}$$
+```math
+\mathcal{L}\psi_k = \lambda_k\,\psi_k \tag{4.1}
+```
 
 where $\mathcal{L}$ is the weighted Laplacian:
 
-$$\mathcal{L}f = \frac{1}{\sqrt{g}}\sum_{ij}\frac{\partial}{\partial b_i}\!\left(\sqrt{g}\,g^{ij}\frac{\partial f}{\partial b_j}\right) + V(b)\,f \tag{4.2}$$
+```math
+\mathcal{L}f = \frac{1}{\sqrt{g}}\sum_{ij}\frac{\partial}{\partial b_i}\!\left(\sqrt{g}\,g^{ij}\frac{\partial f}{\partial b_j}\right) + V(b)\,f \tag{4.2}
+```
 
 with $g^{ij} = \delta_{ij}/b_i$ (the Fisher-Rao metric) and $V(b)$ the
 potential (from the Kelly growth rate).
@@ -385,7 +403,9 @@ Uniform cells waste resolution in the interior and lack resolution at the bounda
 **Step 1: Initial uniform mesh** — K-means with $N = 16$ cells (as in Test 15V).
 
 **Step 2: Error estimator** — for each cell $C_i$, compute:
-$$e_i = \text{Var}(\text{returns within } C_i) \times \text{volume}(C_i)$$
+```math
+e_i = \text{Var}(\text{returns within } C_i) \times \text{volume}(C_i)
+```
 High error = the cell contains too much variation = needs splitting.
 
 **Step 3: Refine** — split cells with $e_i > \text{threshold}$ into 2 sub-cells

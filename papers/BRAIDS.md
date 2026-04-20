@@ -82,11 +82,15 @@ partition; shift space; word problem; conjugacy problem.
 Consider $d$ assets with prices $S_t = (S_{t,1},\ldots,S_{t,d}) \in \mathbb{R}^{d}_+$.
 The configuration space of distinct asset prices is:
 
-$$\mathrm{Conf}_{d}(\mathbb{R}_{+}) = \{(S_1,\ldots,S_d) \in \mathbb{R}^{d}_+ : S_i \neq S_j \text{ for } i \neq j\} \tag{1.1}$$
+```math
+\mathrm{Conf}_{d}(\mathbb{R}_{+}) = \{(S_1,\ldots,S_d) \in \mathbb{R}^{d}_+ : S_i \neq S_j \text{ for } i \neq j\} \tag{1.1}
+```
 
 The **fundamental group** of this space:
 
-$$\pi_1(\mathrm{Conf}_{d}(\mathbb{R}_{+})) = B_d \tag{1.2}$$
+```math
+\pi_1(\mathrm{Conf}_{d}(\mathbb{R}_{+})) = B_d \tag{1.2}
+```
 
 is the **braid group on $d$ strands** — the group of all ways to move $d$ distinct
 points around each other, tracking their paths as braids.
@@ -109,8 +113,10 @@ A dynamic portfolio strategy that rebalances at times $t_1 < t_2 < \ldots < t_n$
 generates a sequence of portfolio transitions. Between rebalancing times, the asset
 prices follow a path in $\mathrm{Conf}_{d}(\mathbb{R}_{+})$, accumulating a braid word:
 
-$$\beta_\text{strategy} = \sigma_{i_1}^{\epsilon_1}\sigma_{i_2}^{\epsilon_2}\cdots\sigma_{i_n}^{\epsilon_n}
-\in B_d, \qquad \epsilon_k \in \{\pm 1\} \tag{1.3}$$
+```math
+\beta_\text{strategy} = \sigma_{i_1}^{\epsilon_1}\sigma_{i_2}^{\epsilon_2}\cdots\sigma_{i_n}^{\epsilon_n}
+\in B_d, \qquad \epsilon_k \in \{\pm 1\} \tag{1.3}
+```
 
 **The strategy braid $\beta$ encodes:**
 - Which assets outperform which and when ($i_k$ = which crossing, $\epsilon_k$ = direction)
@@ -125,7 +131,9 @@ top and bottom endpoints of the braid, turning the open braid into a closed loop
 path $\Gamma = \{b^{\ast}(t)\}$ over one business cycle is exactly the closure of the
 strategy braid traced by the market.
 
-$$\Gamma = \widehat{\beta_{\text{market}}} \in S^3_+ \tag{1.4}$$
+```math
+\Gamma = \widehat{\beta_{\text{market}}} \in S^3_+ \tag{1.4}
+```
 
 **This is Alexander's theorem applied to markets:** every market path (every knot
 in $S^3_+$) arises as the closure of some market braid, and the market is the
@@ -164,8 +172,12 @@ The braid relation $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i
 (the **Yang-Baxter equation** or third Reidemeister move) is the fundamental
 consistency condition for market crossings:
 
-$$\text{(Asset } i \text{ over } i+1) \text{ then } (i+1 \text{ over } i+2) \text{ then } (i \text{ over } i+1)$$
-$$= \text{(Asset } i+1 \text{ over } i+2) \text{ then } (i \text{ over } i+1) \text{ then } (i+1 \text{ over } i+2)$$
+```math
+\text{(Asset } i \text{ over } i+1) \text{ then } (i+1 \text{ over } i+2) \text{ then } (i \text{ over } i+1)
+```
+```math
+= \text{(Asset } i+1 \text{ over } i+2) \text{ then } (i \text{ over } i+1) \text{ then } (i+1 \text{ over } i+2)
+```
 
 **This is a no-arbitrage condition.** If two market paths are Yang-Baxter equivalent
 (related by braid relations), they trace the same knot and hence have the same
@@ -207,7 +219,9 @@ believed to be computationally intractable even for quantum computers.
 
 **The efficient market computes the Jones polynomial.** The universal portfolio:
 
-$$\hat{b}_{T}^{M} = \frac{\int_{M^r} b\,W_T(b)\,d\mathrm{vol}_{M}}{\int_{M^r} W_T(b)\,d\mathrm{vol}_{M}} \tag{3.1}$$
+```math
+\hat{b}_{T}^{M} = \frac{\int_{M^r} b\,W_T(b)\,d\mathrm{vol}_{M}}{\int_{M^r} W_T(b)\,d\mathrm{vol}_{M}} \tag{3.1}
+```
 
 is a path integral over all portfolio trajectories on the market manifold, weighted
 by the wealth function $W_T(b) = \prod_{t=1}^{T} \langle b, x_t\rangle$. By the
@@ -347,7 +361,9 @@ factor $\phi^2$.
 factors. For a market with $r$ factors and $g$ factor interaction loops (genus $g$
 market manifold), the minimum stretch factor satisfies:
 
-$$\lambda_{\rm pA}(g) \geq \frac{1}{4g-2}\log(2g-1) \tag{4.1}$$
+```math
+\lambda_{\rm pA}(g) \geq \frac{1}{4g-2}\log(2g-1) \tag{4.1}
+```
 
 (Penner's theorem, 1988). For $g=1$ (Clifford torus): $\lambda_{\rm pA} \geq \frac{\log 1}{2} = 0$
 — the torus admits periodic maps (the market can be non-chaotic). For $g=2$
@@ -363,18 +379,24 @@ $$\lambda_{\rm pA}(g) \geq \frac{1}{4g-2}\log(2g-1) \tag{4.1}$$
 **Definition 5.1** (Market alphabet and shift space). *The **market alphabet** is
 the set of return states:*
 
-$$\mathcal{A} = \{x \in \mathbb{R}^{d}_+ : x = \text{one-period return vector}\} \tag{5.1}$$
+```math
+\mathcal{A} = \{x \in \mathbb{R}^{d}_+ : x = \text{one-period return vector}\} \tag{5.1}
+```
 
 *Discretised at resolution $\delta$: $\mathcal{A}_\delta = \{a_1,\ldots,a_N\}$,
 a finite set of return "symbols." The **market language** $\mathcal{L}_{M}$ is the
 set of all finite admissible return sequences:*
 
-$$\mathcal{L}_{M} = \{(a_{i_1},\ldots,a_{i_T}) : \text{this sequence can occur in the market}\} \tag{5.2}$$
+```math
+\mathcal{L}_{M} = \{(a_{i_1},\ldots,a_{i_T}) : \text{this sequence can occur in the market}\} \tag{5.2}
+```
 
 *The **market shift space** is:*
 
-$$X_M = \{(a_{i_t})_{t \in \mathbb{Z}} : (a_{i_1},\ldots,a_{i_T}) \in \mathcal{L}_{M} \forall T\}
-\subset \mathcal{A}^\mathbb{Z} \tag{5.3}$$
+```math
+X_M = \{(a_{i_t})_{t \in \mathbb{Z}} : (a_{i_1},\ldots,a_{i_T}) \in \mathcal{L}_{M} \forall T\}
+\subset \mathcal{A}^\mathbb{Z} \tag{5.3}
+```
 
 *with the shift map $\sigma: X_M \to X_M$, $(\sigma x)_t = x_{t+1}$.*
 
@@ -403,11 +425,15 @@ The inefficiency manifests as **unbounded complexity of the market language**.
 **Theorem 5.3** *(Entropy identity)*. *The topological entropy of the market shift
 space equals the Kelly growth rate:*
 
-$$h_{\rm top}(X_M, \sigma) = h_{\rm Kelly}(b^{\ast}) = \mathbb{E}[\log\langle b^{\ast}, x\rangle] \tag{5.4}$$
+```math
+h_{\rm top}(X_M, \sigma) = h_{\rm Kelly}(b^{\ast}) = \mathbb{E}[\log\langle b^{\ast}, x\rangle] \tag{5.4}
+```
 
 *Proof.* The topological entropy of $(X_M, \sigma)$ is:
 
-$$h_{\rm top} = \lim_{T\to\infty} \frac{1}{T}\log|\mathcal{L}_{M}(T)| \tag{5.5}$$
+```math
+h_{\rm top} = \lim_{T\to\infty} \frac{1}{T}\log|\mathcal{L}_{M}(T)| \tag{5.5}
+```
 
 where $|\mathcal{L}_{M}(T)|$ is the number of admissible $T$-length return sequences.
 By the SMB theorem (INFORMATION_THEORY Theorem C): the empirical log-probability
@@ -432,19 +458,23 @@ $r$ factors and factor simplex $\Delta_{r-1}$, the factor simplex vertices
 $\{v_0, v_1, \ldots, v_r\}$ (the $r+1$ pure factor portfolios) define a natural
 Markov partition of $M$:*
 
-$$R_k = \{b \in M : b \text{ is closer to } v_k \text{ than any other vertex}\} \tag{5.6}$$
+```math
+R_k = \{b \in M : b \text{ is closer to } v_k \text{ than any other vertex}\} \tag{5.6}
+```
 
 *(the Voronoi cells of the factor vertices in $g^{\mathrm{FR}}$). The transition
 matrix $A_{kl} = 1$ if the market can move from $R_k$ to $R_l$ in one step.*
 
 *The topological entropy of the market:*
 
-$$h_{\rm top} = \log\rho(A) \tag{5.7}$$
+```math
+h_{\rm top} = \log\rho(A) \tag{5.7}
+```
 
 *where $\rho(A)$ is the spectral radius of the transition matrix $A$.*
 
 This is the Perron-Frobenius eigenvalue of the market transition matrix. For the
-CAPM ($r=1$, two cells): $A = \begin{pmatrix}1&1\\1&1\end{pmatrix}$, $\rho = 2$,
+CAPM ($r=1$, two cells): $A = \begin{pmatrix}1\&1\\1\&1\end{pmatrix}$, $\rho = 2$,
 $h_{\rm top} = \log 2$. For the Clifford torus ($r=2$, four cells): $\rho = 4$,
 $h_{\rm top} = \log 4 = 2\log 2$. The topological entropy grows linearly with the
 factor dimension: $h_{\rm top} = r\log 2$ (for the standard Markov partition).
@@ -473,9 +503,15 @@ in its center — sufficient for simulating infinite computation in finite time
 
 **Definition 6.2** (Market computation). *The **market computation** at time $T$ is:*
 
-$$\text{Input: } (x_1, \ldots, x_T) \in \mathbb{R}^{dT}_{+} \quad\text{(return history)}$$
-$$\text{Computation: universal portfolio evaluation}$$
-$$\text{Output: } \hat{b}_{T}^{M} \in \Delta_{d-1} \quad\text{(optimal portfolio weights)}$$
+```math
+\text{Input: } (x_1, \ldots, x_T) \in \mathbb{R}^{dT}_{+} \quad\text{(return history)}
+```
+```math
+\text{Computation: universal portfolio evaluation}
+```
+```math
+\text{Output: } \hat{b}_{T}^{M} \in \Delta_{d-1} \quad\text{(optimal portfolio weights)}
+```
 
 *This computation is equivalent to evaluating the Jones polynomial of the braid
 $\beta_{\text{market}}$ encoded by the return history — a #**P**-hard computation.*
@@ -493,7 +529,9 @@ for the Turing machine encoded in $\beta$. But:
 $b^{\ast}(T)$ is the halting certificate for the market Turing machine: for any admissible
 strategy $\beta$:*
 
-$$\limsup_{T\to\infty} \frac{1}{T}\log\frac{W_T(\beta)}{W_T(b^{\ast})} \leq 0 \quad \text{a.s.} \tag{6.1}$$
+```math
+\limsup_{T\to\infty} \frac{1}{T}\log\frac{W_T(\beta)}{W_T(b^{\ast})} \leq 0 \quad \text{a.s.} \tag{6.1}
+```
 
 *The log-optimal portfolio "halts" on every input — it always converges to
 the maximum achievable wealth rate. No strategy halts on a superset of inputs.*
@@ -548,7 +586,9 @@ implementing topological quantum gates.
 The **braid index** $b(K)$ of a knot $K$ is the minimum number of strands needed
 to represent $K$ as a closed braid. By the Morton-Williams-Franks inequality:
 
-$$b(K) \geq \frac{1}{2}(\text{span}_{a} J_K(a,z) + 2) \tag{7.1}$$
+```math
+b(K) \geq \frac{1}{2}(\text{span}_{a} J_K(a,z) + 2) \tag{7.1}
+```
 
 where $\text{span}_{a}$ is the span of the HOMFLY polynomial in the $a$-variable.
 
@@ -584,7 +624,9 @@ market** for a given marginal return distribution.
 marginal distribution $(p_1,\ldots,p_N)$ is the Gibbs distribution for the Kelly potential.*
 
 The efficient Bernoulli market has:
-$$p_i^{\ast} = \frac{e^{T b^{*T}\log x_i}}{\sum_j e^{T b^{*T}\log x_j}} \tag{8.1}$$
+```math
+p_i^{\ast} = \frac{e^{T b^{*T}\log x_i}}{\sum_j e^{T b^{*T}\log x_j}} \tag{8.1}
+```
 
 (the Gibbs distribution with Kelly potential — the **market Gibbs state**). This is
 the unique probability distribution on return symbols consistent with both
@@ -661,7 +703,9 @@ rich enough to be universal, operating at the critical point between order and c
 
 **Prediction 1** *(Braid word length = strategy complexity)*. The performance of a
 trading strategy is bounded by its braid word length $\ell(\beta)$:
-$$\mathrm{Sharpe}(\beta) \leq \frac{\ell(\beta)}{T}\cdot\|H\|_{L^2} \tag{10.1}$$
+```math
+\mathrm{Sharpe}(\beta) \leq \frac{\ell(\beta)}{T}\cdot\|H\|_{L^2} \tag{10.1}
+```
 Strategies with shorter braid words earn less alpha per unit of Willmore energy.
 **Testing:** regress annual Sharpe ratios of systematic strategies against their
 estimated braid complexity (operationalised as the number of distinct crossings
@@ -689,21 +733,23 @@ Yang-Baxter consistency — the crisis as a collapse of braiding symmetry.
 
 ## 11. Summary: The Market Braiding Machine
 
-$$\begin{array}{ll}
-\text{Asset price paths} & = \text{strands of the braid}\\
-\text{Trading decisions} & = \text{crossing generators } \sigma_i\\
-\text{Market dynamics} & = \text{braid word } \beta \in B_d\\
-\text{Business cycle} & = \text{closure } \hat\beta \in S^3_+\\
-\text{Market topology} & = \text{knot type of } \hat\beta\\
-\text{Jones polynomial} & = \text{market partition function}\\
-\text{Yang-Baxter eq.} & = \text{no braiding arbitrage}\\
-\text{Pseudo-Anosov} & = \text{efficient market chaos}\\
-\text{Stretch factor} & = \phi^2 = (3+\sqrt{5})/2 \text{ (minimum complexity)}\\
-\text{Topological entropy} & = \text{Kelly growth rate}\\
-\text{Sofic shift} & = \text{efficient market language}\\
-\text{Turing completeness} & = \text{market is universal computer}\\
-\text{\#\textbf{P}-hardness} & = \text{complexity-theoretic EMH}
-\end{array}}$$
+```math
+\begin{array}{ll}
+\text{Asset price paths} \& = \text{strands of the braid}\\
+\text{Trading decisions} \& = \text{crossing generators } \sigma_i\\
+\text{Market dynamics} \& = \text{braid word } \beta \in B_d\\
+\text{Business cycle} \& = \text{closure } \hat\beta \in S^3_+\\
+\text{Market topology} \& = \text{knot type of } \hat\beta\\
+\text{Jones polynomial} \& = \text{market partition function}\\
+\text{Yang-Baxter eq.} \& = \text{no braiding arbitrage}\\
+\text{Pseudo-Anosov} \& = \text{efficient market chaos}\\
+\text{Stretch factor} \& = \phi^2 = (3+\sqrt{5})/2 \text{ (minimum complexity)}\\
+\text{Topological entropy} \& = \text{Kelly growth rate}\\
+\text{Sofic shift} \& = \text{efficient market language}\\
+\text{Turing completeness} \& = \text{market is universal computer}\\
+\text{\#\textbf{P}-hardness} \& = \text{complexity-theoretic EMH}
+\end{array}}
+```
 
 The market is not merely a pricing mechanism or an information aggregator. It is a
 **universal braiding machine** that computes topological invariants of its own history

@@ -55,7 +55,9 @@ have the same persistence diagram (up to stable isometry).
 **(v) Euler characteristic formula.** The Euler characteristic of the
 palindromic nerve complex of a sequence of length $T$ is:
 
-$$\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class})$$
+```math
+\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class})
+```
 
 where $\rho_{\rm pal}$ is the palindromic density and $\chi_{\rm class}$
 is the class-specific Euler characteristic (from above table).
@@ -140,7 +142,9 @@ position space, so $\mathcal{P}$ captures the full topology of the sequence.*
 As the observed sequence grows, new palindromes appear, new overlaps form,
 and the palindromic nerve grows monotonically:
 
-$$\mathcal{P}_{1} \subseteq \mathcal{P}_{2} \subseteq \mathcal{P}_{3} \subseteq \cdots \subseteq \mathcal{P}_{T} \tag{2.1}$$
+```math
+\mathcal{P}_{1} \subseteq \mathcal{P}_{2} \subseteq \mathcal{P}_{3} \subseteq \cdots \subseteq \mathcal{P}_{T} \tag{2.1}
+```
 
 This is a FILTERED simplicial complex. Time parameter: sequence length.
 
@@ -198,7 +202,9 @@ complex stabilises to a space homotopy-equivalent to $S^1$.
 **Theorem 3.1** (Sturmian nerve is $S^1$). *The palindromic nerve complex
 of a Sturmian sequence with slope $\alpha$ has stable homotopy type:*
 
-$$\mathcal{P}^{\rm Sturmian} \simeq S^1 \tag{3.1}$$
+```math
+\mathcal{P}^{\rm Sturmian} \simeq S^1 \tag{3.1}
+```
 
 *with $b_0 = b_1 = 1$ and $b_n = 0$ for $n \geq 2$. Euler characteristic
 $\chi = 0$.*
@@ -216,7 +222,9 @@ For episturmian sequences over alphabet of size $N = r + 1$:
 complex of an episturmian sequence in an $r$-dimensional system has
 stable homotopy type:*
 
-$$\mathcal{P}^{\rm Episturmian}_{r} \simeq T^r \tag{3.2}$$
+```math
+\mathcal{P}^{\rm Episturmian}_{r} \simeq T^r \tag{3.2}
+```
 
 *with Betti numbers $b_k = \binom{r}{k}$ (the standard torus Betti numbers)
 and Euler characteristic $\chi = 0$.*
@@ -267,7 +275,9 @@ factors occur many times, producing a densely-overlapping cover:
 complex of a Bernoulli sequence almost surely is homotopy equivalent to a
 point:*
 
-$$\mathcal{P}^{\rm Bernoulli} \simeq \ast \tag{3.3}$$
+```math
+\mathcal{P}^{\rm Bernoulli} \simeq \ast \tag{3.3}
+```
 
 *with $b_0 = 1$, $b_n = 0$ for $n \geq 1$, and Euler characteristic
 $\chi = 1$.*
@@ -408,7 +418,9 @@ non-reversible).*
 
 **Theorem 5.3** (Euler characteristic of palindromic nerve).
 
-$$\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class}) \tag{5.1}$$
+```math
+\chi(\mathcal{P}_{T}) = 1 - \rho_{\rm pal}(T) \cdot (1 - \chi_{\rm class}) \tag{5.1}
+```
 
 where:
 - $\rho_{\rm pal}(T)$ is the palindromic density (fraction of
@@ -454,11 +466,15 @@ independent*
 **Theorem 6.2** (Morse inequality for palindromic complex). *The number
 $m_n$ of critical $n$-cells in the eertree Morse function satisfies:*
 
-$$m_n \geq b_n(\mathcal{P}) \tag{6.1}$$
+```math
+m_n \geq b_n(\mathcal{P}) \tag{6.1}
+```
 
 *(Morse inequality). The Euler characteristic:*
 
-$$\chi(\mathcal{P}) = \sum_n (-1)^n m_n \tag{6.2}$$
+```math
+\chi(\mathcal{P}) = \sum_n (-1)^n m_n \tag{6.2}
+```
 
 *(Euler-Poincaré).*
 

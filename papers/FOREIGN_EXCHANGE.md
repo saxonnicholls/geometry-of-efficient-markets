@@ -84,7 +84,9 @@ But it is wrong. The correct dimension is $N - 1 = 9$.
 
 The reason is **triangular arbitrage**. For any three currencies $A$, $B$, $C$:
 
-$$\log e_{AC} = \log e_{AB} + \log e_{BC}$$
+```math
+\log e_{AC} = \log e_{AB} + \log e_{BC}
+```
 
 where $e_{AB}$ is the exchange rate of $A$ per unit of $B$. This is not an
 approximate relationship. It is an identity enforced by arbitrageurs to within the
@@ -97,12 +99,16 @@ against a chosen numeraire.
 
 Fix a numeraire currency (say USD). Define the **log-rate vector**:
 
-$$x = (x_1, \ldots, x_{N-1}) \in \mathbb{R}^{N-1}$$
+```math
+x = (x_1, \ldots, x_{N-1}) \in \mathbb{R}^{N-1}
+```
 
 where $x_i = \log e_{i,\mathrm{USD}}$ is the log exchange rate of currency $i$
 against the numeraire. Every exchange rate pair is recoverable:
 
-$$\log e_{ij} = x_i - x_j$$
+```math
+\log e_{ij} = x_i - x_j
+```
 
 The set of all consistent exchange rate vectors is an $(N-1)$-dimensional affine
 subspace of $\mathbb{R}^{N(N-1)/2}$. The 45 rates displayed on the screen are 45
@@ -116,7 +122,9 @@ USD $\approx 44\%$, EUR $\approx 15\%$, JPY $\approx 8\%$, GBP $\approx 6\%$,
 with the remaining six major currencies sharing $\sim 27\%$. Since each FX
 transaction involves two currencies and the total sums to $200\%$, we normalise:
 
-$$w_i = \frac{\text{turnover share of currency } i}{\sum_j \text{turnover share of currency } j}, \qquad \sum_{i=1}^{N} w_i = 1, \qquad w_i > 0$$
+```math
+w_i = \frac{\text{turnover share of currency } i}{\sum_j \text{turnover share of currency } j}, \qquad \sum_{i=1}^{N} w_i = 1, \qquad w_i > 0
+```
 
 The vector $w = (w_1, \ldots, w_N)$ lives on the interior of the $(N-1)$-simplex
 $\Delta_{N-1}$. But we have $N$ currencies and $N-1$ independent exchange rates,
@@ -126,7 +134,9 @@ parametrising the ratios of currency weights once the numeraire is fixed.
 More precisely, the space of arbitrage-free exchange rates is the **positive
 projective space**:
 
-$$\mathbb{RP}^{N-1}_{+} = \mathbb{R}^{N}_+ / \mathbb{R}_{+} \cong \Delta_{N-1}$$
+```math
+\mathbb{RP}^{N-1}_{+} = \mathbb{R}^{N}_+ / \mathbb{R}_{+} \cong \Delta_{N-1}
+```
 
 where the equivalence identifies rate vectors that differ only by a global scaling
 (which is the numeraire choice). This is isomorphic to the simplex because every
@@ -136,7 +146,9 @@ equivalence class has a unique representative with $\sum w_i = 1$.
 
 Equip $\Delta_{N-1}$ with the Fisher–Rao metric:
 
-$$g^{\mathrm{FR}}_{ij}(w) = \frac{\delta_{ij}}{w_i}$$
+```math
+g^{\mathrm{FR}}_{ij}(w) = \frac{\delta_{ij}}{w_i}
+```
 
 This is the canonical Riemannian metric for probability distributions on a finite
 alphabet. In the FX context, $w_i$ is the turnover weight of currency $i$, and
@@ -147,7 +159,9 @@ $w_i$) — exactly right for FX risk.
 
 The **Bhattacharyya embedding** $\phi: \Delta_{N-1} \to S^{N-1}_{+}$:
 
-$$\phi(w) = \left(\sqrt{w_1}, \ldots, \sqrt{w_N}\right) \in S^{N-1}_{+}$$
+```math
+\phi(w) = \left(\sqrt{w_1}, \ldots, \sqrt{w_N}\right) \in S^{N-1}_{+}
+```
 
 maps the currency simplex isometrically into the positive orthant of the unit
 sphere with constant curvature $K = 1/4$. The FX manifold inherits this ambient
@@ -166,13 +180,17 @@ Let $e_i$ be the $i$-th standard basis vector in $\mathbb{R}^{N}$, projected ont
 the tangent space of $\Delta_{N-1}$. The exchange rate pair $(A, B)$ corresponds to
 the direction vector:
 
-$$v_{AB} = e_A - e_B \in T_w \Delta_{N-1}$$
+```math
+v_{AB} = e_A - e_B \in T_w \Delta_{N-1}
+```
 
 Trading EURUSD (going long EUR, short USD) means investing along the direction
 $e_{\mathrm{EUR}} - e_{\mathrm{USD}}$ on the currency simplex. The "return" on
 EURUSD is the inner product of the FX state change with this direction:
 
-$$r_{AB}(t) = \langle dw(t), v_{AB} \rangle_{g^{\mathrm{FR}}} = \frac{dw_A}{w_A} - \frac{dw_B}{w_B}$$
+```math
+r_{AB}(t) = \langle dw(t), v_{AB} \rangle_{g^{\mathrm{FR}}} = \frac{dw_A}{w_A} - \frac{dw_B}{w_B}
+```
 
 which is the log-return of the exchange rate. Every FX trade is a directional bet
 on the single currency simplex.
@@ -264,7 +282,9 @@ borrow in a low-interest-rate currency, invest in a high-interest-rate currency,
 and earn the differential. For a portfolio across $N$ currencies, the carry
 portfolio weights are:
 
-$$b^{\mathrm{carry}}_{i} \propto r_i - \bar{r}$$
+```math
+b^{\mathrm{carry}}_{i} \propto r_i - \bar{r}
+```
 
 where $r_i$ is the short-term interest rate of currency $i$ and
 $\bar{r} = \frac{1}{N}\sum_j r_j$. This is long high-yield, short low-yield.
@@ -274,7 +294,9 @@ $\bar{r} = \frac{1}{N}\sum_j r_j$. This is long high-yield, short low-yield.
 UIP states that the expected exchange rate change should offset the interest rate
 differential:
 
-$$\mathbb{E}[\Delta \log e_{ij}] = r_j - r_i$$
+```math
+\mathbb{E}[\Delta \log e_{ij}] = r_j - r_i
+```
 
 If UIP held, the carry trade would earn zero expected return: the interest
 differential would be exactly offset by expected currency depreciation. UIP is
@@ -292,7 +314,9 @@ manifold is minimal in the carry direction.**
 $H$ be its mean curvature vector. Let $v_{\mathrm{carry}} \in T_{w^{\ast}}\Delta_{N-1}$
 be the carry direction with components $(v_{\mathrm{carry}})_i = (r_i - \bar{r})/\sqrt{w^{\ast}_{i}}$. Then the carry trade Sharpe ratio satisfies:*
 
-$$\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2(M, g_M)}$$
+```math
+\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2(M, g_M)}
+```
 
 *where $H_{\mathrm{carry}} = \langle H, v_{\mathrm{carry}} \rangle$ is the
 component of the mean curvature in the carry direction.*
@@ -320,7 +344,9 @@ of the FX manifold.*
 
 The total Willmore energy of the FX manifold in the carry direction is:
 
-$$\mathcal{W}_{\mathrm{carry}}(M) = \int_M |H_{\mathrm{carry}}|^2 \, d\mathrm{vol}_{M}$$
+```math
+\mathcal{W}_{\mathrm{carry}}(M) = \int_M |H_{\mathrm{carry}}|^2 \, d\mathrm{vol}_{M}
+```
 
 This is the integrated squared curvature in the yield-differential direction —
 the total "carry inefficiency" of the FX market. If the FX market were fully
@@ -343,12 +369,16 @@ the carry curvature is replenished by the underlying economic mechanism
 
 In theory, for any currency triple $(A, B, C)$:
 
-$$e_{AC} = e_{AB} \cdot e_{BC} \qquad \text{exactly}$$
+```math
+e_{AC} = e_{AB} \cdot e_{BC} \qquad \text{exactly}
+```
 
 In practice, the limit order book for each pair is discrete and asynchronous.
 Define the **triangular deviation**:
 
-$$\varepsilon_{ABC}(t) = \log e_{AC}(t) - \log e_{AB}(t) - \log e_{BC}(t)$$
+```math
+\varepsilon_{ABC}(t) = \log e_{AC}(t) - \log e_{AB}(t) - \log e_{BC}(t)
+```
 
 This deviation is non-zero at any given instant due to bid-ask spreads, latency,
 and the asynchronous arrival of orders across the three books.
@@ -360,13 +390,17 @@ and the asynchronous arrival of orders across the three books.
 order book manifold in the cross-rate direction $v_{AC} - v_{AB} - v_{BC}$. It
 satisfies:*
 
-$$|\varepsilon_{ABC}| \leq s^{\mathrm{eff}}_{ABC}$$
+```math
+|\varepsilon_{ABC}| \leq s^{\mathrm{eff}}_{ABC}
+```
 
 *where $s^{\mathrm{eff}}_{ABC}$ is the effective triangular bid-ask spread
 (the sum of half-spreads for the three legs), and the mean curvature in the
 cross-rate direction is:*
 
-$$H_{\mathrm{cross}} = \frac{\varepsilon_{ABC}}{2\sigma_{\mathrm{cross}}}$$
+```math
+H_{\mathrm{cross}} = \frac{\varepsilon_{ABC}}{2\sigma_{\mathrm{cross}}}
+```
 
 *where $\sigma_{\mathrm{cross}}$ is the volatility of the cross-rate.*
 
@@ -382,7 +416,9 @@ exploitable and is eliminated by arbitrageurs. $\square$
 The triangular deviation $\varepsilon_{ABC}(t)$ mean-reverts to zero. Model it as
 an Ornstein–Uhlenbeck process:
 
-$$d\varepsilon = -\lambda_1^{\mathrm{tri}} \varepsilon \, dt + \sigma_{\varepsilon} \, dW$$
+```math
+d\varepsilon = -\lambda_1^{\mathrm{tri}} \varepsilon \, dt + \sigma_{\varepsilon} \, dW
+```
 
 The mean-reversion rate $\lambda_1^{\mathrm{tri}}$ is the **spectral gap** of the
 triangular arbitrage process. It depends on the speed of the fastest arbitrageur:
@@ -412,7 +448,9 @@ An exchange rate $e_{AB} \in \mathbb{R}_{+}$ is an element of the multiplicative
 group $(\mathbb{R}_{+}, \times)$. The full set of exchange rates for $N$ currencies
 is the quotient:
 
-$$\mathcal{E} = \mathbb{R}^{N}_+ / \mathbb{R}_{+} \cong \mathbb{RP}^{N-1}_{+} \cong \Delta_{N-1}$$
+```math
+\mathcal{E} = \mathbb{R}^{N}_+ / \mathbb{R}_{+} \cong \mathbb{RP}^{N-1}_{+} \cong \Delta_{N-1}
+```
 
 where the quotient is by the diagonal action $v \mapsto \lambda v$ for
 $\lambda \in \mathbb{R}_{+}$ (numeraire rescaling). The group operation on
@@ -445,7 +483,9 @@ an assumption — it is a theorem.
 group. Its Lie algebra $\mathfrak{g}_{\mathrm{FX}} = T_{w^{\ast}} M^r_{\mathrm{FX}}$
 consists of the $r$ independent factor directions. For $r = 3$:*
 
-$$\mathfrak{g}_{\mathrm{FX}} = \mathrm{span}\{v_0, v_1, v_2\} = \mathrm{span}\{v_{\mathrm{dollar}}, v_{\mathrm{carry}}, v_{\mathrm{risk}}\}$$
+```math
+\mathfrak{g}_{\mathrm{FX}} = \mathrm{span}\{v_0, v_1, v_2\} = \mathrm{span}\{v_{\mathrm{dollar}}, v_{\mathrm{carry}}, v_{\mathrm{risk}}\}
+```
 
 *The exponential map $\exp: \mathfrak{g}_{\mathrm{FX}} \to M^3_{\mathrm{FX}}$
 gives the FX rate dynamics: a factor shock of magnitude $\alpha$ in direction
@@ -476,7 +516,9 @@ A central bank that fixes its exchange rate is **clamping a coordinate on the
 currency simplex**. The People's Bank of China fixing the USDCNY rate at a target
 level is the constraint:
 
-$$w_{\mathrm{CNY}} = c \qquad \text{(constant)}$$
+```math
+w_{\mathrm{CNY}} = c \qquad \text{(constant)}
+```
 
 The FX manifold is confined to the hyperplane $\{w \in \Delta_{N-1} : w_{\mathrm{CNY}} = c\}$
 — a face of the simplex. The effective dimension drops by one: the constrained
@@ -490,13 +532,17 @@ A more subtle intervention is a **floor** or **ceiling** — a one-sided constra
 The SNB maintained a floor of EURCHF $\geq$ 1.20 from September 2011 to January
 2015. In simplex coordinates, this is the half-space constraint:
 
-$$w_{\mathrm{CHF}} \leq w_{\mathrm{CHF}}^{\max}(\text{EURCHF} = 1.20)$$
+```math
+w_{\mathrm{CHF}} \leq w_{\mathrm{CHF}}^{\max}(\text{EURCHF} = 1.20)
+```
 
 The FX manifold is confined to a half-space of $\Delta_{N-1}$. Near the constraint
 boundary, the manifold is forced away from its unconstrained minimal surface
 configuration. The **Willmore energy accumulates**:
 
-$$\mathcal{W}_{\mathrm{floor}}(t) = \int_{M^r(t)} |H_{\mathrm{boundary}}|^2 \, d\mathrm{vol}_{M}$$
+```math
+\mathcal{W}_{\mathrm{floor}}(t) = \int_{M^r(t)} |H_{\mathrm{boundary}}|^2 \, d\mathrm{vol}_{M}
+```
 
 where $H_{\mathrm{boundary}}$ is the mean curvature induced by the constraint.
 The longer the floor is maintained, and the further the unconstrained equilibrium
@@ -566,7 +612,9 @@ For $N$ currencies, define the **cross-rate consistency graph** $G = (V, E, T)$:
 
 Each triangle $(A, B, C)$ has a **consistency score**:
 
-$$c_{ABC}(t) = 1 - \frac{|\varepsilon_{ABC}(t)|}{s^{\mathrm{eff}}_{ABC}}$$
+```math
+c_{ABC}(t) = 1 - \frac{|\varepsilon_{ABC}(t)|}{s^{\mathrm{eff}}_{ABC}}
+```
 
 where $c_{ABC} = 1$ is perfect consistency and $c_{ABC} = 0$ means the deviation
 equals the effective spread (the maximum tolerable before arbitrage).
@@ -575,7 +623,9 @@ equals the effective spread (the maximum tolerable before arbitrage).
 
 The weighted graph Laplacian of $G$ is:
 
-$$L_{ij} = \begin{cases} \sum_{k \neq i} w_{ik} c_{ik} & \text{if } i = j \\ -w_{ij} c_{ij} & \text{if } i \neq j \end{cases}$$
+```math
+L_{ij} = \begin{cases} \sum_{k \neq i} w_{ik} c_{ik} \& \text{if } i = j \\ -w_{ij} c_{ij} \& \text{if } i \neq j \end{cases}
+```
 
 where $w_{ij}$ is the turnover weight of pair $(i,j)$ and $c_{ij} = \min_k c_{ijk}$
 is the worst consistency score involving pair $(i,j)$.
@@ -584,7 +634,9 @@ is the worst consistency score involving pair $(i,j)$.
 *The Fiedler eigenvalue $\lambda_2(L)$ of the cross-rate consistency graph
 satisfies the discrete Cheeger inequality:*
 
-$$\frac{h^2_{\mathrm{FX}}}{2} \leq \lambda_2(L) \leq 2h_{\mathrm{FX}}$$
+```math
+\frac{h^2_{\mathrm{FX}}}{2} \leq \lambda_2(L) \leq 2h_{\mathrm{FX}}
+```
 
 *where $h_{\mathrm{FX}}$ is the Cheeger constant of the FX market — the minimum
 ratio of "boundary" to "volume" over all partitions of the currency set into two

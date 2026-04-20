@@ -65,7 +65,9 @@ with the Fisher–Rao metric. The key objects are:
 Under the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$, the simplex maps to the
 positive hemisphere:
 
-$$S^{d-1}_{+} = \{u \in \mathbb{R}^{d} : u_i \geq 0, \|u\| = 1\} \tag{1.1}$$
+```math
+S^{d-1}_{+} = \{u \in \mathbb{R}^{d} : u_i \geq 0, \|u\| = 1\} \tag{1.1}
+```
 
 which carries the round metric of constant sectional curvature $K = 1/4$. The market
 manifold maps to $\phi(\Sigma) \subset S^{d-1}_{+}$, and $\Sigma$ is minimal in
@@ -137,9 +139,11 @@ as subsets of $S^{d-1}_{+}$.*
 
 **Theorem 2.2** *(Classification correspondence)*. *There is a bijection:*
 
-$$\left\{\begin{array}{c}\text{strongly efficient market structures}\\ d \text{ assets}, r \text{ factors}\end{array}\right\}
+```math
+\left\{\begin{array}{c}\text{strongly efficient market structures}\\ d \text{ assets}, r \text{ factors}\end{array}\right\}
  \xrightarrow{ \phi } 
-\left\{\begin{array}{c}\text{minimal } r\text{-submanifolds of } S^{d-1}_{+}\\ \text{(up to isometry of }S^{d-1}_{+}\text{)}\end{array}\right\} \tag{2.1}$$
+\left\{\begin{array}{c}\text{minimal } r\text{-submanifolds of } S^{d-1}_{+}\\ \text{(up to isometry of }S^{d-1}_{+}\text{)}\end{array}\right\} \tag{2.1}
+```
 
 *In particular: the set of strongly efficient market structures with $d$ assets and $r$
 factors is countable (finitely many for each topological type, by Choi–Schoen \[1985\]).*
@@ -184,11 +188,15 @@ For a minimal submanifold $\Sigma^r \subset S^{d-1}$ and a compactly supported n
 variation $f \in C^\infty_c(\Sigma)$ (perturbing each point by $\varepsilon f\,\vec{\nu}$
 in the unit normal direction), the second variation of area is:
 
-$$\delta^2\mathrm{Area}(\Sigma)[f,f] = \int_\Sigma f\,(-Lf)\,d\mathrm{vol} \tag{3.1}$$
+```math
+\delta^2\mathrm{Area}(\Sigma)[f,f] = \int_\Sigma f\,(-Lf)\,d\mathrm{vol} \tag{3.1}
+```
 
 where the **Jacobi operator** is:
 
-$$Lf = \Delta_\Sigma f + \left(|II|^2 + \overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu})\right)f \tag{3.2}$$
+```math
+Lf = \Delta_\Sigma f + \left(|II|^2 + \overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu})\right)f \tag{3.2}
+```
 
 Here $\Delta_\Sigma$ is the Laplace–Beltrami operator of $(\Sigma, g_\Sigma)$, $|II|^2 = \sum_{a,b}|II(e_a,e_b)|^2$ is the squared norm of the second fundamental form (summed over
 an orthonormal frame $\{e_a\}$ of $\Sigma$), and $\overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu})$
@@ -196,12 +204,16 @@ is the ambient Ricci curvature in the normal direction.
 
 For $S^{d-1}$ with sectional curvature $K = 1/4$ (Bhattacharyya normalisation):
 
-$$\overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu}) = \frac{d-2}{4} \tag{3.3}$$
+```math
+\overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu}) = \frac{d-2}{4} \tag{3.3}
+```
 
 since $\overline{\mathrm{Ric}} = \frac{(d-2)K}{1} g = \frac{d-2}{4}g$ on $S^{d-1}$.
 So:
 
-$$Lf = \Delta_\Sigma f + \left(|II|^2 + \frac{d-2}{4}\right)f \tag{3.4}$$
+```math
+Lf = \Delta_\Sigma f + \left(|II|^2 + \frac{d-2}{4}\right)f \tag{3.4}
+```
 
 The **stability index** is $\mathrm{ind}(\Sigma) = \\#\{\text{negative eigenvalues of }L\}$
 (counting multiplicity). The surface is **stable** iff $\mathrm{ind}(\Sigma) = 0$,
@@ -215,17 +227,23 @@ the mean curvature to first order is $H(\Sigma_\varepsilon) = -\varepsilon Lf + 
 (the linearisation of $H$ around $H=0$). By the Sharpe–curvature theorem (Theorem 9.1 of
 MINIMAL_SURFACE):
 
-$$\mathrm{Sharpe}^{\ast}(\Sigma_\varepsilon) = \varepsilon\,\|Lf\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{3.5}$$
+```math
+\mathrm{Sharpe}^{\ast}(\Sigma_\varepsilon) = \varepsilon\,\|Lf\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{3.5}
+```
 
 **Definition 3.1** (Stability Sharpe). *The **stability Sharpe ratio** of an efficient
 market structure $\Sigma$ is:*
 
-$$\mathrm{Sh}_{\rm stab}(\Sigma) = \inf_{f \in C^\infty(\Sigma),\, \|f\|_{L^2}=1} \|Lf\|_{L^2(\Sigma)} \tag{3.6}$$
+```math
+\mathrm{Sh}_{\rm stab}(\Sigma) = \inf_{f \in C^\infty(\Sigma),\, \|f\|_{L^2}=1} \|Lf\|_{L^2(\Sigma)} \tag{3.6}
+```
 
 This is the minimum rate at which the Sharpe ratio grows per unit perturbation away from
 efficiency. By the spectral theorem for $L$:
 
-$$\mathrm{Sh}_{\rm stab}(\Sigma) = |\lambda_1(L)| \tag{3.7}$$
+```math
+\mathrm{Sh}_{\rm stab}(\Sigma) = |\lambda_1(L)| \tag{3.7}
+```
 
 where $\lambda_1(L)$ is the eigenvalue of $L$ closest to zero (most negative if $\Sigma$ is
 unstable, most positive smallest if $\Sigma$ is stable).
@@ -263,14 +281,18 @@ For a **stable** efficient market ($\lambda_1 > 0$), a perturbation $\varepsilon
 creates a Sharpe opportunity. Under MCF, the market evolves back toward $\Sigma$.
 The **recovery rate** is:
 
-$$\gamma(\Sigma) = \lambda_1(L) \tag{3.8}$$
+```math
+\gamma(\Sigma) = \lambda_1(L) \tag{3.8}
+```
 
 Linearising the MCF $\partial_t\Sigma = -H\vec{\nu}$ around $\Sigma$:
 $\partial_t(\varepsilon f) = -(-\varepsilon Lf) = \varepsilon Lf$, so for the first
 eigenmode: $\partial_t(\varepsilon f_1) = -\varepsilon\lambda_1 f_1$ — the perturbation
 decays exponentially at rate $\lambda_1$. The half-life of an inefficiency is:
 
-$$t_{1/2}(\Sigma) = \frac{\log 2}{\lambda_1(L)} \tag{3.9}$$
+```math
+t_{1/2}(\Sigma) = \frac{\log 2}{\lambda_1(L)} \tag{3.9}
+```
 
 This is the time for an arbitrage opportunity to halve in magnitude under the action of
 arbitrage capital. For the great $r$-sphere in $S^{d-1}$: $t_{1/2} = \frac{4\log 2}{d-2}$.
@@ -408,12 +430,16 @@ is stable iff all eigenvalues of $L$ are non-positive: $L \leq 0$.
 For the Clifford torus $\tau_{1,1} \subset S^3$ with $K=1/4$: $|II|^2 = 2$ and
 $\overline{\mathrm{Ric}} = \frac{d-2}{4} = \frac{1}{2}$ (using $d=4$). The Jacobi operator is:
 
-$$Lf = \Delta_{T^2} f + \frac{5}{2}f \tag{5.1}$$
+```math
+Lf = \Delta_{T^2} f + \frac{5}{2}f \tag{5.1}
+```
 
 Eigenvalues of $\Delta_{T^2}$ on the Clifford torus (a flat square torus): $-2(m^2 + n^2)$
 for $(m,n) \in \mathbb{Z}^{2}$. The eigenvalues of $L$ are therefore:
 
-$$\lambda_{mn}(L) = -2(m^2+n^2) + \frac{5}{2} \tag{5.2}$$
+```math
+\lambda_{mn}(L) = -2(m^2+n^2) + \frac{5}{2} \tag{5.2}
+```
 
 **Positive** eigenvalues of $L$ (the unstable directions) occur when $2(m^2+n^2) < 5/2$,
 i.e. $m^2+n^2 < 5/4$. Integer solutions: $(m,n) \in \{(0,0), (\pm 1,0), (0,\pm 1)\}$ —
@@ -448,9 +474,11 @@ case appears.
 **The Veronese surface — a detailed look.**  
 The Veronese surface is the image of the map:
 
-$$v: \mathbb{R}P^2 \to S^4, \qquad [x_1:x_2:x_3] \mapsto
+```math
+v: \mathbb{R}P^2 \to S^4, \qquad [x_1:x_2:x_3] \mapsto
 \frac{1}{\sqrt{3}}\!\left(x_1 x_2, x_2 x_3, x_3 x_1, 
-\frac{x_1^2-x_2^2}{2}, \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}\right) \tag{5.5}$$
+\frac{x_1^2-x_2^2}{2}, \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}\right) \tag{5.5}
+```
 
 (normalised to lie on $S^4$). It is a minimal immersion of $\mathbb{R}P^2$ into $S^4$,
 with $|II|^2 = 4/3$ constant, stable with all Jacobi eigenvalues positive.
@@ -544,12 +572,16 @@ We now compute $\lambda_1(L)$ — equivalently $\lambda_1(J)$ — explicitly for
 (totally geodesic) and $\overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu}) = \frac{d-2}{4}$.
 The Jacobi operator:
 
-$$L_{S^r} f = \Delta_{S^r} f + \frac{d-2}{4}\,f \tag{6.1}$$
+```math
+L_{S^r} f = \Delta_{S^r} f + \frac{d-2}{4}\,f \tag{6.1}
+```
 
 Eigenvalues of $\Delta_{S^r}$ (with $K=1/4$ normalisation): $-\frac{k(k+r-1)}{4}$ for
 $k = 0, 1, 2, \ldots$ Hence the eigenvalues of $L$ are:
 
-$$\lambda_k(L) = -\frac{k(k+r-1)}{4} + \frac{d-2}{4} = \frac{(d-2) - k(k+r-1)}{4} \tag{6.2}$$
+```math
+\lambda_k(L) = -\frac{k(k+r-1)}{4} + \frac{d-2}{4} = \frac{(d-2) - k(k+r-1)}{4} \tag{6.2}
+```
 
 Recall our convention: $\mathrm{ind}(\Sigma) = \\#\{\lambda_k(L) > 0\}$ (positive eigenvalues
 of $L$ correspond to area-decreasing perturbations, i.e. unstable directions).
@@ -574,18 +606,24 @@ With Dirichlet conditions, the first admissible eigenvalue of $-\Delta_{S^r_+}$ 
 shifted upward by a boundary correction of order $\pi^2/L^2$, where $L$ is the diameter
 of $S^r_+$. The effective stability condition becomes:
 
-$$\lambda_1^{\rm eff}(L) = \frac{(d-2) - r}{4} - \frac{\pi^2}{L^2} \tag{6.3}$$
+```math
+\lambda_1^{\rm eff}(L) = \frac{(d-2) - r}{4} - \frac{\pi^2}{L^2} \tag{6.3}
+```
 
 Stability requires $\lambda_1^{\rm eff}(L) \leq 0$, i.e.:
 
-$$\frac{\pi^2}{L^2} \geq \frac{d-2-r}{4} \tag{6.4}$$
+```math
+\frac{\pi^2}{L^2} \geq \frac{d-2-r}{4} \tag{6.4}
+```
 
 **For $d \leq 6$:** The diameter $L$ is small enough (order 1 in Bhattacharyya units) that
 the boundary correction dominates, and the great hemispheres are stable. Explicitly:
 
-$$\mathrm{Sh}_{\rm stab}(S^1_+ \subset S^2_+) = \frac{1}{4}, \quad
+```math
+\mathrm{Sh}_{\rm stab}(S^1_+ \subset S^2_+) = \frac{1}{4}, \quad
 \mathrm{Sh}_{\rm stab}(S^2_+ \subset S^3_+) = \frac{1}{2}, \quad
-\mathrm{Sh}_{\rm stab}(S^r_+ \subset S^4_+) = \frac{3}{4} \tag{6.5}$$
+\mathrm{Sh}_{\rm stab}(S^r_+ \subset S^4_+) = \frac{3}{4} \tag{6.5}
+```
 
 **For large $d$ with $r$ fixed (e.g. $d = 50$, $r = 4$):** The bulk term
 $\frac{d-2-r}{4} = \frac{44}{4} = 11$ overwhelms the boundary correction $\pi^2/L^2$
@@ -613,7 +651,9 @@ For the Clifford torus $\tau_{1,1} \subset S^3$ (portfolio: balanced two-factor,
 $|II|^2 = 2$, $\overline{\mathrm{Ric}} = \frac{2}{4} = \frac{1}{2}$ (using $d=4$, $K=1/4$).
 The Jacobi operator is:
 
-$$Lf = \Delta_{T^2}f + \frac{5}{2}f \tag{6.6}$$
+```math
+Lf = \Delta_{T^2}f + \frac{5}{2}f \tag{6.6}
+```
 
 Eigenvalues of $\Delta_{T^2}$ on the flat torus: $-2(m^2+n^2)$ for $(m,n) \in \mathbb{Z}^{2}$.
 The $L$-eigenvalues are therefore $\lambda_{mn}(L) = -2(m^2+n^2) + 5/2$.
@@ -658,7 +698,9 @@ in the relevant sense.
 $\lambda_1 = 5/3$ from the standard-normalisation computation, scaled by $1/4$ for
 Bhattacharyya normalisation:
 
-$$\mathrm{Sh}_{\rm stab}(V) = \frac{5}{12} \tag{6.7}$$
+```math
+\mathrm{Sh}_{\rm stab}(V) = \frac{5}{12} \tag{6.7}
+```
 
 Compared to the great 2-sphere in $S^4$: $\mathrm{Sh}_{\rm stab}(S^2_+) = 3/4$.
 The Veronese has *lower* stability Sharpe than the great sphere — it is stable but less
@@ -669,14 +711,18 @@ for the CAPM great sphere.
 
 For $\tau_{m,n}$ with genus $g = mn$, the Jacobi eigenvalues are bounded above by:
 
-$$\lambda_k(J_{\tau_{m,n}}) \leq -C\cdot mn \quad \text{for } k \leq g \tag{6.10}$$
+```math
+\lambda_k(J_{\tau_{m,n}}) \leq -C\cdot mn \quad \text{for } k \leq g \tag{6.10}
+```
 
 for some constant $C > 0$ (this follows from the Choi–Schoen index estimates \[1985\]).
 The stability index $\mathrm{ind}(\tau_{m,n}) \geq mn$, growing with genus.
 
 **Stability Sharpe for Lawson surfaces:**
 
-$$\mathrm{Sh}_{\rm stab}(\tau_{m,n}) = |\lambda_1(J_{\tau_{m,n}})| \geq C\cdot\frac{mn}{4} \tag{6.11}$$
+```math
+\mathrm{Sh}_{\rm stab}(\tau_{m,n}) = |\lambda_1(J_{\tau_{m,n}})| \geq C\cdot\frac{mn}{4} \tag{6.11}
+```
 
 (in Bhattacharyya normalisation). Higher-genus Lawson surfaces have *larger* stability
 Sharpe — they are more sensitive to perturbations, with larger Sharpe opportunities arising
@@ -733,7 +779,9 @@ gives a real-time early warning signal.
 **Conjecture 7.1.** *For a market with stability index $k$ and intrinsic factor dimension
 $r$, the realised cross-sectional Sharpe ratio of factor-neutral strategies satisfies:*
 
-$$\mathrm{Sharpe}^{\rm observed} \approx \frac{k}{d^2}\cdot C(r,d) \tag{7.1}$$
+```math
+\mathrm{Sharpe}^{\rm observed} \approx \frac{k}{d^2}\cdot C(r,d) \tag{7.1}
+```
 
 *where $C(r,d)$ is a dimension-dependent constant. That is: the observed Sharpe of factor
 strategies grows linearly with the stability index.*
@@ -773,10 +821,12 @@ unstable efficient market structures, each corresponding to a coupled-regime fac
 All unstable. All have $\mathrm{Sharpe}^{\ast} = 0$ but positive stability Sharpe growing
 with genus.
 
-$$\begin{array}{c}
+```math
+\begin{array}{c}
 \text{Stable efficient markets} = \{\text{great spheres}\} \cup \{\text{Veronese}\} \cup \{\text{Clifford hypersurfaces (}d\geq 8\text{)}\}\\[6pt]
 \text{All have Sharpe}^{\ast} = 0. \text{ Only great spheres are universal attractors under MCF.}
-\end{array}}$$
+\end{array}}
+```
 
 ---
 
@@ -808,7 +858,9 @@ We verify the index-5 claim for the Clifford torus $\tau_{1,1} \subset S^3$ in d
 The Clifford torus is $C = S^1(1/\sqrt{2}) \times S^1(1/\sqrt{2}) \subset S^3 \subset \mathbb{R}^{4}$.
 In standard normalisation (unit sphere, $K=1$), $|II|^2 = 2$ and the Jacobi operator is:
 
-$$Jf = -\Delta_{T^2}f - 2f \tag{B.1}$$
+```math
+Jf = -\Delta_{T^2}f - 2f \tag{B.1}
+```
 
 on the flat torus $T^2 = \mathbb{R}^{2}/(2\pi\mathbb{Z})^2$ scaled so that $C$ has area $4\pi^2$.
 Eigenfunctions of $-\Delta_{T^2}$: $e^{i(m\theta + n\varphi)}$ with eigenvalue $m^2 + n^2$.
@@ -925,35 +977,45 @@ dimensionless, universally meaningful), we define the dimensionless invariants
 of a market manifold:
 
 **The market Reynolds number** (from FOKKER_PLANCK_CFD.md):
-$$\mathrm{Re}_{M} = \frac{\|H\|\cdot T\cdot\mathrm{diam}(M)}{\varepsilon^2}
-= \|H\|\cdot T^2\cdot\mathrm{diam}(M) \tag{C.1}$$
+```math
+\mathrm{Re}_{M} = \frac{\|H\|\cdot T\cdot\mathrm{diam}(M)}{\varepsilon^2}
+= \|H\|\cdot T^2\cdot\mathrm{diam}(M) \tag{C.1}
+```
 
 This is dimensionless. $\mathrm{Re}_{M} < 1$: laminar (efficient).
 $\mathrm{Re}_{M} > 10$: turbulent (inefficient, alpha available).
 
 **The concentration number:**
-$$\mathcal{C} = \frac{\lambda_1}{\sum_k\lambda_k} \tag{C.2}$$
+```math
+\mathcal{C} = \frac{\lambda_1}{\sum_k\lambda_k} \tag{C.2}
+```
 
 Dimensionless. $\mathcal{C} \to 1$: one-factor market (CAPM).
 $\mathcal{C} \to 1/d$: maximally diversified (all factors equal).
 Empirically: $\mathcal{C} \approx 0.84$ for US equities.
 
 **The entropy number:**
-$$\mathcal{E} = \frac{H(\lambda)}{\log d} = -\frac{\sum p_k\log p_k}{\log d} \tag{C.3}$$
+```math
+\mathcal{E} = \frac{H(\lambda)}{\log d} = -\frac{\sum p_k\log p_k}{\log d} \tag{C.3}
+```
 
 Dimensionless. $\mathcal{E} \to 0$: one dominant factor (perfectly concentrated).
 $\mathcal{E} \to 1$: uniform spectrum (maximally complex).
 Empirically: $\mathcal{E} \approx 0.26$ for US equities.
 
 **The Cheeger number:**
-$$\mathcal{H} = h_M \cdot \mathrm{diam}(M) \tag{C.4}$$
+```math
+\mathcal{H} = h_M \cdot \mathrm{diam}(M) \tag{C.4}
+```
 
 Dimensionless. Measures the connectivity relative to the size of the manifold.
 $\mathcal{H} \to 0$: approaching disconnection (crisis).
 $\mathcal{H} \gg 1$: well-connected (healthy market).
 
 **The mixing number:**
-$$\mathcal{M} = \frac{t_{\rm mix}}{T} = \frac{-1/\log\lambda_2(P)}{T} \tag{C.5}$$
+```math
+\mathcal{M} = \frac{t_{\rm mix}}{T} = \frac{-1/\log\lambda_2(P)}{T} \tag{C.5}
+```
 
 Dimensionless. Ratio of mixing time to observation window.
 $\mathcal{M} \ll 1$: the market has mixed many times (ergodic, reliable estimates).
@@ -961,7 +1023,9 @@ $\mathcal{M} \sim 1$: barely one mixing time (estimates are unreliable).
 $\mathcal{M} \gg 1$: not mixed yet (non-ergodic, estimates are meaningless).
 
 **The Sharpe-curvature number:**
-$$\mathcal{S} = \frac{\mathrm{Sharpe}^{\ast}}{\|H\|_{L^2}} \tag{C.6}$$
+```math
+\mathcal{S} = \frac{\mathrm{Sharpe}^{\ast}}{\|H\|_{L^2}} \tag{C.6}
+```
 
 Dimensionless. The central theorem says $\mathcal{S} = 1$ to leading order.
 Empirically: $\mathcal{S} \approx 1.007 \pm 0.18$ (Test N9).

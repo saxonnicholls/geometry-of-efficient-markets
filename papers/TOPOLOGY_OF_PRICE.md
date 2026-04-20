@@ -108,7 +108,9 @@ $d = 500$, we retain one component out of 500.
 
 The graph Laplacian of $G$ is the $d \times d$ matrix:
 
-$$L = D - A \tag{1.1}$$
+```math
+L = D - A \tag{1.1}
+```
 
 where $A$ is the weighted adjacency matrix ($A_{ij} = w_{ij}$ if $(i,j) \in E$,
 zero otherwise) and $D$ is the diagonal degree matrix
@@ -116,7 +118,9 @@ zero otherwise) and $D$ is the diagonal degree matrix
 smallest eigenvalue $\lambda_0 = 0$ (eigenvector: the constant vector
 $\mathbf{1}$). The eigenvalues satisfy:
 
-$$0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_{d-1} \tag{1.2}$$
+```math
+0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_{d-1} \tag{1.2}
+```
 
 The first positive eigenvalue $\lambda_1$ is the **Fiedler eigenvalue**
 \[Fiedler 1973\], also called the algebraic connectivity of $G$. Its
@@ -129,7 +133,9 @@ Classical price theory posits two curves — supply and demand — intersecting 
 equilibrium. This is the $|V| = 2$ case of the economic graph: one producer,
 one consumer, one edge. The Laplacian is:
 
-$$L_{2\times 2} = \begin{pmatrix} w & -w \\ -w & w \end{pmatrix} \tag{1.3}$$
+```math
+L_{2\times 2} = \begin{pmatrix} w \& -w \\ -w \& w \end{pmatrix} \tag{1.3}
+```
 
 with eigenvalues $\lambda_0 = 0$ and $\lambda_1 = 2w$. There is one
 eigenvector, one eigenvalue, one price ratio. This is the entire content of
@@ -158,7 +164,9 @@ connected economic graph with adjacency matrix $A$. The equilibrium price
 vector $p^{\ast} \in \Delta_{d-1}$ is the Perron-Frobenius eigenvector of $A$,
 normalised to lie on the simplex:*
 
-$$A p^{\ast} = \rho(A) \, p^{\ast}, \quad p^{\ast}_{i} > 0, \quad \sum_i p^{\ast}_{i} = 1 \tag{2.1}$$
+```math
+A p^{\ast} = \rho(A) \, p^{\ast}, \quad p^{\ast}_{i} > 0, \quad \sum_i p^{\ast}_{i} = 1 \tag{2.1}
+```
 
 *The price ratios $p^{\ast}_{i} / p^{\ast}_{j}$ are determined entirely by the graph topology
 and the edge weights.*
@@ -226,7 +234,9 @@ The classical measure of deadweight loss from a tax $\tau$ on good $i$ is the
 curves, between the pre-tax and post-tax quantities, bounded by the tax wedge.
 For linear curves with elasticities $\epsilon_S$ and $\epsilon_D$:
 
-$$\mathrm{DWL}_{\mathrm{Harberger}} = \frac{1}{2} \tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^{\ast} \tag{3.1}$$
+```math
+\mathrm{DWL}_{\mathrm{Harberger}} = \frac{1}{2} \tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^{\ast} \tag{3.1}
+```
 
 This formula has three limitations: (a) it assumes linear supply and demand;
 (b) it treats each market in isolation; (c) it ignores the dynamic path from
@@ -239,7 +249,9 @@ market manifold $M^r$ from its minimal surface. Before the tax, the efficient
 market satisfies $H = 0$ (the minimal surface condition). The tax introduces a
 forcing term:
 
-$$\partial_t M = -\vec{H} + \tau \cdot f_i \tag{3.2}$$
+```math
+\partial_t M = -\vec{H} + \tau \cdot f_i \tag{3.2}
+```
 
 where $f_i$ is the tax distortion field, concentrated on the $i$-th coordinate
 direction in the simplex. The new equilibrium manifold $\tilde{M}^{r}$ satisfies
@@ -249,7 +261,9 @@ rather than the minimal surface equation.
 **Definition 3.1** (Geometric Deadweight Loss). The deadweight loss of a
 distortion that deforms the market manifold from $M^r$ to $\tilde{M}^{r}$ is:
 
-$$\mathrm{DWL}(M, \tilde{M}) = \mathcal{W}(\tilde{M}) - \mathcal{W}(M) = \int_{\tilde{M}} |H|^2 \, d\mathrm{vol} - \int_M |H|^2 \, d\mathrm{vol} \tag{3.3}$$
+```math
+\mathrm{DWL}(M, \tilde{M}) = \mathcal{W}(\tilde{M}) - \mathcal{W}(M) = \int_{\tilde{M}} |H|^2 \, d\mathrm{vol} - \int_M |H|^2 \, d\mathrm{vol} \tag{3.3}
+```
 
 If the undistorted market is efficient ($\mathcal{W}(M) = 0$), this reduces to
 $\mathrm{DWL} = \mathcal{W}(\tilde{M}) = \int |H|^2 \, d\mathrm{vol}$.
@@ -258,7 +272,9 @@ $\mathrm{DWL} = \mathcal{W}(\tilde{M}) = \int |H|^2 \, d\mathrm{vol}$.
 tax $\tau$ in the $|V| = 2$ economy with linear supply and demand, the Willmore
 deadweight loss reduces to the Harberger triangle:*
 
-$$\mathcal{W}(\tilde{M}) = \frac{1}{2}\tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^{\ast} + O(\tau^3) \tag{3.4}$$
+```math
+\mathcal{W}(\tilde{M}) = \frac{1}{2}\tau^2 \frac{\epsilon_S \epsilon_D}{\epsilon_S + \epsilon_D} Q^{\ast} + O(\tau^3) \tag{3.4}
+```
 
 *Proof.* In the $|V| = 2$ case, $M$ is 1-dimensional (a curve), and the mean
 curvature reduces to the ordinary curvature $\kappa$. The tax-induced
@@ -282,7 +298,9 @@ The geometric formulation is strictly more general:
 (i.e., the economic graph $G$ is complete), mean curvature flow drives
 $\mathcal{W}(M_t)$ monotonically to zero:*
 
-$$\frac{d}{dt}\mathcal{W}(M_t) \leq 0 \tag{3.5}$$
+```math
+\frac{d}{dt}\mathcal{W}(M_t) \leq 0 \tag{3.5}
+```
 
 *The market converges to its minimal surface (the efficient equilibrium)
 regardless of initial allocation. Coase's theorem is Willmore monotonicity
@@ -299,7 +317,9 @@ not affect the final equilibrium $M_\infty$, only the path.
 from $G$, the market is constrained to a subgraph $G' \subset G$. The
 constrained minimal surface $M^{\ast}_{G'}$ has Willmore energy*
 
-$$\mathcal{W}(M^{\ast}_{G'}) \geq \mathcal{W}(M^{\ast}_{G}) = 0 \tag{3.6}$$
+```math
+\mathcal{W}(M^{\ast}_{G'}) \geq \mathcal{W}(M^{\ast}_{G}) = 0 \tag{3.6}
+```
 
 *The gap $\mathcal{W}(M^{\ast}_{G'}) - \mathcal{W}(M^{\ast}_{G}) \geq 0$ is the Coasean
 inefficiency: the deadweight loss attributable to transaction costs.*
@@ -324,7 +344,9 @@ matrix minus the identity). The Laplacian eigenvalues are $\lambda_0 = 0$ and
 $\lambda_k = d$ for $k = 1, \ldots, d-1$. The Cheeger constant achieves its
 maximum:
 
-$$h(K_d) = \left\lceil d/2 \right\rceil \tag{4.1}$$
+```math
+h(K_d) = \left\lceil d/2 \right\rceil \tag{4.1}
+```
 
 No bottleneck exists. Shocks propagate instantly to all agents. The Willmore
 energy is zero: the complete graph supports the full MCF, which converges to the
@@ -337,7 +359,9 @@ The Laplacian eigenvalues are $\lambda_0 = 0$, $\lambda_1 = 1$, and
 $\lambda_k = d$ for $k = 2, \ldots, d-1$ (the eigenvalue 1 has multiplicity
 $d - 2$, and $d$ has multiplicity 1). The Cheeger constant is:
 
-$$h(S_d) = \frac{2}{d} \tag{4.2}$$
+```math
+h(S_d) = \frac{2}{d} \tag{4.2}
+```
 
 The monopolist IS the bottleneck. Every exchange between consumers must pass
 through the central node. The Willmore energy is maximal: the monopolist
@@ -361,7 +385,9 @@ the periphery.
 with Cheeger constant $h(G)$. Adding edges $E'$ to form $G' = (V, E \cup E')$
 satisfies:*
 
-$$h(G') \geq h(G) \tag{4.3}$$
+```math
+h(G') \geq h(G) \tag{4.3}
+```
 
 *The Willmore energy satisfies $\mathcal{W}(M^{\ast}_{G'}) \leq \mathcal{W}(M^{\ast}_{G})$.
 The efficiency gain from anti-trust enforcement (adding competitors = adding
@@ -429,7 +455,9 @@ $G_{\mathrm{food}}$ has:
 **Definition 5.2** (Cheeger Bottleneck). A subset $S \subset V$ has Cheeger
 ratio:
 
-$$h(S) = \frac{|\partial S|}{\min(|S|, |V \setminus S|)} \tag{5.1}$$
+```math
+h(S) = \frac{|\partial S|}{\min(|S|, |V \setminus S|)} \tag{5.1}
+```
 
 where $|\partial S| = \sum_{i \in S, j \notin S} w_{ij}$ is the total weight
 of edges crossing the cut. The Cheeger constant $h(G_{\mathrm{food}}) =
@@ -444,7 +472,9 @@ distribution network with Cheeger constant $h = h(G_{\mathrm{food}})$, and let
 $\sigma^2$ be the variance of food production across nodes. There exists a
 critical threshold*
 
-$$h_{\mathrm{crit}} = c \cdot \sigma \tag{5.2}$$
+```math
+h_{\mathrm{crit}} = c \cdot \sigma \tag{5.2}
+```
 
 *(where $c > 0$ is a constant depending on the graph topology) such that:*
 
@@ -543,12 +573,16 @@ Consider $N$ agents with wealth shares $w = (w_1, \ldots, w_N) \in \Delta_{N-1}$
 The equal distribution is the centroid $w^{\mathrm{eq}} = (1/N, \ldots, 1/N)$.
 The Fisher-Rao distance from equality is:
 
-$$d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) = 2 \arccos\left(\sum_{i=1}^{N} \sqrt{w_i / N}\right) \tag{6.1}$$
+```math
+d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) = 2 \arccos\left(\sum_{i=1}^{N} \sqrt{w_i / N}\right) \tag{6.1}
+```
 
 For moderate inequality (small perturbations from the centroid), this is
 approximately proportional to the Gini coefficient:
 
-$$\mathrm{Gini}(w) \approx \frac{1}{\sqrt{2}} \, d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) + O(d_{\mathrm{FR}}^{2}) \tag{6.2}$$
+```math
+\mathrm{Gini}(w) \approx \frac{1}{\sqrt{2}} \, d_{\mathrm{FR}}(w, w^{\mathrm{eq}}) + O(d_{\mathrm{FR}}^{2}) \tag{6.2}
+```
 
 The Gini coefficient is a first-order approximation to the Fisher-Rao distance
 from equality. The Fisher-Rao distance is the more natural measure: it is
@@ -565,7 +599,9 @@ The **wealth exchange graph** $G_w = (V, E, w)$ has:
 
 The dynamics of wealth on this graph are governed by a diffusion equation:
 
-$$\frac{dw}{dt} = -L_w \, w + \eta(t) \tag{6.3}$$
+```math
+\frac{dw}{dt} = -L_w \, w + \eta(t) \tag{6.3}
+```
 
 where $L_w$ is the graph Laplacian of $G_w$ and $\eta(t)$ is a stochastic
 forcing (new wealth creation, shocks, innovation). The diffusion term $-L_w w$
@@ -657,18 +693,24 @@ exclusive property rights. In graph terms:
 The post-enclosure graph $G_{\mathrm{enclosed}}$ had a tree-like structure:
 landlord $\to$ tenant $\to$ labourer. The Cheeger constant collapsed:
 
-$$h(G_{\mathrm{enclosed}}) = O(1) \ll h(G_{\mathrm{commons}}) = O(n) \tag{7.1}$$
+```math
+h(G_{\mathrm{enclosed}}) = O(1) \ll h(G_{\mathrm{commons}}) = O(n) \tag{7.1}
+```
 
 **Proposition 7.1** (Enclosure as Cheeger Reduction). *Enclosure reduced the
 Cheeger constant of the English food-labour graph from $O(n)$ to $O(1)$, where
 $n$ is the village size. The probability of localised famine conditional on a
 harvest shock increased from*
 
-$$\Pr(\text{famine} \mid \text{shock}, G_{\mathrm{commons}}) \leq e^{-\alpha n^2 T} \approx 0 \tag{7.2}$$
+```math
+\Pr(\text{famine} \mid \text{shock}, G_{\mathrm{commons}}) \leq e^{-\alpha n^2 T} \approx 0 \tag{7.2}
+```
 
 *to*
 
-$$\Pr(\text{famine} \mid \text{shock}, G_{\mathrm{enclosed}}) \geq c > 0 \tag{7.3}$$
+```math
+\Pr(\text{famine} \mid \text{shock}, G_{\mathrm{enclosed}}) \geq c > 0 \tag{7.3}
+```
 
 *for a positive constant $c$ depending on the shock severity relative to the
 remaining single-edge connections.*

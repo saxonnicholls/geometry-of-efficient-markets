@@ -106,7 +106,9 @@ The investor's problem is to decode the factor state $f_t$ from the observed ret
 $x_1, \ldots, x_T$ — and then to allocate portfolio weights optimally. The **channel capacity**
 is:
 
-$$C = \max_{p(f)} I(f; x) = \max_{p(f)} \left[H(x) - H(x|f)\right] \tag{2.1}$$
+```math
+C = \max_{p(f)} I(f; x) = \max_{p(f)} \left[H(x) - H(x|f)\right] \tag{2.1}
+```
 
 where $I(f;x)$ is the mutual information and $H(\cdot)$ is entropy.
 
@@ -114,36 +116,48 @@ where $I(f;x)$ is the mutual information and $H(\cdot)$ is entropy.
 
 For a Gaussian channel with input variance $\sigma_f^2$ and noise variance $\sigma_e^2$:
 
-$$C = \frac{r}{2}\log\left(1 + \frac{\sigma_f^2}{\sigma_e^2}\right) \tag{2.2}$$
+```math
+C = \frac{r}{2}\log\left(1 + \frac{\sigma_f^2}{\sigma_e^2}\right) \tag{2.2}
+```
 
 But the return channel is not Gaussian-input, and the portfolio $b$ plays the role of
 a matched filter. The Fisher information at the optimal portfolio $b^{\ast}$ is:
 
-$$F_{ij}(b^{\ast}) = \mathbb{E}\!\left[\frac{\partial \log p(x|b^{\ast})}{\partial b_i}
+```math
+F_{ij}(b^{\ast}) = \mathbb{E}\!\left[\frac{\partial \log p(x|b^{\ast})}{\partial b_i}
 \frac{\partial \log p(x|b^{\ast})}{\partial b_j}\right]
-= \frac{1}{T}\sum_t \frac{x_{t,i}x_{t,j}}{(b^{*T}x_t)^2} \tag{2.3}$$
+= \frac{1}{T}\sum_t \frac{x_{t,i}x_{t,j}}{(b^{*T}x_t)^2} \tag{2.3}
+```
 
 By the **Cramér–Rao bound**, the minimum variance of any unbiased estimator of $b^{\ast}$
 from $T$ observations is $F(b^{\ast})^{-1}/T$. The channel capacity of the market at portfolio
 $b^{\ast}$ is:
 
-$$C(b^{\ast}) = \frac{1}{2}\log\det\left(I + T\cdot F(b^{\ast})\right)
-= \frac{1}{2}\sum_{k=1}^{d-1}\log(1 + T\lambda_k(F(b^{\ast}))) \tag{2.4}$$
+```math
+C(b^{\ast}) = \frac{1}{2}\log\det\left(I + T\cdot F(b^{\ast})\right)
+= \frac{1}{2}\sum_{k=1}^{d-1}\log(1 + T\lambda_k(F(b^{\ast}))) \tag{2.4}
+```
 
 **Theorem 2.1** *(Theorem A: efficiency = maximum channel capacity)*. *The market manifold
 $M$ is minimal at $b^{\ast}$ (locally efficient) if and only if the channel capacity (2.4) is
 a critical point of $b \mapsto C(b)$ over the manifold $M$:*
 
-$$\nabla_M C(b^{\ast}) = 0 \iff H(b^{\ast}) = 0 \tag{2.5}$$
+```math
+\nabla_M C(b^{\ast}) = 0 \iff H(b^{\ast}) = 0 \tag{2.5}
+```
 
 *Proof.* The gradient of $C(b)$ over the manifold is:
 
-$$\nabla_M C(b) = T\cdot\mathrm{tr}\!\left[(I + TF)^{-1}\nabla_M F(b)\right] \tag{2.6}$$
+```math
+\nabla_M C(b) = T\cdot\mathrm{tr}\!\left[(I + TF)^{-1}\nabla_M F(b)\right] \tag{2.6}
+```
 
 As $T \to \infty$, $(I+TF)^{-1} \approx (TF)^{-1}$ and:
 
-$$\nabla_M C(b) \approx \mathrm{tr}\!\left[F(b)^{-1}\nabla_M F(b)\right]
-= \nabla_M \log\det F(b) \tag{2.7}$$
+```math
+\nabla_M C(b) \approx \mathrm{tr}\!\left[F(b)^{-1}\nabla_M F(b)\right]
+= \nabla_M \log\det F(b) \tag{2.7}
+```
 
 The gradient of $\log\det F$ over $M$ vanishes at $b^{\ast}$ iff the tangential gradient
 $\Pi_{T_{b^{\ast}}M}\nabla_b \log\det F = 0$, which by the Fisher matrix formula (2.3) equals
@@ -159,7 +173,9 @@ of the economic efficiency condition.
 **Corollary 2.2** *(Sharpe from capacity loss)*. *The maximum Sharpe ratio equals the
 square root of the capacity gradient:*
 
-$$\mathrm{Sharpe}^{\ast} = \|\nabla_M C(b^{\ast})\|_{F(b^{\ast})^{-1}}^{1/2} \tag{2.8}$$
+```math
+\mathrm{Sharpe}^{\ast} = \|\nabla_M C(b^{\ast})\|_{F(b^{\ast})^{-1}}^{1/2} \tag{2.8}
+```
 
 *An inefficient market has positive capacity gradient — moving the portfolio in the
 $\nabla_M C$ direction improves channel capacity and earns excess return.*
@@ -168,7 +184,9 @@ $\nabla_M C$ direction improves channel capacity and earns excess return.*
 
 The **effective channel capacity** uses only the significant singular values:
 
-$$C_{\rm eff}(b^{\ast}) = \frac{1}{2}\sum_{k=1}^{r_{\rm eff}}\log(1 + T\lambda_k(F(b^{\ast}))) \tag{2.9}$$
+```math
+C_{\rm eff}(b^{\ast}) = \frac{1}{2}\sum_{k=1}^{r_{\rm eff}}\log(1 + T\lambda_k(F(b^{\ast}))) \tag{2.9}
+```
 
 where $r_{\rm eff} = \|F\|_F^2/\|F\|_2^2$ is the stable rank (same number appearing
 throughout this series). The remaining $d-1-r_{\rm eff}$ channels carry negligible
@@ -192,8 +210,10 @@ For a smooth manifold, this is determined by:
 **Definition 3.1** (Geometric Kolmogorov complexity). *The **description complexity** of
 a minimal market manifold $M \subset S^{d-1}$ is:*
 
-$$K(M) = r\log d + \log\!\left(\frac{1}{\mathrm{vol}(\mathcal{M}_{r})}\right)
-+ \log\!\left(1 + \mathcal{W}_{2}(M)\right) \tag{3.1}$$
+```math
+K(M) = r\log d + \log\!\left(\frac{1}{\mathrm{vol}(\mathcal{M}_{r})}\right)
++ \log\!\left(1 + \mathcal{W}_{2}(M)\right) \tag{3.1}
+```
 
 *where $\mathcal{M}_{r}$ is the moduli space of minimal $r$-submanifolds of $S^{d-1}_{+}$
 and $\mathcal{W}_{2}(M) = \int |II|^2 d\mathrm{vol}$ is the Willmore functional of the
@@ -253,7 +273,9 @@ high-genus Lawson surface rather than the CAPM.
 **Theorem 4.1** *(Shannon–McMillan–Breiman)*. Let $(x_t)_{t \geq 1}$ be a stationary
 ergodic process on $\mathbb{R}^{d}_+$ with entropy rate:
 
-$$h = \lim_{T\to\infty} -\frac{1}{T}\log p(x_1, \ldots, x_T) \quad \text{(a.s.)} \tag{4.1}$$
+```math
+h = \lim_{T\to\infty} -\frac{1}{T}\log p(x_1, \ldots, x_T) \quad \text{(a.s.)} \tag{4.1}
+```
 
 The typical set $\mathcal{T}_{T}^\varepsilon$ — the set of sequences $(x_1,\ldots,x_T)$
 satisfying $\left|-\frac{1}{T}\log p - h\right| < \varepsilon$ — has probability approaching 1,
@@ -264,32 +286,42 @@ and $|\mathcal{T}_{T}^\varepsilon| \approx e^{Th}$.
 **Theorem 4.2** *(Theorem C: SMB = Kelly)*. *For a stationary ergodic return process
 $(x_t)$ with factor structure:*
 
-$$\lim_{T\to\infty} \frac{1}{T}\log W_T(b) = \mathbb{E}[\log\langle b, x\rangle]
-= L(b) \quad \text{a.s.} \tag{4.2}$$
+```math
+\lim_{T\to\infty} \frac{1}{T}\log W_T(b) = \mathbb{E}[\log\langle b, x\rangle]
+= L(b) \quad \text{a.s.} \tag{4.2}
+```
 
 *The maximal log-growth rate is the entropy rate of the return process measured in the
 portfolio metric:*
 
-$$\max_{b \in \Delta_{d-1}} L(b) = L(b^{\ast}) = h_{\rm Kelly} \tag{4.3}$$
+```math
+\max_{b \in \Delta_{d-1}} L(b) = L(b^{\ast}) = h_{\rm Kelly} \tag{4.3}
+```
 
 *where $h_{\rm Kelly}$ is the **Kelly entropy rate** — the maximum log-growth rate of
 the return process achievable by any constantly rebalanced portfolio.*
 
 *The universal portfolio $\hat{b}_{T}$ achieves this rate asymptotically:*
 
-$$\frac{1}{T}\log S_T^{\ast} \to h_{\rm Kelly} \quad \text{a.s.} \tag{4.4}$$
+```math
+\frac{1}{T}\log S_T^{\ast} \to h_{\rm Kelly} \quad \text{a.s.} \tag{4.4}
+```
 
 *and the convergence rate is controlled by the Fisher information at $b^{\ast}$:*
 
-$$\frac{1}{T}\log S_T^{\ast} = h_{\rm Kelly} - \frac{\log T}{2T}(d-1) - \frac{\log\det F(b^{\ast})}{2T}
-+ O\!\left(\frac{1}{T^2}\right) \tag{4.5}$$
+```math
+\frac{1}{T}\log S_T^{\ast} = h_{\rm Kelly} - \frac{\log T}{2T}(d-1) - \frac{\log\det F(b^{\ast})}{2T}
++ O\!\left(\frac{1}{T^2}\right) \tag{4.5}
+```
 
 *Proof.* The almost-sure convergence (4.2) is the ergodic theorem for log-return processes
 \[Algoet–Cover 1988\]. The asymptotic expansion (4.5) is the Laplace approximation of
 LAPLACE.md (Theorem 4.3 there), which gives the log normalisation constant of the universal
 portfolio:*
 
-$$\log S_T^{\ast} = T\cdot L(b^{\ast}) - \frac{d-1}{2}\log T - \frac{1}{2}\log\det F(b^{\ast}) + O(1/T) \tag{4.6}$$
+```math
+\log S_T^{\ast} = T\cdot L(b^{\ast}) - \frac{d-1}{2}\log T - \frac{1}{2}\log\det F(b^{\ast}) + O(1/T) \tag{4.6}
+```
 
 *Dividing by $T$ gives (4.5). $\square$
 
@@ -309,7 +341,9 @@ An inefficient market ($H \neq 0$) means the log-optimal portfolio is systematic
 drifting in the direction $-\vec{H}$ — the typical set is moving, and a better decoder
 (one that anticipates this drift) can achieve higher log-growth. The excess log-growth is:
 
-$$\Delta L = L(\hat{b} + \varepsilon(-\vec{H})) - L(\hat{b}) = \varepsilon^2|H|^2 + O(\varepsilon^4) \tag{4.7}$$
+```math
+\Delta L = L(\hat{b} + \varepsilon(-\vec{H})) - L(\hat{b}) = \varepsilon^2|H|^2 + O(\varepsilon^4) \tag{4.7}
+```
 
 precisely the Sharpe result of MINIMAL_SURFACE.md.
 
@@ -317,12 +351,16 @@ precisely the Sharpe result of MINIMAL_SURFACE.md.
 
 The **Boltzmann entropy** of the posterior distribution $\pi_T(b) \propto W_T(b)\mu(b)$:
 
-$$S(\pi_T) = -\int_\Delta \pi_T(b)\log\pi_T(b)\,d\mu(b) \tag{4.8}$$
+```math
+S(\pi_T) = -\int_\Delta \pi_T(b)\log\pi_T(b)\,d\mu(b) \tag{4.8}
+```
 
 For the Laplace approximation around $b^{\ast}$, this is:
 
-$$S(\pi_T) = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^{\ast})^{-1}
-+ \frac{\mathcal{M}_{0}}{T} + O(1/T^2) \tag{4.9}$$
+```math
+S(\pi_T) = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^{\ast})^{-1}
++ \frac{\mathcal{M}_{0}}{T} + O(1/T^2) \tag{4.9}
+```
 
 where $\mathcal{M}_{0}$ is the Maslov correction from LAPLACE.md (Proposition 5.1 there),
 which includes the Ricci curvature term $\frac{d-2}{4}\mathrm{tr}[F^{-1}]$.
@@ -332,8 +370,10 @@ which includes the Ricci curvature term $\frac{d-2}{4}\mathrm{tr}[F^{-1}]$.
 correction $\mathcal{M}_{0}/T$ accounts for the non-flat geometry of the market manifold.
 For a minimal surface ($H=0$, $\mathrm{tr}[F^{-1}]$ is the Ricci contribution):
 
-$$S(\pi_T)|_{H=0} = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^{\ast})^{-1}
-+ \frac{(d-2)}{4T}\mathrm{tr}[F(b^{\ast})^{-1}] + O(1/T^2) \tag{4.10}$$
+```math
+S(\pi_T)|_{H=0} = \frac{d-1}{2}\log(2\pi e/T) + \frac{1}{2}\log\det F(b^{\ast})^{-1}
++ \frac{(d-2)}{4T}\mathrm{tr}[F(b^{\ast})^{-1}] + O(1/T^2) \tag{4.10}
+```
 
 The $1/T$ correction is the **information-theoretic cost of living on a curved manifold** —
 the Fisher–Rao curvature $K = 1/4$ of the Bhattacharyya sphere adds $\frac{d-2}{4T}$ bits
@@ -350,7 +390,9 @@ In the WF diffusion model of FK_SIMPLEX.md, volatility enters as $\varepsilon^2 
 high volatility = high $\varepsilon^2$ = slow learning. The FK PDE (equation 2.3 of FK_SIMPLEX.md)
 becomes:
 
-$$\frac{\partial u}{\partial\tau} = \frac{\sigma^2}{2T}\mathcal{L}u + r(b,\tau)u \tag{5.1}$$
+```math
+\frac{\partial u}{\partial\tau} = \frac{\sigma^2}{2T}\mathcal{L}u + r(b,\tau)u \tag{5.1}
+```
 
 The WKB parameter is $\varepsilon^2 = \sigma^2/T$, and the semiclassical expansion is
 in powers of $\sigma^2/T$.
@@ -364,15 +406,21 @@ of overall volatility level.*
 
 *(ii) **Stability depends on volatility:** The stability threshold (Theorem D of CLASSIFICATION.md):*
 
-$$\sigma_i(A) < \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{5.2}$$
+```math
+\sigma_i(A) < \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{5.2}
+```
 
 *involves $\lambda_1(-\Delta_M)$ — the spectral gap of the Laplacian on $M$ — which depends
 on the intrinsic geometry and hence on the volatility through the induced metric.*
 
 *(iii) **Critical volatility:** There exists a critical volatility level $\sigma^{\ast} > 0$ such that:*
 
-$$\sigma < \sigma^{\ast}: \quad \text{market manifold stable (CAPM is attractor)}$$
-$$\sigma > \sigma^{\ast}: \quad \text{market manifold unstable (crisis regime)}$$
+```math
+\sigma < \sigma^{\ast}: \quad \text{market manifold stable (CAPM is attractor)}
+```
+```math
+\sigma > \sigma^{\ast}: \quad \text{market manifold unstable (crisis regime)}
+```
 
 *Proof of (i).* The Willmore energy is conformally invariant under Möbius transformations
 of $S^{d-1}$ (MINIMAL_SURFACE Theorem 4.2(ii)). Rescaling the Fisher–Rao metric by $\sigma^2$
@@ -396,8 +444,10 @@ and the market is more easily destabilised. This explains the empirical observat
 
 The channel capacity at portfolio $b^{\ast}$ satisfies:
 
-$$C(\sigma) = \frac{r}{2}\log\left(1 + \frac{T}{\sigma^2}\lambda_1(F(b^{\ast}))\right)
-\approx \frac{r}{2}\log\frac{T}{\sigma^2} \quad (T\gg \sigma^2) \tag{5.3}$$
+```math
+C(\sigma) = \frac{r}{2}\log\left(1 + \frac{T}{\sigma^2}\lambda_1(F(b^{\ast}))\right)
+\approx \frac{r}{2}\log\frac{T}{\sigma^2} \quad (T\gg \sigma^2) \tag{5.3}
+```
 
 The capacity decreases logarithmically with volatility: doubling volatility costs $r/2$ bits
 of channel capacity. **A high-volatility market is a low-capacity information processor.**
@@ -415,8 +465,10 @@ are needed to achieve the same capacity as $T$ observations in a unit-volatility
 The classical mean-variance efficient frontier is the set of portfolios achieving maximum
 expected return for a given level of variance:
 
-$$\mathcal{F}^{\rm MV} = \left\{b \in \Delta_{d-1} : \mathrm{Var}(b^Tx) = v, 
-\mathbb{E}[b^Tx] = \max\right\}_{v \geq 0} \tag{6.1}$$
+```math
+\mathcal{F}^{\rm MV} = \left\{b \in \Delta_{d-1} : \mathrm{Var}(b^Tx) = v,
+\mathbb{E}[b^Tx] = \max\right\}_{v \geq 0} \tag{6.1}
+```
 
 This is a 1-dimensional curve in $\Delta_{d-1}$. Its limitation: it ignores the
 geometric structure of the market manifold $M$ — in particular, it does not distinguish
@@ -426,8 +478,10 @@ between movements along $M$ (factor bets) and movements off $M$ (idiosyncratic b
 
 **Definition 6.1** (Manifold efficient frontier). *For a market manifold $M \subset \Delta_{d-1}$, the **manifold efficient frontier** is:*
 
-$$\mathcal{F}(M) = \left\{b \in \Delta_{d-1} : b = b^{\ast} + \xi, 
-\xi \in N_{b^{\ast}}M, |\xi|_{g^{\mathrm{FR}}} = \rho\right\}_{\rho \geq 0} \tag{6.2}$$
+```math
+\mathcal{F}(M) = \left\{b \in \Delta_{d-1} : b = b^{\ast} + \xi,
+\xi \in N_{b^{\ast}}M, |\xi|_{g^{\mathrm{FR}}} = \rho\right\}_{\rho \geq 0} \tag{6.2}
+```
 
 *the sphere bundle of the normal bundle of $M$ — the set of portfolios obtained by moving
 a distance $\rho$ off the market manifold in the normal direction.*
@@ -441,11 +495,15 @@ family parametrised by the normal bundle $NM$, where $r_{\rm normal} = d-1-r$.*
 obtained by moving in the direction $\vec{H}$ (the mean curvature direction — the primary
 normal direction of inefficiency):*
 
-$$\mathcal{F}^{\rm MV} \subset \left\{b^{\ast} + t\vec{H}(b^{\ast}) : t \in \mathbb{R}\right\} \cap \Delta_{d-1} \tag{6.3}$$
+```math
+\mathcal{F}^{\rm MV} \subset \left\{b^{\ast} + t\vec{H}(b^{\ast}) : t \in \mathbb{R}\right\} \cap \Delta_{d-1} \tag{6.3}
+```
 
 *(iii) The full manifold efficient frontier stratifies as:*
 
-$$\mathcal{F}(M) = \mathcal{F}^{\rm factor}(M) \cup \mathcal{F}^{\rm normal}(M) \tag{6.4}$$
+```math
+\mathcal{F}(M) = \mathcal{F}^{\rm factor}(M) \cup \mathcal{F}^{\rm normal}(M) \tag{6.4}
+```
 
 *where $\mathcal{F}^{\rm factor}$ is the along-manifold frontier (factor bets, $\rho = 0$)
 and $\mathcal{F}^{\rm normal}$ is the off-manifold frontier (idiosyncratic bets, $\rho > 0$).*
@@ -453,8 +511,10 @@ and $\mathcal{F}^{\rm normal}$ is the off-manifold frontier (idiosyncratic bets,
 **Proof of (ii).** The Markowitz frontier maximises $\mathbb{E}[b^T x] - \frac{\lambda}{2}\mathrm{Var}(b^T x)$
 over $b \in \Delta_{d-1}$. The gradient of this objective in the Fisher-Rao metric is:
 
-$$\nabla_{g^{\mathrm{FR}}} \left(\mu^T b - \frac{\lambda}{2}b^T\Sigma b\right)
-= F(b^{\ast})^{-1}(\mu - \lambda\Sigma b^{\ast}) \tag{6.5}$$
+```math
+\nabla_{g^{\mathrm{FR}}} \left(\mu^T b - \frac{\lambda}{2}b^T\Sigma b\right)
+= F(b^{\ast})^{-1}(\mu - \lambda\Sigma b^{\ast}) \tag{6.5}
+```
 
 At the log-optimal portfolio $b^{\ast}$ (the maximiser of $L_T$), the tangential component
 $\Pi_{T_{b^{\ast}}M}(\nabla_{g^{\mathrm{FR}}}(\cdot)) = 0$, but the normal component
@@ -473,8 +533,10 @@ maximum return per unit of idiosyncratic risk. The classical efficient frontier 
 The full information about optimal portfolios is contained in the **Sharpe surface** —
 the surface of maximum Sharpe ratio as a function of portfolio displacement from $M$:
 
-$$\mathrm{Sharpe}(b) = \frac{L(b) - L(b^{\ast})}{|b - b^{\ast}|_{g^{\mathrm{FR}}}}
-= \frac{\langle\vec{H}(b^{\ast}), b-b^{\ast}\rangle_{g^{\mathrm{FR}}} + O(|b-b^{\ast}|^2)}{|b-b^{\ast}|_{g^{\mathrm{FR}}}} \tag{6.6}$$
+```math
+\mathrm{Sharpe}(b) = \frac{L(b) - L(b^{\ast})}{|b - b^{\ast}|_{g^{\mathrm{FR}}}}
+= \frac{\langle\vec{H}(b^{\ast}), b-b^{\ast}\rangle_{g^{\mathrm{FR}}} + O(|b-b^{\ast}|^2)}{|b-b^{\ast}|_{g^{\mathrm{FR}}}} \tag{6.6}
+```
 
 This is maximised in the direction $\vec{H}(b^{\ast})$ with maximum value $|H(b^{\ast})|$. The Sharpe
 surface is a **hemisphere** of radius $|H(b^{\ast})|$ in the normal bundle — every direction in
@@ -500,14 +562,18 @@ central tool is the spectral gap $\lambda_1$ of the chain's transition matrix.
 In our framework: the WF diffusion on the market manifold is a Markov diffusion on
 $(\Sigma, g_\Sigma)$, and its mixing time is:
 
-$$t_{\rm mix} = \frac{\log(1/\varepsilon)}{\lambda_1(-\Delta_\Sigma)} \tag{7.1}$$
+```math
+t_{\rm mix} = \frac{\log(1/\varepsilon)}{\lambda_1(-\Delta_\Sigma)} \tag{7.1}
+```
 
 This is the time for the posterior $\pi_T$ to converge to a $\varepsilon$-neighbourhood of
 its limit $\delta_{b^{\ast}}$. **The spectral gap $\lambda_1$ is exactly the same quantity that
 appears in the Jacobi stability operator** (CLASSIFICATION.md equation 6.6). Diaconis would
 immediately recognise:
 
-$$\text{Market learning rate} = \text{Markov chain spectral gap} = \text{Jacobi stability threshold}$$
+```math
+\text{Market learning rate} = \text{Markov chain spectral gap} = \text{Jacobi stability threshold}
+```
 
 This triple identity is profound: the speed at which the market absorbs information
 (mixing time), the speed at which arbitrageurs restore efficiency (Jacobi stability), and
@@ -524,7 +590,9 @@ role of the deck size $n$.
 **The sharp threshold:** Just as the card shuffle has a sharp mixing threshold, the posterior
 $\pi_T$ has a sharp threshold around $T^{\ast} = (d-2)/(4\lambda_1)$:
 
-$$\|\pi_T - \delta_{b^{\ast}}\|_{\rm TV} \approx \begin{cases}1 & T \ll T^{\ast}\\ 0 & T \gg T^{\ast}\end{cases} \tag{7.2}$$
+```math
+\|\pi_T - \delta_{b^{\ast}}\|_{\rm TV} \approx \begin{cases}1 \& T \ll T^{\ast}\\ 0 \& T \gg T^{\ast}\end{cases} \tag{7.2}
+```
 
 This threshold is the **information-theoretic barrier** to market efficiency: below $T^{\ast}$
 observations, the market cannot reliably identify $b^{\ast}$; above $T^{\ast}$, it does so with high
@@ -541,7 +609,9 @@ invariant under this action — form the 1-dimensional subspace $\{b = c\cdot\ma
 The harmonic analysis of functions on $S^{d-1}_{+}$ (Bhattacharyya sphere) decomposes
 into irreducible representations of $O(d)$:
 
-$$f = \sum_{k=0}^\infty \sum_\alpha \hat{f}_{k,\alpha} Y_{k,\alpha} \tag{7.3}$$
+```math
+f = \sum_{k=0}^\infty \sum_\alpha \hat{f}_{k,\alpha} Y_{k,\alpha} \tag{7.3}
+```
 
 where $Y_{k,\alpha}$ are the spherical harmonics. The minimal surface condition $\Delta_M\iota
 = -r\iota$ (Takahashi theorem) selects the $k=1$ harmonic component — the embedding
@@ -563,7 +633,9 @@ The posterior $\pi_T(b) \propto W_T(b)\mu(b)$ is an exchangeable measure on
 $\{x_1,\ldots,x_T\}$ (the labelling of time steps is arbitrary for the log-optimal portfolio).
 The de Finetti–Diaconis–Freedman theorem gives:
 
-$$\|\pi_T - \pi^{\rm de Finetti}_{T}\|_{\rm TV} \leq \frac{r(d-1)}{T} = O\!\left(\frac{rd}{T}\right) \tag{7.4}$$
+```math
+\|\pi_T - \pi^{\rm de Finetti}_{T}\|_{\rm TV} \leq \frac{r(d-1)}{T} = O\!\left(\frac{rd}{T}\right) \tag{7.4}
+```
 
 where $\pi^{\rm de Finetti}_{T}$ is the i.i.d. de Finetti mixture. This bound is exactly the
 $O(1/T)$ Laplace correction from LAPLACE.md — the departure from the i.i.d. de Finetti
@@ -652,8 +724,10 @@ sense \[Cover–Thomas 2006\]. The connection to the SMB theorem makes this prec
 portfolio is the **minimum-redundancy code** for the return process, and its excess redundancy
 over the optimal (Kelly) code is:
 
-$$\mathrm{Redundancy}(\hat{b}_{T}) = h_{\rm Kelly} - \frac{1}{T}\log S_T^{\ast}
-= \frac{(d-1)\log T}{2T} + O(1/T) \tag{9.1}$$
+```math
+\mathrm{Redundancy}(\hat{b}_{T}) = h_{\rm Kelly} - \frac{1}{T}\log S_T^{\ast}
+= \frac{(d-1)\log T}{2T} + O(1/T) \tag{9.1}
+```
 
 The $\frac{(d-1)\log T}{2T}$ term is the **parametric complexity penalty** — the cost of
 not knowing $b^{\ast}$ in advance, paying $(d-1)/2$ nats per observation to estimate a

@@ -90,16 +90,22 @@ metric (Amari [2016]).
 
 **Definition 1.1** (Channel manifold). *Given a DMC $\mathcal{C} = (\mathcal{X}, p(y|x), \mathcal{Y})$, the **channel manifold** $M_{\mathcal{C}}$ is the statistical manifold:*
 
-$$M_{\mathcal{C}} = \{p(\cdot|x) : x \in \mathcal{X}\} \subset \Delta_{|\mathcal{Y}|-1}$$
+```math
+M_{\mathcal{C}} = \{p(\cdot|x) : x \in \mathcal{X}\} \subset \Delta_{|\mathcal{Y}|-1}
+```
 
 *equipped with the Fisher-Rao metric*
 
-$$g^{\rm FR}_{ij}(x) = \sum_y \frac{1}{p(y|x)} \frac{\partial p(y|x)}{\partial x^i} \frac{\partial p(y|x)}{\partial x^j}. \tag{1.1}$$
+```math
+g^{\rm FR}_{ij}(x) = \sum_y \frac{1}{p(y|x)} \frac{\partial p(y|x)}{\partial x^i} \frac{\partial p(y|x)}{\partial x^j}. \tag{1.1}
+```
 
 This is standard information geometry (Amari [2016], Chapter 2). The channel
 capacity is:
 
-$$C = \max_{p(x)} I(X; Y) \tag{1.2}$$
+```math
+C = \max_{p(x)} I(X; Y) \tag{1.2}
+```
 
 — the maximum mutual information over input distributions. The capacity-achieving
 input distribution is the one that "fills" the channel manifold most efficiently.
@@ -114,7 +120,9 @@ $b'$ at time $t+1$ given that it was at $b$ at time $t$.
 defines a DMC $\mathcal{C}_{M} = (M^r, K_t(b'|b), M^r)$ whose channel manifold
 IS $M^r$ and whose capacity IS the Kelly growth rate:*
 
-$$C(\mathcal{C}_{M}) = h_{\rm Kelly}. \tag{1.3}$$
+```math
+C(\mathcal{C}_{M}) = h_{\rm Kelly}. \tag{1.3}
+```
 
 *The Fisher-Rao metric of the channel manifold equals the Fisher-Rao metric
 of $M^r$.*
@@ -122,13 +130,17 @@ of $M^r$.*
 *Proof.* The mutual information between input (current state $b$) and output
 (next state $b'$) under the Fokker-Planck kernel $K_t$ is:
 
-$$I(b; b') = H(b') - H(b'|b)$$
+```math
+I(b; b') = H(b') - H(b'|b)
+```
 
 where $H(b')$ is the entropy of the stationary distribution (the Jeffreys
 prior, by FOKKER_PLANCK_CFD.md) and $H(b'|b)$ is the conditional entropy
 given the current state. Maximising over input distributions:
 
-$$C = \max_{p(b)} I(b; b') = h_{\rm Kelly}$$
+```math
+C = \max_{p(b)} I(b; b') = h_{\rm Kelly}
+```
 
 by the Shannon-McMillan-Breiman theorem applied to the market process
 (INFORMATION_THEORY.md Theorem C): the maximum information rate extractable
@@ -138,7 +150,9 @@ so it is the capacity-achieving code.
 For the metric identity: the Fisher information of the kernel $K_t(b'|b)$
 with respect to the parameter $b$ is:
 
-$$I_F(b)_{ij} = \mathbb{E}_{b'|b}\left[\frac{\partial \log K_t(b'|b)}{\partial b^i} \frac{\partial \log K_t(b'|b)}{\partial b^j}\right]$$
+```math
+I_F(b)_{ij} = \mathbb{E}_{b'|b}\left[\frac{\partial \log K_t(b'|b)}{\partial b^i} \frac{\partial \log K_t(b'|b)}{\partial b^j}\right]
+```
 
 For the Jacobi diffusion on $\Delta_{d-1}$ (the CAPM case), the transition
 kernel is the Jacobi polynomial series (MARKET_PROCESSES.md), and its Fisher
@@ -169,7 +183,9 @@ Consider a parent market $M_{\rm parent}$ (e.g., the full FX simplex with
 $r = 3$ factors) and a sub-market $M_{\rm sub}$ (e.g., the EUR/USD pair,
 effectively 1-dimensional). The projection:
 
-$$\pi: M_{\rm parent} \to M_{\rm sub} \tag{2.1}$$
+```math
+\pi: M_{\rm parent} \to M_{\rm sub} \tag{2.1}
+```
 
 is a fiber bundle with fiber $F = \pi^{-1}(b_{\rm sub})$ — the set of all
 parent states consistent with the observed sub-market state.
@@ -191,7 +207,9 @@ $\mathcal{C}_\pi$ with:*
 
 *The channel capacity is:*
 
-$$C(\mathcal{C}_\pi) = h_{\rm Kelly}^{\rm parent} - h_{\rm Kelly}^{\rm fiber} \tag{2.2}$$
+```math
+C(\mathcal{C}_\pi) = h_{\rm Kelly}^{\rm parent} - h_{\rm Kelly}^{\rm fiber} \tag{2.2}
+```
 
 *— the Kelly rate of the parent minus the Kelly rate of the fiber. The
 information lost in the projection is exactly the fiber's Kelly rate.*
@@ -199,7 +217,9 @@ information lost in the projection is exactly the fiber's Kelly rate.*
 *Proof sketch.* The mutual information between parent and sub-market states
 decomposes by the chain rule:
 
-$$I(M_{\rm parent}; M_{\rm sub}) = H(M_{\rm parent}) - H(M_{\rm parent}|M_{\rm sub})$$
+```math
+I(M_{\rm parent}; M_{\rm sub}) = H(M_{\rm parent}) - H(M_{\rm parent}|M_{\rm sub})
+```
 
 The conditional entropy $H(M_{\rm parent}|M_{\rm sub})$ is the entropy of the
 fiber — the uncertainty about the full state given the sub-market observation.
@@ -216,7 +236,9 @@ EUR/USD rate.
 
 **The channel capacity from the full FX market to the EUR/USD trader is:**
 
-$$C_{\rm EUR/USD} = h_{\rm Kelly}^{\rm FX} - h_{\rm Kelly}^{\rm fiber}$$
+```math
+C_{\rm EUR/USD} = h_{\rm Kelly}^{\rm FX} - h_{\rm Kelly}^{\rm fiber}
+```
 
 where $h_{\rm Kelly}^{\rm fiber}$ is the information in carry, risk, and
 cross-rate structure that EUR/USD does not reveal.
@@ -224,7 +246,9 @@ cross-rate structure that EUR/USD does not reveal.
 Empirically, the dollar factor explains $\sim 60\%$ of FX variance
 (Verdelhan [2018]). So:
 
-$$C_{\rm EUR/USD} \approx 0.6 \cdot h_{\rm Kelly}^{\rm FX}$$
+```math
+C_{\rm EUR/USD} \approx 0.6 \cdot h_{\rm Kelly}^{\rm FX}
+```
 
 The EUR/USD trader receives about 60% of the information in the FX market.
 The remaining 40% is in the fiber — the carry and risk factors that are
@@ -261,25 +285,33 @@ a global macro trader does not. Each level has its own incompleteness.
 
 In FX, the triangular arbitrage constraint:
 
-$$\log(e_{\rm EUR/JPY}) = \log(e_{\rm EUR/USD}) + \log(e_{\rm USD/JPY})$$
+```math
+\log(e_{\rm EUR/JPY}) = \log(e_{\rm EUR/USD}) + \log(e_{\rm USD/JPY})
+```
 
 is a statement about three channels. The channel from EUR to JPY (direct)
 must equal the composition of the channel from EUR to USD and then USD to JPY.
 
 In the channel-manifold framework:
 
-$$\mathcal{C}_{\rm EUR \to JPY} = \mathcal{C}_{\rm EUR \to USD} \circ \mathcal{C}_{\rm USD \to JPY} \tag{3.1}$$
+```math
+\mathcal{C}_{\rm EUR \to JPY} = \mathcal{C}_{\rm EUR \to USD} \circ \mathcal{C}_{\rm USD \to JPY} \tag{3.1}
+```
 
 The composed channel has capacity:
 
-$$C(\mathcal{C}_{1} \circ \mathcal{C}_{2}) \leq \min(C(\mathcal{C}_{1}), C(\mathcal{C}_{2})) \tag{3.2}$$
+```math
+C(\mathcal{C}_{1} \circ \mathcal{C}_{2}) \leq \min(C(\mathcal{C}_{1}), C(\mathcal{C}_{2})) \tag{3.2}
+```
 
 (the data processing inequality). The direct channel has capacity
 $C(\mathcal{C}_{\rm direct})$. When the composed capacity equals the direct
 capacity, the triangle is "lossless" — no information is lost by routing
 through USD. When they differ, the gap is the **triangular arbitrage profit**:
 
-$$\alpha_{\rm tri} = C(\mathcal{C}_{\rm direct}) - C(\mathcal{C}_{1} \circ \mathcal{C}_{2}) \tag{3.3}$$
+```math
+\alpha_{\rm tri} = C(\mathcal{C}_{\rm direct}) - C(\mathcal{C}_{1} \circ \mathcal{C}_{2}) \tag{3.3}
+```
 
 This gives triangular arbitrage an information-theoretic interpretation: it is
 the capacity gap between the direct and composed channels. HFT firms
@@ -295,7 +327,9 @@ information theory.
 **Theorem 3.1** (Connected sum = cascaded channel). *The connected sum
 $M_1 \#_{\rm neck} M_2$ defines a cascaded channel with:*
 
-$$C(M_1 \# M_2) = \min\left(C(M_1), C(M_2), \frac{\pi^2}{L_{\rm neck}^{2}}\right) \tag{3.4}$$
+```math
+C(M_1 \# M_2) = \min\left(C(M_1), C(M_2), \frac{\pi^2}{L_{\rm neck}^{2}}\right) \tag{3.4}
+```
 
 *where $L_{\rm neck}$ is the neck length (the Fisher-Rao diameter of the
 connecting region). The channel capacity of the connected sum is limited by
@@ -315,7 +349,9 @@ information through the market channel, decode it at their position, and
 retransmit through the ambient channel. The relay capacity theorem (Cover
 and El Gamal [1979]) gives:
 
-$$C_{\rm relay} \leq \max_{p(x,x_1)} \min\{I(X, X_1; Y), I(X; Y, Y_1|X_1)\} \tag{3.5}$$
+```math
+C_{\rm relay} \leq \max_{p(x,x_1)} \min\{I(X, X_1; Y), I(X; Y, Y_1|X_1)\} \tag{3.5}
+```
 
 In our framework:
 - $X$ = the trade (market channel input)
@@ -330,7 +366,9 @@ make it exact:
 **Theorem 3.2** (Willmore = relay capacity). *The relay channel capacity
 provided by off-manifold market makers is:*
 
-$$C_{\rm relay} = \frac{1}{2}\log\left(1 + \frac{\mathcal{W}(M^r)}{\mathcal{W}_{\rm min}}\right) \tag{3.6}$$
+```math
+C_{\rm relay} = \frac{1}{2}\log\left(1 + \frac{\mathcal{W}(M^r)}{\mathcal{W}_{\rm min}}\right) \tag{3.6}
+```
 
 *where $\mathcal{W}_{\rm min} = 4\pi$ is the Willmore minimum for closed
 surfaces (the Li-Yau bound). This is the AWGN channel capacity formula with
@@ -356,7 +394,9 @@ output (price) is observed by the input (traders), who adjust their input
 
 In Shannon's framework, a channel with feedback has the structure:
 
-$$X_t = f_t(W, Y^{t-1}), \qquad Y_t = g(X_t, Z_t) \tag{4.1}$$
+```math
+X_t = f_t(W, Y^{t-1}), \qquad Y_t = g(X_t, Z_t) \tag{4.1}
+```
 
 where $W$ is the message, $Y^{t-1} = (Y_1, \ldots, Y_{t-1})$ is the feedback
 (past outputs), $X_t$ is the channel input at time $t$, and $Z_t$ is the noise.
@@ -374,7 +414,9 @@ structure**. The trader's action depends on the market's past outputs, which
 depend on all traders' past actions, which depend on the market's earlier
 outputs. The price is a fixed point of this feedback loop:
 
-$$p^{\ast} = \Phi(p^{\ast}) \tag{4.2}$$
+```math
+p^{\ast} = \Phi(p^{\ast}) \tag{4.2}
+```
 
 where $\Phi$ is the mapping from current price to the price implied by all
 traders' optimal responses to the current price. The rational expectations
@@ -385,7 +427,9 @@ equilibrium IS the fixed point of the feedback channel.
 Cover and Thomas [2006], Theorem 8.12: **Feedback does not increase the
 capacity of a discrete memoryless channel.**
 
-$$C_{\rm feedback} = C_{\rm no\text{-}feedback} \quad \text{(for DMCs)} \tag{4.3}$$
+```math
+C_{\rm feedback} = C_{\rm no\text{-}feedback} \quad \text{(for DMCs)} \tag{4.3}
+```
 
 This is a profound result for markets. It says: the information capacity of
 the market — the Kelly rate $h_{\rm Kelly}$ — is NOT increased by the fact
@@ -404,7 +448,9 @@ of the noise process (Kim [2010]).
 **Theorem 4.1** (Feedback capacity of the market channel). *The capacity
 of the market channel with feedback exceeds the no-feedback capacity by:*
 
-$$C_{\rm feedback} - C_{\rm no\text{-}feedback} = \frac{1}{2}\log\det\left(I + \frac{\Sigma_{\rm signal}}{\Sigma_{\rm noise}}\right) - \frac{1}{2}\log\left(1 + \frac{\text{tr}(\Sigma_{\rm signal})}{\text{tr}(\Sigma_{\rm noise})}\right) \tag{4.4}$$
+```math
+C_{\rm feedback} - C_{\rm no\text{-}feedback} = \frac{1}{2}\log\det\left(I + \frac{\Sigma_{\rm signal}}{\Sigma_{\rm noise}}\right) - \frac{1}{2}\log\left(1 + \frac{\text{tr}(\Sigma_{\rm signal})}{\text{tr}(\Sigma_{\rm noise})}\right) \tag{4.4}
+```
 
 *The feedback gain is zero when the signal and noise covariances are
 proportional ($\Sigma_{\rm signal} \propto \Sigma_{\rm noise}$) — the CAPM
@@ -422,7 +468,9 @@ such that $\mathcal{T} \vdash G \leftrightarrow \phi(\ulcorner G \urcorner)$
 The market's feedback loop creates exactly this structure. Consider the
 predicate:
 
-$$\phi(x) = \text{"strategy } x \text{ is profitable given that everyone knows } x\text{"}$$
+```math
+\phi(x) = \text{"strategy } x \text{ is profitable given that everyone knows } x\text{"}
+```
 
 The fixed point: a strategy $G$ such that $G$ is profitable if and only if
 everyone knows $G$ is profitable. This is the rational expectations
@@ -483,18 +531,24 @@ participant in the larger market AND a market in its own right.
 At each level $k$, there is a theory $\mathcal{T}_{k}$ — the set of provable
 statements about the market at that level. The theories are nested:
 
-$$\mathcal{T}_{0} \subset \mathcal{T}_{1} \subset \mathcal{T}_{2} \subset \mathcal{T}_{3} \tag{5.1}$$
+```math
+\mathcal{T}_{0} \subset \mathcal{T}_{1} \subset \mathcal{T}_{2} \subset \mathcal{T}_{3} \tag{5.1}
+```
 
 because everything provable about a sub-market is provable in the parent
 theory (the parent has access to more data and more structure).
 
 **Gödel's second incompleteness theorem** applied to this tower:
 
-$$\mathcal{T}_{k} \nvdash \mathrm{Con}(\mathcal{T}_{k}) \tag{5.2}$$
+```math
+\mathcal{T}_{k} \nvdash \mathrm{Con}(\mathcal{T}_{k}) \tag{5.2}
+```
 
 No level can prove its own consistency. But:
 
-$$\mathcal{T}_{k+1} \vdash \mathrm{Con}(\mathcal{T}_{k}) \tag{5.3}$$
+```math
+\mathcal{T}_{k+1} \vdash \mathrm{Con}(\mathcal{T}_{k}) \tag{5.3}
+```
 
 The parent market CAN prove the consistency of the sub-market theory. The
 parent market has a stronger theory — it can see things about the sub-market
@@ -516,7 +570,9 @@ At each level, the unanswerable questions of the sub-market become answerable
 The Giry monad $P$ maps a measurable space $X$ to the space of probability
 measures $P(X)$ (CONVEXIFICATION.md, DUAL_TOWER.md). Iterating:
 
-$$X \to P(X) \to P(P(X)) \to P(P(P(X))) \to \cdots \tag{5.4}$$
+```math
+X \to P(X) \to P(P(X)) \to P(P(P(X))) \to \cdots \tag{5.4}
+```
 
 Each level adds a layer of uncertainty about the previous level. The tower of
 market theories has the same structure:
@@ -598,15 +654,21 @@ see events outside the public lightcone. In the channel-manifold framework:
 The insider has access to a wider channel. Their projection $\pi_{\rm insider}$
 has a smaller fiber than the public projection $\pi_{\rm public}$:
 
-$$\dim(F_{\rm insider}) < \dim(F_{\rm public}) \tag{6.1}$$
+```math
+\dim(F_{\rm insider}) < \dim(F_{\rm public}) \tag{6.1}
+```
 
 The insider's channel capacity is higher:
 
-$$C(\mathcal{C}_{\rm insider}) > C(\mathcal{C}_{\rm public}) \tag{6.2}$$
+```math
+C(\mathcal{C}_{\rm insider}) > C(\mathcal{C}_{\rm public}) \tag{6.2}
+```
 
 And — this is the new result — the insider's Gödel wall is further away:
 
-$$\mathcal{T}_{\rm insider} \supsetneq \mathcal{T}_{\rm public} \tag{6.3}$$
+```math
+\mathcal{T}_{\rm insider} \supsetneq \mathcal{T}_{\rm public} \tag{6.3}
+```
 
 The insider can prove statements that the public theory cannot. This is not
 just "more data" — it is a **stronger axiomatic system**. The insider who
@@ -624,7 +686,9 @@ information within their causal past).
 **Theorem 6.2** (Lightcone = axiom set). *The theory $\mathcal{T}(t_0, b_0)$
 available to an observer at $(t_0, b_0)$ is generated by the axioms:*
 
-$$\mathcal{T}(t_0, b_0) = \langle \phi : \phi \text{ is witnessed in } \mathcal{J}^{-}(t_0, b_0) \rangle \tag{6.4}$$
+```math
+\mathcal{T}(t_0, b_0) = \langle \phi : \phi \text{ is witnessed in } \mathcal{J}^{-}(t_0, b_0) \rangle \tag{6.4}
+```
 
 *where $\mathcal{J}^{-}(t_0, b_0)$ is the causal past (past lightcone) of the
 observer. Observers with wider lightcones have strictly stronger theories.*
@@ -659,7 +723,9 @@ a tuple $(\mathcal{X}, \mathcal{Y}, \{p_\theta(\cdot|\cdot)\}_{\theta \in \Theta
   the channel's parameters update based on its own output*
 
 *The evolution:*
-$$\theta_{t+1} = \Phi(\theta_t, Y_t), \qquad Y_t \sim p_{\theta_t}(\cdot|X_t) \tag{7.1}$$
+```math
+\theta_{t+1} = \Phi(\theta_t, Y_t), \qquad Y_t \sim p_{\theta_t}(\cdot|X_t) \tag{7.1}
+```
 
 *The channel rewires itself after every transmission.*
 
@@ -681,7 +747,9 @@ just relay through the channel — they reshape the channel by relaying through 
 **Theorem 7.2** (Self-referential channel capacity). *The capacity of a
 self-referential channel is:*
 
-$$C_{\rm SR} = \lim_{T \to \infty} \frac{1}{T} \max_{p(x^T)} I(X^T; Y^T) \tag{7.2}$$
+```math
+C_{\rm SR} = \lim_{T \to \infty} \frac{1}{T} \max_{p(x^T)} I(X^T; Y^T) \tag{7.2}
+```
 
 *This limit exists when the self-modification map $\Phi$ is contractive
 (the channel converges to a stationary kernel). The stationary capacity
@@ -699,7 +767,9 @@ in crises (the self-modification is expansive, the channel is non-stationary).
 
 The self-referential channel has a fixed point when:
 
-$$\theta^{\ast} = \Phi(\theta^{\ast}, Y^{\ast}), \qquad Y^{\ast} \sim p_{\theta^{\ast}}(\cdot|X^{\ast}) \tag{7.3}$$
+```math
+\theta^{\ast} = \Phi(\theta^{\ast}, Y^{\ast}), \qquad Y^{\ast} \sim p_{\theta^{\ast}}(\cdot|X^{\ast}) \tag{7.3}
+```
 
 — the channel parameters are stable under their own output. This is the
 rational expectations equilibrium. The price $p^{\ast}$ is a fixed point of the
@@ -732,14 +802,18 @@ contracts to zero volume. All channel capacity goes to zero simultaneously.
 The market ceases to exist. Examples: company delisting, currency abolition
 (the drachma disappearing into the euro).
 
-$$\text{Vol}(M_{\rm sub}) \to 0 \implies C(\mathcal{C}_{\rm sub}) \to 0 \tag{8.1}$$
+```math
+\text{Vol}(M_{\rm sub}) \to 0 \implies C(\mathcal{C}_{\rm sub}) \to 0 \tag{8.1}
+```
 
 **Type II singularity (neck pinch):** A neck connecting two regions of the
 manifold collapses. The manifold splits into two disconnected components.
 One channel becomes two independent channels. Example: the EMU crisis,
 where Greek and German bond manifolds disconnected.
 
-$$M \to M_1 \sqcup M_2, \qquad C(\mathcal{C}_{\rm neck}) \to 0 \tag{8.2}$$
+```math
+M \to M_1 \sqcup M_2, \qquad C(\mathcal{C}_{\rm neck}) \to 0 \tag{8.2}
+```
 
 **Type II REVERSE (neck formation):** Two previously disconnected manifolds
 develop a connecting neck. Two channels merge into one. The new channel
@@ -748,7 +822,9 @@ Example: IPO (a private company connects to the public market), creation of
 a new derivatives market, the launch of Bitcoin futures (connecting
 crypto $M_{\rm BTC}$ to traditional finance $M_{\rm CME}$).
 
-$$M_1 \sqcup M_2 \to M_1 \# M_2, \qquad C_{\rm new} > C(M_1) + C(M_2) \tag{8.3}$$
+```math
+M_1 \sqcup M_2 \to M_1 \# M_2, \qquad C_{\rm new} > C(M_1) + C(M_2) \tag{8.3}
+```
 
 The inequality in (8.3) — that the connected channel has MORE capacity than
 the sum of its parts — is the information-theoretic content of market creation.
@@ -759,7 +835,9 @@ A market exists because connecting sub-manifolds increases total channel capacit
 The MCF on nested manifolds creates a cascade of collapses. Consider the
 hierarchy:
 
-$$M_{\rm stock} \subset M_{\rm sector} \subset M_{\rm national} \subset M_{\rm global}$$
+```math
+M_{\rm stock} \subset M_{\rm sector} \subset M_{\rm national} \subset M_{\rm global}
+```
 
 When $M_{\rm stock}$ hits a Type I singularity (delisting), its residual
 information content doesn't vanish — it gets **absorbed into the fiber of
@@ -776,7 +854,9 @@ Capacity destroyed at one level becomes capacity (or noise) at the level
 above. This is the information-theoretic content of "creative destruction" —
 Schumpeter's process has a channel-capacity formulation:
 
-$$\frac{d}{dt} C_{\rm total} = \sum_k \frac{d}{dt} C_k + \sum_{\rm necks} \frac{d}{dt} C_{\rm neck} \tag{8.4}$$
+```math
+\frac{d}{dt} C_{\rm total} = \sum_k \frac{d}{dt} C_k + \sum_{\rm necks} \frac{d}{dt} C_{\rm neck} \tag{8.4}
+```
 
 Total channel capacity is conserved (up to observation costs — see Section 9)
 across the hierarchy. What disappears at one level reappears at another.
@@ -788,7 +868,9 @@ $M_{\rm parent}$, and $M_{\rm parent}$ is a minimal surface within
 $M_{\rm ambient}$, then $M_{\rm sub}$ is NOT in general a minimal surface
 within $M_{\rm ambient}$. The mean curvature adds:
 
-$$H_{\rm sub \hookrightarrow ambient} = H_{\rm sub \hookrightarrow parent} + A(H_{\rm parent \hookrightarrow ambient}) \tag{8.5}$$
+```math
+H_{\rm sub \hookrightarrow ambient} = H_{\rm sub \hookrightarrow parent} + A(H_{\rm parent \hookrightarrow ambient}) \tag{8.5}
+```
 
 where $A$ is the shape operator. A market that is efficient WITHIN its sector
 may not be efficient within the global market. The residual inefficiency comes
@@ -843,7 +925,9 @@ channel capacity of the market:
 Each barrier is a **filter on the observer set**. The population of potential
 observers thins at each level:
 
-$$N_{\rm aware} > N_{\rm access} > N_{\rm data} > N_{\rm compute} > N_{\rm execute} > N_{\rm confident} > N_{\rm persistent}$$
+```math
+N_{\rm aware} > N_{\rm access} > N_{\rm data} > N_{\rm compute} > N_{\rm execute} > N_{\rm confident} > N_{\rm persistent}
+```
 
 The market's effective channel capacity depends on how many observers survive
 the full hierarchy. A market with cheap observation (liquid equities, free data,
@@ -863,12 +947,16 @@ determined by the total observation cost through the full hierarchy.
 **Theorem 9.1** (Market Landauer bound). *The minimum cost of observing
 $n$ bits of market state is:*
 
-$$\text{Cost}(n) \geq n \cdot s_{\rm min} \tag{9.1}$$
+```math
+\text{Cost}(n) \geq n \cdot s_{\rm min} \tag{9.1}
+```
 
 *where $s_{\rm min}$ is the minimum half-spread in the market. The total
 cost of maintaining a filtration with $N_t$ atoms is:*
 
-$$\text{Cost}(\mathcal{F}_{t}) \geq \log_2(N_t) \cdot s_{\rm min} \tag{9.2}$$
+```math
+\text{Cost}(\mathcal{F}_{t}) \geq \log_2(N_t) \cdot s_{\rm min} \tag{9.2}
+```
 
 *per time step.*
 
@@ -895,7 +983,9 @@ inefficiency.**
 
 Formally:
 
-$$\mathcal{W}^{\ast} \geq \frac{\text{Cost of maintaining } \mathcal{F}^{M}_t}{C_{\rm relay}} \tag{9.3}$$
+```math
+\mathcal{W}^{\ast} \geq \frac{\text{Cost of maintaining } \mathcal{F}^{M}_t}{C_{\rm relay}} \tag{9.3}
+```
 
 The optimal Willmore energy (optimal inefficiency from OBSERVERS_AND_CHANNELS
 Theorem O5) is bounded below by the ratio of observation cost to relay
@@ -904,7 +994,9 @@ observation — violating Landauer.
 
 ### 9.5 The observation-efficiency tradeoff
 
-$$\underbrace{\mathcal{W}(M)}_{\text{inefficiency}} = \underbrace{\mathcal{W}^{\ast}_{\rm structural}}_{\text{ambient shortcut capacity}} + \underbrace{\mathcal{W}_{\rm Landauer}}_{\text{observation cost bound}} + \underbrace{\mathcal{W}_{\rm excess}}_{\text{exploitable alpha}} \tag{9.4}$$
+```math
+\underbrace{\mathcal{W}(M)}_{\text{inefficiency}} = \underbrace{\mathcal{W}^{\ast}_{\rm structural}}_{\text{ambient shortcut capacity}} + \underbrace{\mathcal{W}_{\rm Landauer}}_{\text{observation cost bound}} + \underbrace{\mathcal{W}_{\rm excess}}_{\text{exploitable alpha}} \tag{9.4}
+```
 
 The total Willmore energy decomposes into:
 1. **Structural inefficiency** $\mathcal{W}^{\ast}_{\rm structural}$: the positive
@@ -918,7 +1010,9 @@ The total Willmore energy decomposes into:
 The Sharpe-curvature identity $\mathrm{Sharpe}^{\ast} = \|H\|$ combined with this
 decomposition gives:
 
-$$\mathrm{Sharpe}^{\ast} = \sqrt{\mathcal{W}^{\ast}_{\rm structural}/\text{Vol}(M) + \mathcal{W}_{\rm Landauer}/\text{Vol}(M) + \mathcal{W}_{\rm excess}/\text{Vol}(M)} \tag{9.5}$$
+```math
+\mathrm{Sharpe}^{\ast} = \sqrt{\mathcal{W}^{\ast}_{\rm structural}/\text{Vol}(M) + \mathcal{W}_{\rm Landauer}/\text{Vol}(M) + \mathcal{W}_{\rm excess}/\text{Vol}(M)} \tag{9.5}
+```
 
 Only the third term is tradeable. The first two are the "cost of doing
 business" — the irreducible Sharpe ratio that exists even in a market as
@@ -973,7 +1067,9 @@ same geometric-information-theoretic object.
 The 120 triangular arbitrage constraints (for $N = 10$ currencies:
 $\binom{10}{3} = 120$) are 120 channel composition constraints:
 
-$$\mathcal{C}_{ij} = \mathcal{C}_{ik} \circ \mathcal{C}_{kj} \quad \forall i, j, k \tag{7.1}$$
+```math
+\mathcal{C}_{ij} = \mathcal{C}_{ik} \circ \mathcal{C}_{kj} \quad \forall i, j, k \tag{7.1}
+```
 
 When all constraints are satisfied (perfect triangular arbitrage):
 - All composed channels achieve the same capacity as the direct channels
@@ -992,7 +1088,9 @@ A currency crisis (1997 Asian, 1998 Russian, 2015 SNB) is a channel failure:
 the neck connecting a currency sub-manifold to the rest of the FX manifold
 pinches. In channel terms:
 
-$$C(\mathcal{C}_{\rm crisis}) \to 0 \tag{7.2}$$
+```math
+C(\mathcal{C}_{\rm crisis}) \to 0 \tag{7.2}
+```
 
 The channel capacity goes to zero — the crisis currency becomes causally
 disconnected from the rest of the FX market. Information no longer propagates

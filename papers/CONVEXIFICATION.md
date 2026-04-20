@@ -139,13 +139,17 @@ We develop three approaches, each suited to different situations:
 **Definition 2.1** (Free convex completion). *Let $X$ be a Polish space
 (complete separable metric). The free convex completion of $X$ is the space
 of Borel probability measures:*
-$$\mathcal{P}(X) = \{\mu : \mu \text{ is a Borel probability measure on } X\} \tag{2.1}$$
+```math
+\mathcal{P}(X) = \{\mu : \mu \text{ is a Borel probability measure on } X\} \tag{2.1}
+```
 *equipped with the weak-* topology (convergence against bounded continuous
 test functions).*
 
 **The Dirac embedding** $\iota: X \hookrightarrow \mathcal{P}(X)$ sends each
 point to its Dirac mass:
-$$\iota(x) = \delta_x \tag{2.2}$$
+```math
+\iota(x) = \delta_x \tag{2.2}
+```
 
 **Theorem 2.1** *(Free convex completion — Choquet theory)*.
 *Let $X$ be a compact metrizable space. Then:*
@@ -193,11 +197,15 @@ and the convexification is the set of all probability mixtures over those states
 
 When $X$ is finite ($|X| = d$), $\mathcal{P}(X) = \Delta_{d-1}$ and the
 Fisher-Rao metric is the standard one:
-$$g^{\rm FR}_{ij}(\mu) = \frac{\delta_{ij}}{\mu_i} \tag{2.3}$$
+```math
+g^{\rm FR}_{ij}(\mu) = \frac{\delta_{ij}}{\mu_i} \tag{2.3}
+```
 
 When $X$ is a smooth manifold, $\mathcal{P}(X)$ is infinite-dimensional and
 the Fisher-Rao metric generalises to:
-$$g^{\rm FR}_\mu(\dot\mu_1, \dot\mu_2) = \int_X \frac{\dot\mu_1(x)\,\dot\mu_2(x)}{\mu(x)}\,dx \tag{2.4}$$
+```math
+g^{\rm FR}_\mu(\dot\mu_1, \dot\mu_2) = \int_X \frac{\dot\mu_1(x)\,\dot\mu_2(x)}{\mu(x)}\,dx \tag{2.4}
+```
 
 where $\dot\mu_i$ are tangent vectors (signed measures with $\int\dot\mu_i = 0$)
 and $\mu(x)$ is the density of $\mu$ with respect to a reference measure.
@@ -215,11 +223,15 @@ is the unique (up to scale) Riemannian metric that is:*
 
 The finite-dimensional Bhattacharyya embedding $\phi: p \mapsto \sqrt{p}$
 generalises to infinite dimensions:
-$$\Phi: \mathcal{P}(X) \to L^2(X), \quad \Phi(\mu) = \sqrt{d\mu/dx} \tag{2.5}$$
+```math
+\Phi: \mathcal{P}(X) \to L^2(X), \quad \Phi(\mu) = \sqrt{d\mu/dx} \tag{2.5}
+```
 
 The image lies on the unit sphere $S^\infty$ in $L^2(X)$ (since $\int|d\mu/dx|dx = 1$
 implies $\|\Phi(\mu)\|^2 = 1$). The Bhattacharyya distance becomes:
-$$d_B(\mu, \nu) = \arccos\int_X\sqrt{\frac{d\mu}{dx}\cdot\frac{d\nu}{dx}}\,dx \tag{2.6}$$
+```math
+d_B(\mu, \nu) = \arccos\int_X\sqrt{\frac{d\mu}{dx}\cdot\frac{d\nu}{dx}}\,dx \tag{2.6}
+```
 
 The positive orthant $S^\infty_+$ (non-negative square roots) is geodesically
 convex in $S^\infty$ by the same argument as Theorem 4.2 of Paper 0.1.
@@ -295,18 +307,26 @@ $K_M \leq -\kappa^2 < 0$, isometrically embedded in $S^{N-1}(1/2)$
 (the Bhattacharyya sphere of curvature $K = 1/4$). Then the mean
 curvature satisfies:*
 
-$$\|H\|^2_{L^2(M)} \geq \frac{r(r-1)}{4}\left(\kappa^2 + \frac{1}{4}\right)\mathrm{vol}(M) \tag{4.1}$$
+```math
+\|H\|^2_{L^2(M)} \geq \frac{r(r-1)}{4}\left(\kappa^2 + \frac{1}{4}\right)\mathrm{vol}(M) \tag{4.1}
+```
 
 *Proof.* By the Gauss equation for a submanifold of $S^{N-1}(1/2)$:
-$$K_M(\sigma) = \frac{1}{4} + \langle B(e_1, e_1), B(e_2, e_2)\rangle - |B(e_1, e_2)|^2 \tag{4.2}$$
+```math
+K_M(\sigma) = \frac{1}{4} + \langle B(e_1, e_1), B(e_2, e_2)\rangle - |B(e_1, e_2)|^2 \tag{4.2}
+```
 
 where $\sigma = \mathrm{span}(e_1, e_2)$ is a 2-plane and $B$ is the second
 fundamental form. Since $K_M \leq -\kappa^2$:
-$$\langle B(e_1,e_1), B(e_2,e_2)\rangle - |B(e_1,e_2)|^2 \leq -\kappa^2 - \frac{1}{4} \tag{4.3}$$
+```math
+\langle B(e_1,e_1), B(e_2,e_2)\rangle - |B(e_1,e_2)|^2 \leq -\kappa^2 - \frac{1}{4} \tag{4.3}
+```
 
 Summing over an orthonormal basis and using $|H|^2 \geq \frac{1}{r}|B|^2$
 (from the trace inequality):
-$$|H|^2 \geq \frac{r-1}{r}\left(\kappa^2 + \frac{1}{4}\right) \tag{4.4}$$
+```math
+|H|^2 \geq \frac{r-1}{r}\left(\kappa^2 + \frac{1}{4}\right) \tag{4.4}
+```
 
 Integrating over $M$ gives (4.1). $\square$
 
@@ -316,7 +336,9 @@ Integrating over $M$ gives (4.1). $\square$
 *If the efficient market manifold $M^r$ has everywhere negative sectional
 curvature ($K_M \leq -\kappa^2 < 0$), then:*
 
-$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M)} \geq \sqrt{\frac{r(r-1)}{4}\left(\kappa^2 + \frac{1}{4}\right)\mathrm{vol}(M)} > 0 \tag{4.5}$$
+```math
+\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M)} \geq \sqrt{\frac{r(r-1)}{4}\left(\kappa^2 + \frac{1}{4}\right)\mathrm{vol}(M)} > 0 \tag{4.5}
+```
 
 *A hyperbolic market cannot be efficient in the strong sense ($H = 0$).
 There is a mandatory positive alpha, with a computable lower bound determined
@@ -346,13 +368,19 @@ by the intrinsic curvature and the manifold volume.*
 ### 4.3 Connection to the Gauss-Bonnet theorem
 
 For surfaces ($r = 2$):
-$$\int_M K_M \, d\mathrm{vol} = 2\pi\chi(M) = 2\pi(2 - 2g) \tag{4.6}$$
+```math
+\int_M K_M \, d\mathrm{vol} = 2\pi\chi(M) = 2\pi(2 - 2g) \tag{4.6}
+```
 
 If $M$ has genus $g \geq 2$ (the pseudo-Anosov case):
-$$\int_M |K_M| \, d\mathrm{vol} \geq 4\pi(g - 1) \tag{4.7}$$
+```math
+\int_M |K_M| \, d\mathrm{vol} \geq 4\pi(g - 1) \tag{4.7}
+```
 
 Combined with the embedding curvature bound (4.1):
-$$\mathrm{Sharpe}^{\ast} \geq c \cdot \sqrt{g - 1} \tag{4.8}$$
+```math
+\mathrm{Sharpe}^{\ast} \geq c \cdot \sqrt{g - 1} \tag{4.8}
+```
 
 **The genus of the market manifold gives a lower bound on the achievable
 Sharpe ratio.** Higher topological complexity (more handles) means more
@@ -368,8 +396,10 @@ possible.
 **Definition 5.1** (Reynolds/symmetry convexification). *Let $G$ be a compact
 group acting continuously on a space $X$ by isometries. The Reynolds operator is:*
 
-$$\mathcal{R}_{G}: X \to \mathrm{conv}(\mathrm{orbit}), \quad
-\mathcal{R}_{G}(x) = \int_G g \cdot x \, d\mu_G(g) \tag{5.1}$$
+```math
+\mathcal{R}_{G}: X \to \mathrm{conv}(\mathrm{orbit}), \quad
+\mathcal{R}_{G}(x) = \int_G g \cdot x \, d\mu_G(g) \tag{5.1}
+```
 
 *where $\mu_G$ is the normalised Haar measure on $G$.*
 
@@ -382,8 +412,10 @@ It is idempotent ($\mathcal{R}_{G}^{2} = \mathcal{R}_{G}$), linear, and $G$-inva
 **The equal-weight portfolio is a Reynolds operator.** The symmetric group
 $S_d$ acts on $\Delta_{d-1}$ by permuting coordinates. The Reynolds operator
 for $S_d$ sends any portfolio $b$ to the equal-weight portfolio:
-$$\mathcal{R}_{S_d}(b) = \frac{1}{d!}\sum_{\sigma \in S_d}\sigma(b)
-= \left(\frac{1}{d}, \ldots, \frac{1}{d}\right) = b^{\rm ew} \tag{5.2}$$
+```math
+\mathcal{R}_{S_d}(b) = \frac{1}{d!}\sum_{\sigma \in S_d}\sigma(b)
+= \left(\frac{1}{d}, \ldots, \frac{1}{d}\right) = b^{\rm ew} \tag{5.2}
+```
 
 **Interpretation:** Equal-weight investing is the symmetry convexification of
 any portfolio under the permutation group. It is the maximally convexified
@@ -397,7 +429,9 @@ sector-neutral portfolio — equal weight within sectors, not across.
 market manifold $M^r$ with wealth weighting. This is a generalised Reynolds
 operator where the "group" is the continuous family of log-optimal portfolios
 parametrised by $M^r$, and the "Haar measure" is the wealth-weighted volume:
-$$b^{\rm MUP} = \frac{\int_{M^r} b \, W_T(b) \, d\mathrm{vol}(b)}{\int_{M^r} W_T(b) \, d\mathrm{vol}(b)} \tag{5.3}$$
+```math
+b^{\rm MUP} = \frac{\int_{M^r} b \, W_T(b) \, d\mathrm{vol}(b)}{\int_{M^r} W_T(b) \, d\mathrm{vol}(b)} \tag{5.3}
+```
 
 This is the Reynolds operator for the group of diffeomorphisms of $M^r$,
 restricted to the wealth-weighted invariant measure.
@@ -406,7 +440,9 @@ restricted to the wealth-weighted invariant measure.
 
 For a finite group $G$ acting on $\mathbb{R}^{d}$, the orbit polytope of a
 point $x$ is:
-$$P_G(x) = \mathrm{conv}\{g \cdot x : g \in G\} \tag{5.4}$$
+```math
+P_G(x) = \mathrm{conv}\{g \cdot x : g \in G\} \tag{5.4}
+```
 
 The vertices are the orbit points; the centroid is $\mathcal{R}_{G}(x)$.
 
@@ -436,7 +472,9 @@ factor structure. The limit (a ball) is the CAPM market — the most symmetric
 possible factor structure.
 
 This gives a new interpretation of the Minkowski inequality:
-$$\mathrm{vol}(\mathcal{R}_{G}(M)) \leq \mathrm{vol}(M)$$
+```math
+\mathrm{vol}(\mathcal{R}_{G}(M)) \leq \mathrm{vol}(M)
+```
 
 **Symmetrisation reduces volume.** Diversification (the financial analogue of
 symmetrisation) reduces the effective size of the strategy space.
@@ -464,14 +502,18 @@ We need a version of the theory that works without smoothness.
 $W^{1,2}_{\rm FR}(\Delta_{d-1})$ is the completion of smooth positive
 densities on $\Delta_{d-1}$ under the norm:*
 
-$$\|p\|^2_{W^{1,2}_{\rm FR}} = \int_{\Delta_{d-1}} p \, d\mathrm{vol}
-+ \int_{\Delta_{d-1}} |\nabla_{\rm FR} p|^2_{g^{\rm FR}} \, d\mathrm{vol} \tag{6.1}$$
+```math
+\|p\|^2_{W^{1,2}_{\rm FR}} = \int_{\Delta_{d-1}} p \, d\mathrm{vol}
++ \int_{\Delta_{d-1}} |\nabla_{\rm FR} p|^2_{g^{\rm FR}} \, d\mathrm{vol} \tag{6.1}
+```
 
 *where $\nabla_{\rm FR}$ is the gradient with respect to the Fisher-Rao metric.*
 
 In the Bhattacharyya coordinates $u = \sqrt{p}$, this becomes the standard
 Sobolev space $H^1(S^{d-1}_{+})$ on the positive sphere:
-$$\|u\|^2_{H^1} = \int_{S^{d-1}_{+}} |u|^2 + |\nabla u|^2 \, d\mathrm{vol}_{S^{d-1}} \tag{6.2}$$
+```math
+\|u\|^2_{H^1} = \int_{S^{d-1}_{+}} |u|^2 + |\nabla u|^2 \, d\mathrm{vol}_{S^{d-1}} \tag{6.2}
+```
 
 **The $1/b_i$ singularity is removable in Bhattacharyya coordinates.** The
 Fisher-Rao metric $g^{\rm FR}_{ij} = \delta_{ij}/b_i$ diverges as $b_i \to 0$.
@@ -545,7 +587,9 @@ The Sobolev extension handles the cases that the smooth theory cannot:
 metric space $X$. The ergodic convexification map
 $\mathcal{E}: X \to \mathcal{P}(X)$ defined by:*
 
-$$\mathcal{E}(x) = \lim_{N\to\infty}\frac{1}{N}\sum_{n=0}^{N-1}\delta_{T^n x} \tag{7.1}$$
+```math
+\mathcal{E}(x) = \lim_{N\to\infty}\frac{1}{N}\sum_{n=0}^{N-1}\delta_{T^n x} \tag{7.1}
+```
 
 *satisfies:*
 
@@ -605,10 +649,14 @@ For functions (as opposed to sets), the canonical convexification is the
 Legendre-Fenchel biconjugate:
 
 **Definition 8.1** (Convex envelope). *The convex envelope of $f: \mathbb{R}^{d} \to \mathbb{R} \cup \{+\infty\}$ is:*
-$$f^{**}(x) = \sup\{g(x) : g \leq f, \, g \text{ convex}\} \tag{8.1}$$
+```math
+f^{**}(x) = \sup\{g(x) : g \leq f, \, g \text{ convex}\} \tag{8.1}
+```
 
 *Equivalently, $f^{**}$ is the Legendre-Fenchel biconjugate:*
-$$f^{\ast}(y) = \sup_x(\langle x, y\rangle - f(x)), \qquad f^{**}(x) = \sup_y(\langle x, y\rangle - f^{\ast}(y)) \tag{8.2}$$
+```math
+f^{\ast}(y) = \sup_x(\langle x, y\rangle - f(x)), \qquad f^{**}(x) = \sup_y(\langle x, y\rangle - f^{\ast}(y)) \tag{8.2}
+```
 
 **Theorem 8.1** *(Fenchel-Moreau)*.
 *$f^{**} = f$ iff $f$ is convex and lower semicontinuous. For non-convex $f$,
@@ -619,15 +667,19 @@ $f^{**}$ is the largest convex minorant of $f$.*
 The Kelly log-growth function $L_T(b) = \frac{1}{T}\sum_t \log\langle b, x_t\rangle$
 is concave on $\Delta_{d-1}$ (as a function of $b$). Its Legendre-Fenchel
 conjugate is:
-$$L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}}(\langle y, b\rangle - L_T(b)) \tag{8.3}$$
+```math
+L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}}(\langle y, b\rangle - L_T(b)) \tag{8.3}
+```
 
 This is the **rate function** of the large deviations of the empirical portfolio
 distribution. By Cramér's theorem, $L_T^{\ast}$ governs the probability that the
 empirical portfolio mean deviates from $b^{\ast}$.
 
 **The MUP is the Legendre-Fenchel dual of the Kelly function:**
-$$\log S_T^{\rm MUP} = \log\int_{\Delta} e^{T \cdot L_T(b)}\,d\mu(b)
-\approx T \cdot L_T(b^{\ast}) + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F \tag{8.4}$$
+```math
+\log S_T^{\rm MUP} = \log\int_{\Delta} e^{T \cdot L_T(b)}\,d\mu(b)
+\approx T \cdot L_T(b^{\ast}) + \frac{d-1}{2}\log\frac{2\pi}{T} - \frac{1}{2}\log\det F \tag{8.4}
+```
 
 The Laplace approximation IS the saddle-point approximation of the
 Legendre-Fenchel transform.
@@ -698,7 +750,9 @@ involution $\tau: \{1, \ldots, d\} \to \{1, \ldots, d\}$ (a permutation with
 $\tau^2 = \mathrm{id}$), the **palindromic reflection** on $\Delta_{d-1}$
 is:*
 
-$$R_\tau: \Delta_{d-1} \to \Delta_{d-1}, \qquad R_\tau(b_1, \ldots, b_d) = (b_{\tau(1)}, \ldots, b_{\tau(d)}) \tag{10.1}$$
+```math
+R_\tau: \Delta_{d-1} \to \Delta_{d-1}, \qquad R_\tau(b_1, \ldots, b_d) = (b_{\tau(1)}, \ldots, b_{\tau(d)}) \tag{10.1}
+```
 
 *The simplest case: the reversal $\tau(i) = d+1-i$, giving
 $R(b_1, \ldots, b_d) = (b_d, \ldots, b_1)$.*
@@ -706,7 +760,9 @@ $R(b_1, \ldots, b_d) = (b_d, \ldots, b_1)$.*
 **Definition 10.2** (Palindromic half-simplex). *The **palindromic
 half-simplex** under $R_\tau$ is the fundamental domain:*
 
-$$\Delta^+_{d-1} = \{b \in \Delta_{d-1} : b_i \geq b_{\tau(i)} \text{ for all } i < \tau(i)\} \tag{10.2}$$
+```math
+\Delta^+_{d-1} = \{b \in \Delta_{d-1} : b_i \geq b_{\tau(i)} \text{ for all } i < \tau(i)\} \tag{10.2}
+```
 
 *This is a convex subset of $\Delta_{d-1}$ containing exactly one
 representative from each pair $\{b, R_\tau(b)\}$.*
@@ -714,7 +770,9 @@ representative from each pair $\{b, R_\tau(b)\}$.*
 **Definition 10.3** (Palindromic completion). *The **palindromic completion**
 of a set $S \subseteq \Delta^+_{d-1}$ is:*
 
-$$\mathrm{Pal}(S) = \mathrm{conv}(S \cup R_\tau(S)) \tag{10.3}$$
+```math
+\mathrm{Pal}(S) = \mathrm{conv}(S \cup R_\tau(S)) \tag{10.3}
+```
 
 *The convex hull of $S$ and its palindromic reflection. This is the smallest
 convex set that contains $S$ and is invariant under $R_\tau$.*
@@ -725,7 +783,9 @@ convex set that contains $S$ and is invariant under $R_\tau$.*
 \mathbb{R}$ be a portfolio payoff function that is palindromic under $R_\tau$
 ($f = f \circ R_\tau$). Then:*
 
-$$H(f) = H(f|_{\Delta^+_{d-1}}) \tag{10.4}$$
+```math
+H(f) = H(f|_{\Delta^+_{d-1}}) \tag{10.4}
+```
 
 *The entropy of $f$ on the full simplex equals its entropy on the
 half-simplex. The information in the second half is zero — it is free.*
@@ -745,7 +805,9 @@ For $k$ independent involutions $\tau_1, \ldots, \tau_k$ (commuting
 reflections on $\Delta_{d-1}$), the **$k$-palindromic completion** uses the
 fundamental domain under all $k$ reflections simultaneously:
 
-$$\Delta^+_{d-1}(k) = \{b : b_i \geq b_{\tau_j(i)} \text{ for all } i < \tau_j(i), \text{ all } j = 1, \ldots, k\} \tag{10.5}$$
+```math
+\Delta^+_{d-1}(k) = \{b : b_i \geq b_{\tau_j(i)} \text{ for all } i < \tau_j(i), \text{ all } j = 1, \ldots, k\} \tag{10.5}
+```
 
 The volume of this fundamental domain is $\mathrm{Vol}(\Delta_{d-1}) / 2^k$ —
 the full simplex divided by the order of the palindromic group.
@@ -753,7 +815,9 @@ the full simplex divided by the order of the palindromic group.
 **Theorem 10.5** ($k$-palindromic information reduction). *A function $f$
 that is palindromic under all $k$ reflections satisfies:*
 
-$$H(f) = H(f|_{\Delta^+(k)}) \tag{10.6}$$
+```math
+H(f) = H(f|_{\Delta^+(k)}) \tag{10.6}
+```
 
 *The effective entropy is reduced by a factor of $2^k$: you only need to
 observe the fundamental domain; the remaining $2^k - 1$ copies are free.*
@@ -761,7 +825,9 @@ observe the fundamental domain; the remaining $2^k - 1$ copies are free.*
 For a market with $r$ factors, the maximum palindromic dimension is $k = r$
 (each factor has a reflection symmetry). In this case:
 
-$$H_{\rm eff} = \frac{H_{\rm full}}{2^r} \tag{10.7}$$
+```math
+H_{\rm eff} = \frac{H_{\rm full}}{2^r} \tag{10.7}
+```
 
 A fully palindromic market (symmetric in every factor direction) has
 exponentially reduced information content. This is the CAPM at equilibrium:
@@ -773,7 +839,9 @@ entropy is minimal.
 Under the Bhattacharyya embedding $\phi(b) = \sqrt{b} \in S^{d-1}_{+}$, the
 palindromic reflection $R_\tau$ becomes a REFLECTION of the sphere:
 
-$$\hat{R}_\tau(\sqrt{b_1}, \ldots, \sqrt{b_d}) = (\sqrt{b_{\tau(1)}}, \ldots, \sqrt{b_{\tau(d)}}) \tag{10.8}$$
+```math
+\hat{R}_\tau(\sqrt{b_1}, \ldots, \sqrt{b_d}) = (\sqrt{b_{\tau(1)}}, \ldots, \sqrt{b_{\tau(d)}}) \tag{10.8}
+```
 
 This is an isometry of $S^{d-1}_{+}$ (it preserves the round metric). The
 palindromic half-sphere $S^+$ is a fundamental domain of the reflection group.
@@ -790,7 +858,9 @@ fundamental domain.
 completion of a function $f$ defined on the Weyl chamber
 $C_W \subset S^{d-1}_{+}$ is:*
 
-$$\mathrm{Pal}_{W}(f)(x) = f(w \cdot x) \quad \text{where } w \in W \text{ is the unique element with } w \cdot x \in C_W \tag{10.9}$$
+```math
+\mathrm{Pal}_{W}(f)(x) = f(w \cdot x) \quad \text{where } w \in W \text{ is the unique element with } w \cdot x \in C_W \tag{10.9}
+```
 
 *This extends $f$ from the Weyl chamber to the full sphere by the action of
 the Coxeter group. The extension is palindromic (invariant under $W$) by
@@ -826,22 +896,30 @@ markets (crises, chaos) are the hardest to predict.
 
 The MUP (Manifold Universal Portfolio) integrates over $M^r$:
 
-$$b^{\rm MUP}_{T} = \frac{\int_{M^r} b\, W_T(b)\, d\mathrm{vol}(b)}{\int_{M^r} W_T(b)\, d\mathrm{vol}(b)}$$
+```math
+b^{\rm MUP}_{T} = \frac{\int_{M^r} b\, W_T(b)\, d\mathrm{vol}(b)}{\int_{M^r} W_T(b)\, d\mathrm{vol}(b)}
+```
 
 If $M^r$ has $k$-palindromic symmetry, the integral over $M^r$ reduces to
 an integral over the fundamental domain $M^r_+$:
 
-$$b^{\rm MUP}_{T} = \frac{\int_{M^r_+} b\, W_T(b)\, d\mathrm{vol}(b) + \int_{M^r_+} R_\tau(b)\, W_T(R_\tau(b))\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.10}$$
+```math
+b^{\rm MUP}_{T} = \frac{\int_{M^r_+} b\, W_T(b)\, d\mathrm{vol}(b) + \int_{M^r_+} R_\tau(b)\, W_T(R_\tau(b))\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.10}
+```
 
 By palindromic symmetry, $W_T(b) = W_T(R_\tau(b))$ (palindromic functions
 have the same wealth on both sides). So:
 
-$$b^{\rm MUP}_{T} = \frac{\int_{M^r_+} (b + R_\tau(b))\, W_T(b)\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.11}$$
+```math
+b^{\rm MUP}_{T} = \frac{\int_{M^r_+} (b + R_\tau(b))\, W_T(b)\, d\mathrm{vol}(b)}{2\int_{M^r_+} W_T(b)\, d\mathrm{vol}(b)} \tag{10.11}
+```
 
 The integration domain is HALVED for each palindromic dimension. For a
 $k$-palindromic market:
 
-$$\text{MUP computation cost} \propto \frac{\mathrm{Vol}(M^r)}{2^k} \tag{10.12}$$
+```math
+\text{MUP computation cost} \propto \frac{\mathrm{Vol}(M^r)}{2^k} \tag{10.12}
+```
 
 The palindromic MUP is exponentially cheaper to compute than the general MUP.
 This is the computational dividend of palindromic symmetry: you get the same

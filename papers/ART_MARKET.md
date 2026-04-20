@@ -275,8 +275,10 @@ market values of all artworks, normalised to sum to 1). Let
 $b^{\rm art}(0)$ be the reference allocation at a base date. The
 informationally correct art price index is*
 
-$$I^{\rm FR}(t) = d_{\rm FR}\bigl(b^{\rm art}(t),\, b^{\rm art}(0)\bigr)
-= 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b^{\rm art}_{i}(t)\, b^{\rm art}_{i}(0)}\right) \tag{3.1}$$
+```math
+I^{\rm FR}(t) = d_{\rm FR}\bigl(b^{\rm art}(t),\, b^{\rm art}(0)\bigr)
+= 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b^{\rm art}_{i}(t)\, b^{\rm art}_{i}(0)}\right) \tag{3.1}
+```
 
 *This index is invariant under simultaneous rescaling of all prices (it
 lives on the simplex), is non-negative, equals zero iff the relative
@@ -398,7 +400,9 @@ In the art market, price discovery is glacial. A major provenance discovery
 (e.g., a lost Caravaggio authenticated by leading scholars) can take 5-10
 years to be fully reflected in market prices. The spectral gap is:
 
-$$\lambda_1^{\rm art} \approx 0.05\text{--}0.15 / \text{year} \tag{5.1}$$
+```math
+\lambda_1^{\rm art} \approx 0.05\text{--}0.15 / \text{year} \tag{5.1}
+```
 
 estimated from the autocorrelation of repeat-sales index returns
 \[Goetzmann 1993; Korteweg, Kräussl, and Verwijmeren 2016\]. The MCF
@@ -431,7 +435,9 @@ undergoes a topology change — a singularity that the MCF cannot smooth.
 The Cheeger constant $h_M$ measures the worst bottleneck in the manifold's
 connectivity (Paper IV.1):
 
-$$h_M = \inf_{\Gamma} \frac{\mathrm{Area}(\Gamma)}{\min\bigl(\mathrm{Vol}(A),\,\mathrm{Vol}(B)\bigr)} \tag{5.2}$$
+```math
+h_M = \inf_{\Gamma} \frac{\mathrm{Area}(\Gamma)}{\min\bigl(\mathrm{Vol}(A),\,\mathrm{Vol}(B)\bigr)} \tag{5.2}
+```
 
 where $\Gamma$ divides $M$ into two pieces $A$ and $B$. A market with small
 $h_M$ has severe information bottlenecks — information in region $A$ takes
@@ -447,7 +453,9 @@ institutional collectors and galleries.
 
 Each segment is a nearly disconnected component. The Cheeger constant is tiny:
 
-$$h_M^{\rm art} \approx 0.01\text{--}0.05 \tag{5.3}$$
+```math
+h_M^{\rm art} \approx 0.01\text{--}0.05 \tag{5.3}
+```
 
 For comparison, US large-cap equities have $h_M \approx 0.5$–$1.0$ (sectors
 are interconnected via macro factors). The art market is a manifold with
@@ -458,7 +466,9 @@ thin necks everywhere. Information is trapped in local pockets.
 **Lemma A2** (Willmore energy lower bound). *The Willmore energy of the art
 market manifold satisfies*
 
-$$\mathcal{W}(M^r_{\rm art}) = \int_{M^r_{\rm art}} |H|^2\,d\mathrm{vol} \geq c(\kappa, h_M, \lambda_1) > 0 \tag{5.4}$$
+```math
+\mathcal{W}(M^r_{\rm art}) = \int_{M^r_{\rm art}} |H|^2\,d\mathrm{vol} \geq c(\kappa, h_M, \lambda_1) > 0 \tag{5.4}
+```
 
 *where $c(\kappa, h_M, \lambda_1)$ is a positive constant depending on the
 intrinsic curvature $\kappa$, the Cheeger constant $h_M$, and the spectral
@@ -467,7 +477,9 @@ hyperbolic manifold ($\kappa = \mathrm{const}$, uniform connectivity).*
 
 *Proof sketch.* By the Gauss equation for a submanifold $M^r \subset S^{d-1}_{+}$:
 
-$$\kappa_M = \frac{1}{4} + \langle II(e_i, e_i), II(e_j, e_j)\rangle - |II(e_i, e_j)|^2$$
+```math
+\kappa_M = \frac{1}{4} + \langle II(e_i, e_i), II(e_j, e_j)\rangle - |II(e_i, e_j)|^2
+```
 
 where $1/4$ is the ambient curvature. For $\kappa_M < 0$, the second
 fundamental form $II$ must satisfy $|II|^2 > 1/4$. Since
@@ -553,7 +565,9 @@ arbitrary works) or are contaminated by noise so large as to be effectively
 zero. A few submatrices — within-artist, within-blue-chip-segment — are
 dense and estimable. The result is a block-sparse structure:
 
-$$F_{\rm art} \approx \begin{pmatrix} F_{\rm contemp} & \epsilon & 0 & 0 \\ \epsilon & F_{\rm postwar} & \epsilon & 0 \\ 0 & \epsilon & F_{\rm impress} & 0 \\ 0 & 0 & 0 & F_{\rm oldmasters} \end{pmatrix} \tag{6.1}$$
+```math
+F_{\rm art} \approx \begin{pmatrix} F_{\rm contemp} \& \epsilon \& 0 \& 0 \\ \epsilon \& F_{\rm postwar} \& \epsilon \& 0 \\ 0 \& \epsilon \& F_{\rm impress} \& 0 \\ 0 \& 0 \& 0 \& F_{\rm oldmasters} \end{pmatrix} \tag{6.1}
+```
 
 where $\epsilon$ represents weak cross-segment coupling. This block structure
 IS the Cheeger bottleneck of Section 5.4 expressed in matrix form. The

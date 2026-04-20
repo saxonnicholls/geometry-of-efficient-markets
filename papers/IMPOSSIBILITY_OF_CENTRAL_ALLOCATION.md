@@ -84,8 +84,10 @@ remaining inefficiency to exploit (MINIMAL_SURFACE.md, Theorem 1).
 **Theorem CA1** (Computational Impossibility). *Computing the efficient
 allocation of $d$ goods requires solving the minimal surface equation*
 
-$$\operatorname{div}\!\left(\frac{\nabla f}{\sqrt{1 + |\nabla f|^2}}\right)
-= 0 \tag{1.1}$$
+```math
+\operatorname{div}\!\left(\frac{\nabla f}{\sqrt{1 + |\nabla f|^2}}\right)
+= 0 \tag{1.1}
+```
 
 *on $\Delta_{d-1}$. This is a nonlinear elliptic PDE in $d - 1$ dimensions.
 Standard Galerkin methods require $O(d^k)$ operations for some $k \geq 2$.
@@ -146,7 +148,9 @@ costs. The market's information network is a complete graph $K_N$ where each
 edge $(i,j)$ carries information via bilateral trade. The central planner's
 network is a star graph $S_N$ where each agent reports to a central node. Then:*
 
-$$\frac{C_{\rm market}}{C_{\rm planner}} = \Theta(N). \tag{1.2}$$
+```math
+\frac{C_{\rm market}}{C_{\rm planner}} = \Theta(N). \tag{1.2}
+```
 
 *For $N = 10^8$ agents, the market has $\sim 10^8$ times the information
 capacity of the planner.*
@@ -154,7 +158,9 @@ capacity of the planner.*
 *Proof.* The market operates as a multiple access channel (MAC). In a MAC with
 $N$ transmitters, the sum capacity is (Cover and Thomas [2006], Chapter 15):
 
-$$C_{\rm MAC} = \max_{p(x_1, \ldots, x_N)} I(X_1, \ldots, X_N; Y). \tag{1.3}$$
+```math
+C_{\rm MAC} = \max_{p(x_1, \ldots, x_N)} I(X_1, \ldots, X_N; Y). \tag{1.3}
+```
 
 In the market MAC, the "output" $Y$ is the vector of observed prices. Each
 agent's "transmission" is their trade. The key feature is that the market is
@@ -162,8 +168,10 @@ NOT a point-to-point network — it is a BROADCAST channel where every agent
 simultaneously transmits (trades) and receives (observes prices). The capacity
 of the complete graph $K_N$ is:
 
-$$C_{\rm market} = \sum_{(i,j) \in E(K_N)} C_{ij} = \binom{N}{2} \cdot
-\bar{C} \propto N^2, \tag{1.4}$$
+```math
+C_{\rm market} = \sum_{(i,j) \in E(K_N)} C_{ij} = \binom{N}{2} \cdot
+\bar{C} \propto N^2, \tag{1.4}
+```
 
 where $\bar{C}$ is the average pairwise channel capacity.
 
@@ -171,7 +179,9 @@ The central planner's network is a star $S_N$: $N$ spoke nodes connected to one
 hub. Each spoke can transmit to the hub at rate $C_{\rm link}$. The total
 capacity is:
 
-$$C_{\rm planner} = N \cdot C_{\rm link} \propto N. \tag{1.5}$$
+```math
+C_{\rm planner} = N \cdot C_{\rm link} \propto N. \tag{1.5}
+```
 
 The ratio is $C_{\rm market} / C_{\rm planner} = \Theta(N)$.
 
@@ -209,7 +219,9 @@ constant $h(S_N) = 2/N$. The Erdos-Renyi random graph $G(N, p)$ with
 $p > c \log N / N$ (connected regime) has $h(G) = \Theta(\sqrt{Np})$ with
 high probability. For $p = \Theta(1)$, the ratio is*
 
-$$\frac{h(G_{\rm market})}{h(S_N)} = \Theta(N^{3/2}). \tag{1.6}$$
+```math
+\frac{h(G_{\rm market})}{h(S_N)} = \Theta(N^{3/2}). \tag{1.6}
+```
 
 *A centrally planned economy is maximally fragile: removing the central node
 disconnects the entire graph. A market economy requires removing
@@ -217,8 +229,10 @@ $\Omega(N \cdot h)$ edges to disconnect — superpolynomially more robust.*
 
 *Proof.* The Cheeger constant of a graph $G$ is:
 
-$$h(G) = \min_{S \subset V, \, |S| \leq |V|/2}
-\frac{|\partial S|}{|S|}, \tag{1.7}$$
+```math
+h(G) = \min_{S \subset V, \, |S| \leq |V|/2}
+\frac{|\partial S|}{|S|}, \tag{1.7}
+```
 
 where $|\partial S|$ is the number of edges between $S$ and $V \setminus S$.
 
@@ -228,7 +242,9 @@ $h(S_N) \leq 1$. More precisely, take $S$ to be any $\lfloor N/2 \rfloor$
 spoke vertices. Then $|S| = \lfloor N/2 \rfloor$ and $|\partial S| =
 \lfloor N/2 \rfloor$ (each spoke has exactly one edge to the hub). So
 
-$$h(S_N) = \frac{\lfloor N/2 \rfloor}{\lfloor N/2 \rfloor} = 1.$$
+```math
+h(S_N) = \frac{\lfloor N/2 \rfloor}{\lfloor N/2 \rfloor} = 1.
+```
 
 But this counts the hub as remaining. If we measure the Cheeger constant in
 terms of EDGE removal: the star graph can be completely disconnected by removing
@@ -244,8 +260,10 @@ dense market graph with $p = \Theta(1)$: $h(G) = \Theta(N)$.
 
 The ratio is:
 
-$$\frac{h(G_{\rm market})}{h_{\rm edge}(S_N)} = \frac{\Theta(N)}{2/N}
-= \Theta(N^2).$$
+```math
+\frac{h(G_{\rm market})}{h_{\rm edge}(S_N)} = \frac{\Theta(N)}{2/N}
+= \Theta(N^2).
+```
 
 In the more conservative regime $p = c\log N / N$ (barely connected):
 $h(G) = \Theta(\log N)$, and the ratio is still $\Theta(N \log N / 2)$.
@@ -634,8 +652,10 @@ government intervention adds them.*
 **Theorem CA5** (Optimal Government). *The government policy that maximises the
 rate of convergence to economic efficiency is:*
 
-$$G^{\ast} = \arg\max_{G \in \mathcal{G}} h_M\!\big(G_{\rm economy}(G)\big)
-\quad \text{subject to} \quad \mathrm{cost}(G) \leq B, \tag{5.1}$$
+```math
+G^{\ast} = \arg\max_{G \in \mathcal{G}} h_M\!\big(G_{\rm economy}(G)\big)
+\quad \text{subject to} \quad \mathrm{cost}(G) \leq B, \tag{5.1}
+```
 
 *where $\mathcal{G}$ is the set of feasible policies (edge additions to the
 market graph) and $B$ is the government budget. The greedy algorithm — at each

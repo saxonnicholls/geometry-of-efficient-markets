@@ -83,7 +83,9 @@ senior secured debt ($b_1$), senior unsecured debt ($b_2$), subordinated debt
 ($b_3$), ..., preferred equity ($b_{d-1}$), common equity ($b_d$). Each
 $b_i = V_i / V$ is the fraction of enterprise value held by class $i$, so:
 
-$$b = (b_1, \ldots, b_d) \in \Delta_{d-1} = \left\{b \in \mathbb{R}^{d}_+ : \sum_{i=1}^{d} b_i = 1\right\} \tag{1.1}$$
+```math
+b = (b_1, \ldots, b_d) \in \Delta_{d-1} = \left\{b \in \mathbb{R}^{d}_+ : \sum_{i=1}^{d} b_i = 1\right\} \tag{1.1}
+```
 
 The capital structure of a firm IS a point on the portfolio simplex. This is not
 an analogy — it is an identity. The simplex $\Delta_{d-1}$ is simultaneously the
@@ -100,13 +102,17 @@ location within the triangle encodes its entire capital structure.
 
 The Fisher-Rao metric on $\Delta_{d-1}$:
 
-$$g^{\mathrm{FR}}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.2}$$
+```math
+g^{\mathrm{FR}}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.2}
+```
 
 This metric has a crucial property for credit risk: it **diverges** as any
 component $b_i \to 0$. The Fisher-Rao distance element in the equity direction
 is:
 
-$$ds^2_{\mathrm{equity}} = \frac{db_d^2}{b_d} \tag{1.3}$$
+```math
+ds^2_{\mathrm{equity}} = \frac{db_d^2}{b_d} \tag{1.3}
+```
 
 When equity is 30% of enterprise value ($b_d = 0.3$), a 1% change in equity
 fraction costs $ds^2 = 0.01^2 / 0.3 = 3.3 \times 10^{-4}$. When equity is 3%
@@ -127,7 +133,9 @@ The firm's capital structure evolves stochastically. In our framework, the natur
 diffusion on $\Delta_{d-1}$ is the Wright-Fisher (WF) process, which is the
 canonical Brownian motion of the Fisher-Rao metric (MARKET_PROCESSES.md Section 1):
 
-$$db_i = \varepsilon^2\left[\alpha_i - \left(\sum_j \alpha_j\right) b_i\right]dt + \varepsilon\sqrt{b_i(1-b_i)}\,dW_i^{\perp} \tag{1.4}$$
+```math
+db_i = \varepsilon^2\left[\alpha_i - \left(\sum_j \alpha_j\right) b_i\right]dt + \varepsilon\sqrt{b_i(1-b_i)}\,dW_i^{\perp} \tag{1.4}
+```
 
 where $\varepsilon^2 = 1/T$ is the diffusion scale parameter, $\alpha_i = T b^{\ast}_{i} - 1/2$
 are the drift parameters determined by the firm's "target" capital structure $b^{\ast}$,
@@ -152,7 +160,9 @@ the Feller boundary classification.
 
 Merton (1974) models the firm's total asset value $V(t)$ as geometric Brownian motion:
 
-$$dV = \mu V\,dt + \sigma V\,dW \tag{1.5}$$
+```math
+dV = \mu V\,dt + \sigma V\,dW \tag{1.5}
+```
 
 Default occurs when $V(T) < D$ (asset value falls below debt) at maturity $T$.
 Equity is a call option on $V$ with strike $D$.
@@ -184,7 +194,9 @@ The boundary $\partial\Delta_{d-1} = \{b \in \Delta_{d-1} : b_i = 0 \text{ for s
 consists of $d$ faces, each corresponding to the extinction of one capital class.
 The face of primary interest for credit risk is:
 
-$$\mathcal{D} = \{b \in \Delta_{d-1} : b_d = 0\} \tag{2.1}$$
+```math
+\mathcal{D} = \{b \in \Delta_{d-1} : b_d = 0\} \tag{2.1}
+```
 
 the **default face**, where equity value is zero. When the firm's capital structure
 reaches $\mathcal{D}$, the firm is insolvent: all enterprise value belongs to debt
@@ -195,7 +207,9 @@ diverges. The default face is at **infinite Fisher-Rao distance** from any inter
 point — the geodesic distance from $b$ with $b_d > 0$ to the face $\{b_d = 0\}$
 is:
 
-$$d_{\mathrm{FR}}(b, \mathcal{D}) = 2\arcsin(\sqrt{b_d}) \tag{2.2}$$
+```math
+d_{\mathrm{FR}}(b, \mathcal{D}) = 2\arcsin(\sqrt{b_d}) \tag{2.2}
+```
 
 which tends to zero as $b_d \to 0$ in the Bhattacharyya embedding, but the metric
 divergence means the process decelerates as it approaches. Whether the process
@@ -212,7 +226,9 @@ be the equity drift parameter. The default boundary $\{b_d = 0\}$ is classified 
 
 *(i) Entrance boundary ($\alpha_d \geq 1$):* The WF process starting in the interior
 never reaches $b_d = 0$. The probability of default is zero:
-$$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 0$$
+```math
+\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 0
+```
 *This corresponds to a strongly profitable firm with $b^{\ast}_{d} \geq 3/(2T)$ — the
 equity drift is strong enough to repel the process from the boundary. These are
 investment-grade firms with negligible default risk.*
@@ -220,14 +236,18 @@ investment-grade firms with negligible default risk.*
 *(ii) Regular boundary ($0 < \alpha_d < 1$):* The process can reach $b_d = 0$ with
 positive probability AND can re-enter the interior. Both default and recovery are
 possible:
-$$0 < \mathbb{P}(\exists\, t \leq T : b_d(t) = 0) < 1$$
+```math
+0 < \mathbb{P}(\exists\, t \leq T : b_d(t) = 0) < 1
+```
 *This corresponds to a firm with moderate profitability $1/(2T) < b^{\ast}_{d} < 3/(2T)$.
 The firm can default but can also emerge from bankruptcy. These are high-yield
 (speculative grade) firms.*
 
 *(iii) Exit boundary ($\alpha_d \leq 0$):* The process reaches $b_d = 0$ with
 probability one, and once there, it is absorbed. Default is certain and permanent:
-$$\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 1, \quad b_d(t) = 0 \forall\, t \geq \tau_{\mathcal{D}}$$
+```math
+\mathbb{P}(\exists\, t \leq T : b_d(t) = 0) = 1, \quad b_d(t) = 0 \forall\, t \geq \tau_{\mathcal{D}}
+```
 *where $\tau_{\mathcal{D}}$ is the first hitting time. This corresponds to an
 unprofitable firm with $b^{\ast}_{d} \leq 1/(2T)$: equity is being consumed, and default
 is a matter of time.*
@@ -244,13 +264,17 @@ computable from the Jacobi transition density with absorbing boundary conditions
 that equity hits zero before time $T$, starting from initial capital structure
 $b_d(0) = p$, is:*
 
-$$\mathbb{P}(\tau_{\mathcal{D}} \leq T \mid b_d(0) = p) = 1 - \sum_{n=0}^{\infty} c_n\,e^{-\lambda_n T}\,P_n^{(\alpha_d, \beta_d)}(1 - 2p) \tag{2.3}$$
+```math
+\mathbb{P}(\tau_{\mathcal{D}} \leq T \mid b_d(0) = p) = 1 - \sum_{n=0}^{\infty} c_n\,e^{-\lambda_n T}\,P_n^{(\alpha_d, \beta_d)}(1 - 2p) \tag{2.3}
+```
 
 *where $P_n^{(\alpha,\beta)}$ are the Jacobi polynomials, $\lambda_n = \varepsilon^2 n(n + \alpha_d + \beta_d + 1)$
 are the Jacobi eigenvalues, $\beta_d = \sum_{i \neq d} \alpha_i$ is the aggregate
 debt drift, and the coefficients $c_n$ are determined by the initial condition:*
 
-$$c_n = \frac{(2n + \alpha_d + \beta_d + 1)\,\Gamma(n + \alpha_d + 1)\,\Gamma(n + \beta_d + 1)}{n!\,\Gamma(n + \alpha_d + \beta_d + 1)} \int_0^1 P_n^{(\alpha_d,\beta_d)}(1-2x)\,x^{\alpha_d}(1-x)^{\beta_d}\,dx \tag{2.4}$$
+```math
+c_n = \frac{(2n + \alpha_d + \beta_d + 1)\,\Gamma(n + \alpha_d + 1)\,\Gamma(n + \beta_d + 1)}{n!\,\Gamma(n + \alpha_d + \beta_d + 1)} \int_0^1 P_n^{(\alpha_d,\beta_d)}(1-2x)\,x^{\alpha_d}(1-x)^{\beta_d}\,dx \tag{2.4}
+```
 
 *Proof.* The WF diffusion projected onto the equity coordinate $b_d$ is a Jacobi
 diffusion on $[0,1]$ with parameters $(\alpha_d, \beta_d)$. The transition density
@@ -263,7 +287,9 @@ with Dirichlet boundary condition at $b_d = 0$, as developed in MARKET_PROCESSES
 Theorem 2.1 for the unconstrained case. $\square$
 
 **Corollary 2.3.** *The long-horizon default probability decays as:*
-$$\mathbb{P}(\tau_{\mathcal{D}} > T) \sim c_0\,e^{-\lambda_1 T} \quad\text{as } T \to \infty$$
+```math
+\mathbb{P}(\tau_{\mathcal{D}} > T) \sim c_0\,e^{-\lambda_1 T} \quad\text{as } T \to \infty
+```
 *where $\lambda_1 = \varepsilon^2(1 + \alpha_d + \beta_d)$ is the spectral gap.
 Firms with large spectral gap (strong profitability, low volatility) have
 exponentially small long-horizon default probability.*
@@ -285,7 +311,9 @@ default face.
 **Theorem 3.1** *(Credit spread from Fisher-Rao distance).* *For a firm with capital
 structure $b$ and equity volatility $\sigma$, the credit spread to leading order is:*
 
-$$s \approx \frac{\sigma^2}{2\,d^2_{\mathrm{FR}}(b, \mathcal{D})} + O\!\left(\frac{1}{d^4_{\mathrm{FR}}}\right) \tag{3.1}$$
+```math
+s \approx \frac{\sigma^2}{2\,d^2_{\mathrm{FR}}(b, \mathcal{D})} + O\!\left(\frac{1}{d^4_{\mathrm{FR}}}\right) \tag{3.1}
+```
 
 *where $d_{\mathrm{FR}}(b, \mathcal{D}) = 2\arcsin(\sqrt{b_d})$ is the Fisher-Rao
 distance from the current capital structure to the default boundary.*
@@ -306,7 +334,9 @@ just the equity fraction $b_d$.
 
 The Fisher-Rao distance to the nearest boundary face (not just the equity face) is:
 
-$$d_{\mathrm{FR}}(b, \partial\Delta) = \min_{i=1,\ldots,d} 2\arcsin(\sqrt{b_i}) \tag{3.2}$$
+```math
+d_{\mathrm{FR}}(b, \partial\Delta) = \min_{i=1,\ldots,d} 2\arcsin(\sqrt{b_i}) \tag{3.2}
+```
 
 For a firm with capital structure $b = (0.60, 0.10, 0.30)$ (senior, junior, equity):
 - Distance to equity boundary: $2\arcsin(\sqrt{0.30}) \approx 1.16$
@@ -329,9 +359,13 @@ AAA and AA-rated firms without implausibly high asset volatility.
 model underestimates investment-grade spreads because it uses the Euclidean
 distance to default. The Fisher-Rao distance satisfies:*
 
-$$d_{\mathrm{FR}}(b, \mathcal{D}) > d_{\mathrm{Eucl}}(b, \mathcal{D}) \quad \text{for } b_d > 1/2 \tag{3.3}$$
+```math
+d_{\mathrm{FR}}(b, \mathcal{D}) > d_{\mathrm{Eucl}}(b, \mathcal{D}) \quad \text{for } b_d > 1/2 \tag{3.3}
+```
 
-$$d_{\mathrm{FR}}(b, \mathcal{D}) < d_{\mathrm{Eucl}}(b, \mathcal{D}) \quad \text{for } b_d < 1/2 \tag{3.4}$$
+```math
+d_{\mathrm{FR}}(b, \mathcal{D}) < d_{\mathrm{Eucl}}(b, \mathcal{D}) \quad \text{for } b_d < 1/2 \tag{3.4}
+```
 
 *Proof.* The Fisher-Rao distance is $2\arcsin(\sqrt{b_d})$ and the Euclidean distance
 is $b_d$ (or $\sqrt{b_d}$ in the Bhattacharyya coordinates). For $b_d > 1/2$:
@@ -358,7 +392,9 @@ Near the default boundary, the mean curvature $H$ of the market manifold diverge
 (because the metric diverges). From the Sharpe-curvature identity (MINIMAL_SURFACE.md
 Theorem 1.1):
 
-$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M, g_M)} \tag{3.5}$$
+```math
+\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(M, g_M)} \tag{3.5}
+```
 
 The Sharpe ratio of credit strategies is $\|H\|_{L^2}$ evaluated near the boundary
 — large, because the curvature is large. This is the geometric explanation for
@@ -399,7 +435,9 @@ point depends on the restructuring mechanism:
 **Theorem 4.1** *(Recovery rate from boundary hitting measure).* *The expected
 recovery rate for debt class $i$ (where $i < d$) is:*
 
-$$\mathbb{E}[R_i] = \int_{\mathcal{D}} b_i \cdot \rho_{\mathrm{hit}}(b^{\mathcal{D}})\,d\sigma(b^{\mathcal{D}}) \tag{4.1}$$
+```math
+\mathbb{E}[R_i] = \int_{\mathcal{D}} b_i \cdot \rho_{\mathrm{hit}}(b^{\mathcal{D}})\,d\sigma(b^{\mathcal{D}}) \tag{4.1}
+```
 
 *where $\rho_{\mathrm{hit}}$ is the hitting measure — the probability density of
 the firm's capital structure at the moment of default — and $d\sigma$ is the
@@ -407,7 +445,9 @@ $(d-2)$-dimensional volume element on the face $\mathcal{D}$.*
 
 *The hitting measure is computable from the WF transition density:*
 
-$$\rho_{\mathrm{hit}}(b^{\mathcal{D}}) = \lim_{b_d \to 0}\frac{\varepsilon^2}{2}\,b_d\,\frac{\partial}{\partial b_d}\,p(b_0, b; t)\bigg|_{b = b^{\mathcal{D}}} \tag{4.2}$$
+```math
+\rho_{\mathrm{hit}}(b^{\mathcal{D}}) = \lim_{b_d \to 0}\frac{\varepsilon^2}{2}\,b_d\,\frac{\partial}{\partial b_d}\,p(b_0, b; t)\bigg|_{b = b^{\mathcal{D}}} \tag{4.2}
+```
 
 *where $p(b_0, b; t)$ is the WF transition density from initial capital structure
 $b_0$ (MARKET_PROCESSES.md Theorem 2.1).*
@@ -447,7 +487,9 @@ fixed spread $s_{\mathrm{CDS}}$ to the protection seller, who pays $(1-R)$ upon
 default (where $R$ is the recovery rate). The fair CDS spread equates the expected
 premium leg to the expected protection leg:
 
-$$s_{\mathrm{CDS}} = \frac{(1-R) \cdot \mathbb{E}\!\left[\mathbf{1}_{\{\tau_{\mathcal{D}} \leq T\}}\,e^{-r\tau_{\mathcal{D}}}\right]}{\mathbb{E}\!\left[\int_0^{\min(\tau_{\mathcal{D}},T)} e^{-rt}\,dt\right]} \tag{5.1}$$
+```math
+s_{\mathrm{CDS}} = \frac{(1-R) \cdot \mathbb{E}\!\left[\mathbf{1}_{\{\tau_{\mathcal{D}} \leq T\}}\,e^{-r\tau_{\mathcal{D}}}\right]}{\mathbb{E}\!\left[\int_0^{\min(\tau_{\mathcal{D}},T)} e^{-rt}\,dt\right]} \tag{5.1}
+```
 
 In the geometric framework, both the numerator (expected discounted default
 indicator) and the denominator (expected discounted duration) are functionals of
@@ -458,7 +500,9 @@ the first passage time $\tau_{\mathcal{D}}$ to the Feller boundary.
 **Theorem 5.1** *(CDS spread from the Jacobi spectrum).* *The CDS spread for
 protection on a firm with capital structure $b$, over horizon $T$, is:*
 
-$$s_{\mathrm{CDS}}(T) = (1-R) \cdot \frac{\displaystyle\sum_{n=0}^{\infty} c_n \cdot \frac{1 - e^{-(\lambda_n + r)T}}{\lambda_n + r}}{\displaystyle\sum_{n=0}^{\infty} c_n \cdot \frac{1 - e^{-(\lambda_n + r)T}}{(\lambda_n + r)^2}\left[(\lambda_n + r)T - 1 + e^{-(\lambda_n + r)T}\right]} \tag{5.2}$$
+```math
+s_{\mathrm{CDS}}(T) = (1-R) \cdot \frac{\displaystyle\sum_{n=0}^{\infty} c_n \cdot \frac{1 - e^{-(\lambda_n + r)T}}{\lambda_n + r}}{\displaystyle\sum_{n=0}^{\infty} c_n \cdot \frac{1 - e^{-(\lambda_n + r)T}}{(\lambda_n + r)^2}\left[(\lambda_n + r)T - 1 + e^{-(\lambda_n + r)T}\right]} \tag{5.2}
+```
 
 *where $\lambda_n$ are the Jacobi eigenvalues, $c_n$ are the spectral coefficients
 from Theorem 2.2, $R$ is the expected recovery rate from Theorem 4.1, and $r$ is
@@ -514,7 +558,9 @@ The CDO structure maps naturally to a fiber bundle over the portfolio loss space
 
 **Definition 6.1** *(CDO fiber bundle).* *The CDO fiber bundle is:*
 
-$$\pi: E \to B \tag{6.1}$$
+```math
+\pi: E \to B \tag{6.1}
+```
 
 *where:*
 - *Base space $B$:* the portfolio loss distribution — a point in the simplex of
@@ -530,7 +576,9 @@ $$\pi: E \to B \tag{6.1}$$
 The price of a CDO tranche is computed by integrating the tranche payoff function
 (a section of the fiber) against the loss distribution (a measure on the base):
 
-$$V_{\mathrm{tranche}} = \mathbb{E}\!\left[e^{-rT}\,f_{\mathrm{tranche}}(L_T)\right] = \int_B f_{\mathrm{tranche}}(l)\,d\mu_L(l) \tag{6.2}$$
+```math
+V_{\mathrm{tranche}} = \mathbb{E}\!\left[e^{-rT}\,f_{\mathrm{tranche}}(L_T)\right] = \int_B f_{\mathrm{tranche}}(l)\,d\mu_L(l) \tag{6.2}
+```
 
 where $L_T = \sum_{i=1}^{N} (1-R_i)\,\mathbf{1}_{\{\tau_i \leq T\}}$ is the portfolio
 loss and $f_{\mathrm{tranche}}$ is the tranche payoff function.
@@ -541,7 +589,9 @@ loss and $f_{\mathrm{tranche}}$ is the tranche payoff function.
 the CDO fiber bundle, measured by the O'Neill $A$-tensor (FIBER_BUNDLES.md
 Section 2), determines the sensitivity of tranche prices to correlation:*
 
-$$\frac{\partial V_{\mathrm{tranche}}}{\partial \rho} = \langle A(X, Y), \nabla f_{\mathrm{tranche}}\rangle_{g} \tag{6.3}$$
+```math
+\frac{\partial V_{\mathrm{tranche}}}{\partial \rho} = \langle A(X, Y), \nabla f_{\mathrm{tranche}}\rangle_{g} \tag{6.3}
+```
 
 *where $X, Y$ are horizontal vector fields on the base (directions of changing
 market conditions), $A$ is the O'Neill integrability tensor, and $\rho$ is the
@@ -557,7 +607,9 @@ varies across fibers.*
 correlation across all attachment points and all market states. The flat bundle
 assumption implies:*
 
-$$A \equiv 0, \quad F_A = 0 \tag{6.4}$$
+```math
+A \equiv 0, \quad F_A = 0 \tag{6.4}
+```
 
 *where $F_A$ is the curvature 2-form of the connection. The failure of the Gaussian
 copula is the failure of flatness: the actual CDO bundle has large positive
@@ -640,7 +692,9 @@ $e^{t\Delta_{\mathrm{graph}}}$ has mixing time $\tau_{\mathrm{mix}} \sim 1/\lamb
 where $\lambda_1$ is the spectral gap of the graph Laplacian. By the Cheeger
 inequality:
 
-$$\frac{h_M^2}{2} \leq \lambda_1 \leq 2h_M \tag{7.1}$$
+```math
+\frac{h_M^2}{2} \leq \lambda_1 \leq 2h_M \tag{7.1}
+```
 
 When $h_M \to 0$, the spectral gap $\lambda_1 \to 0$, the mixing time
 $\tau_{\mathrm{mix}} \to \infty$ — but the CONTAGION time (first passage, not
@@ -710,13 +764,17 @@ immediate: the rating is a quantised Fisher-Rao distance from the default bounda
 **Theorem 8.1** *(Rating as logarithmic distance).* *The mapping from Fisher-Rao
 distance to credit rating is approximately logarithmic:*
 
-$$\text{Rating notch} \approx a + c\,\log\,d_{\mathrm{FR}}(b, \mathcal{D}) \tag{8.1}$$
+```math
+\text{Rating notch} \approx a + c\,\log\,d_{\mathrm{FR}}(b, \mathcal{D}) \tag{8.1}
+```
 
 *for constants $a, c > 0$ calibrated to historical default rates. Equivalently,
 the annual default probability increases approximately exponentially with each
 rating notch:*
 
-$$\mathbb{P}(\text{default within 1 year} \mid \text{rating } = k) \approx e^{-\gamma k} \tag{8.2}$$
+```math
+\mathbb{P}(\text{default within 1 year} \mid \text{rating } = k) \approx e^{-\gamma k} \tag{8.2}
+```
 
 *for a constant $\gamma > 0$, where $k$ is the numerical rating (AAA=21, AA+=20,
 ..., D=0).*
@@ -754,7 +812,9 @@ restricted to quantised distance bands. Specifically, the probability of transit
 from rating $i$ (distance band $[d_i, d_{i+1}]$) to rating $j$ (distance band
 $[d_j, d_{j+1}]$) in time $\Delta t$ is:*
 
-$$T_{ij}(\Delta t) = \int_{d_j}^{d_{j+1}} \int_{d_i}^{d_{i+1}} p(x, y; \Delta t)\,\mu_{\rm stat}(x)\,dx\,dy \bigg/ \int_{d_i}^{d_{i+1}} \mu_{\rm stat}(x)\,dx \tag{8.3}$$
+```math
+T_{ij}(\Delta t) = \int_{d_j}^{d_{j+1}} \int_{d_i}^{d_{i+1}} p(x, y; \Delta t)\,\mu_{\rm stat}(x)\,dx\,dy \bigg/ \int_{d_i}^{d_{i+1}} \mu_{\rm stat}(x)\,dx \tag{8.3}
+```
 
 *where $p(x, y; t)$ is the Jacobi transition density in the distance coordinate.*
 
@@ -778,7 +838,9 @@ geometric framework.
 **Proposition 9.1** *(Equity as distance function).* *The equity value of a firm
 is a monotone function of the Fisher-Rao distance from the default boundary:*
 
-$$E = V \cdot b_d = V \cdot \sin^2\!\left(\frac{d_{\mathrm{FR}}}{2}\right) \tag{9.1}$$
+```math
+E = V \cdot b_d = V \cdot \sin^2\!\left(\frac{d_{\mathrm{FR}}}{2}\right) \tag{9.1}
+```
 
 *where $V$ is enterprise value and we have inverted equation (2.2). Equity value
 is zero at the boundary ($d_{\mathrm{FR}} = 0$), increases with distance, and
@@ -795,7 +857,9 @@ basis is nonzero and time-varying.
 arises because the CDS market and the equity market observe different projections
 of the capital structure manifold:*
 
-$$\text{Basis} = s_{\mathrm{CDS}} - s_{\mathrm{equity}} = \langle H, \nu_{\mathrm{CDS}} - \nu_{\mathrm{equity}}\rangle \tag{9.2}$$
+```math
+\text{Basis} = s_{\mathrm{CDS}} - s_{\mathrm{equity}} = \langle H, \nu_{\mathrm{CDS}} - \nu_{\mathrm{equity}}\rangle \tag{9.2}
+```
 
 *where $\nu_{\mathrm{CDS}}$ and $\nu_{\mathrm{equity}}$ are the unit normals to
 the credit and equity market submanifolds respectively, and $H$ is the mean

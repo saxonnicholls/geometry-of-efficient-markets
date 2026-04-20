@@ -110,7 +110,9 @@ explicit bet on reducing the fiber. The pinhooker pays the yearling price
 trialling (shrinks the fiber, increases capacity), and sells the 2-year-old
 at the updated price (smaller fiber, higher capacity). The pinhook profit is:
 
-$$\alpha_{\rm pinhook} = C_{\rm 2yo} - C_{\rm yearling} - \text{Cost}_{\rm training} \tag{0.1}$$
+```math
+\alpha_{\rm pinhook} = C_{\rm 2yo} - C_{\rm yearling} - \text{Cost}_{\rm training} \tag{0.1}
+```
 
 — the capacity gain from fiber reduction minus the cost of producing the
 information. This is positive when the cost of training is less than the
@@ -161,7 +163,9 @@ Denote these $d_{\rm char}$ characteristics. Not all are independent —
 they are correlated through genetics, management, and the laws of
 biomechanics. The effective dimension is:
 
-$$r_{\rm horse} = \text{srank}(\Sigma_{\rm char}) \approx 15\text{-}25 \tag{1.1}$$
+```math
+r_{\rm horse} = \text{srank}(\Sigma_{\rm char}) \approx 15\text{-}25 \tag{1.1}
+```
 
 where $\Sigma_{\rm char}$ is the covariance matrix of characteristics across
 the horse population and $\text{srank}$ is the stable rank.
@@ -176,7 +180,9 @@ $h \mapsto \sqrt{h}$.*
 
 The Fisher-Rao metric on $M_{\rm horse}$:
 
-$$g^{\rm FR}_{ij}(h) = \frac{\delta_{ij}}{h_i} \tag{1.2}$$
+```math
+g^{\rm FR}_{ij}(h) = \frac{\delta_{ij}}{h_i} \tag{1.2}
+```
 
 where $h_i$ is the normalised weight of characteristic $i$ for the horse at
 the point in question. This metric encodes a fundamental truth of horse
@@ -213,7 +219,9 @@ the inter-market channel of MANIFOLD_IS_THE_CHANNEL.md.
 
 The connected sum structure:
 
-$$M_{\rm horse} = M_{\rm flat} \#_{\rm retraining} M_{\rm jumps} \#_{\rm retraining} M_{\rm polo} \#_{\rm retraining} M_{\rm dressage} \tag{1.3}$$
+```math
+M_{\rm horse} = M_{\rm flat} \#_{\rm retraining} M_{\rm jumps} \#_{\rm retraining} M_{\rm polo} \#_{\rm retraining} M_{\rm dressage} \tag{1.3}
+```
 
 The necks are the retraining pathways. A horse that retrains easily has a
 wide neck (high channel capacity between disciplines). A horse that cannot
@@ -239,7 +247,9 @@ Each stage is a **channel** that transmits information from the horse to the
 buyer. The total information available at the fall of the hammer is the
 union of all channels:
 
-$$\mathcal{F}^{\rm sale}_{\rm total} = \mathcal{F}^{\rm catalogue} \vee \mathcal{F}^{\rm parade} \vee \mathcal{F}^{\rm vet} \vee \mathcal{F}^{\rm private} \vee \mathcal{F}^{\rm bidding} \tag{2.1}$$
+```math
+\mathcal{F}^{\rm sale}_{\rm total} = \mathcal{F}^{\rm catalogue} \vee \mathcal{F}^{\rm parade} \vee \mathcal{F}^{\rm vet} \vee \mathcal{F}^{\rm private} \vee \mathcal{F}^{\rm bidding} \tag{2.1}
+```
 
 But no buyer observes all channels. The information hierarchy at a typical
 Magic Millions sale:
@@ -255,7 +265,9 @@ The vendor's information advantage is STRUCTURAL — they have observed the
 horse daily for 18 months. No amount of parade-ring inspection can close
 this gap. The vendor's fiber is much smaller than any buyer's fiber:
 
-$$\dim(F_{\rm vendor}) \ll \dim(F_{\rm buyer}) \tag{2.2}$$
+```math
+\dim(F_{\rm vendor}) \ll \dim(F_{\rm buyer}) \tag{2.2}
+```
 
 This is the classic lemons problem (Akerlof [1970]) in geometric language:
 the vendor's channel has higher capacity than the buyer's. The reserve price
@@ -274,12 +286,16 @@ transmits:
 
 The capacity of the catalogue channel:
 
-$$C_{\rm cat} = H(M_{\rm horse}) - H(M_{\rm horse} | \text{catalogue}) \tag{2.3}$$
+```math
+C_{\rm cat} = H(M_{\rm horse}) - H(M_{\rm horse} | \text{catalogue}) \tag{2.3}
+```
 
 Empirically, pedigree alone explains approximately 30-40% of yearling sale
 price variance (Chezum and Wimmer [1997], Vickner and Koch [2001]). So:
 
-$$C_{\rm cat} \approx 0.35 \cdot h^{\rm horse}_{\rm Kelly}$$
+```math
+C_{\rm cat} \approx 0.35 \cdot h^{\rm horse}_{\rm Kelly}
+```
 
 The remaining 65% is in the physical inspection, veterinary reports, and
 private channels. A buyer who bids off the catalogue alone is using a
@@ -302,7 +318,9 @@ pedigree-based valuation. Empirical studies suggest an additional 15-25% of
 price variance is explained by conformation scores (Burns, Engle, and
 Hennessy [2006]).
 
-$$C_{\rm parade} \approx 0.20 \cdot h^{\rm horse}_{\rm Kelly} \tag{2.4}$$
+```math
+C_{\rm parade} \approx 0.20 \cdot h^{\rm horse}_{\rm Kelly} \tag{2.4}
+```
 
 The confidence σ-algebra (CONFIDENCE.md) is critical here. Two buyers may
 look at the same horse in the parade ring but extract very different amounts
@@ -311,7 +329,9 @@ distinguish 50 conformational categories). The novice uses a coarse
 σ-algebra (they see "nice horse" or "not nice horse"). The effective channel
 capacity for each buyer is:
 
-$$C^{(k)}_{\rm parade} = \rho^{(k)} \cdot C_{\rm parade} \tag{2.5}$$
+```math
+C^{(k)}_{\rm parade} = \rho^{(k)} \cdot C_{\rm parade} \tag{2.5}
+```
 
 where $\rho^{(k)}$ is buyer $k$'s confidence ratio. The experienced judge has
 $\rho \approx 0.8$; the novice has $\rho \approx 0.1$.
@@ -326,7 +346,9 @@ A horse's fiber $F_t$ at time $t$ is the set of future outcomes consistent
 with all information known at time $t$. The fiber shrinks monotonically as
 information arrives:
 
-$$F_{\rm conception} \supsetneq F_{\rm foal} \supsetneq F_{\rm yearling} \supsetneq F_{\rm breeze} \supsetneq F_{\rm maiden} \supsetneq F_{\rm Group} \supsetneq F_{\rm retired} \tag{3.1}$$
+```math
+F_{\rm conception} \supsetneq F_{\rm foal} \supsetneq F_{\rm yearling} \supsetneq F_{\rm breeze} \supsetneq F_{\rm maiden} \supsetneq F_{\rm Group} \supsetneq F_{\rm retired} \tag{3.1}
+```
 
 At each stage, the channel capacity increases (less fiber = less uncertainty):
 
@@ -358,7 +380,9 @@ entropy and fiber entropy, is non-decreasing. $\square$
 The price at each life stage is the expected value under the buyer's
 confidence σ-algebra, discounted by the fiber uncertainty:
 
-$$P_t = \mathbb{E}[V_{\rm lifetime} | \mathcal{F}^{\rm conf}_{t}] \cdot e^{-\lambda \cdot \dim(F_t)} \tag{3.2}$$
+```math
+P_t = \mathbb{E}[V_{\rm lifetime} | \mathcal{F}^{\rm conf}_{t}] \cdot e^{-\lambda \cdot \dim(F_t)} \tag{3.2}
+```
 
 where $V_{\rm lifetime}$ is the total lifetime value (prizemoney + breeding
 value + sale value), $\mathcal{F}^{\rm conf}_{t}$ is the buyer's confidence
@@ -379,11 +403,15 @@ The risk premium $\lambda$ varies by market:
 A pinhooker buys a yearling at time $t_1$ and sells as a 2-year-old at
 time $t_2 > t_1$. Their profit:
 
-$$\Pi_{\rm pinhook} = P_{t_2} - P_{t_1} - \text{Cost}(t_1, t_2) \tag{3.3}$$
+```math
+\Pi_{\rm pinhook} = P_{t_2} - P_{t_1} - \text{Cost}(t_1, t_2) \tag{3.3}
+```
 
 In channel terms:
 
-$$\Pi_{\rm pinhook} = [C_{t_2} - C_{t_1}] \cdot V_{\rm avg} - \text{Cost}(t_1, t_2) \tag{3.4}$$
+```math
+\Pi_{\rm pinhook} = [C_{t_2} - C_{t_1}] \cdot V_{\rm avg} - \text{Cost}(t_1, t_2) \tag{3.4}
+```
 
 The pinhook is profitable when the VALUE of the fiber reduction (the
 information produced by breaking, training, and trialling) exceeds the COST
@@ -419,7 +447,9 @@ The stud fee is effectively a FUTURES CONTRACT on the weighted average
 performance of the stallion's progeny. The underlying asset is the stallion's
 genetic value $G_{\rm sire}$, which is revealed progressively as crops race:
 
-$$\hat{G}_{\rm sire}(n) = \frac{\sum_{k=1}^{n} w_k \cdot \text{Performance}_{k}}{\sum_{k=1}^{n} w_k} \tag{4.1}$$
+```math
+\hat{G}_{\rm sire}(n) = \frac{\sum_{k=1}^{n} w_k \cdot \text{Performance}_{k}}{\sum_{k=1}^{n} w_k} \tag{4.1}
+```
 
 where $n$ is the number of crops, $\text{Performance}_{k}$ is the aggregate
 performance of crop $k$ (winners-to-runners, stakes winners, Group winners,
@@ -431,7 +461,9 @@ recent crops may be weighted more heavily if breeding quality changes).
 Each new crop that races delivers information about $G_{\rm sire}$. The
 Fisher-Rao distance between successive estimates:
 
-$$d_{\rm FR}(\hat{G}(n), \hat{G}(n+1)) = \text{information in crop } n+1 \tag{4.2}$$
+```math
+d_{\rm FR}(\hat{G}(n), \hat{G}(n+1)) = \text{information in crop } n+1 \tag{4.2}
+```
 
 A "hot" young sire (e.g., his first crop dramatically outperforms
 expectations): large $d_{\rm FR}$ — each crop delivers a lot of new
@@ -448,7 +480,9 @@ collapses.
 **Theorem 4.1** (Sire fee is a Bayesian posterior). *The optimal stud fee
 at time $n$ (after $n$ crops have raced) is:*
 
-$$\text{Fee}(n) = \mathbb{E}[G_{\rm sire} | \text{crops } 1, \ldots, n] \cdot \frac{\text{mares}_{\rm demand}}{\text{mares}_{\rm supply}} \tag{4.3}$$
+```math
+\text{Fee}(n) = \mathbb{E}[G_{\rm sire} | \text{crops } 1, \ldots, n] \cdot \frac{\text{mares}_{\rm demand}}{\text{mares}_{\rm supply}} \tag{4.3}
+```
 
 *where the expectation is the Bayesian posterior mean of $G_{\rm sire}$
 given the observed performance of $n$ crops, multiplied by the supply-demand
@@ -471,7 +505,9 @@ The ratio is NOT simply the exchange rate. It incorporates:
 The shuttle stallion IS a connected sum neck between the NH and SH bloodstock
 manifolds:
 
-$$M_{\rm NH} \#_{\rm shuttle} M_{\rm SH} \tag{4.4}$$
+```math
+M_{\rm NH} \#_{\rm shuttle} M_{\rm SH} \tag{4.4}
+```
 
 The neck width (shuttle capacity) is limited by the stallion's fertility,
 the logistics of transport, and quarantine regulations. When Australia
@@ -491,7 +527,9 @@ projection of MULTIPLE manifolds through a single event — the 90 seconds
 matters is a separate manifold, and the race result is the composition of
 all their projections:
 
-$$\text{Result} = \pi_{\rm horse} \circ \pi_{\rm jockey} \circ \pi_{\rm trainer} \circ \pi_{\rm track} \circ \pi_{\rm barrier} \circ \pi_{\rm weight} \circ \pi_{\rm pace} \circ \pi_{\rm field} \tag{5.1}$$
+```math
+\text{Result} = \pi_{\rm horse} \circ \pi_{\rm jockey} \circ \pi_{\rm trainer} \circ \pi_{\rm track} \circ \pi_{\rm barrier} \circ \pi_{\rm weight} \circ \pi_{\rm pace} \circ \pi_{\rm field} \tag{5.1}
+```
 
 Each projection has its own base (what you observe), its own fiber (what you
 don't), and its own channel capacity (how much information it carries about
@@ -595,7 +633,9 @@ $f: \Delta_3 \to \mathbb{R}$ mapping track state to expected performance.
 The Fisher-Rao distance between two going conditions measures how DIFFERENT
 the performance profiles are:
 
-$$d_{\rm FR}(\text{Good}, \text{Heavy}) \gg d_{\rm FR}(\text{Good}, \text{Firm}) \tag{5.2}$$
+```math
+d_{\rm FR}(\text{Good}, \text{Heavy}) \gg d_{\rm FR}(\text{Good}, \text{Firm}) \tag{5.2}
+```
 
 The distance from Good to Heavy is much larger than Good to Firm — because
 heavy going changes the biomechanics radically (favouring strong, heavy
@@ -620,7 +660,9 @@ would be flat in the barrier direction. On a real track, inside barriers
 have an advantage (shorter path on turns) or a disadvantage (traffic,
 kickback) depending on distance, pace, and rail position.
 
-$$\alpha_{\rm barrier}(k) = \mathbb{E}[\text{performance} | \text{barrier} = k] - \mathbb{E}[\text{performance}] \tag{5.3}$$
+```math
+\alpha_{\rm barrier}(k) = \mathbb{E}[\text{performance} | \text{barrier} = k] - \mathbb{E}[\text{performance}] \tag{5.3}
+```
 
 This is directly measurable from historical data. For a typical 1200m race
 at Randwick: barrier 1 has $\alpha \approx +5\%$; barrier 12 has
@@ -645,7 +687,9 @@ $\|H\| > 0$ (some horses are better than others) and add weight to reduce
 the curvature (bringing the better horses closer to the others in expected
 performance).
 
-$$w_i = w_{\rm base} + \lambda \cdot \text{rating}_{i} \tag{5.4}$$
+```math
+w_i = w_{\rm base} + \lambda \cdot \text{rating}_{i} \tag{5.4}
+```
 
 where $\lambda$ is the weight-for-ratings scale (typically 0.5 kg per rating
 point in Australia).
@@ -654,7 +698,9 @@ point in Australia).
 manifold, without handicapping, is $\|H\|_{\rm raw} = \sigma_{\rm ability}$
 (the standard deviation of ability across the field). After handicapping:
 
-$$\|H\|_{\rm handicapped} = \|H\|_{\rm raw} \cdot (1 - \rho_{\rm handicap}) \tag{5.5}$$
+```math
+\|H\|_{\rm handicapped} = \|H\|_{\rm raw} \cdot (1 - \rho_{\rm handicap}) \tag{5.5}
+```
 
 where $\rho_{\rm handicap}$ is the correlation between the handicapper's
 weight assignment and true ability. A perfect handicapper
@@ -710,7 +756,9 @@ A race is not a time trial. It is a COMPETITION — the result depends on
 the other runners. The field manifold $M_{\rm field}$ encodes the
 competitive structure:
 
-$$M_{\rm field} = \prod_{i=1}^{n} M^{(i)}_{\rm horse} / \sim \tag{5.6}$$
+```math
+M_{\rm field} = \prod_{i=1}^{n} M^{(i)}_{\rm horse} / \sim \tag{5.6}
+```
 
 where $n$ is the field size and $\sim$ identifies configurations that
 produce the same race dynamics (e.g., two midfield runners swapping
@@ -722,7 +770,9 @@ interactions). A race with 20 runners has a high-dimensional field manifold
 (many interactions, many possible pace shapes, many barrier/traffic
 scenarios).
 
-$$r_{\rm field} \approx \min(n - 1, r_{\rm horse} + r_{\rm jockey}) \tag{5.7}$$
+```math
+r_{\rm field} \approx \min(n - 1, r_{\rm horse} + r_{\rm jockey}) \tag{5.7}
+```
 
 The field manifold dimension is bounded by the number of runners minus one
 (the competitive degrees of freedom) and by the sum of horse and jockey
@@ -740,19 +790,27 @@ and the form line may not translate.
 
 The race result is the composition of all eight projections:
 
-$$\pi_{\rm result}: M_{\rm horse} \times M_{\rm jockey} \times M_{\rm trainer} \times M_{\rm track} \times M_{\rm barrier} \times M_{\rm weight} \times M_{\rm pace} \times M_{\rm field} \to \{1, 2, \ldots, n\} \tag{5.8}$$
+```math
+\pi_{\rm result}: M_{\rm horse} \times M_{\rm jockey} \times M_{\rm trainer} \times M_{\rm track} \times M_{\rm barrier} \times M_{\rm weight} \times M_{\rm pace} \times M_{\rm field} \to \{1, 2, \ldots, n\} \tag{5.8}
+```
 
 mapping the full state to a finishing order. The total dimension of the
 input space is approximately:
 
-$$r_{\rm total} = r_{\rm horse} + r_{\rm jockey} + r_{\rm trainer} + r_{\rm track} + 1 + 1 + r_{\rm pace} + r_{\rm field}$$
-$$\approx 20 + 10 + 8 + 5 + 1 + 1 + 4 + 15 \approx 64 \tag{5.9}$$
+```math
+r_{\rm total} = r_{\rm horse} + r_{\rm jockey} + r_{\rm trainer} + r_{\rm track} + 1 + 1 + r_{\rm pace} + r_{\rm field}
+```
+```math
+\approx 20 + 10 + 8 + 5 + 1 + 1 + 4 + 15 \approx 64 \tag{5.9}
+```
 
 But the output is a single ranking — a point on $\Delta_{n-1}$ (the
 finishing order probabilities). The projection from a 64-dimensional input
 to an $(n-1)$-dimensional output has an enormous fiber:
 
-$$\dim(F_{\rm race}) = 64 - (n-1) \approx 50 \tag{5.10}$$
+```math
+\dim(F_{\rm race}) = 64 - (n-1) \approx 50 \tag{5.10}
+```
 
 **Fifty dimensions of information are LOST in the projection from the full
 state to the race result.** This is why racing is hard to predict — not
@@ -784,7 +842,9 @@ the public projection doesn't capture. The most valuable fibers:
 
 The total capacity gap between an expert and the public:
 
-$$\Delta C = \sum_{\rm fibers} (\rho_{\rm expert} - \rho_{\rm public}) \cdot C_{\rm fiber} \tag{5.11}$$
+```math
+\Delta C = \sum_{\rm fibers} (\rho_{\rm expert} - \rho_{\rm public}) \cdot C_{\rm fiber} \tag{5.11}
+```
 
 This is the expert's edge — measured in bits per race. An expert who
 models pace, jockey-horse interaction, and preparation patterns has access
@@ -849,7 +909,9 @@ small), each with a different confidence σ-algebra, trading through private
 channels (no public price discovery). The effective channel capacity is
 extremely low:
 
-$$C_{\rm polo} \ll C_{\rm flat} \tag{5.1}$$
+```math
+C_{\rm polo} \ll C_{\rm flat} \tag{5.1}
+```
 
 The Willmore energy is correspondingly high — the polo market is permanently
 inefficient, like the art market (ART_MARKET.md). It is a pseudo-Anosov
@@ -907,7 +969,9 @@ out of 10") or a verbal assessment ("beautiful type, a touch long in the back").
 
 The Fisher-Rao distance between two horses' conformations:
 
-$$d_{\rm FR}(h_1, h_2) = 2\arccos\left(\sum_i \sqrt{c^{(1)}_{i} \cdot c^{(2)}_{i}}\right) \tag{6.1}$$
+```math
+d_{\rm FR}(h_1, h_2) = 2\arccos\left(\sum_i \sqrt{c^{(1)}_{i} \cdot c^{(2)}_{i}}\right) \tag{6.1}
+```
 
 where $c^{(k)}_{i}$ is the normalised conformation vector of horse $k$. This
 distance measures how DIFFERENTLY two horses are built, weighted by the
@@ -924,11 +988,15 @@ pretty horse, ugly horse"). Their σ-algebra has $\sim 10$ atoms.
 
 The expert's channel capacity from the parade ring:
 
-$$C^{\rm expert}_{\rm parade} = \log_2(100) \approx 6.6 \text{ bits per horse}$$
+```math
+C^{\rm expert}_{\rm parade} = \log_2(100) \approx 6.6 \text{ bits per horse}
+```
 
 The novice's channel capacity:
 
-$$C^{\rm novice}_{\rm parade} = \log_2(10) \approx 3.3 \text{ bits per horse}$$
+```math
+C^{\rm novice}_{\rm parade} = \log_2(10) \approx 3.3 \text{ bits per horse}
+```
 
 The expert extracts twice the information from the same 5-minute inspection.
 This capacity difference, compounded over a career of buying hundreds of
@@ -953,18 +1021,24 @@ At each locus $\ell$, the horse has a pair of alleles (one from sire, one
 from dam). For a biallelic locus with alleles $A$ and $a$, the genotype
 frequency in the population defines a point on $\Delta_2$:
 
-$$p = (p_{AA}, p_{Aa}, p_{aa}), \qquad p_{AA} + p_{Aa} + p_{aa} = 1 \tag{7.1}$$
+```math
+p = (p_{AA}, p_{Aa}, p_{aa}), \qquad p_{AA} + p_{Aa} + p_{aa} = 1 \tag{7.1}
+```
 
 For a breed with $L$ relevant loci, the population's genetic state is a
 point on the product simplex:
 
-$$\mathbf{p} = (p^{(1)}, p^{(2)}, \ldots, p^{(L)}) \in \prod_{\ell=1}^{L} \Delta_2^{(\ell)} \tag{7.2}$$
+```math
+\mathbf{p} = (p^{(1)}, p^{(2)}, \ldots, p^{(L)}) \in \prod_{\ell=1}^{L} \Delta_2^{(\ell)} \tag{7.2}
+```
 
 Under linkage equilibrium (loci evolving independently), this product space
 IS the genetic manifold $M_{\rm genetic}$ — with the product Fisher-Rao
 metric:
 
-$$g^{\rm FR} = \bigoplus_{\ell=1}^{L} g^{\rm FR}_{(\ell)} \tag{7.3}$$
+```math
+g^{\rm FR} = \bigoplus_{\ell=1}^{L} g^{\rm FR}_{(\ell)} \tag{7.3}
+```
 
 where $g^{\rm FR}_{(\ell)}$ is the Fisher-Rao metric on the $\ell$-th locus
 simplex. The total dimension is $\sum_\ell (\text{alleles at } \ell - 1) \approx L$
@@ -975,7 +1049,9 @@ for biallelic loci.
 The Wright-Fisher diffusion model for allele frequency evolution in a
 population of effective size $N_e$ is:
 
-$$dp_i = p_i(f_i - \bar{f})\,dt + \sqrt{\frac{p_i(1-p_i)}{2N_e}}\,dW_i \tag{7.4}$$
+```math
+dp_i = p_i(f_i - \bar{f})\,dt + \sqrt{\frac{p_i(1-p_i)}{2N_e}}\,dW_i \tag{7.4}
+```
 
 where $p_i$ is the frequency of allele $i$, $f_i$ is its fitness, and
 $\bar{f} = \sum_j p_j f_j$ is the population mean fitness.
@@ -1058,7 +1134,9 @@ effective dimension $r_{\rm genetic}$ decreases — fewer independent genetic
 directions remain variable. The manifold is collapsing toward a
 lower-dimensional submanifold.
 
-$$\frac{dr_{\rm genetic}}{dt} \approx -\frac{r_{\rm genetic}}{2N_e} \tag{7.5}$$
+```math
+\frac{dr_{\rm genetic}}{dt} \approx -\frac{r_{\rm genetic}}{2N_e} \tag{7.5}
+```
 
 This is the rate of dimension loss from drift alone (without selection or
 mutation to counteract it). At $N_e = 300$, one effective genetic dimension
@@ -1098,12 +1176,16 @@ predictability.
 
 The inbreeding coefficient $F$ measures how close you are to the boundary:
 
-$$F = 1 - \frac{H_{\rm observed}}{H_{\rm expected}} \tag{8.1}$$
+```math
+F = 1 - \frac{H_{\rm observed}}{H_{\rm expected}} \tag{8.1}
+```
 
 where $H_{\rm observed}$ is the observed heterozygosity and $H_{\rm expected}$
 is the expected heterozygosity under random mating. In our framework:
 
-$$F \propto \frac{d_{\rm FR}(p, \partial\Delta)^{-2}}{d_{\rm FR}(p_0, \partial\Delta)^{-2}} \tag{8.2}$$
+```math
+F \propto \frac{d_{\rm FR}(p, \partial\Delta)^{-2}}{d_{\rm FR}(p_0, \partial\Delta)^{-2}} \tag{8.2}
+```
 
 where $\partial\Delta$ is the Feller boundary and $p_0$ is the ancestral
 (fully outcrossed) population. Higher $F$ = closer to the boundary = more
@@ -1166,7 +1248,9 @@ Selection for speed racing (which dominates the commercial market because
 sprinters are precocious and sell well as yearlings) pushes $p_C$ upward.
 Each generation:
 
-$$\Delta p_C \approx p_C p_T \cdot s_{\rm speed} + O(1/N_e) \tag{8.3}$$
+```math
+\Delta p_C \approx p_C p_T \cdot s_{\rm speed} + O(1/N_e) \tag{8.3}
+```
 
 where $s_{\rm speed}$ is the selective advantage of the C allele in the
 commercial market. As $p_C$ increases, the breed loses staying ability.
@@ -1234,7 +1318,9 @@ genome — which genes are active, at what level, in which tissues — is
 regulated by RNA and epigenetic mechanisms (methylation, histone modification,
 non-coding RNA). These mechanisms create a TIME-VARYING manifold:
 
-$$M_{\rm phenotype}(t) = \pi_{\rm expression}(M_{\rm genetic}, \text{environment}(t)) \tag{8.4}$$
+```math
+M_{\rm phenotype}(t) = \pi_{\rm expression}(M_{\rm genetic}, \text{environment}(t)) \tag{8.4}
+```
 
 The phenotype manifold is a PROJECTION of the genetic manifold, modulated by
 the environment. The same genome produces different phenotypes depending on
@@ -1248,7 +1334,9 @@ hormone regulation, neural adaptation, muscle development), which depends on
 past gene expression, which depends on earlier phenotype. The epigenetic
 state $\theta_t$ updates based on its own output:
 
-$$\theta_{t+1} = \Phi(\theta_t, \text{phenotype}_{t}) \tag{8.5}$$
+```math
+\theta_{t+1} = \Phi(\theta_t, \text{phenotype}_{t}) \tag{8.5}
+```
 
 This is exactly the self-referential channel of Definition 7.1 in
 MANIFOLD_IS_THE_CHANNEL.md. The horse's development is a feedback loop
@@ -1320,11 +1408,15 @@ inject new securities.
 population with effective size $N_e$ and no mutation or migration loses
 heterozygosity at rate:*
 
-$$\frac{dH}{dt} = -\frac{H}{2N_e} \tag{9.1}$$
+```math
+\frac{dH}{dt} = -\frac{H}{2N_e} \tag{9.1}
+```
 
 *The expected time to fixation-loss of an allele with frequency $p_0$ is:*
 
-$$t_{\rm fix} \approx -4N_e \cdot [(1-p_0)\log(1-p_0) + p_0 \log p_0] \tag{9.2}$$
+```math
+t_{\rm fix} \approx -4N_e \cdot [(1-p_0)\log(1-p_0) + p_0 \log p_0] \tag{9.2}
+```
 
 *For $N_e = 300$ and $p_0 = 0.15$ (the approximate frequency of the T/T
 staying allele at MSTN): $t_{\rm fix} \approx 480$ generations $\approx 4,800$
@@ -1401,7 +1493,9 @@ space. The atoms of $\mathcal{F}^{\rm BWT}$ are the BWT runs — maximal
 subsequences of characters sharing the same context. The number of runs
 $r_{\rm BWT}$ measures the complexity of the sequence:*
 
-$$r_{\rm BWT}(s) = |\{\text{maximal runs in BWT}(s)\}| \tag{10.1}$$
+```math
+r_{\rm BWT}(s) = |\{\text{maximal runs in BWT}(s)\}| \tag{10.1}
+```
 
 *For a maximally random sequence: $r_{\rm BWT} \approx n$ (every character
 is its own run — no context structure). For a highly structured sequence:
@@ -1440,7 +1534,9 @@ genomic CONTEXTS are (not just their raw sequences).
 **Definition 10.2** (BWT-Fisher distance). *Define the BWT-Fisher distance
 between two genomes as:*
 
-$$d_{\rm BWT\text{-}FR}(s_1, s_2) = d_{\rm FR}(\hat{p}_{1}, \hat{p}_{2}) \tag{10.2}$$
+```math
+d_{\rm BWT\text{-}FR}(s_1, s_2) = d_{\rm FR}(\hat{p}_{1}, \hat{p}_{2}) \tag{10.2}
+```
 
 *where $\hat{p}_{k}$ is the empirical distribution of BWT run lengths for
 genome $k$, and $d_{\rm FR}$ is the Fisher-Rao distance on the simplex of
@@ -1466,7 +1562,9 @@ The BWT of $\sigma$ sorts trading days by their factor context. Days in
 the same BWT run experienced the same market regime. The number of BWT runs
 measures the market's regime complexity:
 
-$$r_{\rm BWT}(\text{market}) = \text{number of distinct regime contexts} \tag{10.3}$$
+```math
+r_{\rm BWT}(\text{market}) = \text{number of distinct regime contexts} \tag{10.3}
+```
 
 A market with few regimes (stable CAPM): $r_{\rm BWT}$ small, high
 compression, low entropy. A market with many regime changes (crisis-prone,
@@ -1497,7 +1595,9 @@ Examples over $\{A, C, G, T\}$ with $A < C < G < T$:
 **Theorem 10.4** (Chen-Fox-Lyndon). *Every finite string $w$ has a unique
 factorisation into a non-increasing sequence of Lyndon words:*
 
-$$w = \ell_1 \ell_2 \cdots \ell_k, \qquad \ell_1 \geq_{\rm lex} \ell_2 \geq_{\rm lex} \cdots \geq_{\rm lex} \ell_k \tag{10.4}$$
+```math
+w = \ell_1 \ell_2 \cdots \ell_k, \qquad \ell_1 \geq_{\rm lex} \ell_2 \geq_{\rm lex} \cdots \geq_{\rm lex} \ell_k \tag{10.4}
+```
 
 *This factorisation is canonical — it depends only on the string and the
 alphabet ordering. It is computable in $O(n)$ time (Duval [1983]).*
@@ -1519,7 +1619,9 @@ decomposed into repetitions of shorter patterns.
 **Example.** Suppose the Voronoi alphabet is $\{1, 2, 3, 4\}$ (four market
 regimes: bull, bear, crisis, recovery). A return sequence might factorise as:
 
-$$\underbrace{1234}_{\ell_1} \underbrace{123}_{\ell_2} \underbrace{12}_{\ell_3} \underbrace{12}_{\ell_4} \underbrace{1}_{\ell_5} \underbrace{1}_{\ell_6}$$
+```math
+\underbrace{1234}_{\ell_1} \underbrace{123}_{\ell_2} \underbrace{12}_{\ell_3} \underbrace{12}_{\ell_4} \underbrace{1}_{\ell_5} \underbrace{1}_{\ell_6}
+```
 
 Each Lyndon factor is an irreducible market cycle. The longest factors
 ($\ell_1 = 1234$: a full four-regime cycle) appear first. As the sequence
@@ -1538,7 +1640,9 @@ The free Lie algebra over an alphabet is the algebra generated by the
 letters under the Lie bracket $[x, y] = xy - yx$. Its dimension in degree
 $n$ is given by the necklace polynomial:
 
-$$\dim(\mathrm{Lie}_{n}(A)) = \frac{1}{n}\sum_{d | n} \mu(d) \cdot |A|^{n/d} \tag{10.5}$$
+```math
+\dim(\mathrm{Lie}_{n}(A)) = \frac{1}{n}\sum_{d | n} \mu(d) \cdot |A|^{n/d} \tag{10.5}
+```
 
 where $\mu$ is the Möbius function.
 
@@ -1567,7 +1671,9 @@ independent "directions" of genetic variation exist.
 
 We now have a complete bijective chain:
 
-$$\text{String } w \xrightarrow{\text{CFL}} (\ell_1, \ldots, \ell_k) \xrightarrow{\text{BWT}} \tilde{w} \xrightarrow{\text{MTF+RLE}} \text{compressed}$$
+```math
+\text{String } w \xrightarrow{\text{CFL}} (\ell_1, \ldots, \ell_k) \xrightarrow{\text{BWT}} \tilde{w} \xrightarrow{\text{MTF+RLE}} \text{compressed}
+```
 
 Each step is reversible. The chain applies identically to:
 
@@ -1660,7 +1766,9 @@ the effective capacity and reducing the fiber. The Fisher-Rao distance
 between the pre-data and post-data characteristic manifolds measures the
 information gain:
 
-$$d_{\rm FR}(M_{\rm pre\text{-}data}, M_{\rm post\text{-}data}) = \text{value of the new data} \tag{7.1}$$
+```math
+d_{\rm FR}(M_{\rm pre\text{-}data}, M_{\rm post\text{-}data}) = \text{value of the new data} \tag{7.1}
+```
 
 Buyers who adopt new data sources first gain a temporary information advantage
 — a wider lightcone (LIGHTCONE_OF_PRICE.md) — until the rest of the market

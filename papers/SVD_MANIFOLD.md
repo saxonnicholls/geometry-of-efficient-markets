@@ -98,18 +98,24 @@ preserves the Willmore energy.
 
 **Theorem D** *(Stability index from SVD)*. The stability index satisfies:
 
-$$\mathrm{ind}(M) = \\#\!\left\{i : |\kappa_i|^2 + \frac{d-2}{4} > \lambda_1(-\Delta_M)\right\} \tag{1.1}$$
+```math
+\mathrm{ind}(M) = \\#\!\left\{i : |\kappa_i|^2 + \frac{d-2}{4} > \lambda_1(-\Delta_M)\right\} \tag{1.1}
+```
 
 where $|\kappa_i|$ are the singular values of the shape operator. A minimal surface is stable
 iff no singular value of $A$ exceeds the threshold $\sqrt{\lambda_1(-\Delta_M) - (d-2)/4}$.
 
 **Theorem E** *(Willmore energy as spectral invariant)*. The Willmore energy:
 
-$$\mathcal{W}(M) = \int_M |H|^2\,d\mathrm{vol} = 0 \quad \text{(for minimal } M\text{)} \tag{1.2}$$
+```math
+\mathcal{W}(M) = \int_M |H|^2\,d\mathrm{vol} = 0 \quad \text{(for minimal } M\text{)} \tag{1.2}
+```
 
 but the **Willmore functional of the second fundamental form**:
 
-$$\mathcal{W}_{2}(M) = \int_M |II|^2_{F}\,d\mathrm{vol} = \int_M \sum_i \kappa_i^2\,d\mathrm{vol} \tag{1.3}$$
+```math
+\mathcal{W}_{2}(M) = \int_M |II|^2_{F}\,d\mathrm{vol} = \int_M \sum_i \kappa_i^2\,d\mathrm{vol} \tag{1.3}
+```
 
 is a symmetric function of the singular values $\{|\kappa_i|\}$ of $A$, conformally
 invariant under the Möbius group of $S^{d-1}$, and determines the stability index via (1.1).
@@ -133,7 +139,9 @@ For an isometric immersion $\iota: M^r \to S^{d-1}$, the differential at each po
 $x \in M$ is $d\iota_x : T_xM \to \mathbb{R}^{d}$. Since $\iota$ is isometric, all singular
 values of $d\iota_x$ equal 1. The SVD is:
 
-$$d\iota_x = U_x I_r V_x^T \tag{2.1}$$
+```math
+d\iota_x = U_x I_r V_x^T \tag{2.1}
+```
 
 where $V_x$ is the orthonormal frame of $T_xM$ and $U_x$ extends it to the full $\mathbb{R}^{d}$.
 This SVD carries no curvature information — it is purely the tangent frame.
@@ -148,7 +156,9 @@ The crucial theorem connecting SVD structure to minimality is:
 
 **Theorem 2.1** *(Takahashi 1966)*. *An isometric immersion $\iota: M^r \to S^{d-1}$ satisfies:*
 
-$$\Delta_M \iota = -\lambda\, \iota \quad \text{(eigenmap condition)} \tag{2.2}$$
+```math
+\Delta_M \iota = -\lambda\, \iota \quad \text{(eigenmap condition)} \tag{2.2}
+```
 
 *for some constant $\lambda > 0$ if and only if $\iota$ is a **minimal isometric immersion**
 into a sphere $S^{d-1}(c)$ of some radius $c$. In this case $\lambda = r$.*
@@ -162,14 +172,18 @@ $H = 0$ and $\lambda = r$. $\square$
 $\mathbf{X} \in \mathbb{R}^{n \times d}$ (with $n$ sample points on $M$), the eigenmap
 condition $\Delta_M \iota = -r\iota$ becomes:
 
-$$L_M \mathbf{X} = -r\mathbf{X} \tag{2.3}$$
+```math
+L_M \mathbf{X} = -r\mathbf{X} \tag{2.3}
+```
 
 where $L_M$ is the discrete Laplace–Beltrami operator on the sampled manifold. The columns
 of $\mathbf{X}$ are eigenvectors of $L_M$ with eigenvalue $-r$. This is **the definition
 of a Laplacian eigenmap** \[Belkin–Niyogi 2003\], and the SVD of $\mathbf{X}$ recovers the
 eigenspace:
 
-$$\mathbf{X} = U_r\Sigma_r V_r^T + \text{residual} \tag{2.4}$$
+```math
+\mathbf{X} = U_r\Sigma_r V_r^T + \text{residual} \tag{2.4}
+```
 
 The top-$r$ SVD components span the eigenspace of $L_M$ corresponding to $-r$ —
 precisely the minimal surface directions. **The Eckart–Young truncation to rank $r$ projects
@@ -187,7 +201,9 @@ rank-$r$ approximation captures the true geometry.
 For a codimension-1 immersion $M^{d-2} \subset S^{d-1}$, the shape operator
 $A: T_xM \to T_xM$ is symmetric and has SVD = eigendecomposition:
 
-$$A = V \mathrm{diag}(\kappa_1, \ldots, \kappa_{d-2}) V^T \tag{3.1}$$
+```math
+A = V \mathrm{diag}(\kappa_1, \ldots, \kappa_{d-2}) V^T \tag{3.1}
+```
 
 The singular values $|\kappa_1| \geq |\kappa_2| \geq \ldots \geq |\kappa_{d-2}|$ are the
 **principal curvature magnitudes**, and the columns of $V$ are the **principal curvature
@@ -203,7 +219,9 @@ directions**.
 
 The minimal surface condition:
 
-$$H = 0 \iff \mathrm{tr}(\Sigma_A^{\rm signed}) = 0 \iff \sum_i \kappa_i = 0 \tag{3.2}$$
+```math
+H = 0 \iff \mathrm{tr}(\Sigma_A^{\rm signed}) = 0 \iff \sum_i \kappa_i = 0 \tag{3.2}
+```
 
 is a condition on the **signed** eigenvalues (not the singular values). The singular values
 $|\kappa_i|$ can be anything; it is the cancellation of signs that is required.
@@ -229,13 +247,17 @@ spectral theorem. The question becomes interesting when we ask about **truncatio
 The rank-$k$ truncation $A_k = V_k\mathrm{diag}(\kappa_1,\ldots,\kappa_k)V_k^T$ preserves
 the top-$k$ curvatures but generally violates:
 
-$$\mathrm{tr}(A_k) = \sum_{i=1}^{k} \kappa_i \neq 0 \quad \text{even if } \sum_{i=1}^{d-2}\kappa_i = 0 \tag{3.3}$$
+```math
+\mathrm{tr}(A_k) = \sum_{i=1}^{k} \kappa_i \neq 0 \quad \text{even if } \sum_{i=1}^{d-2}\kappa_i = 0 \tag{3.3}
+```
 
 **Truncation breaks minimality.** If $M$ is minimal ($\sum_i\kappa_i = 0$) but we keep only
 the top-$k$ singular values, the truncated shape operator is no longer trace-free. The
 mean curvature of the approximated surface is:
 
-$$H_k = \frac{1}{k}\sum_{i=1}^{k} \kappa_i = -\frac{1}{k}\sum_{i=k+1}^{d-2}\kappa_i \tag{3.4}$$
+```math
+H_k = \frac{1}{k}\sum_{i=1}^{k} \kappa_i = -\frac{1}{k}\sum_{i=k+1}^{d-2}\kappa_i \tag{3.4}
+```
 
 This is small when the dropped curvatures $\kappa_{k+1},\ldots$ are small (well-separated
 spectrum), but non-zero in general.
@@ -245,7 +267,9 @@ spectrum), but non-zero in general.
 For a minimal surface in 3D ($d=3$, $r=2$), $A$ has exactly two eigenvalues $\kappa_1, \kappa_2$
 with $\kappa_1 + \kappa_2 = 0$. The SVD is:
 
-$$A = V\begin{pmatrix}\kappa & 0 \\ 0 & -\kappa\end{pmatrix}V^T, \qquad \kappa = |\kappa_1| = |\kappa_2| \tag{3.5}$$
+```math
+A = V\begin{pmatrix}\kappa \& 0 \\ 0 \& -\kappa\end{pmatrix}V^T, \qquad \kappa = |\kappa_1| = |\kappa_2| \tag{3.5}
+```
 
 The **singular values are equal** and the **eigenvalues are opposite**. You cannot truncate
 this without destroying the structure entirely (you cannot drop one of two eigenvalues). So
@@ -270,7 +294,9 @@ opposite sign eigenvalues.*
 
 For a minimal surface, the shape operator $A$ is trace-free. Its Moore–Penrose pseudoinverse:
 
-$$A^+ = V\,\mathrm{diag}(1/\kappa_1,\ldots, 1/\kappa_r, 0, \ldots)\,V^T \tag{4.1}$$
+```math
+A^+ = V\,\mathrm{diag}(1/\kappa_1,\ldots, 1/\kappa_r, 0, \ldots)\,V^T \tag{4.1}
+```
 
 (where we take $1/0 = 0$ for any zero eigenvalue) replaces each nonzero principal curvature
 $\kappa_i$ by its reciprocal $1/\kappa_i$.
@@ -279,7 +305,9 @@ $\kappa_i$ by its reciprocal $1/\kappa_i$.
 minimal surface $M \subset S^{d-1}$ in a normal direction $\nu$. Suppose $A$ is invertible
 on $T_xM$ (no flat directions, $\kappa_i \neq 0$ for all $i$). Then:*
 
-$$\mathrm{tr}(A^+) = \sum_{i=1}^{r} \frac{1}{\kappa_i} = 0 \tag{4.2}$$
+```math
+\mathrm{tr}(A^+) = \sum_{i=1}^{r} \frac{1}{\kappa_i} = 0 \tag{4.2}
+```
 
 *That is, $A^+$ is also trace-free and defines the shape operator of a minimal surface —
 the **dual surface** $M^+$.*
@@ -288,8 +316,10 @@ the **dual surface** $M^+$.*
 $\sum_i 1/\kappa_i = 0$. These are two separate conditions and are NOT generally equivalent.
 The result holds for the specific case $r = 2$ (surfaces):
 
-$$\kappa_1 + \kappa_2 = 0 \implies \kappa_1 = -\kappa_2 \implies
-\frac{1}{\kappa_1} + \frac{1}{\kappa_2} = \frac{1}{\kappa_1} - \frac{1}{\kappa_1} = 0 \checkmark \tag{4.3}$$
+```math
+\kappa_1 + \kappa_2 = 0 \implies \kappa_1 = -\kappa_2 \implies
+\frac{1}{\kappa_1} + \frac{1}{\kappa_2} = \frac{1}{\kappa_1} - \frac{1}{\kappa_1} = 0 \checkmark \tag{4.3}
+```
 
 For $r > 2$: the condition $\sum_i \kappa_i = 0$ does not generally imply $\sum_i 1/\kappa_i = 0$.
 We need an additional symmetry assumption — either that the principal curvatures come in
@@ -310,8 +340,10 @@ is impossible for a real shape operator but occurs for the complexification).
 **The duality in pictures.** For the Clifford torus ($\kappa_1 = +1, \kappa_2 = -1$ in
 standard normalisation):
 
-$$A = \begin{pmatrix}1&0\\0&-1\end{pmatrix}, \qquad
-A^+ = \begin{pmatrix}1&0\\0&-1\end{pmatrix} = A \tag{4.4}$$
+```math
+A = \begin{pmatrix}1\&0\\0\&-1\end{pmatrix}, \qquad
+A^+ = \begin{pmatrix}1\&0\\0\&-1\end{pmatrix} = A \tag{4.4}
+```
 
 The Clifford torus is **self-dual under pseudoinversion**: $A^+ = A$. This is a
 deep structural property — the Clifford torus is a fixed point of the pseudoinverse map
@@ -319,8 +351,10 @@ on the space of shape operators.
 
 For a perturbation of the Clifford torus (the tilted torus with $\kappa_1 = \kappa + \varepsilon, \kappa_2 = -\kappa + \varepsilon$, $H = \varepsilon \neq 0$):
 
-$$A^+ = \begin{pmatrix}1/(\kappa+\varepsilon)&0\\0&1/(-\kappa+\varepsilon)\end{pmatrix},
-\qquad \mathrm{tr}(A^+) = \frac{2\varepsilon}{\varepsilon^2 - \kappa^2} \neq 0 \tag{4.5}$$
+```math
+A^+ = \begin{pmatrix}1/(\kappa+\varepsilon)\&0\\0\&1/(-\kappa+\varepsilon)\end{pmatrix},
+\qquad \mathrm{tr}(A^+) = \frac{2\varepsilon}{\varepsilon^2 - \kappa^2} \neq 0 \tag{4.5}
+```
 
 The dual surface of an *inefficient* market (nonzero $H = \varepsilon$) is also inefficient,
 with the dual mean curvature $H^+ = \mathrm{tr}(A^+)/2 \approx -2\varepsilon/\kappa^2 + O(\varepsilon^2)$.
@@ -358,9 +392,11 @@ inversion.*
 surface $M \subset S^{d-1}$, the dual surface $M^+$ (defined by $A^+ = A^{-1}$ when $A$
 is invertible) has the same Willmore functional:*
 
-$$\mathcal{W}_{2}(M^+) = \int_{M^+} |A^+|_F^2\,d\mathrm{vol}_{M^+}
+```math
+\mathcal{W}_{2}(M^+) = \int_{M^+} |A^+|_F^2\,d\mathrm{vol}_{M^+}
 = \int_M \frac{|A|_F^2}{\kappa^4}\cdot \kappa^2 \cdot \kappa^2\,d\mathrm{vol}_{M}
-= \int_M |A|_F^2\,d\mathrm{vol}_{M} = \mathcal{W}_{2}(M) \tag{4.6}$$
+= \int_M |A|_F^2\,d\mathrm{vol}_{M} = \mathcal{W}_{2}(M) \tag{4.6}
+```
 
 where we used $|A^+|_F^2 = 1/\kappa^2 + 1/\kappa^2 = 2/\kappa^2$ and the area element
 scales as $d\mathrm{vol}_{M^+} = \kappa^4 d\mathrm{vol}_{M}$ (from the Jacobian of the
@@ -381,7 +417,9 @@ and the Willmore integral is preserved by the cancellation of $\kappa^4 \cdot (1
 
 The Gauss–Bonnet theorem states:
 
-$$\int_M K\,d\mathrm{vol}_{M} = 2\pi\chi(M) \tag{5.1}$$
+```math
+\int_M K\,d\mathrm{vol}_{M} = 2\pi\chi(M) \tag{5.1}
+```
 
 where $K$ is the Gaussian (intrinsic) curvature and $\chi(M)$ is the Euler characteristic —
 a topological invariant. For a surface of genus $g$: $\chi = 2 - 2g$.
@@ -400,7 +438,9 @@ the integrated Gaussian curvature is not preserved. $\square$
 **Which aspects of Gaussian curvature ARE preserved?** The Gauss equation relates intrinsic
 and extrinsic curvature:
 
-$$K = \overline{K}(e_1, e_2) + \kappa_1\kappa_2 = \frac{1}{4} + \det(A) \tag{5.2}$$
+```math
+K = \overline{K}(e_1, e_2) + \kappa_1\kappa_2 = \frac{1}{4} + \det(A) \tag{5.2}
+```
 
 (for surfaces in $S^3$ with $K_{\rm ambient} = 1/4$). The Eckart–Young truncation affects
 $\det(A)$ but not $\overline{K}$ (the ambient sectional curvature, a property of $S^3$,
@@ -425,13 +465,17 @@ change in $\det(A)$ — which is generically nonzero.
 For higher-dimensional manifolds, the Chern–Gauss–Bonnet theorem expresses the Euler
 characteristic as a polynomial in the curvature tensor:
 
-$$\chi(M) = \frac{1}{(4\pi)^{r/2}\Gamma(r/2+1)}\int_M \mathrm{Pf}(\Omega)\,d\mathrm{vol} \tag{5.3}$$
+```math
+\chi(M) = \frac{1}{(4\pi)^{r/2}\Gamma(r/2+1)}\int_M \mathrm{Pf}(\Omega)\,d\mathrm{vol} \tag{5.3}
+```
 
 where $\mathrm{Pf}(\Omega)$ is the Pfaffian of the curvature 2-form $\Omega$. In terms of
 the SVD of the curvature tensor: $\mathrm{Pf}(\Omega)$ is a function of the wedge products
 of the curvature eigenvalues — specifically, for a minimal surface in $S^{d-1}$:
 
-$$\chi(M) \propto \int_M \prod_{\text{pairs}} (\kappa_i^2 - \kappa_j^2)\,d\mathrm{vol} \tag{5.4}$$
+```math
+\chi(M) \propto \int_M \prod_{\text{pairs}} (\kappa_i^2 - \kappa_j^2)\,d\mathrm{vol} \tag{5.4}
+```
 
 This is a symmetric function of the singular value pairs — but a *nonlinear* one (products,
 not sums). The SVD truncation that preserves the top-$r$ singular values preserves the
@@ -446,23 +490,31 @@ individual terms but not their products, hence not the Euler characteristic.
 The Jacobi operator $L = \Delta_M + |II|^2 + \overline{\mathrm{Ric}}(\vec{\nu},\vec{\nu})$
 acting on $C^\infty(M)$ is a self-adjoint operator and has a spectral decomposition (SVD = eigendecomposition for self-adjoint operators):
 
-$$L = \sum_k \lambda_k\, \phi_k \otimes \phi_k \tag{6.1}$$
+```math
+L = \sum_k \lambda_k\, \phi_k \otimes \phi_k \tag{6.1}
+```
 
 where $\phi_k$ are the Jacobi eigenfunctions and $\lambda_k$ the Jacobi eigenvalues.
 The stability index is:
 
-$$\mathrm{ind}(M) = \\#\{\lambda_k < 0\} \tag{6.2}$$
+```math
+\mathrm{ind}(M) = \\#\{\lambda_k < 0\} \tag{6.2}
+```
 
 **Theorem 6.1** *(Stability index controlled by shape operator SVD)*. *For a minimal
 surface $M^r \subset S^{d-1}$ with shape operators $\{A_k\}_{k=1}^{d-1-r}$ (one per
 normal direction), the stability index satisfies:*
 
-$$\mathrm{ind}(M) \leq \sum_k \\#\left\{i : \kappa_i(A_k)^2 > \frac{\lambda_1(-\Delta_M)}{2}\right\} \tag{6.3}$$
+```math
+\mathrm{ind}(M) \leq \sum_k \\#\left\{i : \kappa_i(A_k)^2 > \frac{\lambda_1(-\Delta_M)}{2}\right\} \tag{6.3}
+```
 
 *where $\lambda_1(-\Delta_M)$ is the first nonzero Laplacian eigenvalue on $M$ (the spectral
 gap). Conversely, if all singular values of all $A_k$ satisfy:*
 
-$$|\kappa_i(A_k)|^2 < \lambda_1(-\Delta_M) - \frac{d-2}{4} \tag{6.4}$$
+```math
+|\kappa_i(A_k)|^2 < \lambda_1(-\Delta_M) - \frac{d-2}{4} \tag{6.4}
+```
 
 *then $\mathrm{ind}(M) = 0$ ($M$ is stable).*
 
@@ -481,8 +533,10 @@ by $1/\sqrt{d-1}$.
 
 **The stability window from singular values** (extending equation 3.4 from Section 3):
 
-$$\underbrace{0 \leq \sigma_i(A) \leq \sqrt{\frac{\lambda_1 - (d-2)/4}{1}}}_{\text{stable}} \qquad
-\underbrace{\sigma_i(A) > \sqrt{\lambda_1 - (d-2)/4}}_{\text{each such } \sigma_i \text{ contributes to index}} \tag{6.5}$$
+```math
+\underbrace{0 \leq \sigma_i(A) \leq \sqrt{\frac{\lambda_1 - (d-2)/4}{1}}}_{\text{stable}} \qquad
+\underbrace{\sigma_i(A) > \sqrt{\lambda_1 - (d-2)/4}}_{\text{each such } \sigma_i \text{ contributes to index}} \tag{6.5}
+```
 
 For the great $r$-sphere: $\lambda_1(-\Delta_{S^r}) = r$ (in Bhattacharyya normalisation),
 $|II|^2 = 0$, so all $\sigma_i = 0 < \sqrt{r - (d-2)/4}$ — stable.
@@ -497,7 +551,9 @@ values exceed the threshold, confirming instability.
 **Corollary 6.2** *(SVD phase transition for stability)*. *There is a critical singular
 value:*
 
-$$\sigma^{\ast} = \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{6.6}$$
+```math
+\sigma^{\ast} = \sqrt{\lambda_1(-\Delta_M) - \frac{d-2}{4}} \tag{6.6}
+```
 
 *A minimal surface $M$ is stable iff all singular values of all shape operators satisfy
 $\sigma_i < \sigma^{\ast}$, and unstable iff any $\sigma_i > \sigma^{\ast}$.*
@@ -521,21 +577,27 @@ perturbation.
 
 The Fisher information matrix $F(b^{\ast})$ estimated from the return data has SVD:
 
-$$F(b^{\ast}) = V\Lambda V^T,
-\qquad \Lambda = \mathrm{diag}(\lambda_1 \geq \ldots \geq \lambda_{d-1} > 0) \tag{7.1}$$
+```math
+F(b^{\ast}) = V\Lambda V^T,
+\qquad \Lambda = \mathrm{diag}(\lambda_1 \geq \ldots \geq \lambda_{d-1} > 0) \tag{7.1}
+```
 
 The top-$r$ eigenvalues $\lambda_1 \geq \ldots \geq \lambda_r$ correspond to the factor
 directions (tangent to the market manifold $M$), and the remaining $\lambda_{r+1},\ldots,\lambda_{d-1}$
 to the idiosyncratic directions (normal to $M$). The mean curvature formula (Proposition
 2.2 of MINIMAL_SURFACE) is:
 
-$$H^2(b^{\ast}) = \sum_{k=r+1}^{d-1} \frac{(b^{\ast} \cdot v_k)^2}{\lambda_k} \tag{7.2}$$
+```math
+H^2(b^{\ast}) = \sum_{k=r+1}^{d-1} \frac{(b^{\ast} \cdot v_k)^2}{\lambda_k} \tag{7.2}
+```
 
 **Theorem 7.1** *(Theorem F: efficiency in SVD language)*. *The market manifold $M$ is
 minimal at $b^{\ast}$ (the market is locally efficient) iff:*
 
-$$\Pi_{N_{b^{\ast}}M}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right) = 0
-\iff \frac{1}{2\sqrt{b^{\ast}}} = \sum_{k=1}^{r} \alpha_k v_k \in \mathrm{Im}(V_r) \tag{7.3}$$
+```math
+\Pi_{N_{b^{\ast}}M}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right) = 0
+\iff \frac{1}{2\sqrt{b^{\ast}}} = \sum_{k=1}^{r} \alpha_k v_k \in \mathrm{Im}(V_r) \tag{7.3}
+```
 
 *where $V_r = [v_1|\cdots|v_r]$ are the top-$r$ eigenvectors of $F(b^{\ast})$.*
 
@@ -553,8 +615,10 @@ $\mathrm{Im}(V_r)$. $\square$
 **Corollary 7.2** *(The Sharpe ratio as an SVD residual)*. *The maximum achievable Sharpe
 ratio is:*
 
-$$\mathrm{Sharpe}^{\ast} = \left\|\Pi_{N_{b^{\ast}}M}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right\|_{F(b^{\ast})^{-1}}
-= \left(\sum_{k=r+1}^{d-1}\frac{(b^{\ast} \cdot v_k)^2}{\lambda_k}\right)^{1/2} \tag{7.4}$$
+```math
+\mathrm{Sharpe}^{\ast} = \left\|\Pi_{N_{b^{\ast}}M}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right\|_{F(b^{\ast})^{-1}}
+= \left(\sum_{k=r+1}^{d-1}\frac{(b^{\ast} \cdot v_k)^2}{\lambda_k}\right)^{1/2} \tag{7.4}
+```
 
 *This is the weighted residual of the projection of $1/(2\sqrt{b^{\ast}})$ onto $\mathrm{Im}(V_r)^{\perp}$,
 weighted by the reciprocal singular values of $F(b^{\ast})$ in the normal directions.*
@@ -570,7 +634,9 @@ roots of the idiosyncratic eigenvalues.
 The pseudoinverse $F(b^{\ast})^+$ (using the top-$r$ eigenvalues only, setting the rest to zero)
 appears in the Laplace approximation to the universal portfolio (LAPLACE.md):
 
-$$\Sigma_T = (T\cdot F(b^{\ast}))^{-1}_{\upharpoonright T_{b^{\ast}}M} \approx \frac{1}{T} F(b^{\ast})^+ \tag{7.5}$$
+```math
+\Sigma_T = (T\cdot F(b^{\ast}))^{-1}_{\upharpoonright T_{b^{\ast}}M} \approx \frac{1}{T} F(b^{\ast})^+ \tag{7.5}
+```
 
 This is the posterior covariance of the portfolio weights — it is the pseudoinverse of $F$
 restricted to the factor directions. By Theorem 4.1 (pseudoinverse duality), if the market
@@ -646,7 +712,9 @@ isometry), there is a classical representation theorem:
 **Theorem 9.1** *(Weierstrass–Enneper)*. *Every minimal surface in $\mathbb{R}^{3}$ can be
 locally represented as:*
 
-$$\iota(z) = \mathrm{Re}\int_{z_0}^{z} \left(f(1-g^2),\, if(1+g^2),\, 2fg\right)\,dw \tag{9.1}$$
+```math
+\iota(z) = \mathrm{Re}\int_{z_0}^{z} \left(f(1-g^2),\, if(1+g^2),\, 2fg\right)\,dw \tag{9.1}
+```
 
 where $f$ is holomorphic, $g$ is meromorphic, and $fg^2$ has no poles.
 
@@ -654,7 +722,9 @@ The **SVD connection:** The integrand $(f(1-g^2), if(1+g^2), 2fg)$ is a null vec
 $\mathbb{C}^{3}$ (its dot product with itself is zero). Writing it as a $3\times 1$ complex
 vector $\Phi(z)$, the shape operator's SVD at each point is determined by:
 
-$$A \sim \mathrm{Re}(\Phi'(z) \overline{\Phi'(z)}^{T} / |\Phi'(z)|^2) \tag{9.2}$$
+```math
+A \sim \mathrm{Re}(\Phi'(z) \overline{\Phi'(z)}^{T} / |\Phi'(z)|^2) \tag{9.2}
+```
 
 The minimal surface condition ($\mathrm{tr}(A) = 0$) is equivalent to the nullity of $\Phi$:
 $\Phi \cdot \Phi = 0$. **The nullity of the Weierstrass data vector is the complex analytic
@@ -677,7 +747,9 @@ the continuous-manifold version of the data matrix SVD.**
 **Conjecture 10.1** *(Pseudoinverse preserves stability)*. *For a stable minimal surface
 $M$ with paired curvature spectrum, the dual surface $M^+$ is also stable, with:*
 
-$$\mathrm{ind}(M^+) = \mathrm{ind}(M) = 0 \tag{10.1}$$
+```math
+\mathrm{ind}(M^+) = \mathrm{ind}(M) = 0 \tag{10.1}
+```
 
 *Equivalently: stability is preserved under pseudoinverse duality.*
 
@@ -692,12 +764,16 @@ by (4.5) showing equal mean curvature up to sign.
 **Theorem 10.2** *(Curvature concentration for minimal surfaces)*. *For a compact minimal
 $r$-submanifold $M$ of $S^{d-1}$ with stable rank $r_{\rm eff}(A) = \|A\|_F^2/\|A\|_2^2$:*
 
-$$1 \leq r_{\rm eff}(A) \leq r \tag{10.2}$$
+```math
+1 \leq r_{\rm eff}(A) \leq r \tag{10.2}
+```
 
 *with $r_{\rm eff}(A) = 1$ for the Clifford torus and $r_{\rm eff}(A) = r$ for totally
 geodesic surfaces. Moreover, the stability Sharpe satisfies:*
 
-$$\mathrm{Sh}_{\rm stab}(M) \geq \frac{\|A\|_F}{\sqrt{r}} = \frac{\sqrt{|II|^2}}{\sqrt{r}} \tag{10.3}$$
+```math
+\mathrm{Sh}_{\rm stab}(M) \geq \frac{\|A\|_F}{\sqrt{r}} = \frac{\sqrt{|II|^2}}{\sqrt{r}} \tag{10.3}
+```
 
 *with equality for the Clifford torus (all singular values equal).*
 
@@ -720,13 +796,19 @@ structure.
 $X \in \mathbb{R}^{T\times d}$ with SVD $X = U\Sigma V^T$, the empirical estimates of the
 curvature quantities are:*
 
-$$\hat{H}(b^{\ast}) = \left(\sum_{k=r+1}^{d-1}\frac{(\hat{b}^{\ast} \cdot \hat{v}_{k})^2}{\hat\lambda_k}\right)^{1/2}
-\approx \frac{\|\Pi_{V_{d-r}^{T}} (1/\sqrt{\hat{b}^{\ast}})\|_2}{\sqrt{2}\,\hat\lambda_{r+1}^{1/2}} \tag{10.4}$$
+```math
+\hat{H}(b^{\ast}) = \left(\sum_{k=r+1}^{d-1}\frac{(\hat{b}^{\ast} \cdot \hat{v}_{k})^2}{\hat\lambda_k}\right)^{1/2}
+\approx \frac{\|\Pi_{V_{d-r}^{T}} (1/\sqrt{\hat{b}^{\ast}})\|_2}{\sqrt{2}\,\hat\lambda_{r+1}^{1/2}} \tag{10.4}
+```
 
-$$\widehat{r_{\rm eff}(A)} = \frac{\sum_{k>r} \hat\lambda_k^{-2}}{\max_{k>r}\hat\lambda_k^{-2}}
-= \frac{\sum_{k>r} \hat\lambda_k^{-2}}{\hat\lambda_{d-1}^{-2}} \tag{10.5}$$
+```math
+\widehat{r_{\rm eff}(A)} = \frac{\sum_{k>r} \hat\lambda_k^{-2}}{\max_{k>r}\hat\lambda_k^{-2}}
+= \frac{\sum_{k>r} \hat\lambda_k^{-2}}{\hat\lambda_{d-1}^{-2}} \tag{10.5}
+```
 
-$$\widehat{\mathrm{Sh}_{\rm stab}} = \max_{k>r} \hat\lambda_k^{-1/2} \cdot \|(\hat{b}^{\ast})^{1/2}\|_\infty \tag{10.6}$$
+```math
+\widehat{\mathrm{Sh}_{\rm stab}} = \max_{k>r} \hat\lambda_k^{-1/2} \cdot \|(\hat{b}^{\ast})^{1/2}\|_\infty \tag{10.6}
+```
 
 *These are computable from the return data and converge to their population values at rate
 $O(1/\sqrt{T})$ under standard regularity conditions.*
@@ -751,7 +833,9 @@ $O(1/\sqrt{T})$ under standard regularity conditions.*
 The deepest insight is that the minimal surface condition $H = 0$ and the SVD are
 **dually related through the trace**:
 
-$$H = 0 \iff \mathrm{tr}(A) = 0 \iff \text{sum of signed singular values} = 0 \tag{11.1}$$
+```math
+H = 0 \iff \mathrm{tr}(A) = 0 \iff \text{sum of signed singular values} = 0 \tag{11.1}
+```
 
 The SVD decomposes $A$ into principal curvature directions and magnitudes. The minimal
 surface condition is not about the magnitudes (the singular values themselves can be

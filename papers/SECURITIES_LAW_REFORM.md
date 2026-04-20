@@ -57,7 +57,9 @@ submanifold $M^r \subset S^{d-1}_{+}$ of the Bhattacharyya sphere, and that the
 market converges to efficiency (the minimal surface condition $H = 0$) via mean
 curvature flow driven by arbitrage. The rate of this convergence is
 
-$$R_{\rm conv} = \min(\lambda_1, C) \tag{1.1}$$
+```math
+R_{\rm conv} = \min(\lambda_1, C) \tag{1.1}
+```
 
 where $\lambda_1$ is the spectral gap of the Jacobi operator on $M^r$ (the
 geometric ceiling — how fast the manifold can deform) and $C$ is the channel
@@ -73,7 +75,9 @@ resilience provides a floor on convergence speed.
 
 The regulator's objective function is therefore:
 
-$$\max_{(\text{rules})} R_{\rm conv} = \min(\lambda_1, C) \tag{1.2}$$
+```math
+\max_{(\text{rules})} R_{\rm conv} = \min(\lambda_1, C) \tag{1.2}
+```
 
 subject to two constraints:
 
@@ -145,7 +149,9 @@ Theorem N3 of NETWORK_INFORMATION_THEORY.md proves: an insider with private
 signal $X \in \mathcal{F}^{\rm oracle}_{t} \setminus \mathcal{F}^{\rm public}_{t}$
 who trades optimally contributes
 
-$$\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{2.1}$$
+```math
+\Delta R_{\rm conv} = \frac{I(X;\, Y_{\rm trade})}{T} \tag{2.1}
+```
 
 additional bits per period to the market's information channel. The insider's
 trade moves the price toward the true value — it reduces the mean curvature
@@ -239,7 +245,9 @@ curvature $|H|$ at the point on $M^r$ corresponding to the undisclosed
 information remains non-zero for the duration of the delay. The accumulated
 cost is
 
-$$\Delta\mathcal{W} \approx |H|^2 \cdot \Delta t \tag{3.1}$$
+```math
+\Delta\mathcal{W} \approx |H|^2 \cdot \Delta t \tag{3.1}
+```
 
 where $\Delta t$ is the delay in appropriate units. For a major earnings
 surprise with $|H|^2 \approx 0.01$ per hour (a typical curvature magnitude
@@ -260,7 +268,9 @@ The technology exists: XBRL tagging, API feeds, structured data formats. The
 marginal cost of rapid electronic disclosure is negligible for any company
 with a compliance department. The efficiency gain is:
 
-$$\Delta R_{\rm conv} = |H|^2 \cdot (\Delta t_{\rm old} - \Delta t_{\rm new}) \tag{3.2}$$
+```math
+\Delta R_{\rm conv} = |H|^2 \cdot (\Delta t_{\rm old} - \Delta t_{\rm new}) \tag{3.2}
+```
 
 For the earnings surprise example: replacing 96 hours with 60 seconds
 recovers $\Delta\mathcal{W} \approx 0.96$ units of Willmore energy per event.
@@ -294,13 +304,17 @@ minimal surface). Long-only buying can correct underpricing (negative
 curvature), but only short-selling can correct overpricing (positive
 curvature). Mean curvature flow requires both directions:
 
-$$\frac{\partial M^r}{\partial t} = -H\vec{n} \tag{4.1}$$
+```math
+\frac{\partial M^r}{\partial t} = -H\vec{n} \tag{4.1}
+```
 
 When $H > 0$ (overpriced), the flow pushes the manifold *inward* — this is
 short-selling. When $H < 0$ (underpriced), the flow pushes the manifold
 *outward* — this is buying. Banning short-selling makes the flow one-directional:
 
-$$\frac{\partial M^r}{\partial t} = -\min(H, 0)\,\vec{n} \tag{4.2}$$
+```math
+\frac{\partial M^r}{\partial t} = -\min(H, 0)\,\vec{n} \tag{4.2}
+```
 
 This is half a PDE. It cannot converge to $H = 0$. Bubbles persist.
 
@@ -370,7 +384,9 @@ the curvature change to the spectral gap:
 
 The threshold should therefore be dynamic:
 
-$$\Delta p_{\max} \propto \lambda_1 \cdot \sigma_{\rm daily} \tag{5.1}$$
+```math
+\Delta p_{\max} \propto \lambda_1 \cdot \sigma_{\rm daily} \tag{5.1}
+```
 
 When $\lambda_1$ is large (normal times, fast mean-reversion, deep liquidity):
 widen the breakers. The market can absorb large moves. When $\lambda_1$ is
@@ -403,7 +419,9 @@ The exchange estimates $\lambda_1$ daily from rolling return autocorrelation
 (the Fiedler eigenvalue of the return covariance Laplacian). The circuit
 breaker threshold is:
 
-$$\Delta p_{\rm trigger} = C_0 \cdot \lambda_1 \cdot \sigma_{\rm 20d} \tag{5.2}$$
+```math
+\Delta p_{\rm trigger} = C_0 \cdot \lambda_1 \cdot \sigma_{\rm 20d} \tag{5.2}
+```
 
 where $C_0$ is a calibration constant (set to avoid triggering more than
 once per year on average in backtests), $\lambda_1$ is the estimated spectral
@@ -593,7 +611,9 @@ misinformation costs *twice* — once for the channel capacity consumed
 processing the false signal, and once for the spurious curvature that MCF
 must subsequently undo. The total damage per unit of misinformation is:
 
-$$\Delta R_{\rm conv} = -\frac{2 \cdot I(Z;\, Y|X)}{T} \tag{9.1}$$
+```math
+\Delta R_{\rm conv} = -\frac{2 \cdot I(Z;\, Y|X)}{T} \tag{9.1}
+```
 
 Compare this to insider trading on true information, which *helps* at rate
 $+I(X; Y_{\rm trade})/T$ (Theorem N3). The regulatory response should be

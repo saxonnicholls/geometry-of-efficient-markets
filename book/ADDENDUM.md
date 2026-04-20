@@ -15,7 +15,9 @@ papers but were not written up. Organised by source paper. Incorporate tomorrow.
 
 **Lemma L1. Seeley-DeWitt Coefficients = WKB Corrections.**
 The heat kernel expansion on $(M^r, g_M)$:
-$$p_t(b,b) = (4\pi t)^{-r/2}\sum_{k=0}^\infty a_k(b)\, t^k$$
+```math
+p_t(b,b) = (4\pi t)^{-r/2}\sum_{k=0}^\infty a_k(b)\, t^k
+```
 has Seeley-DeWitt coefficients $a_0 = 1$, $a_1 = R_M/6$, $a_2 = \ldots$
 These ARE the successive WKB corrections to the Laplace approximation.
 The $O(1/T^2)$ accuracy (Cover's prior = Jeffreys prior) corresponds to $a_1 = 0$
@@ -39,7 +41,9 @@ with the scalar curvature $R=1/4 \cdot r(r-1)$ giving $a_1 = r(r-1)/24$.
 
 **Lemma M1. Cauchy-Crofton Formula for Sharpe Ratio.**
 The Sharpe ratio can be written as an integral over random hyperplanes $P$:
-$$\mathrm{Sharpe}^{\ast} = c_r \int_{\rm Gr(d-1,d)} \mathrm{length}(M^r \cap P)\, d\nu(P)$$
+```math
+\mathrm{Sharpe}^{\ast} = c_r \int_{\rm Gr(d-1,d)} \mathrm{length}(M^r \cap P)\, d\nu(P)
+```
 where $d\nu$ is the kinematic measure on the Grassmannian.
 This is the Cauchy-Crofton formula for the $L^1$ norm of mean curvature.
 **Practical consequence:** The Sharpe ratio can be estimated by counting how many
@@ -93,7 +97,9 @@ The stability index grows with genus — higher-genus markets have more failure 
 
 **Lemma CV1. Regret Compounds Sub-Linearly.**
 Over $K$ independent market periods of length $T$ each, the total MUP regret is:
-$$R_{\rm total} = K \cdot \frac{r\log T}{2T}$$
+```math
+R_{\rm total} = K \cdot \frac{r\log T}{2T}
+```
 which grows as $K$ but decays as $1/T$ within each period. The compound annual regret
 for daily trading ($T=252$, $K=$ years) is $\approx r\log(252)/(2\cdot252) \approx 1.1r$
 basis points per year. For $r=4$: $\approx 4.4$ bps/year. **The MUP's advantage over
@@ -113,7 +119,9 @@ flows are self-financing.
 **Lemma H1. Heisenberg Uncertainty on the Market Manifold.**
 The portfolio weight $b_i$ and its conjugate momentum $\pi_i = \partial_{\dot{b}_{i}}\mathcal{L}$
 (from the path integral Lagrangian on $M^r$) satisfy:
-$$\Delta b_i \cdot \Delta\pi_i \geq \frac{\varepsilon^2}{2} = \frac{1}{2T}$$
+```math
+\Delta b_i \cdot \Delta\pi_i \geq \frac{\varepsilon^2}{2} = \frac{1}{2T}
+```
 where $\Delta$ denotes standard deviation. **This gives a fundamental limit on
 portfolio precision:** after $T$ observations, the log-optimal portfolio $b^{\ast}$ can
 be estimated to precision no better than $1/\sqrt{T}$ in any single weight —
@@ -143,7 +151,9 @@ equals $r$ at the IR fixed point (CAPM) and is larger at UV fixed points
 
 **Lemma R2. Operator Product Expansion in the Market CFT.**
 The OPE of two return operators $\mathcal{O}_{i}(t_1)\mathcal{O}_{j}(t_2)$ as $t_1\to t_2$:
-$$\mathcal{O}_{i}(t_1)\mathcal{O}_{j}(t_2) \sim \sum_k C_{ij}^{k} |t_1-t_2|^{\Delta_k-\Delta_i-\Delta_j}\mathcal{O}_{k}(t_2)$$
+```math
+\mathcal{O}_{i}(t_1)\mathcal{O}_{j}(t_2) \sim \sum_k C_{ij}^{k} |t_1-t_2|^{\Delta_k-\Delta_i-\Delta_j}\mathcal{O}_{k}(t_2)
+```
 where $\Delta_k = k(k+r-1)/4$ are the scaling dimensions (= eigenvalues of the Jacobi
 operator divided by 4). The OPE coefficients $C_{ij}^{k}$ are the 3-point functions of
 the market CFT. **Market correlations at different time scales are governed by
@@ -167,7 +177,9 @@ rotations are "free" (zero Berry phase) and which accumulate phase.**
 
 **Lemma F2. The Atiyah-Singer Index Theorem Applied to the Market.**
 For the Dirac operator $D$ on the spinor bundle over $M^r$:
-$$\mathrm{ind}(D) = \int_{M^r}\hat{A}(TM) = \hat{A}$-genus of $M^r$$
+```math
+\mathrm{ind}(D) = \int_{M^r}\hat{A}(TM) = \hat{A}$-genus of $M^r
+```
 For $r=2$ (Clifford torus): $\hat{A}(T^2) = 0$ (the $\hat{A}$-genus of any
 flat manifold is 0). For the sphere $S^r$: $\hat{A}(S^r) = 0$ for $r\neq 4k$.
 **The index theorem tells us the number of zero modes of the market's Dirac
@@ -220,7 +232,9 @@ that is invariant under reparametrisation of time.
 **Lemma CX1. The VC Dimension of Manifold-Adapted Strategies.**
 The Vapnik-Chervonenkis dimension of the class of $\mathcal{F}^{M}$-adapted strategies
 (strategies that depend only on the current manifold position) is:
-$$\mathrm{VC}(\mathcal{S}^{M}) = r$$
+```math
+\mathrm{VC}(\mathcal{S}^{M}) = r
+```
 — equal to the manifold dimension. This follows because $\mathcal{S}^{M}$ is
 parameterised by functions on $M^r$, and the VC dimension of function classes
 on $r$-dimensional manifolds is $r$ by the standard Sauer-Shelah lemma.
@@ -252,7 +266,9 @@ predictability from the full history vs just the current state.
 **Lemma FL2. The Filtration Complexity = Hausdorff Dimension of the Path Space.**
 The Hausdorff dimension of the set of all admissible Voronoi paths of length $T$
 under the natural metric on path space equals the filtration complexity:
-$$\dim_H(\text{admissible paths}) = h_{\rm Kelly} / \log(r+1)$$
+```math
+\dim_H(\text{admissible paths}) = h_{\rm Kelly} / \log(r+1)
+```
 This connects the Hausdorff dimension of the market's "trajectory space" to the
 Kelly growth rate — another path from the geometric framework to the Kelly criterion.
 
@@ -262,7 +278,9 @@ Kelly growth rate — another path from the geometric framework to the Kelly cri
 
 **Lemma FP1. Entropy Production = Willmore Energy Flux.**
 The entropy production rate of the market diffusion on $M^r$:
-$$\sigma_{\rm entropy}(t) = \varepsilon^2\int_{M^r}|\nabla_{g_M}\log\rho_t|^2\,\rho_t\,d\mathrm{vol}_{M}$$
+```math
+\sigma_{\rm entropy}(t) = \varepsilon^2\int_{M^r}|\nabla_{g_M}\log\rho_t|^2\,\rho_t\,d\mathrm{vol}_{M}
+```
 satisfies $\sigma_{\rm entropy} \geq \varepsilon^2\lambda_1(L_M)\cdot D_{\rm KL}(\rho_t\|\pi)$
 (Poincaré inequality). At the efficient market equilibrium ($\rho_t = \pi$): $\sigma=0$.
 **Away from equilibrium:** $\sigma_{\rm entropy}$ measures the rate at which the
@@ -273,7 +291,9 @@ rate — achieved when the drift is entirely in the mean curvature direction.
 **Lemma FP2. The H-Theorem for Markets.**
 The free energy $\mathcal{F}[\rho] = \int\rho\log(\rho/\pi)\,d\mathrm{vol}_{M}$
 (KL divergence from equilibrium) is a Lyapunov function:
-$$\frac{d\mathcal{F}}{dt} = -\sigma_{\rm entropy} \leq 0$$
+```math
+\frac{d\mathcal{F}}{dt} = -\sigma_{\rm entropy} \leq 0
+```
 with equality iff $\rho_t = \pi$ (efficient market equilibrium). **The market's
 deviation from efficiency is measured by the free energy $\mathcal{F}[\rho]$,
 which decreases monotonically at rate $\sigma_{\rm entropy}$** — the market entropy
@@ -307,7 +327,9 @@ the Grassberger correlation dimension (also = $r$).
 
 **Lemma LLM1. The Neural Tangent Kernel Converges to the Fisher-Rao Kernel.**
 For an infinitely wide transformer trained on market data, the Neural Tangent Kernel:
-$$K_{\rm NTK}(b_1, b_2) = \mathbb{E}_\theta[\nabla_\theta f_\theta(b_1)\cdot\nabla_\theta f_\theta(b_2)]$$
+```math
+K_{\rm NTK}(b_1, b_2) = \mathbb{E}_\theta[\nabla_\theta f_\theta(b_1)\cdot\nabla_\theta f_\theta(b_2)]
+```
 converges to the heat kernel on $M^r$: $K_{\rm NTK}(b_1,b_2)\to p_t(b_1,b_2)$ as
 width $\to\infty$. This means **the lazy training regime of a wide transformer
 trained on market data learns the heat kernel on $M^r$ — the same object as the
@@ -338,7 +360,9 @@ and idiosyncratic (normal) eigenvalue contributions.**
 The Marchenko-Pastur law is the free convolution of the factor distribution
 (a finite measure on $r$ point masses at the factor eigenvalues) with the Marchenko-Pastur
 noise distribution (for the idiosyncratic part). This gives an exact decomposition:
-$$\mu_{\hat{F}} = \mu_{\rm factor} \boxtimes \mu_{\rm noise}$$
+```math
+\mu_{\hat{F}} = \mu_{\rm factor} \boxtimes \mu_{\rm noise}
+```
 (where $\boxtimes$ is the rectangular free convolution). **This decomposition
 is the random matrix analogue of the tangential/normal bundle decomposition** —
 the empirical spectral distribution factorises into factor and idiosyncratic components.
@@ -349,8 +373,10 @@ the empirical spectral distribution factorises into factor and idiosyncratic com
 
 **Lemma PI1. Spectral Zeta Function Regularisation of the Market Path Integral.**
 The one-loop effective action (from the Gaussian fluctuations around the classical path):
-$$\Gamma_{\rm 1-loop} = -\frac{1}{2}\log\det(-\nabla^2_{M^r} + m^2)
-= \frac{1}{2}\zeta'_{M^r}(0;m^2)$$
+```math
+\Gamma_{\rm 1-loop} = -\frac{1}{2}\log\det(-\nabla^2_{M^r} + m^2)
+= \frac{1}{2}\zeta'_{M^r}(0;m^2)
+```
 where $\zeta_{M^r}(s;m^2) = \sum_k(\lambda_k + m^2)^{-s}$ is the spectral zeta
 function with mass term $m^2 = r(T)$ (the risk-free rate).
 **The one-loop correction to option prices is the spectral zeta function
@@ -360,7 +386,9 @@ The Casimir energy of the Clifford torus market is $\zeta_{T^2}(-1/2)/2$.
 
 **Lemma PI2. The Market Partition Function = Determinant of the Laplacian.**
 The full partition function (path integral with no payoff, just the measure):
-$$\mathcal{Z} = \int\mathcal{D}^{M}[b]\,e^{-S_M[b]/2\varepsilon^2} = (\det(-\varepsilon^2\Delta_M))^{-1/2}$$
+```math
+\mathcal{Z} = \int\mathcal{D}^{M}[b]\,e^{-S_M[b]/2\varepsilon^2} = (\det(-\varepsilon^2\Delta_M))^{-1/2}
+```
 The determinant of the manifold Laplacian can be computed via the Ray-Singer
 analytic torsion (for odd-dimensional manifolds) or the Quillen metric (for
 even-dimensional manifolds). **The market's total "path weight" is the
@@ -373,7 +401,9 @@ inverse square root of the Laplacian determinant — a topological invariant of 
 **Lemma CT1. The Kaplan-Yorke Dimension = $r$.**
 For the pseudo-Anosov market with Lyapunov exponents $\chi_1 \geq \chi_2 \geq \ldots \geq \chi_r$:
 the Kaplan-Yorke (Lyapunov) dimension is:
-$$d_{\rm KY} = k + \frac{\sum_{i=1}^{k}\chi_i}{|\chi_{k+1}|}$$
+```math
+d_{\rm KY} = k + \frac{\sum_{i=1}^{k}\chi_i}{|\chi_{k+1}|}
+```
 where $k$ is the largest index such that $\sum_{i=1}^{k}\chi_i \geq 0$.
 For the efficient pseudo-Anosov market: $\chi_i = \pm\log\lambda_{\rm pA}/r$,
 so $d_{\rm KY} = r$. **The Kaplan-Yorke dimension of the efficient market = $r$ =
@@ -382,7 +412,9 @@ alongside the Grassberger correlation dimension and the FNN algorithm.
 
 **Lemma CT2. Ruelle-Pesin Formula for the Market.**
 The Kolmogorov-Sinai entropy equals the sum of positive Lyapunov exponents:
-$$h_{\rm KS} = \sum_{\chi_i > 0}\chi_i = (r/2)\log\lambda_{\rm pA} = h_{\rm Kelly}$$
+```math
+h_{\rm KS} = \sum_{\chi_i > 0}\chi_i = (r/2)\log\lambda_{\rm pA} = h_{\rm Kelly}
+```
 (for the pseudo-Anosov market with symmetric Lyapunov spectrum).
 **The Kelly growth rate equals the sum of positive Lyapunov exponents of the
 market's dynamics.** This is the Ruelle-Pesin formula applied to the market —
@@ -414,7 +446,9 @@ When assets are partitioned into sectors $\mathcal{S} = \{S_1,\ldots,S_K\}$
 (e.g., technology, finance, healthcare), the Owen value $\phi_i^{\rm Owen}$
 is the Shapley value of a two-stage game: first allocate Kelly growth to sectors,
 then within each sector. The Owen sector attribution:
-$$\Phi_k^{\rm Owen} = \sum_{i\in S_k}\phi_i = \sum_{i\in S_k}b^{\ast}_{i}(\mu_i-\bar\mu)$$
+```math
+\Phi_k^{\rm Owen} = \sum_{i\in S_k}\phi_i = \sum_{i\in S_k}b^{\ast}_{i}(\mu_i-\bar\mu)
+```
 is the sum of Shapley values within each sector — preserving sector-level efficiency
 while maintaining asset-level fairness. **The Owen value is the correct attribution
 framework for sector-level portfolio analysis.**

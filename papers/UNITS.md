@@ -235,7 +235,9 @@ or $T$ to make it dimensionless.
 relates $\kappa_k/\kappa_1$, which has units $[T]^0$ but depends on the time
 unit through $\kappa$, to $\lambda_1/\lambda_k$, which is dimensionless). To
 make a dimensionless prediction, express the hierarchy as:
-$$\frac{t_{1/2}^{(k)} / t_{1/2}^{(1)}}{\lambda_k / \lambda_1} = \text{const?}$$
+```math
+\frac{t_{1/2}^{(k)} / t_{1/2}^{(1)}}{\lambda_k / \lambda_1} = \text{const?}
+```
 Both sides are dimensionless. This is the correctly formulated test.
 
 **Rule 4:** When comparing across asset classes, only compare dimensionless numbers.

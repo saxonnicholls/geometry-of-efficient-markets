@@ -29,7 +29,9 @@ $r=2$), which is the upfront geometric cost of integration. If the two markets
 share $k$ out of $r$ total factors, the merger saves $k \cdot \log T / (2T)$ in
 regret per period. The payback formula
 
-$$T_{\rm payback} \approx \frac{W_{\rm neck} \cdot 2T}{k \cdot \log T}$$
+```math
+T_{\rm payback} \approx \frac{W_{\rm neck} \cdot 2T}{k \cdot \log T}
+```
 
 gives a computable answer to the most expensive question in finance: *should these
 two markets be connected?* High $k/r$ mergers are cheap (NYSE-Euronext, $k/r
@@ -81,7 +83,9 @@ It is simply the economic relationship between the two markets.
 
 Given $\Phi$, the **intermarket spread** at a point $p \in M_1$ is
 
-$$\sigma(p) = \pi(p) - \Phi^{\ast}\pi_2(p) \tag{1.1}$$
+```math
+\sigma(p) = \pi(p) - \Phi^{\ast}\pi_2(p) \tag{1.1}
+```
 
 where $\pi$ is the log-price function on $M_1$ and $\Phi^*\pi_2 = \pi_2 \circ
 \Phi$ is the pullback of the log-price on $M_2$. The spread $\sigma$ is a section
@@ -92,7 +96,9 @@ and measures the deviation of $\Phi$ from a price-preserving isometry.
 
 Any spread admits a unique orthogonal decomposition into three components:
 
-$$\sigma = \sigma_{\rm fund} + \sigma_{\rm curv} + \sigma_{\rm top}. \tag{1.2}$$
+```math
+\sigma = \sigma_{\rm fund} + \sigma_{\rm curv} + \sigma_{\rm top}. \tag{1.2}
+```
 
 **Component 1: Fundamental spread** $\sigma_{\rm fund}$. This is the geodesic
 distance in the product geometry $S^{d_1-1}_{+} \times S^{d_2-1}_{+}$ between the
@@ -140,13 +146,17 @@ that need not revert.
 
 The clean geometric object underlying any spread is the **parity manifold**:
 
-$$\Gamma_\Phi = \{(x, \Phi(x)) : x \in M_1\} \subset M_1 \times M_2 \tag{1.3}$$
+```math
+\Gamma_\Phi = \{(x, \Phi(x)) : x \in M_1\} \subset M_1 \times M_2 \tag{1.3}
+```
 
 — the graph of the correspondence map in the product space. When the two
 markets are in equilibrium, trading lives ON $\Gamma_\Phi$. The spread is the
 **normal displacement** from $\Gamma_\Phi$:
 
-$$\sigma(x, y) = d_{g^{\rm prod}}\!\big((x, y),\, \Gamma_\Phi\big) \tag{1.4}$$
+```math
+\sigma(x, y) = d_{g^{\rm prod}}\!\big((x, y),\, \Gamma_\Phi\big) \tag{1.4}
+```
 
 measured in the product Fisher-Rao metric $g^{\rm prod} = g^{\rm FR}_{1} \oplus g^{\rm FR}_{2}$.
 
@@ -154,13 +164,17 @@ measured in the product Fisher-Rao metric $g^{\rm prod} = g^{\rm FR}_{1} \oplus 
 $M_2$). The spread process evolves in this normal bundle. Near $\Gamma_\Phi$,
 the spread satisfies an OU/Jacobi-type SDE in normal coordinates:
 
-$$d\sigma = -J_\Phi(\sigma)\,dt + \varepsilon\, dW^\perp \tag{1.5}$$
+```math
+d\sigma = -J_\Phi(\sigma)\,dt + \varepsilon\, dW^\perp \tag{1.5}
+```
 
 where $J_\Phi$ is the **Jacobi operator of the parity manifold** — the second
 variation of the "distance to parity" functional. The eigenvalues of $J_\Phi$
 give the mean-reversion speeds of each spread mode:
 
-$$\lambda_k(J_\Phi) = \text{mean-reversion speed of the $k$-th spread component.}$$
+```math
+\lambda_k(J_\Phi) = \text{mean-reversion speed of the $k$-th spread component.}
+```
 
 This directly generalises the pairs trading result (PAIRS_TRADING.md Section 3):
 the OU mean-reversion speed $\kappa$ for a pairs spread IS the first eigenvalue
@@ -217,8 +231,10 @@ in the "expensive" manifold. Formally, the trader selects a portfolio
 $b = (b_1, -b_2)$ on the product space $M_1 \times M_2$ (long $b_1$ on $M_1$,
 short $b_2$ on $M_2$). The trader's P\&L over one period is
 
-$$\Delta W = \langle b_1, x_1 \rangle - \langle b_2, x_2 \rangle \approx
--\Delta\sigma_{\rm curv} + \text{(fundamental drift)} \tag{2.1}$$
+```math
+\Delta W = \langle b_1, x_1 \rangle - \langle b_2, x_2 \rangle \approx
+-\Delta\sigma_{\rm curv} + \text{(fundamental drift)} \tag{2.1}
+```
 
 where $x_1, x_2$ are the return vectors on the respective markets. The P\&L is
 driven by changes in the curvature spread.
@@ -230,7 +246,9 @@ driven by changes in the curvature spread.
 manifolds with O'Neill tensor $A_\Phi$. The maximum Sharpe ratio achievable by
 any spread trade between $M_1$ and $M_2$ is*
 
-$$\mathrm{Sharpe}^{\ast}_{\rm spread} = \|A_\Phi\|_{L^2(M_1, g_{M_1})}. \tag{2.2}$$
+```math
+\mathrm{Sharpe}^{\ast}_{\rm spread} = \|A_\Phi\|_{L^2(M_1, g_{M_1})}. \tag{2.2}
+```
 
 *This is the intermarket analogue of $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ from
 MINIMAL_SURFACE.md. When $\Phi$ is an isometry, $A_\Phi = 0$ and the spread has
@@ -241,8 +259,10 @@ an isometry. By the O'Neill curvature formula [O'Neill 1966], the sectional
 curvature of the product manifold $M_1 \times_\Phi M_2$ (the warped product with
 fibre map $\Phi$) decomposes as
 
-$$K_{M_1 \times_\Phi M_2}(X, Y) = K_{M_1}(X, Y) + K_{M_2}(\Phi_*X, \Phi_*Y)
-- 3|A_\Phi(X, Y)|^2 \tag{2.3}$$
+```math
+K_{M_1 \times_\Phi M_2}(X, Y) = K_{M_1}(X, Y) + K_{M_2}(\Phi_*X, \Phi_*Y)
+- 3|A_\Phi(X, Y)|^2 \tag{2.3}
+```
 
 for horizontal vectors $X, Y$. The excess curvature $|A_\Phi|^2$ generates a
 drift in the log-wealth of the spread portfolio. The maximum Sharpe ratio is the
@@ -256,8 +276,10 @@ maximum eigenvalue of $A_\Phi^{\ast}A_\Phi$. $\square$
 The convergence rate of the curvature spread is determined by the spectral gap of
 the Laplacian on the product manifold. By the spectral theory of product spaces:
 
-$$\lambda_1(M_1 \times M_2) = \min\bigl(\lambda_1(M_1), \lambda_1(M_2)\bigr).
-\tag{2.4}$$
+```math
+\lambda_1(M_1 \times M_2) = \min\bigl(\lambda_1(M_1), \lambda_1(M_2)\bigr).
+\tag{2.4}
+```
 
 The slowest-mixing market sets the convergence rate. A fast, liquid equity market
 paired with a slow, illiquid commodity market converges at the commodity market's
@@ -270,7 +292,9 @@ than equity spreads — and now has a geometric explanation.
 *The optimal spread trade between $M_1$ and $M_2$ is the eigenvector of the
 cross-market Fisher information matrix*
 
-$$F_{\rm cross} = \Phi^{\ast} F_{M_2} - F_{M_1} \tag{2.5}$$
+```math
+F_{\rm cross} = \Phi^{\ast} F_{M_2} - F_{M_1} \tag{2.5}
+```
 
 *corresponding to the smallest (most negative) eigenvalue. This is the direction
 of maximum mean-reversion: the mode along which the correspondence $\Phi$ is
@@ -340,9 +364,11 @@ merged market — how quickly information propagates across the full system.
 *Let $M_1 \mathbin{\#}_{L} M_2$ denote the connected sum with neck length $L$ and
 neck width $w$. The first non-zero eigenvalue of the Laplacian satisfies*
 
-$$\lambda_1(M_1 \mathbin{\#}_{L} M_2) \approx \min\!\left(\lambda_1(M_1), 
+```math
+\lambda_1(M_1 \mathbin{\#}_{L} M_2) \approx \min\!\left(\lambda_1(M_1),
 \lambda_1(M_2), \frac{\pi^2 w^{r-2}}{L^2 \cdot
-\max(\mathrm{vol}(M_1), \mathrm{vol}(M_2))}\right). \tag{3.1}$$
+\max(\mathrm{vol}(M_1), \mathrm{vol}(M_2))}\right). \tag{3.1}
+```
 
 *The third term is the "tunnel mode" — the eigenvalue of the neck itself.*
 
@@ -376,7 +402,9 @@ accommodate the join.
 
 For surfaces ($r = 2$), the classical result is:
 
-$$W_{\rm neck} = \int_{\rm neck} |H|^2 \, d\mathrm{vol} \geq 4\pi. \tag{4.1}$$
+```math
+W_{\rm neck} = \int_{\rm neck} |H|^2 \, d\mathrm{vol} \geq 4\pi. \tag{4.1}
+```
 
 The lower bound $4\pi$ is sharp: it is achieved by the catenoidal neck (the
 rotationally symmetric minimal surface connecting two planes). By the Li-Yau
@@ -386,8 +414,10 @@ self-intersections). A neck costing *exactly* $4\pi$ is the minimal integration
 
 For higher-dimensional manifolds ($r > 2$):
 
-$$W_{\rm neck} \sim \mathrm{Vol}(S^{r-1}) \cdot L^{-(r-2)} = \frac{2\pi^{r/2}}
-{\Gamma(r/2)} \cdot L^{-(r-2)}. \tag{4.2}$$
+```math
+W_{\rm neck} \sim \mathrm{Vol}(S^{r-1}) \cdot L^{-(r-2)} = \frac{2\pi^{r/2}}
+{\Gamma(r/2)} \cdot L^{-(r-2)}. \tag{4.2}
+```
 
 The neck cost *decreases* as the neck lengthens for $r > 2$ — longer, thinner
 necks are cheaper in Willmore energy but slower in spectral gap. There is a
@@ -426,17 +456,23 @@ two markets merge, the total factor count changes.
 Let Market 1 have $r_1$ factors and Market 2 have $r_2$ factors, with $k$ shared
 factors. Before merger:
 
-$$\text{Total regret (pre-merger)} = \frac{r_1 \cdot \log T}{2T} + \frac{r_2 \cdot
-\log T}{2T} = \frac{(r_1 + r_2) \cdot \log T}{2T}. \tag{5.1}$$
+```math
+\text{Total regret (pre-merger)} = \frac{r_1 \cdot \log T}{2T} + \frac{r_2 \cdot
+\log T}{2T} = \frac{(r_1 + r_2) \cdot \log T}{2T}. \tag{5.1}
+```
 
 After merger, the $k$ shared factors are counted once, not twice:
 
-$$\text{Total regret (post-merger)} = \frac{(r_1 + r_2 - k) \cdot \log T}{2T}.
-\tag{5.2}$$
+```math
+\text{Total regret (post-merger)} = \frac{(r_1 + r_2 - k) \cdot \log T}{2T}.
+\tag{5.2}
+```
 
 The saving per period is
 
-$$\Delta_{\rm regret} = \frac{k \cdot \log T}{2T}. \tag{5.3}$$
+```math
+\Delta_{\rm regret} = \frac{k \cdot \log T}{2T}. \tag{5.3}
+```
 
 ### 5.2 The payback formula
 
@@ -444,7 +480,9 @@ $$\Delta_{\rm regret} = \frac{k \cdot \log T}{2T}. \tag{5.3}$$
 *A market merger with neck Willmore energy $W_{\rm neck}$ and $k$ shared factors
 pays for itself after*
 
-$$T_{\rm payback} \approx \frac{W_{\rm neck} \cdot 2T}{k \cdot \log T} \tag{5.4}$$
+```math
+T_{\rm payback} \approx \frac{W_{\rm neck} \cdot 2T}{k \cdot \log T} \tag{5.4}
+```
 
 *periods. For a minimal neck ($W_{\rm neck} = 4\pi$, $r = 2$), this gives
 $T_{\rm payback} \approx 8\pi T / (k \cdot \log T)$.*
@@ -453,10 +491,14 @@ $T_{\rm payback} \approx 8\pi T / (k \cdot \log T)$.*
 The merger saves $k \cdot \log T / (2T)$ per period. The payback period is the
 time at which cumulative savings equal the initial cost:
 
-$$T_{\rm payback} \cdot \frac{k \cdot \log T}{2T} = W_{\rm neck}$$
+```math
+T_{\rm payback} \cdot \frac{k \cdot \log T}{2T} = W_{\rm neck}
+```
 
-$$\implies T_{\rm payback} = \frac{W_{\rm neck} \cdot 2T}{k \cdot \log T}.
-\quad\square \tag{5.5}$$
+```math
+\implies T_{\rm payback} = \frac{W_{\rm neck} \cdot 2T}{k \cdot \log T}.
+\quad\square \tag{5.5}
+```
 
 ### 5.3 Payback table (daily data, $T = 252$)
 
@@ -766,8 +808,10 @@ In practice, no two markets are exactly isometric. But many are *approximately*
 isometric: Brent and WTI crude oil differ only in grade and delivery location.
 For approximately isometric manifolds with $\|A_\Phi\|_{L^2} = \delta \ll 1$:
 
-$$T_{\rm payback} \approx \frac{W_{\rm neck}}{r \cdot \log T / (2T) - \delta^2 /
-(2T)} \approx \frac{W_{\rm neck} \cdot 2T}{r \cdot \log T} \tag{8.1}$$
+```math
+T_{\rm payback} \approx \frac{W_{\rm neck}}{r \cdot \log T / (2T) - \delta^2 /
+(2T)} \approx \frac{W_{\rm neck} \cdot 2T}{r \cdot \log T} \tag{8.1}
+```
 
 which is small when $r$ is large. Near-identical markets merge cheaply and
 quickly. This explains why commodity market convergence (different grades of the
@@ -793,11 +837,15 @@ connectedness and curvature of the intermarket geometry:
 
 The transitions between types are continuous in the neck width parameter $w$:
 
-$$\text{Independent} \xrightarrow{w > 0} \text{Partial merger}
-\xrightarrow{w \to w_{\rm max}} \text{Full integration}$$
+```math
+\text{Independent} \xrightarrow{w > 0} \text{Partial merger}
+\xrightarrow{w \to w_{\rm max}} \text{Full integration}
+```
 
-$$\text{Partial merger} \xrightarrow{w \to 0} \text{De-merger}
-\xrightarrow{w = 0} \text{Independent}$$
+```math
+\text{Partial merger} \xrightarrow{w \to 0} \text{De-merger}
+\xrightarrow{w = 0} \text{Independent}
+```
 
 ### 9.2 The Kapouleas-Mazzeo-Pacard balancing condition
 
@@ -810,7 +858,9 @@ condition** [Kapouleas 1990, Mazzeo and Pacard 2006].
 (the merged market converges to efficiency) if and only if the Kapouleas balancing
 condition holds at the neck:*
 
-$$\sum_{\alpha} n_\alpha \cdot \vec{H}_\alpha = 0 \tag{9.1}$$
+```math
+\sum_{\alpha} n_\alpha \cdot \vec{H}_\alpha = 0 \tag{9.1}
+```
 
 *where the sum is over the neck attachment points $\alpha$, $n_\alpha$ is the
 outward unit normal, and $\vec{H}_\alpha$ is the mean curvature vector at the

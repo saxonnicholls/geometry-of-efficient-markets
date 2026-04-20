@@ -130,7 +130,9 @@ undergoes a universal period-doubling cascade as $r$ increases from 1 to $r_\inf
 - $r_\infty$: chaos onset
 
 The bifurcations occur at parameter values $r_n$ with the universal ratio:
-$$\delta = \lim_{n\to\infty}\frac{r_n - r_{n-1}}{r_{n+1}-r_n} = 4.6692\ldots \tag{2.1}$$
+```math
+\delta = \lim_{n\to\infty}\frac{r_n - r_{n-1}}{r_{n+1}-r_n} = 4.6692\ldots \tag{2.1}
+```
 
 and the attractor scaling with universal constant $\alpha = -2.5029\ldots$.
 
@@ -145,7 +147,9 @@ In the RG framework of RENORMALIZATION.md, the market's RG flow has:
 
 **The market bifurcation parameter** is the market's Reynolds number $\mathrm{Re} = H\cdot T\cdot\mathrm{diam}(M)$ from GEOSPATIAL_CONTAGION.md. As $\mathrm{Re}$ increases:
 
-$$\mathrm{Re} = 0\text{ (efficient/CAPM)} \to 1\text{ (transitional)} \to \infty\text{ (turbulent/pseudo-Anosov)}$$
+```math
+\mathrm{Re} = 0\text{ (efficient/CAPM)} \to 1\text{ (transitional)} \to \infty\text{ (turbulent/pseudo-Anosov)}
+```
 
 **Theorem 2.1** *(Feigenbaum constants in the market bifurcation)*. 
 *The transition from periodic to chaotic market dynamics, viewed as a function of
@@ -153,7 +157,9 @@ the mean curvature $H$ (the market's "control parameter"), exhibits Feigenbaum
 universality: the sequence of period-doubling bifurcations in the market manifold's
 Jacobi spectrum occurs at curvature values $H_n$ with the universal ratio:*
 
-$$\lim_{n\to\infty}\frac{H_n - H_{n-1}}{H_{n+1}-H_n} = \delta_{\rm Feigenbaum} = 4.6692\ldots \tag{2.2}$$
+```math
+\lim_{n\to\infty}\frac{H_n - H_{n-1}}{H_{n+1}-H_n} = \delta_{\rm Feigenbaum} = 4.6692\ldots \tag{2.2}
+```
 
 *The self-similarity constant $\alpha = 2.5029\ldots$ governs the scaling of the
 Voronoi cell sizes at each bifurcation level.*
@@ -182,8 +188,10 @@ the ratio of successive Jacobi eigenvalue spacings should approach $\delta$.
 smooth diffeomorphism $f:M^r\to M^r$ (or a flow). Let $\phi:M^r\to\mathbb{R}$ be
 a smooth observable. Then the delay embedding:
 
-$$\Phi: M^r \to \mathbb{R}^{2r+1}, \qquad
-b \mapsto (\phi(b), \phi(f(b)), \phi(f^2(b)), \ldots, \phi(f^{2r}(b))) \tag{3.1}$$
+```math
+\Phi: M^r \to \mathbb{R}^{2r+1}, \qquad
+b \mapsto (\phi(b), \phi(f(b)), \phi(f^2(b)), \ldots, \phi(f^{2r}(b))) \tag{3.1}
+```
 
 is a generic diffeomorphism onto its image — i.e., for generic $\phi$ and $f$,
 the delay embedding is a smooth embedding of $M^r$ into $\mathbb{R}^{2r+1}$.
@@ -191,7 +199,9 @@ the delay embedding is a smooth embedding of $M^r$ into $\mathbb{R}^{2r+1}$.
 **Financial translation:** Let $x_t = \phi(b^{\ast}(t)) = \log(S_{A,t}/S_{A,0})$
 (the log-return of a single asset $A$). The delay embedding:
 
-$$\mathbf{x}(t) = (x_t, x_{t-\tau}, x_{t-2\tau}, \ldots, x_{t-2r\tau}) \in \mathbb{R}^{2r+1} \tag{3.2}$$
+```math
+\mathbf{x}(t) = (x_t, x_{t-\tau}, x_{t-2\tau}, \ldots, x_{t-2r\tau}) \in \mathbb{R}^{2r+1} \tag{3.2}
+```
 
 is (generically) diffeomorphic to $M^r$ — the embedded point cloud is topologically
 the market manifold!
@@ -220,7 +230,9 @@ cross-sectional data required — just the time series of one stock's log-return
 **Theorem 3.1** *(FNN gives the market manifold dimension)*. 
 *For a market on $M^r$ with smooth dynamics, the FNN algorithm applied to the
 log-return series of any non-degenerate asset identifies the manifold dimension $r$:*
-$$m^{\ast} = 2r+1 \quad\text{(the minimum faithful embedding dimension)} \tag{3.3}$$
+```math
+m^{\ast} = 2r+1 \quad\text{(the minimum faithful embedding dimension)} \tag{3.3}
+```
 *For the CAPM ($r=1$): $m^{\ast}=3$. For the Clifford torus ($r=2$): $m^{\ast}=5$.
 For Fama-French ($r=4$): $m^{\ast}=9$.*
 
@@ -277,8 +289,10 @@ The standard Takens theorem is for real-valued observables. The symbolic version
 For a generic observable $\phi:M^r\to\mathcal{A}$ (the Voronoi cell map), the
 symbolic delay embedding:*
 
-$$\Phi_{\rm sym}: X_M \to \mathcal{A}^{2r+1},
-\qquad (s_t)_{t\geq 0} \mapsto (s_t, s_{t-1}, \ldots, s_{t-2r}) \tag{4.1}$$
+```math
+\Phi_{\rm sym}: X_M \to \mathcal{A}^{2r+1},
+\qquad (s_t)_{t\geq 0} \mapsto (s_t, s_{t-1}, \ldots, s_{t-2r}) \tag{4.1}
+```
 
 *is a topological conjugacy between the shift space $X_M$ and a subshift of
 $\mathcal{A}^{2r+1}$. The image of $\Phi_{\rm sym}$ is the $(2r+1)$-step

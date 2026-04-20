@@ -168,15 +168,21 @@ $\eta(i) = e_i$.
 **Multiplication.** The map $\mu: \mathcal{P}^{2}(X) \to \mathcal{P}(X)$ sends a
 distribution over distributions to its average:
 
-$$\mu(\Pi) = \int_{\Delta_{d-1}} b\, d\Pi(b) \in \Delta_{d-1} \tag{2.1}$$
+```math
+\mu(\Pi) = \int_{\Delta_{d-1}} b\, d\Pi(b) \in \Delta_{d-1} \tag{2.1}
+```
 
 Financially: the fund-of-funds collapses to a single portfolio by taking the
 weighted average of its constituent portfolios. This is the **averaging map**.
 
 **Monad axioms.** The unit and multiplication satisfy:
 
-$$\mu \circ \eta_{\mathcal{P}} = \mu \circ \mathcal{P}(\eta) = \mathrm{id}_{\mathcal{P}} \tag{2.2}$$
-$$\mu \circ \mu_{\mathcal{P}} = \mu \circ \mathcal{P}(\mu) \tag{2.3}$$
+```math
+\mu \circ \eta_{\mathcal{P}} = \mu \circ \mathcal{P}(\eta) = \mathrm{id}_{\mathcal{P}} \tag{2.2}
+```
+```math
+\mu \circ \mu_{\mathcal{P}} = \mu \circ \mathcal{P}(\mu) \tag{2.3}
+```
 
 The first says: embedding a portfolio as a Dirac distribution over portfolios and
 then averaging returns the original portfolio. The second says: collapsing a
@@ -186,7 +192,9 @@ triple tower in either order gives the same result (associativity of averaging).
 
 The MUP posterior $\pi_T \in \mathcal{P}^{2}(X)$ is defined by:
 
-$$d\pi_T(b) = \frac{W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{2.4}$$
+```math
+d\pi_T(b) = \frac{W_T(b)\,d\mu_M(b)}{\int_{M^r} W_T(b)\,d\mu_M(b)} \tag{2.4}
+```
 
 where $W_T(b) = \exp(T \cdot L_T(b))$ is the wealth function and $\mu_M$ is
 the volume measure on $M^r$. This is a probability distribution over
@@ -194,7 +202,9 @@ $M^r \subset \Delta_{d-1}$ — a Level 2 object.
 
 The monad multiplication collapses it:
 
-$$\mu(\pi_T) = \int_{M^r} b\,d\pi_T(b) = \hat{b}^{M}_T \tag{2.5}$$
+```math
+\mu(\pi_T) = \int_{M^r} b\,d\pi_T(b) = \hat{b}^{M}_T \tag{2.5}
+```
 
 The MUP portfolio $\hat{b}^{M}_T$ is the Level 1 shadow of the Level 2 posterior.
 
@@ -203,17 +213,23 @@ The MUP portfolio $\hat{b}^{M}_T$ is the Level 1 shadow of the Level 2 posterior
 The Laplace approximation (LAPLACE.md) says that as $T \to \infty$, the posterior
 $\pi_T$ concentrates on $b^{\ast}$:
 
-$$\pi_T \xrightarrow{T\to\infty} \delta_{b^{\ast}} \tag{2.6}$$
+```math
+\pi_T \xrightarrow{T\to\infty} \delta_{b^{\ast}} \tag{2.6}
+```
 
 The Laplace approximation collapses Level 2 to Level 1. The MUP regret
 
-$$\frac{r\,\log T}{2T} \tag{2.7}$$
+```math
+\frac{r\,\log T}{2T} \tag{2.7}
+```
 
 is the **information cost of this collapse** — the KL divergence between the
 full posterior $\pi_T$ and the point mass $\delta_{b^{\ast}}$, normalised by $T$.
 Explicitly, by the Laplace approximation to the normalising constant:
 
-$$D_{\rm KL}(\pi_T \| \delta_{b^{\ast}}) \approx \frac{r}{2}\log T + \frac{1}{2}\log\det F_M(b^{\ast}) + O(1) \tag{2.8}$$
+```math
+D_{\rm KL}(\pi_T \| \delta_{b^{\ast}}) \approx \frac{r}{2}\log T + \frac{1}{2}\log\det F_M(b^{\ast}) + O(1) \tag{2.8}
+```
 
 where $F_M(b^{\ast})$ is the Fisher information matrix of $M^r$ at $b^{\ast}$. Dividing by
 $T$ gives the per-period regret $(r\log T)/(2T)$. Each dimension of the manifold
@@ -242,7 +258,9 @@ Bhattacharyya coordinates $u_i = \sqrt{b_i}$ on $S^{d-1}_{+}$, $\Delta_{g^{\rm F
 becomes the spherical Laplacian $\Delta_{S^{d-1}}$ restricted to the positive
 orthant. The eigenvalues are:
 
-$$\lambda_n = n(n + d - 2), \qquad n = 0, 1, 2, \ldots \tag{3.1}$$
+```math
+\lambda_n = n(n + d - 2), \qquad n = 0, 1, 2, \ldots \tag{3.1}
+```
 
 with eigenspaces $E_n$ of dimension $\binom{n+d-2}{d-2}(2n+d-2)/(n+d-2)$ (the
 dimension of the space of spherical harmonics of degree $n$ on $S^{d-1}$,
@@ -266,7 +284,9 @@ partition function (CONVERGENCE.md) and in the Walsh-Jacobi correspondence
 
 The eigenspace decomposition
 
-$$L^2(\Delta_{d-1}, g^{\rm FR}) = \bigoplus_{n=0}^\infty E_n \tag{3.2}$$
+```math
+L^2(\Delta_{d-1}, g^{\rm FR}) = \bigoplus_{n=0}^\infty E_n \tag{3.2}
+```
 
 is a multiresolution analysis (MRA) of functions on the market. Define the
 projection $\Pi_n: L^2 \to E_n$ and the partial sum
@@ -291,7 +311,9 @@ gap, corresponding to slower mean-reversion and richer factor structure.
 Any function $f \in L^2(\Delta, g^{\rm FR})$ — for instance, the Kelly growth
 rate $L_T(b)$ — has a spectral expansion:
 
-$$L_T(b) = \sum_{n=0}^\infty \hat{L}_{n} \cdot \psi_n(b) \tag{3.3}$$
+```math
+L_T(b) = \sum_{n=0}^\infty \hat{L}_{n} \cdot \psi_n(b) \tag{3.3}
+```
 
 where $\psi_n$ are the orthonormal Jacobi eigenfunctions and $\hat{L}_n =
 \langle L_T, \psi_n \rangle_{L^2}$ are the spectral coefficients. The energy
@@ -317,7 +339,9 @@ higher factors are increasingly well-separated.
 
 The symmetric group $S_d$ acts on $\Delta_{d-1}$ by permuting coordinates:
 
-$$\sigma \cdot (b_1, \ldots, b_d) = (b_{\sigma^{-1}(1)}, \ldots, b_{\sigma^{-1}(d)}) \tag{4.1}$$
+```math
+\sigma \cdot (b_1, \ldots, b_d) = (b_{\sigma^{-1}(1)}, \ldots, b_{\sigma^{-1}(d)}) \tag{4.1}
+```
 
 This action preserves the Fisher-Rao metric ($g^{\rm FR}$ depends on coordinates
 only through the values $b_i$, not their labelling) and maps $S^{d-1}_{+}$ to itself
@@ -329,7 +353,9 @@ the unique fixed point of the full $S_d$ action.
 By the Peter-Weyl theorem, the space of square-integrable functions on the simplex
 decomposes into isotypic components under the $S_d$ action:
 
-$$L^2(\Delta_{d-1}) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^{\ast} \tag{4.2}$$
+```math
+L^2(\Delta_{d-1}) = \bigoplus_{\lambda \vdash d} V_\lambda \otimes V_\lambda^{\ast} \tag{4.2}
+```
 
 where the sum runs over partitions $\lambda$ of $d$ (equivalently, over irreducible
 representations of $S_d$), $V_\lambda$ is the irreducible representation space of
@@ -351,7 +377,9 @@ irreducible representations have a direct financial interpretation:
 
 For any subgroup $G \leq S_d$, define the **$G$-dual market manifold**:
 
-$$M^r_G = \{b \in M^r : g \cdot b = b \forall\, g \in G\} \tag{4.3}$$
+```math
+M^r_G = \{b \in M^r : g \cdot b = b \forall\, g \in G\} \tag{4.3}
+```
 
 This is the submanifold of $M^r$ that is invariant under $G$ — the set of
 portfolios on $M$ that are unchanged by the permutations in $G$.
@@ -368,7 +396,9 @@ portfolios on $M$ that are unchanged by the permutations in $G$.
 The lattice of subgroups $\{e\} \leq G_1 \leq G_2 \leq \cdots \leq S_d$ gives
 a nested family of dual manifolds:
 
-$$M^r = M^r_{\{e\}} \supseteq M^r_{G_1} \supseteq M^r_{G_2} \supseteq \cdots \supseteq M^r_{S_d} = \{b_{\rm eq}\} \tag{4.4}$$
+```math
+M^r = M^r_{\{e\}} \supseteq M^r_{G_1} \supseteq M^r_{G_2} \supseteq \cdots \supseteq M^r_{S_d} = \{b_{\rm eq}\} \tag{4.4}
+```
 
 Each inclusion $M^r_{G_2} \subseteq M^r_{G_1}$ (for $G_1 \leq G_2$) is a
 symmetry-constrained restriction: the market at the coarser level sees fewer
@@ -382,7 +412,9 @@ The factor decomposition of the market — the decomposition of the return space
 into systematic factors and idiosyncratic noise — is the isotypic decomposition
 of $L^2(M^r)$ under the action of $\mathrm{Aut}(M)$:*
 
-$$L^2(M^r) = \bigoplus_{\lambda \vdash d} m_\lambda \cdot V_\lambda \tag{4.5}$$
+```math
+L^2(M^r) = \bigoplus_{\lambda \vdash d} m_\lambda \cdot V_\lambda \tag{4.5}
+```
 
 *where $m_\lambda \geq 0$ is the multiplicity of the irreducible representation
 $V_\lambda$ in the restricted action on $M^r$. The number of factors is*
@@ -432,7 +464,9 @@ $\Delta_{d-1}$ by the cyclic permutation $\sigma_{\rm cyc}: (b_1, b_2, \ldots,
 b_d) \mapsto (b_d, b_1, \ldots, b_{d-1})$. Its irreducible representations
 are one-dimensional, indexed by the $d$-th roots of unity:
 
-$$\chi_k(\sigma_{\rm cyc}^{j}) = \omega^{jk}, \qquad \omega = e^{2\pi i/d}, \quad k = 0, 1, \ldots, d-1 \tag{5.1}$$
+```math
+\chi_k(\sigma_{\rm cyc}^{j}) = \omega^{jk}, \qquad \omega = e^{2\pi i/d}, \quad k = 0, 1, \ldots, d-1 \tag{5.1}
+```
 
 The isotypic decomposition under $\mathbb{Z}_{d}$ is the **discrete Fourier transform**
 on the simplex. The $k$-th Fourier mode captures variations at frequency $k/d$
@@ -445,7 +479,9 @@ annual production cycles, where the asset ordering reflects calendar months.
 The group $(\mathbb{Z}_{2})^d$ acts on $\Delta_{d-1}$ by sign flips $b_i \mapsto
 1 - b_i$ (projected back to the simplex). Its characters are the Walsh functions:
 
-$$\chi_S(b) = \prod_{i \in S}(-1)^{\mathbf{1}_{b_i < 1/d}}, \qquad S \subseteq [d] \tag{5.2}$$
+```math
+\chi_S(b) = \prod_{i \in S}(-1)^{\mathbf{1}_{b_i < 1/d}}, \qquad S \subseteq [d] \tag{5.2}
+```
 
 **This is the Walsh-Jacobi correspondence of HYPERCUBE_SHAPLEY.md.** The Walsh
 functions on the discrete hypercube $\{-1,+1\}^{d}$, restricted to $\Delta_{d-1}
@@ -503,7 +539,9 @@ multiresolution decomposition of the market, in the following precise sense:*
 is the direct sum of the irreducible representations of $S_d$ corresponding to
 partitions of degree $n$:*
 
-$$E_n = \bigoplus_{\substack{\lambda \vdash d \\ \deg(\lambda) = n}} V_\lambda \otimes V_\lambda^{\ast} \tag{6.1}$$
+```math
+E_n = \bigoplus_{\substack{\lambda \vdash d \\ \deg(\lambda) = n}} V_\lambda \otimes V_\lambda^{\ast} \tag{6.1}
+```
 
 *where $\deg(\lambda) = \lambda_1 - 1$ is the degree of the associated spherical
 harmonic.*
@@ -574,7 +612,9 @@ For functions rather than sets, the canonical dual is the Legendre-Fenchel
 conjugate. The Kelly function $L_T: \Delta_{d-1} \to \mathbb{R}$ is concave. Its
 Legendre-Fenchel conjugate is:
 
-$$L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}} \left[\langle b, y \rangle - L_T(b)\right] \tag{7.1}$$
+```math
+L_T^{\ast}(y) = \sup_{b \in \Delta_{d-1}} \left[\langle b, y \rangle - L_T(b)\right] \tag{7.1}
+```
 
 This is a convex function on $\mathbb{R}^{d}$. The conjugate $L_T^{\ast}$ is the
 **rate function** of portfolio large deviations: $L_T^{\ast}(y)$ measures the
@@ -602,7 +642,9 @@ Part (iii) is the minimax theorem applied to the bilinear coupling. $\square$
 
 The Legendre-Fenchel duality
 
-$$\text{concave Kelly landscape} \longleftrightarrow \text{convex rate function} \tag{7.2}$$
+```math
+\text{concave Kelly landscape} \longleftrightarrow \text{convex rate function} \tag{7.2}
+```
 
 is the function-level analogue of the Giry tower's set-level duality. The Kelly
 function tells you the growth rate as a function of portfolio choice. The rate
@@ -619,7 +661,9 @@ For an abelian group $A$ acting on the simplex, the Pontryagin dual
 $\hat{A} = \mathrm{Hom}(A, U(1))$ is the group of characters. The Peter-Weyl
 decomposition reduces to the Fourier expansion:
 
-$$f(b) = \sum_{\chi \in \hat{A}} \hat{f}(\chi)\,\chi(b) \tag{8.1}$$
+```math
+f(b) = \sum_{\chi \in \hat{A}} \hat{f}(\chi)\,\chi(b) \tag{8.1}
+```
 
 with Fourier coefficients $\hat{f}(\chi) = \int_\Delta f(b)\,\overline{\chi(b)}
 \,d\mu(b)$.
@@ -631,7 +675,9 @@ dual is $\hat{\mathbb{Z}}_{d} \cong \mathbb{Z}_{d}$ — the group is **self-dual
 The characters are the roots of unity $\chi_k(\sigma^j) = e^{2\pi ijk/d}$. The
 Fourier decomposition of returns is:
 
-$$x_{t,j} = \sum_{k=0}^{d-1} \hat{x}_{t,k}\, e^{2\pi ijk/d} \tag{8.2}$$
+```math
+x_{t,j} = \sum_{k=0}^{d-1} \hat{x}_{t,k}\, e^{2\pi ijk/d} \tag{8.2}
+```
 
 The low-frequency components ($k$ small) capture the factor structure (systematic
 risk). The high-frequency components ($k$ near $d/2$) capture idiosyncratic
@@ -644,19 +690,25 @@ For the Clifford torus market $T^2$ (CLASSIFICATION.md, MARKET_PROCESSES.md),
 the natural symmetry group is $U(1) \times U(1)$ — the continuous torus group.
 The Pontryagin dual of $T^r = U(1)^r$ is the **integer lattice**:
 
-$$\widehat{T^r} = \mathbb{Z}^{r} \tag{8.3}$$
+```math
+\widehat{T^r} = \mathbb{Z}^{r} \tag{8.3}
+```
 
 The characters are $\chi_{(n_1,\ldots,n_r)}(\theta_1,\ldots,\theta_r) =
 e^{i(n_1\theta_1 + \cdots + n_r\theta_r)}$ for $(n_1,\ldots,n_r) \in
 \mathbb{Z}^r$. The Fourier decomposition of a function on the Clifford torus
 market is:
 
-$$f(\theta) = \sum_{n \in \mathbb{Z}^{r}} \hat{f}(n)\, e^{i\langle n, \theta\rangle} \tag{8.4}$$
+```math
+f(\theta) = \sum_{n \in \mathbb{Z}^{r}} \hat{f}(n)\, e^{i\langle n, \theta\rangle} \tag{8.4}
+```
 
 This connects directly to the theta-function transition density of
 MARKET_PROCESSES.md: the heat kernel on $T^r$ is
 
-$$K_{T^r}(t, \theta, \theta') = \sum_{n \in \mathbb{Z}^{r}} e^{-|n|^2 t/(2\varepsilon^2)}\, e^{i\langle n, \theta - \theta'\rangle} \tag{8.5}$$
+```math
+K_{T^r}(t, \theta, \theta') = \sum_{n \in \mathbb{Z}^{r}} e^{-|n|^2 t/(2\varepsilon^2)}\, e^{i\langle n, \theta - \theta'\rangle} \tag{8.5}
+```
 
 which is the Jacobi theta function $\vartheta_3$. The Fourier modes indexed by
 $\mathbb{Z}^{r}$ are exactly the spectral dual tower (Section 3) applied to the
@@ -698,7 +750,9 @@ $(k-r)\log T/(2T)$ regret for zero expected gain — pure overfitting.
 
 Total portfolio variance decomposes as:
 
-$$\mathrm{Var}(r_p) = \sum_{\lambda \vdash d} m_\lambda \cdot \mathrm{Var}_\lambda(r_p) \tag{9.1}$$
+```math
+\mathrm{Var}(r_p) = \sum_{\lambda \vdash d} m_\lambda \cdot \mathrm{Var}_\lambda(r_p) \tag{9.1}
+```
 
 where $\mathrm{Var}_\lambda$ is the variance contributed by the irreducible
 representation $V_\lambda$. This is the representation-theoretic analogue of

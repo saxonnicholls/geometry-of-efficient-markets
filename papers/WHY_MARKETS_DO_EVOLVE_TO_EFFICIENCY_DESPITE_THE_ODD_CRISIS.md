@@ -209,7 +209,9 @@ not hypotheses, not empirical regularities.
 $M_t \subset S^{d-1}_{+}$ evolve by mean curvature flow
 $\partial M/\partial t = -H\nu$. Then the Willmore energy is non-increasing:*
 
-$$\frac{d\mathcal{W}}{dt} = \frac{d}{dt}\int_{M_t} |H|^2\,d\mathrm{vol} = -2\int_{M_t}\left(|\nabla H|^2 + |H|^2\left(|A|^2 - \frac{1}{r}|H|^2 + \overline{\mathrm{Ric}}(\nu,\nu)\right)\right)d\mathrm{vol} \leq 0 \tag{2.1}$$
+```math
+\frac{d\mathcal{W}}{dt} = \frac{d}{dt}\int_{M_t} |H|^2\,d\mathrm{vol} = -2\int_{M_t}\left(|\nabla H|^2 + |H|^2\left(|A|^2 - \frac{1}{r}|H|^2 + \overline{\mathrm{Ric}}(\nu,\nu)\right)\right)d\mathrm{vol} \leq 0 \tag{2.1}
+```
 
 *where $A$ is the second fundamental form, $\overline{\mathrm{Ric}}$ is the Ricci
 curvature of the ambient sphere, and the inequality holds whenever
@@ -233,7 +235,9 @@ on a non-negative functional bounded below converges.
 **Theorem 2.2** *(Exponential decay of inefficiency)*. *Between singularities,
 the mean curvature decays exponentially:*
 
-$$\|H(t)\|_{L^2} \leq \|H(0)\|_{L^2}\cdot e^{-\lambda_1 t} \tag{2.2}$$
+```math
+\|H(t)\|_{L^2} \leq \|H(0)\|_{L^2}\cdot e^{-\lambda_1 t} \tag{2.2}
+```
 
 *where $\lambda_1$ is the first non-zero eigenvalue of the Jacobi operator
 $L = \Delta_M + |A|^2 + \overline{\mathrm{Ric}}(\nu,\nu)$ restricted to the
@@ -263,7 +267,9 @@ and has large $|H|$, but the flow rate is fast.
 **Theorem 2.3** *(Concentrated curvature produces entropy faster)*. *The entropy
 production rate under MCF satisfies:*
 
-$$\frac{dS}{dt} = \int_{M_t} |H|^2\,|\nabla H|^2\,d\mathrm{vol} \geq 0 \tag{2.3}$$
+```math
+\frac{dS}{dt} = \int_{M_t} |H|^2\,|\nabla H|^2\,d\mathrm{vol} \geq 0 \tag{2.3}
+```
 
 *This is strictly positive whenever $H$ is non-constant on $M_t$.*
 
@@ -755,7 +761,9 @@ Theorem 4.1), and the number of local minima grows exponentially in $d$.*
 *Proof sketch.* The minimal surface equation for $M^r \subset S^{d-1}_{+}$ in
 local coordinates $(u^1, \ldots, u^r)$ is:
 
-$$g^{ab}\left(\frac{\partial^2 X^\mu}{\partial u^a \partial u^b} - \Gamma^c_{ab}\frac{\partial X^\mu}{\partial u^c} + \bar\Gamma^\mu_{\alpha\beta}\frac{\partial X^\alpha}{\partial u^a}\frac{\partial X^\beta}{\partial u^b}\right) = 0, \quad \mu = 1,\ldots,d \tag{6.1}$$
+```math
+g^{ab}\left(\frac{\partial^2 X^\mu}{\partial u^a \partial u^b} - \Gamma^c_{ab}\frac{\partial X^\mu}{\partial u^c} + \bar\Gamma^\mu_{\alpha\beta}\frac{\partial X^\alpha}{\partial u^a}\frac{\partial X^\beta}{\partial u^b}\right) = 0, \quad \mu = 1,\ldots,d \tag{6.1}
+```
 
 where $g_{ab}$ is the induced metric, $\Gamma^c_{ab}$ are its Christoffel symbols,
 and $\bar\Gamma^\mu_{\alpha\beta}$ are the ambient Christoffel symbols. This is a
@@ -830,7 +838,9 @@ But the true minimal surface — determined by preferences, technology, and reso
 was elsewhere. The gap between the imposed manifold and the true minimal surface
 created Willmore energy:
 
-$$\mathcal{W}_{\rm Soviet} = \int_{M_{\rm imposed}} |H_{\rm imposed} - H_{\rm min}|^2\,d\mathrm{vol} > 0 \tag{6.2}$$
+```math
+\mathcal{W}_{\rm Soviet} = \int_{M_{\rm imposed}} |H_{\rm imposed} - H_{\rm min}|^2\,d\mathrm{vol} > 0 \tag{6.2}
+```
 
 This accumulated Willmore energy manifested as the familiar pathologies of central
 planning: queues (excess demand at administered prices), shortages (misallocated
@@ -911,7 +921,9 @@ converges to a minimal submanifold of $S^{d-1}_{+}$.*
 *(ii) (Exponential convergence between singularities) Between consecutive surgery
 times $T_k$ and $T_{k+1}$:*
 
-$$\mathcal{W}(M_t) \leq \mathcal{W}(M_{T_k^+})\cdot e^{-2\lambda_1^{(k)} (t - T_k)}, \quad t \in (T_k, T_{k+1}) \tag{7.1}$$
+```math
+\mathcal{W}(M_t) \leq \mathcal{W}(M_{T_k^+})\cdot e^{-2\lambda_1^{(k)} (t - T_k)}, \quad t \in (T_k, T_{k+1}) \tag{7.1}
+```
 
 *where $\lambda_1^{(k)}$ is the spectral gap of the Jacobi operator on the $k$-th
 smooth piece.*
@@ -919,14 +931,18 @@ smooth piece.*
 *(iii) (Bounded number of singularities) The number of surgery times in $[0,T]$
 is bounded:*
 
-$$\#\{k : T_k \in [0,T]\} \leq \frac{C\cdot\mathcal{W}(M_0)}{\varepsilon^2} \tag{7.2}$$
+```math
+\#\{k : T_k \in [0,T]\} \leq \frac{C\cdot\mathcal{W}(M_0)}{\varepsilon^2} \tag{7.2}
+```
 
 *where $\varepsilon > 0$ is the surgery scale (the minimum curvature at which
 surgery is performed) and $C$ depends only on $r$ and $d$.*
 
 *(iv) (Surgery monotonicity) Each surgery preserves or reduces total inefficiency:*
 
-$$\mathcal{W}(M_{T_k^+}) \leq \mathcal{W}(M_{T_k^-}) \tag{7.3}$$
+```math
+\mathcal{W}(M_{T_k^+}) \leq \mathcal{W}(M_{T_k^-}) \tag{7.3}
+```
 
 *Proof.*
 

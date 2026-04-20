@@ -59,7 +59,9 @@ satisfy it.
 **(iv) The Palindromic Geometric Process (PGP).** For a single asset, the
 proposal is:
 
-$$d\log S_t = \kappa[\theta_t - \log S_t]\,dt + \sigma\, dW_t \tag{0.1}$$
+```math
+d\log S_t = \kappa[\theta_t - \log S_t]\,dt + \sigma\, dW_t \tag{0.1}
+```
 
 with slowly-varying long-run level $\theta_t$. Stationary distribution
 around $\theta$: log-normal with mean-reversion timescale $1/\kappa$. This
@@ -70,7 +72,9 @@ spectral gap $\lambda_1$.
 **(v) The Fractional Palindromic SDE (FPS).** For the full empirical
 palindromic excess, we need an additional long-range correlation term:
 
-$$d\log S_t = \kappa[\theta_t - \log S_t]\,dt + \sigma\, dB^H_t \tag{0.2}$$
+```math
+d\log S_t = \kappa[\theta_t - \log S_t]\,dt + \sigma\, dB^H_t \tag{0.2}
+```
 
 where $B^H$ is fractional Brownian motion with Hurst parameter $H < 1/2$
 (anti-persistent). The palindromic excess grows as $e^{(1-2H)\lambda_1 k}$
@@ -99,12 +103,16 @@ differential equation; statistical test.
 
 The stochastic differential equation for GBM:
 
-$$dS_t = \mu S_t\,dt + \sigma S_t\,dW_t \tag{1.1}$$
+```math
+dS_t = \mu S_t\,dt + \sigma S_t\,dW_t \tag{1.1}
+```
 
 has the closed-form solution $S_t = S_0 \exp((\mu - \sigma^2/2)t + \sigma W_t)$.
 In log-space $X_t = \log S_t$:
 
-$$dX_t = (\mu - \sigma^2/2)\,dt + \sigma\,dW_t \tag{1.2}$$
+```math
+dX_t = (\mu - \sigma^2/2)\,dt + \sigma\,dW_t \tag{1.2}
+```
 
 — Brownian motion with constant drift.
 
@@ -140,7 +148,9 @@ From FILTRATIONS.md Section 11 and PALINDROMIC_SEQUENCES.md Section 1.2:
 above the random null**. Without detailed balance, the symbolic sequence
 has exactly the random-null palindrome count:
 
-$$\mathbb{E}_{\rm GBM}[\#\mathbf{P}_{2k}] = (T - 2k + 1) \cdot N^{-k} \tag{1.3}$$
+```math
+\mathbb{E}_{\rm GBM}[\#\mathbf{P}_{2k}] = (T - 2k + 1) \cdot N^{-k} \tag{1.3}
+```
 
 **No palindromic excess. No time-reversal symmetry. No mean reversion.**
 
@@ -155,7 +165,9 @@ This is the CORE PREDICTION of GBM that we will now test against data.
 Under GBM in log-space (equation 1.2), the increments $\Delta X_t = X_{t+1} - X_t$ are i.i.d. $N(\mu - \sigma^2/2, \sigma^2)$. When discretised
 via any Voronoi partition of the return space:
 
-$$\sigma_t = \mathrm{Voronoi}(\Delta X_t) \in \{1, 2, \ldots, N\} \tag{2.1}$$
+```math
+\sigma_t = \mathrm{Voronoi}(\Delta X_t) \in \{1, 2, \ldots, N\} \tag{2.1}
+```
 
 the resulting symbolic sequence $(\sigma_1, \sigma_2, \ldots, \sigma_T)$ is
 i.i.d. multinomial with cell probabilities $p_i$ determined by the Voronoi
@@ -170,7 +182,9 @@ the symbolic sequence is i.i.d. UNIFORM over $\{1, \ldots, N\}$.
 partition into $N$ cells, the expected number of palindromic subsequences
 of length exactly $2k$ in a sequence of length $T$ is:*
 
-$$\mu_{2k} := \mathbb{E}_{\rm GBM}[\#\mathbf{P}_{2k}] = (T - 2k + 1) \cdot N^{-k} \tag{2.2}$$
+```math
+\mu_{2k} := \mathbb{E}_{\rm GBM}[\#\mathbf{P}_{2k}] = (T - 2k + 1) \cdot N^{-k} \tag{2.2}
+```
 
 *Proof.* There are $T - 2k + 1$ positions for a length-$2k$ subsequence.
 A random i.i.d. sequence of length $2k$ is palindromic iff the first $k$
@@ -187,7 +201,9 @@ are NOT independent (overlapping windows share symbols).
 **Theorem 2.2** (GBM palindrome variance). *Under the GBM null, the
 variance of the palindrome count is:*
 
-$$\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}] = \mu_{2k}(1 - N^{-k}) + 2 \sum_{j=1}^{2k-1} (T - 2k + 1 - j) \cdot C_j \tag{2.3}$$
+```math
+\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}] = \mu_{2k}(1 - N^{-k}) + 2 \sum_{j=1}^{2k-1} (T - 2k + 1 - j) \cdot C_j \tag{2.3}
+```
 
 *where $C_j$ is the probability that both positions 1 and $1+j$ are
 palindrome centres simultaneously. For $j < 2k$, palindromes overlap, and
@@ -205,7 +221,9 @@ For $j < 2k$: overlap constraints. In particular:
 
 The dominant contribution to the variance is from non-overlapping pairs:
 
-$$\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}] \approx \mu_{2k} + 2(T - 2k)^2 N^{-2k}/T = \mu_{2k}(1 + O(1)) \tag{2.4}$$
+```math
+\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}] \approx \mu_{2k} + 2(T - 2k)^2 N^{-2k}/T = \mu_{2k}(1 + O(1)) \tag{2.4}
+```
 
 For large $T$ and moderate $k$: $\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}] \approx \mu_{2k}$. The standard deviation is $\sqrt{\mu_{2k}}$.
 
@@ -213,7 +231,9 @@ For large $T$ and moderate $k$: $\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}] \appr
 
 **Test PAL-GBM.** Given observed palindrome count $O_{2k}$:
 
-$$Z_{2k} = \frac{O_{2k} - \mu_{2k}}{\sqrt{\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}]}} \approx \frac{O_{2k} - \mu_{2k}}{\sqrt{\mu_{2k}}} \tag{2.5}$$
+```math
+Z_{2k} = \frac{O_{2k} - \mu_{2k}}{\sqrt{\mathrm{Var}_{\rm GBM}[\#\mathbf{P}_{2k}]}} \approx \frac{O_{2k} - \mu_{2k}}{\sqrt{\mu_{2k}}} \tag{2.5}
+```
 
 Under the GBM null, $Z_{2k}$ is approximately $N(0, 1)$. Large positive
 Z-scores reject GBM in favour of palindromic alternatives.
@@ -307,7 +327,9 @@ detailed balance.
 $dX = \mu(X) dt + \sigma(X) dW$ is time-reversible (satisfies detailed
 balance with respect to a stationary density $\pi$) if and only if:*
 
-$$\mu(X) = \frac{1}{2} \sigma^2(X) \frac{d \log \pi(X)}{dX} + \frac{1}{2} \frac{d \sigma^2(X)}{dX} \tag{4.1}$$
+```math
+\mu(X) = \frac{1}{2} \sigma^2(X) \frac{d \log \pi(X)}{dX} + \frac{1}{2} \frac{d \sigma^2(X)}{dX} \tag{4.1}
+```
 
 *where $\pi$ satisfies the Fokker-Planck stationary equation
 $\frac{d}{dX}[\mu \pi] = \frac{1}{2}\frac{d^2}{dX^2}[\sigma^2 \pi]$.*
@@ -321,7 +343,9 @@ structure.
 
 **Alternative A: Log-Ornstein-Uhlenbeck (exponential OU).**
 
-$$dX_t = \kappa[\theta - X_t]\,dt + \sigma\,dW_t \tag{4.2}$$
+```math
+dX_t = \kappa[\theta - X_t]\,dt + \sigma\,dW_t \tag{4.2}
+```
 
 where $X_t = \log S_t$. Mean-reverting to $\theta$ at rate $\kappa$.
 Stationary distribution: $N(\theta, \sigma^2/(2\kappa))$. Time-reversible.
@@ -334,14 +358,18 @@ at short timescales while allowing long-run drift.
 
 **Alternative B: Cox-Ingersoll-Ross (CIR) square-root.**
 
-$$dX_t = \kappa[\theta - X_t]\,dt + \sigma\sqrt{X_t}\,dW_t \tag{4.3}$$
+```math
+dX_t = \kappa[\theta - X_t]\,dt + \sigma\sqrt{X_t}\,dW_t \tag{4.3}
+```
 
 Stationary distribution: non-central chi-squared (Gamma in the Feller case).
 Time-reversible. Widely used for interest rates and volatility.
 
 **Alternative C: Symmetric Jacobi on the simplex.**
 
-$$db^i_t = \kappa[\pi^i - b^i_t]\,dt + \sqrt{\frac{b^i_t(1 - b^i_t)}{T}}\,dW^i_t \tag{4.4}$$
+```math
+db^i_t = \kappa[\pi^i - b^i_t]\,dt + \sqrt{\frac{b^i_t(1 - b^i_t)}{T}}\,dW^i_t \tag{4.4}
+```
 
 with constraint $\sum_i b^i = 1$. Stationary: Dirichlet distribution.
 Time-reversible. Feller boundary at $b^i = 0$ (extinction, default,
@@ -358,7 +386,9 @@ We need to MATCH the empirical excess, not just produce SOME excess.
 log-OU process (equation 4.2), the palindromic excess in the
 Voronoi-discretised sequence satisfies:*
 
-$$\frac{\mathbb{E}[\#\mathbf{P}_{2k}]}{\mu_{2k}^{\rm GBM}} = e^{\kappa k \cdot \Delta t / \tau_{\rm sample}} \tag{4.5}$$
+```math
+\frac{\mathbb{E}[\#\mathbf{P}_{2k}]}{\mu_{2k}^{\rm GBM}} = e^{\kappa k \cdot \Delta t / \tau_{\rm sample}} \tag{4.5}
+```
 
 *where $\Delta t$ is the time step and $\tau_{\rm sample}$ is the sampling
 interval. For daily data ($\tau_{\rm sample} = 1$ day) and $\kappa = 0.02$/day:
@@ -386,7 +416,9 @@ motion $B^H_t$ with Hurst parameter $H \neq 1/2$.
 motion $B^H_t$ with Hurst parameter $H \in (0, 1)$ is the Gaussian process
 with mean zero and covariance:*
 
-$$\mathbb{E}[B^H_t B^H_s] = \frac{1}{2}(|t|^{2H} + |s|^{2H} - |t - s|^{2H}) \tag{5.1}$$
+```math
+\mathbb{E}[B^H_t B^H_s] = \frac{1}{2}(|t|^{2H} + |s|^{2H} - |t - s|^{2H}) \tag{5.1}
+```
 
 For $H = 1/2$: standard Brownian motion (no long-range correlations).
 For $H > 1/2$: persistent (trending; correlations decay slowly).
@@ -396,7 +428,9 @@ For $H < 1/2$: anti-persistent (mean-reverting; correlations alternate sign).
 
 **Definition 5.2** (FPS). *The Fractional Palindromic SDE for log-price is:*
 
-$$dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t \tag{5.2}$$
+```math
+dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t \tag{5.2}
+```
 
 *with $\theta_t$ slowly-varying and $H < 1/2$ (anti-persistent).*
 
@@ -412,7 +446,9 @@ produces the full empirical palindromic excess.
 rate $\kappa$ and Hurst parameter $H$, the palindromic excess in the
 Voronoi-discretised sequence is:*
 
-$$\frac{\mathbb{E}[\#\mathbf{P}_{2k}]}{\mu_{2k}^{\rm GBM}} = e^{(1 - 2H) \kappa k} \cdot (1 + O(k^{-1})) \tag{5.3}$$
+```math
+\frac{\mathbb{E}[\#\mathbf{P}_{2k}]}{\mu_{2k}^{\rm GBM}} = e^{(1 - 2H) \kappa k} \cdot (1 + O(k^{-1})) \tag{5.3}
+```
 
 *For $H = 1/2$: no amplification (standard OU result).*
 *For $H < 1/2$: amplified excess, growing exponentially faster.*
@@ -430,7 +466,9 @@ $e^{(1-2H)\kappa k}$. $\square$
 For US equities with observed $\lambda_1 \approx 0.10\text{-}0.15$
 (estimated from the palindromic excess), and OU $\kappa \approx 0.02$:
 
-$$(1 - 2H) \cdot 0.02 \approx 0.10 \Rightarrow H \approx 1/2 - 2.5 = -2 ???$$
+```math
+(1 - 2H) \cdot 0.02 \approx 0.10 \Rightarrow H \approx 1/2 - 2.5 = -2 ???
+```
 
 This doesn't work — $H$ must be in $(0, 1)$. The interpretation: the
 empirical palindromic excess is TOO STRONG to be explained by OU + fBM
@@ -442,7 +480,9 @@ attenuated by noise). The palindromic-relevant $\kappa_{\rm pal}$ is
 effectively $\kappa \cdot (1 - 2H)$, and solving for the observed
 palindromic excess:
 
-$$\kappa_{\rm pal} \approx 0.10\text{-}0.15 \text{ per day} \tag{5.4}$$
+```math
+\kappa_{\rm pal} \approx 0.10\text{-}0.15 \text{ per day} \tag{5.4}
+```
 
 Consistent with $\kappa = 0.20$/day and $H = 0.25$, or $\kappa = 0.30$ and
 $H = 0.33$, etc. The PALINDROMIC data implies mean-reversion at a
@@ -453,13 +493,17 @@ much shorter timescale than traditional autocorrelation measures suggest.
 **Theorem 5.4** (FPS reduces to GBM). *In the limit $\kappa \to 0$ and
 $H \to 1/2$, the FPS (equation 5.2) becomes:*
 
-$$dX_t \to \sigma\, dW_t \tag{5.5}$$
+```math
+dX_t \to \sigma\, dW_t \tag{5.5}
+```
 
 *— Brownian motion, equivalent to GBM with zero drift. For non-zero drift,
 replace $\theta_t$ with $\theta_0 + \mu t$ and let $\kappa \to 0$: the
 mean-reversion force vanishes and we recover:*
 
-$$dX_t \to \mu\, dt + \sigma\, dW_t \tag{5.6}$$
+```math
+dX_t \to \mu\, dt + \sigma\, dW_t \tag{5.6}
+```
 
 *— exactly GBM in log-space.*
 

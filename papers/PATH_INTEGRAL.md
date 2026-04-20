@@ -26,8 +26,10 @@ the Langevin equation, stochastic quantisation, and the Feynman-Kac theory.
 **(i) The constrained path integral.** The price of a derivative with payoff $G(b_T)$
 on a market on manifold $M^r$ is:
 
-$$V(b,t) = e^{-r(T-t)}\int_{\mathrm{Paths}(M^r)} \mathcal{D}[b] 
-e^{-S_M[b]/(2\varepsilon^2)} G(b_T) \tag{0.1}$$
+```math
+V(b,t) = e^{-r(T-t)}\int_{\mathrm{Paths}(M^r)} \mathcal{D}[b]
+e^{-S_M[b]/(2\varepsilon^2)} G(b_T) \tag{0.1}
+```
 
 where $S_M[b] = \int_t^T |\dot b_s + \varepsilon^2\vec{H}(b_s)|^2_{g_M}\,ds$ is the
 Onsager-Machlup action on $M^r$ and the integral is over all continuous paths
@@ -84,8 +86,10 @@ theta function; McKean; WKB; saddle point; instanton; normal bundle integration.
 The standard Black-Scholes option pricing formula arises from the path integral
 \[Kleinert 2004, Chapter 3\]:
 
-$$V(S,t) = e^{-r(T-t)}\int\mathcal{D}[S] 
-\exp\!\left(-\frac{1}{2\sigma^2}\int_t^T\frac{(\dot S/S - \mu)^2}{\,1\,}\,ds\right)G(S_T) \tag{1.1}$$
+```math
+V(S,t) = e^{-r(T-t)}\int\mathcal{D}[S]
+\exp\!\left(-\frac{1}{2\sigma^2}\int_t^T\frac{(\dot S/S - \mu)^2}{\,1\,}\,ds\right)G(S_T) \tag{1.1}
+```
 
 where $\mathcal{D}[S]$ is the Wiener measure on log-normal paths and the action is
 the Onsager-Machlup functional for GBM. The integral is over all continuous paths
@@ -102,9 +106,11 @@ most of its support on paths that never actually occur.
 
 The **geometric Wiener measure** on paths $b:[t,T]\to M^r$ is:
 
-$$\mathcal{D}^{M}[b] = \lim_{N\to\infty}\prod_{k=0}^{N-1}
+```math
+\mathcal{D}^{M}[b] = \lim_{N\to\infty}\prod_{k=0}^{N-1}
 \frac{d\mathrm{vol}_{M}(b_{t_k})}{(4\pi\varepsilon^2\Delta t)^{r/2}}
-\cdot\exp\!\left(-\frac{|b_{t_{k+1}}-b_{t_k}|^2_{g_M}}{4\varepsilon^2\Delta t}\right) \tag{1.2}$$
+\cdot\exp\!\left(-\frac{|b_{t_{k+1}}-b_{t_k}|^2_{g_M}}{4\varepsilon^2\Delta t}\right) \tag{1.2}
+```
 
 where $d\mathrm{vol}_{M}$ is the Riemannian volume element of $(M^r,g_M)$ and
 $|b-b'|_{g_M}$ is the geodesic distance. This is the heat kernel short-time
@@ -118,10 +124,12 @@ carries the curvature of $M^r$. For the flat torus ($M=T^2$): $d\mathrm{vol}_{T^
 The **Onsager-Machlup functional** gives the probability weight for a specific path
 on a Riemannian manifold \[Ikeda-Watanabe 1989\]. For the market process on $M^r$:
 
-$$S_M[b] = \int_t^T\!\left[\frac{1}{2}|\dot b_s|^2_{g_M}
+```math
+S_M[b] = \int_t^T\!\left[\frac{1}{2}|\dot b_s|^2_{g_M}
 + \varepsilon^2\vec{H}(b_s)\cdot\dot b_s
 + \frac{\varepsilon^4}{2}|\vec{H}(b_s)|^2_{g_M}
-+ \frac{\varepsilon^2}{6}R_M(b_s)\right]ds \tag{1.3}$$
++ \frac{\varepsilon^2}{6}R_M(b_s)\right]ds \tag{1.3}
+```
 
 where $R_M$ is the scalar curvature of $(M^r, g_M)$ and $\varepsilon^2 = 1/T$.
 
@@ -137,8 +145,10 @@ where $R_M$ is the scalar curvature of $(M^r, g_M)$ and $\varepsilon^2 = 1/T$.
 
 **For the efficient market ($H=0$):**
 
-$$S_M^{\rm eff}[b] = \int_t^T\!\left[\frac{1}{2}|\dot b_s|^2_{g_M}
-+ \frac{\varepsilon^2}{6}R_M(b_s)\right]ds \tag{1.4}$$
+```math
+S_M^{\rm eff}[b] = \int_t^T\!\left[\frac{1}{2}|\dot b_s|^2_{g_M}
++ \frac{\varepsilon^2}{6}R_M(b_s)\right]ds \tag{1.4}
+```
 
 The action is the kinetic term plus the scalar curvature correction. The curvature
 correction is $+\frac{\varepsilon^2}{6}R_M$ — for positively curved manifolds (CAPM
@@ -161,21 +171,27 @@ $(M^r, g_M)$ from $b$ to $b'$.
 
 **The WKB option price:**
 
-$$V^{\rm WKB}(b,t;b',T) = e^{-r(T-t)}\cdot
+```math
+V^{\rm WKB}(b,t;b',T) = e^{-r(T-t)}\cdot
 \underbrace{(4\pi\varepsilon^2(T-t))^{-r/2}}_{\text{prefactor}}
 \cdot\underbrace{e^{-d_{g_M}(b,b')^2/(4\varepsilon^2(T-t))}}_{\text{Gaussian in geodesic distance}}
 \cdot\underbrace{J(b,b',T)^{-1/2}}_{\text{Van Vleck det}}
-\cdot G(b') \tag{2.1}$$
+\cdot G(b') \tag{2.1}
+```
 
 where $J(b,b',T)$ is the **Van Vleck-Morette determinant**:
 
-$$J(b,b',T) = \det\!\left(-\frac{\partial^2 S_{\rm cl}(b,b',T)}{\partial b_i\partial b'_j}\right) \tag{2.2}$$
+```math
+J(b,b',T) = \det\!\left(-\frac{\partial^2 S_{\rm cl}(b,b',T)}{\partial b_i\partial b'_j}\right) \tag{2.2}
+```
 
 **Theorem 2.1** *(Van Vleck = Fisher information)*.
 *At the log-optimal portfolio $b = b^{\ast}$, the Van Vleck-Morette determinant equals
 the Fisher information matrix:*
 
-$$J(b^{\ast},b^{\ast},T) = \det F(b^{\ast}) \tag{2.3}$$
+```math
+J(b^{\ast},b^{\ast},T) = \det F(b^{\ast}) \tag{2.3}
+```
 
 *where $F(b^{\ast}) = -\nabla^2 L_T(b^{\ast})|_{b^{\ast}}$ is the Hessian of the Kelly growth rate.*
 
@@ -187,8 +203,10 @@ process, which equals $F(b^{\ast})$ by the Cramér-Rao bound for the efficient m
 **This is LAPLACE.md restated as a path integral identity.** The WKB approximation
 (2.1) evaluated at $b=b'=b^{\ast}$ with the Van Vleck determinant (2.3) gives:
 
-$$V^{\rm WKB}\big|_{b=b^{\ast}} = e^{-rT}\cdot(4\pi\varepsilon^2 T)^{-r/2}\cdot(\det F(b^{\ast}))^{-1/2}\cdot G(b^{\ast})
-= e^{-rT}\cdot\frac{G(b^{\ast})}{(4\pi T)^{r/2}\sqrt{\det F(b^{\ast})}} \tag{2.4}$$
+```math
+V^{\rm WKB}\big|_{b=b^{\ast}} = e^{-rT}\cdot(4\pi\varepsilon^2 T)^{-r/2}\cdot(\det F(b^{\ast}))^{-1/2}\cdot G(b^{\ast})
+= e^{-rT}\cdot\frac{G(b^{\ast})}{(4\pi T)^{r/2}\sqrt{\det F(b^{\ast})}} \tag{2.4}
+```
 
 This is exactly the Laplace approximation of LAPLACE.md (equation 3.7). **The WKB saddle
 point approximation for the manifold path integral IS the Laplace approximation
@@ -208,7 +226,9 @@ measure with the stationary prior.
 
 The **overdamped Langevin equation** on the Riemannian manifold $(M^r, g_M)$ is:
 
-$$\dot b_t = -\varepsilon^2\nabla_{g_M}V(b_t) + \varepsilon\,\eta_t \tag{3.1}$$
+```math
+\dot b_t = -\varepsilon^2\nabla_{g_M}V(b_t) + \varepsilon\,\eta_t \tag{3.1}
+```
 
 where $V = -L_T(b)$ is the Kelly potential (negative log-growth rate), and $\eta_t$
 is white noise with covariance $\mathbb{E}[\eta_t^\mu\eta_s^\nu] = g_M^{\mu\nu}(b_t)\delta(t-s)$
@@ -216,14 +236,18 @@ is white noise with covariance $\mathbb{E}[\eta_t^\mu\eta_s^\nu] = g_M^{\mu\nu}(
 
 For the efficient market ($V$ = constant on $M^r$, i.e., $\nabla_{g_M}L_T = 0$ at $b^{\ast}$):
 
-$$\dot b_t = \varepsilon\,\eta_t \tag{3.2}$$
+```math
+\dot b_t = \varepsilon\,\eta_t \tag{3.2}
+```
 
 Pure diffusion on $M^r$ — the market portfolio performs Brownian motion on the manifold.
 
 For the inefficient market ($V = -L_T$, $\nabla_{g_M}L_T \neq 0$):
 
-$$\dot b_t = \varepsilon^2\nabla_{g_M}L_T(b_t) + \varepsilon\,\eta_t
-= -\varepsilon^2\Pi_{TM}\!\left[\nabla_{g^{\rm FR}}L_T\right] + \varepsilon\,\eta_t \tag{3.3}$$
+```math
+\dot b_t = \varepsilon^2\nabla_{g_M}L_T(b_t) + \varepsilon\,\eta_t
+= -\varepsilon^2\Pi_{TM}\!\left[\nabla_{g^{\rm FR}}L_T\right] + \varepsilon\,\eta_t \tag{3.3}
+```
 
 The drift is the gradient of the Kelly growth rate projected onto $TM$ — which, by the
 KKT conditions for the log-optimal portfolio, equals $-\varepsilon^2\Pi_{NM}\vec{H}/T + O(\varepsilon^4)$ (from CONVERGENCE.md). For the efficient market ($H=0$): zero drift.
@@ -236,16 +260,20 @@ the Langevin equation generates exactly the same diffusion as the WF process on 
 **Parisi and Wu \[1981\]** proposed generating the Euclidean path integral measure by
 running a Langevin equation in a fictitious "stochastic time" $\tau$:
 
-$$\frac{\partial b(t,\tau)}{\partial\tau} = -\frac{\delta S_M[b]}{\delta b(t,\tau)}
-+ \xi(t,\tau) \tag{3.4}$$
+```math
+\frac{\partial b(t,\tau)}{\partial\tau} = -\frac{\delta S_M[b]}{\delta b(t,\tau)}
++ \xi(t,\tau) \tag{3.4}
+```
 
 where $S_M[b]$ is the action and $\xi$ is white noise in both real time $t$ and
 fictitious time $\tau$.
 
 **The stationary distribution** of the Parisi-Wu Langevin equation (3.4) is:
 
-$$\rho_\infty \propto e^{-S_M[b]} = e^{-\int_0^T |\dot b|^2_{g_M}/(2\varepsilon^2)\,dt}
-\cdot e^{-\int_0^T \varepsilon^2|\vec{H}|^2/2\,dt} \tag{3.5}$$
+```math
+\rho_\infty \propto e^{-S_M[b]} = e^{-\int_0^T |\dot b|^2_{g_M}/(2\varepsilon^2)\,dt}
+\cdot e^{-\int_0^T \varepsilon^2|\vec{H}|^2/2\,dt} \tag{3.5}
+```
 
 This is the **path integral measure** — the Parisi-Wu stochastic quantisation generates
 the path integral by running the field equation (3.4) to stationarity. The stationary
@@ -259,8 +287,10 @@ as the direct construction.
 
 The **effective potential** is the free energy density of the path integral:
 
-$$V_{\rm eff}(b) = -\frac{1}{T}\log\int_{\rm paths:b_0=b}\mathcal{D}^{M}[b']\,
-e^{-S_M[b']/2\varepsilon^2} \tag{3.6}$$
+```math
+V_{\rm eff}(b) = -\frac{1}{T}\log\int_{\rm paths:b_0=b}\mathcal{D}^{M}[b']\,
+e^{-S_M[b']/2\varepsilon^2} \tag{3.6}
+```
 
 — the log-probability of the path integral arriving at $b$ starting from a stationary distribution.
 
@@ -289,9 +319,11 @@ For the Clifford torus market ($M = [0,\pi/2]^2$ with periodic identifications),
 the path integral propagator from $(\theta_0,\varphi_0)$ to $(\theta,\varphi)$
 in time $T$ is:
 
-$$K_{T^2}(\theta,\varphi|\theta_0,\varphi_0;T) = \sum_{(n_1,n_2)\in\mathbb{Z}^{2}}
+```math
+K_{T^2}(\theta,\varphi|\theta_0,\varphi_0;T) = \sum_{(n_1,n_2)\in\mathbb{Z}^{2}}
 K_{\rm flat}\!\left(\theta-\theta_0+\frac{n_1\pi}{2}, 
-\varphi-\varphi_0+\frac{n_2\pi}{2}; T\right) \tag{4.1}$$
+\varphi-\varphi_0+\frac{n_2\pi}{2}; T\right) \tag{4.1}
+```
 
 where $K_{\rm flat}(x,y;T) = \frac{1}{2\pi\varepsilon^2 T}e^{-(x^2+y^2)/(2\varepsilon^2 T)}$
 is the flat-space Gaussian propagator.
@@ -299,9 +331,11 @@ is the flat-space Gaussian propagator.
 **The sum over winding numbers** $(n_1,n_2)\in\mathbb{Z}^{2}$ is the Poisson resummation
 of the Gaussian over the lattice $(\pi/2)\mathbb{Z}^{2}$. By the Poisson summation formula:
 
-$$\sum_{n\in\mathbb{Z}} e^{-(\theta+n\pi/2)^2/(2\varepsilon^2 T)}
+```math
+\sum_{n\in\mathbb{Z}} e^{-(\theta+n\pi/2)^2/(2\varepsilon^2 T)}
 = \sqrt{2\pi\varepsilon^2 T}\cdot\sum_{k\in\mathbb{Z}}
-e^{-2k^2\varepsilon^2 T/(\pi^2/4)}\cos(4k\theta/\pi) \tag{4.2}$$
+e^{-2k^2\varepsilon^2 T/(\pi^2/4)}\cos(4k\theta/\pi) \tag{4.2}
+```
 
 The right-hand side is $\frac{\pi}{\sqrt{2}}\cdot\vartheta_3\!\!\left(\frac{\theta}{\pi/2}\,\big|\,
 \frac{2i\varepsilon^2 T}{\pi^2/4}\right)$ — the Jacobi theta function.
@@ -309,8 +343,10 @@ The right-hand side is $\frac{\pi}{\sqrt{2}}\cdot\vartheta_3\!\!\left(\frac{\the
 **Theorem 4.1** *(Theta function = path integral over topological sectors)*.
 *The transition density of the Clifford torus market:*
 
-$$p_T(\theta|\theta_0) = \frac{2}{\pi}\vartheta_3\!\!\left(\frac{\theta-\theta_0}{2}\,\bigg|\,
-\frac{4i\varepsilon^2 T}{\pi}\right) \tag{4.3}$$
+```math
+p_T(\theta|\theta_0) = \frac{2}{\pi}\vartheta_3\!\!\left(\frac{\theta-\theta_0}{2}\,\bigg|\,
+\frac{4i\varepsilon^2 T}{\pi}\right) \tag{4.3}
+```
 
 *(from MARKET_PROCESSES.md equation 4.4) is EXACTLY the path integral (4.1)
 evaluated by Poisson resummation over the winding lattice $\mathbb{Z}^{2} = \pi_1(T^2)$.*
@@ -339,8 +375,10 @@ to $(x,y)$. In $\mathbb{H}^{2}$, for each geodesic distance $\rho$, there is exa
 one geodesic (unlike the torus, where there are infinitely many windings). The sum
 over classical paths gives:
 
-$$K_{\mathbb{H}^{2}}(\rho;T) = \frac{e^{-T/4}}{(4\pi T)^{1/2}}\cdot
-\frac{\rho\,e^{-\rho^2/(4T)}}{\sinh\rho} \tag{4.4}$$
+```math
+K_{\mathbb{H}^{2}}(\rho;T) = \frac{e^{-T/4}}{(4\pi T)^{1/2}}\cdot
+\frac{\rho\,e^{-\rho^2/(4T)}}{\sinh\rho} \tag{4.4}
+```
 
 — the McKean heat kernel (MARKET_PROCESSES.md equation 5.7).
 
@@ -364,24 +402,32 @@ curvature spreads the paths out.
 The Girsanov change of measure from the physical measure $\mathbb{P}$ to the
 risk-neutral measure $\mathbb{Q}$ corresponds to a **shift in the Langevin drift**:
 
-$$\text{Under }\mathbb{P}: \dot b = -\varepsilon^2\vec{H} + \varepsilon\eta
-\qquad\text{(inefficient market drift)}$$
+```math
+\text{Under }\mathbb{P}: \dot b = -\varepsilon^2\vec{H} + \varepsilon\eta
+\qquad\text{(inefficient market drift)}
+```
 
-$$\text{Under }\mathbb{Q}: \dot b = \varepsilon\eta
-\qquad\text{(efficient market, no drift)} \tag{5.1}$$
+```math
+\text{Under }\mathbb{Q}: \dot b = \varepsilon\eta
+\qquad\text{(efficient market, no drift)} \tag{5.1}
+```
 
 The Radon-Nikodym derivative is:
 
-$$\frac{d\mathbb{Q}}{d\mathbb{P}}\bigg|_T = \exp\!\left(
+```math
+\frac{d\mathbb{Q}}{d\mathbb{P}}\bigg|_T = \exp\!\left(
 \frac{1}{\varepsilon}\int_0^T\vec{H}(b_t)\cdot dW_t^M
-- \frac{\varepsilon}{2}\int_0^T|\vec{H}(b_t)|^2_{g_M}\,dt\right) \tag{5.2}$$
+- \frac{\varepsilon}{2}\int_0^T|\vec{H}(b_t)|^2_{g_M}\,dt\right) \tag{5.2}
+```
 
 **In path integral language:** Changing measure from $\mathbb{P}$ to $\mathbb{Q}$
 modifies the Onsager-Machlup action by removing the drift term:
 
-$$S_M^{\mathbb{P}}[b] = \int|\dot b + \varepsilon^2\vec{H}|^2_{g_M}/2\,dt
+```math
+S_M^{\mathbb{P}}[b] = \int|\dot b + \varepsilon^2\vec{H}|^2_{g_M}/2\,dt
 \quad\longrightarrow\quad
-S_M^{\mathbb{Q}}[b] = \int|\dot b|^2_{g_M}/2\,dt \tag{5.3}$$
+S_M^{\mathbb{Q}}[b] = \int|\dot b|^2_{g_M}/2\,dt \tag{5.3}
+```
 
 The risk-neutral action is the PURE kinetic term — the geodesic action. **Under the
 risk-neutral measure, ALL paths on $M^r$ have equal kinetic cost; there is no
@@ -398,8 +444,10 @@ Novikov condition IS the finite Willmore energy condition.**
 
 Under the risk-neutral measure $\mathbb{Q}$, the option price is:
 
-$$V(b,t) = e^{-r(T-t)}\mathbb{E}^{\mathbb{Q}}[G(b_T)|b_t=b]
-= e^{-r(T-t)}\int_{M^r}p^{\mathbb{Q}}_{T-t}(b,b')\,G(b')\,d\mathrm{vol}_{M}(b') \tag{5.4}$$
+```math
+V(b,t) = e^{-r(T-t)}\mathbb{E}^{\mathbb{Q}}[G(b_T)|b_t=b]
+= e^{-r(T-t)}\int_{M^r}p^{\mathbb{Q}}_{T-t}(b,b')\,G(b')\,d\mathrm{vol}_{M}(b') \tag{5.4}
+```
 
 where $p^{\mathbb{Q}}_{T-t}$ is the heat kernel under $\mathbb{Q}$ — the transition
 density of the pure diffusion on $M^r$ (no drift).
@@ -429,20 +477,26 @@ The physical paths and risk-neutral paths are the same.
 
 The full derivative price — accounting for all paths in $\Delta_{d-1}$, not just $M^r$ — is:
 
-$$V_{\rm full}(b,t) = e^{-r(T-t)}\int_{\rm all paths \Delta_{d-1}}
-\mathcal{D}^{\Delta}[b] e^{-S_\Delta[b]/(2\varepsilon^2)} G(b_T) \tag{6.1}$$
+```math
+V_{\rm full}(b,t) = e^{-r(T-t)}\int_{\rm all paths \Delta_{d-1}}
+\mathcal{D}^{\Delta}[b] e^{-S_\Delta[b]/(2\varepsilon^2)} G(b_T) \tag{6.1}
+```
 
 **Splitting paths into manifold and normal components:**
 Any path $b(t) \in \Delta_{d-1}$ near $M^r$ can be written as:
 
-$$b(t) = b^M(t) + \sum_{\alpha=r+1}^{d-1}\xi^\alpha(t)\nu_\alpha(b^M(t)) \tag{6.2}$$
+```math
+b(t) = b^M(t) + \sum_{\alpha=r+1}^{d-1}\xi^\alpha(t)\nu_\alpha(b^M(t)) \tag{6.2}
+```
 
 where $b^M(t) \in M^r$ is the manifold component and $\xi^\alpha(t)\nu_\alpha$ are
 the normal bundle coordinates (HAMILTONIAN_TAILS paper).
 
 **The action splits:**
 
-$$S_\Delta[b] = S_M[b^M] + S_N[\xi;\,b^M] + S_{\rm coupling}[b^M,\xi] \tag{6.3}$$
+```math
+S_\Delta[b] = S_M[b^M] + S_N[\xi;\,b^M] + S_{\rm coupling}[b^M,\xi] \tag{6.3}
+```
 
 where $S_N[\xi;b^M] = \int\sum_\alpha |\dot\xi^\alpha|^2/2\,dt$ is the normal bundle
 kinetic term and $S_{\rm coupling}$ involves the second fundamental form $II$ coupling
@@ -454,14 +508,18 @@ $b^M$ and $\xi$.
 *Integrating out the normal bundle paths $\xi^\alpha$ in (6.1)-(6.3) gives an
 effective action on $M^r$:*
 
-$$V_{\rm full}(b,t) = e^{-r(T-t)}\int_{M^r}\mathcal{D}^{M}[b^M]
- e^{-S_{\rm eff}[b^M]/(2\varepsilon^2)} G^{\rm eff}(b^M_T) \tag{6.4}$$
+```math
+V_{\rm full}(b,t) = e^{-r(T-t)}\int_{M^r}\mathcal{D}^{M}[b^M]
+ e^{-S_{\rm eff}[b^M]/(2\varepsilon^2)} G^{\rm eff}(b^M_T) \tag{6.4}
+```
 
 *where the effective action is:*
 
-$$S_{\rm eff}[b^M] = S_M[b^M]
+```math
+S_{\rm eff}[b^M] = S_M[b^M]
 + \underbrace{\frac{\varepsilon^2}{2}\mathrm{tr}(F_N^{-1})\cdot(T-t)}_{\text{idiosyncratic correction}}
-+ O(\varepsilon^4) \tag{6.5}$$
++ O(\varepsilon^4) \tag{6.5}
+```
 
 *and $F_N = \Pi_{NM}F(b^{\ast})\Pi_{NM}$ is the normal bundle Fisher matrix (idiosyncratic
 Fisher information).*
@@ -530,8 +588,10 @@ PATH INTEGRAL       LANGEVIN EQ.          FK FORMULA
 From (6.5): the effective action on the market manifold receives an idiosyncratic
 correction from integrating out the normal bundle:
 
-$$\Delta V_{\rm incompleteness}(b,t) = e^{-r(T-t)}\cdot\frac{\varepsilon^2}{2}
-\mathrm{tr}(F_N^{-1})\cdot(T-t) \cdot V_{\rm manifold}(b,t) \tag{7.1}$$
+```math
+\Delta V_{\rm incompleteness}(b,t) = e^{-r(T-t)}\cdot\frac{\varepsilon^2}{2}
+\mathrm{tr}(F_N^{-1})\cdot(T-t) \cdot V_{\rm manifold}(b,t) \tag{7.1}
+```
 
 **This is the path integral derivation of the incompleteness premium** — the additional
 option value that arises because idiosyncratic paths contribute to the full path

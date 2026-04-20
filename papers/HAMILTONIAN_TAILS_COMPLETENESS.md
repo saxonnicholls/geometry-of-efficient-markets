@@ -50,8 +50,10 @@ divergence; Atiyah-Singer; ground state; Jacobi spectrum; critical exponents.
 
 The Feynman–Kac PDE on the portfolio simplex (FK_SIMPLEX.md equation 2.3):
 
-$$\frac{\partial u}{\partial\tau} = \mathcal{L}^\varepsilon u + r(b,\tau)\cdot u,
-\qquad u(\cdot, 0) = 1 \tag{1.1}$$
+```math
+\frac{\partial u}{\partial\tau} = \mathcal{L}^\varepsilon u + r(b,\tau)\cdot u,
+\qquad u(\cdot, 0) = 1 \tag{1.1}
+```
 
 where $\mathcal{L}^\varepsilon = \frac{\varepsilon^2}{2}\sum_{ij}C_{ij}(b)\partial_{ij}$
 is the Wright–Fisher generator and $r(b,\tau) = \log\langle b, x_{\lceil\tau T\rceil}\rangle$
@@ -59,13 +61,17 @@ is the Kelly growth rate potential.
 
 Substituting $u(b,\tau) = e^{-\tau E_0}\psi(b,\tau)$ and setting $\varepsilon^2 = 1/T$:
 
-$$-\frac{\partial\psi}{\partial\tau} = \underbrace{\left(-\mathcal{L}^\varepsilon - r(b)\right)}_{\mathcal{H}}\psi \tag{1.2}$$
+```math
+-\frac{\partial\psi}{\partial\tau} = \underbrace{\left(-\mathcal{L}^\varepsilon - r(b)\right)}_{\mathcal{H}}\psi \tag{1.2}
+```
 
 **Definition 1.1** (Efficient Market Hamiltonian). *The **efficient market Hamiltonian** is:*
 
-$$\mathcal{H} = -\mathcal{L}^\varepsilon - r(b)
+```math
+\mathcal{H} = -\mathcal{L}^\varepsilon - r(b)
 = -\frac{1}{2T}\sum_{i,j}C_{ij}(b)\frac{\partial^2}{\partial b_i\partial b_j}
-- \frac{1}{T}\sum_{t=1}^{T}\log\langle b, x_t\rangle} \tag{1.3}$$
+- \frac{1}{T}\sum_{t=1}^{T}\log\langle b, x_t\rangle} \tag{1.3}
+```
 
 *acting on $L^2(\Delta_{d-1}, d\mu)$ where $\mu$ is the uniform measure. The factor
 $1/T$ plays the role of $\hbar$ (the semiclassical parameter).*
@@ -93,12 +99,16 @@ The posterior $|\psi_0|^2 \propto W_T\mu = \pi_T$ follows. $\square$
 *Restricted to the market manifold $M$ (where the posterior concentrates for large $T$),
 the Hamiltonian $\mathcal{H}|_M$ has eigenvalues:*
 
-$$E_k = E_0 + \frac{1}{T}\lambda_k(L_M) + O(1/T^2) \tag{1.4}$$
+```math
+E_k = E_0 + \frac{1}{T}\lambda_k(L_M) + O(1/T^2) \tag{1.4}
+```
 
 *where $\lambda_k(L_M)$ are the eigenvalues of the Jacobi operator on $M$
 (CLASSIFICATION.md equation 3.2). The energy gap is:*
 
-$$\Delta E = E_1 - E_0 = \frac{\lambda_1(L_M)}{T} \tag{1.5}$$
+```math
+\Delta E = E_1 - E_0 = \frac{\lambda_1(L_M)}{T} \tag{1.5}
+```
 
 *Proof.* Near the ground state energy $E_0$, the Hamiltonian restricted to a tubular
 neighbourhood of $M$ decomposes as $\mathcal{H}|_M + \mathcal{H}_\perp$ where
@@ -158,7 +168,9 @@ by the infinite potential wall.
 simplex $\Delta_{d-1}$) with a concave potential well. Its spectral theory is well-developed
 \[Agmon 1982, Reed-Simon Vol IV\], and the ground state is:
 
-$$\psi_0(b) \propto \exp(-S(b)/(2\varepsilon^2))\cdot A(b)^{1/2} = W_T(b)^{1/2} \tag{1.6}$$
+```math
+\psi_0(b) \propto \exp(-S(b)/(2\varepsilon^2))\cdot A(b)^{1/2} = W_T(b)^{1/2} \tag{1.6}
+```
 
 where $S(b) = -\log W_T(b)$ is the WKB action and $A = |\det F|^{-1/4}$ is the
 amplitude factor (Van Vleck determinant to the 1/4 power).
@@ -190,12 +202,16 @@ on $\Delta_{d-1}$ in the *flat* measure $\mu$. But the natural measure for stati
 inference is the Fisher–Rao volume form $d\mathrm{vol}_{g^{\mathrm{FR}}}(b) = \prod_i b_i^{-1/2}\,d^{d-1}b$.
 The *natural* (information-geometric) posterior is:
 
-$$\tilde\pi_T(b) \propto W_T(b)\cdot\prod_i b_i^{-1/2} \tag{2.1}$$
+```math
+\tilde\pi_T(b) \propto W_T(b)\cdot\prod_i b_i^{-1/2} \tag{2.1}
+```
 
 This is a **Dirichlet$(1/2,\ldots,1/2)$ weighted posterior** — the half-integer
 Dirichlet prior introduced by Jeffreys. In terms of $u_i = \sqrt{b_i}$:
 
-$$\tilde\pi_T(u) \propto \exp\!\left(T\sum_{t=1}^{T}\log\langle u^2, x_t\rangle\right)\cdot 1 \tag{2.2}$$
+```math
+\tilde\pi_T(u) \propto \exp\!\left(T\sum_{t=1}^{T}\log\langle u^2, x_t\rangle\right)\cdot 1 \tag{2.2}
+```
 
 (the Jacobian of $b \to u^2$ cancels the $\prod b_i^{-1/2}$ factor).
 
@@ -203,7 +219,9 @@ $$\tilde\pi_T(u) \propto \exp\!\left(T\sum_{t=1}^{T}\log\langle u^2, x_t\rangle\
 posterior is the pushforward of $\tilde\pi_T$ under the map $b \mapsto b_i x_{t,i}$.
 For a portfolio concentrated near $b^{\ast} = e_i$ (100% in asset $i$):
 
-$$p(x_{t,i}) \propto x_{t,i}^{T b^{\ast}_{i}} \cdot (T b^{\ast}_{i})^{-1/2} \tag{2.3}$$
+```math
+p(x_{t,i}) \propto x_{t,i}^{T b^{\ast}_{i}} \cdot (T b^{\ast}_{i})^{-1/2} \tag{2.3}
+```
 
 This is a **power-law distribution** with exponent $Tb^{\ast}_{i} - 1/2$ — precisely a
 **Pareto distribution** with tail index $\alpha = Tb^{\ast}_{i} - 1/2$. For a diversified
@@ -218,7 +236,9 @@ for $T=252$, $d=50$ — **exactly in the empirical range**.
 of asset $i$ under the natural Fisher–Rao posterior is a Pareto distribution with tail
 index:*
 
-$$\alpha_i = T\cdot b^{\ast}_{i} - \frac{1}{2} \tag{2.4}$$
+```math
+\alpha_i = T\cdot b^{\ast}_{i} - \frac{1}{2} \tag{2.4}
+```
 
 *In particular: (i) all assets have fat tails ($\alpha_i < \infty$ for finite $T$);
 (ii) assets with smaller weight $b^{\ast}_{i}$ have heavier tails; (iii) as $T \to \infty$
@@ -229,7 +249,9 @@ with $b^{\ast}_{i}$ fixed, $\alpha_i \to \infty$ (tails become Gaussian in the l
 Fisher–Rao volume factor $\prod_i b_i^{-1/2}$. Near $b^{\ast} = (1/d,\ldots,1/d)$ (uniform),
 the marginal density of coordinate $b_i$ is:
 
-$$\pi_T(b_i) \propto b_i^{Tb^{\ast}_{i} - 1}(1-b_i)^{T(1-b^{\ast}_{i}) - 1}\cdot b_i^{-1/2} = b_i^{Tb^{\ast}_{i} - 3/2}(1-b_i)^{T(1-b^{\ast}_{i})-1} \tag{2.5}$$
+```math
+\pi_T(b_i) \propto b_i^{Tb^{\ast}_{i} - 1}(1-b_i)^{T(1-b^{\ast}_{i}) - 1}\cdot b_i^{-1/2} = b_i^{Tb^{\ast}_{i} - 3/2}(1-b_i)^{T(1-b^{\ast}_{i})-1} \tag{2.5}
+```
 
 This is a Beta$(Tb^{\ast}_{i} - 1/2,\, T(1-b^{\ast}_{i}))$ distribution. The tail at $b_i \to 0$:
 $\pi_T(b_i) \sim b_i^{Tb^{\ast}_{i} - 3/2}$, which in terms of the return $x = b_i/b^{\ast}_{i}$
@@ -241,14 +263,18 @@ The Bhattacharyya sphere $S^{d-1}_{+}$ has constant sectional curvature $K = 1/4
 For a diffusion on a curved space, the **heat kernel** $p_t(b,b')$ has corrections
 from the curvature:
 
-$$p_t(b,b') = \frac{e^{-d_{\rm FR}(b,b')^2/(2t)}}{(4\pi t)^{(d-1)/2}}
-\left[1 + \frac{R}{6}t + O(t^2)\right] \tag{2.6}$$
+```math
+p_t(b,b') = \frac{e^{-d_{\rm FR}(b,b')^2/(2t)}}{(4\pi t)^{(d-1)/2}}
+\left[1 + \frac{R}{6}t + O(t^2)\right] \tag{2.6}
+```
 
 where $R = (d-1)(d-2)/4$ is the scalar curvature of $S^{d-1}_{+}$ and $d_{\rm FR}$
 is the Fisher–Rao distance. The curvature correction $\frac{R}{6}t$ modifies the
 effective diffusion coefficient:
 
-$$\sigma^2_{\rm eff} = \sigma^2\left(1 + \frac{(d-1)(d-2)}{24}t\right) \tag{2.7}$$
+```math
+\sigma^2_{\rm eff} = \sigma^2\left(1 + \frac{(d-1)(d-2)}{24}t\right) \tag{2.7}
+```
 
 For a return process at time $t = T\varepsilon^2 = 1$: $\sigma^2_{\rm eff} \approx \sigma^2(1 + (d-1)(d-2)/24)$.
 
@@ -256,7 +282,9 @@ For a return process at time $t = T\varepsilon^2 = 1$: $\sigma^2_{\rm eff} \appr
 behaviour determined by the Atiyah–Singer index theorem applied to the sphere's Dirac
 operator. For the positive hemisphere $S^{d-1}_{+}$, the **spectral zeta function** is:
 
-$$\zeta_{\mathcal{H}}(s) = \sum_k (\lambda_k + E_0)^{-s} \tag{2.8}$$
+```math
+\zeta_{\mathcal{H}}(s) = \sum_k (\lambda_k + E_0)^{-s} \tag{2.8}
+```
 
 The poles of $\zeta_{\mathcal{H}}(s)$ at $s = (d-1)/2, (d-3)/2, \ldots$ determine the
 heat kernel asymptotics and hence the tail behaviour. Each pole at $s = (d-1-2k)/2$
@@ -266,8 +294,10 @@ contributes a term $\sim |r|^{-(d-1-2k)}$ to the return distribution tail — a 
 under the WF diffusion on $S^{d-1}_{+}$ with $K=1/4$, the tail of the return
 distribution satisfies:*
 
-$$\mathbb{P}(|r_t| > x) \sim x^{-(d-1)/2}\cdot\left(1 + \sum_{k=1}^\infty a_k x^{-2k}\right)
-\quad \text{as } x \to \infty \tag{2.9}$$
+```math
+\mathbb{P}(|r_t| > x) \sim x^{-(d-1)/2}\cdot\left(1 + \sum_{k=1}^\infty a_k x^{-2k}\right)
+\quad \text{as } x \to \infty \tag{2.9}
+```
 
 *The leading tail exponent is $(d-1)/2$. For $d=50$: tail exponent $= 49/2 = 24.5$ — very
 light tails for the full simplex. But after restricting to the $r$-dimensional market manifold
@@ -300,7 +330,9 @@ distribution at the critical point must therefore have power-law tails.
 efficient market fixed point ($H=0$), scale invariance under the RG group forces the
 return distribution to be a power law:*
 
-$$\mathbb{P}(r_t > x) = L(x)\cdot x^{-\alpha} \tag{2.10}$$
+```math
+\mathbb{P}(r_t > x) = L(x)\cdot x^{-\alpha} \tag{2.10}
+```
 
 *where $L(x)$ is slowly varying and $\alpha = r/2$ is the tail index (same as Theorem 2.2).
 For an inefficient market ($H\neq 0$), the return distribution has exponential tails
@@ -391,7 +423,9 @@ the EMM is unique, which depends on the geometry of the market manifold.
 martingale measures $\{\mathbb{Q}\}$ for a market with manifold $M^r \subset \Delta_{d-1}$ is
 parameterised by the normal bundle $NM$:*
 
-$$\mathcal{Q}(M) \cong N_{b^{\ast}}M = (T_{b^{\ast}}M)^{\perp_{g^{\mathrm{FR}}}} \tag{3.1}$$
+```math
+\mathcal{Q}(M) \cong N_{b^{\ast}}M = (T_{b^{\ast}}M)^{\perp_{g^{\mathrm{FR}}}} \tag{3.1}
+```
 
 *The market is complete ($|\mathcal{Q}| = 1$, unique EMM) iff $\dim N_{b^{\ast}}M = 0$,
 i.e.\ $r = d-1$ (the market manifold fills the full simplex tangent space).*
@@ -403,7 +437,9 @@ $\dim\mathcal{Q} = d-1-r$ free parameters in the EMM.*
 $\theta \in T_{b^{\ast}}\Delta_{d-1}$ (the market price of risk vector) satisfying the
 no-arbitrage condition (DERIVATIVES_CONVEXITY equation 3.6):
 
-$$\theta = F(b^{\ast})^{-1}(\mathbb{E}[x] - r_f\mathbf{1}) \tag{3.2}$$
+```math
+\theta = F(b^{\ast})^{-1}(\mathbb{E}[x] - r_f\mathbf{1}) \tag{3.2}
+```
 
 For the systematic (factor) component: $\theta_{\rm sys} = \Pi_{T_{b^{\ast}}M}\theta$
 is uniquely determined by the factor loadings and the expected returns. For the
@@ -426,15 +462,19 @@ $N_{b^{\ast}}M$ under the Fisher–Rao metric — the space of unit-norm unhedge
 For a derivative with payoff $\Psi(S_T)$, the **replication error** of the best
 hedging strategy using only the $r$ factor portfolios is:
 
-$$\text{Hedging error}^{2} = \|\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi\|^2_{g^{\mathrm{FR}}} \tag{3.3}$$
+```math
+\text{Hedging error}^{2} = \|\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi\|^2_{g^{\mathrm{FR}}} \tag{3.3}
+```
 
 — the squared norm of the projection of the payoff gradient onto the normal bundle.
 
 **Theorem 3.3** *(Second fundamental form controls replication)*. *The minimum
 variance of the residual hedging error for a derivative $\Psi$ is:*
 
-$$\sigma^2_{\rm hedge}(\Psi) = \|\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi\|^2
-+ \frac{1}{2}\langle II(b^{\ast}), \nabla^2_{g^{\mathrm{FR}}}\Psi\rangle + O(\varepsilon^2) \tag{3.4}$$
+```math
+\sigma^2_{\rm hedge}(\Psi) = \|\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi\|^2
++ \frac{1}{2}\langle II(b^{\ast}), \nabla^2_{g^{\mathrm{FR}}}\Psi\rangle + O(\varepsilon^2) \tag{3.4}
+```
 
 *where $II$ is the second fundamental form of $M$ in $g^{\mathrm{FR}}$.*
 
@@ -457,7 +497,9 @@ For an index option with payoff $\Psi(I_T) = \Psi(b^{*T}S_T)$: the payoff depend
 on the index $I = b^{*T}S$, which is a function on $T_{b^{\ast}}M$ (the tangential direction
 of the log-optimal portfolio). Therefore:
 
-$$\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi(I) = 0 \tag{3.5}$$
+```math
+\Pi_{N_{b^{\ast}}M}\nabla_{g^{\mathrm{FR}}}\Psi(I) = 0 \tag{3.5}
+```
 
 **Index options have zero linear hedging error** — they are perfectly hedgeable using
 the index portfolio $b^{\ast}$ (plus bonds). This is consistent with the geometric Black-Scholes
@@ -474,7 +516,9 @@ $\Psi(\sigma_I^2) = \Psi(\mathrm{tr}[F_M^{-1}])$ — the trace of the inverse Fi
 matrix. The gradient $\nabla\Psi(\sigma_I^2)$ involves $F_M^{-1}$ and has components
 both tangential and normal to $M$. The normal component:
 
-$$\Pi_{N_{b^{\ast}}M}\nabla\sigma_I^2 = -F_N^{-1}\vec{H}(b^{\ast}) \cdot H \tag{3.6}$$
+```math
+\Pi_{N_{b^{\ast}}M}\nabla\sigma_I^2 = -F_N^{-1}\vec{H}(b^{\ast}) \cdot H \tag{3.6}
+```
 
 (using the Weingarten equation connecting the normal gradient of the metric to the mean
 curvature). For an efficient market ($H=0$): the normal component vanishes — **volatility
@@ -558,7 +602,9 @@ the most "dangerous" normal direction.*
 
 For $d=2$, $r=1$ (the simplest non-trivial case): $\Delta_1 = [0,1]$, $b = (b_1, b_2 = 1-b_1)$.
 
-$$\mathcal{H}_{d=2} = -\frac{1}{2T}b_1(1-b_1)\frac{d^2}{db_1^2} - \frac{1}{T}\sum_t\log(b_1 x_{t,1} + (1-b_1)x_{t,2}) \tag{5.1}$$
+```math
+\mathcal{H}_{d=2} = -\frac{1}{2T}b_1(1-b_1)\frac{d^2}{db_1^2} - \frac{1}{T}\sum_t\log(b_1 x_{t,1} + (1-b_1)x_{t,2}) \tag{5.1}
+```
 
 This is a **Sturm–Liouville operator** on $[0,1]$ with a concave potential. The
 potential $V(b_1) = -\frac{1}{T}\sum_t\log(b_1 x_1 + (1-b_1)x_2)$ is a concave
@@ -571,8 +617,10 @@ from the WF diffusion coefficient).
 
 **Energy levels:** The spectrum of (5.1) is (leading order in $1/T$):
 
-$$E_k = E_0 + \frac{\omega}{T}\left(k + \frac{1}{2}\right),
-\qquad \omega = \sqrt{F_{11}(b^{\ast})\cdot b^{\ast}_{1}(1-b^{\ast}_{1})} \tag{5.2}$$
+```math
+E_k = E_0 + \frac{\omega}{T}\left(k + \frac{1}{2}\right),
+\qquad \omega = \sqrt{F_{11}(b^{\ast})\cdot b^{\ast}_{1}(1-b^{\ast}_{1})} \tag{5.2}
+```
 
 (harmonic oscillator spectrum near the potential minimum, with frequency $\omega$
 determined by the Fisher information and the WF diffusion coefficient at $b^{\ast}_{1}$).
@@ -581,13 +629,17 @@ determined by the Fisher information and the WF diffusion coefficient at $b^{\as
 
 For $d=4$, $r=2$, Clifford torus market (Section 8.2 of MINIMAL_SURFACE):
 
-$$\mathcal{H}_{\rm Cliff} = -\frac{1}{2T}\Delta_{T^2} - \frac{1}{T}\sum_t\log(b_1 x_1 + b_2 x_2 + b_3 x_3 + b_4 x_4) \tag{5.3}$$
+```math
+\mathcal{H}_{\rm Cliff} = -\frac{1}{2T}\Delta_{T^2} - \frac{1}{T}\sum_t\log(b_1 x_1 + b_2 x_2 + b_3 x_3 + b_4 x_4) \tag{5.3}
+```
 
 where $\Delta_{T^2}$ is the flat torus Laplacian on $[0,\pi/2]^2$. The spectrum of the
 Clifford torus Hamiltonian:
 
-$$E_{mn} = E_0 + \frac{2(m^2 + n^2)}{T} - \frac{5}{2T},
-\qquad (m,n) \in \mathbb{Z}^{2}_{\geq 0} \tag{5.4}$$
+```math
+E_{mn} = E_0 + \frac{2(m^2 + n^2)}{T} - \frac{5}{2T},
+\qquad (m,n) \in \mathbb{Z}^{2}_{\geq 0} \tag{5.4}
+```
 
 The **negative energy levels** (below the ground state): $(m,n) \in \{(0,0),(1,0),(0,1)\}$
 (three modes in the positive quadrant) — consistent with the index-5 result of
@@ -597,8 +649,10 @@ These negative energy modes correspond to **unstable quantum tunnelling directio
 the market can tunnel through the potential barrier in these 3 directions, moving
 away from the Clifford torus efficient equilibrium. The tunnelling rate:
 
-$$\Gamma_{\rm tunnel} \sim e^{-S_{\rm instanton}/\varepsilon^2}
-= e^{-T\cdot\Delta S} \tag{5.5}$$
+```math
+\Gamma_{\rm tunnel} \sim e^{-S_{\rm instanton}/\varepsilon^2}
+= e^{-T\cdot\Delta S} \tag{5.5}
+```
 
 where $\Delta S$ is the action difference between the Clifford torus saddle and the
 adjacent potential well (the tilted torus minimum from Example 3 of MINIMAL_SURFACE).
@@ -614,14 +668,16 @@ CAPM equilibrium.
 Three foundational questions — the market Hamiltonian, fat tails, and completeness —
 are all answered by the same geometric structure:
 
-$$\begin{array}{lcl}
-\text{Hamiltonian} & \leftrightarrow & \mathcal{H} = -\mathcal{L}^\varepsilon - r(b)\\[4pt]
-\text{Ground state} & \leftrightarrow & \hat{b}_{T} \text{ (universal portfolio)}\\[4pt]
-\text{Fat tails} & \leftrightarrow & \text{Fisher-Rao divergence at } \partial\Delta\\[4pt]
-\text{Tail index} & \leftrightarrow & \alpha = r/2 \text{ (factor dimension)}\\[4pt]
-\text{Incompleteness} & \leftrightarrow & \dim N_{b^{\ast}}M = d-1-r\\[4pt]
-\text{Hedging error} & \leftrightarrow & \|\Pi_{N_{b^{\ast}}M}\nabla\Psi\|^2_{g^{\mathrm{FR}}}
-\end{array}}$$
+```math
+\begin{array}{lcl}
+\text{Hamiltonian} \& \leftrightarrow \& \mathcal{H} = -\mathcal{L}^\varepsilon - r(b)\\[4pt]
+\text{Ground state} \& \leftrightarrow \& \hat{b}_{T} \text{ (universal portfolio)}\\[4pt]
+\text{Fat tails} \& \leftrightarrow \& \text{Fisher-Rao divergence at } \partial\Delta\\[4pt]
+\text{Tail index} \& \leftrightarrow \& \alpha = r/2 \text{ (factor dimension)}\\[4pt]
+\text{Incompleteness} \& \leftrightarrow \& \dim N_{b^{\ast}}M = d-1-r\\[4pt]
+\text{Hedging error} \& \leftrightarrow \& \|\Pi_{N_{b^{\ast}}M}\nabla\Psi\|^2_{g^{\mathrm{FR}}}
+\end{array}}
+```
 
 The normal bundle of the market manifold is the unifying object: it governs the fat
 tails (through the Fisher–Rao geometry at the simplex boundary), the market

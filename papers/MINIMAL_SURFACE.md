@@ -20,7 +20,9 @@ respectively to (i) the log-optimal portfolio path being a geodesic in $\Sigma$,
 being totally geodesic in the public-information submanifold, and (iii) $\Sigma$ being minimal
 in $(\Delta_{d-1}, g^{\mathrm{FR}})$. We introduce the **market inefficiency functional**:
 
-$$\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_\Sigma$$
+```math
+\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_\Sigma
+```
 
 as the Willmore energy of $\Sigma$ in the Bhattacharyya sphere, and prove that
 $\widetilde{\mathcal{W}}(\Sigma) = 0$ if and only if $\Sigma$ is a minimal submanifold,
@@ -87,7 +89,9 @@ $H \equiv 0$ — i.e.\ $\Sigma$ is a minimal submanifold. This rules out strateg
 $\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2\,d\mathrm{vol}_\Sigma$ is a non-negative functional on submanifolds (conformally invariant when $r=2$; isometry-invariant for all $r$)
 of $(\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_{+}$ satisfying:
 
-$$\widetilde{\mathcal{W}}(\Sigma) = 0 \iff \Sigma \text{ is minimal} \iff \text{market is strongly efficient}$$
+```math
+\widetilde{\mathcal{W}}(\Sigma) = 0 \iff \Sigma \text{ is minimal} \iff \text{market is strongly efficient}
+```
 
 **Theorem C** *(Arbitrage is mean curvature flow)*. An arbitrage strategy that maximises
 expected log-growth subject to the market factor structure deforms $\Sigma$ by mean curvature
@@ -130,8 +134,10 @@ return distribution concentrates on the $r$-dimensional factor subspace.
 **Definition 2.1** (Market manifold). *The **market manifold** $\Sigma \subset \Delta_{d-1}$
 is the closure of the set of log-optimal portfolios over all realisations of the factor shocks:*
 
-$$\Sigma = \overline{\left\{b^{\ast}(\omega) = \operatorname{argmax}_{b \in \Delta_{d-1}}
-\sum_{t=1}^{T} \log\langle b, x_t(\omega)\rangle : \omega \in \Omega \right\}} \tag{2.1}$$
+```math
+\Sigma = \overline{\left\{b^{\ast}(\omega) = \operatorname{argmax}_{b \in \Delta_{d-1}}
+\sum_{t=1}^{T} \log\langle b, x_t(\omega)\rangle : \omega \in \Omega \right\}} \tag{2.1}
+```
 
 *For a pure factor model ($D_e = 0$), $\Sigma$ is the image of the smooth map
 $\alpha \mapsto \Pi_\Delta(\Phi\alpha)$ from the factor simplex $\Delta_{r-1}$ into $\Delta_{d-1}$,
@@ -152,7 +158,9 @@ $\iota: \Sigma \hookrightarrow \Delta_{d-1}$.
 **Definition 2.1** (Bhattacharyya sphere). *The term "Bhattacharyya sphere" in this
 monograph refers specifically to the positive orthant of the unit sphere in $\mathbb{R}^{d}$:*
 
-$$S^{d-1}_{+} = \left\{u \in \mathbb{R}^{d} : u_i \geq 0,\, \|u\|^2 = 1\right\}$$
+```math
+S^{d-1}_{+} = \left\{u \in \mathbb{R}^{d} : u_i \geq 0,\, \|u\|^2 = 1\right\}
+```
 
 *equipped with the round metric of curvature $K = 1/4$ (equivalently, radius 2).
 This is the image of the portfolio simplex $\Delta_{d-1}$ under the square-root map
@@ -165,7 +173,9 @@ the concrete Riemannian manifold $S^{d-1}_{+}$ with the induced round metric.*
 
 Under this isometry, the market manifold maps to:
 
-$$\phi(\Sigma) \subset S^{d-1}_{+} \tag{2.2}$$
+```math
+\phi(\Sigma) \subset S^{d-1}_{+} \tag{2.2}
+```
 
 an $r$-dimensional submanifold of $S^{d-1}_{+}$ with constant ambient
 sectional curvature $K = 1/4$.
@@ -175,13 +185,17 @@ sectional curvature $K = 1/4$.
 The **second fundamental form** of $\Sigma \subset (\Delta_{d-1}, g^{\mathrm{FR}})$ at
 $b \in \Sigma$ is the symmetric bilinear form on $T_b\Sigma$:
 
-$$II_b(u,v) = \nabla^{\mathrm{FR}}_{u} v - \Pi_{T_b\Sigma}(\nabla^{\mathrm{FR}}_{u} v)
-= \Pi_{N_b\Sigma}(\nabla^{\mathrm{FR}}_{u} v) \tag{2.3}$$
+```math
+II_b(u,v) = \nabla^{\mathrm{FR}}_{u} v - \Pi_{T_b\Sigma}(\nabla^{\mathrm{FR}}_{u} v)
+= \Pi_{N_b\Sigma}(\nabla^{\mathrm{FR}}_{u} v) \tag{2.3}
+```
 
 where $\nabla^{\mathrm{FR}}$ is the Levi-Civita connection of $g^{\mathrm{FR}}$ and
 $N_b\Sigma = (T_b\Sigma)^\perp$ is the normal bundle. The **mean curvature vector** is:
 
-$$\vec{H}(b) = \frac{1}{r}\sum_{a=1}^{r} II_b(e_a, e_a) \in N_b\Sigma \tag{2.4}$$
+```math
+\vec{H}(b) = \frac{1}{r}\sum_{a=1}^{r} II_b(e_a, e_a) \in N_b\Sigma \tag{2.4}
+```
 
 where $\{e_a\}$ is any orthonormal frame of $T_b\Sigma$ under $g^{\mathrm{FR}}$. The
 scalar mean curvature is $H = |\vec{H}|_{g^{\mathrm{FR}}}$.
@@ -189,7 +203,9 @@ scalar mean curvature is $H = |\vec{H}|_{g^{\mathrm{FR}}}$.
 **Proposition 2.3** (Mean curvature formula). *In terms of the factor loadings $\Phi$,
 the mean curvature of $\Sigma$ at $b^{\ast} \in \Sigma$ is:*
 
-$$H(b^{\ast}) = \left|\Pi_{N_{b^{\ast}}\Sigma}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right|_{g^{\mathrm{FR}}} \tag{2.5}$$
+```math
+H(b^{\ast}) = \left|\Pi_{N_{b^{\ast}}\Sigma}\!\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right|_{g^{\mathrm{FR}}} \tag{2.5}
+```
 
 *where $1/(2\sqrt{b^{\ast}})$ is the mean curvature vector of the individual coordinate embedding,
 and the projection onto the normal bundle captures the extrinsic curvature of $\Sigma$
@@ -205,11 +221,15 @@ and the factor loading directions. The computation in the $\sqrt{b}$ coordinates
 
 For the linear factor model with loadings $\Phi$, the tangent space at $b^{\ast}$ is:
 
-$$T_{b^{\ast}}\Sigma = \Pi_{T_{b^{\ast}}\Delta}\left(\mathrm{Im}\,\Phi\right) \tag{2.6}$$
+```math
+T_{b^{\ast}}\Sigma = \Pi_{T_{b^{\ast}}\Delta}\left(\mathrm{Im}\,\Phi\right) \tag{2.6}
+```
 
 (the projection of the factor image onto the simplex tangent space). The normal space is:
 
-$$N_{b^{\ast}}\Sigma = \left\{v \in T_{b^{\ast}}\Delta_{d-1} : v \perp_{g^{\mathrm{FR}}} T_{b^{\ast}}\Sigma\right\} \tag{2.7}$$
+```math
+N_{b^{\ast}}\Sigma = \left\{v \in T_{b^{\ast}}\Delta_{d-1} : v \perp_{g^{\mathrm{FR}}} T_{b^{\ast}}\Sigma\right\} \tag{2.7}
+```
 
 These are the directions of the simplex tangent space **not** explained by the factor structure —
 the idiosyncratic directions. **The normal bundle is the idiosyncratic subspace**, and the
@@ -233,14 +253,18 @@ equivalence.
 Suppose there exists a portfolio strategy $\beta_t = b^{\ast}(t) + \delta b(t)$ that achieves
 strictly higher expected log-growth than $b^{\ast}$:
 
-$$\mathbb{E}\!\left[\log\langle \beta_t, x_t\rangle\right] > \mathbb{E}\!\left[\log\langle b^{\ast}(t), x_t\rangle\right] \tag{3.1}$$
+```math
+\mathbb{E}\!\left[\log\langle \beta_t, x_t\rangle\right] > \mathbb{E}\!\left[\log\langle b^{\ast}(t), x_t\rangle\right] \tag{3.1}
+```
 
 The excess growth is $\delta L = \nabla L_T(b^{\ast}) \cdot \delta b + \frac{1}{2}\delta b^T \nabla^2 L_T(b^{\ast})\delta b$.
 Since $b^{\ast}$ is the log-optimal portfolio, $\nabla L_T(b^{\ast}) = 0$ on $T_{b^{\ast}}\Sigma$. So $\delta b$
 must have a component $\delta b_\perp \in N_{b^{\ast}}\Sigma$ in the normal direction (outside the
 market manifold). The rate at which such strategies improve log-growth is:
 
-$$\frac{\partial}{\partial s}\bigg|_{s=0} L_T(b^{\ast} + s\delta b_\perp) = -\delta b_\perp^T F(b^{\ast})\delta b_\perp/2 < 0$$
+```math
+\frac{\partial}{\partial s}\bigg|_{s=0} L_T(b^{\ast} + s\delta b_\perp) = -\delta b_\perp^T F(b^{\ast})\delta b_\perp/2 < 0
+```
 
 Wait — this is **negative**, so deviating from $b^{\ast}$ in normal directions hurts growth. This
 confirms $b^{\ast}$ is optimal on $\Sigma$. But information-based predictability works differently:
@@ -254,7 +278,9 @@ More precisely, at time $t$, an investor with information $\mathcal{F}_{t}$ obse
 portfolio $b^{\ast}(t)$ and attempts to predict the deviation $b^{\ast}(t+1) - b^{\ast}(t)$. The expected
 movement of $b^{\ast}$ across the manifold $\Sigma$ under the Hamiltonian flow of Section 4 is:
 
-$$\mathbb{E}\!\left[b^{\ast}(t+1) - b^{\ast}(t)\,\big|\,\mathcal{F}_{t}\right] = -\varepsilon^2\vec{H}(b^{\ast}(t)) + O(\varepsilon^4) \tag{3.2}$$
+```math
+\mathbb{E}\!\left[b^{\ast}(t+1) - b^{\ast}(t)\,\big|\,\mathcal{F}_{t}\right] = -\varepsilon^2\vec{H}(b^{\ast}(t)) + O(\varepsilon^4) \tag{3.2}
+```
 
 This follows from Itô's formula applied to $b^{\ast}(t)$ as a diffusion on $\Sigma$: the drift of
 the diffusion on a submanifold is $-\varepsilon^2\vec{H}$ (the extrinsic curvature drift), and
@@ -264,8 +290,10 @@ non-zero and in the direction of $-\vec{H}$, which is an exploitable signal.
 
 An investor who knows $\vec{H}(b^{\ast}(t))$ can pre-position in the direction $-\vec{H}$ and earn:
 
-$$\Delta L = \langle -\vec{H}(b^{\ast}), b^{\ast}(t+1) - b^{\ast}(t)\rangle_{g^{\mathrm{FR}}}
-= \varepsilon^2 |\vec{H}|^2 + O(\varepsilon^4) > 0 \tag{3.3}$$
+```math
+\Delta L = \langle -\vec{H}(b^{\ast}), b^{\ast}(t+1) - b^{\ast}(t)\rangle_{g^{\mathrm{FR}}}
+= \varepsilon^2 |\vec{H}|^2 + O(\varepsilon^4) > 0 \tag{3.3}
+```
 
 excess log-growth. This excess is strictly positive when $H \neq 0$, providing exploitable alpha.
 
@@ -275,7 +303,9 @@ If $H \equiv 0$ on $\Sigma$, equation (3.2) gives $\mathbb{E}[b^{\ast}(t+1) - b^
 
 **Corollary 3.2.** *The expected excess return from the optimal information-based strategy is:*
 
-$$\alpha^{\ast}(t) = \varepsilon^2\,|H(b^{\ast}(t))|^2_{g^{\mathrm{FR}}} + O(1/T^2) \tag{3.4}$$
+```math
+\alpha^{\ast}(t) = \varepsilon^2\,|H(b^{\ast}(t))|^2_{g^{\mathrm{FR}}} + O(1/T^2) \tag{3.4}
+```
 
 *The **mean curvature** of the market manifold at the current log-optimal portfolio is the
 market's current alpha — the maximum exploitable excess log-growth rate.*
@@ -295,7 +325,9 @@ surface of minimal Fisher information "area" consistent with the observed factor
 
 *Proof sketch.* The area functional in $g^{\mathrm{FR}}$ is:
 
-$$\mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) = \int_\Sigma \sqrt{\det g_\Sigma}\,d\sigma \tag{3.5}$$
+```math
+\mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) = \int_\Sigma \sqrt{\det g_\Sigma}\,d\sigma \tag{3.5}
+```
 
 This measures the total Fisher information "volume" of the market manifold — the total
 uncertainty in portfolio space covered by the factor structure. Minimising (3.5) subject to
@@ -317,11 +349,15 @@ its minimal area — the Willmore energy measures this inflation.
 $\Sigma \subset (\Delta_{d-1}, g^{\mathrm{FR}}) \cong S^{d-1}_{+}$, the **market inefficiency
 functional** is the Willmore energy:*
 
-$$\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_{g_\Sigma} \tag{4.1}$$
+```math
+\widetilde{\mathcal{W}}(\Sigma) = \int_\Sigma |H|^2_{g^{\mathrm{FR}}}\,d\mathrm{vol}_{g_\Sigma} \tag{4.1}
+```
 
 *This is the standard Willmore energy — the $L^2$-norm of the mean curvature. The market efficiency is:*
 
-$$\mathcal{E}(\Sigma) = \exp(-\widetilde{\mathcal{W}}(\Sigma)) \in (0, 1] \tag{4.2}$$
+```math
+\mathcal{E}(\Sigma) = \exp(-\widetilde{\mathcal{W}}(\Sigma)) \in (0, 1] \tag{4.2}
+```
 
 *with $\mathcal{E} = 1$ (fully efficient) iff $\widetilde{\mathcal{W}} = 0$ iff $\Sigma$ is minimal. The equivalence $\widetilde{\mathcal{W}} = 0 \iff H \equiv 0$ holds because $|H|^2 \geq 0$ pointwise.*
 
@@ -338,13 +374,17 @@ $S^{d-1}_{+}$.*
 *(iv) **Gradient flow:** The $L^2$-gradient flow of $\widetilde{\mathcal{W}}$ with respect to normal
 deformations of $\Sigma$ is the Willmore flow:*
 
-$$\frac{\partial \Sigma}{\partial t} = -\left(\Delta_\Sigma H + H\!\left(\frac{d-2}{4} - H^2\right)\right)\vec{\nu} \tag{4.3}$$
+```math
+\frac{\partial \Sigma}{\partial t} = -\left(\Delta_\Sigma H + H\!\left(\frac{d-2}{4} - H^2\right)\right)\vec{\nu} \tag{4.3}
+```
 
 *where $\Delta_\Sigma$ is the Laplace-Beltrami operator of $(\Sigma, g_\Sigma)$.*
 
 *(v) **Decomposition:** $\widetilde{\mathcal{W}}(\Sigma)$ decomposes as:*
 
-$$\widetilde{\mathcal{W}}(\Sigma) = \mathcal{W}_{\mathrm{sq}}(\Sigma) + \mathcal{W}_{\mathrm{curv}}(\Sigma) \tag{4.4}$$
+```math
+\widetilde{\mathcal{W}}(\Sigma) = \mathcal{W}_{\mathrm{sq}}(\Sigma) + \mathcal{W}_{\mathrm{curv}}(\Sigma) \tag{4.4}
+```
 
 *where $\mathcal{W}_{\mathrm{sq}} = \int |II|^2 d\mathrm{vol}$ is the squared second fundamental form
 (measuring all extrinsic curvature) and $\mathcal{W}_{\mathrm{curv}} = -\int K_\perp\,d\mathrm{vol}$
@@ -361,14 +401,18 @@ For $r > 2$: $\widetilde{\mathcal{W}} = \int |H|^2\,d\mathrm{vol}$ is NOT confor
 
 For $r = 2$ (two-factor markets), the **Li–Yau inequality** \[1982\] states that for a compact immersed surface in $S^n$:
 
-$$\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi \cdot \mathrm{mult}(\Sigma)$$
+```math
+\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi \cdot \mathrm{mult}(\Sigma)
+```
 
 where $\mathrm{mult}(\Sigma) \geq 1$ is the multiplicity (1 for embedded surfaces).
 Under our identification, this gives:
 
 **Corollary 4.3** (Minimum market inefficiency, two-factor case). *For $r=2$ and any non-minimal market manifold $\Sigma$:*
 
-$$\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi \approx 12.57 \tag{4.5}$$
+```math
+\widetilde{\mathcal{W}}(\Sigma) \geq 4\pi \approx 12.57 \tag{4.5}
+```
 
 *with equality for the conformally round sphere (the "rotationally symmetric" market —
 all assets equivalent under factor loading permutation). The market inefficiency is strictly
@@ -423,7 +467,9 @@ the set of portfolios consistent with public signals. The market manifold $\Sigm
 
 **Corollary 5.2** (Hierarchy and martingale interpretation). *The curvature conditions satisfy:*
 
-$$\underbrace{II \equiv 0}_{\text{totally geodesic}} \implies \underbrace{H \equiv 0}_{\text{minimal}} \tag{5.1}$$
+```math
+\underbrace{II \equiv 0}_{\text{totally geodesic}} \implies \underbrace{H \equiv 0}_{\text{minimal}} \tag{5.1}
+```
 
 *So: semi-strong $\implies$ strong EMH (in the curvature sense). If $\Sigma$ is minimal ($H = 0$), then the WF diffusion on $\Sigma$ has zero drift (since the drift term $-\varepsilon^2\vec{H}$ from equation (3.2) vanishes), and the drift-adjusted portfolio path has zero expected geodesic curvature. The EMH in this geometric sense rules out systematic mean-curvature-based alpha, not arbitrary information-based strategies.*
 
@@ -459,7 +505,9 @@ the portfolio $b_t = b^{\ast}(t) - \lambda\,\vec{H}(b^{\ast}(t))$ for $\lambda >
 market manifold toward its minimal surface. In the continuum limit, this deformation is
 mean curvature flow:*
 
-$$\frac{\partial \Sigma}{\partial t} = -H_\Sigma\,\vec{\nu} \tag{6.1}$$
+```math
+\frac{\partial \Sigma}{\partial t} = -H_\Sigma\,\vec{\nu} \tag{6.1}
+```
 
 *where $\vec{\nu}$ is the unit normal of $\Sigma$ in $(\Delta_{d-1}, g^{\mathrm{FR}})$.*
 
@@ -469,7 +517,9 @@ they exert price pressure on the assets with non-zero normal curvature, bringing
 portfolio distribution toward the normal direction. Aggregating over all such arbitrageurs with
 position sizes proportional to $|H|$, the net deformation of the market distribution is:
 
-$$\delta\Sigma = -\rho\,H_\Sigma\,\vec{\nu} \tag{6.2}$$
+```math
+\delta\Sigma = -\rho\,H_\Sigma\,\vec{\nu} \tag{6.2}
+```
 
 where $\rho > 0$ is the aggregate arbitrage capacity. Taking $\rho = 1$ (unit normalisation):
 this is precisely MCF. $\square$
@@ -484,18 +534,24 @@ flow $\partial_t\Sigma = -H\vec{\nu}$ satisfies:*
 
 *(ii) The Willmore energy is decreasing along the flow (under appropriate conditions):*
 
-$$\frac{d}{dt}\widetilde{\mathcal{W}}(\Sigma_t) = -2\int_{\Sigma_t}|\nabla H|^2\,d\mathrm{vol} + \int_{\Sigma_t}(2|A|^2 H^2 - H^4)\,d\mathrm{vol} \tag{6.3}$$
+```math
+\frac{d}{dt}\widetilde{\mathcal{W}}(\Sigma_t) = -2\int_{\Sigma_t}|\nabla H|^2\,d\mathrm{vol} + \int_{\Sigma_t}(2|A|^2 H^2 - H^4)\,d\mathrm{vol} \tag{6.3}
+```
 
 *(iii) For $r=2$ surfaces, $d\widetilde{\mathcal{W}}/dt \leq 0$ (Kuwert-Schätzle 2001). For general $r$, monotonicity requires additional assumptions (bounded $|A|^2/H^2$ ratio). The flow converges (modulo finite-time singularities) to a minimal submanifold $\Sigma^{\ast}$
 with $\widetilde{\mathcal{W}}(\Sigma^{\ast}) = 0$ — the efficient market.*
 
 **Proof of (ii).** Under MCF ($d\Sigma/dt = -H\vec{\nu}$), the evolution of the area element is $d(\mathrm{dvol})/dt = -H^2\,\mathrm{dvol}$. Therefore:
 
-$$\frac{d\widetilde{\mathcal{W}}}{dt} = \frac{d}{dt}\int |H|^2\,\mathrm{dvol} = \int \frac{\partial |H|^2}{\partial t}\,\mathrm{dvol} + \int |H|^2 \cdot (-H^2)\,\mathrm{dvol}$$
+```math
+\frac{d\widetilde{\mathcal{W}}}{dt} = \frac{d}{dt}\int |H|^2\,\mathrm{dvol} = \int \frac{\partial |H|^2}{\partial t}\,\mathrm{dvol} + \int |H|^2 \cdot (-H^2)\,\mathrm{dvol}
+```
 
 The first term involves the evolution of $H$ under MCF: $\partial H/\partial t = \Delta H + |A|^2 H$ \[Huisken 1984\]. For compact surfaces without singularity:
 
-$$\frac{d\widetilde{\mathcal{W}}}{dt} = \int (2H(\Delta H + |A|^2 H) - H^4)\,\mathrm{dvol} = -2\int|\nabla H|^2\,\mathrm{dvol} + \int(2|A|^2 H^2 - H^4)\,\mathrm{dvol}$$
+```math
+\frac{d\widetilde{\mathcal{W}}}{dt} = \int (2H(\Delta H + |A|^2 H) - H^4)\,\mathrm{dvol} = -2\int|\nabla H|^2\,\mathrm{dvol} + \int(2|A|^2 H^2 - H^4)\,\mathrm{dvol}
+```
 
 By the inequality $|A|^2 \geq H^2/r$ (since $H = \mathrm{tr}(A)/r$), the sign of $d\widetilde{\mathcal{W}}/dt$ depends on the balance between gradient and curvature terms. For $r=2$ surfaces, $d\widetilde{\mathcal{W}}/dt \leq 0$ follows from Kuwert-Schätzle \[2001\]. For general $r$, monotonicity of $\widetilde{\mathcal{W}}$ along MCF requires additional assumptions (bounded $|A|^2/H^2$ ratio).
 
@@ -559,7 +615,9 @@ where $F: \mathcal{M}^{r} \to \mathcal{M}^{r}$ is the factor dynamics and $\eta_
 Let $h: \mathcal{M}^{r} \to \mathbb{R}^{d}$ be the observation map ($h_i(\xi) = x_{t,i}$ is the return
 of asset $i$ in state $\xi$). Then for generic $(F, h)$, the delay embedding:*
 
-$$\Phi_k(\xi) = (h(\xi),\, h(F(\xi)),\, \ldots,\, h(F^{2r}(\xi))) \in \mathbb{R}^{(2r+1)d} \tag{7.1}$$
+```math
+\Phi_k(\xi) = (h(\xi),\, h(F(\xi)),\, \ldots,\, h(F^{2r}(\xi))) \in \mathbb{R}^{(2r+1)d} \tag{7.1}
+```
 
 *is a diffeomorphism onto its image. In particular, $2r+1$ consecutive return observations
 $(x_{t-2r},\ldots,x_t)$ determine the current market state $\xi_t \in \mathcal{M}^{r}$
@@ -618,14 +676,18 @@ top-$r$ eigenvectors of the log-return sample covariance.*
 
 *Step 3: The mean curvature $H(b^{\ast})$ is:*
 
-$$H^2(b^{\ast}) = \left\|\Pi_{N_{b^{\ast}}\Sigma}\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right\|^2_{g^{\mathrm{FR}}}
-= \sum_{k=r+1}^{d-1}\left\langle \frac{1}{2\sqrt{b^{\ast}}},\, \nu_k\right\rangle^2_{g^{\mathrm{FR}}} \tag{8.1}$$
+```math
+H^2(b^{\ast}) = \left\|\Pi_{N_{b^{\ast}}\Sigma}\left(\frac{1}{2\sqrt{b^{\ast}}}\right)\right\|^2_{g^{\mathrm{FR}}}
+= \sum_{k=r+1}^{d-1}\left\langle \frac{1}{2\sqrt{b^{\ast}}},\, \nu_k\right\rangle^2_{g^{\mathrm{FR}}} \tag{8.1}
+```
 
 *where $\{\nu_k\}$ are the normal vectors to $\Sigma$ at $b^{\ast}$ in $g^{\mathrm{FR}}$.*
 
 *Step 4: The integrated Willmore energy is estimated by:*
 
-$$\widehat{\widetilde{\mathcal{W}}} = H^2(b^{\ast})\cdot \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{8.2}$$
+```math
+\widehat{\widetilde{\mathcal{W}}} = H^2(b^{\ast})\cdot \mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \tag{8.2}
+```
 
 *where $\mathrm{Area}_{g^{\mathrm{FR}}}(\Sigma) \approx \frac{(2\pi/T)^{r/2}}{|\det(F_\Sigma(b^{\ast}))|^{1/2}}$,
 with $F_\Sigma = \Phi^T F(b^{\ast})\Phi$ the projected Fisher matrix.*
@@ -641,7 +703,9 @@ to the idiosyncratic directions (normal to $\Sigma$).
 
 **Proposition 8.2** (Spectral inefficiency). *The mean curvature squared is:*
 
-$$H^2(b^{\ast}) = \frac{1}{4}\sum_{k=r+1}^{d-1} \frac{(b^{\ast} \cdot \nu_k)^2}{\lambda_k} \tag{8.3}$$
+```math
+H^2(b^{\ast}) = \frac{1}{4}\sum_{k=r+1}^{d-1} \frac{(b^{\ast} \cdot \nu_k)^2}{\lambda_k} \tag{8.3}
+```
 
 *The Willmore energy is large when: (a) the idiosyncratic eigenvalues $\lambda_{r+1},\ldots$
 are small (flat normal curvature), allowing the manifold to "wander" easily in normal directions;
@@ -706,23 +770,31 @@ Bid-ask spreads are proportional to $|\kappa_g|$ at the market maker's time hori
 
 **Proposition 9.1** (Sharpe-curvature identity, leading order). *The maximum Sharpe ratio achievable by exploiting mean curvature drift satisfies:*
 
-$$\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{9.1}$$
+```math
+\mathrm{Sharpe}^{\ast} = \|H\|_{L^2(\Sigma)} + O(\varepsilon^2) \tag{9.1}
+```
 
 *The identity is exact when $|H|$ is constant on $\Sigma$ (which holds for the classified market types: great spheres, Clifford torus). For general manifolds it holds to leading order in $\varepsilon^2 = 1/T$.*
 
 **Proof.** From Corollary 3.2, the excess log-return from the mean curvature drift is $\alpha = \varepsilon^2|H(b)|^2$ per period at portfolio $b$. Integrating over the optimal strategy (which weights each point $b \in \Sigma$ by the posterior):
 
-$$\mathbb{E}[\alpha] = \varepsilon^2 \int_\Sigma |H|^2\,d\pi_T$$
+```math
+\mathbb{E}[\alpha] = \varepsilon^2 \int_\Sigma |H|^2\,d\pi_T
+```
 
 where $\pi_T$ is the MUP posterior. For the variance: $\mathrm{Var}(\alpha) = \varepsilon^4 \int_\Sigma |H|^4\,d\pi_T - \varepsilon^4(\int|H|^2\,d\pi_T)^2 = \varepsilon^4\,\mathrm{Var}_{\pi_T}(|H|^2)$.
 
 The Sharpe ratio is:
 
-$$\mathrm{Sharpe} = \frac{\mathbb{E}[\alpha]}{\sqrt{\mathrm{Var}(\alpha)}} = \frac{\varepsilon^2 \int|H|^2\,d\pi_T}{\varepsilon^2 \sqrt{\mathrm{Var}_{\pi_T}(|H|^2)}} = \frac{\int|H|^2\,d\pi_T}{\sqrt{\mathrm{Var}_{\pi_T}(|H|^2)}} \tag{9.2}$$
+```math
+\mathrm{Sharpe} = \frac{\mathbb{E}[\alpha]}{\sqrt{\mathrm{Var}(\alpha)}} = \frac{\varepsilon^2 \int|H|^2\,d\pi_T}{\varepsilon^2 \sqrt{\mathrm{Var}_{\pi_T}(|H|^2)}} = \frac{\int|H|^2\,d\pi_T}{\sqrt{\mathrm{Var}_{\pi_T}(|H|^2)}} \tag{9.2}
+```
 
 As $T \to \infty$, $\pi_T \to$ uniform on $\Sigma$ (for the efficient case), and:
 
-$$\mathrm{Sharpe} \to \frac{\|H\|^2_{L^2}}{\sqrt{\mathrm{Var}(|H|^2)}}$$
+```math
+\mathrm{Sharpe} \to \frac{\|H\|^2_{L^2}}{\sqrt{\mathrm{Var}(|H|^2)}}
+```
 
 This equals $\|H\|_{L^2}$ exactly when $|H|^2$ is constant on $\Sigma$ (i.e., $H$ is constant magnitude), which holds for the classified manifolds (great spheres, Clifford torus). In general, $\mathrm{Sharpe}^{\ast} \leq \|H\|_{L^2} \cdot \mathrm{vol}(\Sigma)^{1/2} / \sqrt{\mathrm{Var}(|H|^2)}$.
 
@@ -803,7 +875,9 @@ We have established that market efficiency, in all three of its classical forms,
 statement about the differential geometry of the market portfolio manifold in the
 Fisher–Rao metric. The complete picture is:
 
-$$\text{Efficient market} \iff \text{Minimal surface } \Sigma^{\ast} \iff \mathcal{W}(\Sigma) = 0 \iff \mathrm{Sharpe}^{\ast} = 0$$
+```math
+\text{Efficient market} \iff \text{Minimal surface } \Sigma^{\ast} \iff \mathcal{W}(\Sigma) = 0 \iff \mathrm{Sharpe}^{\ast} = 0
+```
 
 The Willmore energy $\widetilde{\mathcal{W}}(\Sigma)$ is the natural, non-negative, computable
 measure of market inefficiency (conformally invariant for $r=2$; isometry-invariant for all $r$). Its square root is the maximum attainable Sharpe ratio.

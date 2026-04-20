@@ -18,7 +18,9 @@ Bayesian foundation of palindromic market theory.
 
 **The central correspondence:**
 
-$$\text{PUP} = \text{Bayes}\left(\text{likelihood} = W_T(b), \text{prior} = \pi_{\rm pal}(b)\right)$$
+```math
+\text{PUP} = \text{Bayes}\left(\text{likelihood} = W_T(b), \text{prior} = \pi_{\rm pal}(b)\right)
+```
 
 where $\pi_{\rm pal}$ is the uniform prior on the palindromic sub-graph
 (eertree embedding) of the de Bruijn graph.
@@ -87,12 +89,16 @@ posterior consistency.
 Bayesian inference updates a prior $\pi(\theta)$ with data $x$ via Bayes'
 theorem:
 
-$$\pi(\theta | x) = \frac{L(x | \theta) \pi(\theta)}{\int L(x | \theta') \pi(\theta')\,d\theta'} \tag{1.1}$$
+```math
+\pi(\theta | x) = \frac{L(x | \theta) \pi(\theta)}{\int L(x | \theta') \pi(\theta')\,d\theta'} \tag{1.1}
+```
 
 For sequential data $x_1, x_2, \ldots, x_T$, the posterior after $T$
 observations:
 
-$$\pi_T(\theta) \propto \pi(\theta) \prod_{t=1}^{T} L(x_t | \theta) \tag{1.2}$$
+```math
+\pi_T(\theta) \propto \pi(\theta) \prod_{t=1}^{T} L(x_t | \theta) \tag{1.2}
+```
 
 The posterior CONCENTRATES around the MLE as $T \to \infty$, with
 Fisher-information-controlled rate.
@@ -102,17 +108,23 @@ Fisher-information-controlled rate.
 For a portfolio $b \in \Delta_{d-1}$ facing return sequence
 $x_1, \ldots, x_T$ with $x_t \in \mathbb{R}^{d}_+$, the log-wealth is:
 
-$$\log W_T(b) = \sum_{t=1}^{T} \log \langle b, x_t \rangle \tag{1.3}$$
+```math
+\log W_T(b) = \sum_{t=1}^{T} \log \langle b, x_t \rangle \tag{1.3}
+```
 
 Viewing $\log W_T(b)$ as a LOG-LIKELIHOOD for $b$ (an unnormalised Bayes
 factor for "portfolio $b$ is optimal"), the Bayesian posterior over
 portfolios is:
 
-$$\pi_T(b) \propto \pi(b) \cdot W_T(b) \tag{1.4}$$
+```math
+\pi_T(b) \propto \pi(b) \cdot W_T(b) \tag{1.4}
+```
 
 The BAYESIAN MEAN portfolio is:
 
-$$b_{\rm Bayes}(T) = \int b \cdot \pi_T(b) \,db = \frac{\int b \cdot W_T(b) \pi(b)\,db}{\int W_T(b) \pi(b)\,db} \tag{1.5}$$
+```math
+b_{\rm Bayes}(T) = \int b \cdot \pi_T(b) \,db = \frac{\int b \cdot W_T(b) \pi(b)\,db}{\int W_T(b) \pi(b)\,db} \tag{1.5}
+```
 
 ### 1.3 The classical results
 
@@ -135,7 +147,9 @@ choices. Choosing a "better" prior reduces regret.
 **Definition 2.1** (Palindromic prior). *The **palindromic prior** on the
 portfolio simplex is:*
 
-$$\pi_{\rm pal}(b) \propto \mathbb{1}[b \in \mathcal{E}] \tag{2.1}$$
+```math
+\pi_{\rm pal}(b) \propto \mathbb{1}[b \in \mathcal{E}] \tag{2.1}
+```
 
 *where $\mathcal{E}$ is the palindromic sub-graph of the de Bruijn graph
 (eertree embedding) — the set of portfolio configurations corresponding
@@ -149,13 +163,17 @@ dynamics under market transitions are time-reversal symmetric.
 **Theorem 2.2** (Palindromic posterior). *Under the palindromic prior
 and the log-wealth likelihood $W_T(b)$, the posterior is:*
 
-$$\pi_T^{\rm pal}(b) \propto W_T(b) \mathbb{1}[b \in \mathcal{E}] \tag{2.2}$$
+```math
+\pi_T^{\rm pal}(b) \propto W_T(b) \mathbb{1}[b \in \mathcal{E}] \tag{2.2}
+```
 
 *— uniform restriction of Cover's posterior to the palindromic sub-manifold.*
 
 *The Bayesian posterior mean IS the Palindromic Universal Portfolio:*
 
-$$b_{\rm PUP}(T) = b_{\rm Bayes}^{\rm pal}(T) \tag{2.3}$$
+```math
+b_{\rm PUP}(T) = b_{\rm Bayes}^{\rm pal}(T) \tag{2.3}
+```
 
 This is the central identification: **PUP is Bayes with palindromic prior.**
 
@@ -166,7 +184,9 @@ is palindromic (in universality class P1-P4), then the palindromic posterior
 $\pi_T^{\rm pal}(b)$ concentrates around the true optimal palindromic
 portfolio $b^{\ast}_{\rm pal}$ at rate:*
 
-$$\mathrm{Var}(\pi_T^{\rm pal}) \sim \frac{r - k}{T \cdot \lambda_1} \tag{2.4}$$
+```math
+\mathrm{Var}(\pi_T^{\rm pal}) \sim \frac{r - k}{T \cdot \lambda_1} \tag{2.4}
+```
 
 *where $r - k$ is the palindromic dimension and $\lambda_1$ is the
 Jacobi spectral gap.*
@@ -183,7 +203,9 @@ bounded by the palindromic deficit.*
 
 The Jeffreys prior on the portfolio simplex is:
 
-$$\pi_J(b) \propto \sqrt{\det g^{\rm FR}(b)} = \prod_{i=1}^{d} b_i^{-1/2} \tag{3.1}$$
+```math
+\pi_J(b) \propto \sqrt{\det g^{\rm FR}(b)} = \prod_{i=1}^{d} b_i^{-1/2} \tag{3.1}
+```
 
 This is the symmetric Dirichlet($1/2, \ldots, 1/2$) distribution.
 
@@ -195,7 +217,9 @@ simplex — including palindromic reflections.*
 
 *In particular, for any involution $\tau$ on $\{1, \ldots, d\}$:*
 
-$$\pi_J(R_\tau(b)) = \pi_J(b) \tag{3.2}$$
+```math
+\pi_J(R_\tau(b)) = \pi_J(b) \tag{3.2}
+```
 
 *Jeffreys is the UNIQUE prior (up to scale) that is both Čencov-invariant
 (reparameterisation) AND palindromic-invariant (reflection).*
@@ -214,7 +238,9 @@ know that.
 **Proposition 3.2** (Cover-Jeffreys palindromic efficiency). *Cover's
 universal portfolio with Jeffreys prior (instead of uniform):*
 
-$$b_{\rm Cover-J}(T) = \frac{\int b \cdot W_T(b) \pi_J(b)\,db}{\int W_T(b) \pi_J(b)\,db}$$
+```math
+b_{\rm Cover-J}(T) = \frac{\int b \cdot W_T(b) \pi_J(b)\,db}{\int W_T(b) \pi_J(b)\,db}
+```
 
 *has regret $(d-1)\log T/(2T) + O(\log\log T)$ (same leading order as
 Cover with uniform prior, different constants). Its PALINDROMIC COMPONENT
@@ -237,7 +263,9 @@ The "palindromic efficiency" of Jeffreys was implicit all along.
 
 Shtarkov's normalised maximum likelihood (NML) achieves the minimax regret:
 
-$$P_{\rm NML}(x^T) = \frac{\max_\theta L(x^T | \theta)}{\int \max_\theta L(y^T | \theta)\,dy^T} \tag{4.1}$$
+```math
+P_{\rm NML}(x^T) = \frac{\max_\theta L(x^T | \theta)}{\int \max_\theta L(y^T | \theta)\,dy^T} \tag{4.1}
+```
 
 The denominator is the normalising constant (the "Shtarkov sum").
 
@@ -245,7 +273,9 @@ The denominator is the normalising constant (the "Shtarkov sum").
 
 **Definition 4.1** (Palindromic NML). *The palindromic NML distribution is:*
 
-$$P_{\rm NML}^{\rm pal}(x^T) = \frac{\max_{\theta \in \Theta_{\rm pal}} L(x^T | \theta)}{\int \max_{\theta \in \Theta_{\rm pal}} L(y^T | \theta)\,dy^T} \tag{4.2}$$
+```math
+P_{\rm NML}^{\rm pal}(x^T) = \frac{\max_{\theta \in \Theta_{\rm pal}} L(x^T | \theta)}{\int \max_{\theta \in \Theta_{\rm pal}} L(y^T | \theta)\,dy^T} \tag{4.2}
+```
 
 *where $\Theta_{\rm pal}$ is the palindromic sub-manifold of the parameter
 space.*
@@ -255,7 +285,9 @@ space.*
 **Theorem 4.2** (Palindromic NML regret). *The palindromic NML achieves
 minimax regret:*
 
-$$R_{\rm NML}^{\rm pal}(T) = \frac{(r - k) \log T}{2} + \log C_{\rm pal} + O(1) \tag{4.3}$$
+```math
+R_{\rm NML}^{\rm pal}(T) = \frac{(r - k) \log T}{2} + \log C_{\rm pal} + O(1) \tag{4.3}
+```
 
 *where $C_{\rm pal}$ is a constant depending on the palindromic sub-manifold
 (analogous to Shtarkov's constant).*
@@ -269,7 +301,9 @@ The palindromic NML is equivalent to Bayesian averaging with the
 palindromic prior (up to a factor). So the PUP formulation gives a
 computable form of palindromic NML:
 
-$$P_{\rm NML}^{\rm pal}(x^T) \propto \int \pi_{\rm pal}(b) \cdot W_T(b)\,db \tag{4.4}$$
+```math
+P_{\rm NML}^{\rm pal}(x^T) \propto \int \pi_{\rm pal}(b) \cdot W_T(b)\,db \tag{4.4}
+```
 
 This is the SAME integral that defines the PUP posterior — completing
 the Bayes-NML-PUP triangle.
@@ -282,11 +316,15 @@ the Bayes-NML-PUP triangle.
 
 The Laplace approximation approximates an integral:
 
-$$I = \int f(\theta) e^{T h(\theta)}\,d\theta \tag{5.1}$$
+```math
+I = \int f(\theta) e^{T h(\theta)}\,d\theta \tag{5.1}
+```
 
 by the saddle point:
 
-$$I \approx f(\hat\theta) e^{T h(\hat\theta)} \cdot \sqrt{\frac{(2\pi)^r}{T^r \det(-\nabla^2 h(\hat\theta))}} \tag{5.2}$$
+```math
+I \approx f(\hat\theta) e^{T h(\hat\theta)} \cdot \sqrt{\frac{(2\pi)^r}{T^r \det(-\nabla^2 h(\hat\theta))}} \tag{5.2}
+```
 
 where $\hat\theta$ is the maximum of $h$. Accuracy: $O(1/T)$.
 
@@ -326,25 +364,33 @@ the fast convergence rate.
 Given data $x^T$, compute the marginal likelihood under each palindromic
 universality class:
 
-$$m_k(x^T) = \int_{\Theta_k} L(x^T | \theta) \pi_k(\theta)\,d\theta \tag{6.1}$$
+```math
+m_k(x^T) = \int_{\Theta_k} L(x^T | \theta) \pi_k(\theta)\,d\theta \tag{6.1}
+```
 
 where $\Theta_k$ is the parameter space of class $k$ (P1-P6) and $\pi_k$
 is the class-specific prior.
 
 The Bayes factor between classes $i$ and $j$:
 
-$$\mathrm{BF}_{ij}(x^T) = \frac{m_i(x^T)}{m_j(x^T)} \tag{6.2}$$
+```math
+\mathrm{BF}_{ij}(x^T) = \frac{m_i(x^T)}{m_j(x^T)} \tag{6.2}
+```
 
 Posterior probability of class $k$ (with uniform class prior):
 
-$$P(k | x^T) = \frac{m_k(x^T)}{\sum_{j=1}^{6} m_j(x^T)} \tag{6.3}$$
+```math
+P(k | x^T) = \frac{m_k(x^T)}{\sum_{j=1}^{6} m_j(x^T)} \tag{6.3}
+```
 
 ### 6.2 Computation via Laplace
 
 Each $m_k$ is computable via Laplace approximation on the class-specific
 parameter space:
 
-$$m_k(x^T) \approx \frac{L(x^T | \hat\theta_k) \pi_k(\hat\theta_k) (2\pi)^{d_k/2}}{T^{d_k/2} \sqrt{\det I_k(\hat\theta_k)}} \tag{6.4}$$
+```math
+m_k(x^T) \approx \frac{L(x^T | \hat\theta_k) \pi_k(\hat\theta_k) (2\pi)^{d_k/2}}{T^{d_k/2} \sqrt{\det I_k(\hat\theta_k)}} \tag{6.4}
+```
 
 where $d_k$ is the parameter dimension of class $k$ and $I_k$ is its
 Fisher information.
@@ -373,7 +419,9 @@ excess.
 
 Use the class posterior probabilities to AVERAGE forecasts:
 
-$$\hat{x}_{t+1} = \sum_{k=1}^{6} P(k | x^T) \cdot \hat{x}_{t+1}^{(k)} \tag{6.5}$$
+```math
+\hat{x}_{t+1} = \sum_{k=1}^{6} P(k | x^T) \cdot \hat{x}_{t+1}^{(k)} \tag{6.5}
+```
 
 where $\hat{x}_{t+1}^{(k)}$ is the forecast under class $k$.
 
@@ -389,7 +437,9 @@ universality class. It's more robust than fixing a single class.
 The FPS (PALINDROMIC_SDE.md) has parameters $(\kappa, \theta, \sigma, H)$.
 Under empirical Bayes, we put a hyperprior over these:
 
-$$\pi(\kappa, \theta, \sigma, H) \tag{7.1}$$
+```math
+\pi(\kappa, \theta, \sigma, H) \tag{7.1}
+```
 
 and estimate the hyperparameters from data.
 
@@ -409,7 +459,9 @@ Combining: a product hyperprior that respects palindromic structure.
 
 Given data, compute:
 
-$$\hat\eta = \arg\max_\eta \int L(x^T | \theta) \pi(\theta | \eta)\,d\theta \tag{7.2}$$
+```math
+\hat\eta = \arg\max_\eta \int L(x^T | \theta) \pi(\theta | \eta)\,d\theta \tag{7.2}
+```
 
 where $\eta = (\alpha_\kappa, \beta_\kappa, \ldots)$ are the hyperparameters.
 

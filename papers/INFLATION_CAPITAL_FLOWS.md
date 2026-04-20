@@ -41,7 +41,9 @@ relative prices, not just the price level.
 **(iii) The Fisher equation is a parallel transport identity.**
 The real return $r_{\rm real}$ on the financial manifold is the nominal return
 $r_{\rm nom}$ minus the holonomy of $\nabla^{\rm flow}$ around the investment cycle:
-$$r_{\rm real} = r_{\rm nom} - \pi_{\rm holonomy}$$
+```math
+r_{\rm real} = r_{\rm nom} - \pi_{\rm holonomy}
+```
 where $\pi_{\rm holonomy}$ is the Berry phase accumulated by a unit of capital
 making one round trip through the goods market. For a flat connection
 (uniform inflation): $\pi_{\rm holonomy} = \pi\cdot T$ (the standard Fisher equation).
@@ -98,7 +100,9 @@ bundles as prices $p$ vary over the factor structure of the price system
 The Fisher-Rao metric on $M^s_{\rm goods}$ gives the **information-theoretic
 distance between consumption bundles** — the Bhattacharyya distance between
 two expenditure weight vectors $w_1$ and $w_2$:
-$$d_{g^{\rm FR}}(w_1, w_2) = 2\arccos\!\sum_i\sqrt{w_{1,i}w_{2,i}} \tag{1.1}$$
+```math
+d_{g^{\rm FR}}(w_1, w_2) = 2\arccos\!\sum_i\sqrt{w_{1,i}w_{2,i}} \tag{1.1}
+```
 
 ### 1.3 The labour market manifold $M^t_{\rm lab}$
 
@@ -130,8 +134,10 @@ be the inflation rate of good $i$, and let $w = (w_1,\ldots,w_{d_g})$ be the
 expenditure shares. The geometric inflation rate is the dual Fisher-Rao norm of
 the sectoral inflation covector $\pi = (\pi^{(1)},\ldots,\pi^{(d_g)})$:*
 
-$$\pi_t^{\rm geo} = |\pi|_{(g^{\rm FR})^{-1}}
-= \sqrt{\sum_i w_i \left(\frac{\dot{p}_{i,t}}{p_{i,t}}\right)^2} \tag{2.1}$$
+```math
+\pi_t^{\rm geo} = |\pi|_{(g^{\rm FR})^{-1}}
+= \sqrt{\sum_i w_i \left(\frac{\dot{p}_{i,t}}{p_{i,t}}\right)^2} \tag{2.1}
+```
 
 *The Fisher-Rao metric on the goods simplex is $g^{\rm FR}_{ij} = \delta_{ij}/w_i$.
 The dual (inverse) metric is $(g^{\rm FR})^{-1}_{ij} = w_i\delta_{ij}$, so the
@@ -157,7 +163,9 @@ The correct state variable is the vector of sectoral inflation rates, not the
 expenditure shares themselves.
 
 **Sectoral inflation.** The geometric inflation decomposes into:
-$$\pi_t^{\rm geo} = \sqrt{\sum_s w_s \left(\pi_t^{(s)}\right)^2} \tag{2.2}$$
+```math
+\pi_t^{\rm geo} = \sqrt{\sum_s w_s \left(\pi_t^{(s)}\right)^2} \tag{2.2}
+```
 
 where $s$ indexes the CPI sub-categories (energy, food, shelter, services, goods).
 Each sector contributes independently. **Headline inflation is the dual Fisher-Rao norm
@@ -170,7 +178,9 @@ prices and their rates of change. This lives in the **tangent bundle** $TM^s_{\r
 not in the goods manifold itself. The **inflation manifold** is a subset of the
 unit tangent bundle:
 
-$$\mathcal{I} = \{(p, v) \in TM^s_{\rm goods} : |v|_{g^{\rm FR}} = \pi_{\rm target}\} \tag{2.3}$$
+```math
+\mathcal{I} = \{(p, v) \in TM^s_{\rm goods} : |v|_{g^{\rm FR}} = \pi_{\rm target}\} \tag{2.3}
+```
 
 — the set of (price level, inflation velocity) pairs consistent with the central
 bank's inflation target. This is a codimension-1 submanifold of $TM^s_{\rm goods}$,
@@ -193,7 +203,9 @@ $(b_{\rm fin}, w_{\rm goods}, \ell_{\rm lab}) \in M^r_{\rm fin}\times M^s_{\rm g
 
 We focus on the financial-goods pair. Define the **combined market space**:
 
-$$\mathcal{B} = M^r_{\rm fin}\times_{f} M^s_{\rm goods} \tag{3.1}$$
+```math
+\mathcal{B} = M^r_{\rm fin}\times_{f} M^s_{\rm goods} \tag{3.1}
+```
 
 as a fiber bundle with:
 - **Base:** $M^r_{\rm fin}$ (the financial market — where capital is allocated)
@@ -206,7 +218,9 @@ as a fiber bundle with:
 A **connection** on $\mathcal{B}$ specifies, for each financial market state $b \in M^r_{\rm fin}$
 and each tangent direction $v\in T_b M^r_{\rm fin}$, how the goods market state moves:
 
-$$\nabla^{\rm flow}_{v} w = \Gamma^{\rm flow}(b,w)\cdot v \tag{3.2}$$
+```math
+\nabla^{\rm flow}_{v} w = \Gamma^{\rm flow}(b,w)\cdot v \tag{3.2}
+```
 
 where $\Gamma^{\rm flow}$ is the **capital flow connection coefficient** — a matrix
 encoding how much goods market displacement $dw$ results from a given financial
@@ -215,7 +229,9 @@ market displacement $db$.
 **The connection one-form** $A^{\rm flow}\in\Omega^1(M^r_{\rm fin}, \mathrm{End}(TM^s_{\rm goods}))$
 encodes the capital flow rate between markets:
 
-$$A^{\rm flow}_{ij}(b) = \frac{\partial w_j}{\partial b_i}\bigg|_{\rm equilibrium} \tag{3.3}$$
+```math
+A^{\rm flow}_{ij}(b) = \frac{\partial w_j}{\partial b_i}\bigg|_{\rm equilibrium} \tag{3.3}
+```
 
 — how much the goods price weight $w_j$ changes when the financial weight $b_i$ changes.
 
@@ -225,7 +241,9 @@ $$A^{\rm flow}_{ij}(b) = \frac{\partial w_j}{\partial b_i}\bigg|_{\rm equilibriu
 *The inflation rate is the contraction of the curvature 2-form with the capital
 flow velocity:*
 
-$$\pi_t = |\iota_v F^{\rm flow}_{t}|_{g^{\rm FR}} \tag{3.4}$$
+```math
+\pi_t = |\iota_v F^{\rm flow}_{t}|_{g^{\rm FR}} \tag{3.4}
+```
 
 *where $F^{\rm flow} = dA^{\rm flow} + A^{\rm flow}\wedge A^{\rm flow}$ is the curvature
 2-form of $\nabla^{\rm flow}$, and $v$ is the capital flow velocity vector.*
@@ -266,20 +284,26 @@ measure the interaction between the horizontal (financial) and vertical (goods)
 directions:
 
 **The O'Neill $A$ tensor:**
-$$A_X Y = \Pi_V(\nabla_{\Pi_H X}\Pi_H Y) + \Pi_H(\nabla_{\Pi_H X}\Pi_V Y) \tag{3.5}$$
+```math
+A_X Y = \Pi_V(\nabla_{\Pi_H X}\Pi_H Y) + \Pi_H(\nabla_{\Pi_H X}\Pi_V Y) \tag{3.5}
+```
 
 measures how much horizontal (financial) movements create vertical (goods) movements
 and vice versa. **$A$ = the capital flow intensity between markets.**
 
 **The O'Neill $T$ tensor:**
-$$T_U V = \Pi_H(\nabla_{\Pi_V U}\Pi_V V) + \Pi_V(\nabla_{\Pi_V U}\Pi_H V) \tag{3.6}$$
+```math
+T_U V = \Pi_H(\nabla_{\Pi_V U}\Pi_V V) + \Pi_V(\nabla_{\Pi_V U}\Pi_H V) \tag{3.6}
+```
 
 measures how goods market curvature affects financial market geometry.
 **$T$ = the feedback from goods prices to financial asset prices.**
 
 **The Grey-O'Neill formula** gives the sectional curvature of $\mathcal{B}$:
-$$K_{\mathcal{B}}(X,U) = K_{\rm fin}(\Pi_H X) + K_{\rm goods}(\Pi_V U)
-+ |A_{X}U|^2 - |T_U X|^2 \tag{3.7}$$
+```math
+K_{\mathcal{B}}(X,U) = K_{\rm fin}(\Pi_H X) + K_{\rm goods}(\Pi_V U)
++ |A_{X}U|^2 - |T_U X|^2 \tag{3.7}
+```
 
 The total curvature of the combined economy is the sum of the curvatures of the
 individual markets plus the cross-terms from the O'Neill tensors. **A high-inflation
@@ -296,13 +320,17 @@ a financial portfolio $b\in M^r_{\rm fin}$ along a path $\gamma$ in the goods
 market and returns to the financial market. The accumulated **holonomy** is the
 Berry phase from FIBER_BUNDLES.md, now given an economic interpretation:
 
-$$\gamma_{\rm Fisher} = \oint_{\rm cycle}\nabla^{\rm flow} \tag{4.1}$$
+```math
+\gamma_{\rm Fisher} = \oint_{\rm cycle}\nabla^{\rm flow} \tag{4.1}
+```
 
 **Theorem 4.1** *(Fisher equation = holonomy identity)*.
 *The real return on the financial manifold equals the nominal return minus the
 holonomy of the capital flow connection around the investment cycle:*
 
-$$r_{\rm real} = r_{\rm nom} - \gamma_{\rm Fisher} \tag{4.2}$$
+```math
+r_{\rm real} = r_{\rm nom} - \gamma_{\rm Fisher} \tag{4.2}
+```
 
 *For a flat connection (uniform, steady inflation at rate $\pi$):
 $\gamma_{\rm Fisher} = \pi\cdot T$ and (4.2) reduces to the standard Fisher equation
@@ -325,7 +353,9 @@ Wicksell's "natural rate of interest" $r^{\ast}$ — the interest rate consisten
 price stability — is geometrically the interest rate at which the curvature of
 the capital flow connection is zero:
 
-$$r^{\ast} : F^{\rm flow}(r^{\ast}) = 0 \tag{4.3}$$
+```math
+r^{\ast} : F^{\rm flow}(r^{\ast}) = 0 \tag{4.3}
+```
 
 The central bank's problem is to find $r^{\ast}$ and set the policy rate equal to it.
 When the policy rate $r_{\rm policy} < r^{\ast}$: the connection has positive curvature
@@ -347,27 +377,37 @@ The classical quantity theory $MV = PQ$ is a statement about volumes on the mani
 **Interpretation of each term:**
 
 $M$ (money supply) = volume of the financial market manifold:
-$$M \propto \mathrm{vol}(M^r_{\rm fin}) = \int_{M^r_{\rm fin}}d\mathrm{vol}_{g^{\rm FR}} \tag{5.1}$$
+```math
+M \propto \mathrm{vol}(M^r_{\rm fin}) = \int_{M^r_{\rm fin}}d\mathrm{vol}_{g^{\rm FR}} \tag{5.1}
+```
 
 $V$ (velocity) = the geodesic flow rate of capital between $M^r_{\rm fin}$ and $M^s_{\rm goods}$:
-$$V = |\nabla^{\rm flow}|_{g_{\rm combined}} \tag{5.2}$$
+```math
+V = |\nabla^{\rm flow}|_{g_{\rm combined}} \tag{5.2}
+```
 
 $P$ (price level) = the geometric (Törnqvist) price index relative to a base period:
-$$P_t = \exp\!\left(\sum_i w_i \log\frac{p_{i,t}}{p_{i,0}}\right) \tag{5.3}$$
+```math
+P_t = \exp\!\left(\sum_i w_i \log\frac{p_{i,t}}{p_{i,0}}\right) \tag{5.3}
+```
 This equals 1 at the base period and grows with the weighted geometric average
 of price relatives. Unlike a Fisher-Rao distance of expenditure shares, this
 correctly registers uniform inflation ($P_t = e^{\pi_0 t}$ when all prices
 grow at rate $\pi_0$).
 
 $Q$ (real output) = volume of the goods market manifold:
-$$Q \propto \mathrm{vol}(M^s_{\rm goods}) \tag{5.4}$$
+```math
+Q \propto \mathrm{vol}(M^s_{\rm goods}) \tag{5.4}
+```
 
 **Theorem 5.1** *(Geometric quantity theory = Gauss's law on the fiber bundle)*.
 *The quantity theory $MV = PQ$ is the integrated divergence theorem applied to
 the capital flow connection:*
 
-$$\int_{M^r_{\rm fin}}\mathrm{div}(\nabla^{\rm flow})\,d\mathrm{vol}_{\rm fin}
-= \int_{M^s_{\rm goods}}\pi\,d\mathrm{vol}_{\rm goods} \tag{5.5}$$
+```math
+\int_{M^r_{\rm fin}}\mathrm{div}(\nabla^{\rm flow})\,d\mathrm{vol}_{\rm fin}
+= \int_{M^s_{\rm goods}}\pi\,d\mathrm{vol}_{\rm goods} \tag{5.5}
+```
 
 *The left side is the total capital outflow from the financial manifold (money creation
 times velocity). The right side is the total inflation load on the goods manifold
@@ -387,7 +427,9 @@ times velocity). The right side is the total inflation load on the goods manifol
 ### 6.1 The Taylor rule derived geometrically
 
 The Federal Reserve's Taylor rule:
-$$r_{\rm policy} = r^{\ast} + 1.5(\pi - \pi^{\ast}) + 0.5(y - y^{\ast}) \tag{6.1}$$
+```math
+r_{\rm policy} = r^{\ast} + 1.5(\pi - \pi^{\ast}) + 0.5(y - y^{\ast}) \tag{6.1}
+```
 
 where $\pi^{\ast}$ is the inflation target, $y-y^{\ast}$ is the output gap.
 
@@ -399,10 +441,14 @@ on both manifolds simultaneously — a multi-manifold LQG controller
 (STOCHASTIC_CONTROL_KALMAN.md Section 6).
 
 The optimal LQG controller for the combined system steers:
-$$\dot{r}_{\rm policy} = -K_\pi(\pi-\pi^{\ast}) - K_y(y-y^{\ast}) \tag{6.2}$$
+```math
+\dot{r}_{\rm policy} = -K_\pi(\pi-\pi^{\ast}) - K_y(y-y^{\ast}) \tag{6.2}
+```
 
 The Taylor coefficients are the LQG gains:
-$$K_\pi = \sqrt{q_\pi/\rho_\pi}, \qquad K_y = \sqrt{q_y/\rho_y} \tag{6.3}$$
+```math
+K_\pi = \sqrt{q_\pi/\rho_\pi}, \qquad K_y = \sqrt{q_y/\rho_y} \tag{6.3}
+```
 
 where $q_\pi, q_y$ are the inflation and output gap penalties and $\rho_\pi, \rho_y$
 are the rate-change costs. **Taylor's empirical coefficients ($K_\pi = 1.5$, $K_y = 0.5$)
@@ -431,11 +477,15 @@ When we add multiple economies — the US financial manifold $M^{r_{\rm US}}_{\r
 the European manifold $M^{r_{\rm EU}}_{\rm fin}$, etc. — capital flows between economies
 are geodesics on the product manifold:
 
-$$M^r_{\rm int} = M^{r_{\rm US}}_{\rm fin}\times M^{r_{\rm EU}}_{\rm fin}\times\cdots \tag{7.1}$$
+```math
+M^r_{\rm int} = M^{r_{\rm US}}_{\rm fin}\times M^{r_{\rm EU}}_{\rm fin}\times\cdots \tag{7.1}
+```
 
 **The exchange rate** is the Fisher-Rao distance between the US and EU financial manifolds:
 
-$$S_{\rm FX} = d_{g^{\rm FR}}(b^{\ast}_{\rm US}, \Phi(b^{\ast}_{\rm EU})) \tag{7.2}$$
+```math
+S_{\rm FX} = d_{g^{\rm FR}}(b^{\ast}_{\rm US}, \Phi(b^{\ast}_{\rm EU})) \tag{7.2}
+```
 
 where $\Phi$ is the currency conversion map sending EU portfolio weights to the
 same asset space as the US portfolio.
@@ -452,7 +502,9 @@ The carry trade (borrow in low-rate currency, invest in high-rate currency) is a
 loop in the international capital flow fiber bundle. The expected return of the
 carry trade is the Berry phase accumulated going around this loop:
 
-$$\gamma_{\rm carry} = \oint_{\rm FX\,cycle}\nabla^{\rm int\,flow} \tag{7.3}$$
+```math
+\gamma_{\rm carry} = \oint_{\rm FX\,cycle}\nabla^{\rm int\,flow} \tag{7.3}
+```
 
 Under UIP: $\gamma_{\rm carry} = 0$ (flat international connection).
 The empirical carry trade premium (Lustig-Verdelhan) is evidence that the
@@ -488,7 +540,9 @@ Each arrow is a connection with curvature:
 The **Phillips curve** ($\pi = f(y-y^{\ast})$, inflation rises when output exceeds potential)
 is the O'Neill $A$-tensor coupling between the goods and labour manifolds:
 
-$$\pi = |A^{\rm goods-lab}(y-y^{\ast})|_{g^{\rm FR}} \tag{8.1}$$
+```math
+\pi = |A^{\rm goods-lab}(y-y^{\ast})|_{g^{\rm FR}} \tag{8.1}
+```
 
 The Phillips curve is not a stable relationship — it shifts when the coupling
 structure between the goods and labour manifolds changes. In geometric terms:

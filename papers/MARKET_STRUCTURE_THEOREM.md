@@ -202,7 +202,9 @@ deficit $\delta(\gamma) \neq 0$.
 **Definition 2.2** (Palindromic fraction). *For a market $M$ at empirical
 depth $n^{\ast}$, the **palindromic fraction** is:*
 
-$$\rho_{\rm market}(M) = \frac{|\mathcal{E}(M)|}{|\text{Walks}(B(N, n^{\ast}))|} \tag{2.1}$$
+```math
+\rho_{\rm market}(M) = \frac{|\mathcal{E}(M)|}{|\text{Walks}(B(N, n^{\ast}))|} \tag{2.1}
+```
 
 *where both sets are counted with the induced measure from the observed
 sequence.*
@@ -220,7 +222,9 @@ sequence.*
 adjacency matrix of the palindromic sub-graph (entry $(i,j)$ = number of
 palindromic walks from $i$ to $j$). Then:*
 
-$$h_{\rm Kelly}(M) = \log \rho(A_{\mathcal{E}}) \tag{2.2}$$
+```math
+h_{\rm Kelly}(M) = \log \rho(A_{\mathcal{E}}) \tag{2.2}
+```
 
 *where $\rho$ denotes the Perron-Frobenius eigenvalue.*
 
@@ -244,7 +248,9 @@ palindromic ones (by eliminating arbitrage).
 
 **Dynamic equation:** the rate of change of the palindromic fraction:
 
-$$\frac{d\rho_{\rm market}}{dt} = \underbrace{\mu_{\rm observe}}_{\text{new palindromes discovered}} + \underbrace{\mu_{\rm arbitrage}}_{\text{arbitrage eliminates non-palindromes}} - \underbrace{\mu_{\rm shock}}_{\text{exogenous shocks create non-palindromic edges}} \tag{3.1}$$
+```math
+\frac{d\rho_{\rm market}}{dt} = \underbrace{\mu_{\rm observe}}_{\text{new palindromes discovered}} + \underbrace{\mu_{\rm arbitrage}}_{\text{arbitrage eliminates non-palindromes}} - \underbrace{\mu_{\rm shock}}_{\text{exogenous shocks create non-palindromic edges}} \tag{3.1}
+```
 
 In equilibrium: $\mu_{\rm observe} + \mu_{\rm arbitrage} = \mu_{\rm shock}$,
 producing a stationary palindromic fraction.
@@ -254,7 +260,9 @@ producing a stationary palindromic fraction.
 **Theorem 3.1** (Monotone palindromisation). *In the absence of exogenous
 shocks, $\rho_{\rm market}(t)$ is monotonically non-decreasing:*
 
-$$\frac{d\rho_{\rm market}}{dt} \geq 0 \quad \text{when } \mu_{\rm shock} = 0 \tag{3.2}$$
+```math
+\frac{d\rho_{\rm market}}{dt} \geq 0 \quad \text{when } \mu_{\rm shock} = 0 \tag{3.2}
+```
 
 *Markets evolve toward palindromic equilibrium. Exogenous shocks can
 reverse this, but the "rest state" of a market is progressive
@@ -341,7 +349,9 @@ These are:
 for doing work (generating arbitrage profits). The total "free energy"
 of a market:
 
-$$F_{\rm market} = (1 - \rho_{\rm market}) \cdot N^{n^{\ast}} \cdot \bar\delta \tag{4.1}$$
+```math
+F_{\rm market} = (1 - \rho_{\rm market}) \cdot N^{n^{\ast}} \cdot \bar\delta \tag{4.1}
+```
 
 where $\bar\delta$ is the average palindromic deficit per non-palindromic edge.
 

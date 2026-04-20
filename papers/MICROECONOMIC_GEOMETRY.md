@@ -98,7 +98,9 @@ spectral gap, palindromic structure — applies verbatim to consumer demand.
 
 At a share vector $s$, the Fisher-Rao metric is:
 
-$$g^{\rm FR}_{ij}(s) = \frac{\delta_{ij}}{s_i} \tag{1.1}$$
+```math
+g^{\rm FR}_{ij}(s) = \frac{\delta_{ij}}{s_i} \tag{1.1}
+```
 
 A consumer who spends most of their income on one commodity (large $s_i$)
 is INSENSITIVE to small changes in that commodity (low $g_{ii}$). A consumer
@@ -125,20 +127,26 @@ The consumer's utility function $U: \mathbb{R}^{d}_+ \to \mathbb{R}$ depends
 on the consumption bundle $q$. The demand for commodity $i$ at price
 vector $p$ and income $I$ is:
 
-$$q_i^{\ast}(p, I) = \arg\max_{q} \{ U(q) : p \cdot q = I \} \tag{2.1}$$
+```math
+q_i^{\ast}(p, I) = \arg\max_{q} \{ U(q) : p \cdot q = I \} \tag{2.1}
+```
 
 The inverse demand function $P_D(q_i)$ gives the price at which the
 consumer demands exactly $q_i$ units. By the first-order conditions of the
 constrained maximisation:
 
-$$P_D(q_i) = \lambda \cdot \frac{\partial U}{\partial q_i} \tag{2.2}$$
+```math
+P_D(q_i) = \lambda \cdot \frac{\partial U}{\partial q_i} \tag{2.2}
+```
 
 where $\lambda$ is the Lagrange multiplier (the marginal utility of income).
 
 **The demand curve IS the gradient of utility.** $P_D$ is a component of
 $\nabla U$. The area under the demand curve from $0$ to $q^{\ast}$ is:
 
-$$\int_0^{q^{\ast}} P_D(q)\, dq = \int_0^{q^{\ast}} \frac{\partial U}{\partial q}\, dq = U(q^{\ast}) - U(0) \tag{2.3}$$
+```math
+\int_0^{q^{\ast}} P_D(q)\, dq = \int_0^{q^{\ast}} \frac{\partial U}{\partial q}\, dq = U(q^{\ast}) - U(0) \tag{2.3}
+```
 
 — the total utility gained by moving from $0$ to $q^{\ast}$. This is the
 fundamental theorem of calculus applied to the gradient. It is also the
@@ -148,11 +156,15 @@ line integral of the utility 1-form along the consumption path.
 
 Symmetrically, the producer has a cost function $C(q)$ and supplies:
 
-$$q_i^{\ast}(p) = \arg\max_q \{ p \cdot q - C(q) \} \tag{2.4}$$
+```math
+q_i^{\ast}(p) = \arg\max_q \{ p \cdot q - C(q) \} \tag{2.4}
+```
 
 The inverse supply function $P_S(q_i)$ is:
 
-$$P_S(q_i) = \frac{\partial C}{\partial q_i} \tag{2.5}$$
+```math
+P_S(q_i) = \frac{\partial C}{\partial q_i} \tag{2.5}
+```
 
 — the marginal cost of producing the $q_i$-th unit. The supply curve IS
 the gradient of cost.
@@ -162,7 +174,9 @@ the gradient of cost.
 Market equilibrium satisfies $P_D(q^{\ast}) = P_S(q^{\ast}) = p^{\ast}$.
 Define the Lagrangian:
 
-$$\mathcal{L}(q, p) = U(q) - C(q) + p \cdot (q^{\text{traded}} - q) \tag{2.6}$$
+```math
+\mathcal{L}(q, p) = U(q) - C(q) + p \cdot (q^{\text{traded}} - q) \tag{2.6}
+```
 
 At equilibrium, $\partial \mathcal{L}/\partial q = 0$, giving
 $\nabla U = \nabla C + p$. The equilibrium price is the common gradient
@@ -183,7 +197,9 @@ is the gradient of the utility-cost difference at that critical point.*
 Consumer surplus at equilibrium is the area between the demand curve and the
 price, from $0$ to $q^{\ast}$:
 
-$$CS = \int_0^{q^{\ast}} [P_D(q) - p^{\ast}]\, dq = U(q^{\ast}) - p^{\ast} q^{\ast} + U(0) \tag{3.1}$$
+```math
+CS = \int_0^{q^{\ast}} [P_D(q) - p^{\ast}]\, dq = U(q^{\ast}) - p^{\ast} q^{\ast} + U(0) \tag{3.1}
+```
 
 This is a line integral of the 1-form $(\nabla U - p^{\ast} \cdot dq)$ along
 the $q$-axis from $0$ to $q^{\ast}$.
@@ -192,13 +208,17 @@ the $q$-axis from $0$ to $q^{\ast}$.
 
 Symmetrically:
 
-$$PS = \int_0^{q^{\ast}} [p^{\ast} - P_S(q)]\, dq = p^{\ast} q^{\ast} - C(q^{\ast}) + C(0) \tag{3.2}$$
+```math
+PS = \int_0^{q^{\ast}} [p^{\ast} - P_S(q)]\, dq = p^{\ast} q^{\ast} - C(q^{\ast}) + C(0) \tag{3.2}
+```
 
 A line integral of $(p^{\ast} \cdot dq - \nabla C)$ along the same path.
 
 ### 3.3 Total surplus
 
-$$TS = CS + PS = U(q^{\ast}) - C(q^{\ast}) + [U(0) - C(0) + 0] \tag{3.3}$$
+```math
+TS = CS + PS = U(q^{\ast}) - C(q^{\ast}) + [U(0) - C(0) + 0] \tag{3.3}
+```
 
 Total surplus is the UTILITY-COST DIFFERENCE at the equilibrium quantity.
 The "base" terms ($U(0), C(0)$) cancel in practice. Total surplus is the
@@ -218,7 +238,9 @@ the commodity simplex.
 **Theorem 3.1** (Surplus as holonomy). *For a consumer moving from endowment
 $\omega$ to consumption bundle $q^{\ast}$ along path $\gamma \subset \Delta_{d-1}$:*
 
-$$CS_{\gamma} = \oint_\gamma (\omega_D - \omega_p) \tag{3.4}$$
+```math
+CS_{\gamma} = \oint_\gamma (\omega_D - \omega_p) \tag{3.4}
+```
 
 *The total consumer surplus along path $\gamma$ is the line integral of the
 utility 1-form minus the price 1-form. For conservative 1-forms (no
@@ -234,13 +256,17 @@ the utility difference at the endpoints.*
 A tax, tariff, price ceiling, or quota drives a wedge between the price
 paid by consumers ($p_D$) and the price received by producers ($p_S$):
 
-$$p_D - p_S = t \tag{4.1}$$
+```math
+p_D - p_S = t \tag{4.1}
+```
 
 where $t$ is the tax/distortion. The equilibrium quantity falls from
 $q^{\ast}$ to $q_t < q^{\ast}$. The deadweight loss (DWL) is the area of
 the triangle between demand and supply curves for $q \in [q_t, q^{\ast}]$:
 
-$$DWL = \int_{q_t}^{q^{\ast}} [P_D(q) - P_S(q)]\, dq \approx \frac{1}{2} t \cdot \Delta q \tag{4.2}$$
+```math
+DWL = \int_{q_t}^{q^{\ast}} [P_D(q) - P_S(q)]\, dq \approx \frac{1}{2} t \cdot \Delta q \tag{4.2}
+```
 
 (The approximation is exact for linear curves; for nonlinear curves, it's
 the leading-order Taylor expansion.)
@@ -261,13 +287,17 @@ mean curvature at the distorted point.
 from a tax/tariff/quota distortion of magnitude $t$ on the commodity
 simplex $\Delta_{d-1}$ is:*
 
-$$DWL = \int_{\Delta_{d-1}} \|H_{\rm distortion}\|^2\, d\mathrm{vol} = \mathcal{W}(M^r_{\rm distorted}) - \mathcal{W}(M^r_{\rm competitive}) \tag{4.3}$$
+```math
+DWL = \int_{\Delta_{d-1}} \|H_{\rm distortion}\|^2\, d\mathrm{vol} = \mathcal{W}(M^r_{\rm distorted}) - \mathcal{W}(M^r_{\rm competitive}) \tag{4.3}
+```
 
 *where $H_{\rm distortion}$ is the mean curvature vector induced by the
 distortion and $\mathcal{W}$ is the Willmore functional. To leading order
 in $t$:*
 
-$$DWL \approx \frac{1}{2} \|\nabla t\|^2_{g^{\rm FR}} \cdot \mathrm{vol}(\Delta_{d-1}) \tag{4.4}$$
+```math
+DWL \approx \frac{1}{2} \|\nabla t\|^2_{g^{\rm FR}} \cdot \mathrm{vol}(\Delta_{d-1}) \tag{4.4}
+```
 
 *— quadratic in the distortion, as in the classical Harberger formula.*
 
@@ -289,7 +319,9 @@ optimal commodity tax structure — the one that raises a given revenue with
 minimum deadweight loss — is the tax assignment that minimises the Willmore
 functional subject to the revenue constraint:*
 
-$$\min_{\{t_i\}} \mathcal{W}(M^r_t) \quad \text{subject to} \quad \sum_i t_i q_i = R \tag{4.5}$$
+```math
+\min_{\{t_i\}} \mathcal{W}(M^r_t) \quad \text{subject to} \quad \sum_i t_i q_i = R \tag{4.5}
+```
 
 *The solution is Ramsey's rule: tax elastic goods less, tax inelastic goods
 more. In geometric terms: tax commodities in directions where the Fisher-Rao
@@ -321,7 +353,9 @@ the bargaining process. In geometric terms: the final state is
 
 Path-independence of a 1-form $\omega$ on a manifold is equivalent to:
 
-$$\oint_\gamma \omega = 0 \quad \text{for every closed loop } \gamma \tag{5.1}$$
+```math
+\oint_\gamma \omega = 0 \quad \text{for every closed loop } \gamma \tag{5.1}
+```
 
 This is the Kolmogorov criterion for detailed balance. This is zero Berry
 phase. This is palindromic symmetry. This is detailed balance of the
@@ -366,7 +400,9 @@ a minimum of $s_{\min}$ in bid-ask equivalent. Over a cycle of $n$ steps,
 the total cost is $n \cdot s_{\min}$, and this cost breaks palindromic
 symmetry:*
 
-$$\delta_{\rm Coase}(\gamma) = n \cdot s_{\min} > 0 \tag{5.2}$$
+```math
+\delta_{\rm Coase}(\gamma) = n \cdot s_{\min} > 0 \tag{5.2}
+```
 
 *When $\delta > 0$, the palindromic structure is broken. The final allocation
 DEPENDS on the path — hence on the initial assignment of property rights.
@@ -473,7 +509,9 @@ supply equals demand — this is the equilibrium.
 The Arrow-Debreu mapping is a self-referential channel: prices determine
 demands, demands determine prices.
 
-$$p_{t+1} = \Phi(p_t), \qquad \Phi: \text{prices} \to \text{excess demand} \to \text{price update} \tag{7.1}$$
+```math
+p_{t+1} = \Phi(p_t), \qquad \Phi: \text{prices} \to \text{excess demand} \to \text{price update} \tag{7.1}
+```
 
 This is Definition 7.1 of MANIFOLD_IS_THE_CHANNEL.md. The equilibrium is
 the fixed point of $\Phi$ — the same Gödelian fixed point that generates
@@ -519,7 +557,9 @@ The consumer's indifference curves are level sets of the utility function on
 the commodity simplex. The slope of an indifference curve is the marginal
 rate of substitution (MRS):
 
-$$MRS_{ij} = \frac{\partial U / \partial q_i}{\partial U / \partial q_j} = \frac{p_i}{p_j} \tag{8.1}$$
+```math
+MRS_{ij} = \frac{\partial U / \partial q_i}{\partial U / \partial q_j} = \frac{p_i}{p_j} \tag{8.1}
+```
 
 At the consumer's optimum, the MRS equals the price ratio — a geometric
 condition that the utility gradient is parallel to the price vector.
@@ -574,7 +614,9 @@ a PPF with $H \neq 0$ — mean curvature in the direction of the inefficiency.
 Cost minimisation — choosing the input bundle that produces a target output
 at minimum cost — is a minimal-path problem on the input simplex:
 
-$$\min_x \{ w \cdot x : F(x) = y \} \tag{9.1}$$
+```math
+\min_x \{ w \cdot x : F(x) = y \} \tag{9.1}
+```
 
 where $x$ is inputs, $w$ is input prices, and $F(x) = y$ is the production
 constraint.
@@ -612,7 +654,9 @@ channel.*
 
 The replicator dynamics of evolutionary game theory:
 
-$$\dot{x}_{i} = x_i (f_i(x) - \bar{f}(x)) \tag{10.2}$$
+```math
+\dot{x}_{i} = x_i (f_i(x) - \bar{f}(x)) \tag{10.2}
+```
 
 where $x_i$ is the share of the population playing strategy $i$ and $f_i$
 is the strategy's fitness. This is EXACTLY the Wright-Fisher / Jacobi

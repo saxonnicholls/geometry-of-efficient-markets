@@ -25,7 +25,9 @@ for palindromic SDEs.
 $dX_t = \kappa[\theta - X_t]dt + \sigma dB^H_t$, the log-price at time $T$
 has characteristic function:
 
-$$\phi_X(u; T) = \exp\left(iu\theta(1 - e^{-\kappa T}) + iu X_0 e^{-\kappa T} - \frac{\sigma^2 u^2}{2}\, \mathcal{V}(T, \kappa, H)\right)$$
+```math
+\phi_X(u; T) = \exp\left(iu\theta(1 - e^{-\kappa T}) + iu X_0 e^{-\kappa T} - \frac{\sigma^2 u^2}{2}\, \mathcal{V}(T, \kappa, H)\right)
+```
 
 where $\mathcal{V}(T, \kappa, H)$ is an explicit variance function involving
 fractional integration kernels. For $H = 1/2$: $\mathcal{V}$ reduces to
@@ -34,7 +36,9 @@ the classical OU variance. For $H < 1/2$: anti-persistent correction.
 **(iii) Option pricing via Carr-Madan FFT.** Given $\phi_X$, European call
 prices compute in $O(N \log N)$ via:
 
-$$C(K, T) = \frac{e^{-\alpha \log K}}{\pi} \int_0^\infty \text{Re}\left[\frac{e^{-iu\log K}\, \phi_X(u - i(\alpha+1); T)}{(\alpha + iu)(\alpha + 1 + iu)}\right] du$$
+```math
+C(K, T) = \frac{e^{-\alpha \log K}}{\pi} \int_0^\infty \text{Re}\left[\frac{e^{-iu\log K}\, \phi_X(u - i(\alpha+1); T)}{(\alpha + iu)(\alpha + 1 + iu)}\right] du
+```
 
 This gives closed-form option prices under FPS — no Monte Carlo needed.
 
@@ -52,7 +56,9 @@ Section 3.
 **(iii) Palindromic Black-Scholes formula.** The call price under FPS
 admits a closed-form analogous to Black-Scholes:
 
-$$C(K, T) = S_0 \Phi(d_1^H) - K e^{-r T} \Phi(d_2^H)$$
+```math
+C(K, T) = S_0 \Phi(d_1^H) - K e^{-r T} \Phi(d_2^H)
+```
 
 with modified $d_1^H, d_2^H$ involving the fractional variance
 $\sigma_H^2 = \sigma^2 T^{2H-1}$. For $H = 1/2$: recovers Black-Scholes.
@@ -88,13 +94,17 @@ Scholes; fractional Ornstein-Uhlenbeck; palindromic SDE; Greeks.
 A function $f: \mathbb{R} \to \mathbb{R}$ is palindromic (even) if
 $f(s) = f(-s)$ for all $s$. Its Fourier transform:
 
-$$\hat{f}(\omega) = \int_{-\infty}^\infty f(s) e^{-i\omega s}\,ds \tag{1.1}$$
+```math
+\hat{f}(\omega) = \int_{-\infty}^\infty f(s) e^{-i\omega s}\,ds \tag{1.1}
+```
 
 **Theorem 1.1** (Palindromic Fourier transform is real even). *If
 $f(s) = f(-s)$, then $\hat{f}(\omega) = \hat{f}(-\omega)$ is real-valued
 and even. Specifically:*
 
-$$\hat{f}(\omega) = 2 \int_0^\infty f(s) \cos(\omega s)\,ds \tag{1.2}$$
+```math
+\hat{f}(\omega) = 2 \int_0^\infty f(s) \cos(\omega s)\,ds \tag{1.2}
+```
 
 *— the cosine Fourier transform. Palindromic structure is the natural
 domain of the cosine basis.*
@@ -116,7 +126,9 @@ palindromic process.
 palindromic covariance $K(s, t) = K(-s, -t)$ admits a Karhunen-Loève
 expansion:*
 
-$$X_t = \sum_{n=1}^\infty \sqrt{\lambda_n}\, \xi_n\, \phi_n(t) \tag{1.3}$$
+```math
+X_t = \sum_{n=1}^\infty \sqrt{\lambda_n}\, \xi_n\, \phi_n(t) \tag{1.3}
+```
 
 *where $\phi_n$ are real-valued eigenfunctions of $K$, with palindromic
 symmetry: $\phi_n(-t) = \pm \phi_n(t)$ (each eigenfunction is either even
@@ -134,13 +146,17 @@ approximately a cosine series.
 The FPS $dX_t = \kappa[\theta - X_t]dt + \sigma dB^H_t$ in stationary
 steady state has covariance:
 
-$$\mathbb{E}[X_s X_t] = \frac{\sigma^2}{2\Gamma(2H+1)\sin(\pi H)} \cdot (|s-t|^{2H-1} - |s+t|^{2H-1}) \cdot e^{-\kappa|s-t|} \tag{1.4}$$
+```math
+\mathbb{E}[X_s X_t] = \frac{\sigma^2}{2\Gamma(2H+1)\sin(\pi H)} \cdot (|s-t|^{2H-1} - |s+t|^{2H-1}) \cdot e^{-\kappa|s-t|} \tag{1.4}
+```
 
 (approximate, leading order for $\kappa(s-t) \ll 1$).
 
 The POWER SPECTRUM (Fourier transform of the covariance):
 
-$$S(\omega) = \frac{\sigma^2}{\omega^{2H-1}} \cdot \frac{1}{\omega^2 + \kappa^2} \tag{1.5}$$
+```math
+S(\omega) = \frac{\sigma^2}{\omega^{2H-1}} \cdot \frac{1}{\omega^2 + \kappa^2} \tag{1.5}
+```
 
 **This is a HYBRID SPECTRUM:**
 - At low frequencies ($\omega \ll \kappa$): $S(\omega) \approx \sigma^2/\kappa^2 \cdot 1/\omega^{2H-1}$ — power-law with exponent $1 - 2H$.
@@ -161,12 +177,16 @@ at $\omega \sim \kappa$ (the mean-reversion rate) with power-law tails.
 For mathematical analysis, it's convenient to work with the FPS in
 stationary form. Writing $Y_t = X_t - \theta$ (centered log-price):
 
-$$dY_t = -\kappa Y_t\,dt + \sigma\,dB^H_t \tag{2.1}$$
+```math
+dY_t = -\kappa Y_t\,dt + \sigma\,dB^H_t \tag{2.1}
+```
 
 This is the **fractional Ornstein-Uhlenbeck process** (Cheridito, Kawaguchi,
 Maejima [2003]). Its explicit solution:
 
-$$Y_t = e^{-\kappa t} Y_0 + \sigma \int_0^t e^{-\kappa(t-s)}\,dB^H_s \tag{2.2}$$
+```math
+Y_t = e^{-\kappa t} Y_0 + \sigma \int_0^t e^{-\kappa(t-s)}\,dB^H_s \tag{2.2}
+```
 
 The stochastic integral is a fractional Wiener integral (well-defined for
 $H > 0$).
@@ -177,15 +197,21 @@ Since $Y_t$ is a Gaussian process (linear combination of Gaussian
 increments), it is completely characterised by its first two moments.
 
 **Mean:**
-$$\mathbb{E}[Y_t] = e^{-\kappa t} Y_0 \to 0 \quad \text{as } t \to \infty \tag{2.3}$$
+```math
+\mathbb{E}[Y_t] = e^{-\kappa t} Y_0 \to 0 \quad \text{as } t \to \infty \tag{2.3}
+```
 
 **Variance (stationary):**
-$$\text{Var}_\infty(Y) = \sigma^2 H(2H-1) \Gamma(2H-1) / (2\kappa)^{2H} \tag{2.4}$$
+```math
+\text{Var}_\infty(Y) = \sigma^2 H(2H-1) \Gamma(2H-1) / (2\kappa)^{2H} \tag{2.4}
+```
 
 (for $H > 1/2$; for $H \leq 1/2$ this formula is modified by regularisation).
 
 **Covariance (stationary):**
-$$\mathbb{E}[Y_s Y_t] = \text{Var}_\infty(Y) \cdot e^{-\kappa|s-t|} \cdot (1 + O(|s-t|^{2H-2})) \tag{2.5}$$
+```math
+\mathbb{E}[Y_s Y_t] = \text{Var}_\infty(Y) \cdot e^{-\kappa|s-t|} \cdot (1 + O(|s-t|^{2H-2})) \tag{2.5}
+```
 
 ### 2.3 The characteristic function of FPS log-price
 
@@ -194,19 +220,27 @@ Since $X_t = \theta + Y_t$ is Gaussian with mean $\theta e^{-\kappa t}(-1)... $,
 Actually $X_t = Y_t + \theta$ where $Y_t$ is fractional OU. The
 characteristic function of the log-price:
 
-$$\phi_X(u; t) = \mathbb{E}[e^{iu X_t}] = e^{iu \theta + iu \mathbb{E}[Y_t - Y_0] - u^2 \text{Var}(Y_t - Y_0)/2} \tag{2.6}$$
+```math
+\phi_X(u; t) = \mathbb{E}[e^{iu X_t}] = e^{iu \theta + iu \mathbb{E}[Y_t - Y_0] - u^2 \text{Var}(Y_t - Y_0)/2} \tag{2.6}
+```
 
 Plugging in:
 
-$$\phi_X(u; T) = \exp\left(iu \theta(1 - e^{-\kappa T}) + iu X_0 e^{-\kappa T} - \frac{u^2}{2}\,\mathcal{V}(T, \kappa, H)\right) \tag{2.7}$$
+```math
+\phi_X(u; T) = \exp\left(iu \theta(1 - e^{-\kappa T}) + iu X_0 e^{-\kappa T} - \frac{u^2}{2}\,\mathcal{V}(T, \kappa, H)\right) \tag{2.7}
+```
 
 where:
 
-$$\mathcal{V}(T, \kappa, H) = \sigma^2 \int_0^T \int_0^T e^{-\kappa(T-s)} e^{-\kappa(T-u)} K_H(s, u)\,ds\,du \tag{2.8}$$
+```math
+\mathcal{V}(T, \kappa, H) = \sigma^2 \int_0^T \int_0^T e^{-\kappa(T-s)} e^{-\kappa(T-u)} K_H(s, u)\,ds\,du \tag{2.8}
+```
 
 and $K_H(s, u)$ is the fBM covariance kernel:
 
-$$K_H(s, u) = H(2H - 1) |s - u|^{2H - 2} \quad \text{for } H > 1/2 \tag{2.9}$$
+```math
+K_H(s, u) = H(2H - 1) |s - u|^{2H - 2} \quad \text{for } H > 1/2 \tag{2.9}
+```
 
 (with modifications for $H \leq 1/2$ involving the Malliavin calculus).
 
@@ -221,7 +255,9 @@ $$K_H(s, u) = H(2H - 1) |s - u|^{2H - 2} \quad \text{for } H > 1/2 \tag{2.9}$$
 For computation, $\mathcal{V}(T, \kappa, H)$ can be evaluated explicitly.
 For $H < 1/2$ (the regime of interest for markets):
 
-$$\mathcal{V}(T, \kappa, H) = \sigma^2 T^{2H} \cdot f_H(\kappa T) \tag{2.10}$$
+```math
+\mathcal{V}(T, \kappa, H) = \sigma^2 T^{2H} \cdot f_H(\kappa T) \tag{2.10}
+```
 
 where $f_H$ is a dimensionless function satisfying:
 
@@ -231,7 +267,9 @@ where $f_H$ is a dimensionless function satisfying:
 
 Explicitly, for $H \in (0, 1/2)$:
 
-$$f_H(x) = \frac{\Gamma(1+2H)\Gamma(1-2H)}{1} \cdot [1 - e^{-x} E_{1,2H+1}(x)] \tag{2.11}$$
+```math
+f_H(x) = \frac{\Gamma(1+2H)\Gamma(1-2H)}{1} \cdot [1 - e^{-x} E_{1,2H+1}(x)] \tag{2.11}
+```
 
 where $E_{1,2H+1}$ is a Mittag-Leffler function.
 
@@ -247,7 +285,9 @@ expansions for small/large arguments.
 Carr and Madan (1999) showed that European option prices can be computed
 via Fourier inversion of the characteristic function. Their formula:
 
-$$C(K, T) = \frac{e^{-\alpha \log K}}{\pi} \int_0^\infty \text{Re}\left[\frac{e^{-iu\log K}\, \psi_T(u)}{\alpha^2 + \alpha - u^2 + i(2\alpha+1)u}\right] du \tag{3.1}$$
+```math
+C(K, T) = \frac{e^{-\alpha \log K}}{\pi} \int_0^\infty \text{Re}\left[\frac{e^{-iu\log K}\, \psi_T(u)}{\alpha^2 + \alpha - u^2 + i(2\alpha+1)u}\right] du \tag{3.1}
+```
 
 where:
 - $K$ is the strike
@@ -266,7 +306,9 @@ Plugging the FPS characteristic function (equation 2.7) into Carr-Madan:
 *Under the FPS with parameters $(\kappa, \theta, \sigma, H)$ and risk-free
 rate $r$, the European call option price with strike $K$ and maturity $T$ is:*
 
-$$C_{\rm FPS}(K, T; \kappa, \theta, \sigma, H) = \frac{e^{-\alpha k} e^{-rT}}{\pi} \int_0^\infty \text{Re}\left[\frac{e^{-iuk} \phi_Y(u - i(\alpha+1); T)}{\alpha^2 + \alpha - u^2 + i(2\alpha+1)u}\right]\,du \tag{3.2}$$
+```math
+C_{\rm FPS}(K, T; \kappa, \theta, \sigma, H) = \frac{e^{-\alpha k} e^{-rT}}{\pi} \int_0^\infty \text{Re}\left[\frac{e^{-iuk} \phi_Y(u - i(\alpha+1); T)}{\alpha^2 + \alpha - u^2 + i(2\alpha+1)u}\right]\,du \tag{3.2}
+```
 
 *where $k = \log K$, $\phi_Y(u; T)$ is the characteristic function of the
 risk-neutral log-price under FPS, and the damping parameter $\alpha$ is
@@ -284,19 +326,27 @@ the log-price at maturity is Gaussian with:
 **Theorem 3.2** (Palindromic Black-Scholes). *Under the FPS, the European
 call price is:*
 
-$$C_{\rm FPS}(S_0, K, T) = S_0 \Phi(d_1^H) - K e^{-rT} \Phi(d_2^H) \tag{3.3}$$
+```math
+C_{\rm FPS}(S_0, K, T) = S_0 \Phi(d_1^H) - K e^{-rT} \Phi(d_2^H) \tag{3.3}
+```
 
 *where:*
 
-$$d_1^H = \frac{\log(S_0/K) + (r + \sigma_H^2(T)/2) T^{1-2H}}{\sigma \sqrt{T^{2H} f_H(\kappa T)}}$$
+```math
+d_1^H = \frac{\log(S_0/K) + (r + \sigma_H^2(T)/2) T^{1-2H}}{\sigma \sqrt{T^{2H} f_H(\kappa T)}}
+```
 
-$$d_2^H = d_1^H - \sigma \sqrt{T^{2H} f_H(\kappa T)}$$
+```math
+d_2^H = d_1^H - \sigma \sqrt{T^{2H} f_H(\kappa T)}
+```
 
 *and $\Phi$ is the standard normal CDF.*
 
 **For $H = 1/2$ and $\kappa = 0$:** $f_H = 1, T^{2H} = T$, giving:
 
-$$d_1 = \frac{\log(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}, \quad d_2 = d_1 - \sigma\sqrt{T}$$
+```math
+d_1 = \frac{\log(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}, \quad d_2 = d_1 - \sigma\sqrt{T}
+```
 
 — exactly the Black-Scholes formula.
 
@@ -331,22 +381,30 @@ Given a market price $C_{\rm market}(K, T)$, the implied volatility
 $\sigma_{\rm imp}(K, T)$ is the Black-Scholes sigma that reproduces the
 market price:
 
-$$C_{\rm BS}(S_0, K, T, r, \sigma_{\rm imp}) = C_{\rm market}(K, T) \tag{4.1}$$
+```math
+C_{\rm BS}(S_0, K, T, r, \sigma_{\rm imp}) = C_{\rm market}(K, T) \tag{4.1}
+```
 
 ### 4.2 FPS implied volatility formula
 
 **Theorem 4.1** (FPS implied volatility). *Under the FPS with parameters
 $(\kappa, H)$, the Black-Scholes implied volatility is:*
 
-$$\sigma_{\rm imp}^{\rm FPS}(K, T) \approx \sigma \sqrt{\frac{T^{2H-1} f_H(\kappa T)}{1}} \cdot [1 + \text{smile terms}(k, H, \kappa T)] \tag{4.2}$$
+```math
+\sigma_{\rm imp}^{\rm FPS}(K, T) \approx \sigma \sqrt{\frac{T^{2H-1} f_H(\kappa T)}{1}} \cdot [1 + \text{smile terms}(k, H, \kappa T)] \tag{4.2}
+```
 
 *The at-the-money ($K = F$) implied vol:*
 
-$$\sigma_{\rm ATM}^{\rm FPS}(T) = \sigma \sqrt{T^{2H-1} f_H(\kappa T)} \tag{4.3}$$
+```math
+\sigma_{\rm ATM}^{\rm FPS}(T) = \sigma \sqrt{T^{2H-1} f_H(\kappa T)} \tag{4.3}
+```
 
 *The smile around ATM (leading-order Taylor expansion in log-moneyness $k = \log(K/F)$):*
 
-$$\sigma_{\rm imp}^{\rm FPS}(K, T) \approx \sigma_{\rm ATM}^{\rm FPS}(T) \cdot \left[1 + a_H(T) \cdot k + b_H(T) \cdot k^2 + \ldots\right] \tag{4.4}$$
+```math
+\sigma_{\rm imp}^{\rm FPS}(K, T) \approx \sigma_{\rm ATM}^{\rm FPS}(T) \cdot \left[1 + a_H(T) \cdot k + b_H(T) \cdot k^2 + \ldots\right] \tag{4.4}
+```
 
 *where $a_H(T), b_H(T)$ are smile/skew coefficients determined by $H$ and
 $\kappa T$.*
@@ -403,20 +461,26 @@ model that produces the surface from $(\kappa, \sigma, H)$.
 
 ### 5.1 Delta
 
-$$\Delta_{\rm FPS} = \frac{\partial C}{\partial S_0} = \Phi(d_1^H) \tag{5.1}$$
+```math
+\Delta_{\rm FPS} = \frac{\partial C}{\partial S_0} = \Phi(d_1^H) \tag{5.1}
+```
 
 Same form as Black-Scholes, but with $d_1^H$ from Theorem 3.2.
 
 ### 5.2 Gamma
 
-$$\Gamma_{\rm FPS} = \frac{\partial^2 C}{\partial S_0^2} = \frac{\phi(d_1^H)}{S_0 \sigma \sqrt{T^{2H} f_H(\kappa T)}} \tag{5.2}$$
+```math
+\Gamma_{\rm FPS} = \frac{\partial^2 C}{\partial S_0^2} = \frac{\phi(d_1^H)}{S_0 \sigma \sqrt{T^{2H} f_H(\kappa T)}} \tag{5.2}
+```
 
 Gamma is AMPLIFIED for $H < 1/2$ at short maturities (because the effective
 variance $T^{2H-1}$ is larger than $1/T$ for small $T$).
 
 ### 5.3 Vega
 
-$$\mathcal{V}_{\rm FPS} = \frac{\partial C}{\partial \sigma} = S_0 \phi(d_1^H) \sqrt{T^{2H} f_H(\kappa T)} \tag{5.3}$$
+```math
+\mathcal{V}_{\rm FPS} = \frac{\partial C}{\partial \sigma} = S_0 \phi(d_1^H) \sqrt{T^{2H} f_H(\kappa T)} \tag{5.3}
+```
 
 Vega has a DIFFERENT time scaling than Black-Scholes: $T^H$ instead of
 $\sqrt{T}$. For $H < 1/2$, vega is smaller at long maturities (consistent
@@ -424,7 +488,9 @@ with the empirical term structure of vega).
 
 ### 5.4 Theta
 
-$$\Theta_{\rm FPS} = -\frac{\partial C}{\partial T} \tag{5.4}$$
+```math
+\Theta_{\rm FPS} = -\frac{\partial C}{\partial T} \tag{5.4}
+```
 
 More complex than Black-Scholes due to the time-dependence of $\mathcal{V}(T)$.
 Not typically closed-form but computable numerically from Carr-Madan.
@@ -433,7 +499,9 @@ Not typically closed-form but computable numerically from Carr-Madan.
 
 A NEW Greek unique to FPS — sensitivity to the palindromic structure:
 
-$$\mathcal{H}_{\rm FPS} = \frac{\partial C}{\partial H} \tag{5.5}$$
+```math
+\mathcal{H}_{\rm FPS} = \frac{\partial C}{\partial H} \tag{5.5}
+```
 
 Measures how option prices change with the Hurst exponent. Since $H$ controls
 the palindromic excess rate, Hurst Vega measures sensitivity to the
@@ -447,7 +515,9 @@ positive Hurst Vega.
 
 Similarly, sensitivity to mean-reversion rate:
 
-$$\mathcal{K}_{\rm FPS} = \frac{\partial C}{\partial \kappa} \tag{5.6}$$
+```math
+\mathcal{K}_{\rm FPS} = \frac{\partial C}{\partial \kappa} \tag{5.6}
+```
 
 For long-dated options: $\mathcal{K}_{\rm FPS} < 0$ (tighter mean-reversion
 reduces long-run variance, reduces option value). For short-dated options:
@@ -470,7 +540,9 @@ MISPRICING — an arbitrage opportunity.
 **Theorem 6.1** (FPS vol surface). *Under FPS with parameters
 $(\sigma, \kappa, H)$, the implied volatility surface is:*
 
-$$\sigma_{\rm imp}(K, T) = G(k, T; \sigma, \kappa, H) \tag{6.1}$$
+```math
+\sigma_{\rm imp}(K, T) = G(k, T; \sigma, \kappa, H) \tag{6.1}
+```
 
 *where $G$ is the function implicit in equations (4.3)-(4.4) and
 $k = \log(K/F)$ is log-moneyness.*

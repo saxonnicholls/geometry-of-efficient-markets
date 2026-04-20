@@ -92,7 +92,9 @@ data since 1926).
 Under a memoryless i.i.d. null with uniform cell probabilities, the expected
 frequency of palindromic subsequences of length $2k$ is:
 
-$$\mathbb{E}_{0}[\#\text{palindromes of length } 2k] = (T - 2k + 1) \cdot N^{-k} \tag{1.1}$$
+```math
+\mathbb{E}_{0}[\#\text{palindromes of length } 2k] = (T - 2k + 1) \cdot N^{-k} \tag{1.1}
+```
 
 For $T = 25{,}000, N = 6, k = 4$: $\mathbb{E}_{0} \approx 19$ palindromes of
 length 8 under the null.
@@ -109,7 +111,9 @@ structural feature of the process.
 
 The Jacobi diffusion on $\Delta_{d-1}$ (MARKET_PROCESSES.md):
 
-$$db_i = b_i(\mu_i - \bar{\mu})\,dt + \sqrt{\frac{b_i(1-b_i)}{T}}\,dW_i \tag{1.2}$$
+```math
+db_i = b_i(\mu_i - \bar{\mu})\,dt + \sqrt{\frac{b_i(1-b_i)}{T}}\,dW_i \tag{1.2}
+```
 
 has a restoring force $b_i(1-b_i)$ that pulls the process toward the
 interior of the simplex. This force generates **time-reversibility**: a
@@ -122,13 +126,17 @@ $\Delta_{d-1}$ with symmetric parameters, discretised via a Voronoi
 partition with $N$ cells, the expected frequency of palindromic subsequences
 of length $2k$ exceeds the memoryless null by a factor:*
 
-$$\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_{0}[\#\text{palindromes}_{2k}]} = \prod_{j=1}^{k-1} \frac{P_{s_j, s_{j+1}} P_{s_{j+1}, s_j}}{1/N^2} \tag{1.3}$$
+```math
+\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_{0}[\#\text{palindromes}_{2k}]} = \prod_{j=1}^{k-1} \frac{P_{s_j, s_{j+1}} P_{s_{j+1}, s_j}}{1/N^2} \tag{1.3}
+```
 
 *Under detailed balance, this product equals $e^{2k \cdot I(\sigma_1; \sigma_2)}$
 where $I$ is the mutual information between consecutive cells. For a
 mean-reverting process with spectral gap $\lambda_1$:*
 
-$$\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_{0}[\#\text{palindromes}_{2k}]} \sim e^{\lambda_1 k} \tag{1.4}$$
+```math
+\frac{\mathbb{E}[\#\text{palindromes}_{2k}]}{\mathbb{E}_{0}[\#\text{palindromes}_{2k}]} \sim e^{\lambda_1 k} \tag{1.4}
+```
 
 *The palindromic excess grows exponentially with length, with rate equal
 to the Jacobi spectral gap — the mean-reversion rate.*
@@ -271,7 +279,9 @@ to $2k \log N$. Palindromes have HALF the entropy per symbol.
 density $\rho_{\rm pal}$ (fraction of positions that are palindrome centres
 of length $\geq 2$) has entropy rate:*
 
-$$h_{\rm eff} = h_{\rm max} \cdot (1 - \rho_{\rm pal}/2) \tag{3.1}$$
+```math
+h_{\rm eff} = h_{\rm max} \cdot (1 - \rho_{\rm pal}/2) \tag{3.1}
+```
 
 *where $h_{\rm max} = \log N$ is the maximum entropy rate for an alphabet
 of size $N$.*
@@ -301,7 +311,9 @@ PLUS the information "this is a palindrome."
 length $T$ containing $m$ non-overlapping palindromic subsequences of total
 length $L \leq T$, the optimal encoding length is:*
 
-$$|\text{code}(\sigma)| = (T - L) \cdot h_{\rm max} + (L/2) \cdot h_{\rm max} + m \cdot \log T = T \cdot h_{\rm max} \cdot (1 - L/(2T)) + O(m \log T) \tag{3.2}$$
+```math
+|\text{code}(\sigma)| = (T - L) \cdot h_{\rm max} + (L/2) \cdot h_{\rm max} + m \cdot \log T = T \cdot h_{\rm max} \cdot (1 - L/(2T)) + O(m \log T) \tag{3.2}
+```
 
 *The palindromic content $L/(2T)$ reduces the encoding length
 proportionally. The $m \log T$ term is the overhead for specifying the
@@ -324,7 +336,9 @@ capacity becomes available for other transmissions.
 density $\rho_{\rm pal}$, the effective channel capacity usable for
 prediction is:*
 
-$$C_{\rm eff}^{\rm pred} = h_{\rm Kelly} + \rho_{\rm pal} \cdot h_{\rm Kelly} / 2 = h_{\rm Kelly} \cdot (1 + \rho_{\rm pal}/2) \tag{3.3}$$
+```math
+C_{\rm eff}^{\rm pred} = h_{\rm Kelly} + \rho_{\rm pal} \cdot h_{\rm Kelly} / 2 = h_{\rm Kelly} \cdot (1 + \rho_{\rm pal}/2) \tag{3.3}
+```
 
 *The palindromic structure provides a **50% capacity bonus** to any trader
 who can detect and exploit it. This is the "free information" that
@@ -364,7 +378,9 @@ the mirror of a past symbol.
 palindromic density $\rho_{\rm pal}$, the PAL-PRED algorithm predicts
 $\sigma_{t+1}$ correctly with probability:*
 
-$$P(\hat{\sigma}_{t+1} = \sigma_{t+1}) = \rho_{\rm pal} \cdot (1 - \epsilon) + (1 - \rho_{\rm pal}) / N \tag{4.1}$$
+```math
+P(\hat{\sigma}_{t+1} = \sigma_{t+1}) = \rho_{\rm pal} \cdot (1 - \epsilon) + (1 - \rho_{\rm pal}) / N \tag{4.1}
+```
 
 *where $\epsilon$ is the detection error rate and $N$ is the alphabet
 size. For $\rho_{\rm pal} = 0.5$ and $\epsilon = 0.1$: prediction accuracy
@@ -385,7 +401,9 @@ If σ̂_{t+1} = σ (a specific Voronoi cell):
 **Theorem 4.2** (Palindromic trading alpha). *The expected log-wealth of
 a PAL-PRED trader exceeds that of a random trader by:*
 
-$$\mathbb{E}[\Delta \log W] = \rho_{\rm pal} \cdot h_{\rm Kelly} / 2 - \text{transaction costs} \tag{4.2}$$
+```math
+\mathbb{E}[\Delta \log W] = \rho_{\rm pal} \cdot h_{\rm Kelly} / 2 - \text{transaction costs} \tag{4.2}
+```
 
 *per period. For US equities with $\rho_{\rm pal} \approx 0.3$ and
 $h_{\rm Kelly} \approx 0.02/\text{day}$: excess return of
@@ -427,7 +445,9 @@ $r$-dimensional symbolic sequence: $\sigma_t \in \{0, 1, \ldots, N_1\} \times \c
 A **multi-dimensional palindrome** is a sub-tensor that is invariant
 under reflection in each dimension simultaneously:
 
-$$\sigma_{t_1, \ldots, t_r} = \sigma_{T_1 - t_1, \ldots, T_r - t_r} \tag{5.1}$$
+```math
+\sigma_{t_1, \ldots, t_r} = \sigma_{T_1 - t_1, \ldots, T_r - t_r} \tag{5.1}
+```
 
 For all $t_1, \ldots, t_r$ in some box. These are the objects Saxon Nicholls
 has constructed as part of his personal research.
@@ -438,7 +458,9 @@ has constructed as part of his personal research.
 palindromic tensor of side $L$ over alphabet sizes $N_1, \ldots, N_k$ has
 entropy:*
 
-$$H_k = (L^k / 2^k) \cdot \sum_i \log N_i \tag{5.2}$$
+```math
+H_k = (L^k / 2^k) \cdot \sum_i \log N_i \tag{5.2}
+```
 
 *A non-palindromic tensor of the same shape has entropy $L^k \sum_i \log N_i$. The palindromic structure reduces entropy by a factor of $2^k$.*
 
@@ -473,7 +495,9 @@ Real market sequences are not EXACTLY palindromic — they are
 QUASI-palindromic. A subsequence $(\sigma_{t-k+1}, \ldots, \sigma_{t+k})$
 is a **quasi-palindrome of tolerance $\epsilon$** if:
 
-$$d_{\rm Hamming}(\sigma_{t-j}, \sigma_{t+j}) \leq \epsilon \quad \text{for at least a fraction } 1 - \epsilon \text{ of } j \tag{6.1}$$
+```math
+d_{\rm Hamming}(\sigma_{t-j}, \sigma_{t+j}) \leq \epsilon \quad \text{for at least a fraction } 1 - \epsilon \text{ of } j \tag{6.1}
+```
 
 Quasi-palindromes are much more common than exact palindromes and carry
 most of the structural information.
@@ -661,7 +685,9 @@ provide a complete structural classification of the market.
 Over an alphabet $A$ of size $N$, how many palindromes of length $n$ are
 there? A palindrome of length $n$ is determined by its first $\lceil n/2 \rceil$ characters (the second half is the mirror of the first). So:
 
-$$P_n := \#\{\text{palindromes of length } n \text{ over } A\} = N^{\lceil n/2 \rceil} \tag{10.1}$$
+```math
+P_n := \#\{\text{palindromes of length } n \text{ over } A\} = N^{\lceil n/2 \rceil} \tag{10.1}
+```
 
 Explicitly:
 - $P_0 = 1$ (the empty palindrome)
@@ -676,16 +702,22 @@ Explicitly:
 
 The ordinary generating function for palindromes by length:
 
-$$P(x) = \sum_{n \geq 0} P_n\, x^n = 1 + Nx + Nx^2 + N^2 x^3 + N^2 x^4 + \cdots \tag{10.2}$$
+```math
+P(x) = \sum_{n \geq 0} P_n\, x^n = 1 + Nx + Nx^2 + N^2 x^3 + N^2 x^4 + \cdots \tag{10.2}
+```
 
 Splitting by parity:
 
-$$P(x) = \sum_{k \geq 0} N^k x^{2k} + \sum_{k \geq 0} N^{k+1} x^{2k+1} = \frac{1}{1 - Nx^2} + \frac{Nx}{1 - Nx^2} = \frac{1 + Nx}{1 - Nx^2} \tag{10.3}$$
+```math
+P(x) = \sum_{k \geq 0} N^k x^{2k} + \sum_{k \geq 0} N^{k+1} x^{2k+1} = \frac{1}{1 - Nx^2} + \frac{Nx}{1 - Nx^2} = \frac{1 + Nx}{1 - Nx^2} \tag{10.3}
+```
 
 **Theorem 10.1** (Palindrome generating function). *The ordinary generating
 function for palindromes over an alphabet of size $N$ is:*
 
-$$P(x) = \frac{1 + Nx}{1 - Nx^2} \tag{10.4}$$
+```math
+P(x) = \frac{1 + Nx}{1 - Nx^2} \tag{10.4}
+```
 
 *The singularity of $P(x)$ is at $x_c = 1/\sqrt{N}$, giving the
 exponential growth rate of palindromes as $\sqrt{N}$ per character —
@@ -709,7 +741,9 @@ distinct palindromic factors. Let $a(n, k)$ = number of words of length $n$
 with exactly $k$ distinct palindromic factors. The bivariate generating
 function:
 
-$$A(x, y) = \sum_{n, k \geq 0} a(n, k)\, x^n y^k \tag{10.5}$$
+```math
+A(x, y) = \sum_{n, k \geq 0} a(n, k)\, x^n y^k \tag{10.5}
+```
 
 **Droubay-Justin-Pirillo bound:** $k \leq n + 1$ for any word of length
 $n$. Rich words achieve $k = n + 1$.
@@ -717,7 +751,9 @@ $n$. Rich words achieve $k = n + 1$.
 **Theorem 10.2** (Rich word generating function). *The generating function
 for rich words (words achieving the maximum palindromic factor count) is:*
 
-$$R(x) = \sum_{n \geq 0} R_n\, x^n \tag{10.6}$$
+```math
+R(x) = \sum_{n \geq 0} R_n\, x^n \tag{10.6}
+```
 
 *where $R_n$ is the number of rich words of length $n$. For binary
 alphabet ($N = 2$), $R_n$ grows polynomially in $n$ (Sturmian sequences
@@ -741,11 +777,15 @@ a random sequence that happens to look palindromic at this stretch)?
 window is a genuine palindrome of length $2k$. Let $H_{\rm rand}$ = null
 hypothesis of a random sequence. Bayes' theorem:
 
-$$P(H_{\rm pal} | \text{data}) = \frac{P(\text{data} | H_{\rm pal}) \cdot P(H_{\rm pal})}{P(\text{data} | H_{\rm pal}) P(H_{\rm pal}) + P(\text{data} | H_{\rm rand}) P(H_{\rm rand})} \tag{10.7}$$
+```math
+P(H_{\rm pal} | \text{data}) = \frac{P(\text{data} | H_{\rm pal}) \cdot P(H_{\rm pal})}{P(\text{data} | H_{\rm pal}) P(H_{\rm pal}) + P(\text{data} | H_{\rm rand}) P(H_{\rm rand})} \tag{10.7}
+```
 
 The likelihood ratio:
 
-$$\Lambda = \frac{P(\text{data} | H_{\rm pal})}{P(\text{data} | H_{\rm rand})} = \frac{1}{N^{-k}} = N^k \tag{10.8}$$
+```math
+\Lambda = \frac{P(\text{data} | H_{\rm pal})}{P(\text{data} | H_{\rm rand})} = \frac{1}{N^{-k}} = N^k \tag{10.8}
+```
 
 (Under the palindromic hypothesis, the observed data is consistent with
 probability 1. Under the random hypothesis, the probability of observing
@@ -755,17 +795,23 @@ exactly this palindrome is $N^{-k}$.)
 of the underlying process. For the Jacobi process with spectral gap
 $\lambda_1$ (from Theorem 1.1):
 
-$$P(H_{\rm pal}) = \rho_{\rm pal}(k) \approx e^{\lambda_1 k} / N^k \tag{10.9}$$
+```math
+P(H_{\rm pal}) = \rho_{\rm pal}(k) \approx e^{\lambda_1 k} / N^k \tag{10.9}
+```
 
 **The posterior:**
 
-$$P(H_{\rm pal} | \text{data}) = \frac{N^k \cdot e^{\lambda_1 k} / N^k}{N^k \cdot e^{\lambda_1 k} / N^k + 1 \cdot (1 - e^{\lambda_1 k}/N^k)} \approx \frac{e^{\lambda_1 k}}{e^{\lambda_1 k} + 1 - e^{\lambda_1 k}/N^k} \tag{10.10}$$
+```math
+P(H_{\rm pal} | \text{data}) = \frac{N^k \cdot e^{\lambda_1 k} / N^k}{N^k \cdot e^{\lambda_1 k} / N^k + 1 \cdot (1 - e^{\lambda_1 k}/N^k)} \approx \frac{e^{\lambda_1 k}}{e^{\lambda_1 k} + 1 - e^{\lambda_1 k}/N^k} \tag{10.10}
+```
 
 **Theorem 10.3** (Palindrome identification probability). *Given an
 observed palindromic-looking subsequence of length $2k$, the probability
 that it is a genuine palindrome (rather than a chance occurrence) is:*
 
-$$P(H_{\rm pal} | \text{data}) \approx \frac{e^{\lambda_1 k}}{e^{\lambda_1 k} + 1} = \frac{1}{1 + e^{-\lambda_1 k}} \tag{10.11}$$
+```math
+P(H_{\rm pal} | \text{data}) \approx \frac{e^{\lambda_1 k}}{e^{\lambda_1 k} + 1} = \frac{1}{1 + e^{-\lambda_1 k}} \tag{10.11}
+```
 
 *— a logistic function of $\lambda_1 k$. For US equities with
 $\lambda_1 \approx 0.02$/day:*
@@ -878,7 +924,9 @@ $\mathcal{F}^{\rm pal}$ is a common refinement of the LZ78 filtration and
 the Voronoi filtration, intersected with the time-reversal symmetric
 events:*
 
-$$\mathcal{F}^{\rm pal}_{t} = (\mathcal{F}^{\rm LZ}_{t} \vee \mathcal{F}^{\rm Vor}_{t})^{\rm time-reversal\,invariant} \tag{11.1}$$
+```math
+\mathcal{F}^{\rm pal}_{t} = (\mathcal{F}^{\rm LZ}_{t} \vee \mathcal{F}^{\rm Vor}_{t})^{\rm time-reversal\,invariant} \tag{11.1}
+```
 
 This completes the filtration dictionary (FILTRATIONS.md Section 12.11):
 the eertree is the FIFTH canonical filtration, capturing time-reversal
@@ -1096,7 +1144,9 @@ reduces entropy.
 $H(f) = -\int f \log f$. Let $\hat{f} = \mathrm{proj}_{C}(f)$ be the
 projection of $f$ onto a convex subspace $C$. Then:*
 
-$$H(\hat{f}) \leq H(f) \tag{13.1}$$
+```math
+H(\hat{f}) \leq H(f) \tag{13.1}
+```
 
 *with equality if and only if $f \in C$ (already palindromic).*
 
@@ -1105,7 +1155,9 @@ $\hat{f}(b) = \mathbb{E}_{g \in G}[f(g \cdot b)]$ where $G$ is the
 symmetry group of $C$. By Jensen's inequality applied to the convex
 function $x \log x$ (integrated over the simplex):
 
-$$\int \hat{f} \log \hat{f}\, db \leq \int \mathbb{E}_{g}[f(g \cdot b) \log f(g \cdot b)]\, db = \int f \log f\, db$$
+```math
+\int \hat{f} \log \hat{f}\, db \leq \int \mathbb{E}_{g}[f(g \cdot b) \log f(g \cdot b)]\, db = \int f \log f\, db
+```
 
 Therefore $-\int \hat{f} \log \hat{f}\, db \geq -\int f \log f\, db$, i.e.,
 $H(\hat{f}) \geq H(f)$... wait, this goes the wrong way.
@@ -1119,7 +1171,9 @@ a probability density on $\Delta_{d-1}$ and we constrain $f$ to lie in
 a proper convex subspace $C \subsetneq \Delta_{d-1}$ (i.e., we condition
 on $f \in C$), then the constrained distribution has entropy:*
 
-$$H(f | f \in C) = H(f) - I(f ; \mathbf{1}_{f \in C}) \leq H(f) \tag{13.2}$$
+```math
+H(f | f \in C) = H(f) - I(f ; \mathbf{1}_{f \in C}) \leq H(f) \tag{13.2}
+```
 
 *where $I$ is the mutual information. Equality holds iff the support of
 $f$ is already contained in $C$.*
@@ -1141,7 +1195,9 @@ is time-reversal.
 Markov chain on $\Delta_{d-1}$ has entropy rate $h \ll h_{\max}$, then its
 support is asymptotically contained in the palindromic subspace:*
 
-$$\mathrm{supp}(\pi_\infty) \subseteq M^{\rm pal}_{d-1}, \qquad \text{codim}(M^{\rm pal}_{d-1}) \approx 1 - h/h_{\max} \tag{13.3}$$
+```math
+\mathrm{supp}(\pi_\infty) \subseteq M^{\rm pal}_{d-1}, \qquad \text{codim}(M^{\rm pal}_{d-1}) \approx 1 - h/h_{\max} \tag{13.3}
+```
 
 *A low-entropy process concentrates on the palindromic (time-reversible)
 locus. A high-entropy process spreads over the full non-palindromic
@@ -1224,7 +1280,9 @@ the geometry of this triangle.
 The Sturmian sequence with slope $\alpha \in (0, 1) \setminus \mathbb{Q}$ is
 the binary sequence:
 
-$$\sigma_n(\alpha) = \lfloor (n+1)\alpha \rfloor - \lfloor n\alpha \rfloor \in \{0, 1\} \tag{14.1}$$
+```math
+\sigma_n(\alpha) = \lfloor (n+1)\alpha \rfloor - \lfloor n\alpha \rfloor \in \{0, 1\} \tag{14.1}
+```
 
 It encodes the fractional parts $\{n\alpha \mod 1\}$. The Fibonacci word is
 the special case $\alpha = \phi - 1 = (\sqrt{5} - 1)/2$, where $\phi$ is the
@@ -1242,7 +1300,9 @@ numbers) give more "flexible" structures.
 **Definition 14.1** (Palindrome Dirichlet series). *For a sequence $\sigma$
 over a finite alphabet, define the palindrome-counting Dirichlet series:*
 
-$$P_\sigma(s) = \sum_{n \geq 1} \frac{p_\sigma(n)}{n^s} \tag{14.2}$$
+```math
+P_\sigma(s) = \sum_{n \geq 1} \frac{p_\sigma(n)}{n^s} \tag{14.2}
+```
 
 *where $p_\sigma(n)$ is the number of distinct palindromic factors of
 length $n$ in $\sigma$. For aperiodic sequences, $P_\sigma(s)$ is
@@ -1252,7 +1312,9 @@ well-defined for $\text{Re}(s)$ large enough for the series to converge.*
 (over a binary alphabet), $p_\sigma(n) = n + 1$ for all $n \geq 0$ (the
 maximum palindromic richness, Droubay-Justin-Pirillo). Therefore:*
 
-$$P_\sigma^{\rm Sturmian}(s) = \sum_{n \geq 1} \frac{n+1}{n^s} = \zeta(s-1) + \zeta(s) \tag{14.3}$$
+```math
+P_\sigma^{\rm Sturmian}(s) = \sum_{n \geq 1} \frac{n+1}{n^s} = \zeta(s-1) + \zeta(s) \tag{14.3}
+```
 
 *— a DIRECT EXPRESSION in terms of the Riemann zeta function.*
 
@@ -1284,7 +1346,9 @@ For episturmian sequences over a larger alphabet (Class P2), the palindrome
 count is $p_\sigma(n) = (N-1)n + 1$ (with $N$ alphabet size). The palindrome
 zeta:
 
-$$P_\sigma^{\rm episturmian}(s) = (N-1) \zeta(s-1) + \zeta(s) \tag{14.4}$$
+```math
+P_\sigma^{\rm episturmian}(s) = (N-1) \zeta(s-1) + \zeta(s) \tag{14.4}
+```
 
 For Arnoux-Rauzy sequences (Class P3) with factor complexity $p_\sigma(n) = (N-1)n + 1$ but different palindromic structure: similar form.
 
@@ -1297,7 +1361,9 @@ Pisot substitution sequence with substitution matrix $M_\beta$ has
 palindrome count growing as $p_\sigma(n) \sim C_\beta \cdot n + O(\beta^n)$
 for some constant $C_\beta$. The palindrome zeta:*
 
-$$P_\sigma^{\rm Pisot}(s) \sim C_\beta \zeta(s-1) + \text{(lower order)} \tag{14.5}$$
+```math
+P_\sigma^{\rm Pisot}(s) \sim C_\beta \zeta(s-1) + \text{(lower order)} \tag{14.5}
+```
 
 *The zeros of $P_\sigma^{\rm Pisot}$ in the critical strip are controlled
 by both $\zeta$ and $\beta$.*
@@ -1308,7 +1374,9 @@ Montgomery (1973) and Odlyzko (1987, 2001) established empirically and
 conjecturally that the pair correlation of non-trivial Riemann zeta zeros
 follows the Gaussian Unitary Ensemble (GUE) statistics:
 
-$$R_2(x) = 1 - \left(\frac{\sin \pi x}{\pi x}\right)^2 \tag{14.6}$$
+```math
+R_2(x) = 1 - \left(\frac{\sin \pi x}{\pi x}\right)^2 \tag{14.6}
+```
 
 In our framework (RANDOM_MATRIX.md), GUE = Dyson class $\beta = 2$. From
 Theorem 12.2: Dyson $\beta = 2$ markets correspond to palindromic classes
@@ -1334,7 +1402,9 @@ market data.
 For a subshift $X$ (closed shift-invariant subset of the symbolic space)
 generated by a substitution, the **dynamical zeta function** is:
 
-$$\zeta_X(s) = \exp\left(\sum_{n \geq 1} \frac{|\text{Fix}(T^n)|}{n} s^n\right) \tag{14.7}$$
+```math
+\zeta_X(s) = \exp\left(\sum_{n \geq 1} \frac{|\text{Fix}(T^n)|}{n} s^n\right) \tag{14.7}
+```
 
 where $T$ is the shift and $|\text{Fix}(T^n)|$ counts periodic orbits of
 period $n$.
@@ -1349,7 +1419,7 @@ zeta function of the associated subshift is rational: $\zeta_X(s) = p(s)/q(s)$ w
 
 The poles of $\zeta_X$ lie at $1/\lambda_i$ where $\lambda_i$ are
 eigenvalues of $M$. For Penrose tilings (substitution matrix
-$\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$): poles at $1/\phi, -1/\phi$.
+$\begin{pmatrix} 1 \& 1 \\ 1 \& 0 \end{pmatrix}$): poles at $1/\phi, -1/\phi$.
 
 **The palindromic structure of a Penrose-like market is encoded in the
 pole structure of the dynamical zeta function.**
@@ -1365,7 +1435,9 @@ in Class P3/P4 (Clifford torus / Pisot regime), the zeros of the
 palindrome zeta $P_\sigma(s)$ in the critical strip lie on a specific
 critical line determined by the market's spectral gap:*
 
-$$\text{Re}(s_{\rm zero}) = 1 - \lambda_1 / h_{\rm max} \tag{14.8}$$
+```math
+\text{Re}(s_{\rm zero}) = 1 - \lambda_1 / h_{\rm max} \tag{14.8}
+```
 
 *For a market with $\lambda_1 / h_{\rm max} = 1/2$ (the "critical" efficiency
 ratio), this gives $\text{Re}(s) = 1/2$ — the classical Riemann line.*
@@ -1468,7 +1540,9 @@ spectrum.
 **Theorem 15.1** (Palindromic Kolmogorov complexity). *For a palindrome
 $w$ of length $n$ over alphabet $A$:*
 
-$$K(w) \leq \frac{n}{2} \log|A| + O(\log n) \tag{15.1}$$
+```math
+K(w) \leq \frac{n}{2} \log|A| + O(\log n) \tag{15.1}
+```
 
 *where $K(\cdot)$ is Kolmogorov complexity (shortest program that outputs
 $w$). The palindromic structure provides a SHORT DESCRIPTION: the first
@@ -1492,7 +1566,9 @@ factor of some actual palindrome (rich substring).
 **Theorem 15.3** (Topological entropy of $X_{\rm pal}$). *The topological
 entropy of the palindromic subshift is:*
 
-$$h_{\rm top}(X_{\rm pal}) = \frac{1}{2} \log|A| \tag{15.2}$$
+```math
+h_{\rm top}(X_{\rm pal}) = \frac{1}{2} \log|A| \tag{15.2}
+```
 
 *— exactly HALF the full-shift entropy $\log|A|$.*
 
@@ -1508,7 +1584,9 @@ halving.
 
 The Rényi entropy of order $q$ generalises Shannon:
 
-$$H_q(p) = \frac{1}{1-q} \log \sum_i p_i^q \tag{15.3}$$
+```math
+H_q(p) = \frac{1}{1-q} \log \sum_i p_i^q \tag{15.3}
+```
 
 For $q = 1$: Shannon. For $q = 2$: collision entropy. For $q = \infty$:
 min-entropy.
@@ -1517,7 +1595,9 @@ min-entropy.
 distribution over length-$2k$ sequences (uniformly weighted over the
 $|A|^k$ distinct palindromes):*
 
-$$H_q^{\rm palindromic} = \frac{1}{2} H_q^{\rm full} \quad \text{for all } q \geq 0 \tag{15.4}$$
+```math
+H_q^{\rm palindromic} = \frac{1}{2} H_q^{\rm full} \quad \text{for all } q \geq 0 \tag{15.4}
+```
 
 *The halving holds at ALL Rényi orders — including the extreme cases
 $q = 0$ (Hartley entropy) and $q \to \infty$ (min-entropy).*
@@ -1547,7 +1627,9 @@ algorithmically random binary digits. For a palindromic market:
 **Conjecture 15.6** (Palindromic Kelly-Chaitin). *If the market is
 palindromic with palindromic density $\rho_{\rm pal}$, then:*
 
-$$h_{\rm Kelly}^{\rm palindromic} = h_{\rm Kelly} \cdot (1 - \rho_{\rm pal}/2) \tag{15.5}$$
+```math
+h_{\rm Kelly}^{\rm palindromic} = h_{\rm Kelly} \cdot (1 - \rho_{\rm pal}/2) \tag{15.5}
+```
 
 *and the Kelly rate's digits are algorithmically random if and only if
 the palindromic structure is fully realised — i.e., the market is in
@@ -1567,7 +1649,9 @@ balance, reversibility).
 entropy production rate of a non-palindromic market equals the RMS
 palindromic deficit per unit time:*
 
-$$\dot{S} = \frac{\overline{\delta^2}}{\tau} \tag{15.6}$$
+```math
+\dot{S} = \frac{\overline{\delta^2}}{\tau} \tag{15.6}
+```
 
 *where $\overline{\delta^2}$ is the mean-squared palindromic deficit
 per cycle and $\tau$ is the cycle period.*

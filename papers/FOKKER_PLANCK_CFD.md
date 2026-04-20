@@ -66,12 +66,16 @@ The Wright-Fisher diffusion on the portfolio simplex (FK_SIMPLEX.md) generates a
 of Kolmogorov equations. For a function $f(b,t)$ and a probability density $\rho(b,t)$:
 
 **Backward equation** (Kolmogorov backward = FK PDE of FK_SIMPLEX.md):
-$$\frac{\partial f}{\partial t} = \mathcal{L} f, \qquad
-\mathcal{L} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} - \varepsilon^2\vec{H}\cdot\nabla_{g^{\mathrm{FR}}} \tag{1.1}$$
+```math
+\frac{\partial f}{\partial t} = \mathcal{L} f, \qquad
+\mathcal{L} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} - \varepsilon^2\vec{H}\cdot\nabla_{g^{\mathrm{FR}}} \tag{1.1}
+```
 
 **Forward equation** (Kolmogorov forward = Fokker-Planck):
-$$\frac{\partial\rho}{\partial t} = \mathcal{L}^{\ast}\rho, \qquad
-\mathcal{L}^{\ast} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} + \varepsilon^2\nabla_{g^{\mathrm{FR}}}\cdot(\vec{H}\rho) \tag{1.2}$$
+```math
+\frac{\partial\rho}{\partial t} = \mathcal{L}^{\ast}\rho, \qquad
+\mathcal{L}^{\ast} = \frac{\varepsilon^2}{2}\Delta_{g^{\mathrm{FR}}} + \varepsilon^2\nabla_{g^{\mathrm{FR}}}\cdot(\vec{H}\rho) \tag{1.2}
+```
 
 where $\mathcal{L}^{\ast}$ is the $L^2(M, d\mathrm{vol}_{M})$-adjoint of $\mathcal{L}$.
 
@@ -82,7 +86,9 @@ lower curvature, "accumulating" the density at the efficient region $\{H=0\}$.
 
 **For the efficient market ($H=0$):** Both equations reduce to the heat equation
 on $(M^r, g_M)$:
-$$\frac{\partial\rho}{\partial t} = \frac{\varepsilon^2}{2}\Delta_M\rho \tag{1.3}$$
+```math
+\frac{\partial\rho}{\partial t} = \frac{\varepsilon^2}{2}\Delta_M\rho \tag{1.3}
+```
 
 This is the heat equation on the minimal surface — one of the most studied PDEs in
 differential geometry. Its solutions are well-understood: the heat kernel, spectral
@@ -95,7 +101,9 @@ expansion, and long-time behaviour are all controlled by the geometry of $M$.
 for the efficient market ($H=0$) is proportional to the Riemannian volume element
 of $(M^r, g_M)$:*
 
-$$\rho_\infty(b) \propto \sqrt{\det g_M(b)} = \prod_{i=1}^{r} \frac{1}{\sqrt{b_{k_i}}} \tag{1.4}$$
+```math
+\rho_\infty(b) \propto \sqrt{\det g_M(b)} = \prod_{i=1}^{r} \frac{1}{\sqrt{b_{k_i}}} \tag{1.4}
+```
 
 *In the coordinates of the full simplex $\Delta_{d-1}$: the stationary distribution
 is the Dirichlet$(1/2, \ldots, 1/2)$ measure — the **Jeffreys prior**.*
@@ -123,7 +131,9 @@ $b = \mathbf{1}/d$) and the distinction vanishes to leading order.
 The Fokker-Planck operator $\mathcal{L}^{\ast} = \frac{\varepsilon^2}{2}\Delta_M$ on
 the efficient market manifold has a complete spectral expansion:
 
-$$\rho(b,t) = \rho_\infty + \sum_{k=1}^\infty a_k e^{-\varepsilon^2\lambda_k t/2}\phi_k(b) \tag{1.5}$$
+```math
+\rho(b,t) = \rho_\infty + \sum_{k=1}^\infty a_k e^{-\varepsilon^2\lambda_k t/2}\phi_k(b) \tag{1.5}
+```
 
 where $\{\lambda_k, \phi_k\}$ are the eigenvalues and eigenfunctions of $-\Delta_M$.
 
@@ -134,7 +144,9 @@ CLASSIFICATION.md. For the efficient market:
 - $\lambda_1 > 0$: the spectral gap, controlling the mixing time
 
 **The spectral gap IS the Jacobi stability eigenvalue:**
-$$\lambda_1(-\Delta_M)\big|_{H=0} = \lambda_1(L_M) \tag{1.6}$$
+```math
+\lambda_1(-\Delta_M)\big|_{H=0} = \lambda_1(L_M) \tag{1.6}
+```
 
 This is the same $\lambda_1$ that appears in CLASSIFICATION, PAIRS_TRADING,
 INFORMATION_THEORY, and MARTINGALE_GEOMETRY. It controls:
@@ -150,8 +162,10 @@ persistent invariant in the entire series.
 
 For $H\neq 0$, the stationary distribution is shifted from the Jeffreys prior:
 
-$$\rho_\infty^{\rm ineff}(b) \propto \exp\!\left(-\frac{2}{\varepsilon^2}\Phi(b)\right)
-\cdot\sqrt{\det g_M(b)} \tag{1.7}$$
+```math
+\rho_\infty^{\rm ineff}(b) \propto \exp\!\left(-\frac{2}{\varepsilon^2}\Phi(b)\right)
+\cdot\sqrt{\det g_M(b)} \tag{1.7}
+```
 
 where $\Phi(b) = -\varepsilon^2\int_\gamma \vec{H}\cdot d\ell$ is the potential
 function for the mean curvature drift (defined on simply-connected domains, or
@@ -191,13 +205,17 @@ The natural diffusion on the 1D positive arc $S^1_+ \subset S^2_+$ in the
 Fisher-Rao metric is the **Jacobi diffusion** (also called the Jacobi process or
 the Wright-Fisher diffusion):
 
-$$db_t = \left[\alpha(1-b_t) - \beta b_t\right]dt + \sqrt{2b_t(1-b_t)}\,dW_t \tag{2.1}$$
+```math
+db_t = \left[\alpha(1-b_t) - \beta b_t\right]dt + \sqrt{2b_t(1-b_t)}\,dW_t \tag{2.1}
+```
 
 with parameters $\alpha, \beta > 0$ related to the factor loading $\phi_1$ and
 the drift $\mu$. The stationary distribution is the **Beta distribution**
 $\mathrm{Beta}(\alpha, \beta)$:
 
-$$\rho_\infty(b) \propto b^{\alpha-1}(1-b)^{\beta-1} \tag{2.2}$$
+```math
+\rho_\infty(b) \propto b^{\alpha-1}(1-b)^{\beta-1} \tag{2.2}
+```
 
 **Properties:** Power-law tails at $b=0$ and $b=1$ with exponents $\alpha-1$ and
 $\beta-1$. For the CAPM with equal-weighted portfolio ($\alpha = \beta$): the
@@ -221,7 +239,9 @@ The Clifford torus has a flat metric (as a submanifold of $S^3$ with the induced
 metric, it is flat — this is why the Clifford torus minimises Willmore energy among
 tori). The natural diffusion on $(T^2, g_{\rm flat})$ is **torus Brownian motion**:
 
-$$d\theta_t = \varepsilon\,dW^1_t, \qquad d\varphi_t = \varepsilon\,dW^2_t \tag{2.3}$$
+```math
+d\theta_t = \varepsilon\,dW^1_t, \qquad d\varphi_t = \varepsilon\,dW^2_t \tag{2.3}
+```
 
 with periodic boundary conditions $\theta \sim \theta + \pi/2$, $\varphi \sim \varphi + \pi/2$
 (on the positive quarter-torus). The stationary distribution is **uniform on $T^2$**.
@@ -245,13 +265,17 @@ hyperbolic (negative sectional curvature, consistent with the figure-eight knot'
 hyperbolic nature). The natural diffusion is the **hyperbolic Brownian motion** on
 the Poincaré disc model:
 
-$$dx_t = -x_t\,dt + \sqrt{1-x_t^2}\,dW_t^1, \qquad
-dy_t = -y_t\,dt + \sqrt{1-y_t^2}\,dW_t^2 \tag{2.4}$$
+```math
+dx_t = -x_t\,dt + \sqrt{1-x_t^2}\,dW_t^1, \qquad
+dy_t = -y_t\,dt + \sqrt{1-y_t^2}\,dW_t^2 \tag{2.4}
+```
 
 (in appropriate coordinates). The stationary distribution is the **Cauchy
 distribution** on the boundary of the hyperbolic disc:
 
-$$\rho_\infty(x) \propto \frac{1}{1+x^2} \tag{2.5}$$
+```math
+\rho_\infty(x) \propto \frac{1}{1+x^2} \tag{2.5}
+```
 
 — a distribution with power-law tails and no finite variance. **Hyperbolic markets
 have Cauchy-distributed returns, consistent with extremely fat tails.**
@@ -319,19 +343,25 @@ primary market manifold.
 
 The $r+1$ **pure factor portfolios** (vertices of the factor simplex mapped to $M$):
 
-$$\mathcal{V} = \{v_0, v_1, \ldots, v_r\} \subset M, \qquad
-v_k = \Pi_\Delta(V_r e_k) \tag{3.1}$$
+```math
+\mathcal{V} = \{v_0, v_1, \ldots, v_r\} \subset M, \qquad
+v_k = \Pi_\Delta(V_r e_k) \tag{3.1}
+```
 
 define a natural Voronoi decomposition of $M$ under $g^{\mathrm{FR}}$:
 
-$$\mathrm{Vor}_{k} = \{b \in M : d_{g^{\mathrm{FR}}}(b, v_k) < d_{g^{\mathrm{FR}}}(b, v_j) \forall j\neq k\} \tag{3.2}$$
+```math
+\mathrm{Vor}_{k} = \{b \in M : d_{g^{\mathrm{FR}}}(b, v_k) < d_{g^{\mathrm{FR}}}(b, v_j) \forall j\neq k\} \tag{3.2}
+```
 
 **Theorem 3.1** *(Voronoi = Markov partition)*.
 *The Voronoi decomposition $\{\mathrm{Vor}_{k}\}_{k=0}^{r}$ of the market manifold $M$
 is the natural Markov partition of the market dynamics (BRAIDS.md Section 5.4).
 The transition matrix $A_{kl}$ of the market automaton satisfies:*
 
-$$A_{kl} = 1 \iff d_{g^{\mathrm{FR}}}(v_k, v_l) \leq \text{diameter of }M/r \tag{3.3}$$
+```math
+A_{kl} = 1 \iff d_{g^{\mathrm{FR}}}(v_k, v_l) \leq \text{diameter of }M/r \tag{3.3}
+```
 
 *(adjacent Voronoi cells can communicate in one step).*
 
@@ -347,7 +377,9 @@ in Fisher-Rao distance — this is precisely the Voronoi cell definition. $\squa
 For the efficient market with stationary distribution $\rho_\infty = d\mathrm{vol}_{M}/\mathrm{vol}(M)$
 (uniform), the stationary probability of being in cell $\mathrm{Vor}_{k}$ is:
 
-$$\pi_k = \frac{\mathrm{vol}_{g_M}(\mathrm{Vor}_{k})}{\mathrm{vol}_{g_M}(M)} \tag{3.4}$$
+```math
+\pi_k = \frac{\mathrm{vol}_{g_M}(\mathrm{Vor}_{k})}{\mathrm{vol}_{g_M}(M)} \tag{3.4}
+```
 
 For a symmetric CAPM manifold (equal factor loadings): all cells have equal volume
 $\pi_k = 1/(r+1)$ — the portfolio spends equal time near each factor vertex.
@@ -360,7 +392,9 @@ often by the optimal portfolio.
 **Estimating Voronoi volumes from data:** The sample estimate of $\pi_k$ is the
 fraction of time the log-optimal portfolio spends in cell $\mathrm{Vor}_{k}$:
 
-$$\hat\pi_k = \frac{1}{T}\sum_{t=1}^{T} \mathbf{1}[b^{\ast}(t) \in \mathrm{Vor}_{k}] \tag{3.5}$$
+```math
+\hat\pi_k = \frac{1}{T}\sum_{t=1}^{T} \mathbf{1}[b^{\ast}(t) \in \mathrm{Vor}_{k}] \tag{3.5}
+```
 
 By ergodicity (the efficient market is ergodic from BRAIDS.md Theorem 4.1):
 $\hat\pi_k \to \pi_k$ almost surely.
@@ -378,7 +412,9 @@ a face. For the market manifold:
 
 **The Delaunay edge weights** are the Fisher-Rao distances:
 
-$$w_{kl} = d_{g^{\mathrm{FR}}}(v_k, v_l) = 2\arccos\!\left(\sqrt{v_k^T v_l}\right) \tag{3.6}$$
+```math
+w_{kl} = d_{g^{\mathrm{FR}}}(v_k, v_l) = 2\arccos\!\left(\sqrt{v_k^T v_l}\right) \tag{3.6}
+```
 
 (the geodesic distance on $S^{d-1}_{+}$ between the two factor portfolios, measuring
 how "different" the two factor exposure profiles are).
@@ -399,7 +435,9 @@ is the spectral gap $\lambda_1(-\Delta_M)$ restricted to the factor graph.*
 For numerical implementation of the MUP (CONVERGENCE.md), the Voronoi decomposition
 provides the natural quadrature rule for the manifold integral:
 
-$$\hat{b}_{T}^{M} \approx \frac{\sum_{k=0}^{r} W_T(v_k)\,\pi_k\,v_k}{\sum_{k=0}^{r} W_T(v_k)\,\pi_k} \tag{3.7}$$
+```math
+\hat{b}_{T}^{M} \approx \frac{\sum_{k=0}^{r} W_T(v_k)\,\pi_k\,v_k}{\sum_{k=0}^{r} W_T(v_k)\,\pi_k} \tag{3.7}
+```
 
 This is the **Voronoi-weighted MUP**: integrate over the $r+1$ Voronoi centres
 weighted by their occupation probabilities. For the uniform CAPM: reduces to the
@@ -410,7 +448,9 @@ edges (second-level Voronoi) and face centres (third-level). The convergence rat
 is controlled by the Lipschitz constant of $W_T(b)$ on $M$ and the mesh parameter
 $h = \max_k \mathrm{diam}(\mathrm{Vor}_{k})$:
 
-$$\left|\hat{b}_{T}^{M} - \hat{b}_{T}^{\rm exact}\right| \leq C\cdot h^2\cdot\|W_T\|_{C^2(M)} \tag{3.8}$$
+```math
+\left|\hat{b}_{T}^{M} - \hat{b}_{T}^{\rm exact}\right| \leq C\cdot h^2\cdot\|W_T\|_{C^2(M)} \tag{3.8}
+```
 
 For the CAPM ($r=1$, 2 Voronoi cells): $h = \pi/4$ (quarter arc), error $O(h^2) \approx 0.6$.
 For $r=4$ with 32-point Voronoi refinement: $h \approx \pi/32$, error $O(10^{-3})$.
@@ -419,7 +459,9 @@ For $r=4$ with 32-point Voronoi refinement: $h \approx \pi/32$, error $O(10^{-3}
 
 The Delaunay triangulation $\mathcal{D}(M)$ computes the **simplicial homology** of $M$:
 
-$$H_k(M; \mathbb{Z}) = \ker\partial_k / \mathrm{im}\,\partial_{k+1} \tag{3.9}$$
+```math
+H_k(M; \mathbb{Z}) = \ker\partial_k / \mathrm{im}\,\partial_{k+1} \tag{3.9}
+```
 
 where $\partial_k$ is the boundary map on $k$-simplices. The Betti numbers
 $\beta_k = \mathrm{rank}(H_k)$ are topological invariants:
@@ -446,11 +488,15 @@ The probability density $\rho(b,t)$ on the market manifold $M$ obeys the
 Fokker-Planck equation (1.2), which is the **continuity equation** for an
 incompressible fluid:
 
-$$\frac{\partial\rho}{\partial t} + \nabla_M\cdot(\rho\vec{v}) = 0 \tag{4.1}$$
+```math
+\frac{\partial\rho}{\partial t} + \nabla_M\cdot(\rho\vec{v}) = 0 \tag{4.1}
+```
 
 with the **probability velocity field**:
 
-$$\vec{v}(b,t) = -\frac{\varepsilon^2}{2}\nabla_M\log\rho - \varepsilon^2\vec{H}(b) \tag{4.2}$$
+```math
+\vec{v}(b,t) = -\frac{\varepsilon^2}{2}\nabla_M\log\rho - \varepsilon^2\vec{H}(b) \tag{4.2}
+```
 
 The first term is diffusion (osmotic velocity); the second is the systematic drift from
 mean curvature (the "pressure" driving the fluid toward lower curvature).
@@ -471,8 +517,10 @@ turbulent ($\mathrm{Re} \gg 1$).
 
 For the market fluid on $M$:
 
-$$\mathrm{Re}_{\rm market} = \frac{|\vec{H}|\cdot L_M}{\varepsilon^2}
-= \frac{H\cdot\mathrm{diam}(M)}{1/T} = H\cdot T\cdot\mathrm{diam}(M) \tag{4.3}$$
+```math
+\mathrm{Re}_{\rm market} = \frac{|\vec{H}|\cdot L_M}{\varepsilon^2}
+= \frac{H\cdot\mathrm{diam}(M)}{1/T} = H\cdot T\cdot\mathrm{diam}(M) \tag{4.3}
+```
 
 where $L_M = \mathrm{diam}(M)$ is the characteristic length scale (diameter of
 the market manifold in $g^{\mathrm{FR}}$), and $\varepsilon^2 = 1/T$ is the
@@ -501,8 +549,10 @@ attract enough capital to drive the market toward efficiency.
 
 The full Navier-Stokes equation for the portfolio fluid on $(M, g_M)$:
 
-$$\frac{\partial\vec{v}}{\partial t} + (\vec{v}\cdot\nabla_M)\vec{v}
-= -\nabla_M p + \varepsilon^2\Delta_M\vec{v} + \vec{f} \tag{4.4}$$
+```math
+\frac{\partial\vec{v}}{\partial t} + (\vec{v}\cdot\nabla_M)\vec{v}
+= -\nabla_M p + \varepsilon^2\Delta_M\vec{v} + \vec{f} \tag{4.4}
+```
 
 where:
 - $\vec{v} = -\nabla_M L_T$ is the portfolio velocity (gradient of log-growth)
@@ -514,7 +564,9 @@ where:
 velocity field $\vec{v}$ (a "streamline" — the path the log-optimal portfolio would
 follow if it were a deterministic gradient flow), the Bernoulli equation holds:
 
-$$L_T(b) + \frac{|\vec{v}|^2_{g_M}}{2} + \varepsilon^2 H(b) = \text{const along streamlines} \tag{4.5}$$
+```math
+L_T(b) + \frac{|\vec{v}|^2_{g_M}}{2} + \varepsilon^2 H(b) = \text{const along streamlines} \tag{4.5}
+```
 
 This is the portfolio analogue of Bernoulli's principle: **along a market streamline,
 total "energy" (log-growth + kinetic + curvature pressure) is conserved.** Fast-flowing
@@ -527,7 +579,9 @@ In fluid dynamics, **vorticity** $\omega = \nabla \times \vec{v}$ measures the
 local rotation of the fluid. For the portfolio velocity field $\vec{v} = -\nabla_M L_T$
 on the market manifold:
 
-$$\omega = \nabla_M \times (-\nabla_M L_T) = 0 \tag{4.6}$$
+```math
+\omega = \nabla_M \times (-\nabla_M L_T) = 0 \tag{4.6}
+```
 
 — the portfolio velocity field is irrotational (it is a gradient field). The efficient
 market fluid is **potential flow** — irrotational and incompressible.
@@ -536,7 +590,9 @@ market fluid is **potential flow** — irrotational and incompressible.
 Berry connection 1-form $A_{\rm Berry}$ has curvature $\mathcal{F} = dA_{\rm Berry}$.
 This curvature is the vorticity of the Berry phase flow:
 
-$$\omega_{\rm Berry} = \mathcal{F} = \frac{\partial A_2}{\partial b_1} - \frac{\partial A_1}{\partial b_2} \tag{4.7}$$
+```math
+\omega_{\rm Berry} = \mathcal{F} = \frac{\partial A_2}{\partial b_1} - \frac{\partial A_1}{\partial b_2} \tag{4.7}
+```
 
 **The Berry curvature IS the vorticity of the portfolio fluid when the market
 parameters vary over time.** For a static market (constant $\mu, \Sigma$): no vorticity.
@@ -557,7 +613,9 @@ In fluid dynamics, the **Kelvin circulation theorem** states that for an ideal f
 a material contour $C$ is conserved.
 
 For the portfolio fluid:
-$$\Gamma_M = \oint_C (-\nabla_M L_T)\cdot d\ell = 0 \tag{4.8}$$
+```math
+\Gamma_M = \oint_C (-\nabla_M L_T)\cdot d\ell = 0 \tag{4.8}
+```
 
 (since $-\nabla_M L_T$ is a gradient field, its line integral around any closed loop
 vanishes — by the fundamental theorem of calculus on manifolds).
@@ -565,8 +623,10 @@ vanishes — by the fundamental theorem of calculus on manifolds).
 **But the Berry connection breaks Kelvin's theorem.** In the presence of a non-trivial
 Berry connection $A_{\rm Berry}$, the circulation picks up a topological contribution:
 
-$$\Gamma_{\rm total} = \oint_C (-\nabla_M L_T + A_{\rm Berry})\cdot d\ell
-= \gamma_{\rm Berry}(C) \tag{4.9}$$
+```math
+\Gamma_{\rm total} = \oint_C (-\nabla_M L_T + A_{\rm Berry})\cdot d\ell
+= \gamma_{\rm Berry}(C) \tag{4.9}
+```
 
 The Berry phase $\gamma_{\rm Berry}(C) = \oint_C A_{\rm Berry}$ is the topological
 circulation — it is constant for all loops in the same homotopy class (FIBER_BUNDLES
@@ -581,8 +641,10 @@ where $\mathbf{D}$ is the strain rate tensor and $\nu$ is the kinematic viscosit
 
 For the portfolio fluid on $M$ with viscosity $\nu = \varepsilon^2$:
 
-$$\mathcal{E}_{\rm diss} = \varepsilon^2\int_M |\mathbf{D}|^2_{g_M}\,d\mathrm{vol}_{M}
-= \varepsilon^2\mathcal{W}_{2}(M) \tag{4.10}$$
+```math
+\mathcal{E}_{\rm diss} = \varepsilon^2\int_M |\mathbf{D}|^2_{g_M}\,d\mathrm{vol}_{M}
+= \varepsilon^2\mathcal{W}_{2}(M) \tag{4.10}
+```
 
 **The energy dissipation rate of the portfolio fluid is the Willmore energy.**
 For the efficient market ($H=0$, $\mathcal{W}_{2} = 0$): zero dissipation — the portfolio
@@ -635,7 +697,9 @@ rate for a fluid with viscosity $\varepsilon^2$ and "velocity" $\vec{H}$.
 **Theorem 6.1** *(Cheeger inequality for market manifolds)*. *The spectral gap
 $\lambda_1(-\Delta_M)$ of the efficient market manifold satisfies the Cheeger inequality:*
 
-$$\frac{h_M^2}{4} \leq \lambda_1 \leq 2h_M \tag{6.1}$$
+```math
+\frac{h_M^2}{4} \leq \lambda_1 \leq 2h_M \tag{6.1}
+```
 
 *where $h_M = \min_{S \subset M} \frac{|\partial S|}{|S|}$ is the Cheeger constant
 (the minimum ratio of boundary length to volume over all subsets $S$ of $M$).*
@@ -649,7 +713,9 @@ the flat torus with side $\pi/2$), giving $1/\pi^2 \leq \lambda_1 \leq 4/\pi$.
 Consistent with $\lambda_1 = 4$ (first nonzero eigenvalue of the flat quarter-torus). ✓
 
 **The Willmore energy is bounded below by the Cheeger constant:**
-$$\mathcal{W}_{2}(M) = \int_M|II|^2\,d\mathrm{vol} \geq h_M^2\cdot\mathrm{vol}(M)/4 \tag{6.2}$$
+```math
+\mathcal{W}_{2}(M) = \int_M|II|^2\,d\mathrm{vol} \geq h_M^2\cdot\mathrm{vol}(M)/4 \tag{6.2}
+```
 
 **The curvature (inefficiency) is bounded below by the topological complexity
 (Cheeger constant).** Markets with richer topological structure (higher Cheeger
@@ -665,15 +731,19 @@ system $\{(b^{(i)}_{t}, w^{(i)}_{t})\}_{i=1}^{N}$ on $M$, where particles move b
 Langevin dynamics (portfolio gradient + noise) and weights update by the likelihood.
 This is the particle filter approximation to the Fokker-Planck equation.
 
-$$b^{(i)}_{t+1} = b^{(i)}_{t} - \varepsilon^2\nabla_{g_M}L_T(b^{(i)}_{t})\,\Delta t
-+ \varepsilon\sqrt{\Delta t}\,\xi^{(i)}_{t}, \quad \xi^{(i)}_{t}\sim\mathcal{N}(0,g_M^{-1}) \tag{6.3}$$
+```math
+b^{(i)}_{t+1} = b^{(i)}_{t} - \varepsilon^2\nabla_{g_M}L_T(b^{(i)}_{t})\,\Delta t
++ \varepsilon\sqrt{\Delta t}\,\xi^{(i)}_{t}, \quad \xi^{(i)}_{t}\sim\mathcal{N}(0,g_M^{-1}) \tag{6.3}
+```
 
 For $N=100$ particles on a 4-dimensional manifold: exact to $O(N^{-1/2}) = O(0.1)$
 in distribution, with $O(N\cdot T\cdot d)$ computational cost.
 
 **Algorithm 2: Streamline integration.** Follow the gradient flow of $L_T$:
 
-$$\frac{db}{dt} = -\nabla_{g_M}L_T(b) \tag{6.4}$$
+```math
+\frac{db}{dt} = -\nabla_{g_M}L_T(b) \tag{6.4}
+```
 
 The terminal point is the log-optimal portfolio $b^{\ast}$. This is **gradient descent in
 the Fisher-Rao metric** — faster convergence than Euclidean gradient descent because

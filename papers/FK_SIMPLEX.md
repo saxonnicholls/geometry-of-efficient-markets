@@ -44,14 +44,18 @@ Cover's Universal Portfolio \[Cover 1991\] is a remarkable object: a portfolio s
 asymptotically matches the best constant-rebalanced portfolio in hindsight, with no statistical
 assumptions on the market. Its wealth after $T$ periods is:
 
-$$S_T^{\ast} = \int_{\Delta_{d-1}} \prod_{t=1}^{T} \langle b, x_t \rangle \, d\mu(b) \tag{1.1}$$
+```math
+S_T^{\ast} = \int_{\Delta_{d-1}} \prod_{t=1}^{T} \langle b, x_t \rangle \, d\mu(b) \tag{1.1}
+```
 
 where $x_t \in \mathbb{R}^{d}_+$ are price relative vectors, $\mu$ is the uniform measure on
 $\Delta_{d-1} = \{b \in \mathbb{R}^{d} : b \geq 0,\, \mathbf{1}^{T} b = 1\}$, and the portfolio
 weights traded at time $T$ are the posterior mean:
 
-$$\hat{b}_{T} = \frac{\int_{\Delta_{d-1}} b \cdot W_T(b) \, d\mu(b)}{\int_{\Delta_{d-1}} W_T(b) \, d\mu(b)},
-\qquad W_T(b) = \prod_{t=1}^{T} \langle b, x_t \rangle \tag{1.2}$$
+```math
+\hat{b}_{T} = \frac{\int_{\Delta_{d-1}} b \cdot W_T(b) \, d\mu(b)}{\int_{\Delta_{d-1}} W_T(b) \, d\mu(b)},
+\qquad W_T(b) = \prod_{t=1}^{T} \langle b, x_t \rangle \tag{1.2}
+```
 
 This is a Bayesian posterior mean where the "likelihood" of portfolio $b$ is its realised wealth
 $W_T(b)$. The integral lives on a $(d-1)$-dimensional simplex; for $d = 50$ stocks this is a
@@ -112,7 +116,9 @@ Section 8 discusses implications for computation and open problems.
 Let $\Delta_{d-1} = \{b \in \mathbb{R}^{d} : b_i \geq 0,\, \sum_i b_i = 1\}$. This is a compact
 $(d-1)$-dimensional manifold with corners. Its boundary stratifies as:
 
-$$\partial \Delta_{d-1} = \bigcup_{i=1}^{d} F_i, \qquad F_i = \{b \in \Delta_{d-1} : b_i = 0\} \tag{2.1}$$
+```math
+\partial \Delta_{d-1} = \bigcup_{i=1}^{d} F_i, \qquad F_i = \{b \in \Delta_{d-1} : b_i = 0\} \tag{2.1}
+```
 
 The interior is $\mathring{\Delta}_{d-1} = \{b : b_i > 0 \forall i\}$. The faces $F_i$ are
 themselves simplices: $F_i \cong \Delta_{d-2}$.
@@ -122,12 +128,16 @@ themselves simplices: $F_i \cong \Delta_{d-2}$.
 The **Fisher information metric** on $\mathring{\Delta}_{d-1}$, viewed as a statistical manifold
 of categorical distributions, is:
 
-$$g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{2.2}$$
+```math
+g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{2.2}
+```
 
 Under the **square-root parameterisation** $\phi: b \mapsto \sqrt{b} = (\sqrt{b_1},\ldots,\sqrt{b_d})$,
 the simplex maps to the positive orthant of the unit sphere:
 
-$$\phi(\Delta_{d-1}) = S^{d-1}_{+} := \{u \in \mathbb{R}^{d} : u_i \geq 0,\, \|u\|^2 = 1\} \tag{2.3}$$
+```math
+\phi(\Delta_{d-1}) = S^{d-1}_{+} := \{u \in \mathbb{R}^{d} : u_i \geq 0,\, \|u\|^2 = 1\} \tag{2.3}
+```
 
 Under this map, the Fisher–Rao metric pulls back to the standard round metric on $S^{d-1}$,
 scaled by $1/4$: $g^{\rm FR} = 4\phi^{\ast} g_{\rm round}$. Hence:
@@ -136,7 +146,9 @@ scaled by $1/4$: $g^{\rm FR} = 4\phi^{\ast} g_{\rm round}$. Hence:
 is isometric to the positive hemisphere $S^{d-1}_{+}$ with constant sectional curvature $K = 1/4$.
 The geodesic distance between $b, b' \in \Delta_{d-1}$ is the Bhattacharyya angle:*
 
-$$d_{\rm FR}(b, b') = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i b'_i}\right) \tag{2.4}$$
+```math
+d_{\rm FR}(b, b') = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i b'_i}\right) \tag{2.4}
+```
 
 This isometry will be fundamental: the Ricci curvature of $(\Delta_{d-1}, g^{\rm FR})$ is
 $\text{Ric} = \frac{d-2}{4} g^{\rm FR}$, and the Weitzenböck correction in the stochastic Stokes
@@ -147,8 +159,10 @@ theorem (Section 6) equals $\frac{d-2}{4}$ times the identity on 1-forms.
 The **Wright–Fisher diffusion** on $\Delta_{d-1}$ with noise parameter $\varepsilon > 0$ and
 drift potential $\Phi$ is the diffusion process $B_t$ satisfying (in Itô form):
 
-$$dB_t^i = \frac{\varepsilon^2}{2}\sum_j \partial_j\bigl[B_t^i(\delta_{ij} - B_t^j)\bigr]\,dt
-+ \nabla_\Delta \Phi(B_t)\,dt + \varepsilon\sum_k \sigma_{ik}(B_t)\,dW_t^k \tag{2.5}$$
+```math
+dB_t^i = \frac{\varepsilon^2}{2}\sum_j \partial_j\bigl[B_t^i(\delta_{ij} - B_t^j)\bigr]\,dt
++ \nabla_\Delta \Phi(B_t)\,dt + \varepsilon\sum_k \sigma_{ik}(B_t)\,dW_t^k \tag{2.5}
+```
 
 where $\sigma_{ik}(b)\sigma_{jk}(b) = b_i(\delta_{ij} - b_j)$ is the WF diffusion coefficient
 (the square root of the covariance of the multinomial distribution), and $W_t$ is
@@ -156,8 +170,10 @@ $d$-dimensional Brownian motion projected onto the tangent space of $\Delta_{d-1
 
 The generator is:
 
-$$\mathcal{L}^\varepsilon f(b) = \frac{\varepsilon^2}{2}\sum_{i,j=1}^{d} b_i(\delta_{ij} - b_j)
-\frac{\partial^2 f}{\partial b_i \partial b_j} + \nabla_\Delta \Phi(b) \cdot \nabla f(b) \tag{2.6}$$
+```math
+\mathcal{L}^\varepsilon f(b) = \frac{\varepsilon^2}{2}\sum_{i,j=1}^{d} b_i(\delta_{ij} - b_j)
+\frac{\partial^2 f}{\partial b_i \partial b_j} + \nabla_\Delta \Phi(b) \cdot \nabla f(b) \tag{2.6}
+```
 
 The diffusion coefficient $C_{ij}(b) = b_i(\delta_{ij} - b_j)$ is the **covariance matrix of the
 Dirichlet distribution**, and equals the inverse of the Fisher–Rao metric restricted to the
@@ -177,17 +193,23 @@ and the fact that these terms integrate to zero against the flat measure on $\De
 Fix a filtered probability space $(\Omega, \mathcal{F}, (\mathcal{F}_{t}), \mathbb{P})$.
 Suppose $d$ asset prices $S_{t,i}$ satisfy:
 
-$$\frac{dS_{t,i}}{S_{t,i}} = \mu_i(t)\,dt + \sum_{k=1}^{m} \sigma_{ik}(t)\,dW_t^k,
-\qquad \Sigma(t) = \sigma(t)\sigma(t)^T \tag{2.7}$$
+```math
+\frac{dS_{t,i}}{S_{t,i}} = \mu_i(t)\,dt + \sum_{k=1}^{m} \sigma_{ik}(t)\,dW_t^k,
+\qquad \Sigma(t) = \sigma(t)\sigma(t)^T \tag{2.7}
+```
 
 The **instantaneous Kelly log-growth rate** of portfolio $b \in \Delta_{d-1}$ is:
 
-$$r(b, t) = b^T \mu(t) - \tfrac{1}{2}\,b^T \Sigma(t)\, b \tag{2.8}$$
+```math
+r(b, t) = b^T \mu(t) - \tfrac{1}{2}\,b^T \Sigma(t)\, b \tag{2.8}
+```
 
 This is the drift of $\log V_t(b)$ where $V_t(b)$ is the wealth of the constantly rebalanced
 portfolio $b$. The **log-optimal portfolio** is:
 
-$$b^{\ast}(t) = \arg\max_{b \in \Delta_{d-1}} r(b,t) \tag{2.9}$$
+```math
+b^{\ast}(t) = \arg\max_{b \in \Delta_{d-1}} r(b,t) \tag{2.9}
+```
 
 In the discrete-time setting, $r(b) = \frac{1}{T}\sum_t \log\langle b, x_t\rangle$ and
 $b^{\ast} = \arg\max_{b \in \Delta_{d-1}} r(b)$ is the empirical log-optimal (Kelly) portfolio.
@@ -203,14 +225,18 @@ diffusion on $\Delta_{d-1}$ with generator $\mathcal{L}^\varepsilon$ (equation (
 and initial condition $B_0^\varepsilon = b$. Let $r: \Delta_{d-1} \times [0,T] \to \mathbb{R}$ be
 the Kelly growth rate (2.8), continuous and bounded. Define:*
 
-$$u(b, t) = \mathbb{E}^{b}\!\left[\exp\!\left(\int_t^T r(B_s^\varepsilon, s)\,ds\right)
-f(B_T^\varepsilon)\right] \tag{3.1}$$
+```math
+u(b, t) = \mathbb{E}^{b}\!\left[\exp\!\left(\int_t^T r(B_s^\varepsilon, s)\,ds\right)
+f(B_T^\varepsilon)\right] \tag{3.1}
+```
 
 *for $f \in C(\Delta_{d-1})$. Then $u \in C^{2,1}(\mathring{\Delta}_{d-1} \times [0,T))$ and
 $u$ satisfies the parabolic PDE:*
 
-$$\frac{\partial u}{\partial t}(b,t) = \mathcal{L}^\varepsilon u(b,t) + r(b,t)\cdot u(b,t),
-\qquad (b,t) \in \mathring{\Delta}_{d-1} \times [0,T) \tag{3.2}$$
+```math
+\frac{\partial u}{\partial t}(b,t) = \mathcal{L}^\varepsilon u(b,t) + r(b,t)\cdot u(b,t),
+\qquad (b,t) \in \mathring{\Delta}_{d-1} \times [0,T) \tag{3.2}
+```
 
 *with terminal condition $u(\cdot, T) = f$ and Wentzell boundary conditions at $\partial\Delta_{d-1}$.*
 
@@ -218,8 +244,10 @@ $$\frac{\partial u}{\partial t}(b,t) = \mathcal{L}^\varepsilon u(b,t) + r(b,t)\c
 adapted to the manifold setting. Define $M_s = e^{\int_t^s r(B_u,u)\,du} \cdot u(B_s, s)$.
 By Itô's formula on the manifold $(\Delta_{d-1}, g^{\rm FR})$ in Stratonovich form:
 
-$$dM_s = e^{\int_t^s r\,du}\left[\left(\frac{\partial u}{\partial s} + \mathcal{L}^\varepsilon u
-+ ru\right)(B_s, s)\,ds + \nabla u(B_s, s) \cdot dB_s^{\rm mart}\right]$$
+```math
+dM_s = e^{\int_t^s r\,du}\left[\left(\frac{\partial u}{\partial s} + \mathcal{L}^\varepsilon u
++ ru\right)(B_s, s)\,ds + \nabla u(B_s, s) \cdot dB_s^{\rm mart}\right]
+```
 
 where $dB_s^{\rm mart} = \varepsilon \sigma(B_s)\,dW_s$ is the martingale part of the WF diffusion.
 The drift of $M_s$ vanishes if and only if $u$ satisfies (3.2). Since $M_s$ is a local martingale
@@ -230,7 +258,9 @@ martingale. Taking expectations: $u(b,t) = M_t = \mathbb{E}^{b}[M_T] = \mathbb{E
 
 **Corollary 3.2.** *The normalisation constant of the universal portfolio satisfies:*
 
-$$\log \int_{\Delta_{d-1}} W_T(b)\,d\mu(b) = \log u_0(T) \tag{3.3}$$
+```math
+\log \int_{\Delta_{d-1}} W_T(b)\,d\mu(b) = \log u_0(T) \tag{3.3}
+```
 
 *where $u_0(t) = \int_{\Delta_{d-1}} u(b, 0)\,d\mu(b)$ and $u$ solves (3.2) with $f \equiv 1$,
 in the discrete-time limit where $r(b,s) = \log\langle b, x_{\lceil sT/T \rceil}\rangle$ is the
@@ -238,8 +268,10 @@ step-function approximation.*
 
 *The universal portfolio weights are:*
 
-$$\hat{b}_{T} = \frac{\int_{\Delta_{d-1}} b \cdot u(b,0)\,d\mu(b)}{\int_{\Delta_{d-1}} u(b,0)\,d\mu(b)}
-= \mathbb{E}^{\pi_0}[B_0^\varepsilon] \tag{3.4}$$
+```math
+\hat{b}_{T} = \frac{\int_{\Delta_{d-1}} b \cdot u(b,0)\,d\mu(b)}{\int_{\Delta_{d-1}} u(b,0)\,d\mu(b)}
+= \mathbb{E}^{\pi_0}[B_0^\varepsilon] \tag{3.4}
+```
 
 *where $\pi_0(db) = u(b,0)\mu(db)/u_0(0)$ is the initial distribution of the FK functional.*
 
@@ -251,12 +283,16 @@ diffusion "knows" where the log-optimal portfolio will be, through the potential
 
 Taking the adjoint of (3.2) in the $b$ variable, the **normalised posterior density**:
 
-$$\pi_t(b) = \frac{u(b, t)\,\mu(b)}{\int_\Delta u(b',t)\,\mu(db')} \propto W_t(b)\,\mu(b)$$
+```math
+\pi_t(b) = \frac{u(b, t)\,\mu(b)}{\int_\Delta u(b',t)\,\mu(db')} \propto W_t(b)\,\mu(b)
+```
 
 satisfies a **forward equation**. Differentiating the normalisation and applying (3.2):
 
-$$\frac{\partial \pi_t}{\partial t} = (\mathcal{L}^\varepsilon)^{\ast} \pi_t
-+ \bigl(r(b,t) - \bar{r}_{t}\bigr)\,\pi_t \tag{3.5}$$
+```math
+\frac{\partial \pi_t}{\partial t} = (\mathcal{L}^\varepsilon)^{\ast} \pi_t
++ \bigl(r(b,t) - \bar{r}_{t}\bigr)\,\pi_t \tag{3.5}
+```
 
 where $\bar{r}_{t} = \int_\Delta r(b,t)\,\pi_t(db)$ is the posterior mean growth rate and
 $(\mathcal{L}^\varepsilon)^{\ast}$ is the Fokker–Planck operator (formal $L^2$-adjoint of $\mathcal{L}^\varepsilon$).
@@ -273,18 +309,24 @@ powers of $\varepsilon$:
 
 **Leading order** ($\varepsilon^0$): The **Hamilton–Jacobi equation on** $\Delta_{d-1}$:
 
-$$\frac{\partial S}{\partial t} + H\!\left(b, \nabla_b S\right) + r(b,t) = 0,
-\qquad S(b,T) = \varepsilon^2 \log f(b) \to 0 \tag{4.1}$$
+```math
+\frac{\partial S}{\partial t} + H\!\left(b, \nabla_b S\right) + r(b,t) = 0,
+\qquad S(b,T) = \varepsilon^2 \log f(b) \to 0 \tag{4.1}
+```
 
 with Hamiltonian:
 
-$$H(b, p) = \frac{1}{2}\sum_{i,j} b_i(\delta_{ij} - b_j)\, p_i p_j
-= \frac{1}{2}\,\|p\|^2_{[g^{\rm FR}(b)]^{-1}} \tag{4.2}$$
+```math
+H(b, p) = \frac{1}{2}\sum_{i,j} b_i(\delta_{ij} - b_j)\, p_i p_j
+= \frac{1}{2}\,\|p\|^2_{[g^{\rm FR}(b)]^{-1}} \tag{4.2}
+```
 
 **Subleading order** ($\varepsilon^2$): The **transport equation** for the Van Vleck amplitude $A_0$:
 
-$$\frac{\partial A_0}{\partial t} + \nabla_b S \cdot \nabla_b A_0
-+ \frac{1}{2}\Delta_b S \cdot A_0 = 0 \tag{4.3}$$
+```math
+\frac{\partial A_0}{\partial t} + \nabla_b S \cdot \nabla_b A_0
++ \frac{1}{2}\Delta_b S \cdot A_0 = 0 \tag{4.3}
+```
 
 where $\Delta_b S = \sum_{ij} b_i(\delta_{ij}-b_j)\partial_{ij} S$ is the WF Laplacian of $S$.
 
@@ -296,15 +338,19 @@ on the Riemannian manifold $(\Delta_{d-1}, g^{\rm FR})$.
 
 **Hamilton's equations** for the geodesic flow:
 
-$$\dot{b}^{i} = \frac{\partial H}{\partial p_i} = b_i\!\left(p_i - \sum_j b_j p_j\right),
-\qquad \dot{p}_{i} = -\frac{\partial H}{\partial b_i} - \frac{\partial r}{\partial b_i} \tag{4.4}$$
+```math
+\dot{b}^{i} = \frac{\partial H}{\partial p_i} = b_i\!\left(p_i - \sum_j b_j p_j\right),
+\qquad \dot{p}_{i} = -\frac{\partial H}{\partial b_i} - \frac{\partial r}{\partial b_i} \tag{4.4}
+```
 
 **Theorem 4.1** (Geodesic = log-optimal path). *The critical point $b^{\ast}(t)$ of $r(\cdot, t)$ over
 $\Delta_{d-1}$ is the rest point of the Hamiltonian flow (4.4). The path $t \mapsto b^{\ast}(t)$
 tracking the log-optimal portfolio as $\mu(t), \Sigma(t)$ evolve is a geodesic of
 $(\Delta_{d-1}, g^{\rm FR})$ in the sense that it minimises the action:*
 
-$$\mathcal{A}[\gamma] = \int_0^T \left[\frac{1}{2}\|\dot{\gamma}\|^2_{g^{\rm FR}} - r(\gamma,t)\right] dt \tag{4.5}$$
+```math
+\mathcal{A}[\gamma] = \int_0^T \left[\frac{1}{2}\|\dot{\gamma}\|^2_{g^{\rm FR}} - r(\gamma,t)\right] dt \tag{4.5}
+```
 
 *The value of the action at the critical path is $S(b^{\ast}, 0) = \int_0^T r(b^{\ast}(s),s)\,ds = \log W_T(b^{\ast})$.*
 
@@ -320,7 +366,9 @@ $\int_\Delta e^{T \cdot r(b)/\varepsilon^2}\,d\mu(b)$ is dominated by the saddle
 
 The standard WKB calculation (Van Vleck determinant) gives at subleading order:
 
-$$u(b^{\ast}, 0) \approx e^{S(b^{\ast},0)/\varepsilon^2} \cdot A_0(b^{\ast}, 0) = W_T(b^{\ast}) \cdot |\det(T \cdot F(b^{\ast}))|^{-1/2} \cdot (2\pi\varepsilon^2)^{(d-1)/2}$$
+```math
+u(b^{\ast}, 0) \approx e^{S(b^{\ast},0)/\varepsilon^2} \cdot A_0(b^{\ast}, 0) = W_T(b^{\ast}) \cdot |\det(T \cdot F(b^{\ast}))|^{-1/2} \cdot (2\pi\varepsilon^2)^{(d-1)/2}
+```
 
 where $F(b^{\ast}) = -\nabla^2_b r(b^{\ast}) = \frac{1}{T}\sum_t \frac{x_t x_t^T}{(b^{*T}x_t)^2}$
 is the **Fisher information matrix of the log-growth rate at $b^{\ast}$** (the Hessian of the PDE potential).
@@ -328,8 +376,10 @@ is the **Fisher information matrix of the log-growth rate at $b^{\ast}$** (the H
 **Theorem 4.3** (WKB = Laplace). *The leading WKB approximation to the FK functional (3.1) with
 $f \equiv 1$ recovers the Laplace approximation to the simplex integral:*
 
-$$\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) \approx W_T(b^{\ast}) \cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2}
-\cdot |\det F(b^{\ast})|^{-1/2} \tag{4.6}$$
+```math
+\int_{\Delta_{d-1}} W_T(b)\,d\mu(b) \approx W_T(b^{\ast}) \cdot \left(\frac{2\pi}{T}\right)^{(d-1)/2}
+\cdot |\det F(b^{\ast})|^{-1/2} \tag{4.6}
+```
 
 *and the universal portfolio weights satisfy $\hat{b}_{T} = b^{\ast} + O(1/T^2)$.*
 
@@ -357,14 +407,18 @@ the FK-weighted WF process. We expand it explicitly.
 
 The **Fokker–Planck operator** (adjoint of $\mathcal{L}^\varepsilon$ in $L^2(\mu)$) is:
 
-$$(\mathcal{L}^\varepsilon)^{\ast} \pi = \frac{\varepsilon^2}{2}\sum_{i,j}
-\frac{\partial^2}{\partial b_i \partial b_j}\bigl[b_i(\delta_{ij} - b_j)\pi\bigr] \tag{5.1}$$
+```math
+(\mathcal{L}^\varepsilon)^{\ast} \pi = \frac{\varepsilon^2}{2}\sum_{i,j}
+\frac{\partial^2}{\partial b_i \partial b_j}\bigl[b_i(\delta_{ij} - b_j)\pi\bigr] \tag{5.1}
+```
 
 Equation (3.5) becomes:
 
-$$\frac{\partial \pi_t}{\partial t} = \underbrace{\frac{\varepsilon^2}{2}\sum_{i,j}
+```math
+\frac{\partial \pi_t}{\partial t} = \underbrace{\frac{\varepsilon^2}{2}\sum_{i,j}
 \frac{\partial^2}{\partial b_i \partial b_j}\bigl[b_i(\delta_{ij} - b_j)\pi_t\bigr]}_{\text{Wright–Fisher diffusion (exploration)}}
-+ \underbrace{\bigl(r(b,t) - \bar{r}(t)\bigr)\pi_t}_{\text{replicator selection}}} \tag{5.2}$$
++ \underbrace{\bigl(r(b,t) - \bar{r}(t)\bigr)\pi_t}_{\text{replicator selection}}} \tag{5.2}
+```
 
 This is the **replicator–diffusion equation** on $\Delta_{d-1}$.
 
@@ -372,7 +426,9 @@ This is the **replicator–diffusion equation** on $\Delta_{d-1}$.
 
 **Case 1: $\varepsilon = 0$ (pure replicator).**
 
-$$\frac{\partial \pi_t}{\partial t} = \bigl(r(b,t) - \bar{r}(t)\bigr)\pi_t \tag{5.3}$$
+```math
+\frac{\partial \pi_t}{\partial t} = \bigl(r(b,t) - \bar{r}(t)\bigr)\pi_t \tag{5.3}
+```
 
 This is the continuous-time replicator equation of evolutionary game theory
 \[Taylor–Jonker 1978\]. Its solution is $\pi_t(b) \propto e^{\int_0^t r(b,s)\,ds} \pi_0(b)$,
@@ -396,7 +452,9 @@ corresponds to a "maximum entropy" portfolio that ignores the data entirely.
 **Theorem 5.1** (Spectral gap and convergence). *The replicator–diffusion equation (5.2)
 has a spectral gap:*
 
-$$\lambda_1 = \varepsilon^2 \cdot \frac{d-1}{2} + \lambda_{\min}(F(b^{\ast}))$$
+```math
+\lambda_1 = \varepsilon^2 \cdot \frac{d-1}{2} + \lambda_{\min}(F(b^{\ast}))
+```
 
 *where the $\varepsilon^2(d-1)/2$ term is the WF spectral gap (Poincaré constant of $\mu$) and
 $\lambda_{\min}(F)$ is the smallest eigenvalue of the Fisher matrix. The posterior $\pi_t$
@@ -422,8 +480,10 @@ arising from the Fisher–Rao geometry, and a boundary local-time term recording
 
 For a smooth $(d-2)$-form $\omega$ on $\Delta_{d-1}$, the classical Stokes theorem states:
 
-$$\int_{\Delta_{d-1}} d\omega = \int_{\partial \Delta_{d-1}} \omega
-= \sum_{i=1}^{d} (-1)^{i-1} \int_{F_i} \omega \tag{6.1}$$
+```math
+\int_{\Delta_{d-1}} d\omega = \int_{\partial \Delta_{d-1}} \omega
+= \sum_{i=1}^{d} (-1)^{i-1} \int_{F_i} \omega \tag{6.1}
+```
 
 where $F_i = \{b_i = 0\}$ are the $d$ faces of the simplex, each oriented by the induced
 orientation. This is a statement about the boundary operator $\partial$ and the exterior
@@ -437,8 +497,10 @@ write $\omega = \sum_{i=1}^{d-1} \omega_i(b)\,db_i$.
 
 The **Stratonovich stochastic line integral** of $\omega$ along $B^\varepsilon$ is:
 
-$$\mathcal{I}_{t}(\omega) = \int_0^t \omega_{B_s^\varepsilon}(\circ dB_s^\varepsilon)
-:= \sum_{i=1}^{d-1}\int_0^t \omega_i(B_s^\varepsilon) \circ dB_s^{\varepsilon,i} \tag{6.2}$$
+```math
+\mathcal{I}_{t}(\omega) = \int_0^t \omega_{B_s^\varepsilon}(\circ dB_s^\varepsilon)
+:= \sum_{i=1}^{d-1}\int_0^t \omega_i(B_s^\varepsilon) \circ dB_s^{\varepsilon,i} \tag{6.2}
+```
 
 For $\omega = df$ (exact), Itô's formula gives $\mathcal{I}_{t}(df) = f(B_t) - f(B_0)$, which is the
 stochastic fundamental theorem of calculus.
@@ -446,13 +508,17 @@ stochastic fundamental theorem of calculus.
 For general $\omega$, the Stratonovich-to-Itô conversion introduces a correction. The WF quadratic
 covariation is:
 
-$$d[B^{\varepsilon,i}, B^{\varepsilon,j}]_t = \varepsilon^2\, B_t^i(\delta_{ij} - B_t^j)\,dt \tag{6.3}$$
+```math
+d[B^{\varepsilon,i}, B^{\varepsilon,j}]_t = \varepsilon^2\, B_t^i(\delta_{ij} - B_t^j)\,dt \tag{6.3}
+```
 
 so the Itô form of (6.2) is:
 
-$$\mathcal{I}_{t}(\omega) = \int_0^t \omega_i(B_s)\,dB_s^i
+```math
+\mathcal{I}_{t}(\omega) = \int_0^t \omega_i(B_s)\,dB_s^i
 + \frac{\varepsilon^2}{2}\int_0^t \sum_{i,j} (\partial_j \omega_i)(B_s)
-\cdot B_s^i(\delta_{ij} - B_s^j)\,ds \tag{6.4}$$
+\cdot B_s^i(\delta_{ij} - B_s^j)\,ds \tag{6.4}
+```
 
 The second term is the **Itô–Stratonovich correction**, dependent on the diffusion coefficient.
 
@@ -461,8 +527,10 @@ The second term is the **Itô–Stratonovich correction**, dependent on the diff
 Define the **stochastic exterior derivative** of $\omega$ as the 2-form whose evaluation on the
 quadratic covariation of $B^\varepsilon$ gives the correction in (6.4):
 
-$$(d^{\rm WF}\omega)(b) = \varepsilon^2 \sum_{i < j}
-(\partial_i \omega_j - \partial_j \omega_i)(b) \cdot b_i(\delta_{ij} - b_j)\,db_i \wedge db_j \tag{6.5}$$
+```math
+(d^{\rm WF}\omega)(b) = \varepsilon^2 \sum_{i < j}
+(\partial_i \omega_j - \partial_j \omega_i)(b) \cdot b_i(\delta_{ij} - b_j)\,db_i \wedge db_j \tag{6.5}
+```
 
 This is the classical exterior derivative $d\omega$, contracted with the WF diffusion tensor:
 $d^{\rm WF}\omega = \varepsilon^2 \iota_{C} d\omega$ where $C_{ij}(b) = b_i(\delta_{ij}-b_j)$ and
@@ -470,13 +538,17 @@ $\iota_C$ denotes interior multiplication.
 
 **Lemma 6.1** (Stochastic Green's formula). *For a smooth function $f$ and 1-form $\omega = df$:*
 
-$$\mathbb{E}_{b}\!\left[\mathcal{I}_\tau(df)\right] = \mathbb{E}_{b}[f(B_\tau) - f(B_0)]
-= \mathbb{E}_{b}\!\left[\int_0^\tau \mathcal{L}^\varepsilon f(B_s)\,ds\right]$$
+```math
+\mathbb{E}_{b}\!\left[\mathcal{I}_\tau(df)\right] = \mathbb{E}_{b}[f(B_\tau) - f(B_0)]
+= \mathbb{E}_{b}\!\left[\int_0^\tau \mathcal{L}^\varepsilon f(B_s)\,ds\right]
+```
 
 *For general $\omega$ (possibly non-exact), the expectation of the stochastic line integral satisfies:*
 
-$$\mathbb{E}_{b}[\mathcal{I}_\tau(\omega)] = \mathbb{E}_{b}\!\left[\int_0^\tau \mathcal{L}^\varepsilon \omega^\sharp(B_s)\,ds\right]
-+ \mathbb{E}_{b}\!\left[\int_0^\tau \frac{\varepsilon^2}{2}\delta\omega(B_s)\,ds\right] \tag{6.6}$$
+```math
+\mathbb{E}_{b}[\mathcal{I}_\tau(\omega)] = \mathbb{E}_{b}\!\left[\int_0^\tau \mathcal{L}^\varepsilon \omega^\sharp(B_s)\,ds\right]
++ \mathbb{E}_{b}\!\left[\int_0^\tau \frac{\varepsilon^2}{2}\delta\omega(B_s)\,ds\right] \tag{6.6}
+```
 
 *where $\omega^\sharp$ is the vector field dual to $\omega$ under $g^{\rm FR}$, and $\delta\omega = -\star d \star \omega$ is the codifferential.*
 
@@ -485,12 +557,16 @@ $$\mathbb{E}_{b}[\mathcal{I}_\tau(\omega)] = \mathbb{E}_{b}\!\left[\int_0^\tau \
 On a Riemannian manifold $(M,g)$, the **Weitzenböck identity** relates the Hodge Laplacian
 $\Delta_H = d\delta + \delta d$ on 1-forms to the connection Laplacian $\nabla^{\ast}\nabla$ by:
 
-$$\Delta_H \omega = \nabla^{\ast} \nabla \omega + \text{Ric}(\omega^\sharp,\cdot) \tag{6.7}$$
+```math
+\Delta_H \omega = \nabla^{\ast} \nabla \omega + \text{Ric}(\omega^\sharp,\cdot) \tag{6.7}
+```
 
 For the simplex $(\Delta_{d-1}, g^{\rm FR}) \cong S^{d-1}_{+}$ with constant curvature $K = 1/4$:
 
-$$\text{Ric}(\omega^\sharp, \omega^\sharp) = \frac{d-2}{4}\, g(\omega^\sharp, \omega^\sharp)
-= \frac{d-2}{4}\, |\omega|^2_{g^{\rm FR}} \tag{6.8}$$
+```math
+\text{Ric}(\omega^\sharp, \omega^\sharp) = \frac{d-2}{4}\, g(\omega^\sharp, \omega^\sharp)
+= \frac{d-2}{4}\, |\omega|^2_{g^{\rm FR}} \tag{6.8}
+```
 
 This is the key: the Fisher–Rao curvature of the simplex introduces a correction term $\frac{d-2}{4}$
 times the norm-squared of $\omega$, which appears in the stochastic Stokes theorem.
@@ -501,12 +577,16 @@ The WF diffusion $B_t^\varepsilon$ hits each face $F_i = \{b_i = 0\}$ at a set o
 positive Lebesgue measure (for $\varepsilon$ small) or in a set of measure zero (for the
 reflecting WF diffusion). In either case, define the **boundary local time** at face $F_i$ as:
 
-$$L_t^{F_i} = \lim_{\eta \to 0} \frac{1}{\eta} \int_0^t \mathbf{1}_{B_s^i < \eta}\,ds \tag{6.9}$$
+```math
+L_t^{F_i} = \lim_{\eta \to 0} \frac{1}{\eta} \int_0^t \mathbf{1}_{B_s^i < \eta}\,ds \tag{6.9}
+```
 
 This measures the "time $B^\varepsilon$ spends near the face where asset $i$ has zero weight."
 The occupation time formula gives, for any $\phi$:
 
-$$\int_0^t \phi(B_s^i)\,d[B^{\varepsilon,i}]_s = \int_0^\infty \phi(a)\,L_t^{F_i}(a)\,da$$
+```math
+\int_0^t \phi(B_s^i)\,d[B^{\varepsilon,i}]_s = \int_0^\infty \phi(a)\,L_t^{F_i}(a)\,da
+```
 
 where $L_t^{F_i}(a)$ is the local time at level $a$ of the $i$-th coordinate.
 
@@ -516,10 +596,12 @@ where $L_t^{F_i}(a)$ is the local time at level $a$ of the $i$-th coordinate.
 Wright–Fisher diffusion on $\Delta_{d-1}$ with noise parameter $\varepsilon > 0$, and let $\omega$
 be a smooth 1-form on $\Delta_{d-1}$. For any stopping time $\tau$:*
 
-$$\mathbb{E}_{b}\!\left[\oint_{\partial \mathcal{C}_\tau} \omega\right]
+```math
+\mathbb{E}_{b}\!\left[\oint_{\partial \mathcal{C}_\tau} \omega\right]
 = \mathbb{E}_{b}\!\left[\int_{\mathcal{C}_\tau} d\omega\right]
 + \underbrace{\frac{\varepsilon^2(d-2)}{4}\,\mathbb{E}_{b}\!\left[\int_0^\tau |\omega|^2_{g^{\rm FR}}(B_s)\,ds\right]}_{\text{Fisher–Rao curvature correction}}
-+ \underbrace{\sum_{i=1}^{d} \mathbb{E}_{b}\!\left[\int_0^\tau (\iota_{\nu_i}\omega)(B_s)\,dL_s^{F_i}\right]}_{\text{boundary local time}} \tag{6.10}$$
++ \underbrace{\sum_{i=1}^{d} \mathbb{E}_{b}\!\left[\int_0^\tau (\iota_{\nu_i}\omega)(B_s)\,dL_s^{F_i}\right]}_{\text{boundary local time}} \tag{6.10}
+```
 
 *where:*
 - *$\mathcal{C}_\tau$ is the 2-chain (stochastic surface) swept by $B_t^\varepsilon$ on $[0,\tau]$,*
@@ -531,8 +613,10 @@ $$\mathbb{E}_{b}\!\left[\oint_{\partial \mathcal{C}_\tau} \omega\right]
 **Proof sketch.** We use the Itô–Stratonovich formula (6.4) and integrate against the
 expectation. For a 2-form $\Omega = d\omega$, the stochastic area formula gives:
 
-$$\mathbb{E}_{b}\!\left[\int_0^\tau \Omega_{B_s}(\circ dB_s, \circ dB_s)\right]
-= \mathbb{E}_{b}\!\left[\int_0^\tau \Omega_{ij}(B_s) \cdot \varepsilon^2 B_s^i(\delta_{ij}-B_s^j)\,ds\right]$$
+```math
+\mathbb{E}_{b}\!\left[\int_0^\tau \Omega_{B_s}(\circ dB_s, \circ dB_s)\right]
+= \mathbb{E}_{b}\!\left[\int_0^\tau \Omega_{ij}(B_s) \cdot \varepsilon^2 B_s^i(\delta_{ij}-B_s^j)\,ds\right]
+```
 
 For the boundary term: the Tanaka formula for the WF diffusion at the face $\{b_i = 0\}$ gives
 a local time contribution $\int_0^\tau (\partial_{b_i}\omega_i)(B_s)\,dL_s^{F_i}$.
@@ -559,9 +643,11 @@ Brownian motion and the Weitzenböck formula reduces to the standard sphere calc
 
 **Corollary 6.4** (Integration by parts on the simplex). *For smooth $f, g: \Delta_{d-1} \to \mathbb{R}$:*
 
-$$\mathbb{E}_{b}\!\left[\int_0^\tau f(B_s^\varepsilon)\,\mathcal{L}^\varepsilon g(B_s^\varepsilon)\,ds\right]
+```math
+\mathbb{E}_{b}\!\left[\int_0^\tau f(B_s^\varepsilon)\,\mathcal{L}^\varepsilon g(B_s^\varepsilon)\,ds\right]
 = -\mathbb{E}_{b}\!\left[\int_0^\tau g^{\rm FR}(\nabla f, \nabla g)(B_s^\varepsilon)\,ds\right]
-+ \sum_i \mathbb{E}_{b}\!\left[\int_0^\tau f(B_s^\varepsilon) g(B_s^\varepsilon)\,dL_s^{F_i}\right] \tag{6.11}$$
++ \sum_i \mathbb{E}_{b}\!\left[\int_0^\tau f(B_s^\varepsilon) g(B_s^\varepsilon)\,dL_s^{F_i}\right] \tag{6.11}
+```
 
 *This is the stochastic Green's identity on $(\Delta_{d-1}, g^{\rm FR})$, with the boundary
 local times playing the role of the boundary flux integral in the classical Green's identity.*
@@ -571,10 +657,12 @@ local times playing the role of the boundary flux integral in the classical Gree
 **Theorem 6.5** (Stochastic isoperimetric inequality). *For the WF diffusion starting at the
 barycentre $b_0 = \mathbf{1}/d$ and a smooth 1-form $\omega$ with $\|\omega\|_{L^\infty} \leq M$:*
 
-$$\left|\mathbb{E}_{b_0}\!\left[\oint_{\partial \mathcal{C}_\tau} \omega\right]\right|
+```math
+\left|\mathbb{E}_{b_0}\!\left[\oint_{\partial \mathcal{C}_\tau} \omega\right]\right|
 \leq \mathbb{E}_{b_0}\!\left[\int_0^\tau \|d\omega\|_{g^{\rm FR}}(B_s)\,ds\right]
 + \frac{\varepsilon^2(d-2)}{4}\,M^2\,\mathbb{E}_{b_0}[\tau]
-+ M \sum_i \mathbb{E}_{b_0}[L_\tau^{F_i}] \tag{6.12}$$
++ M \sum_i \mathbb{E}_{b_0}[L_\tau^{F_i}] \tag{6.12}
+```
 
 *When $\omega$ is the log-return 1-form $\omega_i = \partial_{b_i} L_T(b)\,db_i$ (gradient of the
 log-growth rate), the stochastic line integral $\mathcal{I}_\tau(\omega)$ measures the
@@ -593,13 +681,17 @@ The heat kernel $p_t^\varepsilon(b, b')$ of the WF diffusion is the fundamental 
 $\partial_t p = \mathcal{L}^\varepsilon p$. Under the Bhattacharyya isometry
 $\phi: \Delta_{d-1} \to S^{d-1}_{+}$, this maps to the heat kernel on the hemisphere:
 
-$$p_t^\varepsilon(b,b') = \tilde{p}_{\varepsilon^2 t/4}\!\left(\phi(b), \phi(b')\right) \tag{7.1}$$
+```math
+p_t^\varepsilon(b,b') = \tilde{p}_{\varepsilon^2 t/4}\!\left(\phi(b), \phi(b')\right) \tag{7.1}
+```
 
 where $\tilde{p}_{s}$ is the standard heat kernel on $S^{d-1}$ (expressible in terms of
 Gegenbauer polynomials). The **spectral expansion** is:
 
-$$p_t^\varepsilon(b,b') = \frac{1}{\text{vol}(\Delta_{d-1})}
-\sum_{k=0}^\infty e^{-\varepsilon^2\lambda_k t/4} \sum_{l} Y_{k,l}(\phi(b)) Y_{k,l}(\phi(b')) \tag{7.2}$$
+```math
+p_t^\varepsilon(b,b') = \frac{1}{\text{vol}(\Delta_{d-1})}
+\sum_{k=0}^\infty e^{-\varepsilon^2\lambda_k t/4} \sum_{l} Y_{k,l}(\phi(b)) Y_{k,l}(\phi(b')) \tag{7.2}
+```
 
 where $Y_{k,l}$ are spherical harmonics of degree $k$ on $S^{d-1}$ and
 $\lambda_k = k(k+d-2)$ are the Laplace-Beltrami eigenvalues on $S^{d-1}$.
@@ -609,7 +701,9 @@ $\lambda_k = k(k+d-2)$ are the Laplace-Beltrami eigenvalues on $S^{d-1}$.
 **Definition 7.1** (Heat kernel effective dimension). *The effective dimension of the FK
 functional at time $T$ is:*
 
-$$d_{\rm eff}(T) := \frac{(\text{tr}\,K_T)^2}{\text{tr}\,K_T^2} \tag{7.3}$$
+```math
+d_{\rm eff}(T) := \frac{(\text{tr}\,K_T)^2}{\text{tr}\,K_T^2} \tag{7.3}
+```
 
 where $K_T(b,b') = W_T(b)\,p_{T_0}^\varepsilon(b,b')\,W_T(b')$ is the kernel of the
 weighted heat semigroup, for some reference diffusion time $T_0 = 1/T$.
@@ -617,7 +711,9 @@ weighted heat semigroup, for some reference diffusion time $T_0 = 1/T$.
 **Theorem 7.2** (JL on the simplex via heat kernel). *The effective dimension $d_{\rm eff}(T)$
 satisfies:*
 
-$$d_{\rm eff}(T) \leq r_{\rm eff}(F(b^{\ast})) + O(1/\sqrt{T}) \tag{7.4}$$
+```math
+d_{\rm eff}(T) \leq r_{\rm eff}(F(b^{\ast})) + O(1/\sqrt{T}) \tag{7.4}
+```
 
 *where $r_{\rm eff}(F) = \|F\|_F^2/\|F\|_2^2$ is the stable rank of the Fisher matrix at $b^{\ast}$.*
 
@@ -625,7 +721,9 @@ $$d_{\rm eff}(T) \leq r_{\rm eff}(F(b^{\ast})) + O(1/\sqrt{T}) \tag{7.4}$$
 $b_1,\ldots,b_n \in \Delta_{d-1}$, there exists a random projection
 $\Pi: \Delta_{d-1} \to \Delta_{r-1}$ with $r = O(r_{\rm eff}\log n/\varepsilon^2)$ such that:*
 
-$$\bigl|\log W_T(\Pi(b)) - \log W_T(b)\bigr| \leq \varepsilon\,|\log W_T(b)| \tag{7.5}$$
+```math
+\bigl|\log W_T(\Pi(b)) - \log W_T(b)\bigr| \leq \varepsilon\,|\log W_T(b)| \tag{7.5}
+```
 
 *simultaneously for all $b \in \{b_1,\ldots,b_n\}$ with high probability.*
 
@@ -685,7 +783,9 @@ When the market parameters $\mu(t), \Sigma(t)$ are themselves stochastic (e.g.\ 
 a hidden Markov model), the log-optimal portfolio $b^{\ast}(t)$ is a stochastic process on $\Delta_{d-1}$.
 The HJ equation (4.1) becomes a **stochastic HJ equation** on $\Delta_{d-1}$:
 
-$$dS + H(b, \nabla S)\,dt + r(b,t)\,dt = \nabla_b S \cdot \sigma^{\rm mkt}(b,t)\,dW_t^{\rm mkt} \tag{8.1}$$
+```math
+dS + H(b, \nabla S)\,dt + r(b,t)\,dt = \nabla_b S \cdot \sigma^{\rm mkt}(b,t)\,dW_t^{\rm mkt} \tag{8.1}
+```
 
 where $\sigma^{\rm mkt}$ is the volatility of the market parameters. The solution theory for
 stochastic HJ on manifolds is an active research area \[Lions–Souganidis 1998\]. We conjecture
@@ -708,10 +808,12 @@ on $\Delta_{d-1}$ for $1 \leq k \leq d-2$. The Weitzenböck correction for $k$-f
 the $k$-th antisymmetrisation of the Ricci curvature, which on the Bhattacharyya sphere is
 $k(d-k-1)/4 \cdot |\omega|^2$. We conjecture:*
 
-$$\mathbb{E}\!\left[\oint_{\partial \mathcal{C}_\tau^k} \omega\right]
+```math
+\mathbb{E}\!\left[\oint_{\partial \mathcal{C}_\tau^k} \omega\right]
 = \mathbb{E}\!\left[\int_{\mathcal{C}_\tau^k} d\omega\right]
 + \frac{\varepsilon^2\,k(d-k-1)}{4}\,\mathbb{E}\!\left[\int_0^\tau |\omega|^2 ds\right]
-+ \text{boundary terms} \tag{8.2}$$
++ \text{boundary terms} \tag{8.2}
+```
 
 *where $\mathcal{C}_\tau^k$ is the stochastic $k$-chain swept by the WF diffusion.*
 
@@ -741,7 +843,9 @@ of this quantum system?*
 **Full proof of Theorem 6.2.** We work in the sphere coordinates $u_i = \sqrt{b_i}$, where
 $u \in S^{d-1}_{+}$ and the WF diffusion becomes:
 
-$$du_i = -\frac{\varepsilon^2(d-1)}{8u_i}\,dt + \frac{\varepsilon}{2}\,d\tilde{W}_{i} \tag{A.1}$$
+```math
+du_i = -\frac{\varepsilon^2(d-1)}{8u_i}\,dt + \frac{\varepsilon}{2}\,d\tilde{W}_{i} \tag{A.1}
+```
 
 where $\tilde{W}$ is Brownian motion on $S^{d-1}$ (the Lévy–Brownian motion on the sphere).
 In these coordinates, the WF diffusion is the **Brownian motion on $S^{d-1}_{+}$** with a
@@ -750,19 +854,25 @@ logarithmic drift term from the boundary.
 For a 1-form $\omega = \sum_i \omega_i db_i = \sum_i 2u_i \omega_i(u^2) du_i =: \sum_i \tilde\omega_i du_i$
 on the sphere, the Stratonovich stochastic line integral is:
 
-$$\mathcal{I}_{t}(\tilde\omega) = \sum_i \int_0^t \tilde\omega_i(u_s) \circ du_s^i \tag{A.2}$$
+```math
+\mathcal{I}_{t}(\tilde\omega) = \sum_i \int_0^t \tilde\omega_i(u_s) \circ du_s^i \tag{A.2}
+```
 
 By the standard Stratonovich-to-Itô conversion on $S^{d-1}$:
 
-$$\mathcal{I}_{t}(\tilde\omega) = \underbrace{\text{Itô integral (martingale)}}
+```math
+\mathcal{I}_{t}(\tilde\omega) = \underbrace{\text{Itô integral (martingale)}}
 + \frac{\varepsilon^2}{2}\int_0^t \sum_{i,j}
-(\partial_{u_j}\tilde\omega_i)(u_s)(\delta_{ij} - u_s^i u_s^j)\,ds$$
+(\partial_{u_j}\tilde\omega_i)(u_s)(\delta_{ij} - u_s^i u_s^j)\,ds
+```
 
 The second-order term $\delta_{ij} - u_i u_j$ is precisely the projection onto the tangent space
 of $S^{d-1}$. This term decomposes as:
 
-$$\frac{\varepsilon^2}{2}\int_0^t \left[\underbrace{\sum_{i<j}(d_{u_i}\tilde\omega_j - d_{u_j}\tilde\omega_i)(u_s)(\delta_{ij}-u_i u_j)\,ds}_{= \int \tilde{d\omega}}
-+ \underbrace{\frac{d-2}{4}\int_0^t |\tilde\omega|^2(u_s)\,ds}_{\text{Weitzenböck}}\right] \tag{A.3}$$
+```math
+\frac{\varepsilon^2}{2}\int_0^t \left[\underbrace{\sum_{i<j}(d_{u_i}\tilde\omega_j - d_{u_j}\tilde\omega_i)(u_s)(\delta_{ij}-u_i u_j)\,ds}_{= \int \tilde{d\omega}}
++ \underbrace{\frac{d-2}{4}\int_0^t |\tilde\omega|^2(u_s)\,ds}_{\text{Weitzenböck}}\right] \tag{A.3}
+```
 
 The Weitzenböck term $\frac{d-2}{4}|\tilde\omega|^2$ arises from the Ricci curvature of $S^{d-1}$:
 for a unit sphere, $\text{Ric} = (d-2)g$, and the Bochner identity applied to $\tilde\omega$
@@ -782,15 +892,19 @@ In sphere coordinates $u = \sqrt{b}$, the log-optimal portfolio $b^{\ast} = u^{*
 the first-order condition $\nabla_\Delta r(b^{\ast}) = \lambda \mathbf{1}$ (gradient parallel to the
 constraint normal). In $u$-coordinates this becomes the **geodesic equation on $S^{d-1}$**:
 
-$$\nabla_{u^{\ast}}^{S^{d-1}} \nabla \tilde{r}(u^{\ast}) = 0 \tag{B.1}$$
+```math
+\nabla_{u^{\ast}}^{S^{d-1}} \nabla \tilde{r}(u^{\ast}) = 0 \tag{B.1}
+```
 
 where $\tilde{r}(u) = r(u^2)$ is the log-growth rate in sphere coordinates. This confirms
 Theorem 4.1: $b^{\ast}$ is a geodesic rest point of the information-geometric flow.
 
 The **Newton step** in Fisher–Rao geometry for updating $b^{\ast}$ after observing a new return $x_t$ is:
 
-$$b^{\ast}_{\rm new} = \Pi_\Delta\!\left(b^{\ast} + [g^{\rm FR}(b^{\ast})]^{-1}\nabla_b r(b^{\ast};\, x_t)\right)
-= \Pi_\Delta\!\left(b^{\ast} + C(b^{\ast})\cdot \frac{x_t}{b^{*T}x_t}\right) \tag{B.2}$$
+```math
+b^{\ast}_{\rm new} = \Pi_\Delta\!\left(b^{\ast} + [g^{\rm FR}(b^{\ast})]^{-1}\nabla_b r(b^{\ast};\, x_t)\right)
+= \Pi_\Delta\!\left(b^{\ast} + C(b^{\ast})\cdot \frac{x_t}{b^{*T}x_t}\right) \tag{B.2}
+```
 
 where $C(b) = [g^{\rm FR}]^{-1}$ is the WF diffusion matrix. This is precisely the
 **natural gradient descent step** on the simplex \[Amari 1998\], and its online version

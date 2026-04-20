@@ -65,11 +65,15 @@ prices and implied volatilities: given the spot price $S$, risk-free rate $r_f$,
 and dividend yield $q$, the implied volatility $\sigma_{\rm impl}(K,T)$ is the
 unique positive solution of
 
-$$C(K,T) = \mathrm{BS}(S, K, T, r_f, q, \sigma_{\rm impl}). \tag{1.1}$$
+```math
+C(K,T) = \mathrm{BS}(S, K, T, r_f, q, \sigma_{\rm impl}). \tag{1.1}
+```
 
 The implied volatility surface is the graph
 
-$$\Sigma_{\rm vol} = \{(k, T, \sigma(k,T)) : k \in \mathbb{R}, T > 0\}, \tag{1.2}$$
+```math
+\Sigma_{\rm vol} = \{(k, T, \sigma(k,T)) : k \in \mathbb{R}, T > 0\}, \tag{1.2}
+```
 
 where $k = \log(K/F)$ is the log-forward-moneyness and $F = Se^{(r_f - q)T}$ is the
 forward price. In the Black-Scholes world, $\sigma$ is constant and $\Sigma_{\rm vol}$
@@ -87,20 +91,26 @@ $\Sigma_{\rm vol}$.
 **Definition 1.1** *(Volatility surface metric)*. *The metric on $\Sigma_{\rm vol}$
 is:*
 
-$$ds^2_{\Sigma} = g_{kk}\,dk^2 + 2g_{kT}\,dk\,dT + g_{TT}\,dT^2, \tag{1.3}$$
+```math
+ds^2_{\Sigma} = g_{kk}\,dk^2 + 2g_{kT}\,dk\,dT + g_{TT}\,dT^2, \tag{1.3}
+```
 
 *where the metric components are inherited from the Fisher-Rao metric on the
 option-implied distribution family:*
 
-$$g_{\alpha\beta}(k,T) = \int \frac{\partial \log p(x \mid k,T)}{\partial \theta^\alpha}
-\cdot \frac{\partial \log p(x \mid k,T)}{\partial \theta^\beta}\,p(x \mid k,T)\,dx, \tag{1.4}$$
+```math
+g_{\alpha\beta}(k,T) = \int \frac{\partial \log p(x \mid k,T)}{\partial \theta^\alpha}
+\cdot \frac{\partial \log p(x \mid k,T)}{\partial \theta^\beta}\,p(x \mid k,T)\,dx, \tag{1.4}
+```
 
 *with $\theta^1 = k$, $\theta^2 = T$.*
 
 For the Black-Scholes case (Gaussian risk-neutral density), the metric components
 are explicitly:
 
-$$g_{kk} = \frac{1}{\sigma^2 T}, \quad g_{TT} = \frac{\sigma^2}{4T^2}, \quad g_{kT} = 0, \tag{1.5}$$
+```math
+g_{kk} = \frac{1}{\sigma^2 T}, \quad g_{TT} = \frac{\sigma^2}{4T^2}, \quad g_{kT} = 0, \tag{1.5}
+```
 
 so that the BS metric is diagonal with the strike direction scaled by $1/(\sigma^2 T)$
 and the time direction by $\sigma^2/(4T^2)$. This is conformally flat with conformal
@@ -135,18 +145,22 @@ they determine the full curvature tensor of $\Sigma_{\rm vol}$.
 At fixed maturity $T$, the implied volatility as a function of log-moneyness admits
 the Taylor expansion around ATM ($k = 0$):
 
-$$\sigma(k, T) = \sigma_{\rm ATM}(T)\left(1 + \alpha_1(T)\cdot k + \alpha_2(T)\cdot k^2
-+ \alpha_3(T)\cdot k^3 + \cdots\right), \tag{2.1}$$
+```math
+\sigma(k, T) = \sigma_{\rm ATM}(T)\left(1 + \alpha_1(T)\cdot k + \alpha_2(T)\cdot k^2
++ \alpha_3(T)\cdot k^3 + \cdots\right), \tag{2.1}
+```
 
 where $\sigma_{\rm ATM}(T) = \sigma(0, T)$ is the at-the-money vol, $\alpha_1$ is the
 normalised skew, and $\alpha_2$ is the normalised convexity (or "smile curvature").
 
 In terms of raw derivatives:
 
-$$\text{Skew:}\quad \frac{\partial\sigma}{\partial k}\bigg|_{k=0} = \sigma_{\rm ATM}\cdot\alpha_1,
+```math
+\text{Skew:}\quad \frac{\partial\sigma}{\partial k}\bigg|_{k=0} = \sigma_{\rm ATM}\cdot\alpha_1,
 \qquad
 \text{Convexity:}\quad \frac{\partial^2\sigma}{\partial k^2}\bigg|_{k=0} = \sigma_{\rm ATM}\cdot 2\alpha_2.
-\tag{2.2}$$
+\tag{2.2}
+```
 
 ### 2.2 The smile-curvature theorem
 
@@ -160,15 +174,19 @@ and second fundamental form $II$. The implied volatility smile at maturity $T$ s
 
 *(i) The normalised skew is:*
 
-$$\alpha_1(T) = -\frac{H_{\rm strike}}{2\sigma_{\rm ATM}^{2} T}, \tag{2.3}$$
+```math
+\alpha_1(T) = -\frac{H_{\rm strike}}{2\sigma_{\rm ATM}^{2} T}, \tag{2.3}
+```
 
 *where $H_{\rm strike} = \langle\vec{H}, e_{\rm strike}\rangle$ is the component of
 the mean curvature in the strike (log-moneyness) direction of the ambient space.*
 
 *(ii) The normalised convexity is:*
 
-$$\alpha_2(T) = \frac{1}{4\sigma_{\rm ATM}^{2} T}\left(H_{\rm strike}^{2}
-+ K_{\rm Gauss}^{\rm strike}\right), \tag{2.4}$$
+```math
+\alpha_2(T) = \frac{1}{4\sigma_{\rm ATM}^{2} T}\left(H_{\rm strike}^{2}
++ K_{\rm Gauss}^{\rm strike}\right), \tag{2.4}
+```
 
 *where $K_{\rm Gauss}^{\rm strike}$ is the contribution of the Gaussian curvature
 of $M$ in the plane containing the strike direction.*
@@ -176,8 +194,10 @@ of $M$ in the plane containing the strike direction.*
 *(iii) The smile curvature — the geodesic curvature of the smile curve on
 $\Sigma_{\rm vol}$ — is:*
 
-$$\kappa_{\rm smile}(T) = \frac{2\alpha_2 - \alpha_1^2}{\sigma_{\rm ATM}(1 + \alpha_1^2)^{3/2}}
-\propto \|II\|^2_{\rm strike}. \tag{2.5}$$
+```math
+\kappa_{\rm smile}(T) = \frac{2\alpha_2 - \alpha_1^2}{\sigma_{\rm ATM}(1 + \alpha_1^2)^{3/2}}
+\propto \|II\|^2_{\rm strike}. \tag{2.5}
+```
 
 *Proof.* We work in the Bhattacharyya embedding $\phi: b \mapsto \sqrt{b} \in S^{d-1}_{+}$.
 The option price $C(K,T)$ depends on the log-optimal portfolio $b^{\ast}$ through the
@@ -187,8 +207,10 @@ direction. By the geometric Black-Scholes framework (DERIVATIVES_CONVEXITY.md,
 Theorem 2.2), the $O(\varepsilon^2)$ correction to the implied volatility at
 moneyness $k$ is
 
-$$\delta\sigma(k) = -\frac{\varepsilon^2}{2\sigma_I}\left\langle II(e_k, e_k), \vec{H}\right\rangle
-+ O(\varepsilon^4), \tag{2.6}$$
+```math
+\delta\sigma(k) = -\frac{\varepsilon^2}{2\sigma_I}\left\langle II(e_k, e_k), \vec{H}\right\rangle
++ O(\varepsilon^4), \tag{2.6}
+```
 
 where $e_k$ is the unit tangent to the strike curve in the Bhattacharyya geometry.
 At $k = 0$ (ATM), $e_k$ is the ATM strike direction, and $\langle II(e_k, e_k), \vec{H}\rangle
@@ -233,8 +255,10 @@ The smile encodes the extrinsic geometry of $M^r$ as seen from the options marke
 At fixed moneyness $k_0$ (typically $k_0 = 0$), the vol term structure has the
 asymptotic form:
 
-$$\sigma(0, T) \approx \sigma_\infty + (\sigma_0 - \sigma_\infty)\cdot e^{-\lambda_1 T}
-+ O(e^{-\lambda_2 T}), \tag{3.1}$$
+```math
+\sigma(0, T) \approx \sigma_\infty + (\sigma_0 - \sigma_\infty)\cdot e^{-\lambda_1 T}
++ O(e^{-\lambda_2 T}), \tag{3.1}
+```
 
 where $\sigma_0 = \lim_{T \to 0^+}\sigma(0,T)$ is the instantaneous (spot) vol,
 $\sigma_\infty = \lim_{T \to \infty}\sigma(0,T)$ is the long-run vol, and $\lambda_1$
@@ -249,7 +273,9 @@ is the spectral gap of the vol-of-vol process.
 approximation — the vol level at which the market manifold would be exactly minimal
 in the time direction:*
 
-$$\sigma_\infty = \sqrt{\mathrm{tr}[F_M^{-1}]}, \tag{3.2}$$
+```math
+\sigma_\infty = \sqrt{\mathrm{tr}[F_M^{-1}]}, \tag{3.2}
+```
 
 *which is the intrinsic volatility of the market manifold from DERIVATIVES_CONVEXITY.md
 (Theorem 2.1).*
@@ -257,14 +283,18 @@ $$\sigma_\infty = \sqrt{\mathrm{tr}[F_M^{-1}]}, \tag{3.2}$$
 *(ii) The mean-reversion rate $\lambda_1$ is the first non-zero eigenvalue of the
 Laplacian of the vol-of-vol process on $\Sigma_{\rm vol}$ — the spectral gap:*
 
-$$\lambda_1 = \inf\left\{\frac{\int_{\Sigma_{\rm vol}}|\nabla f|^2\,d\mathrm{vol}}
+```math
+\lambda_1 = \inf\left\{\frac{\int_{\Sigma_{\rm vol}}|\nabla f|^2\,d\mathrm{vol}}
 {\int_{\Sigma_{\rm vol}}f^2\,d\mathrm{vol}} : f \not\equiv 0, \int f\,d\mathrm{vol} = 0\right\}.
-\tag{3.3}$$
+\tag{3.3}
+```
 
 *(iii) The term structure slope at $T = 0$ is:*
 
-$$\frac{\partial\sigma}{\partial T}\bigg|_{T=0, k=0} = -\lambda_1(\sigma_0 - \sigma_\infty)
-= -\lambda_1\cdot H_{\rm time}, \tag{3.4}$$
+```math
+\frac{\partial\sigma}{\partial T}\bigg|_{T=0, k=0} = -\lambda_1(\sigma_0 - \sigma_\infty)
+= -\lambda_1\cdot H_{\rm time}, \tag{3.4}
+```
 
 *where $H_{\rm time} = \sigma_0 - \sigma_\infty$ is the "time-direction mean curvature"
 — the displacement of the current vol from its long-run (minimal surface) level.*
@@ -311,7 +341,9 @@ conditions to be free of static arbitrage:
 
 **Calendar spread condition.** For all $k$ and $0 < T_1 < T_2$:
 
-$$T_2\,\sigma^2(k, T_2) \geq T_1\,\sigma^2(k, T_1). \tag{4.1}$$
+```math
+T_2\,\sigma^2(k, T_2) \geq T_1\,\sigma^2(k, T_1). \tag{4.1}
+```
 
 Equivalently, the total implied variance $w(k, T) = \sigma^2(k, T)\cdot T$ is
 non-decreasing in $T$ at every strike. No profit from buying a longer-dated option
@@ -319,9 +351,11 @@ and selling a shorter-dated one at the same strike.
 
 **Butterfly condition.** For all $(k, T)$:
 
-$$\frac{\partial^2 C}{\partial K^2}(K, T) \geq 0 \quad\Longleftrightarrow\quad
+```math
+\frac{\partial^2 C}{\partial K^2}(K, T) \geq 0 \quad\Longleftrightarrow\quad
 1 - \frac{k\,w'}{w} + \frac{(w')^2}{4}\left(-\frac{1}{4} - \frac{1}{w} + \frac{k^2}{w^2}\right)
-+ \frac{w''}{2} \geq 0, \tag{4.2}$$
++ \frac{w''}{2} \geq 0, \tag{4.2}
+```
 
 where primes denote $\partial/\partial k$. This ensures that the risk-neutral density
 $\partial^2 C/\partial K^2 \geq 0$ is non-negative — a necessary condition for
@@ -337,7 +371,9 @@ are equivalent to curvature constraints:*
 *(i) Calendar spread condition $\Leftrightarrow$ the mean curvature in the time
 direction satisfies:*
 
-$$H_T(k, T) \geq -\frac{\sigma^2(k,T)}{2T} \quad\text{for all } (k,T). \tag{4.3}$$
+```math
+H_T(k, T) \geq -\frac{\sigma^2(k,T)}{2T} \quad\text{for all } (k,T). \tag{4.3}
+```
 
 *The surface cannot curve too steeply downward in the time direction. The bound
 becomes tighter at short maturities (small $T$): near-term vol is more constrained
@@ -346,8 +382,10 @@ than long-term vol.*
 *(ii) Butterfly condition $\Leftrightarrow$ the curvature in the strike direction
 satisfies:*
 
-$$\kappa_{\rm strike}(k, T) + \frac{1}{\sigma^2 T}\left(1 + \frac{k^2}{\sigma^2 T}\right) \geq 0
-\quad\text{for all } (k,T). \tag{4.4}$$
+```math
+\kappa_{\rm strike}(k, T) + \frac{1}{\sigma^2 T}\left(1 + \frac{k^2}{\sigma^2 T}\right) \geq 0
+\quad\text{for all } (k,T). \tag{4.4}
+```
 
 *The surface cannot be too concave in the strike direction. ATM ($k = 0$), the
 constraint reduces to $\kappa_{\rm strike} + 1/(\sigma^2 T) \geq 0$: the smile
@@ -356,7 +394,9 @@ can be concave, but not more concave than the natural curvature scale $1/(\sigma
 *(iii) Together, the admissible curvatures form a **curvature cone** $\mathcal{C}
 \subset \mathbb{R}^2$:*
 
-$$\mathcal{C}(k, T) = \{(H_T, \kappa_{\rm strike}) : (4.3)\text{ and }(4.4)\text{ hold}\}, \tag{4.5}$$
+```math
+\mathcal{C}(k, T) = \{(H_T, \kappa_{\rm strike}) : (4.3)\text{ and }(4.4)\text{ hold}\}, \tag{4.5}
+```
 
 *which is a convex cone in the $(H_T, \kappa_{\rm strike})$ plane, depending on the
 local vol level $\sigma$ and the position $(k, T)$ on the surface.*
@@ -404,7 +444,9 @@ strategies have negative expected profit after transaction costs.
 Gatheral's SVI (Stochastic Volatility Inspired) parameterisation [2004] writes
 the total implied variance slice at maturity $T$ as:
 
-$$w(k) = a + b\left(\rho(k - m) + \sqrt{(k-m)^2 + \tilde\sigma^2}\right), \tag{5.1}$$
+```math
+w(k) = a + b\left(\rho(k - m) + \sqrt{(k-m)^2 + \tilde\sigma^2}\right), \tag{5.1}
+```
 
 where $w(k) = \sigma^2(k,T)\cdot T$ is the total implied variance, and
 $(a, b, \rho, m, \tilde\sigma)$ are the five SVI parameters:
@@ -436,8 +478,10 @@ of the geodesic through ATM.*
 from $(k, T)$ to the minimum-variance point $(m, T)$ in the Fisher-Rao metric on
 the slice at maturity $T$, to leading order in the curvature:*
 
-$$d_{g^{\rm FR}}\big((k, T), (m, T)\big) = \sqrt{(k-m)^2 + \tilde\sigma^2} + O(\kappa^2).
-\tag{5.2}$$
+```math
+d_{g^{\rm FR}}\big((k, T), (m, T)\big) = \sqrt{(k-m)^2 + \tilde\sigma^2} + O(\kappa^2).
+\tag{5.2}
+```
 
 *(iv) The linear coefficient $b\rho$ controls the geodesic direction (tilt), while
 $b\sqrt{(k-m)^2 + \tilde\sigma^2}$ controls the geodesic distance (curvature).
@@ -486,8 +530,10 @@ accuracy and are more prone to producing arbitrage-violating surfaces.
 
 The SABR model (Hagan, Kumar, Lesniewski, Woodward [2002]) specifies:
 
-$$dF = \sigma F^\beta\,dW_1, \qquad d\sigma = \nu\sigma\,dW_2, \qquad
-\langle dW_1, dW_2\rangle = \rho\,dt, \tag{6.1}$$
+```math
+dF = \sigma F^\beta\,dW_1, \qquad d\sigma = \nu\sigma\,dW_2, \qquad
+\langle dW_1, dW_2\rangle = \rho\,dt, \tag{6.1}
+```
 
 where $F$ is the forward price, $\sigma$ is the stochastic volatility, $\beta \in [0,1]$
 is the CEV exponent, $\nu > 0$ is the vol-of-vol, and $\rho \in [-1,1]$ is the
@@ -516,8 +562,10 @@ manifold framework, this coupling is a **connection** between the tangent spaces
 $M_{\rm price}$ and $M_{\rm vol}$ — an off-diagonal term in the combined metric
 tensor on $M_{\rm price} \times M_{\rm vol}$:
 
-$$g_{\rm SABR} = \begin{pmatrix} g_F & \rho\sqrt{g_F g_\sigma} \\
-\rho\sqrt{g_F g_\sigma} & g_\sigma \end{pmatrix}. \tag{6.2}$$
+```math
+g_{\rm SABR} = \begin{pmatrix} g_F \& \rho\sqrt{g_F g_\sigma} \\
+\rho\sqrt{g_F g_\sigma} \& g_\sigma \end{pmatrix}. \tag{6.2}
+```
 
 The determinant $\det(g_{\rm SABR}) = g_F g_\sigma(1 - \rho^2)$ is positive iff
 $|\rho| < 1$: the product metric is non-degenerate exactly when the two processes
@@ -528,8 +576,10 @@ are not perfectly correlated. Perfect correlation ($|\rho| = 1$) collapses the
 
 The celebrated SABR implied vol formula of Hagan et al. [2002]:
 
-$$\sigma_{\rm impl}(K) \approx \frac{\nu\cdot\xi}{\hat\sigma(f_{\rm mid})
-\cdot\chi(\xi)}\left(1 + O(T)\right), \tag{6.3}$$
+```math
+\sigma_{\rm impl}(K) \approx \frac{\nu\cdot\xi}{\hat\sigma(f_{\rm mid})
+\cdot\chi(\xi)}\left(1 + O(T)\right), \tag{6.3}
+```
 
 where $\xi = (\nu/\hat\sigma(f_{\rm mid}))\cdot(FK)^{(1-\beta)/2}\log(F/K)$,
 $\chi(\xi) = \log\left(\frac{\sqrt{1 - 2\rho\xi + \xi^2} + \xi - \rho}{1 - \rho}\right)$,
@@ -561,8 +611,10 @@ This explains both the success and the limitations of SABR:
 
 The Willmore energy of the vol surface is:
 
-$$\mathcal{W}(\Sigma_{\rm vol}) = \int_{\Sigma_{\rm vol}} H^2(k, T)\,d\mathrm{vol}_\Sigma
-= \int_0^\infty\int_{-\infty}^\infty H^2(k,T)\,\sqrt{\det g_\Sigma}\,dk\,dT, \tag{7.1}$$
+```math
+\mathcal{W}(\Sigma_{\rm vol}) = \int_{\Sigma_{\rm vol}} H^2(k, T)\,d\mathrm{vol}_\Sigma
+= \int_0^\infty\int_{-\infty}^\infty H^2(k,T)\,\sqrt{\det g_\Sigma}\,dk\,dT, \tag{7.1}
+```
 
 where $H$ is the mean curvature of $\Sigma_{\rm vol}$ in its ambient space and
 $d\mathrm{vol}_\Sigma$ is the volume form induced by the metric $g_\Sigma$.
@@ -579,8 +631,10 @@ Willmore energy.
 *The CBOE VVIX index — the implied volatility of VIX options, measuring the
 vol-of-vol — satisfies:*
 
-$$\mathrm{VVIX}^{2} = c_0 \cdot \mathcal{W}\!\left(\Sigma_{\rm vol}\big|_{k=0}\right)
-+ O(\varepsilon^2), \tag{7.2}$$
+```math
+\mathrm{VVIX}^{2} = c_0 \cdot \mathcal{W}\!\left(\Sigma_{\rm vol}\big|_{k=0}\right)
++ O(\varepsilon^2), \tag{7.2}
+```
 
 *where $c_0 > 0$ is a normalisation constant depending on the VIX calculation
 methodology, and $\Sigma_{\rm vol}|_{k=0}$ is the ATM slice of the vol surface
@@ -629,8 +683,10 @@ $\Sigma_{\rm vol}(t)$ for the vol surface observed at calendar time $t$.
 **Theorem 8.1** *(Vol surface MCF)*. *Under no-arbitrage, the time evolution of
 the implied vol surface satisfies a constrained mean curvature flow:*
 
-$$\frac{\partial\sigma}{\partial t}(k, T, t) = -\lambda_{\rm MCF}\cdot H(k,T,t)\cdot\nu(k,T,t)
-+ \mu_{\rm info}(k,T,t) + \mu_{\rm mr}(k,T,t), \tag{8.1}$$
+```math
+\frac{\partial\sigma}{\partial t}(k, T, t) = -\lambda_{\rm MCF}\cdot H(k,T,t)\cdot\nu(k,T,t)
++ \mu_{\rm info}(k,T,t) + \mu_{\rm mr}(k,T,t), \tag{8.1}
+```
 
 *where:*
 - *$H(k,T,t)$ is the mean curvature of $\Sigma_{\rm vol}(t)$ at $(k,T)$,*
@@ -674,7 +730,9 @@ February 2018, March 2020), the vol surface takes approximately 20-40 trading
 days to return to its pre-shock configuration. The curvature decays approximately
 exponentially:
 
-$$|H(k, T, t)| \approx |H(k, T, t_0)|\cdot e^{-\lambda_1(t - t_0)}, \tag{8.2}$$
+```math
+|H(k, T, t)| \approx |H(k, T, t_0)|\cdot e^{-\lambda_1(t - t_0)}, \tag{8.2}
+```
 
 with $\lambda_1 \approx 0.03$-$0.06$ per trading day (roughly 8-15 per year). This
 is consistent with the spectral gap $\lambda_1 \approx 12$/year estimated for
@@ -774,9 +832,11 @@ is minimax optimal for the vol trading problem.
 **Theorem 10.1** *(Vol Sharpe = vol surface curvature)*. *The maximum attainable
 Sharpe ratio from volatility trading strategies is:*
 
-$$\mathrm{Sharpe}_{\rm vol}^{\ast} = \|H\|_{L^2(\Sigma_{\rm vol})}
+```math
+\mathrm{Sharpe}_{\rm vol}^{\ast} = \|H\|_{L^2(\Sigma_{\rm vol})}
 = \left(\int_{\Sigma_{\rm vol}} H^2\,d\mathrm{vol}_\Sigma\right)^{1/2}
-= \sqrt{\mathcal{W}(\Sigma_{\rm vol})}. \tag{10.1}$$
+= \sqrt{\mathcal{W}(\Sigma_{\rm vol})}. \tag{10.1}
+```
 
 *This is the vol-market version of the Sharpe-curvature identity (R1,
 MINIMAL_SURFACE.md). The proof is identical: the vol surface is a

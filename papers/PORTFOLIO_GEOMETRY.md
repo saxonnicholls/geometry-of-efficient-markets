@@ -60,7 +60,9 @@ $\delta$, and rebalance by following the **geodesic on $M$** from $b_t$ toward $
 market near a minimal surface $M^{\ast}$ with first Jacobi eigenvalue $\lambda_1$, the
 optimal rebalancing frequency is:*
 
-$$f^{\ast} = \frac{\lambda_1}{\log(1/\varepsilon_{\rm tol})} \tag{1.1}$$
+```math
+f^{\ast} = \frac{\lambda_1}{\log(1/\varepsilon_{\rm tol})} \tag{1.1}
+```
 
 *rebalances per unit time, where $\varepsilon_{\rm tol}$ is the tolerance on the
 deviation from $M^{\ast}$. This is the frequency at which the geometric drift from
@@ -100,7 +102,9 @@ where $f_k = \Pi_\Delta(V_r e_k)$. The $r=1$ case is the classical two-fund
 
 **Minimum turnover:** For a portfolio drifting from $b^{\ast}$ due to price changes:
 
-$$\mathrm{Turnover} = \|\dot{b}_{t}\|_{g^{\rm FR}} = |F(b^{\ast})^{-1/2}\Sigma b^{\ast}\,r_t| \tag{2.1}$$
+```math
+\mathrm{Turnover} = \|\dot{b}_{t}\|_{g^{\rm FR}} = |F(b^{\ast})^{-1/2}\Sigma b^{\ast}\,r_t| \tag{2.1}
+```
 
 where $r_t$ is the period return vector. This is the **geodesic speed** on $M$ — the rate
 at which the portfolio moves in Fisher-Rao distance due to market returns. The minimum
@@ -128,8 +132,10 @@ The Clifford torus market ($d=4$, $r=2$, Section 8.2 of MINIMAL_SURFACE):
 The four "pure portfolios" are: $(1,0,0,0)$, $(0,1,0,0)$, $(0,0,1,0)$, $(0,0,0,1)$.
 The Clifford torus portfolio is:
 
-$$b^{\ast}(\theta,\varphi) = (\tfrac{1}{2}\cos^2\theta, \tfrac{1}{2}\sin^2\theta, 
-\tfrac{1}{2}\cos^2\varphi, \tfrac{1}{2}\sin^2\varphi) \tag{3.1}$$
+```math
+b^{\ast}(\theta,\varphi) = (\tfrac{1}{2}\cos^2\theta, \tfrac{1}{2}\sin^2\theta,
+\tfrac{1}{2}\cos^2\varphi, \tfrac{1}{2}\sin^2\varphi) \tag{3.1}
+```
 
 ### 3.2 The explicit rebalancing rules
 
@@ -137,7 +143,9 @@ $$b^{\ast}(\theta,\varphi) = (\tfrac{1}{2}\cos^2\theta, \tfrac{1}{2}\sin^2\theta
 
 The mean curvature drift at $p \neq 1/2$ is:
 
-$$\dot{p} = -\varepsilon^2 H(p) = -\varepsilon^2\frac{|1-2p|}{4\sqrt{p(1-p)}} \tag{3.2}$$
+```math
+\dot{p} = -\varepsilon^2 H(p) = -\varepsilon^2\frac{|1-2p|}{4\sqrt{p(1-p)}} \tag{3.2}
+```
 
 Rebalancing rule: **whenever $|p - 1/2| > \delta_p$, trade toward $p = 1/2$ at rate $H(p)$**.
 This is the "group-relative value" trade — buy the underweight group, sell the overweight.
@@ -151,13 +159,17 @@ triggers rebalancing.
 
 Within group 1, the angle $\theta_t$ drifts due to relative returns:
 
-$$\dot\theta = \frac{r_{t,1} - r_{t,2}}{2} + \varepsilon^2(\lambda_1\theta + \ldots) \tag{3.3}$$
+```math
+\dot\theta = \frac{r_{t,1} - r_{t,2}}{2} + \varepsilon^2(\lambda_1\theta + \ldots) \tag{3.3}
+```
 
 The mean curvature for within-group drift (mode $(1,0)$ of the Clifford torus Jacobi
 spectrum, $\lambda_{10} = -1/2$ in Bhattacharyya normalisation) creates a predictable
 within-group momentum signal:
 
-$$\text{Within-group Sharpe} = |\lambda_{10}|^{1/2}\varepsilon = \frac{1}{\sqrt{2T}} \tag{3.4}$$
+```math
+\text{Within-group Sharpe} = |\lambda_{10}|^{1/2}\varepsilon = \frac{1}{\sqrt{2T}} \tag{3.4}
+```
 
 This is small ($1/\sqrt{2\times 252} \approx 0.044$) but non-zero — **there is a
 systematic within-group momentum signal of Sharpe $\approx 0.04$ per year in a
@@ -184,8 +196,10 @@ The Veronese surface ($d=5$, $r=2$, Section 5.3 of CLASSIFICATION.md):
 Five assets with a cyclic $\mathbb{Z}_{3}$ symmetry among three "base exposures"
 $(x_1, x_2, x_3)$, with portfolio weights:
 
-$$b_i = v_i^2, \qquad v = \frac{1}{\sqrt{3}}(x_1x_2, x_2x_3, x_3x_1,
-\frac{x_1^2-x_2^2}{2}, \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}) \tag{4.1}$$
+```math
+b_i = v_i^2, \qquad v = \frac{1}{\sqrt{3}}(x_1x_2, x_2x_3, x_3x_1,
+\frac{x_1^2-x_2^2}{2}, \frac{x_1^2+x_2^2-2x_3^2}{2\sqrt{3}}) \tag{4.1}
+```
 
 **Three-fund separation:** The Veronese portfolio lies in the three-dimensional
 space of products $\{x_ix_j\}$ — it is a **pure second-harmonic portfolio**, holding
@@ -219,8 +233,10 @@ Lawson surfaces $\tau_{m,n}$ have genus $g = mn$, corresponding to $mn$ independ
 feedback loops between two factor groups. The portfolio parameterisation
 (MINIMAL_SURFACE equation 8.16):
 
-$$b(\theta,\varphi) = (\sin^2\!\rho\cos^2(m\theta), \sin^2\!\rho\sin^2(m\theta), 
-\cos^2\!\rho\cos^2(n\varphi), \cos^2\!\rho\sin^2(n\varphi)) \tag{5.1}$$
+```math
+b(\theta,\varphi) = (\sin^2\!\rho\cos^2(m\theta), \sin^2\!\rho\sin^2(m\theta),
+\cos^2\!\rho\cos^2(n\varphi), \cos^2\!\rho\sin^2(n\varphi)) \tag{5.1}
+```
 
 where $\rho = \rho(\theta,\varphi)$ solves a nonlinear ODE coupling the two groups.
 
@@ -255,8 +271,10 @@ Lawson surface structure.
 Black and Litterman \[1992\] combine market equilibrium weights (prior) with investor
 views (likelihood) via Bayesian updating:
 
-$$\mu_{\rm BL} = [(\tau\Sigma)^{-1} + P^T\Omega^{-1}P]^{-1}
-[(\tau\Sigma)^{-1}\Pi + P^T\Omega^{-1}Q] \tag{6.1}$$
+```math
+\mu_{\rm BL} = [(\tau\Sigma)^{-1} + P^T\Omega^{-1}P]^{-1}
+[(\tau\Sigma)^{-1}\Pi + P^T\Omega^{-1}Q] \tag{6.1}
+```
 
 where $\Pi$ is the equilibrium return vector, $P$ is the pick matrix, $Q$ is the
 view return vector, and $\Omega$ is the view uncertainty.
@@ -278,13 +296,17 @@ $b^{\ast} \in M$ and a view $v \in T_{b^{\ast}}\Delta_{d-1}$ with confidence $\o
 
 2. *The tangential view $v_M$ moves the portfolio along $M$ to a new point $b^{**}$
    via the geodesic on $(M, g_M)$:*
-   $$b^{**} = \exp_{b^{\ast}}^{M}(\omega\cdot v_M) \tag{6.2}$$
+   ```math
+   b^{**} = \exp_{b^{\ast}}^{M}(\omega\cdot v_M) \tag{6.2}
+   ```
 
 3. *The normal view $v_N$ moves the portfolio off $M$ by distance $\omega\|v_N\|_{g^{\rm FR}}$,
    creating an idiosyncratic tilt with hedging error $\|v_N\|^2_{g^{\rm FR}}$.*
 
 4. *The manifold Black-Litterman portfolio:*
-   $$b_{\rm MBL} = \Pi_\Delta\left(b^{**} + \frac{\omega}{\omega + 1/T}v_N\right) \tag{6.3}$$
+   ```math
+   b_{\rm MBL} = \Pi_\Delta\left(b^{**} + \frac{\omega}{\omega + 1/T}v_N\right) \tag{6.3}
+   ```
 
 *where $1/T$ is the prior strength (inverse of observation count).*
 
@@ -302,7 +324,9 @@ $b^{\ast} \in M$ and a view $v \in T_{b^{\ast}}\Delta_{d-1}$ with confidence $\o
 a portfolio off $M$ with mean curvature $H \neq 0$. The expected alpha of this
 off-manifold position is:
 
-$$\alpha_{\rm view} = \langle v_N, \vec{H}(b^{\ast})\rangle_{g^{\rm FR}} \leq |v_N|_{g^{\rm FR}}\cdot|H| \tag{6.4}$$
+```math
+\alpha_{\rm view} = \langle v_N, \vec{H}(b^{\ast})\rangle_{g^{\rm FR}} \leq |v_N|_{g^{\rm FR}}\cdot|H| \tag{6.4}
+```
 
 (by Cauchy-Schwarz, with equality when the view is aligned with the mean curvature).
 **Views aligned with $\vec{H}$ earn maximum alpha per unit of view uncertainty** — the
@@ -313,7 +337,9 @@ manifold BL automatically identifies the highest-Sharpe view direction.
 When the market manifold $M$ is estimated from data (PCA + log-optimal solve), there
 is estimation uncertainty in $M$ itself. The **manifold estimation uncertainty** is:
 
-$$\Delta M \sim \sqrt{\frac{r(d-r)}{T}} \tag{6.5}$$
+```math
+\Delta M \sim \sqrt{\frac{r(d-r)}{T}} \tag{6.5}
+```
 
 (the Fisher information bound on estimating a $r$-dimensional subspace of $\mathbb{R}^{d}$
 from $T$ observations). For $d=50$, $r=4$, $T=252$: $\Delta M \approx \sqrt{4\times 46/252} \approx 0.85$ — substantial uncertainty in the manifold itself.
@@ -321,7 +347,9 @@ from $T$ observations). For $d=50$, $r=4$, $T=252$: $\Delta M \approx \sqrt{4\ti
 The **full Manifold Black-Litterman** must account for both portfolio uncertainty (Fisher-Rao
 metric) and manifold uncertainty (6.5). The combined posterior is:
 
-$$b_{\rm full-MBL} = \hat{b}_{T}^{M} \otimes \hat{M}_{T} \tag{6.6}$$
+```math
+b_{\rm full-MBL} = \hat{b}_{T}^{M} \otimes \hat{M}_{T} \tag{6.6}
+```
 
 the tensor product of the MUP weights and the estimated manifold — a distribution
 over both $b$ and $M$ simultaneously.
@@ -371,7 +399,9 @@ For each market type, the rebalancing rule follows the geodesic on $M$:
 
 Decompose portfolio risk using the normal bundle:
 
-$$\text{Total risk} = \underbrace{|b_t - b^{\ast}|^2_{F_M}}_{\text{factor risk}} + \underbrace{|b_t - b^{\ast}|^2_{F_N}}_{\text{idiosyncratic risk}} + \underbrace{H^2\tau}_{\text{alpha risk}} \tag{7.1}$$
+```math
+\text{Total risk} = \underbrace{|b_t - b^{\ast}|^2_{F_M}}_{\text{factor risk}} + \underbrace{|b_t - b^{\ast}|^2_{F_N}}_{\text{idiosyncratic risk}} + \underbrace{H^2\tau}_{\text{alpha risk}} \tag{7.1}
+```
 
 where $F_M = V_r^TFV_r$ and $F_N = V_N^TFV_N$ are the factor and idiosyncratic
 Fisher matrices.
@@ -380,7 +410,9 @@ Fisher matrices.
 
 The alpha signal is the mean curvature drift $-\vec{H}(b_t)$:
 
-$$\alpha = -\varepsilon^2\vec{H}(b_t) = -\frac{1}{T}\Pi_{N_{b_t}M}\nabla L_T(b_t) \tag{7.2}$$
+```math
+\alpha = -\varepsilon^2\vec{H}(b_t) = -\frac{1}{T}\Pi_{N_{b_t}M}\nabla L_T(b_t) \tag{7.2}
+```
 
 This is computable from the Fisher matrix and the log-optimal portfolio.
 Maximum Sharpe direction: $\vec{H}/|H|$ (normal to $M$ in the mean curvature direction).
@@ -393,7 +425,9 @@ Maximum Sharpe direction: $\vec{H}/|H|$ (normal to $M$ in the mean curvature dir
 tracking error $\varepsilon$ (maximum $d_{g^{\rm FR}}$ deviation from $b^{\ast}$), the minimum
 turnover portfolio on $M$ solving:*
 
-$$\min_{\tau\geq 0} \|\dot{b}\|_{g^{\rm FR}} \quad \text{s.t.} \quad d_{g^{\rm FR}}(b,b^{\ast}) \leq \varepsilon \tag{8.1}$$
+```math
+\min_{\tau\geq 0} \|\dot{b}\|_{g^{\rm FR}} \quad \text{s.t.} \quad d_{g^{\rm FR}}(b,b^{\ast}) \leq \varepsilon \tag{8.1}
+```
 
 *is the portfolio that follows the **unit-speed geodesic** on $M$ — it moves toward $b^{\ast}$
 at constant Fisher-Rao speed. The minimum turnover is $\varepsilon\cdot\lambda_1^{1/2}/\sqrt{2}$
@@ -402,7 +436,9 @@ at constant Fisher-Rao speed. The minimum turnover is $\varepsilon\cdot\lambda_1
 **Result 8.2** *(Diversification and manifold dimension)*. *The effective number of bets
 (HHI-based diversification) of the log-optimal portfolio on manifold $M^r$ is:*
 
-$$N_{\rm eff}(b^{\ast}) = \frac{1}{\sum_i b_i^{*2}} = \frac{1}{|b^{\ast}|^2} \geq r+1 \tag{8.2}$$
+```math
+N_{\rm eff}(b^{\ast}) = \frac{1}{\sum_i b_i^{*2}} = \frac{1}{|b^{\ast}|^2} \geq r+1 \tag{8.2}
+```
 
 *with equality when $b^{\ast}$ is at the centroid of $M$. The minimum diversification is $r+1$
 funds — one per factor plus one "market" fund. You cannot diversify below $r+1$
@@ -411,7 +447,9 @@ funds without leaving the market manifold.*
 **Result 8.3** *(Geometric Sharpe budget allocation)*. *The total Sharpe budget of the
 manifold is:*
 
-$$\mathrm{Sharpe}_{\rm total}^{2} = \sum_{k=r+1}^{d-1}\frac{(b^{\ast}\cdot\nu_k)^2}{\lambda_k} \tag{8.3}$$
+```math
+\mathrm{Sharpe}_{\rm total}^{2} = \sum_{k=r+1}^{d-1}\frac{(b^{\ast}\cdot\nu_k)^2}{\lambda_k} \tag{8.3}
+```
 
 *This decomposes additively across the $d-1-r$ normal directions — each normal direction
 contributes an independent Sharpe opportunity. The optimal allocation of the Sharpe budget:

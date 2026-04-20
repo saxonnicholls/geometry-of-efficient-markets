@@ -74,7 +74,9 @@ no-arbitrage; lattice eligibility; topological constraint.
 Grassberger and Procaccia \[1983\] proposed estimating the dimension of a strange
 attractor from a scalar time series $\{x_t\}_{t=1}^{T}$ via the **correlation integral**:
 
-$$C(\epsilon) = \lim_{N\to\infty}\frac{2}{N(N-1)}\sum_{1\leq i<j\leq N}\mathbf{1}[\|x_i - x_j\| < \epsilon] \tag{1.1}$$
+```math
+C(\epsilon) = \lim_{N\to\infty}\frac{2}{N(N-1)}\sum_{1\leq i<j\leq N}\mathbf{1}[\|x_i - x_j\| < \epsilon] \tag{1.1}
+```
 
 For a set with fractal dimension $\nu$: $C(\epsilon)\sim\epsilon^\nu$ as $\epsilon\to 0$.
 The **correlation dimension** $\nu$ is estimated as the slope of $\log C(\epsilon)$
@@ -96,7 +98,9 @@ or a statistical artefact of the finite sample?
 delay-embedded return series $\{\mathbf{x}(t)\}_{t=1}^{T}$ with embedding dimension
 $m\geq 2r+1$ has correlation dimension:*
 
-$$\nu = r \tag{1.2}$$
+```math
+\nu = r \tag{1.2}
+```
 
 *exactly. The Grassberger-Procaccia estimate converges: $\hat\nu \to r$ as $T\to\infty$
 with convergence rate $O(1/\log T)$.*
@@ -125,7 +129,9 @@ of CHAOS_TAKENS.md. All three methods estimate the same quantity $r$.
 For the Clifford torus market ($M = T^2$, $r=2$): the correlation integral computed
 from the theta-function transition density is:
 
-$$C(\epsilon) = \int_{T^2}\int_{T^2}\mathbf{1}[d_{g_M}(b,b')<\epsilon]\,\pi(db)\,\pi(db') \tag{1.3}$$
+```math
+C(\epsilon) = \int_{T^2}\int_{T^2}\mathbf{1}[d_{g_M}(b,b')<\epsilon]\,\pi(db)\,\pi(db') \tag{1.3}
+```
 
 where $\pi = d\mathrm{vol}_{T^2}/\mathrm{vol}(T^2)$ is the uniform measure.
 For the flat torus: $C(\epsilon)\sim(\epsilon/\pi)^2$ for small $\epsilon$ — exactly
@@ -137,7 +143,9 @@ integrated correlation function at infinite time — the equilibrium version of 
 Grassberger and Procaccia also showed that the **Kolmogorov-Sinai entropy** can be
 estimated from the correlation integral via the conditional probability:
 
-$$K_2 = -\lim_{\tau\to\infty}\frac{1}{\tau}\log C_2(\epsilon, \tau) \tag{1.4}$$
+```math
+K_2 = -\lim_{\tau\to\infty}\frac{1}{\tau}\log C_2(\epsilon, \tau) \tag{1.4}
+```
 
 where $C_2$ is the second-order correlation integral over $\tau$-step pairs.
 
@@ -145,7 +153,9 @@ where $C_2$ is the second-order correlation integral over $\tau$-step pairs.
 equals the Kelly growth rate $h_{\rm Kelly}$ (from INFORMATION_THEORY.md, the SMB theorem).
 Therefore:
 
-$$K_2 = h_{\rm Kelly}(b^{\ast}) \tag{1.5}$$
+```math
+K_2 = h_{\rm Kelly}(b^{\ast}) \tag{1.5}
+```
 
 The Grassberger $K_2$ entropy estimate is a practical estimator of the Kelly rate.
 This gives three independent empirical estimators of $h_{\rm Kelly}$:
@@ -179,7 +189,9 @@ These methods apply to any regular lattice and give exact results for:
 $\chi(M)$, not all lattice types are eligible as the Delaunay graph. The eligibility
 constraint follows from the Euler-Poincaré formula for cell decompositions:
 
-$$V - E + F = \chi(M) \tag{2.1}$$
+```math
+V - E + F = \chi(M) \tag{2.1}
+```
 
 where $V$ = vertices (Voronoi cells), $E$ = edges (Delaunay adjacencies), $F$ = faces
 (higher-dimensional Delaunay cells), and $\chi(M)$ is the Euler characteristic of $M^r$.
@@ -224,13 +236,17 @@ it cannot be specified independently.
 
 The Guttman-Brak transfer matrix for counting lattice walks of length $n$ is:
 
-$$T_{ij} = \mathbf{1}[\text{step from cell }i\text{ to cell }j\text{ is allowed}]
-= \mathbf{1}[(i,j)\in\mathcal{D}(M)] = A_{ij} \tag{2.2}$$
+```math
+T_{ij} = \mathbf{1}[\text{step from cell }i\text{ to cell }j\text{ is allowed}]
+= \mathbf{1}[(i,j)\in\mathcal{D}(M)] = A_{ij} \tag{2.2}
+```
 
 the Delaunay adjacency matrix of the market manifold.
 
 **The number of admissible Voronoi paths of length $n$:**
-$$a_n = \mathbf{1}^{T} A^n \mathbf{1} = \sum_{i,j}(A^n)_{ij} = \mathrm{tr}(A^n) + (\text{off-diagonal terms}) \tag{2.3}$$
+```math
+a_n = \mathbf{1}^{T} A^n \mathbf{1} = \sum_{i,j}(A^n)_{ij} = \mathrm{tr}(A^n) + (\text{off-diagonal terms}) \tag{2.3}
+```
 
 For the Clifford torus ($4\times4$ matrix $A^{T^2}$ from FILTRATIONS.md equation 3.7):
 $a_n = \mathrm{tr}((A^{T^2})^n) = 2\cdot2^n$ — consistent with the $2\cdot 2^n$ atom count
@@ -258,7 +274,9 @@ connected cluster exists.
 *The bond percolation threshold on the Delaunay graph $\mathcal{D}(M)$ of the market
 manifold satisfies:*
 
-$$p_c \approx h_M \quad\text{(for small }h_M\text{)} \tag{2.4}$$
+```math
+p_c \approx h_M \quad\text{(for small }h_M\text{)} \tag{2.4}
+```
 
 *where $h_M$ is the Cheeger constant of $M^r$. Near a financial crisis ($h_M\to0$):
 the percolation threshold $p_c\to0$ — even a very small probability of edge activation
@@ -299,14 +317,18 @@ The **self-avoiding walk** (SAW) on the Delaunay graph counts paths that do not
 revisit any vertex. The number of SAWs of length $n$ from a fixed vertex is $c_n$,
 and the **connective constant** $\mu$ is:
 
-$$\mu = \lim_{n\to\infty}c_n^{1/n} \tag{2.5}$$
+```math
+\mu = \lim_{n\to\infty}c_n^{1/n} \tag{2.5}
+```
 
 The SAW partition function $F(x) = \sum_n c_n x^n$ has radius of convergence $1/\mu$.
 
 **Theorem 2.4** *(Connective constant = exponential of Kelly rate)*.
 *The connective constant of the Delaunay graph of the market manifold is:*
 
-$$\mu = e^{h_{\rm Kelly}} \tag{2.6}$$
+```math
+\mu = e^{h_{\rm Kelly}} \tag{2.6}
+```
 
 *The SAW partition function has a singularity at $x_c = e^{-h_{\rm Kelly}}$.*
 
@@ -336,7 +358,9 @@ The exact solution gives $c_n \sim \mu^n n^{\gamma-1}$ with $\gamma = 3/2$ (the
 Following Wilf's \[1994\] philosophy — "a generating function is a clothesline on
 which we hang up a sequence of numbers for display" — define:
 
-$$F(x) = \sum_{n=0}^\infty a_n x^n \tag{3.1}$$
+```math
+F(x) = \sum_{n=0}^\infty a_n x^n \tag{3.1}
+```
 
 where $a_n$ = number of admissible Voronoi cell sequences of length $n$ under the
 no-arbitrage constraint. "Admissible" means: (1) each consecutive pair of cells is
@@ -345,16 +369,20 @@ Delaunay-adjacent, and (2) the path does not create a Yang-Baxter arbitrage cycl
 
 **Computing $a_n$:** From the transfer matrix:
 
-$$a_n = \mathbf{1}^{T} A^n \mathbf{1}
-= \sum_k v_k^T \mathbf{1} \cdot \lambda_k^n \cdot \mathbf{1}^{T} v_k \tag{3.2}$$
+```math
+a_n = \mathbf{1}^{T} A^n \mathbf{1}
+= \sum_k v_k^T \mathbf{1} \cdot \lambda_k^n \cdot \mathbf{1}^{T} v_k \tag{3.2}
+```
 
 where $\lambda_k$ and $v_k$ are eigenvalues/eigenvectors of $A$.
 
 **The generating function:**
 
-$$F(x) = \sum_{n=0}^\infty a_n x^n
+```math
+F(x) = \sum_{n=0}^\infty a_n x^n
 = \mathbf{1}^{T}\left(\sum_{n=0}^\infty (xA)^n\right)\mathbf{1}
-= \mathbf{1}^{T}(I - xA)^{-1}\mathbf{1} \tag{3.3}$$
+= \mathbf{1}^{T}(I - xA)^{-1}\mathbf{1} \tag{3.3}
+```
 
 This is a rational function of $x$ with poles at $x_k = 1/\lambda_k$.
 
@@ -371,7 +399,9 @@ function is a rational function of $x$ with the Kelly rate encoding the dominant
 For the Clifford torus with adjacency matrix $A^{T^2}$ (FILTRATIONS.md equation 3.7),
 the generating function $F(x) = \mathbf{1}^{T}(I-xA^{T^2})^{-1}\mathbf{1}$ satisfies:
 
-$$F(x) = \frac{1 - 4x^2}{1 - 2x - 2x^2} \tag{3.4}$$
+```math
+F(x) = \frac{1 - 4x^2}{1 - 2x - 2x^2} \tag{3.4}
+```
 
 (after row-reducing the $4\times 4$ system). The poles are at $x^2+x/2-1/2=0$,
 giving $x_c = (-1+\sqrt{3})/2 \approx 0.366$. Check: $\rho(A^{T^2}) = 2$, so
@@ -381,7 +411,9 @@ gives $x_c = 1/\rho(A) = 1/2$. ✓
 
 **Extracting asymptotics via singularity analysis** (Flajolet-Sedgewick \[2009\]):
 
-$$a_n \sim C\cdot\rho(A)^n = C\cdot 2^n \text{ for the Clifford torus} \tag{3.5}$$
+```math
+a_n \sim C\cdot\rho(A)^n = C\cdot 2^n \text{ for the Clifford torus} \tag{3.5}
+```
 
 consistent with the filtration atom count $2\cdot 2^n$ (FILTRATIONS.md).
 
@@ -414,7 +446,9 @@ topology of the manifold (through the Euler characteristic constraint on the lat
 and the no-arbitrage condition (through the forbidden pattern set). The critical
 point $x_c$ is shifted from $e^{-h_{\rm Kelly}}$ by the no-arbitrage correction:
 
-$$x_c^{\rm no-arb} = e^{-h_{\rm Kelly}}(1 + \delta_{\rm YB}/T + O(1/T^2)) \tag{3.6}$$
+```math
+x_c^{\rm no-arb} = e^{-h_{\rm Kelly}}(1 + \delta_{\rm YB}/T + O(1/T^2)) \tag{3.6}
+```
 
 where $\delta_{\rm YB}$ is the first-order correction from the Yang-Baxter forbidden words.
 
@@ -422,11 +456,15 @@ where $\delta_{\rm YB}$ is the first-order correction from the Yang-Baxter forbi
 
 The mutual information between cells $i$ and $j$ at lag $\tau$ is:
 
-$$I(s_t = i; s_{t+\tau} = j) = \sum_{i,j}(A^\tau)_{ij}\pi_i\log\frac{(A^\tau)_{ij}/\pi_i}{\pi_j} \tag{3.7}$$
+```math
+I(s_t = i; s_{t+\tau} = j) = \sum_{i,j}(A^\tau)_{ij}\pi_i\log\frac{(A^\tau)_{ij}/\pi_i}{\pi_j} \tag{3.7}
+```
 
 The **mutual information generating function** in the spirit of Wilf:
 
-$$G(x) = \sum_{\tau=0}^\infty I_\tau x^\tau, \qquad I_\tau = \sum_{ij}I(i;j|\text{lag }\tau) \tag{3.8}$$
+```math
+G(x) = \sum_{\tau=0}^\infty I_\tau x^\tau, \qquad I_\tau = \sum_{ij}I(i;j|\text{lag }\tau) \tag{3.8}
+```
 
 This generating function has the same singularity structure as $F(x)$ — its dominant
 pole is at $x_c = e^{-h_{\rm Kelly}}$, but the residues encode the information decay

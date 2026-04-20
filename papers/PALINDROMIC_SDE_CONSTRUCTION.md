@@ -40,7 +40,9 @@ the same color.
 
 The unified picture: the Fractional Palindromic SDE
 
-$$dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t$$
+```math
+dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t
+```
 
 emerges as the continuous limit of a NESTED PÓLYA URN at $K$ scales,
 taking $K \to \infty$ with appropriate scaling.
@@ -89,7 +91,9 @@ theorem; subordination; nested scales; continuous limit.
 A palindrome of length $2k+1$ with center $c$ and surrounding symbols
 $s_1, \ldots, s_k$ has the form:
 
-$$p = s_k\, s_{k-1} \cdots s_1\, c\, s_1 \cdots s_{k-1}\, s_k \tag{1.1}$$
+```math
+p = s_k\, s_{k-1} \cdots s_1\, c\, s_1 \cdots s_{k-1}\, s_k \tag{1.1}
+```
 
 (odd-length case; even-length palindromes of length $2k$ are analogous
 with no central symbol).
@@ -98,7 +102,9 @@ with no central symbol).
 CONTAINS the palindrome of length $2k-1$ obtained by trimming the outer
 symbols $s_k$ from both ends. The trimmed palindrome is:*
 
-$$p' = s_{k-1} \cdots s_1\, c\, s_1 \cdots s_{k-1} \tag{1.2}$$
+```math
+p' = s_{k-1} \cdots s_1\, c\, s_1 \cdots s_{k-1} \tag{1.2}
+```
 
 This nesting defines a parent-child relationship between palindromes:
 $p$ is the child of $p'$ (obtained by adding the symbol $s_k$ to both
@@ -145,7 +151,9 @@ $A$ of size $N$:*
 *(2) For $k = 1, 2, 3, \ldots$: draw $\sigma_k \sim \text{Uniform}(A)$
 independently. The palindrome at step $k$ is:*
 
-$$P_k = \sigma_k\, \sigma_{k-1} \cdots \sigma_1\, \sigma_0\, \sigma_1 \cdots \sigma_{k-1}\, \sigma_k \tag{2.1}$$
+```math
+P_k = \sigma_k\, \sigma_{k-1} \cdots \sigma_1\, \sigma_0\, \sigma_1 \cdots \sigma_{k-1}\, \sigma_k \tag{2.1}
+```
 
 *of length $2k + 1$. By construction, $P_k$ is a palindrome.*
 
@@ -161,7 +169,9 @@ PALINDROMIC_SEQUENCES.md).
 **Proposition 2.1** (DPG-0 statistics). *The process DPG-0 generates
 palindromes of length $2k+1$ with probability distribution:*
 
-$$\mathbb{P}(P_k = w) = N^{-(k+1)} \tag{2.2}$$
+```math
+\mathbb{P}(P_k = w) = N^{-(k+1)} \tag{2.2}
+```
 
 *uniformly over all palindromes of length $2k+1$. The number of distinct
 palindromes at step $k$ is $N^{k+1}$, and each occurs with equal
@@ -187,7 +197,9 @@ $\mathbb{R}$, palindromic by construction.
 Parameterize by $s = k \Delta t$ (radial distance from center). In the
 limit, the "value at distance $s$ from center" is:
 
-$$X(s) = \int_0^{|s|} \sigma \,dW_r = \sigma W_{|s|} \tag{2.3}$$
+```math
+X(s) = \int_0^{|s|} \sigma \,dW_r = \sigma W_{|s|} \tag{2.3}
+```
 
 where $W$ is standard Brownian motion. This gives $X(s) = X(-s)$ by
 construction — a palindromic stochastic process on $\mathbb{R}$ (the real
@@ -214,7 +226,9 @@ A sequence $(X_1, X_2, \ldots, X_n)$ is **exchangeable** if its joint
 distribution is invariant under all permutations of the indices. Since
 reversal is a permutation, exchangeable sequences are PALINDROMIC IN LAW:
 
-$$\mathbb{P}(X_1, \ldots, X_n) = \mathbb{P}(X_n, X_{n-1}, \ldots, X_1) \tag{3.1}$$
+```math
+\mathbb{P}(X_1, \ldots, X_n) = \mathbb{P}(X_n, X_{n-1}, \ldots, X_1) \tag{3.1}
+```
 
 **Proposition 3.1** (Exchangeable = statistically palindromic).
 *An exchangeable process is statistically palindromic in the sense that
@@ -229,7 +243,9 @@ De Finetti's theorem (1937): any infinite exchangeable sequence of binary
 random variables is a mixture of i.i.d. Bernoulli sequences. More
 precisely, for an exchangeable binary sequence $(X_1, X_2, \ldots)$:
 
-$$\mathbb{P}(X_1, \ldots, X_n) = \int_0^1 \theta^{\sum X_i} (1 - \theta)^{n - \sum X_i}\, d\mu(\theta) \tag{3.2}$$
+```math
+\mathbb{P}(X_1, \ldots, X_n) = \int_0^1 \theta^{\sum X_i} (1 - \theta)^{n - \sum X_i}\, d\mu(\theta) \tag{3.2}
+```
 
 for some probability measure $\mu$ on $[0, 1]$.
 
@@ -287,11 +303,15 @@ Jacobi diffusion.
 A discrete-time Markov chain on state space $S$ with transition matrix $P$
 is **reversible** with respect to a stationary distribution $\pi$ if:
 
-$$\pi_i P_{ij} = \pi_j P_{ji} \quad \text{for all } i, j \in S \tag{4.1}$$
+```math
+\pi_i P_{ij} = \pi_j P_{ji} \quad \text{for all } i, j \in S \tag{4.1}
+```
 
 Reversible chains have the property: path distributions are palindromic.
 
-$$\mathbb{P}(X_0 = x_0, X_1 = x_1, \ldots, X_n = x_n) = \mathbb{P}(X_0 = x_n, X_1 = x_{n-1}, \ldots, X_n = x_0) \tag{4.2}$$
+```math
+\mathbb{P}(X_0 = x_0, X_1 = x_1, \ldots, X_n = x_n) = \mathbb{P}(X_0 = x_n, X_1 = x_{n-1}, \ldots, X_n = x_0) \tag{4.2}
+```
 
 (when the initial condition is drawn from $\pi$).
 
@@ -321,7 +341,9 @@ INCREMENTS.
 on $\mathbb{R}$. Define $\epsilon_{2N+1-i} = -\epsilon_i$ for $i = 1, \ldots, N$
 (anti-palindromic extension). The walk:*
 
-$$S_t = \sum_{i=1}^{t} \epsilon_i, \quad t = 0, 1, \ldots, 2N \tag{4.3}$$
+```math
+S_t = \sum_{i=1}^{t} \epsilon_i, \quad t = 0, 1, \ldots, 2N \tag{4.3}
+```
 
 *satisfies $S_0 = 0$, $S_{2N} = 0$, and $S_t = S_{2N-t}$ for all $t$.*
 
@@ -346,7 +368,9 @@ on a symmetric path.*
 
 *Explicitly: let $W$ be standard BM on $[0, 1/2]$. Then:*
 
-$$X(t) = \begin{cases} W(t) - 2t\, W(1/2) & t \in [0, 1/2] \\ X(1 - t) & t \in [1/2, 1] \end{cases} \tag{4.4}$$
+```math
+X(t) = \begin{cases} W(t) - 2t\, W(1/2) \& t \in [0, 1/2] \\ X(1 - t) \& t \in [1/2, 1] \end{cases} \tag{4.4}
+```
 
 (bridge conditioning on the first half, mirror on the second half).
 
@@ -369,7 +393,9 @@ on $\Delta^{(N)}_{d-1}$. In the limit $N \to \infty$:
 rescaled urn process $B^{(N)}$ converges in distribution to the Jacobi
 diffusion on $\Delta_{d-1}$:*
 
-$$db_i = \kappa[\pi_i - b_i]\,dt + \sigma\sqrt{b_i(1-b_i)/T}\,dW_i \tag{5.1}$$
+```math
+db_i = \kappa[\pi_i - b_i]\,dt + \sigma\sqrt{b_i(1-b_i)/T}\,dW_i \tag{5.1}
+```
 
 *with stationary distribution $\text{Dir}(\pi_1, \ldots, \pi_d)$.*
 
@@ -384,7 +410,9 @@ By Theorem 1.1 of PALINDROMIC_SEQUENCES.md, the Jacobi diffusion produces
 palindromic excess at rate $e^{\lambda_1 k}$ where $\lambda_1$ is the
 spectral gap. In the continuous limit of Pólya:
 
-$$\lambda_1 = \frac{1}{T} \cdot \frac{1}{\sum_i \pi_i (1 - \pi_i)} \tag{5.2}$$
+```math
+\lambda_1 = \frac{1}{T} \cdot \frac{1}{\sum_i \pi_i (1 - \pi_i)} \tag{5.2}
+```
 
 For a balanced initial urn $(\pi_i = 1/d)$ and $d = 6$: $\lambda_1 = 1/T \cdot 6/5 = 1.2/T$.
 
@@ -440,7 +468,9 @@ nested Pólya urn with $K$ scales at exponentially spaced timescales
 $\tau_k = \tau^k$ (for some $\tau > 1$) in the limit $K \to \infty$ is a
 fractional Brownian motion with Hurst parameter:*
 
-$$H = \frac{1}{2} - \frac{1}{2 \log \tau} \tag{6.1}$$
+```math
+H = \frac{1}{2} - \frac{1}{2 \log \tau} \tag{6.1}
+```
 
 *For $\tau > e$ (Naperian number): $H < 1/2$, giving anti-persistent fBM.*
 
@@ -462,7 +492,9 @@ Combining Stages 1-3:
 3. **Continuous limit** (Stage 3) converges to the Fractional Palindromic
    SDE:
 
-$$dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\, dB^H_t \tag{6.2}$$
+```math
+dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\, dB^H_t \tag{6.2}
+```
 
 with $\kappa$ from the Jacobi spectral gap, $H$ from the nesting ratio,
 and $\theta_t$ from the slowly-moving center (Saxon's "floating
@@ -535,7 +567,9 @@ Matching the empirical parameters from the S&P 500 palindrome test:
 So the market behaves like a NPP with $K \approx 10$ scales at ratio
 $\tau \approx 1.65$. The timescales would be approximately:
 
-$$\tau_1 = 1, \tau_2 = 1.65, \tau_3 = 2.72, \ldots, \tau_{10} = 186$$
+```math
+\tau_1 = 1, \tau_2 = 1.65, \tau_3 = 2.72, \ldots, \tau_{10} = 186
+```
 
 — i.e., 1 day, 1.65 days, 2.72 days, ..., 186 days. This matches the
 observed Fibonacci-scale palindromic structure (Section 6.2 of
@@ -635,7 +669,9 @@ The construction has three stages:
 
 Combining all three: the FPS
 
-$$dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\, dB^H_t$$
+```math
+dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\, dB^H_t
+```
 
 emerges as the universal continuous limit of nested palindromic processes.
 

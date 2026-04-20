@@ -40,14 +40,18 @@ have a WIDER lightcone than the market.
 
 **(i) The market spacetime metric.** The $(r+1)$-dimensional market spacetime
 has Lorentzian metric:
-$$ds^2 = -c_M^2\,dt^2 + g^{\rm FR}_{ij}\,db^i\,db^j \tag{0.1}$$
+```math
+ds^2 = -c_M^2\,dt^2 + g^{\rm FR}_{ij}\,db^i\,db^j \tag{0.1}
+```
 where $c_M = \lambda_1 / \text{diam}_{G}$ is the information propagation speed,
 $t$ is time, and $g^{\rm FR}$ is the Fisher-Rao metric on the spatial
 (portfolio) directions. The signature is $(-,+,+,\ldots,+)$.
 
 **(ii) The lightcone determines causality.** The future lightcone of a
 trade at $(t_0, b_0)$ is:
-$$\mathcal{J}^{+}(t_0, b_0) = \{(t, b) : t > t_0, d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{0.2}$$
+```math
+\mathcal{J}^{+}(t_0, b_0) = \{(t, b) : t > t_0, d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{0.2}
+```
 — the set of future portfolio states reachable from $b_0$ at information speed
 $c_M$. Trades outside this cone CANNOT be influenced by the current state.
 
@@ -113,14 +117,18 @@ is the signature of a Lorentzian metric.
 
 Define the **market spacetime** as the $(r+1)$-dimensional manifold:
 
-$$\mathcal{M} = \mathbb{R} \times M^r \tag{1.1}$$
+```math
+\mathcal{M} = \mathbb{R} \times M^r \tag{1.1}
+```
 
 with points $(t, b)$ where $t \in \mathbb{R}$ is time and $b \in M^r$ is
 the portfolio state.
 
 The **Lorentzian metric** on $\mathcal{M}$:
 
-$$g_{\mu\nu}\,dx^\mu\,dx^\nu = -c_M^2\,dt^2 + g^{\rm FR}_{ij}(b)\,db^i\,db^j \tag{1.2}$$
+```math
+g_{\mu\nu}\,dx^\mu\,dx^\nu = -c_M^2\,dt^2 + g^{\rm FR}_{ij}(b)\,db^i\,db^j \tag{1.2}
+```
 
 The signature is $(-,+,+,\ldots,+)$:
 - The $tt$-component is $g_{00} = -c_M^2 < 0$ (timelike)
@@ -153,11 +161,15 @@ A vector $v = (v^0, v^1, \ldots, v^r)$ at a point $(t, b) \in \mathcal{M}$ is:
 
 The **lightcone** at $(t_0, b_0)$:
 
-$$\mathcal{C}(t_0, b_0) = \{(t, b) : c_M^2(t - t_0)^2 = d_{g^{\rm FR}}(b, b_0)^2\} \tag{2.1}$$
+```math
+\mathcal{C}(t_0, b_0) = \{(t, b) : c_M^2(t - t_0)^2 = d_{g^{\rm FR}}(b, b_0)^2\} \tag{2.1}
+```
 
 The **future lightcone** (causal future):
 
-$$\mathcal{J}^{+}(t_0, b_0) = \{(t, b) : t > t_0, d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{2.2}$$
+```math
+\mathcal{J}^{+}(t_0, b_0) = \{(t, b) : t > t_0, d_{g^{\rm FR}}(b, b_0) \leq c_M(t - t_0)\} \tag{2.2}
+```
 
 Everything inside $\mathcal{J}^{+}$ can be influenced by a trade at $(t_0, b_0)$.
 Everything outside CANNOT — the information hasn't reached there yet.
@@ -166,7 +178,9 @@ Everything outside CANNOT — the information hasn't reached there yet.
 
 The information speed $c_M$ on the Voronoi-tessellated manifold:
 
-$$c_M = \frac{\text{diam}_{\rm FR}(M^r)}{\text{diam}_{G} \cdot \Delta t} \tag{2.3}$$
+```math
+c_M = \frac{\text{diam}_{\rm FR}(M^r)}{\text{diam}_{G} \cdot \Delta t} \tag{2.3}
+```
 
 where $\text{diam}_{G}$ is the graph diameter of the Delaunay adjacency graph
 and $\Delta t$ is the time per observation step.
@@ -185,7 +199,9 @@ A public market participant has lightcone determined by $c_M^{\rm public}$.
 
 An insider has additional information channels → effectively larger $c_M$:
 
-$$c_M^{\rm insider} = c_M^{\rm public} + \Delta c \tag{2.4}$$
+```math
+c_M^{\rm insider} = c_M^{\rm public} + \Delta c \tag{2.4}
+```
 
 where $\Delta c$ depends on the quality and speed of the insider's private signal.
 
@@ -194,7 +210,9 @@ lightcone (not yet priced by the market) are INSIDE the insider's lightcone
 (they can already see and act on them). The insider alpha is the AREA
 DIFFERENCE between the two lightcones:
 
-$$\alpha \propto \text{Vol}(\mathcal{J}^{+}_{\rm insider}) - \text{Vol}(\mathcal{J}^{+}_{\rm public}) \tag{2.5}$$
+```math
+\alpha \propto \text{Vol}(\mathcal{J}^{+}_{\rm insider}) - \text{Vol}(\mathcal{J}^{+}_{\rm public}) \tag{2.5}
+```
 
 This gives a NEW geometric interpretation of insider trading from
 NETWORK_INFORMATION_THEORY.md: the insider doesn't "cheat" — they
@@ -210,7 +228,9 @@ perspective (outside the public lightcone).
 
 In the Lorentzian spacetime $\mathcal{M}$, each asset traces a **worldline**:
 
-$$\gamma_i : \mathbb{R} \to \mathcal{M}, \qquad \gamma_i(t) = (t, b_i(t)) \tag{3.1}$$
+```math
+\gamma_i : \mathbb{R} \to \mathcal{M}, \qquad \gamma_i(t) = (t, b_i(t)) \tag{3.1}
+```
 
 where $b_i(t)$ is the weight of asset $i$ at time $t$.
 
@@ -226,7 +246,9 @@ spacetime where two worldlines intersect — a spacetime EVENT.
 
 The Yang-Baxter equation from BRAIDS.md:
 
-$$\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1} \tag{3.2}$$
+```math
+\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1} \tag{3.2}
+```
 
 says that the order in which crossings occur doesn't matter (the braid
 is invariant under Reidemeister moves). In Lorentzian terms: this is
@@ -253,7 +275,9 @@ In the Lorentzian framework, the base IS the spatial manifold and the
 fiber structure corresponds to the FOLIATION of spacetime into spatial
 hypersurfaces. The O'Neill $A$-tensor:
 
-$$A_X Y = \Pi_V(\nabla_{\Pi_H X}\Pi_H Y) + \Pi_H(\nabla_{\Pi_H X}\Pi_V Y) \tag{4.1}$$
+```math
+A_X Y = \Pi_V(\nabla_{\Pi_H X}\Pi_H Y) + \Pi_H(\nabla_{\Pi_H X}\Pi_V Y) \tag{4.1}
+```
 
 measures how the horizontal (systematic) and vertical (idiosyncratic) directions
 twist relative to each other. In spacetime terms: the O'Neill tensor IS the
@@ -284,7 +308,9 @@ bond markets became causally disconnected.
 For a market that has existed for $T$ periods, the **market horizon** is
 the sphere of Fisher-Rao radius $c_M T$ centred at the current state:
 
-$$\mathcal{H}(T) = \{b \in M^r : d_{g^{\rm FR}}(b, b^{\ast}) = c_M T\} \tag{5.1}$$
+```math
+\mathcal{H}(T) = \{b \in M^r : d_{g^{\rm FR}}(b, b^{\ast}) = c_M T\} \tag{5.1}
+```
 
 Everything inside the horizon has been priced (it's in the market's causal
 past). Everything OUTSIDE has never been reached by market information —
@@ -306,7 +332,9 @@ evolve beyond their ability to respond.
 
 The Rindler horizon distance:
 
-$$d_{\rm Rindler} = c_M^2 / a \tag{5.2}$$
+```math
+d_{\rm Rindler} = c_M^2 / a \tag{5.2}
+```
 
 where $a = c_M - \lambda_1^{\rm trader}$ is the "acceleration gap" between
 the market's information speed and the trader's processing speed.
@@ -324,7 +352,9 @@ of the market.
 
 The **proper time** along a worldline $\gamma(t) = (t, b(t))$ is:
 
-$$\tau = \int \sqrt{c_M^2 - g^{\rm FR}_{ij}\dot{b}^{i}\dot{b}^{j}} dt \tag{6.1}$$
+```math
+\tau = \int \sqrt{c_M^2 - g^{\rm FR}_{ij}\dot{b}^{i}\dot{b}^{j}} dt \tag{6.1}
+```
 
 This is maximised for timelike geodesics (the twin paradox: the traveller
 who stays still ages MOST; the traveller who moves fast ages less).

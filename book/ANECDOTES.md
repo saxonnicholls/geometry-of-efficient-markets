@@ -122,7 +122,9 @@ idiosyncratic filtration, specifically the normal bundle component corresponding
 the "battle outcome" shock.
 
 The excess return from this position:
-$$\Delta\mathrm{PnL} = (72-57)\times\mathrm{position} \approx 26\%\text{ return in 48 hours}$$
+```math
+\Delta\mathrm{PnL} = (72-57)\times\mathrm{position} \approx 26\%\text{ return in 48 hours}
+```
 This is precisely the normal bundle alpha:
 $\Delta\mathrm{PnL} = \varepsilon^2|H_{\rm battle}| \cdot T_{\rm event}$
 where $H_{\rm battle}$ is the mean curvature created by the known-but-undisclosed
@@ -319,7 +321,9 @@ gain function; the value is the Snell envelope. Buffett waits until the market p
 
 **The patience equation.** The expected time to reach the optimal entry point in
 Buffett's Voronoi cell is:
-$$\mathbb{E}[\tau_{z^{\ast}}] = \frac{(z^{\ast})^2 - z_0^2}{2\varepsilon^2} \approx \frac{4-1}{2/T} = 1.5T$$
+```math
+\mathbb{E}[\tau_{z^{\ast}}] = \frac{(z^{\ast})^2 - z_0^2}{2\varepsilon^2} \approx \frac{4-1}{2/T} = 1.5T
+```
 — for a target $z^{\ast} = 2$ starting from $z_0 = 1$, the expected waiting time is
 1.5 years (for annual return data). Buffett holds cash and waits. This is not a
 failure of imagination; it is the optimal stopping rule applied.

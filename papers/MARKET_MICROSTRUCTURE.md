@@ -94,7 +94,9 @@ observation is that it has a natural geometric embedding.
 
 Normalise the bid and ask quantity profiles:
 
-$$b_i^{\rm bid} = \frac{q_i^{\rm bid}}{\sum_{k=1}^{d_{\rm bid}} q_k^{\rm bid}}, \qquad b_j^{\rm ask} = \frac{q_j^{\rm ask}}{\sum_{k=1}^{d_{\rm ask}} q_k^{\rm ask}} \tag{1.1}$$
+```math
+b_i^{\rm bid} = \frac{q_i^{\rm bid}}{\sum_{k=1}^{d_{\rm bid}} q_k^{\rm bid}}, \qquad b_j^{\rm ask} = \frac{q_j^{\rm ask}}{\sum_{k=1}^{d_{\rm ask}} q_k^{\rm ask}} \tag{1.1}
+```
 
 Now $b^{\rm bid} \in \Delta_{d-1}$ and $b^{\rm ask} \in \Delta_{d-1}$ are two
 points on the probability simplex, where $d = d_{\rm bid} = d_{\rm ask}$ after
@@ -106,12 +108,16 @@ transact, concentrated near the best ask.
 
 The LOB is thus a pair of points in the product simplex:
 
-$$\mathrm{LOB}(t) = \bigl(b^{\rm bid}(t),\, b^{\rm ask}(t)\bigr) \in \Delta_{d-1} \times \Delta_{d-1} \tag{1.2}$$
+```math
+\mathrm{LOB}(t) = \bigl(b^{\rm bid}(t),\, b^{\rm ask}(t)\bigr) \in \Delta_{d-1} \times \Delta_{d-1} \tag{1.2}
+```
 
 Under the Bhattacharyya isometry $\phi: b \mapsto \sqrt{b}$, each side maps
 to a point on the positive hemisphere $S^{d-1}_{+}$, and the full LOB maps to:
 
-$$\phi\bigl(\mathrm{LOB}(t)\bigr) \in S^{d-1}_{+} \times S^{d-1}_{+} \subset S^{2d-3}_{+} \tag{1.3}$$
+```math
+\phi\bigl(\mathrm{LOB}(t)\bigr) \in S^{d-1}_{+} \times S^{d-1}_{+} \subset S^{2d-3}_{+} \tag{1.3}
+```
 
 the product Bhattacharyya sphere.
 
@@ -119,11 +125,15 @@ the product Bhattacharyya sphere.
 
 The LOB state space is the product manifold:
 
-$$M^{\rm LOB} = \Delta_{d-1} \times \Delta_{d-1} \tag{1.4}$$
+```math
+M^{\rm LOB} = \Delta_{d-1} \times \Delta_{d-1} \tag{1.4}
+```
 
 equipped with the product Fisher-Rao metric:
 
-$$g^{\rm LOB} = g^{\rm FR}_{\rm bid} \oplus g^{\rm FR}_{\rm ask}, \qquad g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.5}$$
+```math
+g^{\rm LOB} = g^{\rm FR}_{\rm bid} \oplus g^{\rm FR}_{\rm ask}, \qquad g^{\rm FR}_{ij}(b) = \frac{\delta_{ij}}{b_i} \tag{1.5}
+```
 
 This is a $(2d-2)$-dimensional Riemannian manifold. But just as the return
 manifold $M^r$ has intrinsic dimension $r \ll d$ (the number of systematic
@@ -155,7 +165,9 @@ LOB state. The process is Markovian conditional on the current book state
 In the language of MARKET_PROCESSES.md: the LOB process is a diffusion on
 $M^{r_{\rm LOB}}_{\rm LOB}$ with generator:
 
-$$\mathcal{L}_{\rm LOB} = \frac{\varepsilon^2_{\rm LOB}}{2}\Delta_{g^{\rm LOB}} - \varepsilon^2_{\rm LOB}\,\vec{H}_{\rm LOB}\cdot\nabla_{g^{\rm LOB}} \tag{1.6}$$
+```math
+\mathcal{L}_{\rm LOB} = \frac{\varepsilon^2_{\rm LOB}}{2}\Delta_{g^{\rm LOB}} - \varepsilon^2_{\rm LOB}\,\vec{H}_{\rm LOB}\cdot\nabla_{g^{\rm LOB}} \tag{1.6}
+```
 
 where $\varepsilon^2_{\rm LOB} = 1/T_{\rm LOB}$ and $T_{\rm LOB}$ is the
 effective sample size at the microstructure timescale (the number of order
@@ -177,7 +189,9 @@ buyers and sellers.
 
 **Theorem 2.1** (Spread = Fisher-Rao distance). *The geometric bid-ask spread is:*
 
-$$s_{\rm FR} = d_{g^{\rm FR}}\bigl(b^{\rm bid},\, b^{\rm ask}\bigr) = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right) \tag{2.1}$$
+```math
+s_{\rm FR} = d_{g^{\rm FR}}\bigl(b^{\rm bid},\, b^{\rm ask}\bigr) = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right) \tag{2.1}
+```
 
 *where $d_{g^{\rm FR}}$ is the geodesic distance on $(\Delta_{d-1}, g^{\rm FR})$.
 The Bhattacharyya coefficient $\rho_B = \sum_i \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}$
@@ -187,7 +201,9 @@ equals $\cos(s_{\rm FR}/2)$.*
 $S^{d-1}_{+}$ with the round metric. The Fisher-Rao distance between two
 distributions equals the arc length on the sphere between their images:
 
-$$d_{g^{\rm FR}}(p,q) = 2\arccos\!\left(\sum_i \sqrt{p_i\,q_i}\right) = 2\arccos\bigl(\langle\phi(p),\,\phi(q)\rangle\bigr)$$
+```math
+d_{g^{\rm FR}}(p,q) = 2\arccos\!\left(\sum_i \sqrt{p_i\,q_i}\right) = 2\arccos\bigl(\langle\phi(p),\,\phi(q)\rangle\bigr)
+```
 
 which is the angle between $\phi(p) = \sqrt{p}$ and $\phi(q) = \sqrt{q}$ in
 $\mathbb{R}^{d}$. Applied to $p = b^{\rm bid}$ and $q = b^{\rm ask}$, we
@@ -206,7 +222,9 @@ between the two sides of the book.
 The dollar spread $s$ and the Fisher-Rao spread $s_{\rm FR}$ are related to
 leading order by:
 
-$$s \approx s_{\rm FR} \cdot \sigma \cdot \sqrt{\Delta t} \tag{2.2}$$
+```math
+s \approx s_{\rm FR} \cdot \sigma \cdot \sqrt{\Delta t} \tag{2.2}
+```
 
 where $\sigma$ is the asset volatility and $\Delta t$ is the inter-trade
 duration. This follows from the standard microstructure identity
@@ -225,7 +243,9 @@ geometric framework provides a clean separation of these components.
 **Theorem 2.2** (Geometric spread decomposition). *The Fisher-Rao spread
 decomposes as:*
 
-$$s_{\rm FR} = s_{\rm info} + s_{\rm inventory} + s_{\rm adverse} \tag{2.3}$$
+```math
+s_{\rm FR} = s_{\rm info} + s_{\rm inventory} + s_{\rm adverse} \tag{2.3}
+```
 
 *where:*
 
@@ -272,7 +292,9 @@ When a trader submits a market order of size $Q$ (shares), it consumes resting
 liquidity from the LOB, walking up (for a buy) or down (for a sell) the price
 levels. The resulting price change is the *market impact*:
 
-$$\Delta P = f(Q) \tag{3.1}$$
+```math
+\Delta P = f(Q) \tag{3.1}
+```
 
 The functional form of $f$ is one of the central questions in market
 microstructure. Empirical evidence overwhelmingly supports the *square-root
@@ -285,7 +307,9 @@ Donier et al. 2015\].
 **Theorem 3.1** (Market impact = geodesic curvature of the LOB manifold).
 *The price impact of a trade of size $Q$ executed at price level $p$ is:*
 
-$$\Delta P = \kappa_{\rm LOB}(p)\,Q + \frac{1}{2}\,R_{\rm LOB}(p)\,Q^2 + O(Q^3) \tag{3.2}$$
+```math
+\Delta P = \kappa_{\rm LOB}(p)\,Q + \frac{1}{2}\,R_{\rm LOB}(p)\,Q^2 + O(Q^3) \tag{3.2}
+```
 
 *where $\kappa_{\rm LOB}(p)$ is the geodesic curvature of the LOB manifold
 $M^{r_{\rm LOB}}_{\rm LOB}$ at the point corresponding to price level $p$,
@@ -306,7 +330,9 @@ LOB is a curved submanifold of the product simplex.
 The Taylor expansion of the displacement along a curve on a Riemannian
 manifold gives:
 
-$$\Delta P(Q) = \langle\nabla_{\dot\gamma}\dot\gamma,\, \hat{n}\rangle\,Q + \frac{1}{2}\langle R(\dot\gamma,\hat{n})\dot\gamma,\,\hat{n}\rangle\,Q^2 + O(Q^3)$$
+```math
+\Delta P(Q) = \langle\nabla_{\dot\gamma}\dot\gamma,\, \hat{n}\rangle\,Q + \frac{1}{2}\langle R(\dot\gamma,\hat{n})\dot\gamma,\,\hat{n}\rangle\,Q^2 + O(Q^3)
+```
 
 where $\dot\gamma$ is the tangent to the execution path, $\hat{n}$ is the
 price direction, and $R$ is the Riemann tensor. The first term is the geodesic
@@ -342,13 +368,17 @@ $f(Q) \sim \sqrt{Q}$.*
 *Proof.* The total quantity available between the best price and price
 $p_{\rm best} + \delta p$ is:
 
-$$Q(\delta p) = \int_0^{\delta p} q(u)\,du \sim \int_0^{\delta p} u^{1/2}\,du = \frac{2}{3}(\delta p)^{3/2}$$
+```math
+Q(\delta p) = \int_0^{\delta p} q(u)\,du \sim \int_0^{\delta p} u^{1/2}\,du = \frac{2}{3}(\delta p)^{3/2}
+```
 
 Inverting: $\delta p \sim Q^{2/3}$. But the *executed* price impact is the
 volume-weighted average displacement, which scales as
 $\Delta P \sim \int_0^{\delta p} u\,q(u)\,du / Q$. Computing:
 
-$$\Delta P \sim \frac{1}{Q}\int_0^{(\frac{3Q}{2})^{2/3}} u^{3/2}\,du \sim Q^{-1}\cdot Q^{5/3} \cdot Q^{-2/3} \sim Q^{1/2}$$
+```math
+\Delta P \sim \frac{1}{Q}\int_0^{(\frac{3Q}{2})^{2/3}} u^{3/2}\,du \sim Q^{-1}\cdot Q^{5/3} \cdot Q^{-2/3} \sim Q^{1/2}
+```
 
 The exponent $\alpha = 1/2$ for the depth profile is the *Jacobi boundary
 behaviour* of the LOB: near the touch (best price), the LOB is at the boundary
@@ -372,7 +402,9 @@ is the informed trader's order and $\lambda$ is the *price impact coefficient*.
 
 Kyle's fundamental result: in the unique linear equilibrium,
 
-$$\lambda = \frac{\sigma_v}{2\,\sigma_u} \tag{4.1}$$
+```math
+\lambda = \frac{\sigma_v}{2\,\sigma_u} \tag{4.1}
+```
 
 where $\sigma_v$ is the standard deviation of the asset's true value. The
 market maker adjusts prices in response to total order flow because the flow
@@ -382,7 +414,9 @@ market maker adjusts prices in response to total order flow because the flow
 
 **Theorem 4.1** (Kyle's lambda = Fisher information). *In the Kyle model,*
 
-$$\lambda = \frac{1}{2}\,I_F(v;\, x) \tag{4.2}$$
+```math
+\lambda = \frac{1}{2}\,I_F(v;\, x) \tag{4.2}
+```
 
 *where $I_F(v;\, x) = \sigma_v^2/\sigma_u^2$ is the Fisher information that
 the total order flow $x = x_{\rm informed} + u$ carries about the true
@@ -396,12 +430,16 @@ $\beta^2\sigma_v^2 + \sigma_u^2 = 2\sigma_u^2$ (using $\beta = \sigma_u/\sigma_v
 
 The Fisher information of $x$ about $v$ is:
 
-$$I_F(v;\,x) = \left(\frac{\partial}{\partial v}\mathbb{E}[x|v]\right)^2 \Big/ \mathrm{Var}(x|v) = \frac{\beta^2}{\sigma_u^2} = \frac{\sigma_u^2/\sigma_v^2}{\sigma_u^2} = \frac{1}{\sigma_v^2}\cdot\frac{\sigma_v^2}{\sigma_u^2} \cdot \frac{\sigma_u^2}{\sigma_v^2}$$
+```math
+I_F(v;\,x) = \left(\frac{\partial}{\partial v}\mathbb{E}[x|v]\right)^2 \Big/ \mathrm{Var}(x|v) = \frac{\beta^2}{\sigma_u^2} = \frac{\sigma_u^2/\sigma_v^2}{\sigma_u^2} = \frac{1}{\sigma_v^2}\cdot\frac{\sigma_v^2}{\sigma_u^2} \cdot \frac{\sigma_u^2}{\sigma_v^2}
+```
 
 Wait — compute directly. Given $v$, the conditional distribution of $x$ is
 $x | v \sim \mathcal{N}(\beta v,\, \sigma_u^2)$, so the Fisher information is:
 
-$$I_F(v;\,x) = \frac{\beta^2}{\sigma_u^2} = \frac{\sigma_u^2/\sigma_v^2}{\sigma_u^2} = \frac{1}{\sigma_v^2}$$
+```math
+I_F(v;\,x) = \frac{\beta^2}{\sigma_u^2} = \frac{\sigma_u^2/\sigma_v^2}{\sigma_u^2} = \frac{1}{\sigma_v^2}
+```
 
 Hmm — this is the precision. The correct identification uses the *total* Fisher
 information, not conditional. Consider $v$ as the location parameter of the
@@ -409,7 +447,9 @@ model $x \sim \mathcal{N}(\beta v,\,\sigma_u^2)$. The Fisher information is
 $I_F = \beta^2/\sigma_u^2$. Now $\lambda = \sigma_v/(2\sigma_u)$ and
 $\beta = \sigma_u/\sigma_v$, so:
 
-$$\frac{1}{2}I_F = \frac{1}{2}\cdot\frac{\beta^2}{\sigma_u^2} = \frac{1}{2}\cdot\frac{1}{\sigma_v^2}$$
+```math
+\frac{1}{2}I_F = \frac{1}{2}\cdot\frac{\beta^2}{\sigma_u^2} = \frac{1}{2}\cdot\frac{1}{\sigma_v^2}
+```
 
 The correct statement uses the *signal-to-noise Fisher information*. Define
 the signal-to-noise ratio $\mathrm{SNR} = \sigma_v/\sigma_u$, so
@@ -417,7 +457,9 @@ $\lambda = \mathrm{SNR}/2$. The Fisher information of the order flow about
 the *direction* of the informed trade (the signal content per unit of flow)
 is precisely $\mathrm{SNR} = \sigma_v/\sigma_u$. Thus:
 
-$$\lambda = \frac{1}{2}\,\mathrm{SNR} = \frac{1}{2}\cdot\frac{\sigma_v}{\sigma_u} \tag{4.3}$$
+```math
+\lambda = \frac{1}{2}\,\mathrm{SNR} = \frac{1}{2}\cdot\frac{\sigma_v}{\sigma_u} \tag{4.3}
+```
 
 and the signal-to-noise ratio IS the square root of the Fisher information
 ratio $I_F(v)/I_F(u) = \sigma_v^2/\sigma_u^2$. $\square$
@@ -442,7 +484,9 @@ large-capitalisation stocks have lower price impact than small-caps. With $N$
 traders, the total noise variance is $N\sigma_u^2$ (assuming i.i.d. noise
 traders), so:
 
-$$\lambda = \frac{\sigma_v}{2\sqrt{N}\,\sigma_u} \sim \frac{1}{\sqrt{N}} \tag{4.4}$$
+```math
+\lambda = \frac{\sigma_v}{2\sqrt{N}\,\sigma_u} \sim \frac{1}{\sqrt{N}} \tag{4.4}
+```
 
 More traders dilute the information content per unit of flow. Index funds and
 retail flow contribute noise; each additional noise trader reduces $\lambda$
@@ -461,7 +505,9 @@ order flow.
 
 Both are Fisher information quantities. The connection is:
 
-$$r = \mathrm{rank}\bigl(I_F^{\rm macro}\bigr), \qquad \lambda = \frac{1}{2}\,I_F^{\rm micro}(v;\,x) \tag{4.5}$$
+```math
+r = \mathrm{rank}\bigl(I_F^{\rm macro}\bigr), \qquad \lambda = \frac{1}{2}\,I_F^{\rm micro}(v;\,x) \tag{4.5}
+```
 
 The macro Fisher matrix has rank $r$ (the number of factors); the micro Fisher
 information is a scalar (one asset, one informed trader). The geometric unity:
@@ -477,7 +523,9 @@ Almgren and Chriss \[2001\] formulated the optimal execution problem: sell
 $Q$ shares over the time interval $[0,T]$ to minimise the expected execution
 cost plus a risk penalty:
 
-$$\min_{x(\cdot)} \mathbb{E}\!\left[\int_0^T\!\bigl(\underbrace{\eta\,\dot{x}(t)^2}_{\text{temporary impact}} + \underbrace{\gamma\,\kappa_{\rm LOB}\,\dot{x}(t)}_{\text{permanent impact}}\bigr)dt + \underbrace{\alpha\,\mathrm{Var}\!\left[\int_0^T \sigma^2 x(t)^2\,dt\right]}_{\text{timing risk}}\right] \tag{5.1}$$
+```math
+\min_{x(\cdot)} \mathbb{E}\!\left[\int_0^T\!\bigl(\underbrace{\eta\,\dot{x}(t)^2}_{\text{temporary impact}} + \underbrace{\gamma\,\kappa_{\rm LOB}\,\dot{x}(t)}_{\text{permanent impact}}\bigr)dt + \underbrace{\alpha\,\mathrm{Var}\!\left[\int_0^T \sigma^2 x(t)^2\,dt\right]}_{\text{timing risk}}\right] \tag{5.1}
+```
 
 subject to $x(0) = Q$, $x(T) = 0$, where $x(t)$ is the remaining inventory.
 
@@ -489,7 +537,9 @@ geodesic on $M^r$. In the LOB geometry, the result specialises as follows.
 **Theorem 5.1** (Almgren-Chriss = LOB geodesic). *The optimal execution
 rate is:*
 
-$$\dot{x}(t) = -Q\,\frac{\sinh\!\bigl(\kappa(T-t)\bigr)}{\sinh(\kappa T)} \tag{5.2}$$
+```math
+\dot{x}(t) = -Q\,\frac{\sinh\!\bigl(\kappa(T-t)\bigr)}{\sinh(\kappa T)} \tag{5.2}
+```
 
 *where $\kappa = \sqrt{\lambda_{\rm risk}/\lambda_{\rm impact}}$ is the ratio
 of risk aversion to impact cost.*
@@ -497,7 +547,9 @@ of risk aversion to impact cost.*
 *Proof.* The Euler-Lagrange equation for (5.1) is $\ddot{x} = \kappa^2 x$,
 with boundary conditions $x(0) = Q$, $x(T) = 0$. The solution is:
 
-$$x(t) = Q\,\frac{\sinh\!\bigl(\kappa(T-t)\bigr)}{\sinh(\kappa T)} \tag{5.3}$$
+```math
+x(t) = Q\,\frac{\sinh\!\bigl(\kappa(T-t)\bigr)}{\sinh(\kappa T)} \tag{5.3}
+```
 
 Differentiating gives (5.2). This is a geodesic on the LOB manifold with
 effective curvature $\kappa$: the trajectory curves through the LOB state
@@ -518,7 +570,9 @@ determines how aggressively the execution front-loads. $\square$
 
 The total execution cost is the energy of the geodesic on the LOB manifold:
 
-$$\mathrm{Cost} = \int_0^T |\dot{x}(t)|^2\,\kappa_{\rm LOB}\bigl(x(t)\bigr)\,dt = Q^2\,\kappa\,\coth(\kappa T) \tag{5.4}$$
+```math
+\mathrm{Cost} = \int_0^T |\dot{x}(t)|^2\,\kappa_{\rm LOB}\bigl(x(t)\bigr)\,dt = Q^2\,\kappa\,\coth(\kappa T) \tag{5.4}
+```
 
 The cost is the product of $Q^2$ (the square of the order size), $\kappa$ (the
 curvature of the LOB), and $\coth(\kappa T)$ (a function of the
@@ -530,7 +584,9 @@ and a dark pool, the problem becomes geodesic optimisation on the product
 $M^{r_{\rm LOB}}_{\rm lit} \times M^{r_{\rm LOB}}_{\rm dark}$. The optimal
 split is determined by the relative curvatures:
 
-$$\frac{Q_{\rm dark}}{Q_{\rm lit}} = \sqrt{\frac{\kappa_{\rm LOB}^{\rm lit}}{\kappa_{\rm LOB}^{\rm dark}}} \tag{5.5}$$
+```math
+\frac{Q_{\rm dark}}{Q_{\rm lit}} = \sqrt{\frac{\kappa_{\rm LOB}^{\rm lit}}{\kappa_{\rm LOB}^{\rm dark}}} \tag{5.5}
+```
 
 More volume goes to the venue with lower curvature (higher depth, lower impact).
 This is the geometric foundation for smart order routing.
@@ -568,11 +624,15 @@ than the macro MCF.
 **Theorem 6.1** (HFT as microstructure curvature reduction). *HFT market
 making reduces the Willmore energy of the LOB manifold:*
 
-$$\mathcal{W}_{\rm LOB}^{\rm with HFT} < \mathcal{W}_{\rm LOB}^{\rm without HFT} \tag{6.1}$$
+```math
+\mathcal{W}_{\rm LOB}^{\rm with HFT} < \mathcal{W}_{\rm LOB}^{\rm without HFT} \tag{6.1}
+```
 
 *The reduction is:*
 
-$$\Delta\mathcal{W} = \mathcal{W}_{\rm without} - \mathcal{W}_{\rm with} = \int_{M^{r_{\rm LOB}}} |H_{\rm LOB}|^2\,\bigl(1 - e^{-2\lambda_1^{\rm HFT}\,\Delta t}\bigr)\,d\mathrm{vol} \tag{6.2}$$
+```math
+\Delta\mathcal{W} = \mathcal{W}_{\rm without} - \mathcal{W}_{\rm with} = \int_{M^{r_{\rm LOB}}} |H_{\rm LOB}|^2\,\bigl(1 - e^{-2\lambda_1^{\rm HFT}\,\Delta t}\bigr)\,d\mathrm{vol} \tag{6.2}
+```
 
 *where $\lambda_1^{\rm HFT}$ is the HFT's MCF spectral gap (determined by
 its latency and detection speed) and $\Delta t$ is the timescale over which
@@ -590,7 +650,9 @@ the exponential decay over $M^{r_{\rm LOB}}$. $\square$
 The HFT's profit is the Sharpe-curvature identity (R1 from MINIMAL_SURFACE.md)
 applied to the LOB manifold:
 
-$$\mathrm{Sharpe}_{\rm HFT} = \|H_{\rm LOB}\|_{L^2(M^{r_{\rm LOB}})} \tag{6.3}$$
+```math
+\mathrm{Sharpe}_{\rm HFT} = \|H_{\rm LOB}\|_{L^2(M^{r_{\rm LOB}})} \tag{6.3}
+```
 
 The HFT *earns* the curvature it *removes*. Every penny of HFT profit corresponds
 to a penny of microstructure inefficiency that has been eliminated. This is not
@@ -657,7 +719,9 @@ prices recovered.
 **Theorem 7.1** (Flash crash singularity condition). *A flash crash occurs
 when the LOB curvature exceeds the critical threshold:*
 
-$$\kappa_{\rm LOB} > \kappa_{\rm crit} = \frac{1}{\mathrm{depth}_{\min}} \tag{7.1}$$
+```math
+\kappa_{\rm LOB} > \kappa_{\rm crit} = \frac{1}{\mathrm{depth}_{\min}} \tag{7.1}
+```
 
 *where $\mathrm{depth}_{\min}$ is the minimum order book depth (total resting
 quantity) across all price levels within a neighbourhood of the best price.*
@@ -674,7 +738,9 @@ singularity inevitable without intervention. $\square$
 **Post-crisis reforms.** The SEC's limit-up/limit-down (LULD) mechanism,
 implemented after the flash crash, imposes:
 
-$$\kappa_{\rm LOB}(t) \leq \kappa_{\rm max} \quad \forall\,t \tag{7.2}$$
+```math
+\kappa_{\rm LOB}(t) \leq \kappa_{\rm max} \quad \forall\,t \tag{7.2}
+```
 
 by halting trading in any stock whose price moves outside a percentage band
 within a five-minute window. In geometric terms: LULD constrains the maximum
@@ -767,7 +833,9 @@ answer through the spectral hierarchy.
 **Theorem 9.1** (Microstructure-macro spectral hierarchy). *The spectral gaps
 across timescales satisfy:*
 
-$$\lambda_1^{\rm LOB} \gg \lambda_1^{\rm intraday} \gg \lambda_1^{\rm daily} \gg \lambda_1^{\rm macro} \tag{9.1}$$
+```math
+\lambda_1^{\rm LOB} \gg \lambda_1^{\rm intraday} \gg \lambda_1^{\rm daily} \gg \lambda_1^{\rm macro} \tag{9.1}
+```
 
 *Typical magnitudes for a liquid US equity:*
 
@@ -820,7 +888,9 @@ This is not a slogan — it is a theorem. The Sharpe-curvature identity
 $\mathrm{Sharpe}^{\ast} = \|H\|_{L^2}$ applies at every timescale. The total
 curvature (total alpha available) decomposes spectrally:
 
-$$\|H\|_{L^2}^{2} = \sum_{k=1}^\infty |h_k|^2 \tag{9.2}$$
+```math
+\|H\|_{L^2}^{2} = \sum_{k=1}^\infty |h_k|^2 \tag{9.2}
+```
 
 where $h_k$ is the $k$-th Fourier coefficient of the mean curvature in the
 eigenbasis of the Laplace-Beltrami operator. HFTs capture the terms with
@@ -834,7 +904,9 @@ The Cheeger constant $h_M$ determines resilience — how much of the manifold
 must be cut to disconnect it (GEOSPATIAL_CONTAGION.md). At the microstructure
 level:
 
-$$h_M^{\rm LOB} = \inf_S \frac{\mathrm{Area}(\partial S)}{\min\bigl(\mathrm{Vol}(S),\,\mathrm{Vol}(M\setminus S)\bigr)} \tag{9.3}$$
+```math
+h_M^{\rm LOB} = \inf_S \frac{\mathrm{Area}(\partial S)}{\min\bigl(\mathrm{Vol}(S),\,\mathrm{Vol}(M\setminus S)\bigr)} \tag{9.3}
+```
 
 A liquid LOB has a large Cheeger constant: it takes a massive order to
 disconnect the book (remove all orders at some price levels). The flash crash
@@ -843,7 +915,9 @@ disconnectable, and a moderate-sized order suffices to tear it.
 
 The Cheeger inequality $\lambda_1 \geq h_M^2/4$ then gives:
 
-$$\lambda_1^{\rm LOB} \geq \frac{(h_M^{\rm LOB})^2}{4} \tag{9.4}$$
+```math
+\lambda_1^{\rm LOB} \geq \frac{(h_M^{\rm LOB})^2}{4} \tag{9.4}
+```
 
 High Cheeger constant (resilient LOB) implies high spectral gap (fast
 mean-reversion). Low Cheeger constant (fragile LOB) implies slow
@@ -862,7 +936,9 @@ Virtu) who pay for the right to execute against the flow.
 The geometric explanation is immediate. Retail order flow has *low Fisher
 information* — it is largely uninformed. In the language of Section 4:
 
-$$I_F^{\rm retail}(v;\,x) \ll I_F^{\rm institutional}(v;\,x) \tag{10.1}$$
+```math
+I_F^{\rm retail}(v;\,x) \ll I_F^{\rm institutional}(v;\,x) \tag{10.1}
+```
 
 The market maker pays for the right to trade against low-information flow
 because low $I_F$ means low adverse selection. The market maker can quote
@@ -871,7 +947,9 @@ and earns the spread with less risk of being on the wrong side.
 
 The PFOF payment equals the *Fisher information premium*:
 
-$$\mathrm{PFOF} = s_{\rm FR}^{\rm NBBO}\cdot V - s_{\rm FR}^{\rm retail}\cdot V = \bigl(s_{\rm FR}^{\rm NBBO} - s_{\rm FR}^{\rm retail}\bigr)\cdot V \tag{10.2}$$
+```math
+\mathrm{PFOF} = s_{\rm FR}^{\rm NBBO}\cdot V - s_{\rm FR}^{\rm retail}\cdot V = \bigl(s_{\rm FR}^{\rm NBBO} - s_{\rm FR}^{\rm retail}\bigr)\cdot V \tag{10.2}
+```
 
 where $V$ is the volume, $s_{\rm FR}^{\rm NBBO}$ is the national best bid-offer
 spread (set by the full information mix including informed flow), and
@@ -887,7 +965,9 @@ offer: $P_{\rm dark} = (p_1^{\rm bid} + p_1^{\rm ask})/2$.
 
 Geometrically, a dark pool is a *flat* LOB manifold:
 
-$$\kappa_{\rm LOB}^{\rm dark} = 0 \tag{10.3}$$
+```math
+\kappa_{\rm LOB}^{\rm dark} = 0 \tag{10.3}
+```
 
 Midpoint execution means zero spread ($s_{\rm FR}^{\rm dark} = 0$, because bid
 and ask collapse to the same point). Zero spread means zero curvature. The
@@ -905,13 +985,17 @@ but fill probability $p_{\rm fill} < 1$.
 The expected cost of the split $(Q_{\rm lit},\, Q_{\rm dark})$ with
 $Q_{\rm lit} + p_{\rm fill}\,Q_{\rm dark} = Q$ is:
 
-$$C(Q_{\rm lit},\, Q_{\rm dark}) = \kappa_{\rm LOB}^{\rm lit}\,Q_{\rm lit}^{2} + (1 - p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}\,Q_{\rm dark}^{2} \tag{10.4}$$
+```math
+C(Q_{\rm lit},\, Q_{\rm dark}) = \kappa_{\rm LOB}^{\rm lit}\,Q_{\rm lit}^{2} + (1 - p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}\,Q_{\rm dark}^{2} \tag{10.4}
+```
 
 The first term is the impact cost of the lit portion; the second is the cost
 of the unfilled dark pool quantity that must be re-routed to the lit market.
 Minimising over the split gives the optimal dark pool allocation:
 
-$$Q_{\rm dark}^{\ast} = Q\,\frac{p_{\rm fill}}{p_{\rm fill} + \sqrt{(1-p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}}} \tag{10.5}$$
+```math
+Q_{\rm dark}^{\ast} = Q\,\frac{p_{\rm fill}}{p_{\rm fill} + \sqrt{(1-p_{\rm fill})\,\kappa_{\rm LOB}^{\rm lit}}} \tag{10.5}
+```
 
 When $p_{\rm fill}$ is high and $\kappa_{\rm LOB}^{\rm lit}$ is large (thin
 lit market): route more to the dark pool. When $p_{\rm fill}$ is low or the
@@ -927,14 +1011,18 @@ We collect the principal results of this paper.
 
 **Theorem M1** (Spread = Fisher-Rao distance). *The bid-ask spread is:*
 
-$$s_{\rm FR} = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right)$$
+```math
+s_{\rm FR} = 2\arccos\!\left(\sum_{i=1}^{d} \sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\right)
+```
 
 *measuring the informational distance between the bid and ask distributions.*
 *(Proved: Section 2, Theorem 2.1.)*
 
 **Theorem M2** (Market impact = geodesic curvature). *Price impact decomposes as:*
 
-$$\Delta P = \kappa_{\rm LOB}(p)\,Q + \tfrac{1}{2}R_{\rm LOB}(p)\,Q^2 + O(Q^3)$$
+```math
+\Delta P = \kappa_{\rm LOB}(p)\,Q + \tfrac{1}{2}R_{\rm LOB}(p)\,Q^2 + O(Q^3)
+```
 
 *The square-root law $\Delta P \sim \sqrt{Q}$ arises from the Jacobi boundary
 behaviour of the LOB depth profile.*
@@ -943,7 +1031,9 @@ behaviour of the LOB depth profile.*
 **Theorem M3** (Kyle's lambda = Fisher information). *The Kyle price impact
 coefficient satisfies:*
 
-$$\lambda = \frac{1}{2}\,\mathrm{SNR} = \frac{\sigma_v}{2\sigma_u}$$
+```math
+\lambda = \frac{1}{2}\,\mathrm{SNR} = \frac{\sigma_v}{2\sigma_u}
+```
 
 *which is one-half of the signal-to-noise ratio — the Fisher information
 content of order flow about true value.*
@@ -951,21 +1041,27 @@ content of order flow about true value.*
 
 **Theorem M4** (Almgren-Chriss = LOB geodesic). *The optimal execution rate is:*
 
-$$\dot{x}(t) = -Q\,\frac{\sinh\!\bigl(\kappa(T-t)\bigr)}{\sinh(\kappa T)}$$
+```math
+\dot{x}(t) = -Q\,\frac{\sinh\!\bigl(\kappa(T-t)\bigr)}{\sinh(\kappa T)}
+```
 
 *and the execution cost equals the geodesic energy $Q^2\kappa\coth(\kappa T)$.*
 *(Proved: Section 5, Theorem 5.1.)*
 
 **Theorem M5** (Flash crash = LOB singularity). *A flash crash occurs when:*
 
-$$\kappa_{\rm LOB} > \kappa_{\rm crit} = 1/\mathrm{depth}_{\min}$$
+```math
+\kappa_{\rm LOB} > \kappa_{\rm crit} = 1/\mathrm{depth}_{\min}
+```
 
 *Circuit breakers are topological surgery preventing the curvature singularity.*
 *(Proved: Section 7, Theorem 7.1.)*
 
 **Theorem M6** (Spectral hierarchy). *The spectral gaps satisfy:*
 
-$$\lambda_1^{\rm LOB} \gg \lambda_1^{\rm intraday} \gg \lambda_1^{\rm daily} \gg \lambda_1^{\rm macro}$$
+```math
+\lambda_1^{\rm LOB} \gg \lambda_1^{\rm intraday} \gg \lambda_1^{\rm daily} \gg \lambda_1^{\rm macro}
+```
 
 *HFTs capture fast eigenmodes; factor investors capture slow eigenmodes.
 The two are spectrally orthogonal.*

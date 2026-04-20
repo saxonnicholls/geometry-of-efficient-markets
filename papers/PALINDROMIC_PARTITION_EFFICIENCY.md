@@ -40,7 +40,9 @@ Directly implementable with 30 lines of Python.
 into palindromes. Its logarithm divided by $T$ is a NEW ENTROPY MEASURE
 — the palindromic partition entropy. For different universality classes:
 
-$$h_{\rm pal-partition}(\sigma) = \lim_{T \to \infty} \frac{\log P(\sigma)}{T}$$
+```math
+h_{\rm pal-partition}(\sigma) = \lim_{T \to \infty} \frac{\log P(\sigma)}{T}
+```
 
 which depends on the palindromic class (P1: small, P6: maximum).
 
@@ -51,7 +53,9 @@ crisis/non-crisis periods. These are direct observables.
 **(v) Connection to the palindromic fraction.** The PEI closely correlates
 with the palindromic fraction $\rho_{\rm market}$ from MARKET_STRUCTURE_THEOREM.md:
 
-$$\rho_{\rm market} \approx \text{PEI} \cdot (1 + O(1/T))$$
+```math
+\rho_{\rm market} \approx \text{PEI} \cdot (1 + O(1/T))
+```
 
 The two measures agree asymptotically, providing a cross-check.
 
@@ -74,7 +78,9 @@ empirical measurement.
 Given a string $s = s_1 s_2 \cdots s_n$, a **palindromic partition** is a
 decomposition:
 
-$$s = p_1 p_2 \cdots p_k \tag{1.1}$$
+```math
+s = p_1 p_2 \cdots p_k \tag{1.1}
+```
 
 where each $p_i$ is a palindrome (including single characters). The number
 of CUTS is $k - 1$.
@@ -87,7 +93,9 @@ of CUTS is $k - 1$.
 
 The DP for minimum cuts:
 
-$$\text{minCuts}(i) = \min_{0 \leq j < i, s[j+1:i] \in \text{Pal}} \text{minCuts}(j) + 1 \tag{1.2}$$
+```math
+\text{minCuts}(i) = \min_{0 \leq j < i, s[j+1:i] \in \text{Pal}} \text{minCuts}(j) + 1 \tag{1.2}
+```
 
 with base case $\text{minCuts}(0) = -1$ (empty string, no cuts needed).
 
@@ -127,11 +135,15 @@ def min_cuts_palindrome(s):
 The **palindrome partition function** $P(s)$ counts the number of valid
 partitions:
 
-$$P(s) = |\{(p_1, \ldots, p_k) : s = p_1 \cdots p_k, p_i \in \text{Pal}\}| \tag{1.3}$$
+```math
+P(s) = |\{(p_1, \ldots, p_k) : s = p_1 \cdots p_k, p_i \in \text{Pal}\}| \tag{1.3}
+```
 
 **DP:**
 
-$$P(i) = \sum_{0 \leq j < i, s[j+1:i] \in \text{Pal}} P(j) \tag{1.4}$$
+```math
+P(i) = \sum_{0 \leq j < i, s[j+1:i] \in \text{Pal}} P(j) \tag{1.4}
+```
 
 with $P(0) = 1$.
 
@@ -146,7 +158,9 @@ with $P(0) = 1$.
 **Definition 2.1** (Palindromic Efficiency Index, PEI). *For a symbolic
 sequence $\sigma \in A^T$ over alphabet $A$:*
 
-$$\text{PEI}(\sigma) = 1 - \frac{\text{minCuts}(\sigma)}{T - 1} \tag{2.1}$$
+```math
+\text{PEI}(\sigma) = 1 - \frac{\text{minCuts}(\sigma)}{T - 1} \tag{2.1}
+```
 
 ### 2.2 Range and interpretation
 
@@ -184,7 +198,9 @@ markets should give PEI in range 0.3–0.5.*
 **Theorem 2.3** (PEI vs palindromic fraction). *The PEI and the palindromic
 fraction $\rho_{\rm market}$ (MARKET_STRUCTURE_THEOREM.md) are related:*
 
-$$\text{PEI}(\sigma) \approx \rho_{\rm market} + O(1/T) \tag{2.2}$$
+```math
+\text{PEI}(\sigma) \approx \rho_{\rm market} + O(1/T) \tag{2.2}
+```
 
 *as $T \to \infty$.*
 
@@ -207,7 +223,9 @@ Recall: $P(\sigma)$ = number of palindromic partitions of $\sigma$.
 
 **Proposition 3.1** (Upper and lower bounds). *For any $\sigma \in A^T$:*
 
-$$1 \leq P(\sigma) \leq 2^{T-1} \tag{3.1}$$
+```math
+1 \leq P(\sigma) \leq 2^{T-1} \tag{3.1}
+```
 
 *Lower bound: $P(\sigma) \geq 1$ always (the trivial single-character
 partition works). Upper bound: $2^{T-1}$ is the total number of partitions
@@ -217,7 +235,9 @@ partition works). Upper bound: $2^{T-1}$ is the total number of partitions
 
 **Definition 3.2** (Palindromic partition entropy).
 
-$$h_{\rm pal-partition}(\sigma) = \lim_{T \to \infty} \frac{\log_2 P(\sigma)}{T-1} \tag{3.2}$$
+```math
+h_{\rm pal-partition}(\sigma) = \lim_{T \to \infty} \frac{\log_2 P(\sigma)}{T-1} \tag{3.2}
+```
 
 This is the per-symbol entropy of palindromic partitions. Range: $[0, 1]$.
 
@@ -354,7 +374,9 @@ These are predictions — confirming or refuting them is OP-PPE1.
 
 A sharp drop in PEI is a crisis signal. Define:
 
-$$\Delta \text{PEI}(t) = \text{PEI}(t) - \text{PEI}(t - 60 \text{ days}) \tag{4.1}$$
+```math
+\Delta \text{PEI}(t) = \text{PEI}(t) - \text{PEI}(t - 60 \text{ days}) \tag{4.1}
+```
 
 Crisis warning: $\Delta \text{PEI} < -0.1$ over 60 days.
 
@@ -404,7 +426,9 @@ relations:
 **Conjecture 5.1** (PEI-Willmore). *The PEI of a market sequence is
 inversely related to its Willmore energy:*
 
-$$\text{PEI}(\sigma) \approx 1 - c \cdot \mathcal{W}(M) \tag{5.1}$$
+```math
+\text{PEI}(\sigma) \approx 1 - c \cdot \mathcal{W}(M) \tag{5.1}
+```
 
 *where $M$ is the inferred market manifold and $c$ is a normalisation
 constant.*
@@ -417,7 +441,9 @@ geometry with inverse relationships to efficiency.
 
 **Conjecture 5.2** (PEI-Kelly). *For efficient markets (PEI close to 1):*
 
-$$h_{\rm Kelly}(\sigma) \approx h_{\rm max} \cdot (1 - \text{PEI}^{2}) \tag{5.2}$$
+```math
+h_{\rm Kelly}(\sigma) \approx h_{\rm max} \cdot (1 - \text{PEI}^{2}) \tag{5.2}
+```
 
 *The Kelly rate is suppressed by palindromic efficiency (consistent with
 the palindromic entropy halving).*

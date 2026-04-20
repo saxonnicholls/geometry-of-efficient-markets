@@ -93,8 +93,10 @@ distinguished by the symmetry of the matrix with respect to time-reversal:
 The three classes are characterised by $\beta \in \{1,2,4\}$ appearing in the
 Vandermonde factor of the joint eigenvalue distribution:
 
-$$P(\lambda_1,\ldots,\lambda_n) \propto \prod_{i<j}|\lambda_i-\lambda_j|^\beta
-\cdot\exp\!\left(-\frac{\beta n}{2}\sum_i V(\lambda_i)\right) \tag{1.1}$$
+```math
+P(\lambda_1,\ldots,\lambda_n) \propto \prod_{i<j}|\lambda_i-\lambda_j|^\beta
+\cdot\exp\!\left(-\frac{\beta n}{2}\sum_i V(\lambda_i)\right) \tag{1.1}
+```
 
 ### 1.2 The market symmetry classes
 
@@ -140,7 +142,9 @@ physical arguments above and by the numerical evidence of Section 8.*
 *The symmetry class of the market's random matrix ensemble is detectable from the
 empirical distribution of the return covariance eigenvalues. Specifically, the
 ratio of the first and second eigenvalue spacings:*
-$$r_n = \frac{\lambda_{n+1}-\lambda_n}{\lambda_n-\lambda_{n-1}}$$
+```math
+r_n = \frac{\lambda_{n+1}-\lambda_n}{\lambda_n-\lambda_{n-1}}
+```
 *has a distribution that depends on $\beta$: the ratio distribution is different
 for $\beta=1$ (GOE), $\beta=2$ (GUE), and $\beta=4$ (GSE). This is a model-free
 test of the market manifold symmetry class.*
@@ -152,7 +156,9 @@ test of the market manifold symmetry class.*
 ### 2.1 The Vandermonde = eigenvalue repulsion
 
 The Vandermonde determinant:
-$$\mathrm{Van}(\lambda) = \prod_{i<j}(\lambda_i - \lambda_j) = \det(\lambda_i^{j-1}) \tag{2.1}$$
+```math
+\mathrm{Van}(\lambda) = \prod_{i<j}(\lambda_i - \lambda_j) = \det(\lambda_i^{j-1}) \tag{2.1}
+```
 
 appears in the joint eigenvalue distribution (1.1) as $|\mathrm{Van}(\lambda)|^\beta$.
 In the random matrix context, this repulsion prevents eigenvalue clustering:
@@ -167,8 +173,10 @@ repulsion is the Fisher-Rao pressure keeping factors orthogonal and well-separat
 between the factor eigenvalues. Specifically, the probability measure on factor
 eigenvalue configurations:*
 
-$$\mu_{\rm factor}(d\lambda) \propto |\mathrm{Van}(\lambda)|^\beta
-\prod_i \lambda_i^{\alpha_i-1}(1-\lambda_i)^{\beta_i-1}\,d\lambda_i \tag{2.2}$$
+```math
+\mu_{\rm factor}(d\lambda) \propto |\mathrm{Van}(\lambda)|^\beta
+\prod_i \lambda_i^{\alpha_i-1}(1-\lambda_i)^{\beta_i-1}\,d\lambda_i \tag{2.2}
+```
 
 *is the $\beta$-Jacobi ensemble, which is the factor eigenvalue distribution under
 the Jeffreys prior on the market manifold.*
@@ -197,14 +205,18 @@ degeneracy than the CAPM — the GUE Vandermonde provides a stronger diversifica
 
 The Selberg integral \[Selberg 1944\]:
 
-$$S_n(a,b,\gamma) = \int_0^1\cdots\int_0^1
+```math
+S_n(a,b,\gamma) = \int_0^1\cdots\int_0^1
 \prod_{i=1}^{n} t_i^{a-1}(1-t_i)^{b-1}
-\prod_{1\leq i<j\leq n}|t_i-t_j|^{2\gamma}\,dt_1\cdots dt_n \tag{3.1}$$
+\prod_{1\leq i<j\leq n}|t_i-t_j|^{2\gamma}\,dt_1\cdots dt_n \tag{3.1}
+```
 
 has the exact closed form:
 
-$$S_n(a,b,\gamma) = \prod_{k=0}^{n-1}\frac{\Gamma(a+k\gamma)\Gamma(b+k\gamma)\Gamma(1+(k+1)\gamma)}
-{\Gamma(a+b+(n-1+k)\gamma)\Gamma(1+\gamma)} \tag{3.2}$$
+```math
+S_n(a,b,\gamma) = \prod_{k=0}^{n-1}\frac{\Gamma(a+k\gamma)\Gamma(b+k\gamma)\Gamma(1+(k+1)\gamma)}
+{\Gamma(a+b+(n-1+k)\gamma)\Gamma(1+\gamma)} \tag{3.2}
+```
 
 This is one of the most important integrals in mathematical physics — appearing in
 conformal field theory, the quantum Hall effect, and random matrix theory.
@@ -215,8 +227,10 @@ conformal field theory, the quantum Hall effect, and random matrix theory.
 *The normalisation constant of the Manifold Universal Portfolio on the $r$-dimensional
 market manifold is a Selberg integral:*
 
-$$\mathcal{Z}_{T}^{M} = \int_{M^r} W_T(b)\,d\mathrm{vol}_{M}(b)
-= S_r(Tb^{\ast}_{1} - 1/2, Tb^{\ast}_{2} - 1/2, \beta/2) \tag{3.3}$$
+```math
+\mathcal{Z}_{T}^{M} = \int_{M^r} W_T(b)\,d\mathrm{vol}_{M}(b)
+= S_r(Tb^{\ast}_{1} - 1/2, Tb^{\ast}_{2} - 1/2, \beta/2) \tag{3.3}
+```
 
 *where $\beta$ is the Dyson index of the market manifold (1, 2, or 4), and
 $b^{\ast}_{1}, b^{\ast}_{2},\ldots$ are the log-optimal portfolio weights at the factor vertices.*
@@ -232,15 +246,19 @@ normalisation exactly. $\square$
 **Corollary 3.2** *(The MUP partition function is exactly computable)*.
 *For a CAPM market ($\beta=1$) with $n=r$ factors:*
 
-$$\mathcal{Z}_{T}^{\rm CAPM} = S_r(Tb^{\ast}/r - 1/2, Tb^{\ast}/r - 1/2, 1/2)
+```math
+\mathcal{Z}_{T}^{\rm CAPM} = S_r(Tb^{\ast}/r - 1/2, Tb^{\ast}/r - 1/2, 1/2)
 = \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^{\ast}/r - 1/2 + k/2)\Gamma(1+(k+1)/2)}
-{\Gamma(2Tb^{\ast}/r - 1 + (r-1+k)/2)\Gamma(3/2)} \tag{3.4}$$
+{\Gamma(2Tb^{\ast}/r - 1 + (r-1+k)/2)\Gamma(3/2)} \tag{3.4}
+```
 
 *For a GUE market ($\beta=2$, Clifford torus):*
 
-$$\mathcal{Z}_{T}^{\rm GUE} = S_r(Tb^{\ast}/r - 1/2, Tb^{\ast}/r - 1/2, 1)
+```math
+\mathcal{Z}_{T}^{\rm GUE} = S_r(Tb^{\ast}/r - 1/2, Tb^{\ast}/r - 1/2, 1)
 = \prod_{k=0}^{r-1}\frac{\Gamma^2(Tb^{\ast}/r-1/2+k)\Gamma(k+2)}
-{\Gamma(2Tb^{\ast}/r-1+(r-1+k))\Gamma(2)} \tag{3.5}$$
+{\Gamma(2Tb^{\ast}/r-1+(r-1+k))\Gamma(2)} \tag{3.5}
+```
 
 *The ratio $\mathcal{Z}_{T}^{\rm GUE}/\mathcal{Z}_{T}^{\rm CAPM}$ is an explicit function
 of $r$ and $T$ that measures the excess diversification provided by the GUE Clifford
@@ -260,9 +278,11 @@ a $T\times d$ random matrix in the $\beta$-ensemble (real/complex/quaternionic
 for $\beta=1/2/4$) with aspect ratio $c = d/T$, the empirical spectral distribution
 converges to the $\beta$-Marchenko-Pastur law:*
 
-$$\rho_{\rm MP}^\beta(\lambda) = \frac{1}{2\pi c\lambda}
+```math
+\rho_{\rm MP}^\beta(\lambda) = \frac{1}{2\pi c\lambda}
 \sqrt{(\lambda_+ - \lambda)(\lambda-\lambda_-)}\cdot\mathbf{1}_{[\lambda_-,\lambda_+]}(\lambda)
-\tag{4.1}$$
+\tag{4.1}
+```
 
 *where $\lambda_\pm = (1\pm\sqrt{c})^2$ and $c = d/T$ is the aspect ratio.*
 
@@ -281,8 +301,10 @@ with increasing repulsion as $\beta$ increases.
 The equilibrium measure $\mu^{\ast}$ — the weak limit of the empirical spectral distribution — 
 minimises the $\beta$-ensemble free energy functional:
 
-$$F_\beta[\mu] = \int V(\lambda)\,\mu(d\lambda)
-- \frac{1}{\beta}\int\!\!\int\log|\lambda-\mu|\,\mu(d\lambda)\mu(d\mu) \tag{4.2}$$
+```math
+F_\beta[\mu] = \int V(\lambda)\,\mu(d\lambda)
+- \frac{1}{\beta}\int\!\!\int\log|\lambda-\mu|\,\mu(d\lambda)\mu(d\mu) \tag{4.2}
+```
 
 **In the market context:** The potential $V(\lambda) = -L_T(b)$ is the negative Kelly
 growth rate. The logarithmic energy term is the Fisher-Rao diversification pressure.
@@ -293,14 +315,18 @@ pressure.
 *The equilibrium measure $\mu^{\ast}_\beta$ of the $\beta$-ensemble with potential
 $V(\lambda) = -L_T(b)$ is the log-optimal portfolio distribution on $M^r$:*
 
-$$\mu^{\ast}_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_{M}(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}$$
+```math
+\mu^{\ast}_\beta = \pi_T(db) = \frac{W_T(b)\,d\mathrm{vol}_{M}(b)}{\int_{M^r}W_T(b')\,d\mathrm{vol}_{M}(b')} \tag{4.3}
+```
 
 — the MUP posterior distribution. The variational problem for the RMT equilibrium
 measure IS the MUP optimisation problem.
 
 The Euler-Lagrange equation for (4.2):
 
-$$V'(\lambda) - \frac{2}{\beta}\mathrm{P.V.}\int\frac{\mu^{\ast}(d\mu)}{\lambda-\mu} = C \tag{4.4}$$
+```math
+V'(\lambda) - \frac{2}{\beta}\mathrm{P.V.}\int\frac{\mu^{\ast}(d\mu)}{\lambda-\mu} = C \tag{4.4}
+```
 
 (where P.V. is the principal value) is the Fredholm integral equation whose solution
 is the MUP portfolio. The kernel $1/(\lambda-\mu)$ is the Cauchy transform — the
@@ -316,8 +342,10 @@ The Tracy-Widom distribution $F_\beta(s)$ describes the rescaled fluctuations of
 largest eigenvalue $\lambda_{\rm max}$ of a $\beta$-ensemble matrix near the edge of
 the support:
 
-$$\mathbb{P}\!\left(\lambda_{\rm max} \leq \lambda_+ + \frac{s}{\lambda_+ n^{2/3}}\right)
-\to F_\beta(s) \quad\text{as } n\to\infty \tag{5.1}$$
+```math
+\mathbb{P}\!\left(\lambda_{\rm max} \leq \lambda_+ + \frac{s}{\lambda_+ n^{2/3}}\right)
+\to F_\beta(s) \quad\text{as } n\to\infty \tag{5.1}
+```
 
 **The three distributions are connected through Fredholm determinant representations.**
 The Tracy-Widom distributions $F_1$, $F_2$, $F_4$ are related via Fredholm determinants
@@ -391,11 +419,13 @@ interpolate between the $\beta$-ensemble (factor statistics) and Poisson statist
 (idiosyncratic statistics), with the crossover controlled by the Jacobi spectral gap
 $\lambda_1(L_M)$:*
 
-$$\text{At scale } k \text{ from } \lambda_r: \quad \text{statistics} =
+```math
+\text{At scale } k \text{ from } \lambda_r: \quad \text{statistics} =
 \begin{cases}
-\beta\text{-ensemble} & k \ll \lambda_1(L_M)^{-1} \\
-\text{Poisson} & k \gg \lambda_1(L_M)^{-1}
-\end{cases} \tag{6.1}$$
+\beta\text{-ensemble} \& k \ll \lambda_1(L_M)^{-1} \\
+\text{Poisson} \& k \gg \lambda_1(L_M)^{-1}
+\end{cases} \tag{6.1}
+```
 
 *The Jacobi spectral gap $\lambda_1$ controls the mesoscopic crossover scale:
 a large spectral gap means a sharp factor-to-idiosyncratic boundary; a small gap
@@ -419,14 +449,18 @@ is visible.
 ### 7.1 The Wishart-Laguerre ensemble
 
 For a GOE market ($\beta=1$), the sample Fisher information matrix:
-$$\hat F = \frac{1}{T}X^TX, \qquad X\in\mathbb{R}^{T\times d} \tag{7.1}$$
+```math
+\hat F = \frac{1}{T}X^TX, \qquad X\in\mathbb{R}^{T\times d} \tag{7.1}
+```
 
 is a **real Wishart matrix** (also called the Laguerre orthogonal ensemble). Its joint
 eigenvalue density:
 
-$$P_{\rm Wishart}^\beta(\lambda) \propto
+```math
+P_{\rm Wishart}^\beta(\lambda) \propto
 \prod_{i<j}|\lambda_i-\lambda_j|^\beta
-\cdot\prod_i\lambda_i^{\beta(T-d-1)/2}\cdot e^{-\beta T\lambda_i/2} \tag{7.2}$$
+\cdot\prod_i\lambda_i^{\beta(T-d-1)/2}\cdot e^{-\beta T\lambda_i/2} \tag{7.2}
+```
 
 is a $\beta$-Laguerre ensemble with parameter $a = \beta(T-d-1)/2$.
 
@@ -510,7 +544,9 @@ This is a direct test of whether the market's symmetry class is GOE or GUE.
 Dyson \[1962\] showed that the eigenvalue dynamics of a matrix undergoing standard
 Brownian motion form a particle system with logarithmic repulsion:
 
-$$d\lambda_i = dW_i + \frac{\beta}{2}\sum_{j\neq i}\frac{dt}{\lambda_i-\lambda_j} \tag{9.1}$$
+```math
+d\lambda_i = dW_i + \frac{\beta}{2}\sum_{j\neq i}\frac{dt}{\lambda_i-\lambda_j} \tag{9.1}
+```
 
 This is the **Dyson Brownian motion** — eigenvalues diffuse while repelling each other
 with strength $\beta/2$.
@@ -524,8 +560,10 @@ $\beta/2$ where $\beta$ is the market's symmetry class.
 *For a market on manifold $M$ with Dyson class $\beta$, the eigenvalue process
 $(\lambda_1(t),\ldots,\lambda_r(t))$ of the Fisher information matrix satisfies:*
 
-$$d\lambda_i = \varepsilon\,dW_i + \frac{\beta\varepsilon^2}{2}\sum_{j\neq i}\frac{dt}{\lambda_i-\lambda_j}
-+ (\text{mean curvature drift}) \tag{9.2}$$
+```math
+d\lambda_i = \varepsilon\,dW_i + \frac{\beta\varepsilon^2}{2}\sum_{j\neq i}\frac{dt}{\lambda_i-\lambda_j}
++ (\text{mean curvature drift}) \tag{9.2}
+```
 
 *For the efficient market ($H=0$): the mean curvature drift vanishes and the eigenvalues
 perform pure $\beta$-Dyson BM.*
@@ -555,18 +593,20 @@ eigenvalue dynamics (Kramers doublets — eigenvalues come in pairs).
 
 ## Summary: The RMT-Geometry-Finance Triangle
 
-$$\begin{array}{ccc}
-\text{Random Matrix Theory} & \longleftrightarrow & \text{Market Geometry} \\[6pt]
-\beta\in\{1,2,4\} & \longleftrightarrow & \text{Symmetry of }M \\
-\text{Vandermonde }|\lambda_i-\lambda_j|^\beta & \longleftrightarrow & \text{Fisher-Rao repulsion} \\
-\text{Marchenko-Pastur} & \longleftrightarrow & d\mathrm{vol}_{M}\text{ (stationary dist.)} \\
-\text{Tracy-Widom }F_\beta & \longleftrightarrow & \text{Largest factor eigenvalue} \\
-\text{Selberg integral} & \longleftrightarrow & \text{MUP partition function} \\
-\text{Equilibrium measure} & \longleftrightarrow & \text{MUP posterior} \\
-\text{Dyson BM} & \longleftrightarrow & \text{Factor eigenvalue dynamics} \\
-\text{MCF} & \longleftrightarrow & \text{Eigenvalue repulsion regularisation} \\
-\text{Mesoscopic crossover} & \longleftrightarrow & TM\to NM\text{ transition} \\
-\end{array}}$$
+```math
+\begin{array}{ccc}
+\text{Random Matrix Theory} \& \longleftrightarrow \& \text{Market Geometry} \\[6pt]
+\beta\in\{1,2,4\} \& \longleftrightarrow \& \text{Symmetry of }M \\
+\text{Vandermonde }|\lambda_i-\lambda_j|^\beta \& \longleftrightarrow \& \text{Fisher-Rao repulsion} \\
+\text{Marchenko-Pastur} \& \longleftrightarrow \& d\mathrm{vol}_{M}\text{ (stationary dist.)} \\
+\text{Tracy-Widom }F_\beta \& \longleftrightarrow \& \text{Largest factor eigenvalue} \\
+\text{Selberg integral} \& \longleftrightarrow \& \text{MUP partition function} \\
+\text{Equilibrium measure} \& \longleftrightarrow \& \text{MUP posterior} \\
+\text{Dyson BM} \& \longleftrightarrow \& \text{Factor eigenvalue dynamics} \\
+\text{MCF} \& \longleftrightarrow \& \text{Eigenvalue repulsion regularisation} \\
+\text{Mesoscopic crossover} \& \longleftrightarrow \& TM\to NM\text{ transition} \\
+\end{array}}
+```
 
 **The main theorem in one sentence:** The random matrix ensemble appropriate for
 an efficient market is uniquely determined by the symmetry group of the market
