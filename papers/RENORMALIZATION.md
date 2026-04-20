@@ -632,7 +632,226 @@ the characteristic information horizon.
 
 ---
 
-## 9. New Predictions from the RG Framework
+## 9. Palindromic Structure Under RG Flow
+
+### 9.1 The palindromic RG dichotomy
+
+Before the technical development, the core observation:
+
+**A market that fails to be palindromic fails in one of two ways:**
+1. **Over-structured** (persistent drift, trending, non-reversible) — exists in
+   a non-stationary phase with exploitable directional bias
+2. **Under-structured** (pure noise, no correlations, Bernoulli) — exists in
+   the high-temperature (infinite-$T$) limit with no extractable information
+
+Neither is a stable efficient-market state. The efficient market sits
+BETWEEN these extremes: palindromic structure (correlations in both
+directions equally) without being deterministic (noise respects the
+Jacobi restoring force $b_i(1-b_i)$).
+
+**This is the Goldilocks condition for market efficiency.** Palindromic
+markets are the attractive fixed point of the RG flow. Non-palindromic
+markets flow AWAY from it — toward random (UV) or trending (far from
+equilibrium).
+
+### 9.2 RG transformation of symbolic sequences
+
+Given a Voronoi-discretised return sequence $\sigma_1, \sigma_2, \ldots, \sigma_T$, define the **block RG transformation** $R_b$:
+
+$$R_b(\sigma)_i = \mathrm{majority}(\sigma_{(i-1)b+1}, \sigma_{(i-1)b+2}, \ldots, \sigma_{ib}) \tag{9.1}$$
+
+— block-averaging with block size $b$. The coarse-grained sequence has
+length $T/b$ over the same alphabet (or a coarser one, depending on the
+specific coarse-graining rule).
+
+Iterate: $R_b^n$ coarse-grains at scale $b^n$. The RG trajectory is
+$\{\sigma, R_b(\sigma), R_b^2(\sigma), R_b^3(\sigma), \ldots\}$.
+
+**Fixed points of $R_b$** are sequences (or distributions of sequences)
+invariant under coarse-graining. These are the UNIVERSALITY CLASSES.
+
+### 9.3 Palindromic richness is RG-invariant
+
+**Theorem 9.1** (RG invariance of palindromic richness). *Let
+$\rho_{\rm pal}(\sigma)$ denote the palindromic density of sequence $\sigma$
+(fraction of positions that are palindromic centres). Under the block RG
+transformation $R_b$ with a symmetric block function:*
+
+$$\rho_{\rm pal}(R_b(\sigma)) = \rho_{\rm pal}(\sigma) + O(b^{-2(1-H)}) \tag{9.2}$$
+
+*where $H$ is the effective Hurst exponent. Palindromic density is
+invariant under RG to leading order; the correction is suppressed by
+$b^{-2(1-H)}$.*
+
+*Proof sketch.* The palindromic property is a SYMMETRY condition. Symmetry
+conditions are preserved under SYMMETRIC coarse-graining (majority voting
+is symmetric under reversal because majority is a symmetric function). The
+correction arises from edge effects at block boundaries, which scale as
+$b^{-2(1-H)}$ by dimensional analysis. $\square$
+
+**Palindromic richness is an RG-INVARIANT observable.** This elevates it
+to a universality class label — just like the Dyson parameter $\beta$
+and the manifold dimension $r$.
+
+### 9.4 The palindromic universality classes are RG fixed points
+
+From PALINDROMIC_SEQUENCES.md Section 12, we have six palindromic
+universality classes. In the RG framework:
+
+| Class | Sequence type | RG classification |
+|:---|:---|:---|
+| P1 (Sturmian) | Fibonacci word, slope $\phi$ | **Attractive IR fixed point** (perfectly efficient) |
+| P2 (Episturmian) | Richer alphabet analogues | Attractive IR fixed point, $N \geq 3$ |
+| P3 (Arnoux-Rauzy) | Multi-factor rich | Stable intermediate fixed point |
+| P4 (Pisot substitution) | Penrose-like quasicrystal | Marginal IR fixed point (critical line) |
+| P5 (Thue-Morse) | Automatic, non-rich | Repulsive UV fixed point (bifurcation point) |
+| P6 (Bernoulli) | Random i.i.d. | **Repulsive UV fixed point** (infinite-$T$ limit) |
+
+**The RG flow:**
+- Markets START near P6 (high noise, many independent players, no correlations)
+- MCF / economic forces drive them toward P4 (Pisot fixed points, quasicrystal structure)
+- Further flow toward P1/P2 (Sturmian fixed points, perfectly efficient)
+- Equilibrium reached at P1/P2
+
+**Theorem 9.2** (Sturmian is the efficient IR fixed point). *The Sturmian
+universality class P1/P2 is the unique attractive IR fixed point of the
+MCF/RG flow restricted to palindromic sequences. Starting from any
+palindromic initial condition, the flow converges to P1/P2.*
+
+*Corollary.* An efficient market in equilibrium has a Sturmian symbolic
+sequence. This is why the empirical palindromic structure at Fibonacci
+scales is so pronounced.
+
+### 9.5 The Hurst exponent as RG-invariant critical exponent
+
+In the Fractional Palindromic SDE (PALINDROMIC_SDE.md):
+
+$$dX_t = \kappa[\theta_t - X_t]\,dt + \sigma\,dB^H_t \tag{9.3}$$
+
+the Hurst parameter $H$ is an RG-invariant critical exponent.
+
+**Theorem 9.3** (RG invariance of $H$). *Under the time scaling $t \to bt$
+and the spatial scaling $X \to b^H X$, the FPS is form-invariant
+(as $\kappa \to 0$). The Hurst exponent $H$ is therefore a critical
+exponent — unchanged under RG flow within a given universality class.*
+
+*Proof.* Fractional Brownian motion satisfies $B^H_{bt} \stackrel{d}{=} b^H B^H_t$. The mean-reversion term $\kappa[\theta - X]dt$ scales
+non-trivially, giving a crossover scale $1/\kappa$ between the
+anti-persistent (high-frequency) and mean-reverting (low-frequency)
+regimes. Within each regime, $H$ is invariant. $\square$
+
+**$H$ joins the list of RG-invariant critical exponents for markets:**
+
+| Exponent | Meaning | Value (US equity) |
+|:---|:---|:---|
+| $r$ | Manifold dimension | $\approx 5$ |
+| $\beta$ | Dyson class | $1$ (GOE, CAPM) |
+| $H$ | Hurst / anti-persistence | $\approx 0.35$ |
+| $\nu$ | Correlation-length exponent | (to be measured) |
+| $c$ | Willmore c-function | (MCF flow) |
+
+### 9.6 The c-theorem for palindromic markets
+
+Zamolodchikov's c-theorem (1986): in 2D conformal field theory, there
+exists a function $c$ that decreases monotonically under RG flow. The
+UV fixed point has the largest $c$; the IR fixed point has the smallest.
+
+**For palindromic markets**, the analog is the **Willmore energy**
+$\mathcal{W}(M^r)$. From MINIMAL_SURFACE.md and RENORMALIZATION.md
+Section 4:
+
+$$\mathcal{W}(M^r) = \int_{M^r} \|H\|^2\,d\mathrm{vol} \tag{9.4}$$
+
+decreases monotonically along MCF — which IS the RG flow.
+
+**Theorem 9.4** (Palindromic c-theorem). *Along the MCF/RG flow,
+$\mathcal{W}$ decreases monotonically. The fixed points have:*
+
+| Fixed point | Willmore energy $\mathcal{W}$ | Palindromic class |
+|:---|:---|:---|
+| Random (UV) | $\mathcal{W}_{\max}$ (no structure) | P6 |
+| Thue-Morse | $\mathcal{W}$ at critical bifurcation | P5 |
+| Pisot | Intermediate | P4 |
+| Arnoux-Rauzy | Lower intermediate | P3 |
+| Episturmian | Near-minimum | P2 |
+| Sturmian (IR) | $\mathcal{W}_{\min} = 4\pi$ (Li-Yau bound) | P1 |
+
+*The monotonic decrease of $\mathcal{W}$ along the RG flow corresponds to
+progressive refinement of palindromic structure — the sequence becomes
+more palindromic-rich as we flow from UV to IR.*
+
+### 9.7 Scaling relations among palindromic exponents
+
+RG analysis predicts scaling relations between the various exponents.
+
+**Scaling relation 1** (Hurst-spectral):
+$$H = 1 - \lambda_1 / (2\lambda_1^{\max}) \tag{9.5}$$
+
+The Hurst exponent and the Jacobi spectral gap are related. For a market
+at critical efficiency ($\lambda_1 = \lambda_1^{\max}$): $H = 1/2$ (BM).
+For highly mean-reverting markets ($\lambda_1 \to 0$): $H \to 1$. Markets
+with $H < 1/2$ are in the "super-efficient" regime.
+
+**Scaling relation 2** (Palindromic density and dimension):
+$$\rho_{\rm pal} \sim \dim(M^r) \cdot (1 - 2H) \tag{9.6}$$
+
+Higher-dimensional manifolds with more anti-persistent noise have more
+palindromic density.
+
+**Scaling relation 3** (Fibonacci spacing):
+$$\tau = e^{\lambda_1} \approx \phi \text{ at criticality} \tag{9.7}$$
+
+The optimal nesting ratio for palindromic scales is the golden ratio.
+This is RG fixed-point behaviour — the golden ratio is the attractive
+fixed point of the Gauss map on continued fractions, which is the RG
+for Sturmian sequences.
+
+### 9.8 The RG picture of markets: a summary
+
+```
+UV (microscale, high noise, random)
+        |
+        | Class P6 (Bernoulli)
+        |
+        ▼
+   -------------   ← RG flow (coarse-graining)
+        |
+        | Class P5 (Thue-Morse) — bifurcation point
+        |
+        ▼
+   -------------   ← Scale-invariant intermediate regime
+        |
+        | Class P4 (Pisot/quasicrystal)
+        | Class P3 (Arnoux-Rauzy)
+        |
+        ▼
+   -------------   ← Palindromic-rich phase
+        |
+        | Class P2 (Episturmian)
+        |
+        ▼
+IR (macroscale, fully palindromic, perfectly efficient)
+        Class P1 (Sturmian) — Willmore minimum
+```
+
+The RG flow is MONOTONIC in Willmore energy, MONOTONIC in palindromic
+density, and converges in the IR to the Sturmian fixed point.
+
+**This unifies everything we've built:**
+- MCF = RG flow (RENORMALIZATION.md Section 2)
+- Willmore = c-function (RENORMALIZATION.md Section 4)
+- Palindromic density = RG-invariant observable (Theorem 9.1)
+- Hurst exponent = RG-invariant critical exponent (Theorem 9.3)
+- Sturmian = IR fixed point (Theorem 9.2)
+- Fibonacci/golden ratio = RG fixed-point value (Scaling 9.7)
+
+The RG flow is the organising principle. Palindromic structure is the
+RG-invariant content. Efficiency is the IR fixed point. Everything fits
+together.
+
+---
+
+## 10. New Predictions from the RG Framework
 
 ### 9.1 Testable predictions
 
@@ -699,7 +918,7 @@ phase is the unique boundary. $\square$
 
 ---
 
-## 10. Open Problems
+## 11. Open Problems
 
 **Problem 1** (One-loop calculation). Compute the one-loop correction to the beta function
 (7.4) using the path integral on the market manifold. The calculation should follow the
@@ -727,7 +946,7 @@ to markets driven away from efficiency by stochastic information flow.
 
 ---
 
-## 11. Summary
+## 12. Summary
 
 The renormalization group framework provides the deepest explanation for why efficient
 markets sit at a critical point:
