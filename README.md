@@ -100,7 +100,7 @@ generated from real market data.**
 ### Test 1: Palindrome counts
 
 <p align="center">
-  <img src="data/results/fps_vs_gbm/01_palindrome_counts.png" width="100%" alt="Palindrome counts: real vs GBM vs FPS"/>
+  <img src="code/visualisation/fps_vs_gbm/01_palindrome_counts.png" width="100%" alt="Palindrome counts: real vs GBM vs FPS"/>
 </p>
 
 **The devastating chart.** Real S&P 500 palindrome counts (dark blue)
@@ -112,7 +112,7 @@ range across all lengths. **GBM rejected at p ≈ $10^{-16}$.**
 ### Test 2: Volatility clustering
 
 <p align="center">
-  <img src="data/results/fps_vs_gbm/03_volatility_clustering.png" width="100%" alt="Volatility clustering: autocorrelation of absolute returns"/>
+  <img src="code/visualisation/fps_vs_gbm/03_volatility_clustering.png" width="100%" alt="Volatility clustering: autocorrelation of absolute returns"/>
 </p>
 
 **GBM cannot produce volatility clustering.** The autocorrelation of
@@ -125,7 +125,7 @@ single-chart rejection of GBM.**
 ### Test 3: The variogram — proof of anti-persistent Hurst
 
 <p align="center">
-  <img src="data/results/fps_vs_gbm/06_variogram.png" width="100%" alt="Variogram: structure function showing anti-persistent Hurst"/>
+  <img src="code/visualisation/fps_vs_gbm/06_variogram.png" width="100%" alt="Variogram: structure function showing anti-persistent Hurst"/>
 </p>
 
 **Empirical variogram slope ≈ 0.80 — incompatible with GBM.** The
@@ -138,7 +138,7 @@ quantitative proof that markets are NOT Brownian motion.**
 ### Test 4: The PEI — 99 years of palindromic efficiency
 
 <p align="center">
-  <img src="data/results/pei/01_pei_time_series.png" width="100%" alt="Palindromic Efficiency Index over 99 years"/>
+  <img src="code/visualisation/pei/01_pei_time_series.png" width="100%" alt="Palindromic Efficiency Index over 99 years"/>
 </p>
 
 **The S&P 500 palindromic efficiency, 1926-2025.** Rolling 1-year PEI
@@ -154,7 +154,7 @@ $1/\phi^2 = 0.382$.
 ### Test 5: The efficiency diagram
 
 <p align="center">
-  <img src="data/results/pei/03_2d_efficiency_diagram.png" width="100%" alt="2D efficiency diagram: PEI vs partition entropy"/>
+  <img src="code/visualisation/pei/03_2d_efficiency_diagram.png" width="100%" alt="2D efficiency diagram: PEI vs partition entropy"/>
 </p>
 
 **The S&P 500 is definitively in Class P3/P4 (Pisot/Arnoux-Rauzy).**
@@ -168,7 +168,7 @@ Exactly in the middle — which is where real markets live.**
 ### Test 6: Return distributions (fat tails)
 
 <p align="center">
-  <img src="data/results/fps_vs_gbm/04_return_distributions.png" width="100%" alt="Return distribution: real vs GBM vs FPS"/>
+  <img src="code/visualisation/fps_vs_gbm/04_return_distributions.png" width="100%" alt="Return distribution: real vs GBM vs FPS"/>
 </p>
 
 **Fat tails are everywhere in real data; GBM has none.** Left: density
@@ -356,7 +356,7 @@ $\kappa = 1.5$/year, $H = 0.35$ (anti-persistent).
 #### The price curves
 
 <p align="center">
-  <img src="data/results/option_pricing/01_price_curves.png" width="100%" alt="Option prices vs strike at multiple maturities"/>
+  <img src="code/visualisation/option_pricing/01_price_curves.png" width="100%" alt="Option prices vs strike at multiple maturities"/>
 </p>
 
 Call option prices vs strike at 1 month, 3 months, 1 year, and 2 years.
@@ -369,7 +369,7 @@ FPS gets it with three.
 #### The volatility smile
 
 <p align="center">
-  <img src="data/results/option_pricing/02_volatility_smile.png" width="100%" alt="The implied volatility smile from FPS"/>
+  <img src="code/visualisation/option_pricing/02_volatility_smile.png" width="100%" alt="The implied volatility smile from FPS"/>
 </p>
 
 **This is the money shot.** Black-Scholes implied volatility is flat
@@ -383,7 +383,7 @@ first principles — no SVI, no SABR, no ad-hoc fitting.**
 #### The term structure hump
 
 <p align="center">
-  <img src="data/results/option_pricing/03_term_structure.png" width="100%" alt="ATM volatility term structure"/>
+  <img src="code/visualisation/option_pricing/03_term_structure.png" width="100%" alt="ATM volatility term structure"/>
 </p>
 
 ATM implied volatility as a function of maturity. Black-Scholes is flat
@@ -398,7 +398,7 @@ plus anti-persistent noise.
 #### The pricing difference heatmap
 
 <p align="center">
-  <img src="data/results/option_pricing/04_difference_heatmap.png" width="100%" alt="FPS − BS price difference heatmap"/>
+  <img src="code/visualisation/option_pricing/04_difference_heatmap.png" width="100%" alt="FPS − BS price difference heatmap"/>
 </p>
 
 The price difference $C_{\rm FPS} - C_{\rm BS}$ across (strike × maturity).
@@ -412,7 +412,7 @@ short maturities, diverging sharply at longer tenors.
 #### The Greeks
 
 <p align="center">
-  <img src="data/results/option_pricing/05_greeks_comparison.png" width="100%" alt="Option Greeks comparison"/>
+  <img src="code/visualisation/option_pricing/05_greeks_comparison.png" width="100%" alt="Option Greeks comparison"/>
 </p>
 
 Delta, Gamma, Vega, and the new Hurst Vega — all at T = 0.5 years.
@@ -426,7 +426,7 @@ hedge exposure to palindromic-structure regime changes using this Greek.
 #### Hurst sensitivity
 
 <p align="center">
-  <img src="data/results/option_pricing/06_hurst_sensitivity.png" width="100%" alt="Hurst parameter sensitivity"/>
+  <img src="code/visualisation/option_pricing/06_hurst_sensitivity.png" width="100%" alt="Hurst parameter sensitivity"/>
 </p>
 
 Left: call price curves at different Hurst values. As $H$ increases
