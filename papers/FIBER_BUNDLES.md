@@ -405,7 +405,9 @@ corresponding to $c_1 \neq 0$. By the Chern-Weil formula, this winding accumulat
 the Berry phase $\gamma_{\rm Berry} = 2\pi c_1$ per cycle. The Berry phase
 $\gamma_{\rm Berry} = 2\pi c_1$ is accumulated per cycle of the factor loop.
 Converting to log-return requires dividing by the cycle period $T_{\rm cycle}$:
-$\alpha_{\rm Berry} = \gamma_{\rm Berry}/(2\pi \cdot T_{\rm cycle}) = c_1/T_{\rm cycle}$.
+```math
+\alpha_{\rm Berry} = \gamma_{\rm Berry}/(2\pi \cdot T_{\rm cycle}) = c_1/T_{\rm cycle}.
+```
 This gives an excess log-return of $c_1/T_{\rm cycle}$ per period, which is
 topologically quantized but inversely proportional to the cycle length. $\square$
 

@@ -202,7 +202,9 @@ since the payoff depends on a single direction $b^{\ast}$. Hence the factor is $
 The second term involves the Hessian of the call price with respect to portfolio weights.*
 
 *Proof sketch.* The manifold Laplacian on $M = S^r_+$ in Bhattacharyya normalisation is
-$\Delta_{S^r} = \frac{1}{\sqrt{\det g}}\partial_i(\sqrt{\det g}\,g^{ij}\partial_j)$.
+```math
+\Delta_{S^r} = \frac{1}{\sqrt{\det g}}\partial_i(\sqrt{\det g}\,g^{ij}\partial_j).
+```
 For a function of the index $I = b^T S$ only, the Laplacian picks up only the radial
 component plus the Ricci correction. Expanding $\Delta_M C$ around the Black–Scholes
 solution and integrating over $\tau$ gives (2.12). $\square$

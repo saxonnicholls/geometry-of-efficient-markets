@@ -758,7 +758,9 @@ closer to the minimal surface along the volatility normal direction.
 "factors" in empirical asset pricing corresponds geometrically to over-estimating the dimension
 of $\Sigma$: researchers are mistaking extrinsic curvature of a low-dimensional manifold for
 additional intrinsic dimensions. The Willmore energy measures this precisely:
-$r_{\mathrm{estimated}} = r_{\mathrm{true}} + \lfloor \widetilde{\mathcal{W}}(\Sigma)/(4\pi)\rfloor$
+```math
+r_{\mathrm{estimated}} = r_{\mathrm{true}} + \lfloor \widetilde{\mathcal{W}}(\Sigma)/(4\pi)\rfloor
+```
 — for $r=2$, each $4\pi$ of Willmore energy mimics one spurious factor dimension (by the Li-Yau bound). For general $r$, the threshold per spurious dimension depends on the ambient geometry (see Remark 4.3a).
 
 **Market microstructure** (high-frequency $\kappa_g$). At intraday time scales, the geodesic

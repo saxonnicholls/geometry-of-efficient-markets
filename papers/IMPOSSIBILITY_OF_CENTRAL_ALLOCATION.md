@@ -538,7 +538,9 @@ between competing suppliers. The Cheeger constant is $h = 2/N$ — the minimum
 possible for a connected graph on $N + 1$ vertices. The spectral gap is
 $\lambda_1 = 1$ (the slowest possible convergence for a connected graph). The
 monopolist extracts rent equal to the Willmore energy:
-$\mathcal{W}_{\rm monopoly} = \int |H|^2 \, d\mathrm{vol}_{M} > 0$
+```math
+\mathcal{W}_{\rm monopoly} = \int |H|^2 \, d\mathrm{vol}_{M} > 0
+```
 (TOPOLOGY_OF_PRICE.md, Section 5.3).
 
 Anti-trust enforcement breaks the monopoly star into a denser graph of

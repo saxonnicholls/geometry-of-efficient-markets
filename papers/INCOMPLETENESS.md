@@ -461,7 +461,9 @@ For the upper bound, the LZ78 compression result from FILTRATIONS.md gives:
 c_{\rm LZ}(x_{1:T}) \sim \frac{r \log T}{\log(r+1)}
 ```
 and the description of $x_{1:T}$ via the LZ dictionary has length
-$c_{\rm LZ} \cdot \log T + O(c_{\rm LZ}) = r \cdot h_{\rm Kelly} \cdot T + O(\sqrt{T})$
+```math
+c_{\rm LZ} \cdot \log T + O(c_{\rm LZ}) = r \cdot h_{\rm Kelly} \cdot T + O(\sqrt{T})
+```
 by standard results on the optimality of LZ78 (Ziv-Lempel 1978, Theorem 2).
 
 The $O(\sqrt{T})$ gap is tight: the central limit theorem for additive

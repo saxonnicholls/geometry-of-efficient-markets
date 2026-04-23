@@ -238,11 +238,15 @@ When the market is not at its log-optimal portfolio (i.e., during a transition),
 the dynamics are nonlinear. The **manifold extended Kalman filter** (EKF):
 
 1. Propagate the state estimate along the geodesic on $M^r$:
-   $\hat b^{\ast}(t+\Delta t) = \exp_{\hat b^{\ast}(t)}(\varepsilon\sqrt{\Delta t}\,\hat\xi_t)$
+```math
+\hat b^{\ast}(t+\Delta t) = \exp_{\hat b^{\ast}(t)}(\varepsilon\sqrt{\Delta t}\,\hat\xi_t)
+```
    where $\exp$ is the Riemannian exponential map on $(M^r, g_M)$
 
 2. Update the covariance using the parallel transport of $P$ along the geodesic:
-   $P^- = \mathcal{P}_{\gamma}P\mathcal{P}_\gamma^T + \varepsilon^2\Delta t\cdot g_M^{-1}$
+```math
+P^- = \mathcal{P}_{\gamma}P\mathcal{P}_\gamma^T + \varepsilon^2\Delta t\cdot g_M^{-1}
+```
    where $\mathcal{P}_\gamma$ is parallel transport along the geodesic $\gamma$
 
 3. Compute the Kalman gain as in (2.5)

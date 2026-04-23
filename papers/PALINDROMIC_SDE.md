@@ -50,7 +50,9 @@ Z-score > 100. No parameter choice within GBM can close this gap.
 
 **(iii) The replacement: reversible diffusions.** A diffusion
 $dX = \mu(X) dt + \sigma(X) dW$ is time-reversible iff
-$\mu(X) = \frac{1}{2}\sigma^2(X) \nabla \log \pi(X) + \frac{1}{2}\nabla \sigma^2(X)$
+```math
+\mu(X) = \frac{1}{2}\sigma^2(X) \nabla \log \pi(X) + \frac{1}{2}\nabla \sigma^2(X)
+```
 for a stationary density $\pi$. This is the DETAILED BALANCE condition —
 the condition that produces palindromic statistics. GBM fails this
 condition (no stationary $\pi$). Log-OU, symmetric Jacobi, and CIR all

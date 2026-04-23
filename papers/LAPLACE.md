@@ -24,7 +24,9 @@ reason the approximation is so accurate in practice. The next correction, at $O(
 involves the third cumulant of the log-return distribution under $b^{\ast}$ and the Ricci curvature
 of $(\Delta_{d-1}, g^{\mathrm{FR}})$. We provide explicit, computable bounds for all
 $T \geq 1$ and $d \geq 2$, and illustrate the theory with numerical experiments for
-$d \in \{5, 10, 50\}$.
+```math
+d \in \{5, 10, 50\}.
+```
 
 **Keywords.** Universal portfolio; Laplace approximation; WKB expansion;
 Feynman–Kac; Hamilton–Jacobi; Fisher information; simplex integral; Van Vleck determinant;
@@ -48,7 +50,9 @@ wealth likelihood:
 ```
 
 where $\mu = \mathrm{Leb}_{d-1}/(d-1)!$ is the normalised Lebesgue measure on
-$\Delta_{d-1} = \{b \in \mathbb{R}^{d} : b \geq 0,\, \mathbf{1}^Tb = 1\}$.
+```math
+\Delta_{d-1} = \{b \in \mathbb{R}^{d} : b \geq 0,\, \mathbf{1}^Tb = 1\}.
+```
 
 Computing $\hat{b}_{T}$ exactly requires integrating over $\Delta_{d-1}$, a $(d-1)$-dimensional
 manifold. For $d = 50$ stocks this is a 49-dimensional integral.
@@ -300,7 +304,9 @@ Along a characteristic, $\dot{S} = p \cdot \dot{b} - H(b,p) - r = \frac{1}{2}\|p
 At the saddle point $b^{\ast}$, we have $p^{\ast} \equiv 0$ by the stationarity condition $\nabla_b S = p = 0$.
 Substituting $p^{\ast} = 0$ into (3.6)–(3.7): $\dot{b}^{\ast} = 0$ (the saddle is fixed), and
 $\dot{p}^{\ast} = -\nabla_b r(b^{\ast}(s),s)$. The characteristic through $b^{\ast}$ satisfies
-$S(b^{\ast}(T), T) = -\int_0^T r(b^{\ast},\tau)\,d\tau \cdot (-1) = \log W_T(b^{\ast})$.
+```math
+S(b^{\ast}(T), T) = -\int_0^T r(b^{\ast},\tau)\,d\tau \cdot (-1) = \log W_T(b^{\ast}).
+```
 
 The stationarity $\nabla_b S(b^{\ast},T) = 0$ follows from the fact that $b^{\ast}$ maximises
 $L_T(b) = \frac{1}{T}S(b,T)$, hence $\nabla S(b^{\ast},T) = T\nabla L_T(b^{\ast}) = 0$ by KKT. $\square$
@@ -591,7 +597,9 @@ gives $\frac{1}{2T^2}\kappa_{jkl}\Sigma_{ij}\Sigma_{kl}$, contributing at $O(1/T
 The key identity: for the uniform prior, $b^{\ast}$ is the unconstrained maximum of $L_T$ in
 $\mathrm{int}(\Delta_{d-1})$, and the uniform prior is the stationary distribution of the
 Wright-Fisher diffusion. This gives the symmetry relation
-$\kappa_{jkl}\Sigma_{ij}\Sigma_{kl} = b_i^{\ast}\cdot\kappa_{jkl}\Sigma_{jk}\Sigma_{ll}$,
+```math
+\kappa_{jkl}\Sigma_{ij}\Sigma_{kl} = b_i^{\ast}\cdot\kappa_{jkl}\Sigma_{jk}\Sigma_{ll},
+```
 which is exactly $A_i - b_i^{\ast}\cdot A_0 = 0$. (Geometrically: the uniform prior treats all
 directions symmetrically at $b^{\ast}$, so the cubic correction to the mean of $b_i$ is
 proportional to $b_i^{\ast}$ times the cubic correction to the normaliser.)
@@ -636,7 +644,9 @@ $K \sim 1/\sigma^3_{\mathrm{idio}}$, so:
 ```
 
 For $d = 50$, $\sigma_{\mathrm{idio}} = 0.1$, $T = 252$ (one year of daily data):
-$\|\hat{b}_{T} - b^{\ast}\|_1 \lesssim 50^3 \cdot 0.01 / 252^2 \approx 2\times 10^{-4}$.
+```math
+\|\hat{b}_{T} - b^{\ast}\|_1 \lesssim 50^3 \cdot 0.01 / 252^2 \approx 2\times 10^{-4}.
+```
 This is negligible for any practical purpose.
 
 ---
@@ -777,7 +787,9 @@ We compare the Laplace approximation $b^{\ast}$ with Monte Carlo (50,000 samples
 and measure $L^1$ error as a function of $T$ for $d \in \{5, 10, 50\}$.
 
 Data is generated from a factor model with $r = 3$ factors:
-$\log x_{t,i} = \mu_i\,\Delta t + \sum_{k=1}^{r} \phi_{ik} f_{tk} + \varepsilon_{ti}$
+```math
+\log x_{t,i} = \mu_i\,\Delta t + \sum_{k=1}^{r} \phi_{ik} f_{tk} + \varepsilon_{ti}
+```
 with $f_{tk}\sim\mathcal{N}(0,\sigma_f^2)$ and $\varepsilon_{ti}\sim\mathcal{N}(0,\sigma_e^2)$.
 
 ### 7.2 Error decay
@@ -906,7 +918,9 @@ posterior mean of $b_i$ (not $v_i$), the corresponding condition is $A_i = b_i^{
 (see (4.8c)), which holds for the uniform prior on $\Delta_{d-1}$.*
 
 **Proof.** Gram–Charlier expansion: write
-$e^{Tf(v)} = e^{-Tv^T\Sigma^{-1}v/2} \cdot \left[1 + Tf_3(v) + \frac{T^2f_3(v)^2}{2} + Tf_4(v) + \cdots\right]$.
+```math
+e^{Tf(v)} = e^{-Tv^T\Sigma^{-1}v/2} \cdot \left[1 + Tf_3(v) + \frac{T^2f_3(v)^2}{2} + Tf_4(v) + \cdots\right].
+```
 
 **Step 1: Individual integrals have $O(1/T)$ cubic corrections.**
 The term $v_i \cdot Tf_3(v) = v_i \cdot T\kappa_{jkl}v_jv_kv_l/6$ involves a fourth Gaussian

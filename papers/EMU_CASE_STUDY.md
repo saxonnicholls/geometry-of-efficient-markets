@@ -292,7 +292,9 @@ where $\delta$ depends on the neck radius and the target payback period.*
 
 *Proof.* Part (i): each Maastricht scalar is a diagonal entry of $F_i$ in the
 Maastricht basis. If $|\sigma_j^{(1)} - \sigma_j^{(2)}| \to \infty$, then
-$\|F_1 - F_2\|_{\rm op} \geq |\sigma_j^{(1)} - \sigma_j^{(2)}| \to \infty$,
+```math
+\|F_1 - F_2\|_{\rm op} \geq |\sigma_j^{(1)} - \sigma_j^{(2)}| \to \infty,
+```
 and the neck curvature $\|H_{\rm neck}\|^2 \geq C\|F_1 - F_2\|_{\rm op}$
 (from INTERMARKET_GEOMETRY.md, Proposition 5.3) is unbounded.
 

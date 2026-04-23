@@ -153,7 +153,9 @@ the normal bundle, placing holonomy in $Sp(n)$ and forcing GSE statistics. Requi
 for Theorem 1.1(iii) of RANDOM_MATRIX.
 
 **C28. Selberg Derivative = Shapley Value (Grade A) ★★**
-$\partial/\partial a_i \log S_r(a,b,\gamma) = \phi_i = b^{\ast}_{i}(\mu_i - \bar\mu)$.
+```math
+\partial/\partial a_i \log S_r(a,b,\gamma) = \phi_i = b^{\ast}_{i}(\mu_i - \bar\mu).
+```
 The derivative of the log Selberg integral with respect to the $i$-th parameter equals
 the Shapley value. Would connect RANDOM_MATRIX to HYPERCUBE_SHAPLEY.
 

@@ -67,7 +67,9 @@ the projection onto the normal bundle.
 estimated RMS mean curvature of the market manifold.
 
 **H1 (our theory):** The regression
-$\mathrm{Sharpe}^{\rm realised}_{t} = \beta_0 + \beta_1 \hat H_t + \varepsilon_t$
+```math
+\mathrm{Sharpe}^{\rm realised}_{t} = \beta_0 + \beta_1 \hat H_t + \varepsilon_t
+```
 has slope $\beta_1 > 0$ with $p < 0.05$, and the R² is substantially positive.
 
 **What would falsify this:** $\beta_1 \leq 0$ or R² $< 0.05$ across multiple
@@ -758,7 +760,9 @@ for S&P 500 options.
 **H0:** CBOE SKEW is uncorrelated with the estimated market manifold curvature $H$.
 
 **H1 (our theory):** The regression
-$\mathrm{SKEW}_{t} = \gamma_0 + \gamma_1 \hat H^2_t / (2\sigma_{I,t}) + \varepsilon_t$
+```math
+\mathrm{SKEW}_{t} = \gamma_0 + \gamma_1 \hat H^2_t / (2\sigma_{I,t}) + \varepsilon_t
+```
 has slope $\gamma_1 > 0$ (p < 0.05) and explains at least 10% of SKEW variation.
 
 **What would falsify this:** No significant relationship, or VIX alone explains

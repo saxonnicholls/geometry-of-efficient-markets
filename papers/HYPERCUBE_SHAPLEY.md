@@ -377,7 +377,9 @@ In the Kelly game:
 — the expected marginal contribution of asset $i$ over a uniformly random coalition.
 
 **The Banzhaf = the Walsh-Fourier coefficient** of $v$ at the singleton $\{i\}$:
-$\beta_i = \hat v_{\{i\}} = \int_\Delta v(b)(2b_i-1)\,d\mathrm{vol}(b)$.
+```math
+\beta_i = \hat v_{\{i\}} = \int_\Delta v(b)(2b_i-1)\,d\mathrm{vol}(b).
+```
 
 This connection — Banzhaf power index = Walsh-Fourier coefficient — links cooperative
 game theory to the harmonic analysis on the hypercube/simplex. **Game theory and Fourier

@@ -324,12 +324,16 @@ component of the mean curvature in the carry direction.*
 *Proof.* This is the Sharpe–curvature identity of MINIMAL_SURFACE.md (R1),
 applied to the specific portfolio direction $v_{\mathrm{carry}}$. The carry
 portfolio $b^{\mathrm{carry}}$ has excess return
-$\mu_{\mathrm{carry}} = \sum_i b^{\mathrm{carry}}_{i} (r_i - \mathbb{E}[\Delta \log e_i])$
+```math
+\mu_{\mathrm{carry}} = \sum_i b^{\mathrm{carry}}_{i} (r_i - \mathbb{E}[\Delta \log e_i])
+```
 — the UIP violation. By the Sharpe–curvature identity, the Sharpe ratio of any
 portfolio direction equals the $L^2$-norm of the mean curvature projected onto
 that direction. The carry direction is the interest-rate-differential vector,
 normalised to unit length in the Fisher–Rao metric. Therefore
-$\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2}$.
+```math
+\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2}.
+```
 
 UIP ($\mathrm{Sharpe}_{\mathrm{carry}} = 0$) holds if and only if
 $H_{\mathrm{carry}} = 0$ — the FX manifold is minimal in the carry direction.
@@ -495,7 +499,9 @@ $v_k$ moves the FX state from $w^{\ast}$ to $\exp(\alpha v_k) \cdot w^{\ast}$.*
 $w^{\ast}$ is spanned by the $r$ principal directions of the FX return covariance
 matrix (restricted to $M^r$). These directions form a Lie algebra under the
 bracket induced by the multiplicative group structure:
-$[v_k, v_l]_i = v_{k,i} v_{l,i} (1/w^{\ast}_{i}) - v_{l,i} v_{k,i} (1/w^{\ast}_{i}) = 0$
+```math
+[v_k, v_l]_i = v_{k,i} v_{l,i} (1/w^{\ast}_{i}) - v_{l,i} v_{k,i} (1/w^{\ast}_{i}) = 0
+```
 in the abelian case (which holds when the factors are orthogonal in $g^{\mathrm{FR}}$).
 The exponential map of the abelian group is componentwise exponentiation on
 the simplex. $\square$
@@ -583,13 +589,17 @@ precisely those most exposed to the curvature singularity.
 *Let $M^r_{\mathrm{FX}}(t)$ be the FX manifold constrained to a half-space
 $\{w_k \leq c\}$ for $t \in [0, \tau]$, with the constraint removed at $t = \tau$.
 If the accumulated Willmore energy
-$\mathcal{W}_{\mathrm{floor}}(\tau) > \mathcal{W}_{\mathrm{crit}}$
+```math
+\mathcal{W}_{\mathrm{floor}}(\tau) > \mathcal{W}_{\mathrm{crit}}
+```
 (the critical Willmore energy for Type II singularity formation in codimension
 $N - 1 - r$), then the MCF starting from $M^r(\tau)$ develops a Type II
 singularity in finite time.*
 
 *Proof sketch.* At the constraint boundary, the second fundamental form
-$\mathrm{II}(v, v) \sim (\text{unconstrained curvature}) + (\text{Lagrange multiplier})$
+```math
+\mathrm{II}(v, v) \sim (\text{unconstrained curvature}) + (\text{Lagrange multiplier})
+```
 has a contribution from the Lagrange multiplier enforcing the half-space constraint.
 When the constraint is removed, the Lagrange multiplier vanishes instantaneously
 but the curvature does not — the manifold inherits the full curvature as initial
@@ -816,7 +826,9 @@ structure.*
 **Theorem FX2** (Carry = mean curvature; UIP violation = non-minimality).
 *The carry trade Sharpe ratio equals the $L^2$-norm of the mean curvature in
 the carry direction:
-$\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2(M, g_M)}$.
+```math
+\mathrm{Sharpe}_{\mathrm{carry}} = \|H_{\mathrm{carry}}\|_{L^2(M, g_M)}.
+```
 UIP holds if and only if the FX manifold is minimal in the carry direction.
 The Lustig–Verdelhan Sharpe of $\sim 0.5$–$0.8$ is a direct measurement of
 FX manifold curvature.*

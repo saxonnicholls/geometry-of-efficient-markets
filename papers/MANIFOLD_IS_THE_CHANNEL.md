@@ -1184,7 +1184,9 @@ metric equals the manifold metric.
 
 **Theorem MC2** (Projection-channel duality). The fiber bundle projection
 $\pi: M_{\rm parent} \to M_{\rm sub}$ is a channel with capacity
-$h_{\rm Kelly}^{\rm parent} - h_{\rm Kelly}^{\rm fiber}$.
+```math
+h_{\rm Kelly}^{\rm parent} - h_{\rm Kelly}^{\rm fiber}.
+```
 
 **Theorem MC3** (Willmore = relay capacity). The relay capacity of
 off-manifold market makers is $(1/2)\log(1 + \mathcal{W}/\mathcal{W}_{\rm min})$.

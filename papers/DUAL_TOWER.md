@@ -120,7 +120,9 @@ the number of time periods. Portfolio weights $b = (b_1, \ldots, b_d) \in
 The Bhattacharyya isometry is $\phi: b \mapsto \sqrt{b} \in S^{d-1}_{+}$. The
 log-optimal portfolio is $b^{\ast} = \arg\max_{b \in M^r} L_T(b)$ where
 $L_T(b) = \frac{1}{T}\sum_{t=1}^{T} \log\langle b, x_t \rangle$. The MUP is
-$\hat{b}^{M}_T = \int_{M^r} b\, W_T(b)\,d\mu_M(b) / \int_{M^r} W_T(b)\,d\mu_M(b)$.
+```math
+\hat{b}^{M}_T = \int_{M^r} b\, W_T(b)\,d\mu_M(b) / \int_{M^r} W_T(b)\,d\mu_M(b).
+```
 
 ---
 

@@ -719,7 +719,9 @@ length $T/b$ over the same alphabet (or a coarser one, depending on the
 specific coarse-graining rule).
 
 Iterate: $R_b^n$ coarse-grains at scale $b^n$. The RG trajectory is
-$\{\sigma, R_b(\sigma), R_b^2(\sigma), R_b^3(\sigma), \ldots\}$.
+```math
+\{\sigma, R_b(\sigma), R_b^2(\sigma), R_b^3(\sigma), \ldots\}.
+```
 
 **Fixed points of $R_b$** are sequences (or distributions of sequences)
 invariant under coarse-graining. These are the UNIVERSALITY CLASSES.

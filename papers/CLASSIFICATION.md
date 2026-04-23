@@ -88,7 +88,9 @@ of the area functional determines:
 1. Whether the market *stays* efficient after a small perturbation (stable) or *runs away*
    from efficiency (unstable).
 2. The rate at which Sharpe opportunities grow when the market is displaced from $\Sigma$:
-   $\mathrm{Sharpe}^{\ast}(\Sigma_\varepsilon) = \varepsilon|\lambda_1(L)| + O(\varepsilon^2)$.
+```math
+\mathrm{Sharpe}^{\ast}(\Sigma_\varepsilon) = \varepsilon|\lambda_1(L)| + O(\varepsilon^2).
+```
 3. The rate at which arbitrage capital (performing MCF) restores efficiency: for stable
    surfaces, the restoration rate is $\lambda_1(L)$ per arbitrage cycle.
 

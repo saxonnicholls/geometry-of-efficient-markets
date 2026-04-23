@@ -32,7 +32,9 @@ curvature blowup on a millisecond timescale when the LOB manifold tears.
 **Principal results:**
 
 **(i) Spread = Fisher-Rao distance.** The bid-ask spread is
-$s_{\rm FR} = d_{g^{\rm FR}}(b^{\rm bid}, b^{\rm ask}) = 2\arccos\bigl(\sum_i\sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\bigr)$,
+```math
+s_{\rm FR} = d_{g^{\rm FR}}(b^{\rm bid}, b^{\rm ask}) = 2\arccos\bigl(\sum_i\sqrt{b_i^{\rm bid}\,b_i^{\rm ask}}\bigr),
+```
 measuring the informational disagreement between buyers and sellers.
 
 **(ii) Market impact = geodesic curvature.** The price impact of a trade of size
@@ -56,7 +58,9 @@ critical threshold set by minimum book depth. Circuit breakers are topological
 surgery preventing the singularity.
 
 **(vi) Spectral hierarchy.** The spectral gaps across timescales satisfy
-$\lambda_1^{\rm LOB} \gg \lambda_1^{\rm intraday} \gg \lambda_1^{\rm daily} \gg \lambda_1^{\rm macro}$.
+```math
+\lambda_1^{\rm LOB} \gg \lambda_1^{\rm intraday} \gg \lambda_1^{\rm daily} \gg \lambda_1^{\rm macro}.
+```
 HFTs remove high-frequency curvature; factor investors earn the low-frequency
 curvature that HFTs cannot reach.
 

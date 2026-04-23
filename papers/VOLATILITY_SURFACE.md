@@ -582,7 +582,9 @@ The celebrated SABR implied vol formula of Hagan et al. [2002]:
 ```
 
 where $\xi = (\nu/\hat\sigma(f_{\rm mid}))\cdot(FK)^{(1-\beta)/2}\log(F/K)$,
-$\chi(\xi) = \log\left(\frac{\sqrt{1 - 2\rho\xi + \xi^2} + \xi - \rho}{1 - \rho}\right)$,
+```math
+\chi(\xi) = \log\left(\frac{\sqrt{1 - 2\rho\xi + \xi^2} + \xi - \rho}{1 - \rho}\right),
+```
 and $\hat\sigma$ is a known function of $(F, K, \beta)$.
 
 The geometric content is this: $\chi(\xi)$ is the **geodesic distance** on the

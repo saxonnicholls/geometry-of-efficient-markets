@@ -209,7 +209,9 @@ each rebalancing date, rolling 504-day (2-year) windows stepped quarterly,
 1. **Stable rank.** Compute the Fisher information matrix
    $\hat{I}_{ij} = \hat{\Sigma}_{ij} / (b^{\ast}_{i} b^{\ast}_{j})$ where $b^{\ast}$ is the
    equal-weight portfolio (as a neutral reference). The stable rank is
-   $\mathrm{sr}(\hat{I}) = \mathrm{tr}(\hat{I}) / \|\hat{I}\|_{\rm op}$.
+```math
+\mathrm{sr}(\hat{I}) = \mathrm{tr}(\hat{I}) / \|\hat{I}\|_{\rm op}.
+```
    Set $r_1 = \lfloor \mathrm{sr}(\hat{I}) \rceil$.
 
 2. **Variance ratio.** Eigendecompose $\hat{\Sigma}$. Set $r_2$ = number of
@@ -374,7 +376,9 @@ of systemic risk fails.
 These tests target the classification theorem (R3): that market structures
 fall into three types — CAPM (great sphere), Clifford torus, and
 pseudo-Anosov (hyperbolic) — distinguished by their Dyson symmetry class
-$\beta \in \{1, 2, 4\}$.
+```math
+\beta \in \{1, 2, 4\}.
+```
 
 ---
 

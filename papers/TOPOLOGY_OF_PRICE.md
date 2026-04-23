@@ -266,7 +266,9 @@ distortion that deforms the market manifold from $M^r$ to $\tilde{M}^{r}$ is:
 ```
 
 If the undistorted market is efficient ($\mathcal{W}(M) = 0$), this reduces to
-$\mathrm{DWL} = \mathcal{W}(\tilde{M}) = \int |H|^2 \, d\mathrm{vol}$.
+```math
+\mathrm{DWL} = \mathcal{W}(\tilde{M}) = \int |H|^2 \, d\mathrm{vol}.
+```
 
 **Proposition 3.2** (Harberger Triangle as Special Case). *For a single-good
 tax $\tau$ in the $|V| = 2$ economy with linear supply and demand, the Willmore

@@ -18,17 +18,35 @@ with holes, a negatively curved space, a discrete combinatorial object — is
 there a canonical way to embed it into a convex information-processing space,
 and what is the cost?
 
-We develop three answers. First, the **free convex completion** $\mathcal{P}(X)$:
-the space of probability measures on $X$, with the Dirac embedding
-$x \mapsto \delta_x$. This is the universal convexification — it embeds any
-measurable space into a convex space while preserving all structure that can
-be preserved. Second, the **symmetry convexification** $\mathcal{C}_{G}(X)$:
-for a group $G$ acting on $X$, the orbit-averaged space, which convexifies
-by exploiting symmetry. Third, the **Sobolev convexification**: when $X$ lacks
-the smoothness required by Čencov's theorem, we work in the Sobolev space
-$W^{1,2}(\Delta_{d-1}, g^{\rm FR})$ where the Fisher-Rao metric is defined
-in the weak sense, extending the information-geometric framework to
-non-smooth state spaces.
+We develop three answers.
+
+**First — the free convex completion:**
+
+```math
+\mathcal{P}(X) = \{\text{Borel probability measures on } X\}
+```
+
+with the Dirac embedding $x \mapsto \delta_x$. This is the universal
+convexification — it embeds any measurable space into a convex space while
+preserving all structure that can be preserved.
+
+**Second — the symmetry convexification:**
+
+```math
+\mathcal{C}_{G}(X) = \text{orbit-averaged space of } X \text{ under group } G
+```
+
+which convexifies by exploiting symmetry.
+
+**Third — the Sobolev convexification:** when $X$ lacks the smoothness
+required by Čencov's theorem, we work in the Sobolev space
+
+```math
+W^{1,2}(\Delta_{d-1},\, g^{\rm FR})
+```
+
+where the Fisher-Rao metric is defined in the weak sense, extending the
+information-geometric framework to non-smooth state spaces.
 
 The central result: **convexification is probabilification**. The passage
 from any space to its convex completion is, in every known case, the passage
@@ -151,23 +169,35 @@ point to its Dirac mass:
 \iota(x) = \delta_x \tag{2.2}
 ```
 
-**Theorem 2.1** *(Free convex completion — Choquet theory)*.
-*Let $X$ be a compact metrizable space. Then:*
+**Theorem 2.1** *(Free convex completion — Choquet theory).*
 
-*(i) $\mathcal{P}(X)$ is a compact convex subset of the locally convex space
-$C(X)^{\ast}$ (dual of continuous functions).*
+Let $X$ be a compact metrizable space. Then:
 
-*(ii) The extreme points of $\mathcal{P}(X)$ are exactly the Dirac masses:
-$\mathrm{ext}(\mathcal{P}(X)) = \{\delta_x : x \in X\}$.*
+**(i)** $\mathcal{P}(X)$ is a compact convex subset of the locally convex
+space $C(X)^{\ast}$ (dual of continuous functions).
 
-*(iii) (Choquet representation) Every $\mu \in \mathcal{P}(X)$ has a unique
-representation as a mixture of extreme points:
-$\mu = \int_X \delta_x \, d\mu(x)$.*
+**(ii)** The extreme points of $\mathcal{P}(X)$ are exactly the Dirac
+masses:
 
-*(iv) (Universal property) For any continuous affine map
-$\phi: \mathcal{P}(X) \to C$ into a convex set $C$, there exists a unique
-continuous map $f: X \to C$ such that $\phi(\mu) = \int f \, d\mu$.
-$\mathcal{P}(X)$ is the "free" convex set over $X$.*
+```math
+\mathrm{ext}(\mathcal{P}(X)) = \{\delta_x : x \in X\}.
+```
+
+**(iii)** (Choquet representation) Every $\mu \in \mathcal{P}(X)$ has a
+unique representation as a mixture of extreme points:
+
+```math
+\mu = \int_X \delta_x \, d\mu(x).
+```
+
+**(iv)** (Universal property) For any continuous affine map $\phi: \mathcal{P}(X) \to C$ into a convex set $C$, there exists a unique
+continuous map $f: X \to C$ such that
+
+```math
+\phi(\mu) = \int_X f(x) \, d\mu(x).
+```
+
+$\mathcal{P}(X)$ is the "free" convex set over $X$.
 
 *Proof.* Parts (i)–(iii) are the content of Choquet's theorem (Phelps 1966).
 Part (iv) is the universal property of the probability monad
@@ -534,7 +564,9 @@ Consequently:*
 holds for $q \leq 2d/(d-2)$.*
 
 *(ii) The Poincaré inequality holds:
-$\int |f - \bar f|^2 w \, d\mathrm{vol} \leq C_P \int |\nabla f|^2 w \, d\mathrm{vol}$
+```math
+\int |f - \bar f|^2 w \, d\mathrm{vol} \leq C_P \int |\nabla f|^2 w \, d\mathrm{vol}
+```
 with $C_P = 1/\lambda_1$ (spectral gap of the weighted Laplacian).*
 
 *(iii) Elliptic regularity: solutions of $\Delta_w f = g$ with

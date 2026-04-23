@@ -987,7 +987,9 @@ recessions correctly predicted since 1955.
 **Result Y6** (Theorem 9.1). *Bond MUP = carry + steepener + butterfly
 (Pythagorean decomposition).* The MUP on $M^3_{\mathrm{bond}}$ decomposes along
 the three Jacobi eigenmodes. The combined Sharpe ratio satisfies
-$\mathrm{Sharpe}^{2}_{\mathrm{total}} = \sum_{n=0}^{2} \mathrm{Sharpe}^{2}_n$
+```math
+\mathrm{Sharpe}^{2}_{\mathrm{total}} = \sum_{n=0}^{2} \mathrm{Sharpe}^{2}_n
+```
 by orthogonality in the Fisher--Rao metric.
 
 ---

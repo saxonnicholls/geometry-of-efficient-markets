@@ -40,7 +40,9 @@ $S_n(\alpha,\beta,\gamma) = \int_{[0,1]^n}\prod_i t_i^{\alpha-1}(1-t_i)^{\beta-1
 $\beta$-ensemble on the portfolio simplex with Jacobi-type potential. Setting
 $\alpha = \beta = Tb^{\ast} - 1/2$ (the Jacobi parameters from MARKET_PROCESSES.md)
 and $\gamma = \beta/2$: the Selberg integral equals the MUP normalisation constant
-$\int_{M^r}W_T(b)\,d\mathrm{vol}_{M}$.
+```math
+\int_{M^r}W_T(b)\,d\mathrm{vol}_{M}.
+```
 
 **(iv) The bulk spectral distribution.** For all three ensembles, the
 empirical spectral distribution of the return covariance converges to the

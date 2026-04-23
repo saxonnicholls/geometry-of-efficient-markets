@@ -59,7 +59,9 @@ $\|H\|_{L^2}$ — computable from publicly available odds.
 
 **(iv) The Harville formula is conjectured to arise from a Jacobi diffusion on the race simplex.**
 The Harville (1973) model for finishing-order probabilities —
-$P(\text{horse } i \text{ finishes } k\text{-th}) = p_i / \sum_{j \notin \{1,\ldots,k-1\}} p_j$
+```math
+P(\text{horse } i \text{ finishes } k\text{-th}) = p_i / \sum_{j \notin \{1,\ldots,k-1\}} p_j
+```
 — is consistent with a sequential absorption model on $\Delta_{d-1}$ with
 Jacobi-type dynamics, though the precise identification requires verification
 (see Conjecture 5.1).

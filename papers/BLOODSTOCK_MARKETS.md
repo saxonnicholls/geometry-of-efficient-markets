@@ -1556,7 +1556,9 @@ The BWT applies not only to genetic sequences but to market return sequences
 Discretise the market return sequence into symbols using the Voronoi
 partition (as in test 15V from the experiments): each day's return vector is
 assigned to a Voronoi cell, producing a symbolic sequence
-$\sigma = (\sigma_1, \sigma_2, \ldots, \sigma_T) \in \{1, \ldots, N\}^{T}$.
+```math
+\sigma = (\sigma_1, \sigma_2, \ldots, \sigma_T) \in \{1, \ldots, N\}^{T}.
+```
 
 The BWT of $\sigma$ sorts trading days by their factor context. Days in
 the same BWT run experienced the same market regime. The number of BWT runs

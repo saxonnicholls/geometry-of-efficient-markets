@@ -626,7 +626,9 @@ where $p_t(v_k,v_l)$ is the heat kernel evaluated at the Voronoi cell centres
 (9.1) on the Delaunay graph is:*
 
 *(i) Subcritical (shocks die out) iff $\rho(A_{\rm Hawkes}) < 1$ where
-$A_{\rm Hawkes,kl} = \int_0^\infty \phi_{kl}(t)\,dt = \alpha_{kl}\,G(v_k,v_l)$
+```math
+A_{\rm Hawkes,kl} = \int_0^\infty \phi_{kl}(t)\,dt = \alpha_{kl}\,G(v_k,v_l)
+```
 and $G$ is the Green's function of $-\Delta_M$.*
 
 *(ii) Critical iff $\rho(A_{\rm Hawkes}) = 1$ — the Hawkes process is at criticality

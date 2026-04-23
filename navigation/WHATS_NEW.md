@@ -30,7 +30,9 @@ of Čencov to $W^{1,2}$ under Muckenhoupt $A_2$ weights.
 ## Tier 1: Fully Proved and Publishable Today (26 results)
 
 **R1. Sharpe-Curvature Identity** *(MINIMAL_SURFACE)*
-$\mathrm{Sharpe}^{\ast}=\|H\|_{L^2(M,g_M)}$.
+```math
+\mathrm{Sharpe}^{\ast}=\|H\|_{L^2(M,g_M)}.
+```
 Vol skew of index options measures $H$ in real time.
 
 **R2. MUP Minimax Optimality, Regret $r\log T/2T$** *(CONVERGENCE)*

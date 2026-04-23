@@ -305,7 +305,9 @@ portfolio configuration to another via the geodesic on $M^r$.
 For the Clifford torus: instantons include constant paths ($b=b^{\ast}$, the
 log-optimal portfolio) AND non-trivial winding paths that go around the torus.
 The winding instantons contribute to the path integral with action
-$S_{\rm instanton} = n^2(\pi/2)^2/(2\varepsilon^2\cdot\mathrm{Area}(T^2)) \propto n^2/\varepsilon^2$
+```math
+S_{\rm instanton} = n^2(\pi/2)^2/(2\varepsilon^2\cdot\mathrm{Area}(T^2)) \propto n^2/\varepsilon^2
+```
 — exponentially suppressed for large winding number $n$. **Topological instantons
 generate exponentially small corrections to option prices from the winding number sectors.**
 

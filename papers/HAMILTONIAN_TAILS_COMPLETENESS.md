@@ -346,7 +346,9 @@ $p(x) \propto x^{-\alpha-1}$. The exponent $\alpha$ is determined by the scaling
 of the return operator at the fixed point, which is $(d-2)/4$ in Fisher–Rao coordinates —
 giving $\alpha = (d-2)/4 \cdot (2/r) = (d-2)/(2r)$. For $d = 50$, $r=4$: $\alpha = 48/8 = 6$.
 Combining with the sphere curvature result (Theorem 2.2): the actual tail index is
-$\alpha_{\rm eff} = \min(\alpha_{\rm sphere}, \alpha_{\rm RG}) = \min(r/2, (d-2)/(2r))$.
+```math
+\alpha_{\rm eff} = \min(\alpha_{\rm sphere}, \alpha_{\rm RG}) = \min(r/2, (d-2)/(2r)).
+```
 For $r=4$, $d=50$: $\min(2, 6) = 2$. $\square$
 
 **The key insight:** Fat tails in equity returns are not an anomaly requiring special

@@ -142,7 +142,9 @@ mean-reverting process with spectral gap $\lambda_1$:*
 to the Jacobi spectral gap — the mean-reversion rate.*
 
 *Proof sketch.* Under detailed balance, $\pi_i P_{ij} = \pi_j P_{ji}$, so
-$P_{ij} P_{ji} = \pi_j P_{ji}^{2} / \pi_i \geq (\pi_j/\pi_i) \cdot P_{ji}^{2}$.
+```math
+P_{ij} P_{ji} = \pi_j P_{ji}^{2} / \pi_i \geq (\pi_j/\pi_i) \cdot P_{ji}^{2}.
+```
 The mutual information $I(\sigma_1; \sigma_2) = \sum_{ij} \pi_i P_{ij}
 \log(P_{ij}/\pi_j)$ is positive for any non-trivial Markov chain. For a
 Jacobi process with spectral gap $\lambda_1$, the per-step mutual

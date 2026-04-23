@@ -199,7 +199,9 @@ $M^s_{\rm goods}$, not a position-tracking problem.
 ### 3.1 The combined market space
 
 The economy's state is described by a triple
-$(b_{\rm fin}, w_{\rm goods}, \ell_{\rm lab}) \in M^r_{\rm fin}\times M^s_{\rm goods}\times M^t_{\rm lab}$.
+```math
+(b_{\rm fin}, w_{\rm goods}, \ell_{\rm lab}) \in M^r_{\rm fin}\times M^s_{\rm goods}\times M^t_{\rm lab}.
+```
 
 We focus on the financial-goods pair. Define the **combined market space**:
 

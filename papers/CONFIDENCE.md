@@ -673,7 +673,9 @@ wall constrains what actually happens.
 
 **Theorem CF1** (Confidence is a σ-algebra). The set of events an agent is
 willing to condition their capital allocation on forms a σ-algebra
-$\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{A}_t$.
+```math
+\mathcal{F}^{\rm conf}_{t} \subseteq \mathcal{F}^{A}_t.
+```
 
 **Theorem CF2** (Effective channel capacity). The market's effective
 information-processing capacity is $C_{\rm eff} = \bar{\rho} \cdot C_{\rm full}$,
